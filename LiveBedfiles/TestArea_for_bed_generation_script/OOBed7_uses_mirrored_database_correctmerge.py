@@ -6,6 +6,7 @@ from sqlalchemy import or_
 from versionnumber import Accversion
 import time
 from copy import deepcopy
+import subprocess
 
 #Need to module load python/2.7
 #Need to provide arguments 'up' to include the 5'UTR and 'down' to include the 3'UTR and the associated list of accession numbers of the associated transcripts
@@ -1082,6 +1083,9 @@ def UTR(argv):
 		log.write("\n\n os module file path: %s" % os.__file__)
 		log.write("\n\n pd class file path: %s" % pd.__file__)
 		log.write("\n\n cruzdb module file path: %s" % cruzdb.__file__)
+		sub=subprocess.Popen(['git', 'describe', '--tags'], stdout=subprocess.PIPE)
+		gitversion = sub.stdout.read().strip('\n')
+		log.write("\n\n" + "version as defined by git tag = " + gitversion)
 		#from cruzdb import Genome
 	else:
 		print "WARNING you need to define --logfile"
