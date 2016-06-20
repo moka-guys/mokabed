@@ -11,6 +11,7 @@ import cruzdb
 import subprocess
 import sys, getopt
 from _ast import Lambda
+import os, shutil
 
 ### Command to run test
 ### --newscript <new version of bedfile script> --livescript <current live version of script>
@@ -60,28 +61,53 @@ class Runscripts(object):
     def __init__(self):
         self.newscript = ''
         self.livescript = ''
+        self.output = ''
          
     def subprocessscripts(self):
+    
+    	#Add trailing backslash to output folder if one not added
+    	self.output=os.path.join(self.output, '')
+    	# Make output folder
+    	os.makedirs(os.path.dirname(self.output))
+    	
+    
         # Run python script on test data for coding data - Accessions
-        subprocess.call("python %s --codingup 30 --codingdown 20 --transcripts /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71_truthset.txt --logfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71test_new_Logfile.txt --useaccessions --outputfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/newoutput.bed" % self.newscript, shell=True)
-        subprocess.call("python %s --codingup 30 --codingdown 20 --transcripts /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71_truthset.txt --logfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71test_live_Logfile.txt --useaccessions --outputfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/liveoutput.bed" % self.livescript, shell=True)
+        subprocess.call("python %s --codingup 30 --codingdown 20 --transcripts /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71_truthset.txt --logfile %s/Pan71test_new_Logfile.txt --useaccessions --outputfile %s/newoutput.bed" % (self.newscript, self.output, self.output), shell=True)
+        subprocess.call("python %s --codingup 30 --codingdown 20 --transcripts /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71_truthset.txt --logfile %s/Pan71test_live_Logfile.txt --useaccessions --outputfile %s/liveoutput.bed" % (self.livescript, self.output, self.output), shell=True)
         
         # Run python script on test data for whole exon regions - Accessions
-        subprocess.call("python %s --up 15 --codingup 0 --down 10 --codingdown 0 --transcripts /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71_truthsubset.txt --logfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71testexon_new_Logfile.txt --useaccessions --outputfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/newoutputexon.bed" % self.newscript, shell=True)
-        subprocess.call("python %s --up 15 --codingup 0 --down 10 --codingdown 0 --transcripts /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71_truthsubset.txt --logfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71testexon_live_Logfile.txt --useaccessions --outputfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/liveoutputexon.bed" % self.livescript, shell=True)
+        subprocess.call("python %s --up 15 --codingup 0 --down 10 --codingdown 0 --transcripts /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71_truthsubset.txt --logfile %s/Pan71testexon_new_Logfile.txt --useaccessions --outputfile %s/newoutputexon.bed" % (self.newscript, self.output, self.output), shell=True)
+        subprocess.call("python %s --up 15 --codingup 0 --down 10 --codingdown 0 --transcripts /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71_truthsubset.txt --logfile %s/Pan71testexon_live_Logfile.txt --useaccessions --outputfile %s/liveoutputexon.bed" % (self.livescript, self.output, self.output), shell=True)
         
         # Run python script on test data for coding regions where 5' and 3' coding regions receive different flanking value to internal coding regions - Accessions
-        subprocess.call("python %s --StartFlank 50 --codingup 0 --StopFlank 100 --codingdown 0 --transcripts /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71_truthsubset.txt --logfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71testUTR_new_Logfile.txt --useaccessions --outputfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/newoutputUTR.bed" % self.newscript, shell=True)
-        subprocess.call("python %s --StartFlank 50 --codingup 0 --StopFlank 100 --codingdown 0 --transcripts /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71_truthsubset.txt --logfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71testUTR_live_Logfile.txt --useaccessions --outputfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/liveoutputUTR.bed" % self.livescript, shell=True)
+        subprocess.call("python %s --StartFlank 50 --codingup 0 --StopFlank 100 --codingdown 0 --transcripts /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71_truthsubset.txt --logfile %s/Pan71testUTR_new_Logfile.txt --useaccessions --outputfile %s/newoutputUTR.bed" % (self.newscript, self.output, self.output), shell=True)
+        subprocess.call("python %s --StartFlank 50 --codingup 0 --StopFlank 100 --codingdown 0 --transcripts /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan71_truthsubset.txt --logfile %s/Pan71testUTR_live_Logfile.txt --useaccessions --outputfile %s/liveoutputUTR.bed" % (self.livescript, self.output, self.output), shell=True)
         
         # Run python script on test data for coding regions - Gene symbol list
-        subprocess.call("python %s --codingup 30 --codingdown 20 --genes /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols.txt --logfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols_codingexons_new_Logfile.txt --mergeboundaries --outputfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols_codingexons_new.bed" % self.newscript, shell=True)
-        subprocess.call("python %s --codingup 30 --codingdown 20 --genes /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols.txt --logfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols_codingexons_live_Logfile.txt --mergeboundaries --outputfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols_codingexons_live.bed" % self.livescript, shell=True)
+        subprocess.call("python %s --codingup 30 --codingdown 20 --genes /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols.txt --logfile %s/Pan81_subset_20genesymbols_codingexons_new_Logfile.txt --mergeboundaries --outputfile %s/Pan81_subset_20genesymbols_codingexons_new.bed"  % (self.newscript, self.output, self.output), shell=True)
+        subprocess.call("python %s --codingup 30 --codingdown 20 --genes /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols.txt --logfile %s/Pan81_subset_20genesymbols_codingexons_live_Logfile.txt --mergeboundaries --outputfile %s/Pan81_subset_20genesymbols_codingexons_live.bed" % (self.livescript, self.output, self.output), shell=True)
         
 		# Run python script on test data for whole exon regions - Gene symbol list
-        subprocess.call("python %s --up 30 --down 20 --codingup 30 --codingdown 20 --genes /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols.txt --logfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols_wholeexon_new_Logfile.txt --mergeboundaries --outputfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols_wholeexon_new.bed" % self.newscript, shell=True)
-        subprocess.call("python %s --up 30 --down 20 --codingup 30 --codingdown 20 --genes /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols.txt --logfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols_wholeexon_live_Logfile.txt --mergeboundaries --outputfile /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols_wholeexon_live.bed" % self.livescript, shell=True)
+        subprocess.call("python %s --up 30 --down 20 --codingup 30 --codingdown 20 --genes /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols.txt --logfile %s/Pan81_subset_20genesymbols_wholeexon_new_Logfile.txt --mergeboundaries --outputfile %s/Pan81_subset_20genesymbols_wholeexon_new.bed" % (self.newscript, self.output, self.output), shell=True)
+        subprocess.call("python %s --up 30 --down 20 --codingup 30 --codingdown 20 --genes /home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols.txt --logfile %s/Pan81_subset_20genesymbols_wholeexon_live_Logfile.txt --mergeboundaries --outputfile %s/Pan81_subset_20genesymbols_wholeexon_live.bed" % (self.livescript, self.output, self.output), shell=True)
 
+        #Copy across the scripts being tested to output folder
+        shutil.copy2(self.livescript, self.output)
+        shutil.copy2(self.newscript, self.output)
+        #Copy across the truth set for testing coding exon boundaries from a list of accessions
+        shutil.copy2('/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/UCSCtruthsetmanual.bed', self.output)
+        #Copy across the truth set for testing whole exon boundaries from a list of accessions
+        shutil.copy2('/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/UCSCexons_manual.bed', self.output)
+        #Copy across the truth set for translational start/end exon boundaries from a list of accessions
+        shutil.copy2("/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/UCSC_UTR_manual.bed", self.output)
+        #Copy across the truth set for testing coding exon boundaries from a list of genes
+        shutil.copy2("/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/UCSCgenesymbols_coding_manual.bed", self.output)
+        #Copy across the truth set for testing whole exon boundaries from a list of genes
+        shutil.copy2("/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/UCSCgenesymbols_exons_manual.bed", self.output)
+        
+        #Delete new test file
+        os.remove(self.newscript)
+        
 
         
         
@@ -101,6 +127,7 @@ class Test(unittest.TestCase):
      
     def setUp(self):
          
+        runscript = Runscripts()
  
 #         # read in the UCSC database
 #         g = cruzdb.Genome(db='/home/kevin/Documents/PythonDocs/UnittestOOBed7_uses_mirrored_database/cruzdbrefGene.db')
@@ -123,17 +150,17 @@ class Test(unittest.TestCase):
 #         self.testChr = [val.encode('ascii', 'ignore') for val in bedfile.Chr]
 #         self.testStart = [str(val) for val in bedfile.Start]
 #         self.testStop = [str(val) for val in  bedfile.Stop]
-        self.ucsctruth = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/UCSCtruthsetmanual.bed", header=0)
+        self.ucsctruth = pd.read_table("/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/UCSCtruthsetmanual.bed", header=0)
         self.ucsctruthchr = list(self.ucsctruth['#Chr'])
         self.ucsctruthstart = list(self.ucsctruth.Start)
         self.ucsctruthstop = list(self.ucsctruth.Stop)
         
-        self.ucscexontruth = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/UCSCexons_manual.bed", header=0)
+        self.ucscexontruth = pd.read_table("/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/UCSCexons_manual.bed", header=0)
         self.ucscexontruthchr = list(self.ucscexontruth['#Chr'])
         self.ucscexontruthstart = list(self.ucscexontruth.Start)
         self.ucscexontruthstop = list(self.ucscexontruth.Stop)
         
-        self.ucscutrtruth = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/UCSC_UTR_manual.bed", header=0)
+        self.ucscutrtruth = pd.read_table("/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/UCSC_UTR_manual.bed", header=0)
         self.ucscutrtruthchr = list(self.ucscutrtruth['#Chr'])
         self.ucscutrtruthstart = list(self.ucscutrtruth.Start)
         self.ucscutrtruthstop = list(self.ucscutrtruth.Stop)
@@ -141,70 +168,88 @@ class Test(unittest.TestCase):
         
         
 
-        self.ucsctruthgscoding = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/UCSCgenesymbols_coding_manual.bed", header=0)
+        self.ucsctruthgscoding = pd.read_table("/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/UCSCgenesymbols_coding_manual.bed", header=0)
         self.ucsctruthgscoding = self.ucsctruthgscoding.sort(["#Chr", "Start", "Stop"], ascending = [1, 1, 1])
         self.ucsctruthgscodingchr = list(self.ucsctruthgscoding['#Chr'])
         self.ucsctruthgscodingstart = list(self.ucsctruthgscoding.Start)
         self.ucsctruthgscodingstop = list(self.ucsctruthgscoding.Stop)
         
-        self.ucsctruthgswholeexon = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/UCSCgenesymbols_exons_manual.bed", header=0)
+        self.ucsctruthgswholeexon = pd.read_table("/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/UCSCgenesymbols_exons_manual.bed", header=0)
         self.ucsctruthgswholeexon = self.ucsctruthgswholeexon.sort(["#Chr", "Start", "Stop"], ascending = [1, 1, 1])
         self.ucsctruthgswholeexonchr = list(self.ucsctruthgswholeexon['#Chr'])
         self.ucsctruthgswholeexonstart = list(self.ucsctruthgswholeexon.Start)
         self.ucsctruthgswholeexonstop = list(self.ucsctruthgswholeexon.Stop)
         
         
-        
+        newbedinput = runscript.output + "newoutput.bed"
          
-        self.newbed = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/newoutput.bed", header=0)
+        self.newbed = pd.read_table(newbedinput, header=0)
         self.newbedchr = list(self.newbed['#Chr'])
         self.newbedstart = list(self.newbed.Start)
         self.newbedstop = list(self.newbed.Stop)
+        
+        oldbedinput = runscript.output + "liveoutput.bed"
          
-        self.oldbed = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/liveoutput.bed", header=0)
+        self.oldbed = pd.read_table(oldbedinput, header=0)
         self.oldbedchr = list(self.oldbed['#Chr'])
         self.oldbedstart = list(self.oldbed.Start)
         self.oldbedstop = list(self.oldbed.Stop)
         
-        self.newbedexon = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/newoutputexon.bed", header=0)
+        newbedexoninput = runscript.output + "newoutputexon.bed"
+        
+        self.newbedexon = pd.read_table(newbedexoninput, header=0)
         self.newbedexonchr = list(self.newbedexon['#Chr'])
         self.newbedexonstart = list(self.newbedexon.Start)
         self.newbedexonstop = list(self.newbedexon.Stop)
+        
+        oldbedexoninput = runscript.output + "liveoutputexon.bed"
          
-        self.oldbedexon = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/liveoutputexon.bed", header=0)
+        self.oldbedexon = pd.read_table(oldbedexoninput, header=0)
         self.oldbedexonchr = list(self.oldbedexon['#Chr'])
         self.oldbedexonstart = list(self.oldbedexon.Start)
         self.oldbedexonstop = list(self.oldbedexon.Stop)
         
-        self.newbedutr = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/newoutputUTR.bed", header=0)
+        newbedutrinput = runscript.output + "newoutputUTR.bed"
+        
+        self.newbedutr = pd.read_table(newbedutrinput, header=0)
         self.newbedutrchr = list(self.newbedutr['#Chr'])
         self.newbedutrstart = list(self.newbedutr.Start)
         self.newbedutrstop = list(self.newbedutr.Stop)
+        
+        oldbedutrinput = runscript.output + "liveoutputUTR.bed"
          
-        self.oldbedutr = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/liveoutputUTR.bed", header=0)
+        self.oldbedutr = pd.read_table(oldbedutrinput, header=0)
         self.oldbedutrchr = list(self.oldbedutr['#Chr'])
         self.oldbedutrstart = list(self.oldbedutr.Start)
         self.oldbedutrstop = list(self.oldbedutr.Stop)
         
-        self.newbedgscoding = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols_codingexons_new.bed", header=0)
+        newbedgscodinginput = runscript.output + "Pan81_subset_20genesymbols_codingexons_new.bed"
+        
+        self.newbedgscoding = pd.read_table(newbedgscodinginput, header=0)
         self.newbedgscoding = self.newbedgscoding.sort(["#Chr", "Start", "Stop"], ascending = [1, 1, 1])
         self.newbedgscodingchr = list(self.newbedgscoding['#Chr'])
         self.newbedgscodingstart = list(self.newbedgscoding.Start)
         self.newbedgscodingstop = list(self.newbedgscoding.Stop)
+        
+        oldbedgscodinginput = runscript.output + "Pan81_subset_20genesymbols_codingexons_live.bed"
          
-        self.oldbedgscoding = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols_codingexons_live.bed", header=0)
+        self.oldbedgscoding = pd.read_table(oldbedgscodinginput, header=0)
         self.oldbedgscoding = self.oldbedgscoding.sort(["#Chr", "Start", "Stop"], ascending = [1, 1, 1])
         self.oldbedgscodingchr = list(self.oldbedgscoding['#Chr'])
         self.oldbedgscodingstart = list(self.oldbedgscoding.Start)
         self.oldbedgscodingstop = list(self.oldbedgscoding.Stop)
         
-        self.newbedgswholeexon = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols_wholeexon_new.bed", header=0)
+        newbedgswholeexoninput = runscript.output + "Pan81_subset_20genesymbols_wholeexon_new.bed"
+        
+        self.newbedgswholeexon = pd.read_table(newbedgswholeexoninput, header=0)
         self.newbedgswholeexon = self.newbedgswholeexon.sort(["#Chr", "Start", "Stop"], ascending = [1, 1, 1])
         self.newbedgswholeexonchr = list(self.newbedgswholeexon['#Chr'])
         self.newbedgswholeexonstart = list(self.newbedgswholeexon.Start)
         self.newbedgswholeexonstop = list(self.newbedgswholeexon.Stop)
+        
+        oldbedgswholeexoninput = runscript.output + "Pan81_subset_20genesymbols_wholeexon_live.bed"
          
-        self.oldbedgswholeexon = pd.read_table("/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/TestArea_for_bed_generation_script/Pan81_subset_20genesymbols_wholeexon_live.bed", header=0)
+        self.oldbedgswholeexon = pd.read_table(oldbedgswholeexoninput, header=0)
         self.oldbedgswholeexon = self.oldbedgswholeexon.sort(["#Chr", "Start", "Stop"], ascending = [1, 1, 1])
         self.oldbedgswholeexonchr = list(self.oldbedgswholeexon['#Chr'])
         self.oldbedgswholeexonstart = list(self.oldbedgswholeexon.Start)
@@ -345,7 +390,7 @@ def argums(argv):
     log = ''
 #Generates and interprets a list of options which can be passed as arguments to the function UTR
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "h", ["newscript=", "livescript="])
+        opts, args = getopt.getopt(sys.argv[1:], "h", ["newscript=", "livescript=", "output="])
     except getopt.GetoptError, err:
         print str(err)
         runscripts.usage()
@@ -361,7 +406,7 @@ def argums(argv):
             runscripts.usage()
             sys.exit()
         elif o == "--newscript":
-            if a in ("-h", "--help", "--livescript"):
+            if a in ("-h", "--help", "--livescript", "--output"):
                 print "need to define --newscript"
                 runscripts.usage()
                 sys.exit()
@@ -369,12 +414,26 @@ def argums(argv):
                 runscripts.newscript = a
                  
         elif o == "--livescript":
-            if a in ("-h", "--help", "--newscript"):
+            if a in ("-h", "--help", "--newscript", "--output"):
                 print "need to define --livescript"
                 runscripts.usage()
                 sys.exit()
             else:
                 runscripts.livescript = a
+                
+        elif o == "--output":
+            if a in ("-h", "--help", "--newscript", "--livescript"):
+                print "need to define --output"
+                runscripts.usage()
+                sys.exit()
+            else:
+                runscripts.output = a
+		
+                
+    if not runscripts.output:
+       print "--output was not given"
+       runscripts.usage()
+       sys.exit(2)
                  
     runscripts.subprocessscripts()
                 
