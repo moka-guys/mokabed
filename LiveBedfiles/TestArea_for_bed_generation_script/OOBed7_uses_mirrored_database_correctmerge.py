@@ -301,6 +301,10 @@ class Bedfile:
 				except:
 					#print access
 					pass
+
+			with open('Synonymsnocodingregions','a') as nocoding:
+				if not mergecds:
+					nocoding.write(gene + "\n")
 			
 			#Generate output file showing a list of gene symbols which don't have a coding region annoated
 			#if not cds:
