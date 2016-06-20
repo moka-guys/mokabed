@@ -5,8 +5,7 @@ import cruzdb
 from sqlalchemy import or_
 from versionnumber import Accversion
 import time
-from copy import deepcopy
-import subprocess
+
 
 #Need to module load python/2.7
 #Need to provide arguments 'up' to include the 5'UTR and 'down' to include the 3'UTR and the associated list of accession numbers of the associated transcripts
@@ -100,16 +99,6 @@ class Bedfile:
 		self.StopFlank = ''
 		self.bedfile = pd.DataFrame()
 		self.bed = pd.DataFrame()
-		self.chrlist = []
-		self.listlength = 0
-		self.Chrom = []
-		self.Acc = []
-		self.Gene = []
-		self.Startmerge = []
-		self.Stopmerge = []
-		self.lastgene=''
-		self.prevselfstart = []
-		self.prevselfstop = []
 	
 
 	def usage(self):
@@ -260,8 +249,7 @@ class Bedfile:
 		fc = open('Synonymsnocodingregions', 'w')
 		fc.close()
 		genepos = refGene.filter_by(name2="NOX4MOCK").filter(or_(refGene.chrom=='chr1', refGene.chrom=='chr2', refGene.chrom=='chr3', refGene.chrom=='chr4', refGene.chrom=='chr5', refGene.chrom=='chr6', refGene.chrom=='chr7', refGene.chrom=='chr8', refGene.chrom=='chr9', refGene.chrom=='chr10', refGene.chrom=='chr11', refGene.chrom=='chr12', refGene.chrom=='chr13', refGene.chrom=='chr14', refGene.chrom=='chr15', refGene.chrom=='chr16', refGene.chrom=='chr17', refGene.chrom=='chr18', refGene.chrom=='chr19', refGene.chrom=='chr20', refGene.chrom=='chr21', refGene.chrom=='chr22', refGene.chrom=='chrX', refGene.chrom=='chrY')).all()
-		
-		self.lastgene = self.bed.iget_value(-1,0)
+
 		#If using pandas 0.10.1 use for loop in line below
 		for index, gene in self.bed[self.bed.columns[0:1]].itertuples():
 			mergecds = []
@@ -301,10 +289,6 @@ class Bedfile:
 				except:
 					#print access
 					pass
-
-			with open('Synonymsnocodingregions','a') as nocoding:
-				if not mergecds:
-					nocoding.write(gene + "\n")
 			
 			#Generate output file showing a list of gene symbols which don't have a coding region annoated
 			#if not cds:
@@ -877,43 +861,9 @@ class Bedfile:
 					
 		else:
 			print "You need to provide --coding arguments"
-		#print self.Chr
-		
-		# Re-run data through merge_ranges to ensure overlapping regions are merged
-		# Run following section if mergeboundaries command is set
-		if self.mergeboundariesboolean == True:
-			# Set mergestart to the list of start positions defined by self.Start
-			mergestart = self.Start
-			# Set mergestop to the list of stop positions defined by self.Stop
-			mergestop = self.Stop
-			# Run following if code to remove previously loaded start positions from self.Start
-			if self.prevselfstart and self.prevselfstop:
-				for st, sp in zip(self.prevselfstart, self.prevselfstop):
-					mergestart.remove(st)
-					mergestop.remove(sp)
-			#deepcopy ensures that self.prevselfstart and self.prevselfstop lists are not linked to the original lists self.Start and self.Stop
-			self.prevselfstart = deepcopy(self.Start)
-			self.prevselfstop = deepcopy(self.Stop)
+
+					
 			
-			#Run the start positions defined by self.flankingregion through merge_ranges this merges any regions that become overalapping as a result of the extra bases added
-			tuplestartstop = zip(mergestart, mergestop)
-			mergeboundariespostflankingregion = [val for val in self.merge_ranges(tuplestartstop)]
-			startmerge, stopmerge = [a[0] for a in mergeboundariespostflankingregion], [a[1] for a in mergeboundariespostflankingregion]
-			self.Startmerge.extend(startmerge)
-			self.Stopmerge.extend(stopmerge)
-			self.Chrom.extend([geneposition.chrom] * len(mergeboundariespostflankingregion))
-			self.Acc.extend([geneposition.name] * len(mergeboundariespostflankingregion))
-			self.Gene.extend([geneposition.name2] * len(mergeboundariespostflankingregion))
-			
-			# Once the final gene has been processed then re-define the lists to be outputted to the final bed file
-			if geneposition.name2 == self.lastgene:
-				self.Start = self.Startmerge
-				self.Stop = self.Stopmerge
-				self.Chr = self.Chrom
-				self.Accession = self.Acc
-				self.GeneName = self.Gene
-		
-		
 			
 #python Cruzdb.py --coding 10 --transcripts NM_000546 NM_004360 NM_000059 NM_000314 NM_007294 NM_000455
 def UTR(argv):
@@ -1087,9 +1037,6 @@ def UTR(argv):
 		log.write("\n\n os module file path: %s" % os.__file__)
 		log.write("\n\n pd class file path: %s" % pd.__file__)
 		log.write("\n\n cruzdb module file path: %s" % cruzdb.__file__)
-		sub=subprocess.Popen(['git', 'describe', '--tags'], stdout=subprocess.PIPE)
-		gitversion = sub.stdout.read().strip('\n')
-		log.write("\n\n" + "version as defined by git tag = " + gitversion)
 		#from cruzdb import Genome
 	else:
 		print "WARNING you need to define --logfile"
@@ -1103,7 +1050,7 @@ def UTR(argv):
 	if bedfile.coding != True:
 		bedfile.coding = False
 	
-#Initiate flankingregion method from class Bedfile		
+#Initiate flankingregion method from class BedFiles		
 	bedfile.filereader()
 	if bedfile.transcriptlist == True and bedfile.useaccessionslist == True:
 		bedfile.useaccessions()
