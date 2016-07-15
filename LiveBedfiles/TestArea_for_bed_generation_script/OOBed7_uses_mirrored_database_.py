@@ -236,14 +236,14 @@ class Bedfile:
 		#YOU CAN INCLUDE HEADERS BUT THE LINE MUST START WITH #
 		#bedfile.to_csv(path_or_buf=self.outputfile, header=False, sep='\t')
 
-	def mergeboundaries(self, database='/home/ryank/LiveReferenceSequencs/refGene.db', table="refGene"):
+	def mergeboundaries(self, database='/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/Cruzdb/cruzdb_refGene.db', table="refGene"):
 		
 		#This will mirror the hg19 RefSeq data from UCSC and store it locally at the file location /home/kevin/Documents/NGS_Pipeline/BedFiles/cruzdb_refGene.db
 		#g = cruzdb.Genome(db="hg19")
 		#gs = g.mirror(['refGene'], 'sqlite:////home/kevin/Documents/NGS_Pipeline/BedFiles/cruzdb_refGene.db')
 		
 		#To access the locally stored database invoke the command below
-		#g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/refGene.db')
+		#g = cruzdb.Genome(db='/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/Cruzdb/cruzdb_refGene.db')
 		if table == "refGene":
 			g = cruzdb.Genome(db=database)
 			refGene = g.refGene
@@ -355,8 +355,8 @@ class Bedfile:
 		#gs = g.mirror(['refGene'], 'sqlite:////home/kevin/Documents/NGS_Pipeline/BedFiles/cruzdb_refGene.db')
 		
 		#To access the locally stored database invoke the command below
-		g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/refGene.db')
-		#g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/refGene.db')
+		g = cruzdb.Genome(db='/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/Cruzdb/cruzdb_refGene.db')
+		#g = cruzdb.Genome(db='/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/Cruzdb/cruzdb_refGene.db')
 		refGene = g.refGene
 		
 		bed = pd.read_table(self.transcripts, header= 0)
@@ -409,7 +409,7 @@ class Bedfile:
 		#gs = g.mirror(['refGene'], 'sqlite:////home/kevin/Documents/NGS_Pipeline/BedFiles/cruzdb_refGene.db')
 		
 		#To access the locally stored database invoke the command below
-		g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/refGene.db')
+		g = cruzdb.Genome(db='/home/ryank/GithubRepoLive/mokapipe/LiveBedfiles/Cruzdb/cruzdb_refGene.db')
 		refGene = g.refGene
 		
 		bed = pd.read_table(self.transcripts, header= 0)
