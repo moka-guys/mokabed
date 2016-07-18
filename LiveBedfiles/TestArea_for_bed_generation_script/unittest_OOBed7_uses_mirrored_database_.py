@@ -129,7 +129,7 @@ class Test(unittest.TestCase):
     	
     def setUp(self):
 
-        self.output = "/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/160715krunittest_NewRefGene_GbCdnaInfo_OldTruthSet/"
+        self.output = "/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/160715krunittest_NewRefGene_GbCdnaInfo_UpdatedTruthSet/"
 #         # read in the UCSC database
 #         g = cruzdb.Genome(db='/home/kevin/Documents/PythonDocs/UnittestOOBed7_uses_mirrored_database/cruzdbrefGene.db')
 #         # Select the refGene table
@@ -453,4 +453,4 @@ if __name__ == "__main__":
     #unittest.main()
     unittest.main(argv=[sys.argv[0]],testRunner=runner, exit=False)
     print "Moving"
-    shutil.move("log_file.txt", "/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/160715krunittest_NewRefGene_GbCdnaInfo_OldTruthSet/log_file.txt")
+    shutil.move("log_file.txt", "/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/160715krunittest_NewRefGene_GbCdnaInfo_UpdatedTruthSet/log_file.txt")
