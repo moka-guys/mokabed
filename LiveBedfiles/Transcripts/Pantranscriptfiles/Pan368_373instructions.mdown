@@ -1,0 +1,177 @@
+
+
+Instructions for generating bed files Pan 368, 370, 371, 372 and 373
+
+1) Convert CNV control sites.xls to a bed file
+	Copy CNV control sites column into libre calc and separate string using ":" and "-" as delimiters. This will separate the field into chr, start and stop columns.
+	Then pasted the MLPA site column in column 4. Saved file as a .txt file (saved file using tab as the delimiter). Saved file as /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/160719CNVcontrolsites.txt
+
+2) Open Pan368.txt, Pan370.txt, Pan371.txt, Pan372.txt, Pan373.txt in libre calc and move GuysAccession column to the first column position (select column, select column with mouse and then press alt and move column to correct position). Save files into /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles folder (libre calc saves as .csv instead of .txt but will not affect python script usage)
+
+3) Run python script OOBed7_uses_mirrored_database_newtest.py located in /home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script which relates to script pointing to latest RefGene and GbCdnaInfo tables (downloaded on 16062016)
+
+	- Open interactive session on clster and cd to 
+	/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script
+
+	- Load python module 
+	module load python/2.7
+
+	# Pan368
+
+	python OOBed7_uses_mirrored_database_newtest.py \
+	--codingup 30 \
+	--codingdown 20 \
+	--transcripts /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan368_genes.csv \
+	--logfile /home/ryank/mokabed/LiveBedfiles/Pan368_NoCNVsites_LogFile.txt \
+	--outputfile /home/ryank/mokabed/LiveBedfiles/Pan368_NoCNVsites_data.bed \
+	--useaccessions
+
+	# Pan370
+
+	python OOBed7_uses_mirrored_database_newtest.py \
+	--codingup 30 \
+	--codingdown 20 \
+	--transcripts /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan370_genes.csv \
+	--logfile /home/ryank/mokabed/LiveBedfiles/Pan370_NoCNVsites_LogFile.txt \
+	--outputfile /home/ryank/mokabed/LiveBedfiles/Pan370_NoCNVsites_data.bed \
+	--useaccessions
+
+	# Pan371
+
+	python OOBed7_uses_mirrored_database_newtest.py \
+	--codingup 30 \
+	--codingdown 20 \
+	--transcripts /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan371_genes.csv \
+	--logfile /home/ryank/mokabed/LiveBedfiles/Pan371_NoCNVsites_LogFile.txt \
+	--outputfile /home/ryank/mokabed/LiveBedfiles/Pan371_NoCNVsites_data.bed \
+	--useaccessions
+
+	# Pan372
+
+	python OOBed7_uses_mirrored_database_newtest.py \
+	--codingup 30 \
+	--codingdown 20 \
+	--transcripts /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan372_genes.csv \
+	--logfile /home/ryank/mokabed/LiveBedfiles/Pan372_NoCNVsites_LogFile.txt \
+	--outputfile /home/ryank/mokabed/LiveBedfiles/Pan372_NoCNVsites_data.bed \
+	--useaccessions
+
+	# Pan373
+
+	python OOBed7_uses_mirrored_database_newtest.py \
+	--codingup 30 \
+	--codingdown 20 \
+	--transcripts /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan373_genes.csv \
+	--logfile /home/ryank/mokabed/LiveBedfiles/Pan373_NoCNVsites_LogFile.txt \
+	--outputfile /home/ryank/mokabed/LiveBedfiles/Pan373_NoCNVsites_data.bed \
+	--useaccessions
+
+4) Append 160719CNVcontrolsites.txt to each of the bed file generated above:
+
+
+	## Pan368
+
+	## Generate bed file adding in CNV sites
+	sed 1d /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/160719CNVcontrolsites.txt | awk '{print $0, "\t."}' >> /home/ryank/mokabed/LiveBedfiles/Pan368_NoCNVsites_data.bed
+
+	## Rename bed file to PlusCNVsites
+	mv /home/ryank/mokabed/LiveBedfiles/Pan368_NoCNVsites_data.bed /home/ryank/mokabed/LiveBedfiles/Pan368_PlusCNVsites_data.bed 
+
+	## Generate log file
+
+	cat  /home/ryank/mokabed/LiveBedfiles/Pan368_NoCNVsites_LogFile.txt > /home/ryank/mokabed/LiveBedfiles/Pan368_PlusCNVsites_LogFile.txt
+
+	echo -e "\ncat /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/160719CNVcontrolsites.txt >> /home/ryank/mokabed/LiveBedfiles/Pan368_NoCNVsites_data.bed
+
+	mv /home/ryank/mokabed/LiveBedfiles/Pan368_NoCNVsites_data.bed /home/ryank/mokabed/LiveBedfiles/Pan368_PlusCNVsites_data.bed " >> /home/ryank/mokabed/LiveBedfiles/Pan368_PlusCNVsites_LogFile.txt
+
+	## Remove previous logfile
+	rm  /home/ryank/mokabed/LiveBedfiles/Pan368_NoCNVsites_LogFile.txt
+
+
+	## Pan370
+
+	## Generate bed file adding in CNV sites
+	sed 1d /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/160719CNVcontrolsites.txt | awk '{print $0, "\t."}' >> /home/ryank/mokabed/LiveBedfiles/Pan370_NoCNVsites_data.bed
+
+	## Rename bed file to PlusCNVsites
+	mv /home/ryank/mokabed/LiveBedfiles/Pan370_NoCNVsites_data.bed /home/ryank/mokabed/LiveBedfiles/Pan370_PlusCNVsites_data.bed 
+
+	## Generate log file
+
+	cat  /home/ryank/mokabed/LiveBedfiles/Pan370_NoCNVsites_LogFile.txt > /home/ryank/mokabed/LiveBedfiles/Pan370_PlusCNVsites_LogFile.txt
+
+	echo -e "\ncat /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/160719CNVcontrolsites.txt >> /home/ryank/mokabed/LiveBedfiles/Pan370_NoCNVsites_data.bed
+
+	mv /home/ryank/mokabed/LiveBedfiles/Pan370_NoCNVsites_data.bed /home/ryank/mokabed/LiveBedfiles/Pan370_PlusCNVsites_data.bed " >> /home/ryank/mokabed/LiveBedfiles/Pan370_PlusCNVsites_LogFile.txt
+
+	## Remove previous logfile
+	rm  /home/ryank/mokabed/LiveBedfiles/Pan370_NoCNVsites_LogFile.txt
+
+
+	## Pan371
+
+	## Generate bed file adding in CNV sites
+	sed 1d /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/160719CNVcontrolsites.txt | awk '{print $0, "\t."}' >> /home/ryank/mokabed/LiveBedfiles/Pan371_NoCNVsites_data.bed
+
+	## Rename bed file to PlusCNVsites
+	mv /home/ryank/mokabed/LiveBedfiles/Pan371_NoCNVsites_data.bed /home/ryank/mokabed/LiveBedfiles/Pan371_PlusCNVsites_data.bed 
+
+	## Generate log file
+
+	cat  /home/ryank/mokabed/LiveBedfiles/Pan371_NoCNVsites_LogFile.txt > /home/ryank/mokabed/LiveBedfiles/Pan371_PlusCNVsites_LogFile.txt
+
+	echo -e "\ncat /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/160719CNVcontrolsites.txt >> /home/ryank/mokabed/LiveBedfiles/Pan371_NoCNVsites_data.bed
+
+	mv /home/ryank/mokabed/LiveBedfiles/Pan371_NoCNVsites_data.bed /home/ryank/mokabed/LiveBedfiles/Pan371_PlusCNVsites_data.bed " >> /home/ryank/mokabed/LiveBedfiles/Pan371_PlusCNVsites_LogFile.txt
+
+	## Remove previous logfile
+	rm  /home/ryank/mokabed/LiveBedfiles/Pan371_NoCNVsites_LogFile.txt
+
+
+	## Pan372
+
+	## Generate bed file adding in CNV sites
+	sed 1d /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/160719CNVcontrolsites.txt | awk '{print $0, "\t."}' >> /home/ryank/mokabed/LiveBedfiles/Pan372_NoCNVsites_data.bed
+
+	## Rename bed file to PlusCNVsites
+	mv /home/ryank/mokabed/LiveBedfiles/Pan372_NoCNVsites_data.bed /home/ryank/mokabed/LiveBedfiles/Pan372_PlusCNVsites_data.bed 
+
+	## Generate log file
+
+	cat  /home/ryank/mokabed/LiveBedfiles/Pan372_NoCNVsites_LogFile.txt > /home/ryank/mokabed/LiveBedfiles/Pan372_PlusCNVsites_LogFile.txt
+
+	echo -e "\ncat /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/160719CNVcontrolsites.txt >> /home/ryank/mokabed/LiveBedfiles/Pan372_NoCNVsites_data.bed
+
+	mv /home/ryank/mokabed/LiveBedfiles/Pan372_NoCNVsites_data.bed /home/ryank/mokabed/LiveBedfiles/Pan372_PlusCNVsites_data.bed " >> /home/ryank/mokabed/LiveBedfiles/Pan372_PlusCNVsites_LogFile.txt
+
+	## Remove previous logfile
+	rm  /home/ryank/mokabed/LiveBedfiles/Pan372_NoCNVsites_LogFile.txt
+
+
+	## Pan373
+
+	## Generate bed file adding in CNV sites
+	sed 1d /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/160719CNVcontrolsites.txt | awk '{print $0, "\t."}' >> /home/ryank/mokabed/LiveBedfiles/Pan373_NoCNVsites_data.bed
+
+	## Rename bed file to PlusCNVsites
+	mv /home/ryank/mokabed/LiveBedfiles/Pan373_NoCNVsites_data.bed /home/ryank/mokabed/LiveBedfiles/Pan373_PlusCNVsites_data.bed 
+
+	## Generate log file
+
+	cat  /home/ryank/mokabed/LiveBedfiles/Pan373_NoCNVsites_LogFile.txt > /home/ryank/mokabed/LiveBedfiles/Pan373_PlusCNVsites_LogFile.txt
+
+	echo -e "\ncat /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/160719CNVcontrolsites.txt >> /home/ryank/mokabed/LiveBedfiles/Pan373_NoCNVsites_data.bed
+
+	mv /home/ryank/mokabed/LiveBedfiles/Pan373_NoCNVsites_data.bed /home/ryank/mokabed/LiveBedfiles/Pan373_PlusCNVsites_data.bed " >> /home/ryank/mokabed/LiveBedfiles/Pan373_PlusCNVsites_LogFile.txt
+
+	## Remove previous logfile
+	rm  /home/ryank/mokabed/LiveBedfiles/Pan373_NoCNVsites_LogFile.txt
+
+
+
+5) Add in intronic region to 
+
+
+
+

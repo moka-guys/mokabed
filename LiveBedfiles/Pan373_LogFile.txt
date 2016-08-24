@@ -1,0 +1,30 @@
+Command arguments executed:
+OOBed7_uses_mirrored_database_newtest.py --codingup 30 --codingdown 20 --transcripts /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan373_genes.csv --logfile /home/ryank/mokabed/LiveBedfiles/Pan373_NoCNVsites_LogFile.txt --outputfile /home/ryank/mokabed/LiveBedfiles/Pan373_NoCNVsites_data.bed --useaccessions 
+
+ Python version: 2.7 (r27:82500, Oct 25 2012, 12:29:43) 
+[GCC 4.4.6 20110731 (Red Hat 4.4.6-3)]
+
+ getopt module file path: /apps/python/2.7/lib/python2.7/getopt.pyc
+
+ os module file path: /apps/python/2.7/lib/python2.7/os.pyc
+
+ pd class file path: /apps/python/2.7/lib/python2.7/site-packages/pandas/__init__.pyc
+
+ cruzdb module file path: /apps/python/2.7/lib/python2.7/site-packages/cruzdb/__init__.pyc
+
+version as defined by git tag = v1.0-14-g54c4048
+cat /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/160719CNVcontrolsites.txt >> /home/ryank/mokabed/LiveBedfiles/Pan373_NoCNVsites_data.bed
+
+mv /home/ryank/mokabed/LiveBedfiles/Pan373_NoCNVsites_data.bed /home/ryank/mokabed/LiveBedfiles/Pan373_PlusCNVsites_data.bed 
+
+mv /home/ryank/mokabed/LiveBedfiles/Pan373_PlusCNVsites_data.bed /home/ryank/mokabed/LiveBedfiles/Pan373_data.bed
+mv /home/ryank/mokabed/LiveBedfiles/Pan373_PlusCNVsites_LogFile.txt /home/ryank/mokabed/LiveBedfiles/Pan373_LogFile.txt 
+
+Find: NM_000152.4 Replace: NM_000152.3
+Find: NM_000235.3 Replace: NM_000235.2
+Find: NM_002626.5 Replace: NM_002626.4
+Find: NM_006241.7 Replace: NM_006241.4 
+
+Manually added  chr17	78078340	78078341	NM_000152.3	GAA which relates to an intronic position chr17:78078341
+
+mv /home/ryank/mokabed/LiveBedfiles/Pan373_data.bed /home/ryank/mokabed/LiveBedfiles/Pan373data.bed
