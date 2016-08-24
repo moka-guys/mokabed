@@ -353,7 +353,7 @@ class Bedfile:
 		#gs = g.mirror(['refGene'], 'sqlite:////home/kevin/Documents/NGS_Pipeline/BedFiles/cruzdb_refGene.db')
 		
 		#To access the locally stored database invoke the command below
-		g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/Versions/Downloaded160612/160612/refGene.db')
+		g = cruzdb.Genome(db='hg19')
 		#g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/Versions/Downloaded160612/160612/refGene.db')
 		refGene = g.refGene
 		
