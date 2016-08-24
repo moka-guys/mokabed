@@ -3,7 +3,7 @@ import sys, getopt, os
 import pandas as pd
 import cruzdb
 from sqlalchemy import or_
-from versionnumber_newtest import Accversion
+from versionnumber_newtest import Liveaccversion
 import time
 from copy import deepcopy
 import subprocess
@@ -379,7 +379,7 @@ class Bedfile:
 			access = genepos.name.encode('ascii', 'ignore')
 
 			try:
-				version = Accversion().versionfinder(access)
+				version = Liveaccversion().versionfinder(access)
 				versionenc = version.encode('ascii', 'ignore')
 				#namelist.append(versionenc)
 			except ValueError:
