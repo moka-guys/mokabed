@@ -85,6 +85,14 @@ class Liveaccversion():
 		gbCdnaInfocopy = livegbcdninfo.filter_by(acc = accession).one()
         return gbCdnaInfocopy.acc + "." + str(gbCdnaInfocopy.version)
         
+class LiveRefLink():
+
+	def entreidretrieve(self, accession)
+		hgfixed = cruzdb.Genome(db="hgFixed")
+		liverefLink = hgfixed.refLink
+		refLink = liverefLink.filter_by(mrnaAcc = accession).one()
+        return gbCdnaInfocopy.locusLinkId
+        
         
 def main():
     Session = sessionmaker(bind=engine)
