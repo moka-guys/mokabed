@@ -77,6 +77,14 @@ class Accversion(GbCdnaInfocopy):
         gbCdnaInfocopy = session.query(GbCdnaInfocopy).filter_by(acc = accession).one()
         return gbCdnaInfocopy.acc + "." + str(gbCdnaInfocopy.version)
         
+class Liveaccversion():
+
+	def versionfinder(self, accession):
+		hgfixed = cruzdb.Genome(db="hgFixed")
+		livegbcdninfo = hgfixed.gbCdnaInfo
+		gbCdnaInfocopy = livegbcdninfo.filter_by(acc = accession).one()
+        return gbCdnaInfocopy.acc + "." + str(gbCdnaInfocopy.version)
+        
         
 def main():
     Session = sessionmaker(bind=engine)
