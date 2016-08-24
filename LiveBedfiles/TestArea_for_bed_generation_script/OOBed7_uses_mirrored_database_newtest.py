@@ -236,7 +236,7 @@ class Bedfile:
 		#YOU CAN INCLUDE HEADERS BUT THE LINE MUST START WITH #
 		#bedfile.to_csv(path_or_buf=self.outputfile, header=False, sep='\t')
 
-	def mergeboundaries(self, database='/home/ryank/LiveReferenceSequencs/Versions/Downloaded160612/160612/refGene.db', table="refGene"):
+	def mergeboundaries(self, database='hg19'):
 		
 		#This will mirror the hg19 RefSeq data from UCSC and store it locally at the file location /home/kevin/Documents/NGS_Pipeline/BedFiles/cruzdb_refGene.db
 		#g = cruzdb.Genome(db="hg19")
@@ -244,12 +244,10 @@ class Bedfile:
 		
 		#To access the locally stored database invoke the command below
 		#g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/Versions/Downloaded160612/160612/refGene.db')
-		if table == "refGene":
-			g = cruzdb.Genome(db=database)
-			refGene = g.refGene
-		else:
-			g = cruzdb.Genome(db=database)
-			refGene = g.refGeneLookup
+		
+		# Query Live RefGene Table on UCSC
+		g = cruzdb.Genome(db=database)
+		refGene = g.refGene
 		
 		#bed = pd.read_table(self.genes, header= 0)
 		#The 2 lines below show you how to query the live database at UCSC 
