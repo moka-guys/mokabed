@@ -110,6 +110,8 @@ class Bedfile:
 		self.lastgene=''
 		self.prevselfstart = []
 		self.prevselfstop = []
+		self.entrezid = []
+		self.entrezidmerge = []
 	
 
 	def usage(self):
@@ -210,12 +212,13 @@ class Bedfile:
 		Stop = pd.Series(self.Stop)
 		Accession = pd.Series(self.Accession)
 		GeneName = pd.Series(self.GeneName)
+		Entrezid = pd.Series(self.entrezid)
 		#Needed to ammend this script as updated Pandas was printing index number and data type info field as well as the values.
 		#To print just the values I need to re-assign the Chr, Start and Stop series to just the values using the .values function
 		Chr = Chr.values
 		Start = Start.values
 		Stop = Stop.values
-		self.bedfile = pd.DataFrame(zip(Start, Stop, Accession, GeneName),  columns = ["Start", "Stop", "Accession", "GeneName"], index=[Chr])
+		self.bedfile = pd.DataFrame(zip(Start, Stop, Accession, GeneName, Entrezid),  columns = ["Start", "Stop", "Accession", "GeneName", "EntrezID"], index=[Chr])
 		
 		#bedfile = pd.DataFrame(zip(Start, Stop, GeneName),  columns = ["Start", "Stop", "GeneName"], index=[Chr])
 
@@ -339,6 +342,7 @@ class Bedfile:
 			setattr(geneposition, "name2", posexons.name2.encode('ascii', 'ignore'))
 			setattr(geneposition, "chrom", posexons.chrom)
 			setattr(geneposition, "strand", posexons.strand)
+			setattr(geneposition, "entrezid", entrezid)
 			
 			
 			#self.flankingregion(geneposition = geneposition, positionsexons= geneposition.exons, positionscds = geneposition.cds)
@@ -455,6 +459,7 @@ class Bedfile:
 				self.Chr.append(geneposition.chrom)
 				self.Accession.append(geneposition.name)
 				self.GeneName.append(geneposition.name2)
+				self.entrezid.append(geneposition.entrezid)
 				
 			#Generate Accession column				
 			#for row in positionsexons:
@@ -506,6 +511,8 @@ class Bedfile:
 				self.Chr.append(geneposition.chrom)
 				self.Accession.append(geneposition.name)
 				self.GeneName.append(geneposition.name2)
+				self.entrezid.append(geneposition.entrezid)
+				
 # 			#Generate Accession column				
 # 			for row in positionsexons:
 # 				self.Accession.append(geneposition.name)
@@ -583,6 +590,7 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
+					self.entrezid.append(geneposition.entrezid)
 					#Define flanking region round Stop codon
 					if self.StopFlanking == True:
 						StopFlank = long(self.StopFlank)
@@ -624,6 +632,7 @@ class Bedfile:
 						self.Chr.append(geneposition.chrom)
 						self.Accession.append(geneposition.name)
 						self.GeneName.append(geneposition.name2)
+						self.entrezid.append(geneposition.entrezid)
 						counter += 1
 					else:
 						counter += 1
@@ -637,6 +646,7 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
+					self.entrezid.append(geneposition.entrezid)
 					counter += 1
 			
 				else:
@@ -649,6 +659,7 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
+					self.entrezid.append(geneposition.entrezid)
 		#self.codingup adds to the 5' end of the first coding exon
 		#self.codingup and self.codingdown add to the ends of each internal coding exon
 		#self.codingdownstream adds to the end of the 3'UTR of the last exon	
@@ -678,6 +689,7 @@ class Bedfile:
 						self.Chr.append(geneposition.chrom)
 						self.Accession.append(geneposition.name)
 						self.GeneName.append(geneposition.name2)
+						self.entrezid.append(geneposition.entrezid)
 						counter += 1
 					else:
 						counter += 1
@@ -691,6 +703,7 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
+					self.entrezid.append(geneposition.entrezid)
 					counter += 1
 			
 				else:
@@ -702,7 +715,8 @@ class Bedfile:
 					self.Stop.append(downstreamUTR)
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
-					self.GeneName.append(geneposition.name2)					
+					self.GeneName.append(geneposition.name2)
+					self.entrezid.append(geneposition.entrezid)				
 		#self.codingup adds to the 5' end of the first coding exon
 		#self.codingup and self.codingdown add to the ends of each internal coding exon
 		#self.codingdownstream adds to the end of the 3'UTR of the last exon	
@@ -726,6 +740,7 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
+					self.entrezid.append(geneposition.entrezid)
 					counter += 1
 					
 				elif a > positionscds[0][0] and counter != (len(positionsexons) - 1):
@@ -738,6 +753,7 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
+					self.entrezid.append(geneposition.entrezid)
 					counter += 1
 			
 				else:
@@ -747,6 +763,7 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
+					self.entrezid.append(geneposition.entrezid)
 					if self.StartFlanking == True:
 							StartFlank = long(self.StartFlank)
 							exons5 = positionscds[-1][1] + StartFlank
@@ -771,7 +788,11 @@ class Bedfile:
 			
 			#Generate GeneName column				
 			for row in positionscds:
-				self.GeneName.append(geneposition.name2)	
+				self.GeneName.append(geneposition.name2)
+				
+			#Generate entrezid column				
+			for row in positionscds:
+				self.entrezid.append(geneposition.entrezid)
 			
 			
 			
@@ -834,7 +855,11 @@ class Bedfile:
 			
 			#Generate GeneName column				
 			for row in positionscds:
-				self.GeneName.append(geneposition.name2)	
+				self.GeneName.append(geneposition.name2)
+				
+			#Generate entrezid column				
+			for row in positionscds:
+				self.entrezid.append(geneposition.entrezid)
 			
 			
 			#Generate the Start and Stop columns
@@ -915,6 +940,7 @@ class Bedfile:
 			self.Chrom.extend([geneposition.chrom] * len(mergeboundariespostflankingregion))
 			self.Acc.extend([geneposition.name] * len(mergeboundariespostflankingregion))
 			self.Gene.extend([geneposition.name2] * len(mergeboundariespostflankingregion))
+			self.entrezidmerge.extend([geneposition.entrezid] * len(mergeboundariespostflankingregion))
 			
 			# Once the final gene has been processed then re-define the lists to be outputted to the final bed file
 			if geneposition.name2 == self.lastgene:
@@ -923,7 +949,7 @@ class Bedfile:
 				self.Chr = self.Chrom
 				self.Accession = self.Acc
 				self.GeneName = self.Gene
-		
+				self.entrezid = self.entrezidmerge
 		
 			
 #python Cruzdb.py --coding 10 --transcripts NM_000546 NM_004360 NM_000059 NM_000314 NM_007294 NM_000455
