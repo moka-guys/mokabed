@@ -7,6 +7,7 @@ from versionnumber_newtest import Liveaccversion, LiveRefLink
 import time
 from copy import deepcopy
 import subprocess
+import re
 
 #Need to module load python/2.7
 #Need to provide arguments 'up' to include the 5'UTR and 'down' to include the 3'UTR and the associated list of accession numbers of the associated transcripts
@@ -210,15 +211,19 @@ class Bedfile:
 		Chr = pd.Series(self.Chr)		
 		Start = pd.Series(self.Start)
 		Stop = pd.Series(self.Stop)
-		Accession = pd.Series(self.Accession)
-		GeneName = pd.Series(self.GeneName)
+		#Re-format GeneName and Accession columns so that they are merged using a semicolon delimiter
+		Accession_formatted = map(lambda x: re.sub('[\[\'\] ]', '', str(x)), self.Accession)
+		Gene_Accession = map(lambda (x,y): x + ";" + y, zip(self.GeneName, Accession_formatted))
+		Gene_Acc = pd.Series(Gene_Accession)
+		#Accession = pd.Series(self.Accession)
+		#GeneName = pd.Series(self.GeneName)
 		Entrezid = pd.Series(self.entrezid)
 		#Needed to ammend this script as updated Pandas was printing index number and data type info field as well as the values.
 		#To print just the values I need to re-assign the Chr, Start and Stop series to just the values using the .values function
 		Chr = Chr.values
 		Start = Start.values
 		Stop = Stop.values
-		self.bedfile = pd.DataFrame(zip(Start, Stop, Accession, GeneName, Entrezid),  columns = ["Start", "Stop", "Accession", "GeneName", "EntrezID"], index=[Chr])
+		self.bedfile = pd.DataFrame(zip(Start, Stop, Entrezid, Gene_Acc),  columns = ["Start", "Stop", "EntrezID", "Gene_Accession"], index=[Chr])
 		
 		#bedfile = pd.DataFrame(zip(Start, Stop, GeneName),  columns = ["Start", "Stop", "GeneName"], index=[Chr])
 
@@ -230,10 +235,12 @@ class Bedfile:
 				print "Error on line ", counter," Not all Start values are less than corresponding Stop values"
 				
 			counter += 1
-		self.bedfile.index.name = "#Chr"
+		#Add in empty columns to ensure that the bed file generated is in Bed detail format
+		output_reindex = self.bedfile.reindex(columns=['Start', 'Stop', 'EntrezID', '', '', '', '', '', '', '', '', '', 'Gene_Accession'])
+		output_reindex.index.name = "#Chr"
 		#print "this is bedfile", self.bedfile
 		#CSV file with column headers
-		self.bedfile.to_csv(path_or_buf=self.outputfile, sep='\t')
+		output_reindex.to_csv(path_or_buf=self.outputfile, sep='\t')
 		
 		#CSV file without column headers (needs to be in this format in order to get coverage stats from pipeline.THIS IS NOT CORRECT!!!!)
 		#YOU CAN INCLUDE HEADERS BUT THE LINE MUST START WITH #
