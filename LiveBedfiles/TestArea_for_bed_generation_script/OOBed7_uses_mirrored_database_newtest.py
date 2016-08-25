@@ -342,7 +342,7 @@ class Bedfile:
 			setattr(geneposition, "name2", posexons.name2.encode('ascii', 'ignore'))
 			setattr(geneposition, "chrom", posexons.chrom)
 			setattr(geneposition, "strand", posexons.strand)
-			setattr(geneposition, "entrezid", entrezid)
+			setattr(geneposition, "entrezid", entrez)
 			
 			
 			#self.flankingregion(geneposition = geneposition, positionsexons= geneposition.exons, positionscds = geneposition.cds)
@@ -394,16 +394,24 @@ class Bedfile:
 			# Set the coding exon boundaries and assign to variable positionsexons
 			poscds=genepos.cds
 			access = genepos.name.encode('ascii', 'ignore')
+			
 
 			try:
 				version = Liveaccversion().versionfinder(access)
 				versionenc = version.encode('ascii', 'ignore')
-				#namelist.append(versionenc)
+				
 			except ValueError:
-				print "The accession access has no valid version number"
+				print "The accession %s has no valid version number" % (access)
+
 				
 			print versionenc
 			print genepos.name2.encode('ascii', 'ignore')
+			
+			
+			# Generate the entrezid for the gene symbol inserted based on its associated NM accesions
+			entrez = LiveRefLink().entrezidretrieve(access)
+			
+				
 			class atrib():
 				pass
 			geneposition = atrib()
@@ -413,6 +421,8 @@ class Bedfile:
 			setattr(geneposition, "name2", genepos.name2.encode('ascii', 'ignore'))
 			setattr(geneposition, "chrom", genepos.chrom)
 			setattr(geneposition, "strand", genepos.strand)
+			setattr(geneposition, "entrezid", entrez)
+			
 			
 			self.flankingregion(geneposition = geneposition, positionsexons= geneposition.exons, positionscds = geneposition.cds)
 
