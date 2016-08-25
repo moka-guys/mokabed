@@ -3,7 +3,7 @@ import sys, getopt, os
 import pandas as pd
 import cruzdb
 from sqlalchemy import or_
-from versionnumber_newtest import Liveaccversion
+from versionnumber_newtest import Liveaccversion, LiveRefLink
 import time
 from copy import deepcopy
 import subprocess
@@ -265,8 +265,10 @@ class Bedfile:
 			mergecds = []
 			mergeexon = []
 			namelist = []
+			entrezlist = []
 			genepos = []
 			posexons=[]
+			uniqueentrez = ''
 		#If using pandas 0.13.1 or greater use for loop in line below
 		#for index, gene in bed[[0]].itertuples():
 			
@@ -292,13 +294,24 @@ class Bedfile:
 				#print posexons.name.encode('ascii', 'ignore')
 				access = posexons.name.encode('ascii', 'ignore')
 				#print access
-				try:
-					version = Accversion().versionfinder(access)
-					versionenc = version.encode('ascii', 'ignore')
-					namelist.append(versionenc)
-				except:
-					#print access
-					pass
+				
+				# Generate the version number for each accession number
+				version = Liveaccversion().versionfinder(access)
+				versionenc = version.encode('ascii', 'ignore')
+				namelist.append(versionenc)
+				# Generate the entrezid for the gene symbol inserted based on its associated NM accesions
+				entrez = LiveRefLink().entrezidretrieve(access)
+				entrezlist.append(entrez)
+				uniqueentrez = len(set(entrezlist))
+										
+			# If statement indicates if more than one entrez id has been identified for a gene symbol
+			# If so a ValueError is raised and a message indicating for which gene symbol this occurred
+			if uniqueentrez != 1:
+				raise ValueError('uniqueentrez list shows more than one entrez id was retieved for the gene symbol %s' % (gene))
+			else:
+				# entrezid generated
+				entrezid = "".join(str(val) for val in set(entrezlist))
+				print entrezid
 
 			with open('Synonymsnocodingregions','a') as nocoding:
 				if not mergecds:

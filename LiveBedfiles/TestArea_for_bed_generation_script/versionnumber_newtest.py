@@ -83,15 +83,15 @@ class Liveaccversion():
 		hgfixed = cruzdb.Genome(db="hgFixed")
 		livegbcdninfo = hgfixed.gbCdnaInfo
 		gbCdnaInfocopy = livegbcdninfo.filter_by(acc = accession).one()
-        return gbCdnaInfocopy.acc + "." + str(gbCdnaInfocopy.version)
+		return gbCdnaInfocopy.acc + "." + str(gbCdnaInfocopy.version)
         
 class LiveRefLink():
 
-	def entreidretrieve(self, accession)
+	def entrezidretrieve(self, accession):
 		hgfixed = cruzdb.Genome(db="hgFixed")
 		liverefLink = hgfixed.refLink
 		refLink = liverefLink.filter_by(mrnaAcc = accession).one()
-        return gbCdnaInfocopy.locusLinkId
+		return refLink.locusLinkId
         
         
 def main():
