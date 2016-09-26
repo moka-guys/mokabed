@@ -4,7 +4,7 @@ import pandas as pd
 import cruzdb
 from sqlalchemy import or_
 from versionnumber_newtest import Liveaccversion, LiveRefLink
-import time
+import time, datetime, subprocess
 from copy import deepcopy
 import subprocess
 import re
@@ -245,6 +245,9 @@ class Bedfile:
 		#CSV file without column headers (needs to be in this format in order to get coverage stats from pipeline.THIS IS NOT CORRECT!!!!)
 		#YOU CAN INCLUDE HEADERS BUT THE LINE MUST START WITH #
 		#bedfile.to_csv(path_or_buf=self.outputfile, header=False, sep='\t')
+		
+		timestamp = "#" + str(datetime.datetime.now())
+		subprocess.call("sed -i '1 i\%s' %s" % (timestamp, self.outputfile), shell=True)
 
 	def mergeboundaries(self, database='hg19'):
 		
@@ -1132,6 +1135,7 @@ def UTR(argv):
 			assert False, "unhandled option"
 	if log == True:		
 		log = open(logfile, 'w+')
+		log.write("Time Stamp:" + str(datetime.datetime.now()) + "\n")
 		log.write("Command arguments executed:\n")
 		for item in sys.argv:
 			str(item)
