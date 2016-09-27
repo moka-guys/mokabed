@@ -113,6 +113,8 @@ class Bedfile:
 		self.prevselfstop = []
 		self.entrezid = []
 		self.entrezidmerge = []
+		self.g = ''
+		self.refGene = ''
 	
 
 	def usage(self):
@@ -208,7 +210,7 @@ class Bedfile:
 		
 	def writefile(self):
 	#Write columns to a csv bed file
-		Chr = pd.Series(self.Chr)		
+		Chr = pd.Series(self.Chr)	
 		Start = pd.Series(self.Start)
 		Stop = pd.Series(self.Stop)
 		#Re-format GeneName and Accession columns so that they are merged using a semicolon delimiter
@@ -249,7 +251,13 @@ class Bedfile:
 		timestamp = "#" + str(datetime.datetime.now())
 		subprocess.call("sed -i '1 i\%s' %s" % (timestamp, self.outputfile), shell=True)
 
-	def mergeboundaries(self, database='hg19'):
+	def calldb(self, database='hg19'):
+		self.g = cruzdb.Genome(db=database)
+		self.refGene = self.g.refGene
+		return self.g
+
+
+	def mergeboundaries(self):
 		
 		#This will mirror the hg19 RefSeq data from UCSC and store it locally at the file location /home/kevin/Documents/NGS_Pipeline/BedFiles/cruzdb_refGene.db
 		#g = cruzdb.Genome(db="hg19")
@@ -259,18 +267,21 @@ class Bedfile:
 		#g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/Versions/Downloaded160612/160612/refGene.db')
 		
 		# Query Live RefGene Table on UCSC
-		g = cruzdb.Genome(db=database)
-		refGene = g.refGene
+		#self.g = cruzdb.Genome(db=database)
+		#refGene = g.refGene
 		
 		#bed = pd.read_table(self.genes, header= 0)
 		#The 2 lines below show you how to query the live database at UCSC 
 		#g = cruzdb.Genome(db="hg19")
 		#refGene = g.refGene
+
+		self.calldb()
+
 		fr = open('Synonymsnotinrefgene','w')
 		fr.close()
 		fc = open('Synonymsnocodingregions', 'w')
 		fc.close()
-		genepos = refGene.filter_by(name2="NOX4MOCK").filter(or_(refGene.chrom=='chr1', refGene.chrom=='chr2', refGene.chrom=='chr3', refGene.chrom=='chr4', refGene.chrom=='chr5', refGene.chrom=='chr6', refGene.chrom=='chr7', refGene.chrom=='chr8', refGene.chrom=='chr9', refGene.chrom=='chr10', refGene.chrom=='chr11', refGene.chrom=='chr12', refGene.chrom=='chr13', refGene.chrom=='chr14', refGene.chrom=='chr15', refGene.chrom=='chr16', refGene.chrom=='chr17', refGene.chrom=='chr18', refGene.chrom=='chr19', refGene.chrom=='chr20', refGene.chrom=='chr21', refGene.chrom=='chr22', refGene.chrom=='chrX', refGene.chrom=='chrY')).all()
+		genepos = self.refGene.filter_by(name2="NOX4MOCK").filter(or_(self.refGene.chrom=='chr1', self.refGene.chrom=='chr2', self.refGene.chrom=='chr3', self.refGene.chrom=='chr4', self.refGene.chrom=='chr5', self.refGene.chrom=='chr6', self.refGene.chrom=='chr7', self.refGene.chrom=='chr8', self.refGene.chrom=='chr9', self.refGene.chrom=='chr10', self.refGene.chrom=='chr11', self.refGene.chrom=='chr12', self.refGene.chrom=='chr13', self.refGene.chrom=='chr14', self.refGene.chrom=='chr15', self.refGene.chrom=='chr16', self.refGene.chrom=='chr17', self.refGene.chrom=='chr18', self.refGene.chrom=='chr19', self.refGene.chrom=='chr20', self.refGene.chrom=='chr21', self.refGene.chrom=='chr22', self.refGene.chrom=='chrX', self.refGene.chrom=='chrY')).all()
 		
 		self.lastgene = self.bed.iget_value(-1,0)
 		#If using pandas 0.10.1 use for loop in line below
@@ -286,10 +297,10 @@ class Bedfile:
 		#for index, gene in bed[[0]].itertuples():
 			
 			try:
-				genepos = refGene.filter_by(name2=gene).filter(or_(refGene.chrom=='chr1', refGene.chrom=='chr2', refGene.chrom=='chr3', refGene.chrom=='chr4', refGene.chrom=='chr5', refGene.chrom=='chr6', refGene.chrom=='chr7', refGene.chrom=='chr8', refGene.chrom=='chr9', refGene.chrom=='chr10', refGene.chrom=='chr11', refGene.chrom=='chr12', refGene.chrom=='chr13', refGene.chrom=='chr14', refGene.chrom=='chr15', refGene.chrom=='chr16', refGene.chrom=='chr17', refGene.chrom=='chr18', refGene.chrom=='chr19', refGene.chrom=='chr20', refGene.chrom=='chr21', refGene.chrom=='chr22', refGene.chrom=='chrX', refGene.chrom=='chrY')).all()
+				genepos = self.refGene.filter_by(name2=gene).filter(or_(self.refGene.chrom=='chr1', self.refGene.chrom=='chr2', self.refGene.chrom=='chr3', self.refGene.chrom=='chr4', self.refGene.chrom=='chr5', self.refGene.chrom=='chr6', self.refGene.chrom=='chr7', self.refGene.chrom=='chr8', self.refGene.chrom=='chr9', self.refGene.chrom=='chr10', self.refGene.chrom=='chr11', self.refGene.chrom=='chr12', self.refGene.chrom=='chr13', self.refGene.chrom=='chr14', self.refGene.chrom=='chr15', self.refGene.chrom=='chr16', self.refGene.chrom=='chr17', self.refGene.chrom=='chr18', self.refGene.chrom=='chr19', self.refGene.chrom=='chr20', self.refGene.chrom=='chr21', self.refGene.chrom=='chr22', self.refGene.chrom=='chrX', self.refGene.chrom=='chrY')).all()
 				
 			except:
-				genepos = refGene.filter_by(name2=gene).filter(or_(refGene.chrom=='chrX')).all()
+				genepos = self.refGene.filter_by(name2=gene).filter(or_(self.refGene.chrom=='chrX')).all()
 			#print genepos
 			
 			# For each gene append the exon boundaries for each accession entry to the list "coding"
@@ -380,10 +391,12 @@ class Bedfile:
 		#gs = g.mirror(['refGene'], 'sqlite:////home/kevin/Documents/NGS_Pipeline/BedFiles/cruzdb_refGene.db')
 		
 		#To access the locally stored database invoke the command below
-		g = cruzdb.Genome(db='hg19')
+		#g = cruzdb.Genome(db='hg19')
 		#g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/Versions/Downloaded160612/160612/refGene.db')
-		refGene = g.refGene
+		#refGene = g.refGene
 		
+		self.calldb()
+
 		bed = pd.read_table(self.transcripts, header= 0)
 		#The 2 lines below show you how to query the live database at UCSC 
 		#g = cruzdb.Genome(db="hg19")
@@ -396,9 +409,9 @@ class Bedfile:
 		#for index, gene in bed[[0]].itertuples():
 		
 			try:
-				genepos = refGene.filter_by(name=acc).filter(or_(refGene.chrom=='chr1', refGene.chrom=='chr2', refGene.chrom=='chr3', refGene.chrom=='chr4', refGene.chrom=='chr5', refGene.chrom=='chr6', refGene.chrom=='chr7', refGene.chrom=='chr8', refGene.chrom=='chr9', refGene.chrom=='chr10', refGene.chrom=='chr11', refGene.chrom=='chr12', refGene.chrom=='chr13', refGene.chrom=='chr14', refGene.chrom=='chr15', refGene.chrom=='chr16', refGene.chrom=='chr17', refGene.chrom=='chr18', refGene.chrom=='chr19', refGene.chrom=='chr20', refGene.chrom=='chr21', refGene.chrom=='chr22', refGene.chrom=='chrX', refGene.chrom=='chrY')).one()
+				genepos = self.refGene.filter_by(name=acc).filter(or_(self.refGene.chrom=='chr1', self.refGene.chrom=='chr2', self.refGene.chrom=='chr3', self.refGene.chrom=='chr4', self.refGene.chrom=='chr5', self.refGene.chrom=='chr6', self.refGene.chrom=='chr7', self.refGene.chrom=='chr8', self.refGene.chrom=='chr9', self.refGene.chrom=='chr10', self.refGene.chrom=='chr11', self.refGene.chrom=='chr12', self.refGene.chrom=='chr13', self.refGene.chrom=='chr14', self.refGene.chrom=='chr15', self.refGene.chrom=='chr16', self.refGene.chrom=='chr17', self.refGene.chrom=='chr18', self.refGene.chrom=='chr19', self.refGene.chrom=='chr20', self.refGene.chrom=='chr21', self.refGene.chrom=='chr22', self.refGene.chrom=='chrX', self.refGene.chrom=='chrY')).one()
 			except:
-				genepos = refGene.filter_by(name=acc).filter(or_(refGene.chrom=='chrX')).one()
+				genepos = self.refGene.filter_by(name=acc).filter(or_(self.refGene.chrom=='chrX')).one()
 			# Set the exon boundaries and assign to variable positionsexons
 			posexons=genepos.exons
 			# Set the coding exon boundaries and assign to variable positionsexons
@@ -1145,6 +1158,8 @@ def UTR(argv):
 		log.write("\n\n os module file path: %s" % os.__file__)
 		log.write("\n\n pd class file path: %s" % pd.__file__)
 		log.write("\n\n cruzdb module file path: %s" % cruzdb.__file__)
+		if str(bedfile.calldb()) == "Genome('mysql://genome@genome-mysql.cse.ucsc.edu/hg19')":
+			log.write("\n\n Querying Live UCSC database: %s and table: %s" % (bedfile.g, bedfile.refGene))
 		sub=subprocess.Popen(['git', 'describe', '--tags'], stdout=subprocess.PIPE)
 		gitversion = sub.stdout.read().strip('\n')
 		log.write("\n\n" + "version as defined by git tag = " + gitversion)
