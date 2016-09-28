@@ -3,11 +3,9 @@ import sys, getopt, os
 import pandas as pd
 import cruzdb
 from sqlalchemy import or_
-from versionnumber_newtest import Liveaccversion, LiveRefLink
-import time, datetime, subprocess
-from copy import deepcopy
-import subprocess
-import re
+from versionnumber import Accversion
+import time
+
 
 #Need to module load python/2.7
 #Need to provide arguments 'up' to include the 5'UTR and 'down' to include the 3'UTR and the associated list of accession numbers of the associated transcripts
@@ -101,20 +99,6 @@ class Bedfile:
 		self.StopFlank = ''
 		self.bedfile = pd.DataFrame()
 		self.bed = pd.DataFrame()
-		self.chrlist = []
-		self.listlength = 0
-		self.Chrom = []
-		self.Acc = []
-		self.Gene = []
-		self.Startmerge = []
-		self.Stopmerge = []
-		self.lastgene=''
-		self.prevselfstart = []
-		self.prevselfstop = []
-		self.entrezid = []
-		self.entrezidmerge = []
-		self.g = ''
-		self.refGene = ''
 	
 
 	def usage(self):
@@ -210,22 +194,17 @@ class Bedfile:
 		
 	def writefile(self):
 	#Write columns to a csv bed file
-		Chr = pd.Series(self.Chr)	
+		Chr = pd.Series(self.Chr)		
 		Start = pd.Series(self.Start)
 		Stop = pd.Series(self.Stop)
-		#Re-format GeneName and Accession columns so that they are merged using a semicolon delimiter
-		Accession_formatted = map(lambda x: re.sub('[\[\'\] ]', '', str(x)), self.Accession)
-		Gene_Accession = map(lambda (x,y): x + ";" + y, zip(self.GeneName, Accession_formatted))
-		Gene_Acc = pd.Series(Gene_Accession)
-		#Accession = pd.Series(self.Accession)
-		#GeneName = pd.Series(self.GeneName)
-		Entrezid = pd.Series(self.entrezid)
+		Accession = pd.Series(self.Accession)
+		GeneName = pd.Series(self.GeneName)
 		#Needed to ammend this script as updated Pandas was printing index number and data type info field as well as the values.
 		#To print just the values I need to re-assign the Chr, Start and Stop series to just the values using the .values function
 		Chr = Chr.values
 		Start = Start.values
 		Stop = Stop.values
-		self.bedfile = pd.DataFrame(zip(Start, Stop, Entrezid, Gene_Acc),  columns = ["Start", "Stop", "EntrezID", "Gene_Accession"], index=[Chr])
+		self.bedfile = pd.DataFrame(zip(Start, Stop, Accession, GeneName),  columns = ["Start", "Stop", "Accession", "GeneName"], index=[Chr])
 		
 		#bedfile = pd.DataFrame(zip(Start, Stop, GeneName),  columns = ["Start", "Stop", "GeneName"], index=[Chr])
 
@@ -237,70 +216,55 @@ class Bedfile:
 				print "Error on line ", counter," Not all Start values are less than corresponding Stop values"
 				
 			counter += 1
-		#Add in empty columns to ensure that the bed file generated is in Bed detail format
-		output_reindex = self.bedfile.reindex(columns=['Start', 'Stop', 'EntrezID', '', '', '', '', '', '', '', '', '', 'Gene_Accession'])
-		output_reindex.index.name = "#Chr"
+		self.bedfile.index.name = "#Chr"
 		#print "this is bedfile", self.bedfile
 		#CSV file with column headers
-		output_reindex.to_csv(path_or_buf=self.outputfile, sep='\t')
+		self.bedfile.to_csv(path_or_buf=self.outputfile, sep='\t')
 		
 		#CSV file without column headers (needs to be in this format in order to get coverage stats from pipeline.THIS IS NOT CORRECT!!!!)
 		#YOU CAN INCLUDE HEADERS BUT THE LINE MUST START WITH #
 		#bedfile.to_csv(path_or_buf=self.outputfile, header=False, sep='\t')
-		
-		timestamp = "#" + str(datetime.datetime.now())
-		subprocess.call("sed -i '1 i\%s' %s" % (timestamp, self.outputfile), shell=True)
 
-	def calldb(self, database='hg19'):
-		self.g = cruzdb.Genome(db=database)
-		self.refGene = self.g.refGene
-		return self.g
-
-
-	def mergeboundaries(self):
+	def mergeboundaries(self, database='/home/ryank/LiveReferenceSequencs/160612/refGene.db', table="refGene"):
 		
 		#This will mirror the hg19 RefSeq data from UCSC and store it locally at the file location /home/kevin/Documents/NGS_Pipeline/BedFiles/cruzdb_refGene.db
 		#g = cruzdb.Genome(db="hg19")
 		#gs = g.mirror(['refGene'], 'sqlite:////home/kevin/Documents/NGS_Pipeline/BedFiles/cruzdb_refGene.db')
 		
 		#To access the locally stored database invoke the command below
-		#g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/Versions/Downloaded160612/160612/refGene.db')
-		
-		# Query Live RefGene Table on UCSC
-		#self.g = cruzdb.Genome(db=database)
-		#refGene = g.refGene
+		#g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/160612/refGene.db')
+		if table == "refGene":
+			g = cruzdb.Genome(db=database)
+			refGene = g.refGene
+		else:
+			g = cruzdb.Genome(db=database)
+			refGene = g.refGeneLookup
 		
 		#bed = pd.read_table(self.genes, header= 0)
 		#The 2 lines below show you how to query the live database at UCSC 
 		#g = cruzdb.Genome(db="hg19")
 		#refGene = g.refGene
-
-		self.calldb()
-
 		fr = open('Synonymsnotinrefgene','w')
 		fr.close()
 		fc = open('Synonymsnocodingregions', 'w')
 		fc.close()
-		genepos = self.refGene.filter_by(name2="NOX4MOCK").filter(or_(self.refGene.chrom=='chr1', self.refGene.chrom=='chr2', self.refGene.chrom=='chr3', self.refGene.chrom=='chr4', self.refGene.chrom=='chr5', self.refGene.chrom=='chr6', self.refGene.chrom=='chr7', self.refGene.chrom=='chr8', self.refGene.chrom=='chr9', self.refGene.chrom=='chr10', self.refGene.chrom=='chr11', self.refGene.chrom=='chr12', self.refGene.chrom=='chr13', self.refGene.chrom=='chr14', self.refGene.chrom=='chr15', self.refGene.chrom=='chr16', self.refGene.chrom=='chr17', self.refGene.chrom=='chr18', self.refGene.chrom=='chr19', self.refGene.chrom=='chr20', self.refGene.chrom=='chr21', self.refGene.chrom=='chr22', self.refGene.chrom=='chrX', self.refGene.chrom=='chrY')).all()
-		
-		self.lastgene = self.bed.iget_value(-1,0)
+		genepos = refGene.filter_by(name2="NOX4MOCK").filter(or_(refGene.chrom=='chr1', refGene.chrom=='chr2', refGene.chrom=='chr3', refGene.chrom=='chr4', refGene.chrom=='chr5', refGene.chrom=='chr6', refGene.chrom=='chr7', refGene.chrom=='chr8', refGene.chrom=='chr9', refGene.chrom=='chr10', refGene.chrom=='chr11', refGene.chrom=='chr12', refGene.chrom=='chr13', refGene.chrom=='chr14', refGene.chrom=='chr15', refGene.chrom=='chr16', refGene.chrom=='chr17', refGene.chrom=='chr18', refGene.chrom=='chr19', refGene.chrom=='chr20', refGene.chrom=='chr21', refGene.chrom=='chr22', refGene.chrom=='chrX', refGene.chrom=='chrY')).all()
+
 		#If using pandas 0.10.1 use for loop in line below
 		for index, gene in self.bed[self.bed.columns[0:1]].itertuples():
 			mergecds = []
 			mergeexon = []
 			namelist = []
-			entrezlist = []
 			genepos = []
 			posexons=[]
-			uniqueentrez = ''
 		#If using pandas 0.13.1 or greater use for loop in line below
 		#for index, gene in bed[[0]].itertuples():
 			
 			try:
-				genepos = self.refGene.filter_by(name2=gene).filter(or_(self.refGene.chrom=='chr1', self.refGene.chrom=='chr2', self.refGene.chrom=='chr3', self.refGene.chrom=='chr4', self.refGene.chrom=='chr5', self.refGene.chrom=='chr6', self.refGene.chrom=='chr7', self.refGene.chrom=='chr8', self.refGene.chrom=='chr9', self.refGene.chrom=='chr10', self.refGene.chrom=='chr11', self.refGene.chrom=='chr12', self.refGene.chrom=='chr13', self.refGene.chrom=='chr14', self.refGene.chrom=='chr15', self.refGene.chrom=='chr16', self.refGene.chrom=='chr17', self.refGene.chrom=='chr18', self.refGene.chrom=='chr19', self.refGene.chrom=='chr20', self.refGene.chrom=='chr21', self.refGene.chrom=='chr22', self.refGene.chrom=='chrX', self.refGene.chrom=='chrY')).all()
+				genepos = refGene.filter_by(name2=gene).filter(or_(refGene.chrom=='chr1', refGene.chrom=='chr2', refGene.chrom=='chr3', refGene.chrom=='chr4', refGene.chrom=='chr5', refGene.chrom=='chr6', refGene.chrom=='chr7', refGene.chrom=='chr8', refGene.chrom=='chr9', refGene.chrom=='chr10', refGene.chrom=='chr11', refGene.chrom=='chr12', refGene.chrom=='chr13', refGene.chrom=='chr14', refGene.chrom=='chr15', refGene.chrom=='chr16', refGene.chrom=='chr17', refGene.chrom=='chr18', refGene.chrom=='chr19', refGene.chrom=='chr20', refGene.chrom=='chr21', refGene.chrom=='chr22', refGene.chrom=='chrX', refGene.chrom=='chrY')).all()
 				
 			except:
-				genepos = self.refGene.filter_by(name2=gene).filter(or_(self.refGene.chrom=='chrX')).all()
+				genepos = refGene.filter_by(name2=gene).filter(or_(refGene.chrom=='chrX')).all()
 			#print genepos
 			
 			# For each gene append the exon boundaries for each accession entry to the list "coding"
@@ -318,28 +282,13 @@ class Bedfile:
 				#print posexons.name.encode('ascii', 'ignore')
 				access = posexons.name.encode('ascii', 'ignore')
 				#print access
-				
-				# Generate the version number for each accession number
-				version = Liveaccversion().versionfinder(access)
-				versionenc = version.encode('ascii', 'ignore')
-				namelist.append(versionenc)
-				# Generate the entrezid for the gene symbol inserted based on its associated NM accesions
-				entrez = LiveRefLink().entrezidretrieve(access)
-				entrezlist.append(entrez)
-				uniqueentrez = len(set(entrezlist))
-										
-			# If statement indicates if more than one entrez id has been identified for a gene symbol
-			# If so a ValueError is raised and a message indicating for which gene symbol this occurred
-			if uniqueentrez != 1:
-				raise ValueError('uniqueentrez list shows more than one entrez id was retieved for the gene symbol %s' % (gene))
-			else:
-				# entrezid generated
-				entrezid = "".join(str(val) for val in set(entrezlist))
-				print entrezid
-
-			with open('Synonymsnocodingregions','a') as nocoding:
-				if not mergecds:
-					nocoding.write(gene + "\n")
+				try:
+					version = Accversion().versionfinder(access)
+					versionenc = version.encode('ascii', 'ignore')
+					namelist.append(versionenc)
+				except:
+					#print access
+					pass
 			
 			#Generate output file showing a list of gene symbols which don't have a coding region annoated
 			#if not cds:
@@ -363,7 +312,6 @@ class Bedfile:
 			setattr(geneposition, "name2", posexons.name2.encode('ascii', 'ignore'))
 			setattr(geneposition, "chrom", posexons.chrom)
 			setattr(geneposition, "strand", posexons.strand)
-			setattr(geneposition, "entrezid", entrez)
 			
 			
 			#self.flankingregion(geneposition = geneposition, positionsexons= geneposition.exons, positionscds = geneposition.cds)
@@ -391,12 +339,10 @@ class Bedfile:
 		#gs = g.mirror(['refGene'], 'sqlite:////home/kevin/Documents/NGS_Pipeline/BedFiles/cruzdb_refGene.db')
 		
 		#To access the locally stored database invoke the command below
-		#g = cruzdb.Genome(db='hg19')
-		#g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/Versions/Downloaded160612/160612/refGene.db')
-		#refGene = g.refGene
+		g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/160612/refGene.db')
+		#g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/160612/refGene.db')
+		refGene = g.refGene
 		
-		self.calldb()
-
 		bed = pd.read_table(self.transcripts, header= 0)
 		#The 2 lines below show you how to query the live database at UCSC 
 		#g = cruzdb.Genome(db="hg19")
@@ -409,32 +355,24 @@ class Bedfile:
 		#for index, gene in bed[[0]].itertuples():
 		
 			try:
-				genepos = self.refGene.filter_by(name=acc).filter(or_(self.refGene.chrom=='chr1', self.refGene.chrom=='chr2', self.refGene.chrom=='chr3', self.refGene.chrom=='chr4', self.refGene.chrom=='chr5', self.refGene.chrom=='chr6', self.refGene.chrom=='chr7', self.refGene.chrom=='chr8', self.refGene.chrom=='chr9', self.refGene.chrom=='chr10', self.refGene.chrom=='chr11', self.refGene.chrom=='chr12', self.refGene.chrom=='chr13', self.refGene.chrom=='chr14', self.refGene.chrom=='chr15', self.refGene.chrom=='chr16', self.refGene.chrom=='chr17', self.refGene.chrom=='chr18', self.refGene.chrom=='chr19', self.refGene.chrom=='chr20', self.refGene.chrom=='chr21', self.refGene.chrom=='chr22', self.refGene.chrom=='chrX', self.refGene.chrom=='chrY')).one()
+				genepos = refGene.filter_by(name=acc).filter(or_(refGene.chrom=='chr1', refGene.chrom=='chr2', refGene.chrom=='chr3', refGene.chrom=='chr4', refGene.chrom=='chr5', refGene.chrom=='chr6', refGene.chrom=='chr7', refGene.chrom=='chr8', refGene.chrom=='chr9', refGene.chrom=='chr10', refGene.chrom=='chr11', refGene.chrom=='chr12', refGene.chrom=='chr13', refGene.chrom=='chr14', refGene.chrom=='chr15', refGene.chrom=='chr16', refGene.chrom=='chr17', refGene.chrom=='chr18', refGene.chrom=='chr19', refGene.chrom=='chr20', refGene.chrom=='chr21', refGene.chrom=='chr22', refGene.chrom=='chrX', refGene.chrom=='chrY')).one()
 			except:
-				genepos = self.refGene.filter_by(name=acc).filter(or_(self.refGene.chrom=='chrX')).one()
+				genepos = refGene.filter_by(name=acc).filter(or_(refGene.chrom=='chrX')).one()
 			# Set the exon boundaries and assign to variable positionsexons
 			posexons=genepos.exons
 			# Set the coding exon boundaries and assign to variable positionsexons
 			poscds=genepos.cds
 			access = genepos.name.encode('ascii', 'ignore')
-			
 
 			try:
-				version = Liveaccversion().versionfinder(access)
+				version = Accversion().versionfinder(access)
 				versionenc = version.encode('ascii', 'ignore')
-				
+				#namelist.append(versionenc)
 			except ValueError:
-				print "The accession %s has no valid version number" % (access)
-
+				print "The accession access has no valid version number"
 				
 			print versionenc
 			print genepos.name2.encode('ascii', 'ignore')
-			
-			
-			# Generate the entrezid for the gene symbol inserted based on its associated NM accesions
-			entrez = LiveRefLink().entrezidretrieve(access)
-			
-				
 			class atrib():
 				pass
 			geneposition = atrib()
@@ -444,8 +382,6 @@ class Bedfile:
 			setattr(geneposition, "name2", genepos.name2.encode('ascii', 'ignore'))
 			setattr(geneposition, "chrom", genepos.chrom)
 			setattr(geneposition, "strand", genepos.strand)
-			setattr(geneposition, "entrezid", entrez)
-			
 			
 			self.flankingregion(geneposition = geneposition, positionsexons= geneposition.exons, positionscds = geneposition.cds)
 
@@ -457,7 +393,7 @@ class Bedfile:
 		#gs = g.mirror(['refGene'], 'sqlite:////home/kevin/Documents/NGS_Pipeline/BedFiles/cruzdb_refGene.db')
 		
 		#To access the locally stored database invoke the command below
-		g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/Versions/Downloaded160612/160612/refGene.db')
+		g = cruzdb.Genome(db='/home/ryank/LiveReferenceSequencs/160612/refGene.db')
 		refGene = g.refGene
 		
 		bed = pd.read_table(self.transcripts, header= 0)
@@ -492,7 +428,6 @@ class Bedfile:
 				self.Chr.append(geneposition.chrom)
 				self.Accession.append(geneposition.name)
 				self.GeneName.append(geneposition.name2)
-				self.entrezid.append(geneposition.entrezid)
 				
 			#Generate Accession column				
 			#for row in positionsexons:
@@ -544,8 +479,6 @@ class Bedfile:
 				self.Chr.append(geneposition.chrom)
 				self.Accession.append(geneposition.name)
 				self.GeneName.append(geneposition.name2)
-				self.entrezid.append(geneposition.entrezid)
-				
 # 			#Generate Accession column				
 # 			for row in positionsexons:
 # 				self.Accession.append(geneposition.name)
@@ -623,7 +556,6 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
-					self.entrezid.append(geneposition.entrezid)
 					#Define flanking region round Stop codon
 					if self.StopFlanking == True:
 						StopFlank = long(self.StopFlank)
@@ -665,7 +597,6 @@ class Bedfile:
 						self.Chr.append(geneposition.chrom)
 						self.Accession.append(geneposition.name)
 						self.GeneName.append(geneposition.name2)
-						self.entrezid.append(geneposition.entrezid)
 						counter += 1
 					else:
 						counter += 1
@@ -679,7 +610,6 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
-					self.entrezid.append(geneposition.entrezid)
 					counter += 1
 			
 				else:
@@ -692,7 +622,6 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
-					self.entrezid.append(geneposition.entrezid)
 		#self.codingup adds to the 5' end of the first coding exon
 		#self.codingup and self.codingdown add to the ends of each internal coding exon
 		#self.codingdownstream adds to the end of the 3'UTR of the last exon	
@@ -722,7 +651,6 @@ class Bedfile:
 						self.Chr.append(geneposition.chrom)
 						self.Accession.append(geneposition.name)
 						self.GeneName.append(geneposition.name2)
-						self.entrezid.append(geneposition.entrezid)
 						counter += 1
 					else:
 						counter += 1
@@ -736,7 +664,6 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
-					self.entrezid.append(geneposition.entrezid)
 					counter += 1
 			
 				else:
@@ -748,8 +675,7 @@ class Bedfile:
 					self.Stop.append(downstreamUTR)
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
-					self.GeneName.append(geneposition.name2)
-					self.entrezid.append(geneposition.entrezid)				
+					self.GeneName.append(geneposition.name2)					
 		#self.codingup adds to the 5' end of the first coding exon
 		#self.codingup and self.codingdown add to the ends of each internal coding exon
 		#self.codingdownstream adds to the end of the 3'UTR of the last exon	
@@ -773,7 +699,6 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
-					self.entrezid.append(geneposition.entrezid)
 					counter += 1
 					
 				elif a > positionscds[0][0] and counter != (len(positionsexons) - 1):
@@ -786,7 +711,6 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
-					self.entrezid.append(geneposition.entrezid)
 					counter += 1
 			
 				else:
@@ -796,7 +720,6 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
-					self.entrezid.append(geneposition.entrezid)
 					if self.StartFlanking == True:
 							StartFlank = long(self.StartFlank)
 							exons5 = positionscds[-1][1] + StartFlank
@@ -821,11 +744,7 @@ class Bedfile:
 			
 			#Generate GeneName column				
 			for row in positionscds:
-				self.GeneName.append(geneposition.name2)
-				
-			#Generate entrezid column				
-			for row in positionscds:
-				self.entrezid.append(geneposition.entrezid)
+				self.GeneName.append(geneposition.name2)	
 			
 			
 			
@@ -888,11 +807,7 @@ class Bedfile:
 			
 			#Generate GeneName column				
 			for row in positionscds:
-				self.GeneName.append(geneposition.name2)
-				
-			#Generate entrezid column				
-			for row in positionscds:
-				self.entrezid.append(geneposition.entrezid)
+				self.GeneName.append(geneposition.name2)	
 			
 			
 			#Generate the Start and Stop columns
@@ -946,44 +861,9 @@ class Bedfile:
 					
 		else:
 			print "You need to provide --coding arguments"
-		#print self.Chr
-		
-		# Re-run data through merge_ranges to ensure overlapping regions are merged
-		# Run following section if mergeboundaries command is set
-		if self.mergeboundariesboolean == True:
-			# Set mergestart to the list of start positions defined by self.Start
-			mergestart = self.Start
-			# Set mergestop to the list of stop positions defined by self.Stop
-			mergestop = self.Stop
-			# Run following if code to remove previously loaded start positions from self.Start
-			if self.prevselfstart and self.prevselfstop:
-				for st, sp in zip(self.prevselfstart, self.prevselfstop):
-					mergestart.remove(st)
-					mergestop.remove(sp)
-			#deepcopy ensures that self.prevselfstart and self.prevselfstop lists are not linked to the original lists self.Start and self.Stop
-			self.prevselfstart = deepcopy(self.Start)
-			self.prevselfstop = deepcopy(self.Stop)
+
+					
 			
-			#Run the start positions defined by self.flankingregion through merge_ranges this merges any regions that become overalapping as a result of the extra bases added
-			tuplestartstop = zip(mergestart, mergestop)
-			mergeboundariespostflankingregion = [val for val in self.merge_ranges(tuplestartstop)]
-			startmerge, stopmerge = [a[0] for a in mergeboundariespostflankingregion], [a[1] for a in mergeboundariespostflankingregion]
-			self.Startmerge.extend(startmerge)
-			self.Stopmerge.extend(stopmerge)
-			self.Chrom.extend([geneposition.chrom] * len(mergeboundariespostflankingregion))
-			self.Acc.extend([geneposition.name] * len(mergeboundariespostflankingregion))
-			self.Gene.extend([geneposition.name2] * len(mergeboundariespostflankingregion))
-			self.entrezidmerge.extend([geneposition.entrezid] * len(mergeboundariespostflankingregion))
-			
-			# Once the final gene has been processed then re-define the lists to be outputted to the final bed file
-			if geneposition.name2 == self.lastgene:
-				self.Start = self.Startmerge
-				self.Stop = self.Stopmerge
-				self.Chr = self.Chrom
-				self.Accession = self.Acc
-				self.GeneName = self.Gene
-				self.entrezid = self.entrezidmerge
-		
 			
 #python Cruzdb.py --coding 10 --transcripts NM_000546 NM_004360 NM_000059 NM_000314 NM_007294 NM_000455
 def UTR(argv):
@@ -1148,7 +1028,6 @@ def UTR(argv):
 			assert False, "unhandled option"
 	if log == True:		
 		log = open(logfile, 'w+')
-		log.write("Time Stamp:" + str(datetime.datetime.now()) + "\n")
 		log.write("Command arguments executed:\n")
 		for item in sys.argv:
 			str(item)
@@ -1158,11 +1037,6 @@ def UTR(argv):
 		log.write("\n\n os module file path: %s" % os.__file__)
 		log.write("\n\n pd class file path: %s" % pd.__file__)
 		log.write("\n\n cruzdb module file path: %s" % cruzdb.__file__)
-		if str(bedfile.calldb()) == "Genome('mysql://genome@genome-mysql.cse.ucsc.edu/hg19')":
-			log.write("\n\n Querying Live UCSC database: %s and table: %s" % (bedfile.g, bedfile.refGene))
-		sub=subprocess.Popen(['git', 'describe', '--tags'], stdout=subprocess.PIPE)
-		gitversion = sub.stdout.read().strip('\n')
-		log.write("\n\n" + "version as defined by git tag = " + gitversion)
 		#from cruzdb import Genome
 	else:
 		print "WARNING you need to define --logfile"
@@ -1176,7 +1050,7 @@ def UTR(argv):
 	if bedfile.coding != True:
 		bedfile.coding = False
 	
-#Initiate flankingregion method from class Bedfile		
+#Initiate flankingregion method from class BedFiles		
 	bedfile.filereader()
 	if bedfile.transcriptlist == True and bedfile.useaccessionslist == True:
 		bedfile.useaccessions()
