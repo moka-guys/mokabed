@@ -116,6 +116,7 @@ class Bedfile:
 		self.g = ''
 		self.refGene = ''
 		self.refseqoutput = ''
+		self.minuschr = ''
 	
 
 	def usage(self):
@@ -135,7 +136,7 @@ class Bedfile:
 		bed = pd.read_table(self.outputfile, header= 1)
 
 		# Generate columns in Pandas series format which will be used to generate the RefSeq columns
-		Chrser = bed.groupby(['EntrezID'])['#Chr'].apply(lambda x: ''.join(sorted(set(list(x)))))
+		Chrser = bed.groupby(['EntrezID'])['#Chr'].apply(lambda x: ''.join(sorted(set(map(str, list(x))))))
 		Startser =bed.groupby(['EntrezID'])['Start'].apply(lambda x: ",".join(map(str, list(x))))
 		Stopser =bed.groupby(['EntrezID'])['Stop'].apply(lambda x: ",".join(map(str, list(x))))
 		NMacc = bed.groupby(['EntrezID'])['Gene_Accession'].apply(lambda x: ''.join(sorted(set(list(x)))))
@@ -151,11 +152,6 @@ class Bedfile:
 		cdsEndStat = pd.Series()
 		exonFrames = pd.Series()
 		
-		# If --minuschr command is issued
-		if self.minuschr:
-			Chrser_list = list(Chrser.values)
-			Chrser = map( lambda x: x.replace( 'chr', ''), Chrser_list)
-			Chrser = pd.Series(Chrser)
 
 		
 		# Concatanate the list of pandas series into a single dataframe which is to be outed as a text file
@@ -270,7 +266,7 @@ class Bedfile:
 		# If --minuschr command is issued
 		if self.minuschr:
 			Chrremoved = map( lambda x: x.replace( 'chr', ''), Chr)
-			Chr = pd.Series(Chrremoved)
+			Chr = Chrremoved
 		
 		Start = Start.values
 		Stop = Stop.values
@@ -1040,7 +1036,7 @@ def UTR(argv):
 	log = ''	
 #Generates and interprets a list of options which can be passed as arguments to the function UTR
 	try:
-      		opts, args = getopt.getopt(sys.argv[1:], "h", ["coordinatefile=", "coordup=", "coorddown=", "up=", "down=", "codingup=", "codingdown=", "StartFlank=", "StopFlank=", "logfile=", "outputfile=", "CNVoutput=", "transcripts=", "mergeboundaries", "genes=", "useaccessions"])
+      		opts, args = getopt.getopt(sys.argv[1:], "h", ["coordinatefile=", "coordup=", "coorddown=", "up=", "down=", "codingup=", "codingdown=", "StartFlank=", "StopFlank=", "logfile=", "outputfile=", "CNVoutput=", "transcripts=", "mergeboundaries", "genes=", "useaccessions", "minuschr"])
 	except getopt.GetoptError, err:
 		print str(err)
 		bedfile.usage()
@@ -1056,7 +1052,7 @@ def UTR(argv):
 			bedfile.usage()
 			sys.exit()
 		elif o == "--coordinatefile":
-			if a in ("-h", "--help", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes"):
+			if a in ("-h", "--help", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes", "--minuschr"):
 				print "need to define --coordinatefile"
 				bedfile.usage()
 				sys.exit()
@@ -1065,7 +1061,7 @@ def UTR(argv):
 				bedfile.coordinates = True
 
 		elif o == "--coordup":
-			if a in ("-h", "--help", "--coordinatefile", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes"):
+			if a in ("-h", "--help", "--coordinatefile", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes", "--minuschr"):
 				print "need to define --coordup"
 				bedfile.usage()
 				sys.exit()
@@ -1074,7 +1070,7 @@ def UTR(argv):
 				bedfile.coordinates = True
 
 		elif o == "--coorddown":
-			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes"):
+			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes", "--minuschr"):
 				print "need to define --coordup"
 				bedfile.usage()
 				sys.exit()
@@ -1084,7 +1080,7 @@ def UTR(argv):
 
 
 		elif o == "--up":
-			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--down", "--codingup", "--codingdown", "--StartFlank", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes"):
+			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--down", "--codingup", "--codingdown", "--StartFlank", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes", "--minuschr"):
 				print "need to define --up"
 				bedfile.usage()
 				sys.exit()
@@ -1093,7 +1089,7 @@ def UTR(argv):
 				bedfile.up = True
 
 		elif o == "--down":
-			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--codingup", "--codingdown", "--StartFlank", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes"):
+			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--codingup", "--codingdown", "--StartFlank", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes", "--minuschr"):
 				print "need to define --down"
 				bedfile.usage()
 				sys.exit()
@@ -1101,7 +1097,7 @@ def UTR(argv):
 				bedfile.downstream = a
 				bedfile.down = True
 		elif o == "--codingup":
-			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingdown", "--StartFlank", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes"):
+			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingdown", "--StartFlank", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes", "--minuschr"):
 				print "need to define --codingup"
 				bedfile.usage()
 				sys.exit()
@@ -1110,7 +1106,7 @@ def UTR(argv):
 				bedfile.coding = True
 				
 		elif o == "--codingdown":
-			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--StartFlank", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes"):
+			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--StartFlank", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes", "--minuschr"):
 				print "need to define --codingdown"
 				bedfile.usage()
 				sys.exit()
@@ -1119,7 +1115,7 @@ def UTR(argv):
 				bedfile.coding = True
 				
 		elif o == "--StartFlank":
-			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes"):
+			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StopFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes", "--minuschr"):
 				print "need to define --StartFlank"
 				bedfile.usage()
 				sys.exit()
@@ -1128,7 +1124,7 @@ def UTR(argv):
 				bedfile.StartFlanking = True
 				
 		elif o == "--StopFlank":
-			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes"):
+			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--logfile", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes", "--minuschr"):
 				print "need to define --StartFlank"
 				bedfile.usage()
 				sys.exit()
@@ -1137,7 +1133,7 @@ def UTR(argv):
 				bedfile.StopFlanking = True
 		
 		elif o == "--logfile":
-			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--StopFlank", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes"):
+			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--StopFlank", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes", "--minuschr"):
 				print "need to define --logfile"
 				bedfile.usage()
 				sys.exit()
@@ -1147,7 +1143,7 @@ def UTR(argv):
 			
 				
 		elif o == "--outputfile":
-			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--logfile", "--StopFlank", "--transcripts", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes"):
+			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--logfile", "--StopFlank", "--transcripts", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes", "--minuschr"):
 				print "need to define --outputfile"
 				bedfile.usage()
 				sys.exit()
@@ -1156,7 +1152,7 @@ def UTR(argv):
 				bedfile.output = True	
 				
 		elif o == "--CNVoutput":
-			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--logfile", "--StopFlank", "--transcripts", "--outputfile", "--mergeboundaries", "--useaccessions", "--genes"):
+			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--logfile", "--StopFlank", "--transcripts", "--outputfile", "--mergeboundaries", "--useaccessions", "--genes", "--minuschr"):
 				print "need to define --CNVoutput"
 				bedfile.usage()
 				sys.exit()
@@ -1167,7 +1163,7 @@ def UTR(argv):
 
 
 		elif o == "--transcripts":
-			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--logfile", "--StopFlank", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes"):
+			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--logfile", "--StopFlank", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--genes", "--minuschr"):
 				print "need to define --transcripts"
 				bedfile.usage()
 				sys.exit()
@@ -1176,7 +1172,7 @@ def UTR(argv):
 				bedfile.transcriptlist = True
 				
 		elif o == "--genes":
-			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--logfile", "--StopFlank", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions"):
+			if a in ("-h", "--help", "--coordinatefile", "--coordup", "--coorddown", "--up", "--down", "--codingup", "--codingdown", "--StartFlank", "--logfile", "--StopFlank", "--transcripts", "--outputfile", "--CNVoutput", "--mergeboundaries", "--useaccessions", "--minuschr"):
 				print "need to define --genes"
 				bedfile.usage()
 				sys.exit()
@@ -1191,6 +1187,10 @@ def UTR(argv):
 		elif o == "--useaccessions":
 			
 			bedfile.useaccessionslist = True	
+			
+		elif o == "--minuschr":
+			
+			bedfile.minuschr = True	
 		
 
 		else:
