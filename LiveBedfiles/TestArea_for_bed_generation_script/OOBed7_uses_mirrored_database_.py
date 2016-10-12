@@ -115,6 +115,7 @@ class Bedfile:
 		self.entrezidmerge = []
 		self.g = ''
 		self.refGene = ''
+		self.refseqoutput = ''
 	
 
 	def usage(self):
@@ -150,16 +151,24 @@ class Bedfile:
 		cdsEndStat = pd.Series()
 		exonFrames = pd.Series()
 		
+		# If --minuschr command is issued
+		if self.minuschr:
+			Chrser_list = list(Chrser.values)
+			Chrser = map( lambda x: x.replace( 'chr', ''), Chrser_list)
+			Chrser = pd.Series(Chrser)
+
+		
 		# Concatanate the list of pandas series into a single dataframe which is to be outed as a text file
 		df = pd.concat([NMacc, Chrser, strand, txStart, txEnd, cdsStart, cdsEnd, exonCount, Startser, Stopser, score, name2, cdsStartStat, cdsEndStat, exonFrames], axis=1, keys=['name', 'chrom', 'strand','txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount','exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'])
 		# Ammend index header so it is in line with RefSeq format
 		df.index.name = "bin"
 		
 		# Generate file path without extension
-		refseqoutput = os.path.splitext(self.outputfile)[0] + "RefSeqFormat.txt"
+		self.refseqoutput = os.path.splitext(self.outputfile)[0] + "RefSeqFormat.txt"
 		
 		# Output dataframe as a RefSeq flat file
-		df.to_csv(path_or_buf=refseqoutput, sep='\t')
+		df.to_csv(path_or_buf=self.refseqoutput, sep='\t')
+
 		
 	    
 	def filereader(self):
@@ -257,6 +266,12 @@ class Bedfile:
 		#Needed to ammend this script as updated Pandas was printing index number and data type info field as well as the values.
 		#To print just the values I need to re-assign the Chr, Start and Stop series to just the values using the .values function
 		Chr = Chr.values
+		
+		# If --minuschr command is issued
+		if self.minuschr:
+			Chrremoved = map( lambda x: x.replace( 'chr', ''), Chr)
+			Chr = pd.Series(Chrremoved)
+		
 		Start = Start.values
 		Stop = Stop.values
 		self.bedfile = pd.DataFrame(zip(Start, Stop, Entrezid, Gene_Acc),  columns = ["Start", "Stop", "EntrezID", "Gene_Accession"], index=[Chr])
