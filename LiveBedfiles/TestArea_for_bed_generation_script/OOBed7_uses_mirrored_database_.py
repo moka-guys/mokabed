@@ -128,6 +128,40 @@ class Bedfile:
 	    """
 	    print usage
 	    
+	def refseqfile(self):
+		
+		# Load bed file output automatically into the refseqfile		
+		bed = pd.read_table(self.outputfile, header= 1)
+
+		# Generate columns in Pandas series format which will be used to generate the RefSeq columns
+		Chrser = bed.groupby(['EntrezID'])['#Chr'].apply(lambda x: ''.join(sorted(set(list(x)))))
+		Startser =bed.groupby(['EntrezID'])['Start'].apply(lambda x: ",".join(map(str, list(x))))
+		Stopser =bed.groupby(['EntrezID'])['Stop'].apply(lambda x: ",".join(map(str, list(x))))
+		NMacc = bed.groupby(['EntrezID'])['Gene_Accession'].apply(lambda x: ''.join(sorted(set(list(x)))))
+		exonCount = bed.groupby(['EntrezID'])['Start'].apply(len)
+		strand = pd.Series()
+		txStart = pd.Series()
+		txEnd = pd.Series()
+		cdsStart = bed.groupby(['EntrezID'])['Start'].apply(lambda x: list(x)[0])
+		cdsEnd = bed.groupby(['EntrezID'])['Stop'].apply(lambda x: list(x)[-1])
+		score = pd.Series()
+		name2 = bed.groupby(['EntrezID'])['Gene_Accession'].apply(lambda x: ''.join(sorted(set(list(x)))).split(';')[0])
+		cdsStartStat = pd.Series()
+		cdsEndStat = pd.Series()
+		exonFrames = pd.Series()
+		
+		# Concatanate the list of pandas series into a single dataframe which is to be outed as a text file
+		df = pd.concat([NMacc, Chrser, strand, txStart, txEnd, cdsStart, cdsEnd, exonCount, Startser, Stopser, score, name2, cdsStartStat, cdsEndStat, exonFrames], axis=1, keys=['name', 'chrom', 'strand','txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount','exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'])
+		# Ammend index header so it is in line with RefSeq format
+		df.index.name = "bin"
+		
+		# Generate file path without extension
+		refseqoutput = os.path.splitext(self.outputfile)[0] + "RefSeqFormat.txt"
+		
+		# Output dataframe as a RefSeq flat file
+		df.to_csv(path_or_buf=refseqoutput, sep='\t')
+		
+	    
 	def filereader(self):
 		
 		if self.coordinatefile:
@@ -1150,6 +1184,7 @@ def UTR(argv):
 		log = open(logfile, 'w+')
 		log.write("Time Stamp:" + str(datetime.datetime.now()) + "\n")
 		log.write("Command arguments executed:\n")
+		log.write("RefSeq table format version generated as %s" % os.path.splitext(bedfile.outputfile)[0] + "RefSeqFormat.txt\n")
 		for item in sys.argv:
 			str(item)
 			log.write("%s " % item)
@@ -1193,6 +1228,9 @@ def UTR(argv):
 		print "You have not supplied a file name to write to using argument --outputfile"
 	if bedfile.CNVoutputboolean == True:
 		bedfile.bedsplitter()
+		
+	# Automatically generate refseq format version of bed file
+	bedfile.refseqfile()
 	
 
 
