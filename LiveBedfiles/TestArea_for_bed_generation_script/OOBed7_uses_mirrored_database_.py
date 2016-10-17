@@ -152,18 +152,20 @@ class Bedfile:
 		cdsEndStat = pd.Series()
 		exonFrames = pd.Series()
 		
-
+		
 		
 		# Concatanate the list of pandas series into a single dataframe which is to be outed as a text file
 		df = pd.concat([NMacc, Chrser, strand, txStart, txEnd, cdsStart, cdsEnd, exonCount, Startser, Stopser, score, name2, cdsStartStat, cdsEndStat, exonFrames], axis=1, keys=['name', 'chrom', 'strand','txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount','exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'])
+		df2 = df.fillna('NULL')
+		
 		# Ammend index header so it is in line with RefSeq format
-		df.index.name = "#bin"
+		df2.index.name = "#bin"
 		
 		# Generate file path without extension
 		self.refseqoutput = os.path.splitext(self.outputfile)[0] + "RefSeqFormat.txt"
 		
 		# Output dataframe as a RefSeq flat file
-		df.to_csv(path_or_buf=self.refseqoutput, sep='\t')
+		df2.to_csv(path_or_buf=self.refseqoutput, sep='\t')
 
 		
 	    
