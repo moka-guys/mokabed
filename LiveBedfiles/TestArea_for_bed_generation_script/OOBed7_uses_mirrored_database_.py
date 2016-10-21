@@ -29,7 +29,7 @@ import re
 #python OOBed5.py --codingup 30 --codingdown 20 --up 30 --StopFlank 50 --logfile /home/kevin/Documents/NGS_Pipeline/BedFiles/TP53only_LogFile.txt --outputfile /home/kevin/Documents/NGS_Pipeline/BedFiles/TP53onlyBedFile.csv --transcripts /home/kevin/Documents/NGS_Pipeline/BedFiles/Transcripts/TP53onlyTranscripts.txt
 #python OOBed5.py --codingup 30 --codingdown 20 --up 30 --StopFlank 50 --logfile /home/kevin/Documents/NGS_Pipeline/BedFiles/WholeExomeAnalysis3/Pantest_LogFile.txt --outputfile /home/kevin/Documents/NGS_Pipeline/BedFiles/WholeExomeAnalysis3/Pantest.csv --transcripts /home/kevin/Documents/NGS_Pipeline/BedFiles/Transcripts/Holdingfolder/Pan59.txt
 
-#python /home/kevin/Documents/NGS_Pipeline/BedFiles/OOBed5.py --logfile /home/kevin/Documents/NGS_Pipeline/BedFiles/WholeExomeAnalysis/NM_032470PlusMinus5_LogFile.txt --coordinatefile /home/kevin/Documents/NGS_Pipeline/BedFiles/Transcripts/Pantranscriptfiles/NM_032470Coordinates.txt --coordup 5 --coorddown 5 --outputfile /home/kevin/Documents/NGS_Pipeline/BedFiles/NM_032470PlusMinus5BedFile.csv
+#python /home/kevin/Documents/NGS_Pipeline/BedemoveFiles/OOBed5.py --logfile /home/kevin/Documents/NGS_Pipeline/BedFiles/WholeExomeAnalysis/NM_032470PlusMinus5_LogFile.txt --coordinatefile /home/kevin/Documents/NGS_Pipeline/BedFiles/Transcripts/Pantranscriptfiles/NM_032470Coordinates.txt --coordup 5 --coorddown 5 --outputfile /home/kevin/Documents/NGS_Pipeline/BedFiles/NM_032470PlusMinus5BedFile.csv
 #python /home/kevin/Documents/NGS_Pipeline/BedFiles/OOBed5.py --codingup 5 --codingdown 5 --logfile /home/kevin/Documents/NGS_Pipeline/BedFiles/WholeExomeAnalysis/${bedname}_LogFile.txt --outputfile /home/kevin/Documents/NGS_Pipeline/BedFiles/WholeExomeAnalysis/${bedname}data.bed --transcripts /home/kevin/Documents/NGS_Pipeline/BedFiles/Transcripts/transcriptfiles/$transcript
 
 #python /home/kevin/Documents/NGS_Pipeline/BedFiles/OOBed5.py --codingup 30 --codingdown 20 --logfile /home/kevin/Documents/NGS_Pipeline/BedFiles/CM_Panel/KBTBD13_LogFile.txt --outputfile /home/kevin/Documents/NGS_Pipeline/BedFiles/CM_Panel/KBTBD13data.bed --transcripts /home/kevin/Documents/NGS_Pipeline/BedFiles/Transcripts/KBTBD13_CMpanelMissingGene.txt
@@ -142,8 +142,8 @@ class Bedfile:
 		NMacc = bed.groupby(['EntrezID'])['Gene_Accession'].apply(lambda x: ''.join(sorted(set(list(x)))))
 		exonCount = bed.groupby(['EntrezID'])['Start'].apply(len)
 		strand = pd.Series()
-		txStart = pd.Series()
-		txEnd = pd.Series()
+		txStart = bed.groupby(['EntrezID'])['Start'].apply(lambda x: list(x)[0])
+		txEnd = bed.groupby(['EntrezID'])['Stop'].apply(lambda x: list(x)[-1])
 		cdsStart = bed.groupby(['EntrezID'])['Start'].apply(lambda x: list(x)[0])
 		cdsEnd = bed.groupby(['EntrezID'])['Stop'].apply(lambda x: list(x)[-1])
 		score = pd.Series()
@@ -186,9 +186,9 @@ class Bedfile:
 		startnumber = int(self.coordup)
 		endnumber = int(self.coorddown)
 		newstart = bed.Start - startnumber
-		self.Start.extend(newstart)
+		self.Start.extend(int(newstart))
 		newstop = bed.Stop + endnumber
-		self.Stop.extend(newstop)
+		self.Stop.extend(int(newstop))
 		#Append Accessions for this list
 		self.Accession.extend(bed.Accession)
 		#Append gene names for this list
@@ -284,9 +284,15 @@ class Bedfile:
 				print "Error on line ", counter," Not all Start values are less than corresponding Stop values"
 				
 			counter += 1
+		#self.bedfile.sort_values("Stop", ascending=True,inplace=True)
+		#self.bedfile.sort_values("Start",ascending=True, inplace=True)
+		#self.bedfile.sort_index(inplace=True,ascending=True)
+		
 		#Add in empty columns to ensure that the bed file generated is in Bed detail format
 		output_reindex = self.bedfile.reindex(columns=['Start', 'Stop', 'EntrezID', '', '', '', '', '', '', '', '', '', 'Gene_Accession'])
+		
 		output_reindex.index.name = "#Chr"
+		
 		#print "this is bedfile", self.bedfile
 		#CSV file with column headers
 		output_reindex.to_csv(path_or_buf=self.outputfile, sep='\t')
@@ -297,6 +303,60 @@ class Bedfile:
 		
 		timestamp = "#" + str(datetime.datetime.now())
 		subprocess.call("sed -i '1 i\%s' %s" % (timestamp, self.outputfile), shell=True)
+		
+		# call function to order the bedfile
+		self.order_refseq_file()
+		
+	def order_refseq_file(self):
+		#open self.outputfile
+		refseq_file=open(self.outputfile,'r')
+		#list for bedfile lines 
+		coord_list=[]
+		#list for headers
+		header=[]
+		#loop through the newly created befile
+		for line in refseq_file:
+			#capture headers
+			if line.startswith("#"):
+				header.append(line)
+			else:
+				# for each line of genomic coords split on tab
+				splitline=line.split('\t')
+				# capture the chromosome and replace the chr if not removed above
+				splitline[0]=splitline[0].replace('chr','')
+				# if it's not a sex chrom convert to integer to ensure sort works correctly NB sorting will put integers first, then letters
+				if splitline[0] not in ('X','Y'):
+					splitline[0]=int(splitline[0])
+				# covert start and stop to integer
+				splitline[1]=int(splitline[1])
+				splitline[2]=int(splitline[2])
+				#append the whole line to a list
+				coord_list.append(splitline)
+	
+		#sort this list first on stop, then start then chr
+		coord_list.sort(key=lambda tup: tup[2])  # sorts on stop
+		coord_list.sort(key=lambda tup: tup[1])  # sorts on start
+		coord_list.sort(key=lambda tup: tup[0])  # sorts on chr 1 -> 22 then X then Y 
+				
+		#close file
+		refseq_file.close()
+		#reopen file but as write (will overwrite the file)
+		refseq_file2=open(self.outputfile,'w')
+		# write the header
+		for line in header:
+			refseq_file2.write(line)
+		# write the sorted bedfile 
+		for line in coord_list:
+			#first convert all elements in each line to strings (needed by the join function)
+			string_list=[str(element) for element in line]
+			#if --minuschr is not given we need to replace the chr which was removed above
+			if not self.minuschr:
+				string_list[0]='chr'+string_list[0]
+			# write the line, joining each element with a tab
+			refseq_file2.write("\t".join(string_list))
+		
+		#close file
+		refseq_file2.close()
 
 	def calldb(self, database='hg19'):
 		self.g = cruzdb.Genome(db=database)
