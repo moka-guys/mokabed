@@ -8,6 +8,7 @@ import time, datetime, subprocess
 from copy import deepcopy
 import subprocess
 import re
+import numpy as np
 
 #Need to module load python/2.7
 #Need to provide arguments 'up' to include the 5'UTR and 'down' to include the 3'UTR and the associated list of accession numbers of the associated transcripts
@@ -117,6 +118,8 @@ class Bedfile:
 		self.refGene = ''
 		self.refseqoutput = ''
 		self.minuschr = ''
+		self.strand = []
+		self.strandmerge = []
 	
 
 	def usage(self):
@@ -134,6 +137,8 @@ class Bedfile:
 		
 		# Load bed file output automatically into the refseqfile		
 		bed = pd.read_table(self.outputfile, header= 1)
+		
+		chr = []
 
 		# Generate columns in Pandas series format which will be used to generate the RefSeq columns
 		Chrser = bed.groupby(['EntrezID'])['#Chr'].apply(lambda x: ''.join(sorted(set(map(str, list(x))))))
@@ -141,21 +146,41 @@ class Bedfile:
 		Stopser =bed.groupby(['EntrezID'])['Stop'].apply(lambda x: ",".join(map(str, list(x))))
 		NMacc = bed.groupby(['EntrezID'])['Gene_Accession'].apply(lambda x: ''.join(sorted(set(list(x)))))
 		exonCount = bed.groupby(['EntrezID'])['Start'].apply(len)
-		strand = pd.Series()
+		Stranddf = pd.DataFrame(zip(self.strand, self.entrezid),  columns = ["Strand","EntrezID"])
+		Newstrand = Stranddf.groupby(['EntrezID'])["Strand"].apply(lambda x: ''.join(sorted(set(map(str, list(x))))))
 		txStart = bed.groupby(['EntrezID'])['Start'].apply(lambda x: list(x)[0])
 		txEnd = bed.groupby(['EntrezID'])['Stop'].apply(lambda x: list(x)[-1])
-		cdsStart = bed.groupby(['EntrezID'])['Start'].apply(lambda x: list(x)[0])
-		cdsEnd = bed.groupby(['EntrezID'])['Stop'].apply(lambda x: list(x)[-1])
+		cdsStart = bed.groupby(['EntrezID'])['Start'].apply(lambda x: int(list(x)[0]))
+		cdsEnd = bed.groupby(['EntrezID'])['Stop'].apply(lambda x: int(list(x)[-1]))
 		score = pd.Series()
 		name2 = bed.groupby(['EntrezID'])['Gene_Accession'].apply(lambda x: ''.join(sorted(set(list(x)))).split(';')[0])
 		cdsStartStat = pd.Series()
 		cdsEndStat = pd.Series()
-		exonFrames = pd.Series()
+		exonFrameslist = []
+		# Set exonFrames to 0
+		for val in exonCount.values:
+			ef = ['0'] * val
+			efstr = ','.join(ef)
+			#efstrformatted = efstr[1:-1]
+			exonFrameslist.append(efstr)
+		#Exonframedf = pd.DataFrame(zip(self.strand, self.entrezid),  columns = ["Strand","EntrezID"])
+		exonFrames = pd.Series(exonFrameslist, index = Chrser.index)
+		
 		
 		
 		
 		# Concatanate the list of pandas series into a single dataframe which is to be outed as a text file
-		df = pd.concat([NMacc, Chrser, strand, txStart, txEnd, cdsStart, cdsEnd, exonCount, Startser, Stopser, score, name2, cdsStartStat, cdsEndStat, exonFrames], axis=1, keys=['name', 'chrom', 'strand','txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount','exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'])
+		df = pd.concat([NMacc, Chrser, Newstrand, txStart, txEnd, cdsStart, cdsEnd, exonCount, Startser, Stopser, score, name2, cdsStartStat, cdsEndStat, exonFrames], axis=1, keys=['name', 'chrom', 'strand','txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount','exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'])
+		# Replace X and Y values in chrom column with numerical values 23 ands 24. This is required for sorting the columns in numerical order
+		df['chrom'].replace(['X', 'Y'], ['23', '24'], inplace =True)
+		# Convert the chrom, cdsStart and cdsEnd columns to integers. This is required for sorting the columns in numerical order
+		df['chrom'] = df['chrom'].astype(str).astype('int')
+		df['cdsStart'] = df['cdsStart'].astype(str).astype('int')
+		df['cdsEnd'] = df['cdsEnd'].astype(str).astype('int')
+		
+		df.sort(['chrom', 'cdsStart', 'cdsEnd'], inplace = True)
+		df['chrom'] = df['chrom'].astype(str)
+		df['chrom'].replace(['23', '24'], ['X', 'Y'], inplace =True)
 		df2 = df.fillna('NULL')
 		
 		# Ammend index header so it is in line with RefSeq format
@@ -306,6 +331,7 @@ class Bedfile:
 		
 		# call function to order the bedfile
 		self.order_refseq_file()
+
 		
 	def order_refseq_file(self):
 		#open self.outputfile
@@ -408,7 +434,9 @@ class Bedfile:
 				
 			except:
 				genepos = self.refGene.filter_by(name2=gene).filter(or_(self.refGene.chrom=='chrX')).all()
-			#print genepos
+			#exonframes = genepos.exonframes
+			
+
 			
 			# For each gene append the exon boundaries for each accession entry to the list "coding"
 			
@@ -525,7 +553,6 @@ class Bedfile:
 			poscds=genepos.cds
 			access = genepos.name.encode('ascii', 'ignore')
 			
-
 			try:
 				version = Liveaccversion().versionfinder(access)
 				versionenc = version.encode('ascii', 'ignore')
@@ -600,6 +627,7 @@ class Bedfile:
 				self.Accession.append(geneposition.name)
 				self.GeneName.append(geneposition.name2)
 				self.entrezid.append(geneposition.entrezid)
+				self.strand.append(geneposition.strand)
 				
 			#Generate Accession column				
 			#for row in positionsexons:
@@ -652,6 +680,7 @@ class Bedfile:
 				self.Accession.append(geneposition.name)
 				self.GeneName.append(geneposition.name2)
 				self.entrezid.append(geneposition.entrezid)
+				self.strand.append(geneposition.strand)
 				
 # 			#Generate Accession column				
 # 			for row in positionsexons:
@@ -731,6 +760,7 @@ class Bedfile:
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
 					self.entrezid.append(geneposition.entrezid)
+					self.strand.append(geneposition.strand)
 					#Define flanking region round Stop codon
 					if self.StopFlanking == True:
 						StopFlank = long(self.StopFlank)
@@ -773,6 +803,7 @@ class Bedfile:
 						self.Accession.append(geneposition.name)
 						self.GeneName.append(geneposition.name2)
 						self.entrezid.append(geneposition.entrezid)
+						self.strand.append(geneposition.strand)
 						counter += 1
 					else:
 						counter += 1
@@ -787,6 +818,7 @@ class Bedfile:
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
 					self.entrezid.append(geneposition.entrezid)
+					self.strand.append(geneposition.strand)
 					counter += 1
 			
 				else:
@@ -800,6 +832,7 @@ class Bedfile:
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
 					self.entrezid.append(geneposition.entrezid)
+					self.strand.append(geneposition.strand)
 		#self.codingup adds to the 5' end of the first coding exon
 		#self.codingup and self.codingdown add to the ends of each internal coding exon
 		#self.codingdownstream adds to the end of the 3'UTR of the last exon	
@@ -830,6 +863,7 @@ class Bedfile:
 						self.Accession.append(geneposition.name)
 						self.GeneName.append(geneposition.name2)
 						self.entrezid.append(geneposition.entrezid)
+						self.strand.append(geneposition.strand)
 						counter += 1
 					else:
 						counter += 1
@@ -844,6 +878,7 @@ class Bedfile:
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
 					self.entrezid.append(geneposition.entrezid)
+					self.strand.append(geneposition.strand)
 					counter += 1
 			
 				else:
@@ -856,7 +891,8 @@ class Bedfile:
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
-					self.entrezid.append(geneposition.entrezid)				
+					self.entrezid.append(geneposition.entrezid)
+					self.strand.append(geneposition.strand)			
 		#self.codingup adds to the 5' end of the first coding exon
 		#self.codingup and self.codingdown add to the ends of each internal coding exon
 		#self.codingdownstream adds to the end of the 3'UTR of the last exon	
@@ -881,6 +917,7 @@ class Bedfile:
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
 					self.entrezid.append(geneposition.entrezid)
+					self.strand.append(geneposition.strand)
 					counter += 1
 					
 				elif a > positionscds[0][0] and counter != (len(positionsexons) - 1):
@@ -894,6 +931,7 @@ class Bedfile:
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
 					self.entrezid.append(geneposition.entrezid)
+					self.strand.append(geneposition.strand)
 					counter += 1
 			
 				else:
@@ -904,6 +942,7 @@ class Bedfile:
 					self.Accession.append(geneposition.name)
 					self.GeneName.append(geneposition.name2)
 					self.entrezid.append(geneposition.entrezid)
+					self.strand.append(geneposition.strand)
 					if self.StartFlanking == True:
 							StartFlank = long(self.StartFlank)
 							exons5 = positionscds[-1][1] + StartFlank
@@ -930,9 +969,10 @@ class Bedfile:
 			for row in positionscds:
 				self.GeneName.append(geneposition.name2)
 				
-			#Generate entrezid column				
+			#Generate entrezid and strand column				
 			for row in positionscds:
 				self.entrezid.append(geneposition.entrezid)
+				self.strand.append(geneposition.strand)
 			
 			
 			
@@ -997,9 +1037,10 @@ class Bedfile:
 			for row in positionscds:
 				self.GeneName.append(geneposition.name2)
 				
-			#Generate entrezid column				
+			#Generate entrezid and strand columns				
 			for row in positionscds:
 				self.entrezid.append(geneposition.entrezid)
+				self.strand.append(geneposition.strand)
 			
 			
 			#Generate the Start and Stop columns
@@ -1081,6 +1122,8 @@ class Bedfile:
 			self.Acc.extend([geneposition.name] * len(mergeboundariespostflankingregion))
 			self.Gene.extend([geneposition.name2] * len(mergeboundariespostflankingregion))
 			self.entrezidmerge.extend([geneposition.entrezid] * len(mergeboundariespostflankingregion))
+			self.strandmerge.extend([geneposition.strand] * len(mergeboundariespostflankingregion))
+			
 			
 			# Once the final gene has been processed then re-define the lists to be outputted to the final bed file
 			if geneposition.name2 == self.lastgene:
@@ -1090,6 +1133,7 @@ class Bedfile:
 				self.Accession = self.Acc
 				self.GeneName = self.Gene
 				self.entrezid = self.entrezidmerge
+				self.strand = self.strandmerge
 		
 			
 #python Cruzdb.py --coding 10 --transcripts NM_000546 NM_004360 NM_000059 NM_000314 NM_007294 NM_000455
