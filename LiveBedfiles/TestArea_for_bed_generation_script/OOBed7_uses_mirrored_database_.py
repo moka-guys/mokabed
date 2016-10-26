@@ -171,6 +171,9 @@ class Bedfile:
 		
 		# Concatanate the list of pandas series into a single dataframe which is to be outed as a text file
 		df = pd.concat([NMacc, Chrser, Newstrand, txStart, txEnd, cdsStart, cdsEnd, exonCount, Startser, Stopser, score, name2, cdsStartStat, cdsEndStat, exonFrames], axis=1, keys=['name', 'chrom', 'strand','txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount','exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'])
+		df.score = df.score.astype(str)
+		df.cdsStartStat = df.cdsStartStat.astype(str)
+		df.cdsEndStat = df.cdsEndStat.astype(str)
 		# Replace X and Y values in chrom column with numerical values 23 ands 24. This is required for sorting the columns in numerical order
 		df['chrom'].replace(['X', 'Y'], ['23', '24'], inplace =True)
 		# Convert the chrom, cdsStart and cdsEnd columns to integers. This is required for sorting the columns in numerical order
