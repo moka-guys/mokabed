@@ -449,7 +449,7 @@ class Bedfile:
 			# For each gene append the exon boundaries for each accession entry to the list "coding"
 			
 			# Generate an output file showing the list of gene symbols not in RefGene
-			with open("/home/ryank/test/Pan492_2_4_Synonym.txt",'a') as notinrefgene:
+			with open(synonym,'a') as notinrefgene:
 				if not genepos:
 					notinrefgene.write(gene + "\n")
 			
