@@ -412,10 +412,15 @@ class Bedfile:
 		#refGene = g.refGene
 
 		self.calldb()
-
-		fr = open('Synonymsnotinrefgene','w')
+		
+		# Synonyms not in refgene file
+		synonym=os.path.splitext(self.outputfile)[0] + "_Synonym.txt"
+		
+		synonym_nocoding=os.path.splitext(self.outputfile)[0] + "_Synonymnocoding.txt"
+		
+		fr = open(synonym,'w')
 		fr.close()
-		fc = open('Synonymsnocodingregions', 'w')
+		fc = open(synonym_nocoding, 'w')
 		fc.close()
 		genepos = self.refGene.filter_by(name2="NOX4MOCK").filter(or_(self.refGene.chrom=='chr1', self.refGene.chrom=='chr2', self.refGene.chrom=='chr3', self.refGene.chrom=='chr4', self.refGene.chrom=='chr5', self.refGene.chrom=='chr6', self.refGene.chrom=='chr7', self.refGene.chrom=='chr8', self.refGene.chrom=='chr9', self.refGene.chrom=='chr10', self.refGene.chrom=='chr11', self.refGene.chrom=='chr12', self.refGene.chrom=='chr13', self.refGene.chrom=='chr14', self.refGene.chrom=='chr15', self.refGene.chrom=='chr16', self.refGene.chrom=='chr17', self.refGene.chrom=='chr18', self.refGene.chrom=='chr19', self.refGene.chrom=='chr20', self.refGene.chrom=='chr21', self.refGene.chrom=='chr22', self.refGene.chrom=='chrX', self.refGene.chrom=='chrY')).all()
 		
@@ -444,7 +449,7 @@ class Bedfile:
 			# For each gene append the exon boundaries for each accession entry to the list "coding"
 			
 			# Generate an output file showing the list of gene symbols not in RefGene
-			with open('Synonymsnotinrefgene','a') as notinrefgene:
+			with open("/home/ryank/test/Pan492_2_4_Synonym.txt",'a') as notinrefgene:
 				if not genepos:
 					notinrefgene.write(gene + "\n")
 			
@@ -475,7 +480,7 @@ class Bedfile:
 				entrezid = "".join(str(val) for val in set(entrezlist))
 				print entrezid
 
-			with open('Synonymsnocodingregions','a') as nocoding:
+			with open(synonym_nocoding,'a') as nocoding:
 				if not mergecds:
 					nocoding.write(gene + "\n")
 			
@@ -1319,10 +1324,15 @@ def UTR(argv):
 		log.write("\n\n cruzdb module file path: %s" % cruzdb.__file__)
 		if str(bedfile.calldb()) == "Genome('mysql://genome@genome-mysql.cse.ucsc.edu/hg19')":
 			log.write("\n\n Querying Live UCSC database: %s and table: %s" % (bedfile.g, bedfile.refGene))
-		sub=subprocess.Popen(['git', 'describe', '--tags'], stdout=subprocess.PIPE)
-		gitversion = sub.stdout.read().strip('\n')
-		log.write("\n\n" + "version as defined by git tag = " + gitversion)
-		#from cruzdb import Genome
+			#sub=subprocess.Popen(['git', 'describe', '--tags'], stdout=subprocess.PIPE)
+			##process = subprocess.Popen(command,stdout=subprocess.PIPE, shell=True)
+     		##print proc_stdout
+     		##proc_stdout = process.communicate()[0].strip()
+     	 	sub=subprocess.Popen('cd /home/ryank/mokabed; git describe --tags', stdout=subprocess.PIPE, shell=True)
+     	  	gitversion = sub.communicate()[0].strip('\n')
+     	   	#gitversion = sub.stdout.read().strip('\n')
+     		log.write("\n\n" + "version as defined by git tag = " + gitversion)
+			 #from cruzdb import Genome
 	else:
 		print "WARNING you need to define --logfile"
 		bedfile.usage()
