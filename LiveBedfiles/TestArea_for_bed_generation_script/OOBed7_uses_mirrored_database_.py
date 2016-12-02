@@ -412,7 +412,9 @@ class Bedfile:
 		#refGene = g.refGene
 
 		self.calldb()
-		
+		#Create instances of the classes holding the tables to be queried (creating instances increases the speed of the script as it doesn't have to keep re-reading the contents of the table in on every loop 
+		liveacc = Liveaccversion()
+		liveref = LiveRefLink()
 		# Synonyms not in refgene file
 		synonym=os.path.splitext(self.outputfile)[0] + "_Synonym.txt"
 		
@@ -463,11 +465,11 @@ class Bedfile:
 				#print access
 				
 				# Generate the version number for each accession number
-				version = Liveaccversion().versionfinder(access)
+				version = liveacc.versionfinder(access)
 				versionenc = version.encode('ascii', 'ignore')
 				namelist.append(versionenc)
 				# Generate the entrezid for the gene symbol inserted based on its associated NM accesions
-				entrez = LiveRefLink().entrezidretrieve(access)
+				entrez = liveref.entrezidretrieve(access)
 				entrezlist.append(entrez)
 				uniqueentrez = len(set(entrezlist))
 										
@@ -539,6 +541,10 @@ class Bedfile:
 		#refGene = g.refGene
 		
 		self.calldb()
+		#Create instances of the classes holding the tables to be queried (creating instances increases the speed of the script as it doesn't have to keep re-reading the contents of the table in on every loop 
+		liveacc = Liveaccversion()
+		liveref = LiveRefLink()
+		
 
 		bed = pd.read_table(self.transcripts, header= 0)
 		#The 2 lines below show you how to query the live database at UCSC 
@@ -562,7 +568,7 @@ class Bedfile:
 			access = genepos.name.encode('ascii', 'ignore')
 			
 			try:
-				version = Liveaccversion().versionfinder(access)
+				version = liveacc.versionfinder(access)
 				versionenc = version.encode('ascii', 'ignore')
 				
 			except ValueError:
@@ -574,7 +580,7 @@ class Bedfile:
 			
 			
 			# Generate the entrezid for the gene symbol inserted based on its associated NM accesions
-			entrez = LiveRefLink().entrezidretrieve(access)
+			entrez = liveref.entrezidretrieve(access)
 			
 				
 			class atrib():
