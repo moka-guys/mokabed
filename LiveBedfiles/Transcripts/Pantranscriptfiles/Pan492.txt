@@ -1,4 +1,4 @@
-	Accession
+GeneSymbol	Accession
 DDX11L1	
 WASH7P	
 CD99P1	
