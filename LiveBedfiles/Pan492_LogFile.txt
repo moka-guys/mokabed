@@ -1,0 +1,19 @@
+Time Stamp:2016-12-06 19:59:39.321601
+Command arguments executed:
+RefSeq table format version generated as /home/ryank/mokabed/LiveBedfiles/Pan492dataRefSeqFormat.txt
+/home/ryank/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --up 5 --down 5 --codingup 5 --codingdown 5 --outputfile /home/ryank/mokabed/LiveBedfiles/Pan492data.bed --logfile /home/ryank/mokabed/LiveBedfiles/Pan492_LogFile.txt --minuschr --mergeboundaries --genes /home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan492.txt 
+
+ Python version: 2.7 (r27:82500, Oct 25 2012, 12:29:43) 
+[GCC 4.4.6 20110731 (Red Hat 4.4.6-3)]
+
+ getopt module file path: /apps/python/2.7/lib/python2.7/getopt.pyc
+
+ os module file path: /apps/python/2.7/lib/python2.7/os.pyc
+
+ pd class file path: /apps/python/2.7/lib/python2.7/site-packages/pandas/__init__.pyc
+
+ cruzdb module file path: /apps/python/2.7/lib/python2.7/site-packages/cruzdb/__init__.pyc
+
+ Querying Live UCSC database: Genome('mysql://genome@genome-mysql.cse.ucsc.edu/hg19') and table: <class 'cruzdb.sqlsoup.refGene'>
+
+version as defined by git tag = v1.1-29-g02797b4

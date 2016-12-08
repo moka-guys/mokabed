@@ -1,0 +1,4 @@
+Command issued to generate Pan493data.bed.
+cat /home/ryank/mokabed/LiveBedfiles/Pan468data.bed <(tail -n +3 /home/ryank/mokabed/LiveBedfiles/Pan492data.bed) > /home/ryank/mokabed/LiveBedfiles/Pan493data.bed
+
+2016-12-07_15:56:09

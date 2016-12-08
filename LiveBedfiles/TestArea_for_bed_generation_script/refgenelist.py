@@ -6,9 +6,11 @@ Created on 2 Dec 2016
 
 import cruzdb, os
 import pandas as pd
+from OOBed7_uses_mirrored_database_ import Bedfile 
 
 def refgenelist():
     
+
     ###################################### Generate list of NM gene symbols includes genes for which there exist NR accessions also #############
     g = cruzdb.Genome(db='hg19')
     ##Returns all Gene symbols in name2 column (this contains repeats and non-coding gene symbols)
@@ -134,10 +136,41 @@ def refgenelist():
     
     
     return len(dfNR_minusNMgenes_reindex), len(dfmerge), len(df9[df9['Boolean'] == True])
+    
+def convert(v):
+	try:
+		return int(v)
+	except ValueError:
+		return v
+
+
+def concatenaterefseqfiles():
+
+    #Take the RefSeq files that have been generated 
+    refseq1 = pd.read_table('/home/ryank/mokabed/LiveBedfiles/Pan492dataRefSeqFormat.txt', header= 0)
+    refseq2 = pd.read_table('/home/ryank/mokabed/LiveBedfiles/Pan468dataRefSeqFormat.txt', header= 0)
+    # Append the dataframes together
+    combinedrefseq = refseq1.append(refseq2)
+    # Alter number values to integers in chrom column
+    chromvals = [convert(val) for val in combinedrefseq['chrom'].values]
+    print len(chromvals)
+    print len(combinedrefseq['chrom'].values)
+    # Replace chrom column with formatted list chromvals
+    mapping = {'1' : 1, '2' : 2, '3' : 3, '4' : 4, '5' : 5, '6' : 6, '7' : 7,  '8' : 8, '9' : 9, '10' : 10, '11' : 11, '12' : 12, '13' : 13, '14' : 14, '15' : 15,
+'16' :16, '17' : 17, '18' : 18, '19' : 19, '20' : 20, '21' : 21, '22' : 22} 
+    combinedrefseq.replace({'chrom' : mapping}, inplace=True)
+    #Reorder refseq file based on chrom, cdsStart, cdsStop
+    result = combinedrefseq.sort(['chrom', 'cdsStart', 'cdsEnd'], ascending=[1, 1, 1])
+    result.set_index(['#bin'], inplace=True)
+    #result = combinedrefseq.sort_values(['chrom', 'cdsStart', 'cdsEnd'], ascending=[1, 1, 1])  # updated version of pandas df.sort()
+    #Write file out to csv file
+    result.to_csv(path_or_buf='/home/ryank/mokabed/LiveBedfiles/Pan493dataRefSeqFormat.txt' ,sep='\t')
+    
      
 
 
     
     
 if __name__ == '__main__':
-    print refgenelist()
+    #print refgenelist()
+    concatenaterefseqfiles()
