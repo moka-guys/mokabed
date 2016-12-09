@@ -1,0 +1,16 @@
+Command issued to generate Pan493data.bed.
+cat <(tail -n +3 /home/ryank/mokabed/LiveBedfiles/Pan468data.bed) <(tail -n +3 /home/ryank/mokabed/LiveBedfiles/Pan492data.bed) > /home/ryank/mokabed/LiveBedfiles/Pan493dataunsorted.bed
+
+cat /home/ryank/mokabed/LiveBedfiles/Pan493dataunsorted.bed | sort -n -k1,1V -k2,2n -k3,3n > /home/ryank/mokabed/LiveBedfiles/Pan493data.bed
+
+sed -i "1 i #Chr\tStart\tStop\tEntrexID\t\t\t\t\t\t\t\t\t\tGeneAccession" /home/ryank/mokabed/LiveBedfiles/Pan493data.bed
+
+date=2016-12-08_15:52:51; sed -i "1 i #2016-12-08_09:39:38" Pan493data.bed
+
+rm /home/ryank/mokabed/LiveBedfiles/Pan493dataunsorted.bed
+
+
+Ran concatenaterefseqfiles function from refgenelist.py to concatenate Pan492dataRefSeqFormat.txt and Pan468dataRefSeqFormat.txt files to generate Pan493dataRefSeqFormat.txt.
+Ran concatenaterefseqfilescheck function to ensure the RefSeq file has been concatenated correctly by checking against an orthogonal method of generating the file
+
+
