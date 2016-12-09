@@ -5,7 +5,7 @@ Created on 2 Dec 2016
 '''
 
 import cruzdb, os
-import pandas as pd
+import pandas as pd, subprocess
 from OOBed7_uses_mirrored_database_ import Bedfile 
 
 def refgenelist():
@@ -151,6 +151,7 @@ def concatenaterefseqfiles():
     refseq2 = pd.read_table('/home/ryank/mokabed/LiveBedfiles/Pan468dataRefSeqFormat.txt', header= 0)
     # Append the dataframes together
     combinedrefseq = refseq1.append(refseq2)
+    
     # Alter number values to integers in chrom column
     chromvals = [convert(val) for val in combinedrefseq['chrom'].values]
     print len(chromvals)
@@ -160,17 +161,51 @@ def concatenaterefseqfiles():
 '16' :16, '17' : 17, '18' : 18, '19' : 19, '20' : 20, '21' : 21, '22' : 22} 
     combinedrefseq.replace({'chrom' : mapping}, inplace=True)
     #Reorder refseq file based on chrom, cdsStart, cdsStop
-    result = combinedrefseq.sort(['chrom', 'cdsStart', 'cdsEnd'], ascending=[1, 1, 1])
-    result.set_index(['#bin'], inplace=True)
+    result = combinedrefseq.sort(['chrom', 'cdsStart', 'cdsEnd', '#bin'], ascending=[1, 1, 1, 1])
+    
     #result = combinedrefseq.sort_values(['chrom', 'cdsStart', 'cdsEnd'], ascending=[1, 1, 1])  # updated version of pandas df.sort()
+    result.set_index(['#bin'], inplace=True)
+    result1 = result.applymap(lambda x: str(x))
+    finalresult1 = result1.fillna('NULL')
     #Write file out to csv file
-    result.to_csv(path_or_buf='/home/ryank/mokabed/LiveBedfiles/Pan493dataRefSeqFormat.txt' ,sep='\t')
-    
-     
+    finalresult1.to_csv(path_or_buf='/home/ryank/mokabed/LiveBedfiles/Pan493dataRefSeqFormat.txt' ,sep='\t')
+    return '/home/ryank/mokabed/LiveBedfiles/Pan493dataRefSeqFormat.txt'
 
+def concatenaterefseqfilescheck(refseqfile):
 
+    #Test generation of concatenated refseq file
+    #Alternative method of generating concatenated refseq file
+    filenames = ['/home/ryank/mokabed/LiveBedfiles/Pan492dataRefSeqFormat.txt', '/home/ryank/mokabed/LiveBedfiles/Pan468dataRefSeqFormat.txt']
+    out = '/home/ryank/test/Pan493dataRefSeqFormattest.txt'
+    with open(out, 'w') as outfile:
+    	for fname in filenames:
+        	with open(fname) as infile:
+	    		if filenames.index(fname) == 1:
+            			for i, line in enumerate(infile):
+					if i == 0:
+						pass
+					else:
+                				outfile.write(line)
+	    		else:
+	    			for line in infile:
+                			outfile.write(line)
+    finaloutfile = '/home/ryank/test/Pan493dataRefSeqFormattestfinal.txt'
+    # sort refseq file based on chrom, cdsStart, cdsStop
+    #with open(finaloutfile, "w") as finalout:
+    with open(out, 'r') as outfile:
+    	header = outfile.readline()
     
-    
+    p1 = subprocess.Popen('tail -n +2 "%s" | sort -k3,3V -k7,7n -k8,8n -k1,1n > "%s"'% (out, finaloutfile), shell=True)
+    # Need to wait until p1 has finished before p2 can begin
+    p1.wait()
+    # Add header
+    p2 = subprocess.Popen("sed -i '1 i\%s' %s"% (header, finaloutfile), shell=True)
+    # Need to wait until p2 has finished before p3 can begin
+    p2.wait()	
+    # Perform diff of refseq files	    
+    p3 = subprocess.Popen("diff  %s %s > /home/ryank/test/filecheck.txt"% (refseqfile, finaloutfile), shell=True)
+
 if __name__ == '__main__':
     #print refgenelist()
-    concatenaterefseqfiles()
+    refseq = concatenaterefseqfiles()
+    concatenaterefseqfilescheck(refseq)

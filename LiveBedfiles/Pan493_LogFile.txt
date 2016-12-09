@@ -11,5 +11,6 @@ rm /home/ryank/mokabed/LiveBedfiles/Pan493dataunsorted.bed
 
 
 Ran concatenaterefseqfiles function from refgenelist.py to concatenate Pan492dataRefSeqFormat.txt and Pan468dataRefSeqFormat.txt files to generate Pan493dataRefSeqFormat.txt.
+Ran concatenaterefseqfilescheck function to ensure the RefSeq file has been concatenated correctly by checking against an orthogonal method of generating the file
 
 
