@@ -70,16 +70,6 @@ from sambambaconvert import Sambamba
 
 
 
-# def geneobjects (genepositionlists):
-# 	def dec_flankingregion(func):
-# 		def func_wrapper (*args, **kwargs):
-# 			for gene in genepositionlists:
-# 				return func(geneposition = gene, positionsexons = gene.exons, positionscds = gene.cds)
-# 		return func_wrapper
-# 	return dec_flankingregion
-
-
-
 class Bedfile:
 
 	def __init__(self):
@@ -1415,7 +1405,6 @@ def UTR(argv):
 	if bedfile.mergeboundariesboolean == True and bedfile.genelist == True:
 		for val in (bedfile.mergeboundaries()):
 			for v in val:
-				print v
 				bedfile.flankingregion(geneposition=v, positionsexons=v.exons, positionscds=v.cds)
 		
 	if bedfile.coordinates == True:
