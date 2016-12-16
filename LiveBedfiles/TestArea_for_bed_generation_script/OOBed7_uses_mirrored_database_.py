@@ -9,6 +9,7 @@ from copy import deepcopy
 import subprocess
 import re
 import numpy as np
+from sambambaconvert import Sambamba
 
 #Need to module load python/2.7
 #Need to provide arguments 'up' to include the 5'UTR and 'down' to include the 3'UTR and the associated list of accession numbers of the associated transcripts
@@ -68,6 +69,7 @@ import numpy as np
 #python OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 20 --logfile /home/kevin/Documents/NGS_Pipeline/BedFiles/NewCM_LogFile.txt --outputfile /home/kevin/Documents/NGS_Pipeline/BedFiles/NewCMdata.bed --transcripts /home/kevin/Documents/NGS_Pipeline/BedFiles/Transcripts/CMpanelTranscriptsNew.txt
 
 
+
 class Bedfile:
 
 	def __init__(self):
@@ -120,6 +122,7 @@ class Bedfile:
 		self.minuschr = ''
 		self.strand = []
 		self.strandmerge = []
+		self.listgeneposition = []
 	
 
 	def usage(self):
@@ -141,19 +144,19 @@ class Bedfile:
 		chr = []
 
 		# Generate columns in Pandas series format which will be used to generate the RefSeq columns
-		Chrser = bed.groupby(['EntrezID'])['#Chr'].apply(lambda x: ''.join(sorted(set(map(str, list(x))))))
-		Startser =bed.groupby(['EntrezID'])['Start'].apply(lambda x: ",".join(map(str, list(x))))
-		Stopser =bed.groupby(['EntrezID'])['Stop'].apply(lambda x: ",".join(map(str, list(x))))
-		NMacc = bed.groupby(['EntrezID'])['Gene_Accession'].apply(lambda x: ''.join(sorted(set(list(x)))))
-		exonCount = bed.groupby(['EntrezID'])['Start'].apply(len)
-		Stranddf = pd.DataFrame(zip(self.strand, self.entrezid),  columns = ["Strand","EntrezID"])
-		Newstrand = Stranddf.groupby(['EntrezID'])["Strand"].apply(lambda x: ''.join(sorted(set(map(str, list(x))))))
-		txStart = bed.groupby(['EntrezID'])['Start'].apply(lambda x: list(x)[0])
-		txEnd = bed.groupby(['EntrezID'])['Stop'].apply(lambda x: list(x)[-1])
-		cdsStart = bed.groupby(['EntrezID'])['Start'].apply(lambda x: int(list(x)[0]))
-		cdsEnd = bed.groupby(['EntrezID'])['Stop'].apply(lambda x: int(list(x)[-1]))
+		Chrser = bed.groupby(['EntrezID', '#Chr'])['#Chr'].apply(lambda x: ''.join(sorted(set(map(str, list(x))))))
+		Startser =bed.groupby(['EntrezID', '#Chr'])['Start'].apply(lambda x: ",".join(map(str, list(x))))
+		Stopser =bed.groupby(['EntrezID', '#Chr'])['Stop'].apply(lambda x: ",".join(map(str, list(x))))
+		NMacc = bed.groupby(['EntrezID', '#Chr'])['Gene_Accession'].apply(lambda x: ''.join(sorted(set(list(x)))))
+		exonCount = bed.groupby(['EntrezID', '#Chr'])['Start'].apply(len)
+		Stranddf = pd.DataFrame(zip(self.strand, self.entrezid, self.Chr),  columns = ["Strand","EntrezID", "#Chr"])
+		Newstrand = Stranddf.groupby(['EntrezID', "#Chr"])["Strand"].apply(lambda x: ''.join(sorted(set(map(str, list(x))))))
+		txStart = bed.groupby(['EntrezID', '#Chr'])['Start'].apply(lambda x: list(x)[0])
+		txEnd = bed.groupby(['EntrezID', '#Chr'])['Stop'].apply(lambda x: list(x)[-1])
+		cdsStart = bed.groupby(['EntrezID', '#Chr'])['Start'].apply(lambda x: int(list(x)[0]))
+		cdsEnd = bed.groupby(['EntrezID', '#Chr'])['Stop'].apply(lambda x: int(list(x)[-1]))
 		score = pd.Series()
-		name2 = bed.groupby(['EntrezID'])['Gene_Accession'].apply(lambda x: ''.join(sorted(set(list(x)))).split(';')[0])
+		name2 = bed.groupby(['EntrezID', '#Chr'])['Gene_Accession'].apply(lambda x: ''.join(sorted(set(list(x)))).split(';')[0])
 		cdsStartStat = pd.Series()
 		cdsEndStat = pd.Series()
 		exonFrameslist = []
@@ -166,8 +169,7 @@ class Bedfile:
 		#Exonframedf = pd.DataFrame(zip(self.strand, self.entrezid),  columns = ["Strand","EntrezID"])
 		exonFrames = pd.Series(exonFrameslist, index = Chrser.index)
 		
-		
-		
+		l = [NMacc, Chrser, Newstrand, txStart, txEnd, cdsStart, cdsEnd, exonCount, Startser, Stopser, score, name2, cdsStartStat, cdsEndStat, exonFrames]
 		
 		# Concatanate the list of pandas series into a single dataframe which is to be outed as a text file
 		df = pd.concat([NMacc, Chrser, Newstrand, txStart, txEnd, cdsStart, cdsEnd, exonCount, Startser, Stopser, score, name2, cdsStartStat, cdsEndStat, exonFrames], axis=1, keys=['name', 'chrom', 'strand','txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount','exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'])
@@ -185,7 +187,11 @@ class Bedfile:
 		df['chrom'] = df['chrom'].astype(str)
 		df['chrom'].replace(['23', '24'], ['X', 'Y'], inplace =True)
 		df2 = df.fillna('NULL')
+		df2 = df2.reset_index().drop("#Chr", axis=1)
+		df2.set_index('EntrezID', inplace=True)
+		#df2.reset_index(inplace=True).drop("#Chr", axis=1)
 		
+
 		# Ammend index header so it is in line with RefSeq format
 		df2.index.name = "#bin"
 		
@@ -279,6 +285,22 @@ class Bedfile:
 		
 	def writefile(self):
 	#Write columns to a csv bed file
+	# Once the final gene has been processed then re-define the lists to be outputted to the final bed file
+		if self.Startmerge:
+			self.Start = self.Startmerge
+		if self.Stopmerge:	
+			self.Stop = self.Stopmerge
+		if self.Chrom:
+			self.Chr = self.Chrom
+		if self.Acc:
+			self.Accession = self.Acc
+		if self.Gene:
+			self.GeneName = self.Gene
+		if self.entrezidmerge:
+			self.entrezid = self.entrezidmerge
+		if self.strandmerge:
+			self.strand = self.strandmerge
+	
 		Chr = pd.Series(self.Chr)	
 		Start = pd.Series(self.Start)
 		Stop = pd.Series(self.Stop)
@@ -296,11 +318,12 @@ class Bedfile:
 		# If --minuschr command is issued
 		if self.minuschr:
 			Chrremoved = map( lambda x: x.replace( 'chr', ''), Chr)
-			Chr = Chrremoved
+			self.Chr = Chrremoved
 		
 		Start = Start.values
 		Stop = Stop.values
-		self.bedfile = pd.DataFrame(zip(Start, Stop, Entrezid, Gene_Acc),  columns = ["Start", "Stop", "EntrezID", "Gene_Accession"], index=[Chr])
+		
+		self.bedfile = pd.DataFrame(zip(Start, Stop, Entrezid, Gene_Acc),  columns = ["Start", "Stop", "EntrezID", "Gene_Accession"], index=[self.Chr])
 		
 		#bedfile = pd.DataFrame(zip(Start, Stop, GeneName),  columns = ["Start", "Stop", "GeneName"], index=[Chr])
 
@@ -410,7 +433,7 @@ class Bedfile:
 		#The 2 lines below show you how to query the live database at UCSC 
 		#g = cruzdb.Genome(db="hg19")
 		#refGene = g.refGene
-
+		
 		self.calldb()
 		#Create instances of the classes holding the tables to be queried (creating instances increases the speed of the script as it doesn't have to keep re-reading the contents of the table in on every loop 
 		liveacc = Liveaccversion()
@@ -436,14 +459,15 @@ class Bedfile:
 			genepos = []
 			posexons=[]
 			uniqueentrez = ''
+			
 		#If using pandas 0.13.1 or greater use for loop in line below
 		#for index, gene in bed[[0]].itertuples():
 			
 			try:
-				genepos = self.refGene.filter_by(name2=gene).filter(or_(self.refGene.chrom=='chr1', self.refGene.chrom=='chr2', self.refGene.chrom=='chr3', self.refGene.chrom=='chr4', self.refGene.chrom=='chr5', self.refGene.chrom=='chr6', self.refGene.chrom=='chr7', self.refGene.chrom=='chr8', self.refGene.chrom=='chr9', self.refGene.chrom=='chr10', self.refGene.chrom=='chr11', self.refGene.chrom=='chr12', self.refGene.chrom=='chr13', self.refGene.chrom=='chr14', self.refGene.chrom=='chr15', self.refGene.chrom=='chr16', self.refGene.chrom=='chr17', self.refGene.chrom=='chr18', self.refGene.chrom=='chr19', self.refGene.chrom=='chr20', self.refGene.chrom=='chr21', self.refGene.chrom=='chr22', self.refGene.chrom=='chrX', self.refGene.chrom=='chrY')).all()
+				geneobj = self.refGene.filter_by(name2=gene).filter(or_(self.refGene.chrom=='chr1', self.refGene.chrom=='chr2', self.refGene.chrom=='chr3', self.refGene.chrom=='chr4', self.refGene.chrom=='chr5', self.refGene.chrom=='chr6', self.refGene.chrom=='chr7', self.refGene.chrom=='chr8', self.refGene.chrom=='chr9', self.refGene.chrom=='chr10', self.refGene.chrom=='chr11', self.refGene.chrom=='chr12', self.refGene.chrom=='chr13', self.refGene.chrom=='chr14', self.refGene.chrom=='chr15', self.refGene.chrom=='chr16', self.refGene.chrom=='chr17', self.refGene.chrom=='chr18', self.refGene.chrom=='chr19', self.refGene.chrom=='chr20', self.refGene.chrom=='chr21', self.refGene.chrom=='chr22', self.refGene.chrom=='chrX', self.refGene.chrom=='chrY')).all()
 				
 			except:
-				genepos = self.refGene.filter_by(name2=gene).filter(or_(self.refGene.chrom=='chrX')).all()
+				geneobj = self.refGene.filter_by(name2=gene).filter(or_(self.refGene.chrom=='chrX')).all()
 			#exonframes = genepos.exonframes
 			
 
@@ -452,68 +476,96 @@ class Bedfile:
 			
 			# Generate an output file showing the list of gene symbols not in RefGene
 			with open(synonym,'a') as notinrefgene:
-				if not genepos:
+				if not geneobj:
 					notinrefgene.write(gene + "\n")
 			
-			for posexons in genepos:
-				if posexons.cds:
-					cds = posexons.cds
-				mergecds.extend(posexons.cds)
-				mergeexon.extend(posexons.exons)
-				#print posexons.name.encode('ascii', 'ignore')
-				access = posexons.name.encode('ascii', 'ignore')
-				#print access
-				
-				# Generate the version number for each accession number
-				version = liveacc.versionfinder(access)
-				versionenc = version.encode('ascii', 'ignore')
-				namelist.append(versionenc)
+			#Generate a list of gene objects splitting the object across chromosomes if gene maps to more than one chromosome
+			# Create a list of chromosomes for where the gene maps
+			chrs = list(set([posexons.chrom for posexons in geneobj]))
+			# Generate a set of lists where the index of the dictionary refers to a specific list
+			chrlists = {}
+			for val in chrs:
+				chrlists[val] = []
+
+			# Populate each chromosome specific list with gene objects for that chromosome
+			for posexons in geneobj:
+				chrlists[posexons.chrom].append(posexons)
+			
+
+
+			#Iterate over each chromosome specific gene object
+			self.listgeneposition = []
+
+			for chromoz in chrlists:
+				mergecds = []
+				mergeexon = []
+				namelist = []
+				entrezlist = []
+				mergecdsboundaries = []
+				mergeexonboundaries = []
+				for posexons in chrlists[chromoz]:
+
+					if posexons.cds:
+						cds = posexons.cds
+					mergecds.extend(posexons.cds)
+					mergeexon.extend(posexons.exons)
+					#print posexons.name.encode('ascii', 'ignore')
+					access = posexons.name.encode('ascii', 'ignore')
+					#print access
+					
+					# Generate the version number for each accession number
+					version = liveacc.versionfinder(access)
+					versionenc = version.encode('ascii', 'ignore')
+					namelist.append(versionenc)
 				# Generate the entrezid for the gene symbol inserted based on its associated NM accesions
 				entrez = liveref.entrezidretrieve(access)
 				entrezlist.append(entrez)
 				uniqueentrez = len(set(entrezlist))
 										
-			# If statement indicates if more than one entrez id has been identified for a gene symbol
-			# If so a ValueError is raised and a message indicating for which gene symbol this occurred
-			if uniqueentrez != 1:
-				raise ValueError('uniqueentrez list shows more than one entrez id was retieved for the gene symbol %s' % (gene))
-			else:
-				# entrezid generated
-				entrezid = "".join(str(val) for val in set(entrezlist))
-				print entrezid
+				# If statement indicates if more than one entrez id has been identified for a gene symbol
+				# If so a ValueError is raised and a message indicating for which gene symbol this occurred
+				if uniqueentrez != 1:
+					raise ValueError('uniqueentrez list shows more than one entrez id was retieved for the gene symbol %s' % (gene))
+				else:
+					# entrezid generated
+					entrezid = "".join(str(val) for val in set(entrezlist))
+					print entrezid
 
-			with open(synonym_nocoding,'a') as nocoding:
-				if not mergecds:
-					nocoding.write(gene + "\n")
-			
-			#Generate output file showing a list of gene symbols which don't have a coding region annoated
-			#if not cds:
-			#	with open('Synonymsnocodingregions', 'a') as nocodingregions:
-			#		nocodingregions.write(gene + "\n")
-			cds = []
+				with open(synonym_nocoding,'a') as nocoding:
+					if not mergecds:
+						nocoding.write(gene + "\n")
+				
+				#Generate output file showing a list of gene symbols which don't have a coding region annoated
+				#if not cds:
+				#	with open('Synonymsnocodingregions', 'a') as nocodingregions:
+				#		nocodingregions.write(gene + "\n")
+				cds = []
+					
+					
+				
+				# Submit the list "coding as an argument to the function "merge_ranges" which will remove duplicate entries and generate the maximum non-verlapping set of intervals eg ((1,5),(3,7),(4,9)) would be merged into the interval (1,9)
+				mergecdsboundaries = [val for val in self.merge_ranges(mergecds)]
+				#yield mergecdsboundaries
+				mergeexonboundaries = [val for val in self.merge_ranges(mergeexon)]
+				#Reset the attributes to the geneposition class
+				class atrib():
+					pass
+				geneposition = atrib()
+				setattr(geneposition, "cds", mergecdsboundaries)
+				setattr(geneposition, "exons", mergeexonboundaries)
+				setattr(geneposition, "name", namelist)
+				setattr(geneposition, "name2", posexons.name2.encode('ascii', 'ignore'))
+				setattr(geneposition, "chrom", posexons.chrom)
+				setattr(geneposition, "strand", posexons.strand)
+				setattr(geneposition, "entrezid", entrez)
 				
 				
-			
-			# Submit the list "coding as an argument to the function "merge_ranges" which will remove duplicate entries and generate the maximum non-verlapping set of intervals eg ((1,5),(3,7),(4,9)) would be merged into the interval (1,9)
-			mergecdsboundaries = [val for val in self.merge_ranges(mergecds)]
-			#yield mergecdsboundaries
-			mergeexonboundaries = [val for val in self.merge_ranges(mergeexon)]
-			#Reset the attributes to the geneposition class
-			class atrib():
-				pass
-			geneposition = atrib()
-			setattr(geneposition, "cds", mergecdsboundaries)
-			setattr(geneposition, "exons", mergeexonboundaries)
-			setattr(geneposition, "name", namelist)
-			setattr(geneposition, "name2", posexons.name2.encode('ascii', 'ignore'))
-			setattr(geneposition, "chrom", posexons.chrom)
-			setattr(geneposition, "strand", posexons.strand)
-			setattr(geneposition, "entrezid", entrez)
-			
-			
-			#self.flankingregion(geneposition = geneposition, positionsexons= geneposition.exons, positionscds = geneposition.cds)
-			#yield "here",mergecds
-			yield geneposition
+				#self.flankingregion(geneposition = geneposition, positionsexons= geneposition.exons, positionscds = geneposition.cds)
+				#yield "here",mergecds
+				self.listgeneposition.append(geneposition)
+			chrlists.clear()
+			yield self.listgeneposition
+
 			
 	def merge_ranges(self, ranges):
 		ranges = iter(sorted(ranges))
@@ -596,7 +648,6 @@ class Bedfile:
 			
 			
 			self.flankingregion(geneposition = geneposition, positionsexons= geneposition.exons, positionscds = geneposition.cds)
-
 
 	def flankingregion(self, geneposition, positionsexons, positionscds):
 		"""
@@ -1108,8 +1159,9 @@ class Bedfile:
 					
 		else:
 			print "You need to provide --coding arguments"
+
 		#print self.Chr
-		
+		#print len(self.Start), len(self.Chr)
 		# Re-run data through merge_ranges to ensure overlapping regions are merged
 		# Run following section if mergeboundaries command is set
 		if self.mergeboundariesboolean == True:
@@ -1133,21 +1185,15 @@ class Bedfile:
 			self.Startmerge.extend(startmerge)
 			self.Stopmerge.extend(stopmerge)
 			self.Chrom.extend([geneposition.chrom] * len(mergeboundariespostflankingregion))
+			print len(mergeboundariespostflankingregion)
 			self.Acc.extend([geneposition.name] * len(mergeboundariespostflankingregion))
 			self.Gene.extend([geneposition.name2] * len(mergeboundariespostflankingregion))
 			self.entrezidmerge.extend([geneposition.entrezid] * len(mergeboundariespostflankingregion))
 			self.strandmerge.extend([geneposition.strand] * len(mergeboundariespostflankingregion))
 			
 			
-			# Once the final gene has been processed then re-define the lists to be outputted to the final bed file
-			if geneposition.name2 == self.lastgene:
-				self.Start = self.Startmerge
-				self.Stop = self.Stopmerge
-				self.Chr = self.Chrom
-				self.Accession = self.Acc
-				self.GeneName = self.Gene
-				self.entrezid = self.entrezidmerge
-				self.strand = self.strandmerge
+			
+	
 		
 			
 #python Cruzdb.py --coding 10 --transcripts NM_000546 NM_004360 NM_000059 NM_000314 NM_007294 NM_000455
@@ -1357,8 +1403,9 @@ def UTR(argv):
 		bedfile.useaccessions()
 		#bedfile.flankingregion()
 	if bedfile.mergeboundariesboolean == True and bedfile.genelist == True:
-		for val in bedfile.mergeboundaries():
-			bedfile.flankingregion(geneposition = val, positionsexons= val.exons, positionscds = val.cds)
+		for val in (bedfile.mergeboundaries()):
+			for v in val:
+				bedfile.flankingregion(geneposition=v, positionsexons=v.exons, positionscds=v.cds)
 		
 	if bedfile.coordinates == True:
 		bedfile.coordfile()
@@ -1371,6 +1418,10 @@ def UTR(argv):
 		
 	# Automatically generate refseq format version of bed file
 	bedfile.refseqfile()
+	# Create sambamba file
+	sambamba = Sambamba()
+	bedfile.sambambaoutput = os.path.splitext(bedfile.outputfile)[0] + "Sambamba.bed"
+	sambamba.create_sambamba_bed(bedfile=bedfile.outputfile, refseqfile=bedfile.refseqoutput, sambambaoutput =bedfile.sambambaoutput )
 	
 
 
