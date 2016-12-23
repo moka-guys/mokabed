@@ -40,19 +40,19 @@ class Sambamba(object):
                     refseq = open(refseqfile, 'r')
                     # loop through refseq file
                     for line2 in refseq:
-                         # skip if strand is already captured or if a header
-                         if strand != "X" or line2.startswith("#"):
+                        # skip if strand is already captured or if a header
+                        if strand != "X" or line2.startswith("#"):
                              pass
-                         else:
-                             # capture the gene symbol
-                             splitline2 = line2.split("\t")
-                             gene_acc2 = splitline2[1].rstrip()
-                             splitgene_acc2 = gene_acc2.split(";")
-                             genesymbol2 = splitgene_acc2[0].rstrip()
-                             transcripts2 = splitgene_acc2[1]
-                             # if gene symbol in refseq file matches that of bedfile capture the strand
-                             if str(genesymbol2) == str(genesymbol):
-                                 strand = splitline2[3].rstrip()
+                        else:
+                            # capture the gene symbol
+                            splitline2 = line2.split("\t")
+                            gene_acc2 = splitline2[1].rstrip()
+                            splitgene_acc2 = gene_acc2.split(";")
+                            genesymbol2 = splitgene_acc2[0].rstrip()
+                            transcripts2 = splitgene_acc2[1]
+                            # if gene symbol in refseq file matches that of bedfile capture the strand
+                            if str(genesymbol2) == str(genesymbol):
+                                strand = splitline2[3].rstrip()
                     # important to close refseq file so it loops through again for next line in bedfile
                     refseq.close()
 
