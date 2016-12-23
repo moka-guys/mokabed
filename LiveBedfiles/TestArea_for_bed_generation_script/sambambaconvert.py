@@ -3,7 +3,7 @@
 
 class Sambamba(object):
 
-    def create_sambamba_bed(self, bedfile, refseqfile, sambambaoutput):
+    def create_sambamba_bed(self, bedfile,  refseqfile, sambambaoutput): #refseqfile, sambambaoutput):
             '''convert to a bedfile with all columns needed for sambamba'''
             # open input bedfile
             bed = open(bedfile, 'r')
@@ -31,27 +31,28 @@ class Sambamba(object):
                     genesymbol = splitgene_acc[0].rstrip()
                     transcripts = splitgene_acc[1]
                     gene_transcripts = genesymbol + ";" + transcripts
+                    strand = "+"
 
                     # create name and score values
                     F3 = chr + "-" + start + "-" + stop
                     F4 = "0"
-                    # open refseq file to capture strand
+                    # # open refseq file to capture strand
                     refseq = open(refseqfile, 'r')
                     # loop through refseq file
                     for line2 in refseq:
-                        # skip if strand is already captured or if a header
-                        if strand != "X" or line2.startswith("#"):
-                            pass
-                        else:
-                            # capture the gene symbol
-                            splitline2 = line2.split("\t")
-                            gene_acc2 = splitline2[1].rstrip()
-                            splitgene_acc2 = gene_acc2.split(";")
-                            genesymbol2 = splitgene_acc2[0].rstrip()
-                            transcripts2 = splitgene_acc2[1]
-                            # if gene symbol in refseq file matches that of bedfile capture the strand
-                            if str(genesymbol2) == str(genesymbol):
-                                strand = splitline2[3].rstrip()
+                         # skip if strand is already captured or if a header
+                         if strand != "X" or line2.startswith("#"):
+                             pass
+                         else:
+                             # capture the gene symbol
+                             splitline2 = line2.split("\t")
+                             gene_acc2 = splitline2[1].rstrip()
+                             splitgene_acc2 = gene_acc2.split(";")
+                             genesymbol2 = splitgene_acc2[0].rstrip()
+                             transcripts2 = splitgene_acc2[1]
+                             # if gene symbol in refseq file matches that of bedfile capture the strand
+                             if str(genesymbol2) == str(genesymbol):
+                                 strand = splitline2[3].rstrip()
                     # important to close refseq file so it loops through again for next line in bedfile
                     refseq.close()
 
