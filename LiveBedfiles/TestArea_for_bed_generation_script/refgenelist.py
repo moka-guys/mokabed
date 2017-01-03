@@ -139,10 +139,10 @@ def refgenelist():
     return len(dfNR_minusNMgenes_reindex), len(dfmerge), len(df9[df9['Boolean'] == True])
     
 def convert(v):
-	try:
-		return int(v)
-	except ValueError:
-		return v
+    try:
+        return int(v)
+    except ValueError:
+        return v
 
 
 def concatenaterefseqfiles():
@@ -179,9 +179,9 @@ def concatenaterefseqfilescheck(refseqfile):
     filenames = ['/home/ryank/mokabed/LiveBedfiles/Pan492dataRefSeqFormat.txt', '/home/ryank/mokabed/LiveBedfiles/Pan468dataRefSeqFormat.txt']
     out = '/home/ryank/test/Pan493dataRefSeqFormattest.txt'
     with open(out, 'w') as outfile:
-    	for fname in filenames:
-        	with open(fname) as infile:
-	    		if filenames.index(fname) == 1:
+        for fname in filenames:
+            with open(fname) as infile:
+                if filenames.index(fname) == 1:
                     for i, line in enumerate(infile):
                             if i == 0:
                                 pass
@@ -194,7 +194,7 @@ def concatenaterefseqfilescheck(refseqfile):
     # sort refseq file based on chrom, cdsStart, cdsStop
     #with open(finaloutfile, "w") as finalout:
     with open(out, 'r') as outfile:
-    	header = outfile.readline()
+        header = outfile.readline()
     
     p1 = subprocess.Popen('tail -n +2 "%s" | sort -k3,3V -k7,7n -k8,8n -k1,1n > "%s"'% (out, finaloutfile), shell=True)
     # Need to wait until p1 has finished before p2 can begin
@@ -202,66 +202,66 @@ def concatenaterefseqfilescheck(refseqfile):
     # Add header
     p2 = subprocess.Popen("sed -i '1 i\%s' %s"% (header, finaloutfile), shell=True)
     # Need to wait until p2 has finished before p3 can begin
-    p2.wait()	
-    # Perform diff of refseq files	    
+    p2.wait()   
+    # Perform diff of refseq files      
     p3 = subprocess.Popen("diff  %s %s > /home/ryank/test/filecheck.txt"% (refseqfile, finaloutfile), shell=True)
 
 
 def calldb(database='hg19'):
-	g = cruzdb.Genome(db=database)
-	refGene = g.refGene
-	return refGene
+    g = cruzdb.Genome(db=database)
+    refGene = g.refGene
+    return refGene
 
 #Return number of overlapping bases
 def getOverlap(a, b):
-	return max(0, min(a[1], b[1]) - max(a[0], b[0]))
+    return max(0, min(a[1], b[1]) - max(a[0], b[0]))
 
 def disparateregiongenes(gene):
         
-	
-	# Checks if any of the returned regions for a gene do not overlap indicating that the genes are mapped to alternative regions
-	try:
-		regionslist = refGene.filter_by(name2=gene).filter(or_(refGene.chrom=='chr1', refGene.chrom=='chr2', refGene.chrom=='chr3', refGene.chrom=='chr4', refGene.chrom=='chr5', refGene.chrom=='chr6', refGene.chrom=='chr7', refGene.chrom=='chr8', refGene.chrom=='chr9', refGene.chrom=='chr10', refGene.chrom=='chr11', refGene.chrom=='chr12', refGene.chrom=='chr13', refGene.chrom=='chr14', refGene.chrom=='chr15', refGene.chrom=='chr16', refGene.chrom=='chr17', refGene.chrom=='chr18', refGene.chrom=='chr19', refGene.chrom=='chr20', refGene.chrom=='chr21', refGene.chrom=='chr22', refGene.chrom=='chrX', refGene.chrom=='chrY')).all()
-				
-	except:
-		regionslist = refGene.filter_by(name2=gene).filter(or_(refGene.chrom=='chrX')).all()
+    
+    # Checks if any of the returned regions for a gene do not overlap indicating that the genes are mapped to alternative regions
+    try:
+        regionslist = refGene.filter_by(name2=gene).filter(or_(refGene.chrom=='chr1', refGene.chrom=='chr2', refGene.chrom=='chr3', refGene.chrom=='chr4', refGene.chrom=='chr5', refGene.chrom=='chr6', refGene.chrom=='chr7', refGene.chrom=='chr8', refGene.chrom=='chr9', refGene.chrom=='chr10', refGene.chrom=='chr11', refGene.chrom=='chr12', refGene.chrom=='chr13', refGene.chrom=='chr14', refGene.chrom=='chr15', refGene.chrom=='chr16', refGene.chrom=='chr17', refGene.chrom=='chr18', refGene.chrom=='chr19', refGene.chrom=='chr20', refGene.chrom=='chr21', refGene.chrom=='chr22', refGene.chrom=='chrX', refGene.chrom=='chrY')).all()
+                
+    except:
+        regionslist = refGene.filter_by(name2=gene).filter(or_(refGene.chrom=='chrX')).all()
 
-	
-	regions = []
-	#Generate a list of intervals for the gene
-	for region in regionslist:
-		regionstartstop = [region.name2, region.chrom, region.start, region.end]
-		regions.append(regionstartstop)
+    
+    regions = []
+    #Generate a list of intervals for the gene
+    for region in regionslist:
+        regionstartstop = [region.name2, region.chrom, region.start, region.end]
+        regions.append(regionstartstop)
 
-	#Iterate over regions list and genrate a list of regions that don't overlap
-	#First sort the list in-place in genomic order based on chr then start and stop
-	regions = sorted(regions)
+    #Iterate over regions list and genrate a list of regions that don't overlap
+    #First sort the list in-place in genomic order based on chr then start and stop
+    regions = sorted(regions)
         
-	nonoverlaps = []
-	compare=''
+    nonoverlaps = []
+    compare=''
     if len(regions) > 1:
-		for i, r in enumerate(regions[:-1]):
-			compare2 = regions[i+1][2:]
-			if not compare:		
-				compare = r[2:]
-				appendval = r
-				
-			if getOverlap(compare, compare2) == 0:
-				if appendval not in nonoverlaps:
-					nonoverlaps.append(appendval)
-				if regions[i+1] not in nonoverlaps:
-					nonoverlaps.append(regions[i+1])
-				compare = ''
-				 
-	
-			else:
-				mergelist = [compare, compare2]
-				mergeboundaries = [val for val in Bedfile().merge_ranges(mergelist)]
-				compare = mergeboundaries[0]
-				#print list(mergeboundaries[0])
-				appendval = r[:2] + list(mergeboundaries[0])
-			
-	return nonoverlaps
+        for i, r in enumerate(regions[:-1]):
+            compare2 = regions[i+1][2:]
+            if not compare:     
+                compare = r[2:]
+                appendval = r
+                
+            if getOverlap(compare, compare2) == 0:
+                if appendval not in nonoverlaps:
+                    nonoverlaps.append(appendval)
+                if regions[i+1] not in nonoverlaps:
+                    nonoverlaps.append(regions[i+1])
+                compare = ''
+                 
+    
+            else:
+                mergelist = [compare, compare2]
+                mergeboundaries = [val for val in Bedfile().merge_ranges(mergelist)]
+                compare = mergeboundaries[0]
+                #print list(mergeboundaries[0])
+                appendval = r[:2] + list(mergeboundaries[0])
+            
+    return nonoverlaps
 
 
 
