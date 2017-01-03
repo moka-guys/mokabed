@@ -64,4 +64,6 @@ class Sambamba(object):
 
 
 if __name__ == '__main__':
+    sam = Sambamba()
+    sam.create_sambamba_bed(bedfile="/home/ryank/mokabed/LiveBedfiles/Pan468data.bed", refseqfile="/home/ryank/mokabed/LiveBedfiles/Pan468dataRefSeqFormat.txt", sambambaoutput="/home/ryank/mokabed/LiveBedfiles/Pan468dataSambamba.bed")
     pass
