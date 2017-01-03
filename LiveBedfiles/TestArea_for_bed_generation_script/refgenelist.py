@@ -101,7 +101,7 @@ def refgenelist():
                                                                                                                 
     logger.close()
     
-    ###################################### Generate list of NR gene symbols does not include genes for which there exist NR accessions also #############
+    ###################################### Generate list of NR gene symbols - do not include genes for which there exist NM accessions also #############
        
     # df column indicating True for Genes with NM and NR accessions and False otherwise
     df10['BooleanTrueNRNM'] = df10['GeneSymbol'].isin(df6['GeneSymbol'])
@@ -183,9 +183,9 @@ def concatenaterefseqfilescheck(refseqfile):
         	with open(fname) as infile:
 	    		if filenames.index(fname) == 1:
             			for i, line in enumerate(infile):
-					if i == 0:
-						pass
-					else:
+					       if i == 0:
+						      pass
+					       else:
                 				outfile.write(line)
 	    		else:
 	    			for line in infile:
