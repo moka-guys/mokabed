@@ -182,14 +182,14 @@ def concatenaterefseqfilescheck(refseqfile):
     	for fname in filenames:
         	with open(fname) as infile:
 	    		if filenames.index(fname) == 1:
-            			for i, line in enumerate(infile):
-					       if i == 0:
-						      pass
-					       else:
-                				outfile.write(line)
-	    		else:
-	    			for line in infile:
-                			outfile.write(line)
+                    for i, line in enumerate(infile):
+                            if i == 0:
+                                pass
+                            else:
+                                outfile.write(line)
+                else:
+                    for line in infile:
+                        outfile.write(line)
     finaloutfile = '/home/ryank/test/Pan493dataRefSeqFormattestfinal.txt'
     # sort refseq file based on chrom, cdsStart, cdsStop
     #with open(finaloutfile, "w") as finalout:
@@ -239,7 +239,7 @@ def disparateregiongenes(gene):
         
 	nonoverlaps = []
 	compare=''
-        if len(regions) > 1:
+    if len(regions) > 1:
 		for i, r in enumerate(regions[:-1]):
 			compare2 = regions[i+1][2:]
 			if not compare:		
