@@ -139,9 +139,9 @@ class Bedfile:
 	def refseqfile(self):
 		
 		# Load bed file output automatically into the refseqfile		
-		bed = pd.read_table(self.outputfile, header= 1)
+		bed = pd.read_table(self.outputfile, header= 1, dtype={'#Chr':object, 'Start':int, 'Stop':int, 'EntrezID':int, 'Gene_Accession':object})
+
 		
-		chr = []
 
 		# Generate columns in Pandas series format which will be used to generate the RefSeq columns
 		Chrser = bed.groupby(['EntrezID', '#Chr'])['#Chr'].apply(lambda x: ''.join(sorted(set(map(str, list(x))))))
@@ -155,10 +155,10 @@ class Bedfile:
 		txEnd = bed.groupby(['EntrezID', '#Chr'])['Stop'].apply(lambda x: list(x)[-1])
 		cdsStart = bed.groupby(['EntrezID', '#Chr'])['Start'].apply(lambda x: int(list(x)[0]))
 		cdsEnd = bed.groupby(['EntrezID', '#Chr'])['Stop'].apply(lambda x: int(list(x)[-1]))
-		score = pd.Series()
+		score = pd.Series(index = Chrser.index)
 		name2 = bed.groupby(['EntrezID', '#Chr'])['Gene_Accession'].apply(lambda x: ''.join(sorted(set(list(x)))).split(';')[0])
-		cdsStartStat = pd.Series()
-		cdsEndStat = pd.Series()
+		cdsStartStat = pd.Series(index = Chrser.index)
+		cdsEndStat = pd.Series(index = Chrser.index)
 		exonFrameslist = []
 		# Set exonFrames to 0
 		for val in exonCount.values:
@@ -166,17 +166,20 @@ class Bedfile:
 			efstr = ','.join(ef)
 			#efstrformatted = efstr[1:-1]
 			exonFrameslist.append(efstr)
+
 		#Exonframedf = pd.DataFrame(zip(self.strand, self.entrezid),  columns = ["Strand","EntrezID"])
 		exonFrames = pd.Series(exonFrameslist, index = Chrser.index)
 		
-		l = [NMacc, Chrser, Newstrand, txStart, txEnd, cdsStart, cdsEnd, exonCount, Startser, Stopser, score, name2, cdsStartStat, cdsEndStat, exonFrames]
-		
 		# Concatanate the list of pandas series into a single dataframe which is to be outed as a text file
-		df = pd.concat([NMacc, Chrser, Newstrand, txStart, txEnd, cdsStart, cdsEnd, exonCount, Startser, Stopser, score, name2, cdsStartStat, cdsEndStat, exonFrames], axis=1, keys=['name', 'chrom', 'strand','txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount','exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'])
-		df.score = df.score.astype(str)
-		df.cdsStartStat = df.cdsStartStat.astype(str)
-		df.cdsEndStat = df.cdsEndStat.astype(str)
+		df = pd.DataFrame(zip(NMacc.values, Chrser.values, Newstrand.values, txStart.values, txEnd.values, cdsStart.values, cdsEnd.values, exonCount.values, Startser.values, Stopser.values, score.values, name2.values, cdsStartStat.values, cdsEndStat.values, exonFrames.values), columns = ['name', 'chrom', 'strand','txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount', 'exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'], index=Chrser.index)
+		
+		#df = pd.concat([NMacc.reset_index(), Chrser.reset_index().reset_index().reset_index().reset_index(), Newstrand.reset_index().reset_index().reset_index(), txStart.reset_index().reset_index(), txEnd.reset_index()], axis=1)
+		
+		df["score"] = df["score"].astype(str)
+		df["cdsStartStat"] = df["cdsStartStat"].astype(str)
+		df["cdsEndStat"] = df["cdsEndStat"].astype(str)
 		# Replace X and Y values in chrom column with numerical values 23 ands 24. This is required for sorting the columns in numerical order
+		
 		df['chrom'].replace(['X', 'Y'], ['23', '24'], inplace =True)
 		# Convert the chrom, cdsStart and cdsEnd columns to integers. This is required for sorting the columns in numerical order
 		df['chrom'] = df['chrom'].astype(str).astype('int')
@@ -264,10 +267,7 @@ class Bedfile:
 		
 		
 			counter += 1
-			#print Difference
-		#print len(Newstart)
-		#print len(Newend)
-		#print len(Chromosome)
+		
 		Chromosome = pd.Series(Chromosome)
 		Newstart = pd.Series(Newstart)
 		Newend = pd.Series(Newend)
@@ -1185,12 +1185,11 @@ class Bedfile:
 			self.Startmerge.extend(startmerge)
 			self.Stopmerge.extend(stopmerge)
 			self.Chrom.extend([geneposition.chrom] * len(mergeboundariespostflankingregion))
-			print len(mergeboundariespostflankingregion)
+			#print len(mergeboundariespostflankingregion)
 			self.Acc.extend([geneposition.name] * len(mergeboundariespostflankingregion))
 			self.Gene.extend([geneposition.name2] * len(mergeboundariespostflankingregion))
 			self.entrezidmerge.extend([geneposition.entrezid] * len(mergeboundariespostflankingregion))
 			self.strandmerge.extend([geneposition.strand] * len(mergeboundariespostflankingregion))
-			
 			
 			
 	
@@ -1421,7 +1420,7 @@ def UTR(argv):
 	# Create sambamba file
 	sambamba = Sambamba()
 	bedfile.sambambaoutput = os.path.splitext(bedfile.outputfile)[0] + "Sambamba.bed"
-	sambamba.create_sambamba_bed(bedfile=bedfile.outputfile, refseqfile=bedfile.refseqoutput, sambambaoutput =bedfile.sambambaoutput )
+	sambamba.create_sambamba_bed(bedfile=bedfile.outputfile, refseqfile=bedfile.refseqoutput, sambambaoutput =bedfile.sambambaoutput)
 	
 
 

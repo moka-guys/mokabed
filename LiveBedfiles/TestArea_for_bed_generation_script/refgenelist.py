@@ -6,7 +6,8 @@ Created on 2 Dec 2016
 
 import cruzdb, os
 import pandas as pd, subprocess
-from OOBed7_uses_mirrored_database_ import Bedfile 
+from OOBed7_uses_mirrored_database_ import Bedfile
+from sqlalchemy import or_
 
 def refgenelist():
     
@@ -100,7 +101,7 @@ def refgenelist():
                                                                                                                 
     logger.close()
     
-    ###################################### Generate list of NR gene symbols does not include genes for which there exist NR accessions also #############
+    ###################################### Generate list of NR gene symbols - do not include genes for which there exist NM accessions also #############
        
     # df column indicating True for Genes with NM and NR accessions and False otherwise
     df10['BooleanTrueNRNM'] = df10['GeneSymbol'].isin(df6['GeneSymbol'])
@@ -138,10 +139,10 @@ def refgenelist():
     return len(dfNR_minusNMgenes_reindex), len(dfmerge), len(df9[df9['Boolean'] == True])
     
 def convert(v):
-	try:
-		return int(v)
-	except ValueError:
-		return v
+    try:
+        return int(v)
+    except ValueError:
+        return v
 
 
 def concatenaterefseqfiles():
@@ -178,22 +179,22 @@ def concatenaterefseqfilescheck(refseqfile):
     filenames = ['/home/ryank/mokabed/LiveBedfiles/Pan492dataRefSeqFormat.txt', '/home/ryank/mokabed/LiveBedfiles/Pan468dataRefSeqFormat.txt']
     out = '/home/ryank/test/Pan493dataRefSeqFormattest.txt'
     with open(out, 'w') as outfile:
-    	for fname in filenames:
-        	with open(fname) as infile:
-	    		if filenames.index(fname) == 1:
-            			for i, line in enumerate(infile):
-					if i == 0:
-						pass
-					else:
-                				outfile.write(line)
-	    		else:
-	    			for line in infile:
-                			outfile.write(line)
+        for fname in filenames:
+            with open(fname) as infile:
+                if filenames.index(fname) == 1:
+                    for i, line in enumerate(infile):
+                            if i == 0:
+                                pass
+                            else:
+                                outfile.write(line)
+                else:
+                    for line in infile:
+                        outfile.write(line)
     finaloutfile = '/home/ryank/test/Pan493dataRefSeqFormattestfinal.txt'
     # sort refseq file based on chrom, cdsStart, cdsStop
     #with open(finaloutfile, "w") as finalout:
     with open(out, 'r') as outfile:
-    	header = outfile.readline()
+        header = outfile.readline()
     
     p1 = subprocess.Popen('tail -n +2 "%s" | sort -k3,3V -k7,7n -k8,8n -k1,1n > "%s"'% (out, finaloutfile), shell=True)
     # Need to wait until p1 has finished before p2 can begin
@@ -201,11 +202,88 @@ def concatenaterefseqfilescheck(refseqfile):
     # Add header
     p2 = subprocess.Popen("sed -i '1 i\%s' %s"% (header, finaloutfile), shell=True)
     # Need to wait until p2 has finished before p3 can begin
-    p2.wait()	
-    # Perform diff of refseq files	    
+    p2.wait()   
+    # Perform diff of refseq files      
     p3 = subprocess.Popen("diff  %s %s > /home/ryank/test/filecheck.txt"% (refseqfile, finaloutfile), shell=True)
 
+
+def calldb(database='hg19'):
+    g = cruzdb.Genome(db=database)
+    refGene = g.refGene
+    return refGene
+
+#Return number of overlapping bases
+def getOverlap(a, b):
+    return max(0, min(a[1], b[1]) - max(a[0], b[0]))
+
+def disparateregiongenes(gene):
+        
+    
+    # Checks if any of the returned regions for a gene do not overlap indicating that the genes are mapped to alternative regions
+    try:
+        regionslist = refGene.filter_by(name2=gene).filter(or_(refGene.chrom=='chr1', refGene.chrom=='chr2', refGene.chrom=='chr3', refGene.chrom=='chr4', refGene.chrom=='chr5', refGene.chrom=='chr6', refGene.chrom=='chr7', refGene.chrom=='chr8', refGene.chrom=='chr9', refGene.chrom=='chr10', refGene.chrom=='chr11', refGene.chrom=='chr12', refGene.chrom=='chr13', refGene.chrom=='chr14', refGene.chrom=='chr15', refGene.chrom=='chr16', refGene.chrom=='chr17', refGene.chrom=='chr18', refGene.chrom=='chr19', refGene.chrom=='chr20', refGene.chrom=='chr21', refGene.chrom=='chr22', refGene.chrom=='chrX', refGene.chrom=='chrY')).all()
+                
+    except:
+        regionslist = refGene.filter_by(name2=gene).filter(or_(refGene.chrom=='chrX')).all()
+
+    
+    regions = []
+    #Generate a list of intervals for the gene
+    for region in regionslist:
+        regionstartstop = [region.name2, region.chrom, region.start, region.end]
+        regions.append(regionstartstop)
+
+    #Iterate over regions list and genrate a list of regions that don't overlap
+    #First sort the list in-place in genomic order based on chr then start and stop
+    regions = sorted(regions)
+        
+    nonoverlaps = []
+    compare=''
+    if len(regions) > 1:
+        for i, r in enumerate(regions[:-1]):
+            compare2 = regions[i+1][2:]
+            if not compare:     
+                compare = r[2:]
+                appendval = r
+                
+            if getOverlap(compare, compare2) == 0:
+                if appendval not in nonoverlaps:
+                    nonoverlaps.append(appendval)
+                if regions[i+1] not in nonoverlaps:
+                    nonoverlaps.append(regions[i+1])
+                compare = ''
+                 
+    
+            else:
+                mergelist = [compare, compare2]
+                mergeboundaries = [val for val in Bedfile().merge_ranges(mergelist)]
+                compare = mergeboundaries[0]
+                #print list(mergeboundaries[0])
+                appendval = r[:2] + list(mergeboundaries[0])
+            
+    return nonoverlaps
+
+
+
 if __name__ == '__main__':
-    #print refgenelist()
-    refseq = concatenaterefseqfiles()
-    concatenaterefseqfilescheck(refseq)
+    
+    #print refgenelist() #Uncomment this line to the left if you want to generate a list of refgene genes (generates coding gene list(some of these genes will have NM and NR accessions associated with them) and a seaparate list of non-coding genes
+    refseq = concatenaterefseqfiles() # Uncomment this line if you want to concatenate the refseq gene list files (i.e. use it for concatenating the coding and non-coding refseq files)
+    concatenaterefseqfilescheck(refseq) # Checks that the refseq files have been concatenated correctly that were generated by the function concatenaterefseqfiles()
+    #Take the RefSeq files that have been generated 
+    #refseq1 = pd.read_table('/home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan492.txt', header= 0)
+    #refseq2 = pd.read_table('/home/ryank/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan468.txt', header= 0)
+    #refseq1 = pd.read_table('/home/ryank/test/Pan492check.txt', header= 0)
+    #refseq2 = pd.read_table('/home/ryank/test/Pan468check.txt', header= 0)
+    # Append the dataframes together
+    #combinedrefseq = refseq1.append(refseq2)
+    #refGene = calldb()
+    #totalnonoverlapregions = filter(lambda x: True if len(x) > 0 else False, map(disparateregiongenes, combinedrefseq['GeneSymbol']))
+    #totalnonoverlapgenes = filter(disparateregiongenes, combinedrefseq['GeneSymbol'])
+    #seriesnonoverlapregions = pd.Series(totalnonoverlapregions)
+    #seriesnonoverlapgenes = pd.Series(totalnonoverlapgenes)
+    #nonoverlapgenes = pd.DataFrame(zip(seriesnonoverlapregions, seriesnonoverlapgenes),  columns = ["Non-overlap_regions", "Non-overlap_genes"])
+    #nonoverlapgenes.to_csv(path_or_buf='/home/ryank/test/non-overlap_genes', sep='\t')
+    #nonoverlapgenes.to_csv(path_or_buf='/home/ryank/test/non-overlap_genes_includePARs', sep='\t')
+    #nonoverlapgenes.to_csv(path_or_buf='/home/ryank/test/non-overlap_genes_includeCHECK', sep='\t')
+
