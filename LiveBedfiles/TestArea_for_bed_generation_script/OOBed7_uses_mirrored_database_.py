@@ -1379,7 +1379,7 @@ def UTR(argv):
 			##process = subprocess.Popen(command,stdout=subprocess.PIPE, shell=True)
      		##print proc_stdout
      		##proc_stdout = process.communicate()[0].strip()
-     	 	sub=subprocess.Popen('cd /home/ryank/mokabed; git describe --tags', stdout=subprocess.PIPE, shell=True)
+     	 	sub=subprocess.Popen('cd /home/$USER/mokabed; git describe --tags', stdout=subprocess.PIPE, shell=True)
      	  	gitversion = sub.communicate()[0].strip('\n')
      	   	#gitversion = sub.stdout.read().strip('\n')
      		log.write("\n\n" + "version as defined by git tag = " + gitversion)
