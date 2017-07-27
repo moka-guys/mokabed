@@ -1,2 +1,0 @@
-GuysAccession	Symbol	GuysAccessionVersion
-NM_000051	ATM	0

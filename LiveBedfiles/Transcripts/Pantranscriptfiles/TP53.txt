@@ -1,2 +1,0 @@
-GuysAccession	Symbol	GuysAccessionVersion
-NM_000546	TP53	0
