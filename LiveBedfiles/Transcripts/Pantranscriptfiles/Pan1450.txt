@@ -1,0 +1,3 @@
+Same input used as for Pan1449 however there was in issue when using mokabed
+
+See Pan1450_LofFile.txt in LiveBedfiles.
