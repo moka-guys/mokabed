@@ -1,2 +1,0 @@
-GuysAccession	Gene	Version
-NM_000527	LDLR	4
