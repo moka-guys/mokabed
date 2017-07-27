@@ -15,3 +15,13 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/PALB2da
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.0-118-g6d0763a
+
+===============Manual addition to PALB2data.bed=====================
+16	23652380	23652528	79728										PALB2;NM_024675.3
+replaced with
+16	23652380	23652728	79728										PALB2;NM_024675.3
+
+===============Manual addition to PALB2Sambamba.bed =================
+16	23652380	23652528	16-23652380-23652528	0	+	PALB2;NM_024675.3	79728
+replaced with
+16	23652380	23652728	16-23652380-23652728	0	+	PALB2;NM_024675.3	79728
