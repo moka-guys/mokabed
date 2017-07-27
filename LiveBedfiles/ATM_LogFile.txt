@@ -15,3 +15,15 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/ATMdata
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.0-118-g6d0763a
+
+===============Manual addition to ATM.bed=====================
+11	108098301	108098473	472										ATM;NM_000051.3
+replaced with 
+11	108093508	108093963	472										ATM;NM_000051.3
+11	108098271	108098473	472										ATM;NM_000051.3
+
+===============Manual addition to ATMSambamba.bed=====================
+11	108098301	108098473	11-108098301-108098473	0	+	ATM;NM_000051.3	472
+replaced with 
+11	108093508	108093963	11-108093508-108093963	0	+	ATM;NM_000051.3	472
+11	108098271	108098473	11-108098271-108098473	0	+	ATM;NM_000051.3	472
