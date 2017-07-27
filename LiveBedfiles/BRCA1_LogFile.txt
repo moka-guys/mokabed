@@ -15,3 +15,19 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/BRCA1da
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.0-118-g6d0763a
+
+
+===============Manual addition to BRCA1data.bed=====================
+17	41275983	41276163	17-41275983-41276163	0	+	BRCA1;NM_007294.3	672
+replaced with 
+17	41275983	41276182	17-41275983-41276182	0	+	BRCA1;NM_007294.3	672
+17	41277237	41277550	17-41277237-41277550	0	+	BRCA1;NM_007294.3	672
+
+
+
+===============Manual addition to BRCA1Sambamba.bed=====================
+
+17	41275983	41276163	672										BRCA1;NM_007294.3
+replaced with 
+17	41275983	41276182	672										BRCA1;NM_007294.3
+17	41277237	41277550	672										BRCA1;NM_007294.3
