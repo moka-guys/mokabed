@@ -15,3 +15,17 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/TP53dat
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.0-118-g6d0763a
+
+====================manual addition of UTR to TP53data.bed================
+This line 
+17	7579788	7579962	7157										TP53;NM_000546.5
+replaced with these lines
+17	7579788	7579990	7157										TP53;NM_000546.5
+17	7590644	7590918	7157										TP53;NM_000546.5
+
+====================manual addition of UTR to TP53data.bed================
+This line 
+17	7579788	7579962	17-7579788-7579962	0	+	TP53;NM_000546.5	7157
+replaced with these lines
+17	7579788	7579990	17-7579788-7579990	0	+	TP53;NM_000546.5	7157
+17	7590644	7590918	17-7590644-7590918	0	+	TP53;NM_000546.5	7157
