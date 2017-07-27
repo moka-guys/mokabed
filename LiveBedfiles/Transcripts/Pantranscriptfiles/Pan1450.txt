@@ -1,3 +1,5 @@
+See below input however there was in issue when using mokabed - See Pan1450_LogFile.txt in LiveBedfiles.
+
 GuysAccession	Symbol	GuysAccessionVersion
 NM_000051	ATM	0
 NM_000059	BRCA2	0
