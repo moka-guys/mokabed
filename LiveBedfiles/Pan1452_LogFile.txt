@@ -3,7 +3,7 @@
 For this panel the 5' UTRs +/-50bp were requested in addition to cds +/-50bp.
 Mokabed failed when asked to include the 5' UTRs only, however it did work when asked to include both the 5' and 3' UTRs.
 Therefore mokabed was run twice, once to produce bed files with no UTRs, and a second time to include both 5' and 3' UTRs (+/-50bp) (see Mokabed logs below).
-The 5' UTRs from Pan1452_5+3UTR_data.bed + Pan1452_5+3UTR_dataSambamba.bed were then copied and pasted into Pan1452data.bed + Pan1452dataSambamba.bed.
+The 5' UTRs from Pan1452_5+3UTR_data.bed + Pan1452_5+3UTR_dataSambamba.bed were then copied and pasted into Pan1452data.bed + Pan1452dataSambamba.bed (see Manual Changes below).
 The Pan1452dataRefSeqFormat.txt file was used to find the strand of each gene, necessary to determine the location of the 5' end of the gene. 
 
 
@@ -51,3 +51,40 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan1452
 version as defined by git tag = v1.0-118-g6d0763a
 
 
+Manual Changes:
+
+==============Pan1452data.bed==============
+
+< 1	179544675	179545049	7827										NPHS2;NM_014625.3
+> 1	179544675	179545137	7827										NPHS2;NM_014625.3
+
+< 2	228012078	228012249	1286										COL4A4;NM_000092.4
+> 2	228012078	228012350	1286										COL4A4;NM_000092.4
+> 2	228028672	228029325	1286										COL4A4;NM_000092.4
+
+< 2	228029392	228029579	1285										COL4A3;NM_000091.4
+> 2	228029230	228029579	1285										COL4A3;NM_000091.4
+
+< X	107682537	107682651	1288										COL4A6;NM_001847.3
+> X	107682537	107682777	1288										COL4A6;NM_001847.3
+
+< X	107683305	107683486	1287										COL4A5;NM_033380.2
+> X	107683023	107683486	1287										COL4A5;NM_033380.2
+
+==============Pan1452dataSambamba.bed==============
+
+< 1	179544675	179545049	1-179544675-179545049	0	+	NPHS2;NM_014625.3	7827
+> 1	179544675	179545137	1-179544675-179545137	0	+	NPHS2;NM_014625.3	7827
+
+< 2	228012078	228012249	2-228012078-228012249	0	+	COL4A4;NM_000092.4	1286
+> 2	228012078	228012350	2-228012078-228012350	0	+	COL4A4;NM_000092.4	1286
+> 2	228028672	228029325	2-228028672-228029325	0	+	COL4A4;NM_000092.4	1286
+
+< 2	228029392	228029579	2-228029392-228029579	0	+	COL4A3;NM_000091.4	1285
+> 2	228029230	228029579	2-228029230-228029579	0	+	COL4A3;NM_000091.4	1285
+
+< X	107682537	107682651	X-107682537-107682651	0	+	COL4A6;NM_001847.3	1288
+> X	107682537	107682777	X-107682537-107682777	0	+	COL4A6;NM_001847.3	1288
+
+< X	107683305	107683486	X-107683305-107683486	0	+	COL4A5;NM_033380.2	1287
+> X	107683023	107683486	X-107683023-107683486	0	+	COL4A5;NM_033380.2	1287
