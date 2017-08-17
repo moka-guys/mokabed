@@ -1,4 +1,4 @@
-Time Stamp:2017-04-21 15:30:42.840927
+Time Stamp:2017-08-09 09:34:55.024846
 Command arguments executed:
 RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan1063dataRefSeqFormat.txt
 /home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/Pan1063.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan1063data.bed --logfile /home/dnanexus/out/Output_files/Pan1063_LogFile.txt 
@@ -14,4 +14,9 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan1063
 
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
-version as defined by git tag = v1.0-97-ga7b5e1f
+version as defined by git tag = v1.0-183-g2c79ec1
+
+===========Manual Changes=============
+Manually added 17:78078341 to:
+Pan1063data.bed
+Pan1063dataSambamba.bed
