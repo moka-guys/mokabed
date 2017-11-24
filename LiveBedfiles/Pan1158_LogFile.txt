@@ -27,11 +27,23 @@ bedfiles have been generated for each bedfile and have been combined using the b
 1. Pan1158data.bed
 # add non-header lines from Pan1158DMDdata.bed
 sed '/^#/ d' < Pan1158DMDdata.bed >> Pan1158data.bed
+
 #sort the combined bedfile using bedtools
 bedtools sort -i Pan1158data.bed > Pan1158datasorted.bed
+
 # rename the Pan1158data.bed to show it doesn't contain DMD
 mv Pan1158data.bed Pan1158data_incomplete.bed 
+
 # rename the sorted, combined bedfile to Pan1158data.bed
 mv Pan1158datasorted.bed Pan1158data.bed
+
 # mistake in sorting order was 1,10,11 not 1,2...10,11- resort data.bed
 sort -k1,V1 -k2,2n -o Pan1158data.bed Pan1158data.bed
+
+
+
+2. Pan1158dataSambamba.bed
+# add non-header lines from Pan1158DMDdataSambamba.bed
+sed '/^#/ d' < Pan1158DMDdataSambamba.bed >> Pan1158dataSambamba.bed
+#sort the combined bedfile inplace using bedtools
+sort -k1,1V -k2,2n -o Pan1158dataSambamba.bed Pan1158dataSambamba.bed
