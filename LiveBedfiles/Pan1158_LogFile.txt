@@ -33,5 +33,5 @@ bedtools sort -i Pan1158data.bed > Pan1158datasorted.bed
 mv Pan1158data.bed Pan1158data_incomplete.bed 
 # rename the sorted, combined bedfile to Pan1158data.bed
 mv Pan1158datasorted.bed Pan1158data.bed
-
-2. 
+# mistake in sorting order was 1,10,11 not 1,2...10,11- resort data.bed
+sort -k1,V1 -k2,2n -o Pan1158data.bed Pan1158data.bed
