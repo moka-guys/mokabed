@@ -47,3 +47,6 @@ sort -k1,V1 -k2,2n -o Pan1158data.bed Pan1158data.bed
 sed '/^#/ d' < Pan1158DMDdataSambamba.bed >> Pan1158dataSambamba.bed
 #sort the combined bedfile inplace using bedtools
 sort -k1,1V -k2,2n -o Pan1158dataSambamba.bed Pan1158dataSambamba.bed
+
+3.  Pan1158dataRefSeqFormat.txt
+# Using the sorting order of genes when sorting previous files this line was copied and pasted from Pan1158DMDdataRefSeqFormat.txt to Pan1158dataRefSeqFormat.txt
