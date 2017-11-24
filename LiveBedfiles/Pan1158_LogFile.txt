@@ -15,3 +15,23 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan1158
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.0-204-g5ab2be3
+
+===================manual modifications============
+AJ 171123
+DMD requires the 5' UTR to be included
+Pan1158 contains all genes except DMD
+Pan1158DMD contains only DMD
+
+bedfiles have been generated for each bedfile and have been combined using the below commands
+
+1. Pan1158data.bed
+# add non-header lines from Pan1158DMDdata.bed
+sed '/^#/ d' < Pan1158DMDdata.bed >> Pan1158data.bed
+#sort the combined bedfile using bedtools
+bedtools sort -i Pan1158data.bed > Pan1158datasorted.bed
+# rename the Pan1158data.bed to show it doesn't contain DMD
+mv Pan1158data.bed Pan1158data_incomplete.bed 
+# rename the sorted, combined bedfile to Pan1158data.bed
+mv Pan1158datasorted.bed Pan1158data.bed
+
+2. 
