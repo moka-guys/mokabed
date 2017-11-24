@@ -40,6 +40,9 @@ mv Pan1158datasorted.bed Pan1158data.bed
 # mistake in sorting order was 1,10,11 not 1,2...10,11- resort data.bed
 sort -k1,V1 -k2,2n -o Pan1158data.bed Pan1158data.bed
 
+# sort removed the header lines.
+The original unmodified bedfiles were returned
+
 
 
 2. Pan1158dataSambamba.bed
