@@ -41,7 +41,14 @@ mv Pan1158datasorted.bed Pan1158data.bed
 sort -k1,V1 -k2,2n -o Pan1158data.bed Pan1158data.bed
 
 # sort removed the header lines.
-The original unmodified bedfiles were returned
+
+#The original unmodified bedfiles were returned
+# they were re-combined using the command above
+sed '/^#/ d' < Pan1158DMDdata.bed >> Pan1158data.bed
+
+# the sorting now takes into account header lines:
+sed '/^[^#]/ d' Pan1158data.bed > Pan1158data.sorted.bed; sed '/#/ d' Pan1158data.bed | sort -k1,1V -k2,2n >> Pan1158data.sorted.bed ; mv Pan1158data.bed Pan1158data.notsorted.bed; mv Pan1158data.sorted.bed Pan1158data.bed
+
 
 
 
