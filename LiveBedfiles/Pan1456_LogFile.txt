@@ -33,3 +33,9 @@ sed '/^#/ d' < Pan1456DMDdata.bed >> Pan1456data.bed
 # rename the combined Pan1456data.bed to notsorted
 # rename the sorted bedfile to pan1456data.bed
 sed '/^[^#]/ d' Pan1456data.bed > Pan1456data.sorted.bed; sed '/#/ d' Pan1456data.bed | sort -k1,1V -k2,2n >> Pan1456data.sorted.bed ; mv Pan1456data.bed Pan1456data.notsorted.bed; mv Pan1456data.sorted.bed Pan1456data.bed
+
+2. Pan1456dataSambamba.bed
+# add non-header lines from Pan1456DMDdataSambamba.bed
+sed '/^#/ d' < Pan1456DMDdataSambamba.bed >> Pan1456dataSambamba.bed
+#sort the combined bedfile inplace 
+sort -k1,1V -k2,2n -o Pan1456dataSambamba.bed Pan1456dataSambamba.bed
