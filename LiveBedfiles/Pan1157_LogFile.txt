@@ -15,3 +15,10 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan1157
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.0-204-g5ab2be3
+
+# ================= Manual modifications
+All genes plus LDLR 5'UTR +10
+APOB ex26 only (chr2:21227942-21235533) - These coordinates include +/- 10bp padding
+
+1. Pan1157data.bed
+A bed file containing was created (Pan1157APOBdata.bed)
