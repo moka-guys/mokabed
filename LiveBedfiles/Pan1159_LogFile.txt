@@ -38,3 +38,9 @@ sed '/^[^#]/ d' Pan1159data.bed > Pan1159data.sorted.bed; sed '/#/ d' Pan1159dat
 
 2. Pan1159dataSambamba.bed
 A line for each SNV was created in Pan1159_rsID_Sambamba.bed
+
+#add non-header lines from Pan1159_rsID.bed
+sed '/^#/ d' < Pan1159_rsID_Sambamba.bed >> Pan1159dataSambamba.bed
+
+sort the combined bedfile inplace 
+sort -k1,1V -k2,2n -o Pan1159dataSambamba.bed Pan1159dataSambamba.bed
