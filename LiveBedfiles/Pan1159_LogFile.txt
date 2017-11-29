@@ -25,3 +25,13 @@ rs6151429 - 22:51063477
 
 1. Pan1159data.bed
 A line for each SNV was created in Pan1159_rsID.bed
+
+combined the bed files
+#add non-header lines from Pan1159_rsID.bed
+sed '/^#/ d' < Pan1159_rsID.bed >> Pan1159data.bed
+
+# add the header lines to a sorted bed file. 
+# Then sort the combined Pan1159data.bed on chr and then start in numerical order and append to the sorted.bed file
+# rename the combined Pan1159data.bed to notsorted
+# rename the sorted bedfile to Pan1159data.bed
+sed '/^[^#]/ d' Pan1159data.bed > Pan1159data.sorted.bed; sed '/#/ d' Pan1159data.bed | sort -k1,1V -k2,2n >> Pan1159data.sorted.bed ; mv Pan1159data.bed Pan1159data.notsorted.bed; mv Pan1159data.sorted.bed Pan1159data.bed
