@@ -1,0 +1,50 @@
+Time Stamp:2017-11-29 19:14:46.532377
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan1157dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/Pan1157.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan1157data.bed --logfile /home/dnanexus/out/Output_files/Pan1157_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.0-204-g5ab2be3
+
+# ================= Manual modifications
+All genes plus LDLR 5'UTR +10
+APOB ex26 only (chr2:21227942-21235533) - These coordinates include +/- 10bp padding
+
+1. Pan1157data.bed
+A bed file containing was created (Pan1157APOBdata.bed)
+
+#add non-header lines from Pan1157APOBdata.bed
+sed '/^#/ d' < Pan1157APOBdata.bed >> Pan1157data.bed
+#add non-header lines from Pan1157LDLRdata.bed
+sed '/^#/ d' < Pan1157LDLRdata.bed >> Pan1157data.bed
+
+
+# add the header lines to a sorted bed file. 
+# Then sort the combined Pan1157data.bed on chr and then start in numerical order and append to the sorted.bed file
+# rename the combined Pan1157data.bed to notsorted
+# rename the sorted bedfile to Pan1157data.bed
+sed '/^[^#]/ d' Pan1157data.bed > Pan1157data.sorted.bed; sed '/#/ d' Pan1157data.bed | sort -k1,1V -k2,2n >> Pan1157data.sorted.bed ; mv Pan1157data.bed Pan1157data.notsorted.bed; mv Pan1157data.sorted.bed Pan1157data.bed
+
+2. Pan1157dataSambamba.bed
+# A sambamba bedfile was created for APOB (Pan1157APOBSambamba.bed)
+
+# add non-header lines from Pan1157APOBdataSambamba.bed
+sed '/^#/ d' < Pan1157APOBdataSambamba.bed >> Pan1157dataSambamba.bed
+#add non-header lines from Pan1157LDLRdata.bed
+sed '/^#/ d' < Pan1157LDLRdataSambamba.bed >> Pan1157dataSambamba.bed
+
+#sort the combined bedfile inplace 
+sort -k1,1V -k2,2n -o Pan1157dataSambamba.bed Pan1157dataSambamba.bed
+
+3. Pan1157dataRefSeqFormat.bed
+The lines from Pan1157APOBdataRefSeqFormat.bed and Pan1157LDLRdataRefSeqFormat.bed were copied and pasted into the bedfile using the same order as found in Pan1157data.bed
