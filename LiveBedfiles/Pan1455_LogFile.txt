@@ -47,3 +47,6 @@ sed '/^#/ d' < Pan1455LDLRdataSambamba.bed >> Pan1455dataSambamba.bed
 
 #sort the combined bedfile inplace 
 sort -k1,1V -k2,2n -o Pan1455dataSambamba.bed Pan1455dataSambamba.bed
+
+3. Pan1455dataRefSeqFormat.bed
+The lines from Pan1455LDLRdataRefSeqFormat.bed were copied and pasted into the bedfile using the same order as found in Pan1455data.bed
