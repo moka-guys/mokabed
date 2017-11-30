@@ -39,3 +39,11 @@ sed '/^#/ d' < Pan1455LDLRdata.bed >> Pan1455data.bed
 sed '/^[^#]/ d' Pan1455data.bed > Pan1455data.sorted.bed; sed '/#/ d' Pan1455data.bed | sort -k1,1V -k2,2n >> Pan1455data.sorted.bed ; mv Pan1455data.bed Pan1455data.notsorted.bed; mv Pan1455data.sorted.bed Pan1455data.bed
 
 
+2. Pan1455dataSambamba.bed
+# A sambamba bedfile was created for LDLR (Pan1455LDLRSambamba.bed)
+
+#add non-header lines from Pan1455LDLRdata.bed
+sed '/^#/ d' < Pan1455LDLRdataSambamba.bed >> Pan1455dataSambamba.bed
+
+#sort the combined bedfile inplace 
+sort -k1,1V -k2,2n -o Pan1455dataSambamba.bed Pan1455dataSambamba.bed
