@@ -23,8 +23,8 @@ APOB ex26 only (chr2:21227942-21235533) - These coordinates include +/- 10bp pad
 Bedfiles were created for APOB (Pan1157APOB*.bed)
 
 Mokabed does not create the bedfile for LDLR extending UTR correctly :
- If the LDLR UTR is included the output is many copies of the UTR region. Therefore the LDLR bedfile was made once with the UTR extended (Pan1455LDLRUTR) and one without the UTR (Pan1455LDLR) 
- The line relating to the UTR is copied from Pan1455LDLRUTR into Pan1455LDLR.
+ If the LDLR UTR is included the output is many copies of the UTR region. Therefore the LDLR bedfile was made once with the UTR extended (Pan1157LDLRUTR) and one without the UTR (Pan1157LDLR) 
+ The line relating to the UTR is copied from Pan1157LDLRUTR into Pan1157LDLR.
 
 1. Pan1157data.bed
 #add non-header lines from Pan1157APOBdata.bed
