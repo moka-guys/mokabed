@@ -23,3 +23,19 @@ Do not include APOB exon 22
 Mokabed does not create the bedfile for LDLR extending UTR correctly :
 If the LDLR UTR is included the output is many copies of the UTR region. Therefore the LDLR bedfile was made once with the UTR extended (Pan1455LDLRUTR) and one without the UTR (Pan1455LDLR) 
 The line relating to the UTR is copied from Pan1455LDLRUTR into Pan1455LDLR.
+
+1. Pan1455data.bed
+The LDLR bedfile described above (Pan1455LDLRdata.bed) contains the required regiosn of LDLR
+All other genes (excluding APOB) with +/-50 bp are in Pan1455data.bed
+
+#add non-header lines from Pan1455LDLRdata.bed
+sed '/^#/ d' < Pan1455LDLRdata.bed >> Pan1455data.bed
+
+
+# add the header lines to a sorted bed file. 
+# Then sort the combined Pan1455data.bed on chr and then start in numerical order and append to the sorted.bed file
+# rename the combined Pan1455data.bed to notsorted
+# rename the sorted bedfile to Pan1455data.bed
+sed '/^[^#]/ d' Pan1455data.bed > Pan1455data.sorted.bed; sed '/#/ d' Pan1455data.bed | sort -k1,1V -k2,2n >> Pan1455data.sorted.bed ; mv Pan1455data.bed Pan1455data.notsorted.bed; mv Pan1455data.sorted.bed Pan1455data.bed
+
+
