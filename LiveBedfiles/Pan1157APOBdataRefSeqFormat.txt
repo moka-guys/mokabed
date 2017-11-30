@@ -1,0 +1,2 @@
+#bin	name	chrom	strand	txStart	txEnd	cdsStart	cdsEnd	exonCount	exonStarts	exonSEnds	score	name2	cdsStartStat	cdsEndStat	exonFrames
+338	APOB;NM_000384.2	2	+	21227942	21235533	21227942	21235533	1	21227942	21235533	nan	APOB	nan	nan	0
