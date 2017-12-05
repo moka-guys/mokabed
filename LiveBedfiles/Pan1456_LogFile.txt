@@ -27,3 +27,13 @@ Bedfiles have been generated for each set of transcripts and have been combined 
 
 1. Pan1456data.bed
 All exons of Pan1456DMD_000109data.bed were removed except for the line of interest
+
+#add non-header lines from the two DMD bed files to Pan1456data.bed
+sed '/^#/ d' < Pan1456DMD_000109data.bed >> Pan1456data.bed
+sed '/^#/ d' < Pan1456DMD_004006data.bed >> Pan1456data.bed
+
+# add the header lines to a sorted bed file. 
+# Then sort the combined Pan1456data.bed on chr and then start in numerical order and append to the sorted.bed file
+# remove the unsorted, combined Pan1456data.bed
+# rename the sorted bedfile to pan1456data.bed
+sed '/^[^#]/ d' Pan1456data.bed > Pan1456data.sorted.bed; sed '/#/ d' Pan1456data.bed | sort -k1,1V -k2,2n >> Pan1456data.sorted.bed ; rm Pan1456data.bed; mv Pan1456data.sorted.bed Pan1456data.bed
