@@ -18,7 +18,7 @@ version as defined by git tag = v1.0-204-g5ab2be3
 
 # ========== Manual modifications
 4 SNVs are to be included into the bedfile. These are:
-rs111033640 - 9:34646586
+rs111033640 - 9:34646583-34646586
 rs199473684 - X:100654735
 rs3027584 - X:100662921
 rs6151429 - 22:51063477
