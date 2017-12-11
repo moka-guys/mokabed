@@ -213,7 +213,17 @@ class Bedfile:
 		if self.genes:
 			self.bed = pd.read_table(self.genes, header= 0)
 		if self.transcripts:
-			self.bed = pd.read_table(self.transcripts, header= 0)
+			# check the transcript file has a header line
+			with open(self.transcripts, 'r') as f:
+				# read the first line only
+    				first_line = f.readline()
+    			# check the first line doesn't contain "NM_" and the header contains a string that should be present in at least one of the column headers (header is GuysAccession	approvedsymbol	GuysAccessionVersion)
+    			if "Accession" in first_line and "NM_" not in first_line:
+    				# read the file into a pandas table
+				self.bed = pd.read_table(self.transcripts, header= 0)
+			else:
+				# if no header report the missing header and exit
+				sys.exit("missing header in transcript file")
 
 	def coordfile(self):
 		#Set up bed file using a bed file where the start positions for each exon are base 0
