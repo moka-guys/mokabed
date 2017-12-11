@@ -217,8 +217,8 @@ class Bedfile:
 			with open(self.transcripts, 'r') as f:
 				# read the first line only
     				first_line = f.readline()
-    			# check the first line starts with the expected header
-    			if first_line.startswith("GuysAccession"):
+    			# check the first line doesn't contain "NM_" and the header contains a string that should be present in at least one of the column headers (header is GuysAccession	approvedsymbol	GuysAccessionVersion)
+    			if "Accession" in first_line and "NM_" not in first_line:
     				# read the file into a pandas table
 				self.bed = pd.read_table(self.transcripts, header= 0)
 			else:
