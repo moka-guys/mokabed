@@ -49,3 +49,9 @@ sort -k1,1V -k2,2n -o Pan1159dataSambamba.bed Pan1159dataSambamba.bed
 A line for each SNV was created in Pan1159_rsID_dataRefSeqFormat.bed
 
 These were copied and pasted in the same order as the above bed files
+
+# ============== Missing gene
+It was noticed that due to the missing header in the input file the first gene was missing from the output.
+The header line was added and bedfile remade.
+The remade files were added with the suffix _temporary.
+these were commited so the additional genes could be seen and then removed.
