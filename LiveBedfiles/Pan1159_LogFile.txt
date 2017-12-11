@@ -51,7 +51,8 @@ A line for each SNV was created in Pan1159_rsID_dataRefSeqFormat.bed
 These were copied and pasted in the same order as the above bed files
 
 # ============== Missing gene
-It was noticed that due to the missing header in the input file the first gene was missing from the output.
-The header line was added and bedfile remade.
-The remade files were added with the suffix _temporary.
-these were commited so the additional genes could be seen and then removed.
+It was noticed that due to the missing header in the input file the first gene (ACVRL1) was missing from the output.
+The header line was added to the input file and mokabed re-run.
+The newly created bed files have the suffix _temporary (these were commited in commit 3651f3210cc8e3c9e061cfff3b8b8f83d621260b).
+The lines for ACVRL1 were copied and pasted to the correct position in the bed file to avoid having to repeat the steps described above.
+The difference in c20b49cd93187411a6ab7411fd110d5cdfdf54c9 show that only lines relating to ACVRL1 were affected.
