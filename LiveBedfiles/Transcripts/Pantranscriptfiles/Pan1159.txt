@@ -1,3 +1,4 @@
+Accession	ApprovedSymbol	GuysAccessionVersion
 NM_000020	ACVRL1	0
 NM_020919	ALS2	0
 NM_001145	ANG	0
