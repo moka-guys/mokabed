@@ -32,6 +32,7 @@ The line relating to the UTR is copied from Pan1965LDLR_UTR into Pan1965LDLR.
 sed '/^#/ d' < Pan1965_APOBdata.bed >> Pan1965data.bed
 #add non-header lines from Pan1965_LDLRdata.bed
 sed '/^#/ d' < Pan1965_LDLRdata.bed >> Pan1965data.bed
+#Additional COL4A5 exons added (converting to 0 based and adding 10bp padding)
 
 
 2. Pan1965dataSambamba.bed
@@ -39,6 +40,7 @@ sed '/^#/ d' < Pan1965_LDLRdata.bed >> Pan1965data.bed
 sed '/^#/ d' < Pan1965_APOBdataSambamba.bed >> Pan1965dataSambamba.bed
 # add non-header lines from Pan1965_LDLRdataSambamba.bed
 sed '/^#/ d' < Pan1965_LDLRdataSambamba.bed >> Pan1965dataSambamba.bed
+#Additional COL4A5 exons added (converting to 0 based and adding 10bp padding)
 
 
 3. Pan1965dataRefSeqFormat.txt
@@ -46,4 +48,5 @@ sed '/^#/ d' < Pan1965_LDLRdataSambamba.bed >> Pan1965dataSambamba.bed
 sed '/^#/ d' < Pan1965_APOBdataRefSeqFormat.txt >> Pan1965dataRefSeqFormat.txt
 # add non-header lines from Pan1965_LDLRdataRefSeqFormat.txt
 sed '/^#/ d' < Pan1965_LDLRdataRefSeqFormat.txt >> Pan1965dataRefSeqFormat.txt
+#Additional COL4A5 exons added (converting to 0 based and adding 10bp padding)
 
