@@ -23,3 +23,17 @@ plus missing exons from COL4A5 chrX: 107913458-107913466 (+/-10) and chrX:107917
 
 Bedfiles were created for APOB (Pan1157_APOB*.bed) using Mokabed. The files were then edited to remove all exons except ex26.
 
+1. Pan1965data.bed
+#add non-header lines from Pan1965_APOBdata.bed
+sed '/^#/ d' < Pan1965_APOBdata.bed >> Pan1965data.bed
+
+
+2. Pan1965dataSambamba.bed
+# add non-header lines from Pan1965_APOBdataSambamba.bed
+sed '/^#/ d' < Pan1965_APOBdataSambamba.bed >> Pan1965dataSambamba.bed
+
+
+3. Pan1965dataRefSeqFormat.txt
+# add non-header lines from Pan1965_APOBdataRefSeqFormat.txt
+sed '/^#/ d' < Pan1965_APOBdataRefSeqFormat.txt >> Pan1965dataRefSeqFormat.txt
+
