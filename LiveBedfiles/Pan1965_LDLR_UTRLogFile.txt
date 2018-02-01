@@ -1,7 +1,7 @@
-Time Stamp:2018-02-01 15:11:42.948203
+Time Stamp:2018-02-01 15:13:14.175770
 Command arguments executed:
 RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan1965_LDLRdataRefSeqFormat.txt
-/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/Pan1965_LDLR.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan1965_LDLRdata.bed --logfile /home/dnanexus/out/Output_files/Pan1965_LDLR_LogFile.txt 
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --up 10 --down 10 --useaccessions --transcripts /home/dnanexus/Pan1965_LDLR.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan1965_LDLRdata.bed --logfile /home/dnanexus/out/Output_files/Pan1965_LDLR_LogFile.txt 
 
  Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
 [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
