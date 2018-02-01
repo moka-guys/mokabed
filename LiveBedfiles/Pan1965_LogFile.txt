@@ -21,7 +21,11 @@ All genes plus LDLR 5'UTR +10
 APOB ex26 only (chr2:21227942-21235533) - These coordinates include +/- 10bp padding and are 1 based
 plus missing exons from COL4A5 chrX: 107913458-107913466 (+/-10) and chrX:107917975-107917983 (+/-10) - These coordinates do NOT include padding and are 1 based 
 
-Bedfiles were created for APOB (Pan1157_APOB*.bed) using Mokabed. The files were then edited to remove all exons except ex26.
+Bedfiles were created for APOB (Pan1965_APOB*.bed) using Mokabed. The files were then edited to remove all exons except ex26.
+
+Mokabed does not create the bedfile for LDLR extending UTR correctly :
+If the LDLR UTR is included the output is many copies of the UTR region. Therefore the LDLR bedfile was made once with the UTR extended (Pan1965LDLR_UTR) and one without the UTR (Pan1965LDLR) 
+The line relating to the UTR is copied from Pan1965LDLR_UTR into Pan1965LDLR.
 
 1. Pan1965data.bed
 #add non-header lines from Pan1965_APOBdata.bed
