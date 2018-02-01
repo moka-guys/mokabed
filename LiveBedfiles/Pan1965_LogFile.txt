@@ -15,3 +15,11 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan1965
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.0-260-g32d2a72
+
+# ================= Manual modifications
+All genes plus LDLR 5'UTR +10
+APOB ex26 only (chr2:21227942-21235533) - These coordinates include +/- 10bp padding and are 1 based
+plus missing exons from COL4A5 chrX: 107913458-107913466 (+/-10) and chrX:107917975-107917983 (+/-10) - These coordinates do NOT include padding and are 1 based 
+
+Bedfiles were created for APOB (Pan1157_APOB*.bed) using Mokabed. The files were then edited to remove all exons except ex26.
+
