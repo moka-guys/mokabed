@@ -30,14 +30,20 @@ The line relating to the UTR is copied from Pan1965LDLR_UTR into Pan1965LDLR.
 1. Pan1965data.bed
 #add non-header lines from Pan1965_APOBdata.bed
 sed '/^#/ d' < Pan1965_APOBdata.bed >> Pan1965data.bed
+#add non-header lines from Pan1965_LDLRdata.bed
+sed '/^#/ d' < Pan1965_LDLRdata.bed >> Pan1965data.bed
 
 
 2. Pan1965dataSambamba.bed
 # add non-header lines from Pan1965_APOBdataSambamba.bed
 sed '/^#/ d' < Pan1965_APOBdataSambamba.bed >> Pan1965dataSambamba.bed
+# add non-header lines from Pan1965_LDLRdataSambamba.bed
+sed '/^#/ d' < Pan1965_LDLRdataSambamba.bed >> Pan1965dataSambamba.bed
 
 
 3. Pan1965dataRefSeqFormat.txt
 # add non-header lines from Pan1965_APOBdataRefSeqFormat.txt
 sed '/^#/ d' < Pan1965_APOBdataRefSeqFormat.txt >> Pan1965dataRefSeqFormat.txt
+# add non-header lines from Pan1965_LDLRdataRefSeqFormat.txt
+sed '/^#/ d' < Pan1965_LDLRdataRefSeqFormat.txt >> Pan1965dataRefSeqFormat.txt
 
