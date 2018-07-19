@@ -1,0 +1,4 @@
+The file agilent_sureselect_human_all_exon_v5_b37_targets.bed was used for variant calling but only contains the coordinates of the capture baits.
+Dragen does not pad the targets for variant calling, therefore we have used the file S04380110_Padded.bed from suredesign, which contains the same regions +/-100bp.
+
+
