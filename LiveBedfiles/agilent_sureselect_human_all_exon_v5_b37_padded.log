@@ -12,3 +12,7 @@ cut '/home/aled/mokabed/LiveBedfiles/S04380110_Padded.bed'  --fields=1,2,3 > '/h
 
 4. merge overlapping targets
 bedtools merge -i LiveBedfiles/S04380110_Padded_3col.bed > LiveBedfiles/S04380110_Padded_3col_merged.bed 
+
+5. rename file and delete all intermediate files
+mv LiveBedfiles/S04380110_Padded_3col_merged.bed LiveBedfiles/agilent_sureselect_human_all_exon_v5_b37_padded.bed
+rm LiveBedfiles/S04380110_Padded*
