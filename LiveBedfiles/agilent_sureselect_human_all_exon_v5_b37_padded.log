@@ -7,3 +7,5 @@ This was done is a text editor, replacing "/nchr" with "/n"
 2. remove header
 This was done is a text editor
 
+3. remove 4th column
+cut '/home/aled/mokabed/LiveBedfiles/S04380110_Padded.bed'  --fields=1,2,3 > '/home/aled/mokabed/LiveBedfiles/S04380110_Padded_3col.bed'
