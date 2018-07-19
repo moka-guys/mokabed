@@ -4,5 +4,6 @@ Dragen does not pad the targets for variant calling, therefore we have used the 
 1. remove 'chr'
 This was done is a text editor, replacing "/nchr" with "/n"
 
-
+2. remove header
+This was done is a text editor
 
