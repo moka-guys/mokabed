@@ -19,3 +19,13 @@ This bedfile was created using the command `bedtools merge -i Pan2577.bed > Pan2
 
 This only contains three columns chr,start and stop as the name column cannot easily be merged.
 
+Pan2577_Sambamba.bed
+This file is used by sambamba/chanjo for variant calling. It is based on Pan2577.bed and contains:
+
+chr,start,stop - taken from Pan2577.bed
+Name - in format chr-start-stop
+Score - default value of 0
+Strand - taken from the annotations.
+Gene symbol;transcript - taken from the annotations.
+EntrezGeneID - Added manually.
+
