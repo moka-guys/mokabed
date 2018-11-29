@@ -29,3 +29,6 @@ Strand - taken from the annotations.
 Gene symbol;transcript - taken from the annotations.
 EntrezGeneID - Added manually.
 
+Pan2577_PE.bed
+This is used by BAMclipper to soft clip primers. It defines the primer pairs and is in the format chr start stop chr start stop
+The relevant columns were taken from the master file
