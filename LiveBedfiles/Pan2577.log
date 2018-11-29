@@ -4,3 +4,13 @@ The kit design is available from the manufacturers - see Accel-Amplicon-Plus_57G
 This masterfile contains the coordinates of the target of the amplicon (the region between the primers), and the coordinates and sequence of the forward and reverse primers.
 The coordinates stated in this file are zero based.
 
+Some fields used in the BED files below required some annotations of the coordinates stated in the masterfile. 
+Creation of these annotations are described in the repository https://github.com/moka-guys/swift57_amplicons.
+
+Pan2577.bed
+This BED file is used to generate QC and was used to create the bed files described below.
+
+This bedfile contains 4 columns, chr, start, stop and name. chr, start and stop was taken from the masterfile. 
+The name was created from the output of the annotations and designed to be informative (eg 001_MPL_cDNA_1471-1565_codon_491-521_chr1:43814936-43815079).
+
+
