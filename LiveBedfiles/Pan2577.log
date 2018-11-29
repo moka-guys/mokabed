@@ -13,4 +13,9 @@ This BED file is used to generate QC and was used to create the bed files descri
 This bedfile contains 4 columns, chr, start, stop and name. chr, start and stop was taken from the masterfile. 
 The name was created from the output of the annotations and designed to be informative (eg 001_MPL_cDNA_1471-1565_codon_491-521_chr1:43814936-43815079).
 
+Pan2577_flat.bed
+The varscan and lofreq variant callers require flattened bedfiles, as any variants called within overlapping regions are called once for each region.
+This bedfile was created using the command `bedtools merge -i Pan2577.bed > Pan2577_flat.bed`
+
+This only contains three columns chr,start and stop as the name column cannot easily be merged.
 
