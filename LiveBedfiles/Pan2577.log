@@ -1,0 +1,6 @@
+This documents the generation of the Pan2577 (swift 57G) bed files.
+
+The kit design is available from the manufacturers - see Accel-Amplicon-Plus_57G_masterfile.txt
+This masterfile contains the coordinates of the target of the amplicon (the region between the primers), and the coordinates and sequence of the forward and reverse primers.
+The coordinates stated in this file are zero based.
+
