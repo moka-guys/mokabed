@@ -1,0 +1,17 @@
+This documents the generation of the Pan2684 (swift 57G) bed files.
+
+The kit design is available from the manufacturers - see Accel-Amplicon-Plus_57G_masterfile.txt
+This masterfile contains the coordinates of the target of the amplicon (the region between the primers), and the coordinates and sequence of the forward and reverse primers.
+The coordinates stated in this file are zero based and half open (ie the stop coordinate is not included). This is inline with the coordinates stated in the USCS database tables and in line with the expectations of the UCSC browser (http://genome.ucsc.edu/blog/the-ucsc-genome-browser-coordinate-counting-systems/).
+
+Some fields used in the BED files below required some annotations of the coordinates stated in the masterfile. 
+Creation of these annotations are described in the repository https://github.com/moka-guys/swift_amplicon_annotations.
+
+Pan2684.bed
+This BED file is used to generate QC and was used to create the bed files described below.
+
+This bedfile contains 14 columns.
+The first three columns are chr, start and stop (taken from the masterfile). 
+The fourth column is the EntrezgeneID. These were manually curated from the HGNC snapshot in Moka.
+The fourteenth column is the informative name, created from the output of the annotations (eg MPL;NM_005373_c.1471-1565_p.491-521). The semi colon ensures consistency between bedfiles and that the sambamba bedfile is compatibile with the sambamba coverage app.
+
