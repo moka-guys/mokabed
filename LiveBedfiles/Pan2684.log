@@ -20,3 +20,13 @@ The varscan and lofreq variant callers require flattened bedfiles, as any varian
 This bedfile was created using the command `bedtools merge -i Pan2684.bed > Pan2684_flat.bed`
 
 This only contains three columns chr,start and stop as the name column cannot easily be merged.
+
+Pan2684_Sambamba.bed
+This file is used by sambamba/chanjo for variant calling. It is based on Pan2684.bed and contains:
+
+chr,start,stop - taken from Pan2684.bed
+Name - in format chr-start-stop
+Score - default value of 0
+Strand - taken from the annotations.
+informative name - in format gene;transcript_c.1-2_p.1-2 (as described above).
+EntrezGeneID - Manually curated from the HGNC snapshot in Moka.
