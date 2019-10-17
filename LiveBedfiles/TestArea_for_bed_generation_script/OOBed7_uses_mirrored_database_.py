@@ -172,7 +172,7 @@ class Bedfile:
 		print "printing out lengths of df2 columns" 
 		print len(NMacc.values)
 		print len(Chrser.values)
-		print len(Newstrand.values)
+		#print len(Newstrand.values)
 		print len(txStart.values)
 		print len(cdsStart.values)
 		print len(cdsEnd.values)
