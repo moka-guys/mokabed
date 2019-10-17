@@ -184,7 +184,7 @@ class Bedfile:
 		print len(cdsStartStat.values)
 		print len(exonFrames.values)
 		# Concatanate the list of pandas series into a single dataframe which is to be outed as a text file
-		df = pd.DataFrame(zip(NMacc.values, Chrser.values, txStart.values, txEnd.values, cdsStart.values, cdsEnd.values, exonCount.values, Startser.values, Stopser.values, score.values, name2.values, cdsStartStat.values, cdsEndStat.values, exonFrames.values), columns = ['name', 'chrom', 'strand','txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount', 'exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'], index=Chrser.index)
+		df = pd.DataFrame(zip(NMacc.values, Chrser.values, txStart.values, txEnd.values, cdsStart.values, cdsEnd.values, exonCount.values, Startser.values, Stopser.values, score.values, name2.values, cdsStartStat.values, cdsEndStat.values, exonFrames.values), columns = ['name', 'chrom', 'txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount', 'exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'], index=Chrser.index)
 		
 		#df = pd.concat([NMacc.reset_index(), Chrser.reset_index().reset_index().reset_index().reset_index(), Newstrand.reset_index().reset_index().reset_index(), txStart.reset_index().reset_index(), txEnd.reset_index()], axis=1)
 		
