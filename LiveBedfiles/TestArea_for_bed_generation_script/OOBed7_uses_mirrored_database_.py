@@ -1436,3 +1436,6 @@ def UTR(argv):
 
 
 if __name__=="__main__":
+	start_time = time.time()
+	UTR(sys.argv[1:])
+	print("--- %s seconds ---" % (time.time() - start_time))
