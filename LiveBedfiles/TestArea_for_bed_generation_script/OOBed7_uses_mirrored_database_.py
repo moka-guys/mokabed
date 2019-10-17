@@ -150,6 +150,8 @@ class Bedfile:
 		NMacc = bed.groupby(['EntrezID', '#Chr'])['Gene_Accession'].apply(lambda x: ''.join(sorted(set(list(x)))))
 		exonCount = bed.groupby(['EntrezID', '#Chr'])['Start'].apply(len)
 		Stranddf = pd.DataFrame(zip(self.strand, self.entrezid, self.Chr),  columns = ["Strand","EntrezID", "#Chr"])
+		print "printing length of Stranddf"
+		print len(Stranddf)
 		Newstrand = Stranddf.groupby(['EntrezID', "#Chr"])["Strand"].apply(lambda x: ''.join(sorted(set(map(str, list(x))))))
 		txStart = bed.groupby(['EntrezID', '#Chr'])['Start'].apply(lambda x: list(x)[0])
 		txEnd = bed.groupby(['EntrezID', '#Chr'])['Stop'].apply(lambda x: list(x)[-1])
