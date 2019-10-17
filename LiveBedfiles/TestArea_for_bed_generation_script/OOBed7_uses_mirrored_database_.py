@@ -166,10 +166,23 @@ class Bedfile:
 			efstr = ','.join(ef)
 			#efstrformatted = efstr[1:-1]
 			exonFrameslist.append(efstr)
-
+		
 		#Exonframedf = pd.DataFrame(zip(self.strand, self.entrezid),  columns = ["Strand","EntrezID"])
 		exonFrames = pd.Series(exonFrameslist, index = Chrser.index)
-		
+		print "printing out lengths of df2 columns" 
+		print len(NMacc.values)
+		print len(Chrser.values)
+		print len(Newstrand.values)
+		print len(txStart.values)
+		print len(cdsStart.values)
+		print len(cdsEnd.values)
+		print len(exonCount.values)
+		print len(Startser.values)
+		print len(Stopser.values)
+		print len(score.values)
+		print len(name2.values)
+		print len(cdsStartStat.values)
+		print len(exonFrames.values)
 		# Concatanate the list of pandas series into a single dataframe which is to be outed as a text file
 		df = pd.DataFrame(zip(NMacc.values, Chrser.values, Newstrand.values, txStart.values, txEnd.values, cdsStart.values, cdsEnd.values, exonCount.values, Startser.values, Stopser.values, score.values, name2.values, cdsStartStat.values, cdsEndStat.values, exonFrames.values), columns = ['name', 'chrom', 'strand','txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount', 'exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'], index=Chrser.index)
 		
