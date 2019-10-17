@@ -812,6 +812,7 @@ class Bedfile:
 					self.Stop.append(exons3)
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
+					self.entrezid.append(geneposition.entrezid)
 					self.GeneName.append(geneposition.name2)
 					
 					counter += 1
@@ -824,6 +825,7 @@ class Bedfile:
 					self.Stop.append(exons3)
 					self.Chr.append(geneposition.chrom)
 					self.Accession.append(geneposition.name)
+					self.entrezid.append(geneposition.entrezid)
 					self.GeneName.append(geneposition.name2)
 					counter += 1
 			
