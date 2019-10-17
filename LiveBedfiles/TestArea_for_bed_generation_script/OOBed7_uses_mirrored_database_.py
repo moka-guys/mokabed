@@ -150,7 +150,7 @@ class Bedfile:
 		NMacc = bed.groupby(['EntrezID', '#Chr'])['Gene_Accession'].apply(lambda x: ''.join(sorted(set(list(x)))))
 		exonCount = bed.groupby(['EntrezID', '#Chr'])['Start'].apply(len)
 		Stranddf = pd.DataFrame(zip(self.strand, self.entrezid, self.Chr),  columns = ["Strand","EntrezID", "#Chr"])
-		#Newstrand = Stranddf.groupby(['EntrezID', "#Chr"])["Strand"].apply(lambda x: ''.join(sorted(set(map(str, list(x))))))
+		Newstrand = Stranddf.groupby(['EntrezID', "#Chr"])["Strand"].apply(lambda x: ''.join(sorted(set(map(str, list(x))))))
 		txStart = bed.groupby(['EntrezID', '#Chr'])['Start'].apply(lambda x: list(x)[0])
 		txEnd = bed.groupby(['EntrezID', '#Chr'])['Stop'].apply(lambda x: list(x)[-1])
 		cdsStart = bed.groupby(['EntrezID', '#Chr'])['Start'].apply(lambda x: int(list(x)[0]))
@@ -184,7 +184,7 @@ class Bedfile:
 		print len(cdsStartStat.values)
 		print len(exonFrames.values)
 		# Concatanate the list of pandas series into a single dataframe which is to be outed as a text file
-		df = pd.DataFrame(zip(NMacc.values, Chrser.values, txStart.values, txEnd.values, cdsStart.values, cdsEnd.values, exonCount.values, Startser.values, Stopser.values, score.values, name2.values, cdsStartStat.values, cdsEndStat.values, exonFrames.values), columns = ['name', 'chrom', 'txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount', 'exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'], index=Chrser.index)
+		df = pd.DataFrame(zip(NMacc.values, Chrser.values, Newstrand.values, txStart.values, txEnd.values, cdsStart.values, cdsEnd.values, exonCount.values, Startser.values, Stopser.values, score.values, name2.values, cdsStartStat.values, cdsEndStat.values, exonFrames.values), columns = ['name', 'chrom', 'strand', 'txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount', 'exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'], index=Chrser.index)
 		
 		#df = pd.concat([NMacc.reset_index(), Chrser.reset_index().reset_index().reset_index().reset_index(), Newstrand.reset_index().reset_index().reset_index(), txStart.reset_index().reset_index(), txEnd.reset_index()], axis=1)
 		
@@ -831,6 +831,7 @@ class Bedfile:
 					self.Accession.append(geneposition.name)
 					self.entrezid.append(geneposition.entrezid)
 					self.GeneName.append(geneposition.name2)
+					self.strand.append(geneposition.strand)
 					
 					counter += 1
 				elif counter > 0 and b < positionscds[-1][1]:
@@ -844,6 +845,7 @@ class Bedfile:
 					self.Accession.append(geneposition.name)
 					self.entrezid.append(geneposition.entrezid)
 					self.GeneName.append(geneposition.name2)
+					self.strand.append(geneposition.strand)
 					counter += 1
 			
 				else:
