@@ -169,7 +169,6 @@ class Bedfile:
 		
 		#Exonframedf = pd.DataFrame(zip(self.strand, self.entrezid),  columns = ["Strand","EntrezID"])
 		exonFrames = pd.Series(exonFrameslist, index = Chrser.index)
-		print "printing out lengths of df2 columns" 
 
 		# Concatanate the list of pandas series into a single dataframe which is to be outed as a text file
 		df = pd.DataFrame(zip(NMacc.values, Chrser.values, Newstrand.values, txStart.values, txEnd.values, cdsStart.values, cdsEnd.values, exonCount.values, Startser.values, Stopser.values, score.values, name2.values, cdsStartStat.values, cdsEndStat.values, exonFrames.values), columns = ['name', 'chrom', 'strand', 'txStart', 'txEnd', 'cdsStart', 'cdsEnd', 'exonCount', 'exonStarts', 'exonSEnds', 'score', 'name2', 'cdsStartStat', 'cdsEndStat', 'exonFrames'], index=Chrser.index)
@@ -306,7 +305,6 @@ class Bedfile:
 		if self.Gene:
 			self.GeneName = self.Gene
 		if self.entrezidmerge:
-			print "setting entrezid in writefile"
 			self.entrezid = self.entrezidmerge
 		if self.strandmerge:
 			self.strand = self.strandmerge
@@ -352,7 +350,7 @@ class Bedfile:
 		#Add in empty columns to ensure that the bed file generated is in Bed detail format
 		output_reindex = self.bedfile.reindex(columns=['Start', 'Stop', 'EntrezID', '', '', '', '', '', '', '', '', '', 'Gene_Accession'])
 		output_reindex.index.name = "#Chr"
-		print output_reindex
+
 		
 		#print "this is bedfile", self.bedfile
 		#CSV file with column headers
@@ -646,7 +644,6 @@ class Bedfile:
 			# Generate the entrezid for the gene symbol inserted based on its associated NM accesions
 			entrez = liveref.entrezidretrieve(access)
 			
-			print gene, " nana test ", entrez
 				
 			class atrib():
 				pass
@@ -750,7 +747,6 @@ class Bedfile:
 		#self.downstream adds to the 3'UTR of the last exon
 		#self.codingup and self.codingdown add to the ends of each internal coding exon
 		elif self.up == True and self.down == True and self.coding == True and geneposition.strand == "-":
-			
 			#Generate the Chr column			
 			for row in positionsexons:
 				
