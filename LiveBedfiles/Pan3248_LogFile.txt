@@ -58,3 +58,7 @@ git rm Pan3248_NF2_NM016418data.bed
 git rm Pan3248_NF2_NM016418dataSambamba.bed
 git rm Pan3248_NF2_NM016418dataRefSeqFormat.txt
 git rm Pan3248_NF2_NM016418_LogFile.txt
+
+Woops I forgot to use the sorted files in the git mv steps above, so re-do:
+git mv -f Pan3248_NF2_NM000268data.sorted.bed Pan3248data.bed
+git mv -f Pan3248_NF2_NM000268dataSambamba.sorted.bed Pan3248dataSambamba.bed
