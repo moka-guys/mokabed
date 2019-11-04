@@ -96,6 +96,17 @@ Manually added additional exon from NM_016418 into Pan3249_NF2_NM000268dataRefSe
 git mv Pan3249_NF2_NM000268data.sorted.bed Pan3249data.bed
 git mv Pan3249_NF2_NM000268dataSambamba.sorted.bed Pan3249dataSambamba.bed
 
+Remove intermediate files:
+git rm Pan3249_NF2_NM_000268data.bed
+git rm Pan3249_NF2_NM_000268dataRefSeqFormat.txt
+git rm Pan3249_NF2_NM_000268dataSambamba.bed
+git rm Pan3249_NF2_NM_000268_LogFile.txt
+git rm Pan3249_NF2_NM_016418data.bed
+git rm Pan3249_NF2_NM_016418dataRefSeqFormat.txt
+git rm Pan3249_NF2_NM_016418dataSambamba.bed
+git rm Pan3249_NF2_NM_016418_LogFile.txt
+
+
 
 
 
