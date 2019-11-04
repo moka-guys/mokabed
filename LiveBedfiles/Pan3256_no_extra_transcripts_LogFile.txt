@@ -15,3 +15,15 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan3256
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+
+Use bedtools subtract to add regions from extra transcripts that aren't in main file. Then rename file.
+bedtools subtract -a Pan3256_extra_transcriptsdata.bed  -b Pan3256_no_extra_transcriptsdata.bed >> Pan3256_no_extra_transcriptsdata.bed
+sort Pan3256_no_extra_transcriptsdata.bed -k1,1V -k2,2n -k3,3n > Pan3256_no_extra_transcriptsdata.sorted.bed && mv Pan3256_no_extra_transcriptsdata.sorted.bed Pan3256data.bed
+sort command moved header to bottom so moved back to top in vscode
+bedtools subtract -a Pan3256_extra_transcriptsdataSambamba.bed -b Pan3256_no_extra_transcriptsdataSambamba.bed  >> Pan3256_no_extra_transcriptsdataSambamba.bed
+sort Pan3256_no_extra_transcriptsdataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3256_no_extra_transcriptsdataSambamba.sorted.bed && mv Pan3256_no_extra_transcriptsdataSambamba.sorted.bed Pan3256dataSambamba.bed
+
+
+
+Manually added additional exon from NM_016418 into Pan3248_NF2_NM000268dataRefSeqFormat.txt
