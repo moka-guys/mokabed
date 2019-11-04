@@ -27,3 +27,8 @@ sort Pan3256_no_extra_transcriptsdataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3256
 Left refseq file as it (i.e. without extra exons from additional transcripts) since this file isn't used
 Remove intermediate files and rename files
 
+Manually added in SNP sites (SNP v2) to Pan3248data.bed and Pan3248dataSambamba.bed (for the SNP ID check) as provided by user.
+For fields that usually require gene/transcript name, I just added the dbSNP rs ID instead (as previously done in Pan1159)
+Then sorted the bed files
+sort Pan3256data.bed -k1,1V -k2,2n -k3,3n > Pan3256data.sorted.bed && mv Pan3256data.sorted.bed Pan3256data.bed
+sort Pan3256dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3256dataSambamba.sorted.bed && mv Pan3256dataSambamba.sorted.bed Pan3256dataSambamba.bed
