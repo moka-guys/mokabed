@@ -107,6 +107,8 @@ git rm Pan3249_NF2_NM_016418dataSambamba.bed
 git rm Pan3249_NF2_NM_016418_LogFile.txt
 
 
+I then used RPKM_bedfile to add Pan657 & Pan3249 to Pan3249data.bed
+
 
 
 
