@@ -65,3 +65,6 @@ git mv -f Pan3248_NF2_NM000268dataSambamba.sorted.bed Pan3248dataSambamba.bed
 
 Next manually added in the SNP sites to Pan3248data.bed and Pan3248dataSambamba.bed (for the SNP ID check) as provided by user.
 For fields that usually require gene/transcript name, I just added the dbSNP rs ID instead (as previously done in Pan1159)
+Then sorted the bed files
+sort Pan3248data.bed -k1,1V -k2,2n -k3,3n > Pan3248data.sorted.bed && mv Pan3248data.sorted.bed Pan3248data.bed
+sort Pan3248dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3248dataSambamba.sorted.bed && mv Pan3248dataSambamba.sorted.bed Pan3248dataSambamba.bed
