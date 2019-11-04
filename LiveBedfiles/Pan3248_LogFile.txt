@@ -62,3 +62,6 @@ git rm Pan3248_NF2_NM016418_LogFile.txt
 Woops I forgot to use the sorted files in the git mv steps above, so re-do:
 git mv -f Pan3248_NF2_NM000268data.sorted.bed Pan3248data.bed
 git mv -f Pan3248_NF2_NM000268dataSambamba.sorted.bed Pan3248dataSambamba.bed
+
+Next manually added in the SNP sites to Pan3248data.bed and Pan3248dataSambamba.bed (for the SNP ID check) as provided by user.
+For fields that usually require gene/transcript name, I just added the dbSNP rs ID instead (as previously done in Pan1159)
