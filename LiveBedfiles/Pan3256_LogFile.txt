@@ -24,6 +24,6 @@ sort command moved header to bottom so moved back to top in vscode
 bedtools subtract -a Pan3256_extra_transcriptsdataSambamba.bed -b Pan3256_no_extra_transcriptsdataSambamba.bed  >> Pan3256_no_extra_transcriptsdataSambamba.bed
 sort Pan3256_no_extra_transcriptsdataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3256_no_extra_transcriptsdataSambamba.sorted.bed && mv Pan3256_no_extra_transcriptsdataSambamba.sorted.bed Pan3256dataSambamba.bed
 
+Left refseq file as it (i.e. without extra exons from additional transcripts) since this file isn't used
+Remove intermediate files and rename files
 
-
-Manually added additional exon from NM_016418 into Pan3248_NF2_NM000268dataRefSeqFormat.txt
