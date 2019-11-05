@@ -5,3 +5,4 @@ SELECT GuysAccession,Symbol,'0' as GuysAccessionVersion
 
 The output from this query is saved as Pan3249.txt in 'Pan3249v2/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles' 
 
+As Pan3249 has multiple transcripts for NF2 (NM000268 & NM016418) I split Pan3249.txt into two files Pan3249_NF2_NM_000268.txt & Pan3249_NF2_NM_016418.txt so that mokabed can be run on them separately. 
