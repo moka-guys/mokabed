@@ -1,0 +1,7 @@
+The following SQL statement was used to extract the gene list for Pan 3249 from MOKA:
+SELECT GuysAccession,Symbol,'0' as GuysAccessionVersion
+  FROM dbo.NGSPanelGenes
+ WHERE NGSPanelID=3249
+
+The output from this query is saved as Pan3249.txt in 'Pan3249v2/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles' 
+
