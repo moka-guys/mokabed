@@ -1,0 +1,70 @@
+Time Stamp:2019-10-25 13:28:23.556139
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan3248_NF2_NM000268dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --up 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan3248_NF2_NM000268.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan3248_NF2_NM000268data.bed --logfile /home/dnanexus/out/Output_files/Pan3248_NF2_NM000268_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+
+Time Stamp:2019-10-25 13:28:23.261524
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan3248_NF2_NM016418dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --up 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan3248_NF2_NM016418.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan3248_NF2_NM016418data.bed --logfile /home/dnanexus/out/Output_files/Pan3248_NF2_NM016418_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+
+Panel contains 2 transcripts for NF2. Don't want to include overlapping regions twice (would mess with RPKM calculations) but also don't want to merge overlapping exons (would cause issues with reporting exon level coverage)
+Therefore ran mokabed with only one of the transcripts included in the file (NM_000268). Then ran a second time with only NM_016418 (see Pan3248_NF2_NM016418_LogFile in git history).
+
+Use bedtools subtract to add regions from NM_016418 that aren't in NM_000268 into the NM_000268 files.
+bedtools subtract -a Pan3248_NF2_NM016418data.bed -b Pan3248_NF2_NM000268data.bed >> Pan3248_NF2_NM000268data.bed
+sort Pan3248_NF2_NM000268data.bed -k1,1V -k2,2n -k3,3n > Pan3248_NF2_NM000268data.sorted.bed
+sort command moved header to bottom so moved back to top in vscode
+bedtools subtract -a Pan3248_NF2_NM016418dataSambamba.bed -b Pan3248_NF2_NM000268dataSambamba.bed >> Pan3248_NF2_NM000268dataSambamba.bed
+sort Pan3248_NF2_NM000268dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3248_NF2_NM000268dataSambamba.bed
+Manually added additional exon from NM_016418 into Pan3248_NF2_NM000268dataRefSeqFormat.txt
+
+Rename the NM_000268 files to just Pan3248 (since they now contain the data from both NF2 transcripts)
+git mv Pan3248_NF2_NM000268data.bed Pan3248data.bed
+git mv Pan3248_NF2_NM000268dataSambamba.bed Pan3248dataSambamba.bed
+git mv Pan3248_NF2_NM000268dataRefSeqFormat.txt Pan3248dataRefSeqFormat.txt
+git mv Pan3248_NF2_NM000268_LogFile.txt Pan3248_LogFile.txt
+
+Remove the NM_016418 files since they are no longer needed
+git rm Pan3248_NF2_NM016418data.bed
+git rm Pan3248_NF2_NM016418dataSambamba.bed
+git rm Pan3248_NF2_NM016418dataRefSeqFormat.txt
+git rm Pan3248_NF2_NM016418_LogFile.txt
+
+Woops I forgot to use the sorted files in the git mv steps above, so re-do:
+git mv -f Pan3248_NF2_NM000268data.sorted.bed Pan3248data.bed
+git mv -f Pan3248_NF2_NM000268dataSambamba.sorted.bed Pan3248dataSambamba.bed
+
+Next manually added in the SNP sites to Pan3248data.bed and Pan3248dataSambamba.bed (for the SNP ID check) as provided by user.
+For fields that usually require gene/transcript name, I just added the dbSNP rs ID instead (as previously done in Pan1159)
+Then sorted the bed files
+sort Pan3248data.bed -k1,1V -k2,2n -k3,3n > Pan3248data.sorted.bed && mv Pan3248data.sorted.bed Pan3248data.bed
+sort Pan3248dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3248dataSambamba.sorted.bed && mv Pan3248dataSambamba.sorted.bed Pan3248dataSambamba.bed
