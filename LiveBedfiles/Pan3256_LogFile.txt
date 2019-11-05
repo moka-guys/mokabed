@@ -32,3 +32,7 @@ For fields that usually require gene/transcript name, I just added the dbSNP rs 
 Then sorted the bed files
 sort Pan3256data.bed -k1,1V -k2,2n -k3,3n > Pan3256data.sorted.bed && mv Pan3256data.sorted.bed Pan3256data.bed
 sort Pan3256dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3256dataSambamba.sorted.bed && mv Pan3256dataSambamba.sorted.bed Pan3256dataSambamba.bed
+
+SNP sites was missing 3 chrX SNPs, manually add in
+sort Pan3256data.bed -k1,1V -k2,2n -k3,3n > Pan3256data.sorted.bed && mv Pan3256data.sorted.bed Pan3256data.bed
+sort Pan3256dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3256dataSambamba.sorted.bed && mv Pan3256dataSambamba.sorted.bed Pan3256dataSambamba.bed
