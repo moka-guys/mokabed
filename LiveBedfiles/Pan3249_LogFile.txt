@@ -50,3 +50,4 @@ Used bedtools subtract to add regions from NM_016418 that aren't in NM_000268 in
 
 bedtools subtract -a Pan3249_NF2_NM_016418data.bed -b Pan3249_NF2_NM_000268data.bed >> Pan3249_NF2_NM_000268data.bed
 
+sort Pan3249_NF2_NM_000268data.bed -k1,1V -k2,2n -k3,3n > Pan3249_NF2_NM000268data.sorted.bed
