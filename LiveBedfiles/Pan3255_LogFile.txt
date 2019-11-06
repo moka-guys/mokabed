@@ -22,3 +22,7 @@ sort Pan3255_noextra_transcriptsdata.bed -k1,1V -k2,2n -k3,3n > Pan3255_no_extra
 sort command moved header to bottom so moved back to top in vscode
 
 Remove intermediate files and rename files
+
+Use RPKM bedfile app in DNAnexus to combine Pan3253 and Pan3254 (CNV controls) with Pan3255data.bed
+
+Save Pan3255_RPKM_logfile.txt and Pan3255_RPKM.bed 
