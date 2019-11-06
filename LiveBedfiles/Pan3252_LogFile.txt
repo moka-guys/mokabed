@@ -1,0 +1,2 @@
+Rename SNP_ID v2 Pan3252.txt to Pan3252.bed
+git mv 'SNP_ID v2 Pan3252.txt' Pan3252.bed
