@@ -3,3 +3,6 @@ git mv Viapath\ Integrated\ Cancer\ Panel\ Intron\ CNV\ Pan3254.txt Pan3254.bed
 
 Remove chr
 sed -i 's/^chr//g' Pan3254.bed
+
+Sort
+sort Pan3254.bed -k1,1V -k2,2n -k3,3n > Pan3254.sorted.bed && mv Pan3254.sorted.bed Pan3254.bed
