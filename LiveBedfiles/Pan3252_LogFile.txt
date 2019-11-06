@@ -2,3 +2,6 @@ Rename SNP_ID v2 Pan3252.txt to Pan3252.bed
 git mv 'SNP_ID v2 Pan3252.txt' Pan3252.bed
 
 Coordinates are in b38, but we need b37, so liftover using UCSC (uploaded bed through web interface, used default settings)
+
+Remove chr
+sed -i 's/^chr//g' Pan3252.bed
