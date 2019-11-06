@@ -69,3 +69,6 @@ Appending additional bedfiles to bedfile:
 cat /home/dnanexus/in/CNV_control_regions/0/Pan657.bed >> Pan3249_RPKM.bed
 cat /home/dnanexus/in/CNV_control_regions/1/Pan3247.bed >> Pan3249_RPKM.bed
 
+I manually separated the line "X129093299129093499NGS CNV2214579516045795260MUTYH_3_11" as per Aled's comment Looks like the first bedfile (Pan657) that was added didn't have a new line at the end of the file so thisline is invalid.please seperate after CNV22.  This left all the lines below this change with ^M line endings so I ran %s/^M//g in vim to convert to unix EOL.
+
+
