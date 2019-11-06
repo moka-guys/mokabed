@@ -1,2 +1,5 @@
 Rename bed file
 git mv NGS\ CNV\ sites\ v3\ Pan3253.txt Pan3253.bed
+
+Remove chr
+sed -i 's/^chr//g' Pan3253.bed

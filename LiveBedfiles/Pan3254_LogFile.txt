@@ -1,2 +1,5 @@
 Rename bed file
 git mv Viapath\ Integrated\ Cancer\ Panel\ Intron\ CNV\ Pan3254.txt Pan3254.bed
+
+Remove chr
+sed -i 's/^chr//g' Pan3254.bed
