@@ -1,3 +1,4 @@
 Remove unnecessary lines (vscode)
 
-
+Remove chr
+sed -i 's/^chr//g' Pan659.bed
