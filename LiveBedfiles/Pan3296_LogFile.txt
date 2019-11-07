@@ -1,3 +1,11 @@
 Downloaded supplied file S0768212_Covered.bed and saved it to repo.
 
 I manually edited the file to remove chr from the chromosome names using the regex ^chr.
+
+I changed the name of the file to Pan3296data.bed so that it matches the pattern expected by the DNA Nexus app RPKM_bedfile:
+
+ git mv S0768212_Covered.bed Pan3296data.bed
+
+I uploaded this file to DNA nexus.
+
+ 
