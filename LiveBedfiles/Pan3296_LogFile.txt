@@ -1,1 +1,3 @@
 Downloaded supplied file S0768212_Covered.bed and saved it to repo.
+
+I manually edited the file to remove chr from the chromosome names using the regex ^chr.
