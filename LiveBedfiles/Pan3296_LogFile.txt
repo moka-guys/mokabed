@@ -17,4 +17,4 @@ No additonal bed files to be added
 
 I saved the output Pan3296_RPKM.bed & Pan3296_RPKM_logfile.txt to this repo.
 
- 
+I added the request form for Pan3296 to this repo. 
