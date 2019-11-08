@@ -23,3 +23,6 @@ sort Pan3255_no_extra_transcriptsdata.bed -k1,1V -k2,2n -k3,3n > Pan3255_no_extr
 sort command moved header to bottom so moved back to top in vscode
 
 Remove intermediate files
+
+Save RPKM app outputs (Pan3255+Pan3253+Pan3254)
+
