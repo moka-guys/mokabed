@@ -17,3 +17,5 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan3255
 version as defined by git tag = v1.2
 
 Download Mokabed original data.bed outputs 
+Use bedtools subtract to add regions from extra transcripts that aren't in main file. Then rename file.
+bedtools subtract -a Pan3255_extra_transcriptsdata.bed  -b Pan3255_no_extra_transcriptsdata.bed >> Pan3255_no_extra_transcriptsdata.bed
