@@ -1,0 +1,37 @@
+Time Stamp:2019-11-04 15:08:06.664605
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan3256_no_extra_transcriptsdataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --up 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan3256_no_extra_transcripts.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan3256_no_extra_transcriptsdata.bed --logfile /home/dnanexus/out/Output_files/Pan3256_no_extra_transcripts_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+
+Use bedtools subtract to add regions from extra transcripts that aren't in main file. Then rename file.
+bedtools subtract -a Pan3256_extra_transcriptsdata.bed  -b Pan3256_no_extra_transcriptsdata.bed >> Pan3256_no_extra_transcriptsdata.bed
+sort Pan3256_no_extra_transcriptsdata.bed -k1,1V -k2,2n -k3,3n > Pan3256_no_extra_transcriptsdata.sorted.bed && mv Pan3256_no_extra_transcriptsdata.sorted.bed Pan3256data.bed
+sort command moved header to bottom so moved back to top in vscode
+bedtools subtract -a Pan3256_extra_transcriptsdataSambamba.bed -b Pan3256_no_extra_transcriptsdataSambamba.bed  >> Pan3256_no_extra_transcriptsdataSambamba.bed
+sort Pan3256_no_extra_transcriptsdataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3256_no_extra_transcriptsdataSambamba.sorted.bed && mv Pan3256_no_extra_transcriptsdataSambamba.sorted.bed Pan3256dataSambamba.bed
+
+Left refseq file as it (i.e. without extra exons from additional transcripts) since this file isn't used
+Remove intermediate files and rename files
+
+Manually add in SNP sites from Pan3252 Pan3256data.bed and Pan3256dataSambamba.bed
+
+Sort again now that SNP sites added
+
+Delete RefSeq file since it is no longer accurate
+
+Add transcript files that were used as input to Mokabed
+Update to the combined input file.
