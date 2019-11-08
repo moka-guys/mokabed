@@ -1,0 +1,5 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_001042492	NF1	0
+NM_016418	NF2	0
+NM_000264	PTCH1	0
+NM_020630	RET	0
