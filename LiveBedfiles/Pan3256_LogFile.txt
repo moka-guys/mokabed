@@ -30,3 +30,5 @@ Remove intermediate files and rename files
 Manually add in SNP sites from Pan3252 Pan3256data.bed and Pan3256dataSambamba.bed
 
 Sort again now that SNP sites added
+
+Delete RefSeq file since it is no longer accurate
