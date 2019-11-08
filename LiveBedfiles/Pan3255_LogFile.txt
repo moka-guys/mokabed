@@ -13,3 +13,5 @@ Save original mokabed log files
 
 Save the bed files request form.
 Save transcript files used for Mokabed
+
+Removed the joint transcript file, as there are two seperated transcript files. 
