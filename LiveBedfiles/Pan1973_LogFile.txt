@@ -38,3 +38,5 @@ Appending additional bedfiles to bedfile:
 cat /home/dnanexus/in/CNV_control_regions/0/Pan657.bed >> Pan1973_RPKM.bed
 
 I added Pan1973_RPKM.bed to the repo.
+
+I copied the request form for Pan1973 into this repo.
