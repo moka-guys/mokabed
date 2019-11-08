@@ -34,3 +34,4 @@ Sort again now that SNP sites added
 Delete RefSeq file since it is no longer accurate
 
 Add transcript files that were used as input to Mokabed
+Update to the combined input file.
