@@ -1,0 +1,24 @@
+Downloaded supplied file S0768212_Covered.bed and saved it to repo.
+
+I manually edited the file to remove chr from the chromosome names using the regex ^chr.
+
+I changed the name of the file to Pan3296data.bed so that it matches the pattern expected by the DNA Nexus app RPKM_bedfile:
+
+ git mv S0768212_Covered.bed Pan3296data.bed
+
+I uploaded this file to DNA nexus and ran it through the DNA nexus app RPKM_bedfile V1.
+
+Creating bedfile for RPKM analysis for Pam3296
+Removing header line with command:
+sed -i '/^#/ d' /home/dnanexus/in/bedfile/Pam3296data.bed
+Taking first four columns only:
+awk '{ print $1\t$2\t$3\t$4 }' /home/dnanexus/in/bedfile/Pam3296data.bed > Pam3296_RPKM.bed
+No additonal bed files to be added
+
+I saved the output Pan3296_RPKM.bed & Pan3296_RPKM_logfile.txt to this repo.
+
+I added the request form for Pan3296 to this repo.
+
+I deleted the unneeded file Pan3296data.bed as requested:
+
+git rm Pan3296data.bed
