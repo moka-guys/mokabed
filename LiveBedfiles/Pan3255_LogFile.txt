@@ -26,3 +26,7 @@ Remove intermediate files
 
 Save RPKM app outputs (Pan3255+Pan3253+Pan3254)
 
+Save Pan3255transcripts.txt file, rename file to be consistent with the rest of the transcript files. 
+Save original mokabed log files 
+
+Save the bed files request form.
