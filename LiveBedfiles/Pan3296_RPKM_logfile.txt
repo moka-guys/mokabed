@@ -1,0 +1,6 @@
+Creating bedfile for RPKM analysis for Pam3296
+Removing header line with command:
+sed -i '/^#/ d' /home/dnanexus/in/bedfile/Pam3296data.bed
+Taking first four columns only:
+awk '{ print $1\t$2\t$3\t$4 }' /home/dnanexus/in/bedfile/Pam3296data.bed > Pam3296_RPKM.bed
+No additonal bed files to be added
