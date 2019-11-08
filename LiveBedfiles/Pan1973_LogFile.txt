@@ -43,3 +43,5 @@ I copied the request form for Pan1973 into this repo.
 
 Removed unecessary files
 git rm Pan1973data.bed
+
+Added file Pan1973_RPKM_logfile.txt to repo
