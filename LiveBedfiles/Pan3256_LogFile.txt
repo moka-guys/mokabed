@@ -35,3 +35,7 @@ Delete RefSeq file since it is no longer accurate
 
 Add transcript files that were used as input to Mokabed
 Update to the combined input file.
+
+#Pan3256flat.bed
+If bed files used by variant calling has overlapping regions it can lead to variants being called once per region so create a flattened bed file
+bedtools merge -i Pan3256data.bed > Pan3256flat.bed
