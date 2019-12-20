@@ -9,3 +9,7 @@ bedtools intersect -v -a 'Twist_Exome_Target_hg19.bed' -b 'Twist_Exome_RefSeq_ta
 Therefore the BED files should be combined, sorted and merged:
 cat Twist_Exome_RefSeq_targets_hg19.bed >> 'Twist_Exome_Target_hg19.bed'
 
+# sort
+sort -k1,1 -k2,2n Twist_Exome_Target_hg19.bed > Twist_Exome_RefSeq_targets_hg19_sorted.bed
+
+
