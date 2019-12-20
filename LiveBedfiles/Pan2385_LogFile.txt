@@ -2,3 +2,10 @@
 # Two files were provided by TWIST:
 Twist_Exome_RefSeq_targets_hg19.bed - contains the kit with added refseq baits
 Twist_Exome_Target_hg19.bed - contains the CCDS only
+
+BEDtools intersect command (below) showed there were regions in the CCDS bedfile, not in the refseq bedfile.
+bedtools intersect -v -a 'Twist_Exome_Target_hg19.bed' -b 'Twist_Exome_RefSeq_targets_hg19.bed
+
+Therefore the BED files should be combined, sorted and merged:
+cat Twist_Exome_RefSeq_targets_hg19.bed >> 'Twist_Exome_Target_hg19.bed'
+
