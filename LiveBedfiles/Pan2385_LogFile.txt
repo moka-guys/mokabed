@@ -18,3 +18,5 @@ bedtools merge -i Twist_Exome_RefSeq_targets_hg19_sorted.bed > Twist_Exome_RefSe
 # rename (and remove all temp files)
 git mv Twist_Exome_RefSeq_targets_hg19_sorted_merged.bed Pan2385.bed
 
+# remove chr
+sed -i 's/chr//' Pan2385.bed
