@@ -15,4 +15,6 @@ sort -k1,1 -k2,2n Twist_Exome_Target_hg19.bed > Twist_Exome_RefSeq_targets_hg19_
 # merge
 bedtools merge -i Twist_Exome_RefSeq_targets_hg19_sorted.bed > Twist_Exome_RefSeq_targets_hg19_sorted_merged.bed
 
+# rename (and remove all temp files)
+git mv Twist_Exome_RefSeq_targets_hg19_sorted_merged.bed Pan2385.bed
 
