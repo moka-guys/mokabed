@@ -21,11 +21,11 @@ cat Twist_Exome_RefSeq_targets_hg19.bed >> 'Twist_Exome_Target_hg19.bed'
 ## remove chr
 `sed -i 's/chr//' Pan2385.bed`
 
-# rename to reflect the kit design
+## rename to reflect the kit design
 `git mv Pan2385.bed Twist_Exome_RefSeq_CCDS_v1.2.bed`
 `git mv Pan2385.LogFile.txt Twist_Exome_RefSeq_CCDS_v1.2_LogFile.txt`
 
-# create padded.bed
+## create padded.bed
 using the below code create a padded code:
 
 ```
@@ -42,3 +42,7 @@ with open('/home/aled/mokabed/LiveBedfiles/Twist_Exome_RefSeq_CCDS_v1.2.bed','r'
 with open('/home/aled/mokabed/LiveBedfiles/Twist_Exome_RefSeq_CCDS_v1.2_padded.bed','w') as newbed:
     newbed.writelines(list)
 ```
+
+## repeat merge step on padded bed
+`bedtools merge -i Twist_Exome_RefSeq_CCDS_v1.2_padded.bed > Twist_Exome_RefSeq_CCDS_v1.2_padded_merged.bed`
+
