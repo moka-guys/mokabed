@@ -49,3 +49,6 @@ with open('/home/aled/mokabed/LiveBedfiles/Twist_Exome_RefSeq_CCDS_v1.2_padded.b
 ## rename merged padded bed
 `git rm Twist_Exome_RefSeq_CCDS_v1.2_padded.bed`
 `git mv Twist_Exome_RefSeq_CCDS_v1.2_padded_merged.bed Twist_Exome_RefSeq_CCDS_v1.2_padded.bed`
+
+## rename unpadded bed (targets bedfile)
+`git mv Twist_Exome_RefSeq_CCDS_v1.2.bed Twist_Exome_RefSeq_CCDS_v1.2_targets.bed`
