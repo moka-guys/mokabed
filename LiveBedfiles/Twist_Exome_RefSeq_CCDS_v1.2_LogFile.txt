@@ -20,3 +20,7 @@ git mv Twist_Exome_RefSeq_targets_hg19_sorted_merged.bed Pan2385.bed
 
 # remove chr
 sed -i 's/chr//' Pan2385.bed
+
+# rename to reflect the kit design
+git mv Pan2385.bed Twist_Exome_RefSeq_CCDS_v1.2.bed
+git mv Pan2385.LogFile.txt Twist_Exome_RefSeq_CCDS_v1.2_LogFile.txt
