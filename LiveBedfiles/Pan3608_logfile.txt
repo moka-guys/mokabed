@@ -1,1 +1,4 @@
 The coordinates for these CNVs were provided by M Yau.
+
+# rename BED file
+git mv LiveBedfiles/Pan3608_VCP_CNV_control_sites.bed Pan3608.bed
