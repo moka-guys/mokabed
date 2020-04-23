@@ -2,3 +2,6 @@
 
 # rename BED file
 git mv LiveBedfiles/Pan3610_VCP2_intron_CNV_v2.1.bed LiveBedfiles/Pan3610.bed
+
+# remove chr
+sed -i 's/^chr//g' LiveBedfiles/Pan3610.bed 
