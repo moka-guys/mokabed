@@ -6,3 +6,5 @@ awk '{ print $1\t$2\t$3\t$4 }' /home/dnanexus/in/bedfile/Pan3614data.bed > Pan36
 Appending additional bedfiles to bedfile:
 cat /home/dnanexus/in/CNV_control_regions/0/Pan3608.bed >> Pan3614_RPKM.bed
 cat /home/dnanexus/in/CNV_control_regions/1/Pan3610.bed >> Pan3614_RPKM.bed
+
+# checked all concatenated files start on a new line
