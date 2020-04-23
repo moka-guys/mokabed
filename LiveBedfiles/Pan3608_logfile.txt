@@ -1,0 +1,15 @@
+The coordinates for these CNVs were provided by M Yau.
+
+# rename BED file
+git mv LiveBedfiles/Pan3608_VCP_CNV_control_sites.bed Pan3608.bed
+
+# move bedfile back to where it should be!
+git mv Pan3608.bed LiveBedfiles/Pan3608.bed
+
+# remove chr
+sed -i 's/^chr//g' LiveBedfiles/Pan3608.bed 
+
+#sort bed file
+sort LiveBedfiles/Pan3608.bed -k1,1V -k2,2n -k3,3n > LiveBedfiles/Pan3608.sorted.bed && mv LiveBedfiles/Pan3608.sorted.bed LiveBedfiles/Pan3608.bed
+
+# checked for empty new line at end of file
