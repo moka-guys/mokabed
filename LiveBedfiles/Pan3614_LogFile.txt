@@ -25,3 +25,6 @@ cat Pan3614_LogFile.txt >> Pan3614_logfile.txt
 git rm Pan3614_LogFile.txt
 git mv Pan3614_logfile.txt Pan3614_LogFile.txt
 
+# run nexus app to create RPKM Bedfile
+performed in 003_200423_Pan3614
+see Pan3614_RPKM_logfile.txt
