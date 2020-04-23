@@ -1,2 +1,12 @@
 The coordinates for this BED file were provided by M Yau.
 
+Save BED file request form in correct folder 
+
+Save BED file in the correct folder
+
+#remove chr
+sed -i 's/^chr//g' LiveBedfiles/Pan3607.bed
+
+
+
+
