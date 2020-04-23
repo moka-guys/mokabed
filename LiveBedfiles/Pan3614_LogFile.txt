@@ -28,3 +28,6 @@ git mv Pan3614_logfile.txt Pan3614_LogFile.txt
 # run nexus app to create RPKM Bedfile
 performed in 003_200423_Pan3614
 see Pan3614_RPKM_logfile.txt
+
+#rename the bedfile request form
+git mv RequestForms/Pan3614_BEDfile_creation_request_form.docx RequestForms/Pan3614_request_form.docx
