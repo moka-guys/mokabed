@@ -2,3 +2,6 @@ The coordinates for these CNVs were provided by M Yau.
 
 # rename BED file
 git mv LiveBedfiles/Pan3608_VCP_CNV_control_sites.bed Pan3608.bed
+
+# move bedfile back to where it should be!
+git mv Pan3608.bed LiveBedfiles/Pan3608.bed
