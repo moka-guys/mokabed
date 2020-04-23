@@ -1,3 +1,7 @@
 The coordinates for this BED file were provided by M Yau.
 
 Save BED file request form in correct folder
+
+Save BED file in the correct folder
+
+#Format BED file remove NC_... suffix and add start position to the BED file e.g SNP pos -1 
