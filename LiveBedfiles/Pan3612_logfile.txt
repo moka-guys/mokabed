@@ -6,3 +6,8 @@ Save BED file in the correct folder
 
 #Remove NC number and save it in the correct format
 awk -F '.' '{print$2 "\t" $3}' Pan3612.bed | awk -F ':' '{print $1 "\t" $2}' | awk -F '\t' '{print $1 "\t" $3 "\t" $4}' >> Pan3612_formatted.bed
+
+#Deleted the formatted.bed file chrom numbers were incorrect
+
+#Formatted BED file removed NC_... suffix and added start position to the BED file e.g SNP pos -1 
+
