@@ -5,3 +5,6 @@ git mv LiveBedfiles/Pan3608_VCP_CNV_control_sites.bed Pan3608.bed
 
 # move bedfile back to where it should be!
 git mv Pan3608.bed LiveBedfiles/Pan3608.bed
+
+# remove chr
+sed -i 's/^chr//g' LiveBedfiles/Pan3608.bed 
