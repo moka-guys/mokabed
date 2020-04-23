@@ -1,3 +1,7 @@
+# transcripts extracted from MOKA using:
+select GuysAccession,Symbol,'0' as GuysAccessionVersion
+from dbo.NGSPanelGenes
+where NGSPanelID = 3614
 Time Stamp:2020-04-23 10:20:17.875559
 Command arguments executed:
 RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan3614dataRefSeqFormat.txt
@@ -15,3 +19,9 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan3614
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+# combine log files
+cat Pan3614_LogFile.txt >> Pan3614_logfile.txt
+git rm Pan3614_LogFile.txt
+git mv Pan3614_logfile.txt Pan3614_LogFile.txt
+

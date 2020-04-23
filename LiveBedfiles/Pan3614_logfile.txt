@@ -1,4 +1,0 @@
-# transcripts extracted from MOKA using:
-select GuysAccession,Symbol,'0' as GuysAccessionVersion
-from dbo.NGSPanelGenes
-where NGSPanelID = 3614
