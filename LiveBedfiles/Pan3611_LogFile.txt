@@ -1,3 +1,5 @@
 The coordinates for this BED file were provided by M Yau.
 
-Saved requet form in the correct folder 
+Save request form in the correct folder 
+
+Save BED file in the correct folder 
