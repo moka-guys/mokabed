@@ -3,3 +3,10 @@ The coordinates for this BED file were provided by M Yau.
 Save BED file request form in correct folder 
 
 Save BED file in the correct folder
+
+#Remove NC number and save it in the correct format
+awk -F '.' '{print$2 "\t" $3}' Pan3609.bed | awk -F ':' '{print $1 "\t" $2}' | awk -F '\t' '{print $1 "\t" $3 "\t" $4}' | awk -F "_" '{print $1 "\t" $2 "\t" $3 "\t" $4}' >> Pan3609_formatted.bed
+
+#Delete old Bed file and rename new Bed file
+rm Pan3609.bed
+mv Pan3609_formatted.bed Pan3609.bed
