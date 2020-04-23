@@ -1,1 +1,4 @@
 # The file Pan3610_VCP2_intron_CNV_v2.1 was provided by M Yau
+
+# rename BED file
+git mv LiveBedfiles/Pan3610_VCP2_intron_CNV_v2.1.bed LiveBedfiles/Pan3610.bed
