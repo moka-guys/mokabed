@@ -1,0 +1,18 @@
+The coordinates for this BED file were provided by M Yau.
+
+Save BED file request form in correct folder 
+
+Saved BED file 
+
+#Remove NC_... suffix
+#Save it in the correct format
+awk -F '.' '{print$1 "\t" $3}' Pan3609.bed | awk -F '_' '{print$1 "\t" $2}' >> Pan3609_formatted.bed
+
+#Delete old Bed file and rename new Bed file
+rm Pan3609.bed
+mv Pan3609_formatted.bed Pan3609.bed
+
+#sort bed file
+sort LiveBedfiles/Pan3609.bed -k1,1V -k2,2n -k3,3n > LiveBedfiles/Pan3609.sorted.bed && mv LiveBedfiles/Pan3609.sorted.bed LiveBedfiles/Pan3609.bed
+
+#checked for empty new line at end of file
