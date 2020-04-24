@@ -26,4 +26,6 @@ version as defined by git tag = v1.0-260-g32d2a72
 
 #Save outputs from Mokabed into Git repo
 
+#Combine Bedfiles Pan3613 Pan3607 Pan3609 Pan3611 Pan3612 
+cat Pan3613data.bed Pan3607.bed Pan3609.bed Pan3611.bed Pan3612.bed >> Pan3213_combined.bed
 
