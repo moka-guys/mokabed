@@ -1,3 +1,7 @@
-The coordinates for this BED file were provided by M Yau.
-
 Save BED file request form in correct folder
+
+# transcripts extracted from MOKA using:
+select GuysAccession,Symbol,'0' as GuysAccessionVersion
+from dbo.NGSPanelGenes
+where NGSPanelID = 3614
+
