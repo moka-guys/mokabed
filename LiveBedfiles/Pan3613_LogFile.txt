@@ -36,3 +36,6 @@ rm Pan3613data.bed | mv Pan3613_combined.bed Pan3613data.bed
 sort LiveBedfiles/Pan3613data.bed -k1,1V -k2,2n -k3,3n > LiveBedfiles/Pan3613.sorted.bed && mv LiveBedfiles/Pan3613.sorted.bed LiveBedfiles/Pan3613data.bed
 
 #Move header to the top 
+
+#Add the remaining bed file to the Sambamba Bed file
+cat Pan3613dataSambamba.bed Pan3607.bed Pan3609.bed Pan3611.bed Pan3612.bed >> Pan3613dataSambamba_combined.bed
