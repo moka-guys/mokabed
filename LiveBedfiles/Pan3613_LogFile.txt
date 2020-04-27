@@ -1,0 +1,48 @@
+Save BED file request form in correct folder
+
+# transcripts extracted from MOKA using:
+select GuysAccession,Symbol,'0' as GuysAccessionVersion
+from dbo.NGSPanelGenes
+where NGSPanelID = 3613
+
+#Run Mokabed
+Time Stamp:2020-04-24 12:29:11.544981
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan3613dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --up 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan3613.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan3613data.bed --logfile /home/dnanexus/out/Output_files/Pan3613_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+#Save outputs from Mokabed into Git repo
+
+#Combine Bedfiles Pan3613 Pan3607 Pan3609 Pan3611 Pan3612 
+cat Pan3613data.bed Pan3607.bed Pan3609.bed Pan3611.bed Pan3612.bed >> Pan3613_combined.bed
+
+#Rm Pan3613data.bed and rename Pan3213_combined.bed to Pan3613data.bed
+rm Pan3613data.bed | mv Pan3613_combined.bed Pan3613data.bed
+
+#Sort the bed file 
+sort LiveBedfiles/Pan3613data.bed -k1,1V -k2,2n -k3,3n > LiveBedfiles/Pan3613.sorted.bed && mv LiveBedfiles/Pan3613.sorted.bed LiveBedfiles/Pan3613data.bed
+
+#Move header to the top 
+
+#Add the remaining bed file to the Sambamba Bed file
+cat Pan3613dataSambamba.bed Pan3607.bed Pan3609.bed Pan3611.bed Pan3612.bed >> Pan3613dataSambamba_combined.bed
+
+#Remove old Sambamba Bed file and replace with combined 
+rm Pan3613dataSambamba.bed | mv Pan3613dataSambamba_combined.bed Pan3613dataSambamba.bed
+
+#In excel format Pan3607 Pan3609 Pan3611 Pan3612 output to match the Sambamba output 
+
+#Insert 0 for missing EntrezID in SambambaBed file  
