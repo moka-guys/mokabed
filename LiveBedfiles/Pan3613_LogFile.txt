@@ -44,3 +44,5 @@ cat Pan3613dataSambamba.bed Pan3607.bed Pan3609.bed Pan3611.bed Pan3612.bed >> P
 rm Pan3613dataSambamba.bed | mv Pan3613dataSambamba_combined.bed Pan3613dataSambamba.bed
 
 #In excel format Pan3607 Pan3609 Pan3611 Pan3612 output to match the Sambamba output 
+
+#Insert 0 for missing EntrezID in SambambaBed file  
