@@ -47,4 +47,4 @@ rm Pan3613dataSambamba.bed | mv Pan3613dataSambamba_combined.bed Pan3613dataSamb
 
 #Insert 0 for missing EntrezID in SambambaBed file 
 
-#Delete empty line at the top of the file 
+#Delete empty line at the top of the Pan3613data.bed file 
