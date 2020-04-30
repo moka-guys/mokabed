@@ -8,3 +8,4 @@ Positions were checked in UCSC by adding the data as a track and comparing the c
 One position provided (rs5742910) relates to a insertion (rather than SNV). For this position the region was extended to the base before and after the insertion.
 Should this BED file be used to restrict variants extra padding may be required.
 
+A number of entries are also duplicated, where multiple different SNVs are seen at the same position. Only one record is required in this BED so duplicate rows were removed.
