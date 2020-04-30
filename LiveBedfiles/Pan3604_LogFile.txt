@@ -1,12 +1,11 @@
 The coordinates for this BED file were provided by M Yau.
 
-Save BED file request form in correct folder
+BED file request form saved in /RequestForms
 
-Save BED file in the correct folder
+The coordinates were manually converted into BED file format in Excel.
+The position quoted in the coordinates was used as the stop coord and the start pos was this coord -1.
+Positions were checked in UCSC by adding the data as a track and comparing the coordinate chage
+One position provided related to a duplication (rather than SNV) but as these BED files are used for coverage and QC a single base description is sufficient. Should this BED file be used to restrict variants extra padding should be added.
 
-#Format BED file remove NC_... suffix and add start position to the BED file e.g SNP pos -1 
 
-#sort BED file 
-sort LiveBedfiles/Pan3612.bed -k1,1V -k2,2n -k3,3n > LiveBedfiles/Pan3612.sorted.bed && mv LiveBedfiles/Pan3612.sorted.bed LiveBedfiles/Pan3612.bed
 
-#checked for empty new line at end of file
