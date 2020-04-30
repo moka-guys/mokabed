@@ -7,5 +7,6 @@ The position quoted in the coordinates was used as the stop coord and the start 
 Positions were checked in UCSC by adding the data as a track and comparing the coordinate chage
 One position provided related to a deletion (rather than SNV) but as these BED files are used for coverage and QC a this region is sufficient. Should this BED file be used to restrict variants extra padding may be required.
 
-
+# remove chr
+sed -i 's/^chr//g' Pan3604.bed 
 
