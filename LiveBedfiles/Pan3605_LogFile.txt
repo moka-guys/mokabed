@@ -8,5 +8,7 @@ Positions were checked in UCSC by adding the data as a track and comparing the c
 One position provided related to a deletion (rather than SNV) but as these BED files are used for coverage and QC a this region is sufficient. Should this BED file be used to restrict variants extra padding may be required.
 
 # remove chr
-sed -i 's/^chr//g' Pan3604.bed 
+sed -i 's/^chr//g' Pan3605.bed 
 
+# sort 
+sort Pan3605.bed -k1,1V -k2,2n -k3,3n > Pan3605.sorted.bed; mv Pan3605.sorted.bed Pan3605.bed
