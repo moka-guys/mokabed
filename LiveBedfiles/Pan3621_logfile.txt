@@ -9,3 +9,6 @@ One position provided (rs5742910) relates to a insertion (rather than SNV). For 
 Should this BED file be used to restrict variants extra padding may be required.
 
 A number of entries are also duplicated, where multiple different SNVs are seen at the same position. Only one record is required in this BED so duplicate rows were removed.
+
+# remove chr
+sed -i 's/^chr//g' Pan3621.bed 
