@@ -12,3 +12,8 @@ A number of entries are also duplicated, where multiple different SNVs are seen 
 
 # remove chr
 sed -i 's/^chr//g' Pan3621.bed 
+
+# sort 
+sort Pan3621.bed -k1,1V -k2,2n -k3,3n > Pan3621.sorted.bed; mv Pan3621.sorted.bed Pan3621.bed
+
+# empty new line at end checked
