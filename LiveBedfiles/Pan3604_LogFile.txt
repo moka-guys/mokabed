@@ -1,0 +1,12 @@
+The coordinates for this BED file were provided by M Yau.
+
+Save BED file request form in correct folder
+
+Save BED file in the correct folder
+
+#Format BED file remove NC_... suffix and add start position to the BED file e.g SNP pos -1 
+
+#sort BED file 
+sort LiveBedfiles/Pan3612.bed -k1,1V -k2,2n -k3,3n > LiveBedfiles/Pan3612.sorted.bed && mv LiveBedfiles/Pan3612.sorted.bed LiveBedfiles/Pan3612.bed
+
+#checked for empty new line at end of file
