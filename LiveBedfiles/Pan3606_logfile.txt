@@ -1,0 +1,7 @@
+The coordinates for this BED file were provided by M Yau.
+
+BED file request form saved in /RequestForms
+
+The coordinates were manually converted into BED file format in Excel.
+The position quoted in the coordinates was used as the stop coord and the start pos was this coord -1.
+Positions were checked in UCSC by adding the data as a track and comparing the coordinate chage
