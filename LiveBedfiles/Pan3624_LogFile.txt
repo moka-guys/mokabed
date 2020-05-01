@@ -6,3 +6,5 @@ where NGSPanelID = 3624
 bedfile request form saved.
 
 2 genes have multiple transcripts. These were split into seperate files.
+
+MokaBED was run for both transcript lists
