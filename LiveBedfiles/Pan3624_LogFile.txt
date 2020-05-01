@@ -24,3 +24,4 @@ Rename and remove intermediate files
 git mv Pan3624_no_duplicatesdata.bed Pan3624data.bed
 git rm Pan3624_no_duplicatesdata_unsorted.bed Pan3624_duplicatesdata.bed Pan3624_duplicatesdataRefSeqFormat.txt Pan3624_duplicatesdataSambamba.bed Pan3624_no_duplicatesdataRefSeqFormat.txt Pan3624_no_duplicatesdataSambamba.bed Pan3624_no_duplicatesdata_unsorted.bed' 
 
+create RPKM BED file using the nexus app and Pan3624data.bed
