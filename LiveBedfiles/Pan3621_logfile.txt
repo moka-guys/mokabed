@@ -1,0 +1,19 @@
+The coordinates for this BED file were provided by M Yau.
+
+BED file request form saved in /RequestForms
+
+The coordinates were manually converted into BED file format in Excel.
+The position quoted in the coordinates was used as the stop coord and the start pos was this coord -1.
+Positions were checked in UCSC by adding the data as a track and comparing the coordinate chage
+One position provided (rs5742910) relates to a insertion (rather than SNV). For this position the region was extended to the base before and after the insertion.
+Should this BED file be used to restrict variants extra padding may be required.
+
+A number of entries are also duplicated, where multiple different SNVs are seen at the same position. Only one record is required in this BED so duplicate rows were removed.
+
+# remove chr
+sed -i 's/^chr//g' Pan3621.bed 
+
+# sort 
+sort Pan3621.bed -k1,1V -k2,2n -k3,3n > Pan3621.sorted.bed; mv Pan3621.sorted.bed Pan3621.bed
+
+# empty new line at end checked
