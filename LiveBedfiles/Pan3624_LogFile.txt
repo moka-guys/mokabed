@@ -20,3 +20,7 @@ sort command moved header to bottom so moved back to top in vscode
 mv Pan3624_no_duplicatesdata.bed Pan3624_no_duplicatesdata_unsorted.bed 
 mv Pan3624_no_duplicatesdata.sorted.bed Pan3624_no_duplicatesdata.bed
 
+Rename and remove intermediate files
+git mv Pan3624_no_duplicatesdata.bed Pan3624data.bed
+git rm Pan3624_no_duplicatesdata_unsorted.bed Pan3624_duplicatesdata.bed Pan3624_duplicatesdataRefSeqFormat.txt Pan3624_duplicatesdataSambamba.bed Pan3624_no_duplicatesdataRefSeqFormat.txt Pan3624_no_duplicatesdataSambamba.bed Pan3624_no_duplicatesdata_unsorted.bed' 
+
