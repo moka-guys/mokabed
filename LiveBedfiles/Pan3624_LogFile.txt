@@ -9,4 +9,5 @@ bedfile request form saved.
 
 MokaBED was run for both transcript lists
 
+# subtract BED files, adding regions only in additional exons into main file.
 bedtools subtract -a Pan3624_duplicatesdata.bed  -b Pan3624_no_duplicatesdata.bed >> Pan3624_no_duplicatesdata.bed
