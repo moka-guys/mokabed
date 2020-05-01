@@ -27,3 +27,5 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan3623
 
 version as defined by git tag = v1.2
 
+Use bedtools subtract to add regions from extra transcripts that aren't in main file. 
+bedtools subtract -a Pan3623_duplicatesdata.bed -b Pan3623data.bed >> Pan3623data.bed
