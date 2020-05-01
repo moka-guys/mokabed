@@ -61,3 +61,7 @@ cat Pan3621.bed Pan3604.bed Pan3605.bed Pan3606.bed Pan3607.bed Pan3612.bed >> P
 
 # manually add in extra columns to the SNP sites to match sambamba format
 # this was tested on a BAM file and worked without issues
+
+# repeat sorting on sambamba bed
+sort Pan3623dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3623dataSambamba_sorted.bed; mv Pan3623dataSambamba.bed Pan3623dataSambamba_unsorted.bed; mv Pan3623dataSambamba_sorted.bed Pan3623dataSambamba.bed; rm Pan3623dataSambamba_unsorted.bed
+# this was also tested
