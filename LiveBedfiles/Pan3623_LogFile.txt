@@ -1,0 +1,67 @@
+# transcripts extracted from MOKA using:
+select GuysAccession,Symbol,'0' as GuysAccessionVersion
+from dbo.NGSPanelGenes
+where NGSPanelID = 3623
+
+BEDfile request form saved into /RequestForms 
+
+2 genes have multiple transcripts. These were split into seperate files.
+
+MokaBED was run for both transcript lists
+
+Time Stamp:2020-05-01 12:06:59.464066
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan3623dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --up 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan3623.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan3623data.bed --logfile /home/dnanexus/out/Output_files/Pan3623_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+Use bedtools subtract to add regions from extra transcripts that aren't in main file. 
+bedtools subtract -a Pan3623_duplicatesdata.bed -b Pan3623data.bed >> Pan3623data.bed
+
+# sort and rename to make review easier
+sort Pan3623data.bed -k1,1V -k2,2n -k3,3n > Pan3623data_sorted.bed; mv Pan3623data.bed Pan3623data_unsorted.bed; mv Pan3623data_sorted.bed Pan3623data.bed
+
+# move header back to top manually
+
+# repeat for sambamba
+# add extra regions
+bedtools subtract -a Pan3623_duplicatesdataSambamba.bed -b Pan3623dataSambamba.bed  >> Pan3623dataSambamba.bed
+
+# sort and rename to make review easier
+sort Pan3623dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3623dataSambamba_sorted.bed; mv Pan3623dataSambamba.bed Pan3623dataSambamba_unsorted.bed; mv Pan3623dataSambamba_sorted.bed Pan3623dataSambamba.bed; rm Pan3623dataSambamba_unsorted.bed
+
+#Delete RefSeq file since it is no longer accurate and not used
+rm Pan3623dataRefSeqFormat.txt
+
+# remove intermediate files
+rm Pan3623_duplicatesdata.bed Pan3623_duplicatesdataRefSeqFormat.txt Pan3623_duplicatesdataSambamba.bed
+
+# add in the additional panels.
+cat Pan3621.bed Pan3604.bed Pan3605.bed Pan3606.bed Pan3607.bed Pan3612.bed >> Pan3623data.bed
+
+# repeat sort and rename to make review easier
+sort Pan3623data.bed -k1,1V -k2,2n -k3,3n > Pan3623data_sorted.bed; mv Pan3623data.bed Pan3623data_unsorted.bed; mv Pan3623data_sorted.bed Pan3623data.bed; rm Pan3623data_unsorted.bed 
+
+# move header back to top manually
+
+# add all the SNPs into sambamba bed
+cat Pan3621.bed Pan3604.bed Pan3605.bed Pan3606.bed Pan3607.bed Pan3612.bed >> Pan3623dataSambamba.bed 
+
+# manually add in extra columns to the SNP sites to match sambamba format
+# this was tested on a BAM file and worked without issues
+
+# repeat sorting on sambamba bed
+sort Pan3623dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3623dataSambamba_sorted.bed; mv Pan3623dataSambamba.bed Pan3623dataSambamba_unsorted.bed; mv Pan3623dataSambamba_sorted.bed Pan3623dataSambamba.bed; rm Pan3623dataSambamba_unsorted.bed
+# this was also tested
