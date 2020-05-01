@@ -1,0 +1,16 @@
+The coordinates for this BED file were provided by M Yau.
+
+BED file request form saved in /RequestForms
+
+The coordinates were manually converted into BED file format in Excel.
+The position quoted in the coordinates was used as the stop coord and the start pos was this coord -1.
+Positions were checked in UCSC by adding the data as a track and comparing the coordinate chage
+One position provided related to a duplication (rather than SNV) but as these BED files are used for coverage and QC a single base description is sufficient. Should this BED file be used to restrict variants extra padding should be added.
+
+# remove chr
+sed -i 's/^chr//g' Pan3604.bed 
+
+# sort 
+sort Pan3604.bed -k1,1V -k2,2n -k3,3n > Pan3604.sorted.bed; mv Pan3604.sorted.bed Pan3604.bed
+
+# checked for empty new line at end of file
