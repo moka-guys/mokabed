@@ -33,4 +33,5 @@ bedtools subtract -a Pan3623_duplicatesdata.bed -b Pan3623data.bed >> Pan3623dat
 # sort and rename to make review easier
 sort Pan3623data.bed -k1,1V -k2,2n -k3,3n > Pan3623data_sorted.bed; mv Pan3623data.bed Pan3623data_unsorted.bed; mv Pan3623data_sorted.bed Pan3623data.bed
 
+# move header back to top manually
 
