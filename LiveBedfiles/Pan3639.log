@@ -1,0 +1,12 @@
+This documents the generation of the Pan3639 (swift 57G) bed files.
+These files are a slight modification of Pan2684, with the addition of predicted super amplicons.
+
+Therefore a copy was taken of Pan2684.bed, Pan2684.log, Pan2684Sambamba.bed, Pan2684_PE.bed, renamed with Pan3639.
+
+The kit design is available from the manufacturers - see Accel-Amplicon-Plus_57G_masterfile.txt
+This masterfile contains the coordinates of the target of the amplicon (the region between the primers), and the coordinates and sequence of the forward and reverse primers.
+The coordinates stated in this file are zero based and half open (ie the stop coordinate is not included). This is inline with the coordinates stated in the USCS database tables and in line with the expectations of the UCSC browser (http://genome.ucsc.edu/blog/the-ucsc-genome-browser-coordinate-counting-systems/).
+
+Some fields used in the BED files below required some annotations of the coordinates stated in the masterfile. 
+Creation of these annotations are described in the repository https://github.com/moka-guys/swift_amplicon_annotations.
+
