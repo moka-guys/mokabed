@@ -11,3 +11,18 @@ Some fields used in the BED files below required some annotations of the coordin
 Creation of these annotations are described in the repository https://github.com/moka-guys/swift_amplicon_annotations.
 
 In addition to this a BED file with expected super amplicons was provided by SWIFT (57G_tiled_primers_amplicons_superamps_200415.bed).
+
+
+#Pan3639data.bed
+This BED file is used to generate QC and was used to create the bed files described below.
+
+This bedfile contains 14 columns.
+The first three columns are chr, start and stop (taken from the masterfile). 
+The fourth column is the EntrezgeneID. These were manually curated from the HGNC snapshot in Moka.
+After some empty columns, the fourteenth column is the informative name, created from the output of the annotations (eg NRAS;NM_002524_c.408-450_p.137-150). 
+The semi colon ensures consistency between bedfiles and that the sambamba bedfile is compatibile with the sambamba coverage app.
+
+NB there must only be a single empty new line at the end of the file.
+
+To avoid super amplicons being being included twice in coverage and QC calculations, but to ensure the regions are included in the coverage and variant calling only the regions of the super-amplcions not already covered will be added.
+These were added manually, using the information provided by the existing amplicons. Some super amplicons were already covered so were not added.
