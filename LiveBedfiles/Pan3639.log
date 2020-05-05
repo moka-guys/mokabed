@@ -26,3 +26,10 @@ NB there must only be a single empty new line at the end of the file.
 
 To avoid super amplicons being being included twice in coverage and QC calculations, but to ensure the regions are included in the coverage and variant calling only the regions of the super-amplcions not already covered will be added.
 These were added manually, using the information provided by the existing amplicons. Some super amplicons were already covered so were not added.
+
+#Pan3639_flat.bed
+The varscan and lofreq variant callers require flattened bedfiles, as any variants called within overlapping regions are called once for each region.
+This bedfile was created using the command:
+`bedtools merge -i Pan3639.bed > Pan3639_flat.bed`
+
+This only contains three columns chr,start and stop as the name column cannot easily be merged.
