@@ -33,3 +33,8 @@ This bedfile was created using the command:
 `bedtools merge -i Pan3639.bed > Pan3639_flat.bed`
 
 This only contains three columns chr,start and stop as the name column cannot easily be merged.
+
+# Pan3639_Sambamba.bed
+This file is used by sambamba/chanjo for variant calling. It is based on Pan2684.bed but had the super amplicons manually added, as per data.bed
+
+
