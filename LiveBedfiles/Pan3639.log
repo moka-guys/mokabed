@@ -10,3 +10,4 @@ The coordinates stated in this file are zero based and half open (ie the stop co
 Some fields used in the BED files below required some annotations of the coordinates stated in the masterfile. 
 Creation of these annotations are described in the repository https://github.com/moka-guys/swift_amplicon_annotations.
 
+In addition to this a BED file with expected super amplicons was provided by SWIFT (57G_tiled_primers_amplicons_superamps_200415.bed).
