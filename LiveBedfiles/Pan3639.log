@@ -41,3 +41,8 @@ This file is used by sambamba/chanjo for variant calling. It is based on Pan2684
 This file is used to soft clip primers.
 `awk 'BEGIN { OFS="\t" } {print $1,$5,$6,$1,$8,$9}' Accel-Amplicon-Plus_57G_masterfile.txt  > Pan3639_PE.bed`
 
+sort BED file 
+`sort -k1n,1 -k2n,3n -k5n,6n Pan3639_PE.bed > Pan3639_PE_sorted.bed`
+rename sorted bed
+`rm Pan3639_PE.bed`
+`mv Pan3639_PE_sorted.bed Pan3639_PE.bed`
