@@ -37,4 +37,7 @@ This only contains three columns chr,start and stop as the name column cannot ea
 # Pan3639_Sambamba.bed
 This file is used by sambamba/chanjo for variant calling. It is based on Pan2684.bed but had the super amplicons manually added, as per data.bed
 
+# Pan3639_PE.bed
+This file is used to soft clip primers.
+`awk 'BEGIN { OFS="\t" } {print $1,$5,$6,$1,$8,$9}' Accel-Amplicon-Plus_57G_masterfile.txt  > Pan3639_PE.bed`
 
