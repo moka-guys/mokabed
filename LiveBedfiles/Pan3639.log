@@ -41,8 +41,32 @@ This file is used by sambamba/chanjo for variant calling. It is based on Pan2684
 This file is used to soft clip primers.
 `awk 'BEGIN { OFS="\t" } {print $1,$5,$6,$1,$8,$9}' Accel-Amplicon-Plus_57G_masterfile.txt  > Pan3639_PE.bed`
 
-sort BED file 
+# sort BED file 
 `sort -k1n,1 -k2n,3n -k5n,6n Pan3639_PE.bed > Pan3639_PE_sorted.bed`
 rename sorted bed
 `rm Pan3639_PE.bed`
 `mv Pan3639_PE_sorted.bed Pan3639_PE.bed`
+
+# Pan3639_PE.bed
+Testing the BED file we found reads for two regions were being marked as ectopic.
+Regions with 'correct' clipping take into account 0 based coordinates.
+eg:
+25368322	25368348 - in unclipped BAM amplicons start at 25368323 
+
+ectopic regions seem to have incorrect coordinates for primers
+25362754	25362775 - in unclipped BAM amplicons start at 25362754 
+135797225	135797248 - in unclipped BAM amplicons start at 135797225
+
+Therefore two lines were changed:
+from
+9	135797225	135797248	9	135797344	135797364
+To
+9	135797224	135797248	9	135797344	135797364
+
+and
+
+from
+12	25362754	25362775	12	25362897	25362918
+to
+12	25362753	25362775	12	25362897	25362918
+
