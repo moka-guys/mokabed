@@ -70,3 +70,20 @@ from
 to
 12	25362753	25362775	12	25362897	25362918
 
+# Pan3639data.bed
+Further issues were found with the Accel-Amplicon-Plus_57G_masterfile.txt
+
+Columns 1-3 denote the target region and was used to create Pan3639data.bed.
+Columns 5-6 and 8-9 describe the primers which flank these regions (and used to create the PE bed file)
+Column 2 (start) should be the same as column 6 (primer1 end) and column 3 (stop) should be the same as column 8 (primer2 start).
+
+2 amplicons were found to not fit this pattern so Pan3639data.bed was updated accordingly:
+from
+9	135797225	135797364	7248										TSC1;NM_000368_c.509-644_p.171-214
+to
+9	135797248	135797344	7248										TSC1;NM_000368_c.509-644_p.171-214
+
+and 
+12	25378516	25378591	3845										KRAS;NM_004985_c.407-450_p.137-150
+To
+12	25378516	25378590	3845										KRAS;NM_004985_c.407-450_p.137-150
