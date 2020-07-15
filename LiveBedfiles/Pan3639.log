@@ -93,3 +93,15 @@ In case the above changes affected Pan3639_flat.bed this file was recreated:
 `bedtools merge -i Pan3639.bed > Pan3639_flat.bed`
 Only one region was affected as the KRAS amplicon is merged with overlapping amplicons so the flattened region does not change.
 
+# Pan3639_Sambamba.bed
+The two regions altered in Pan3639data.bed were altered in this file also.
+from
+9	135797225	135797364	9-135797225-135797364	0	-	TSC1;NM_000368_c.509-644_p.171-214	7248
+to
+9	135797248	135797344	9-135797248-135797344	0	-	TSC1;NM_000368_c.509-644_p.171-214	7248
+
+and
+from
+12	25378516	25378591	12-25378516-25378591	0	-	KRAS;NM_004985_c.407-450_p.137-150	3845
+to
+12	25378516	25378590	12-25378516-25378590	0	-	KRAS;NM_004985_c.407-450_p.137-150	3845
