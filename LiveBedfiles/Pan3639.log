@@ -87,3 +87,9 @@ and
 12	25378516	25378591	3845										KRAS;NM_004985_c.407-450_p.137-150
 To
 12	25378516	25378590	3845										KRAS;NM_004985_c.407-450_p.137-150
+
+# Pan3639_flat.bed
+In case the above changes affected Pan3639_flat.bed this file was recreated:
+`bedtools merge -i Pan3639.bed > Pan3639_flat.bed`
+Only one region was affected as the KRAS amplicon is merged with overlapping amplicons so the flattened region does not change.
+
