@@ -6,3 +6,5 @@ The list of transcripts was created form a master list
 
 Pan3973_part1-4.txt
 These files were manually curated, ensuring there were no duplicate transcripts for each gene. A check was also performed for duplicate transcripts.
+Pan3973_problem.txt
+After running mokabed on Pan3973_part1.txt a problem was found with SMN1. This was removed from SMN1 to processing seperately later
