@@ -8,3 +8,10 @@ Pan3973_part1-4.txt
 These files were manually curated, ensuring there were no duplicate transcripts for each gene. A check was also performed for duplicate transcripts.
 Pan3973_problem.txt
 After running mokabed on Pan3973_part1.txt a problem was found with SMN1. This was removed from SMN1 to processing seperately later
+
+Pan3973_part1-4.txt
+All 4 samples were run through mokabed. See each logfile for full logs but the commands executed have been extracted and saved below. 
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan3973_part1.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan3973_part1data.bed --logfile /home/dnanexus/out/Output_files/Pan3973_part1_LogFile.txt 
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan3973_part2.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan3973_part2data.bed --logfile /home/dnanexus/out/Output_files/Pan3973_part2_LogFile.txt 
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan3973_part3.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan3973_part3data.bed --logfile /home/dnanexus/out/Output_files/Pan3973_part3_LogFile.txt 
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan3973_part4.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan3973_part4data.bed --logfile /home/dnanexus/out/Output_files/Pan3973_part4_LogFile.txt 
