@@ -122,9 +122,18 @@ sambamba.create_sambamba_bed(bedfile='/home/aled/Documents/mokabed/LiveBedfiles/
 bedtools subtract -a '/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_problemdataSambamba.bed' -b '/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_part1dataSambamba.bed' >> '/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_part1dataSambamba.bed'
 ```
 
-
 ### Add extra BED files to Pan3973_part1data.bed
 The following pre-defined BED files were requested to be added to this BED file Pan3604, Pan3607, Pan3612, Pan3621. Concatenate these to the end of the file.
 ```
 cat '/home/aled/Documents/mokabed/LiveBedfiles/Pan3604.bed' '/home/aled/Documents/mokabed/LiveBedfiles/Pan3607.bed' '/home/aled/Documents/mokabed/LiveBedfiles/Pan3612.bed' '/home/aled/Documents/mokabed/LiveBedfiles/Pan3621.bed' >> '/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_part1data.bed' 
 ```
+
+### Add extra BED files to Pan3973_part1dataSambamba.bed
+The following pre-defined BED files were requested to be added to this BED file Pan3604, Pan3607, Pan3612, Pan3621. Concatenate these to the end of the file.
+```
+cat '/home/aled/Documents/mokabed/LiveBedfiles/Pan3604.bed' '/home/aled/Documents/mokabed/LiveBedfiles/Pan3607.bed' '/home/aled/Documents/mokabed/LiveBedfiles/Pan3612.bed' '/home/aled/Documents/mokabed/LiveBedfiles/Pan3621.bed' >> '/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_part1dataSambamba.bed' 
+```
+
+### update the extra regions in Pan3973_part1dataSambamba.bed
+Changes were made manually to match sambamba format.
+The BED file was tested by running the chanjo app which completed withotu error.
