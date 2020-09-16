@@ -67,3 +67,7 @@ combined = zip(list1,list2)for i in combined:
 ```
 
 NB. the list of coordinates were taken from the refseq format file
+
+
+#### change to include cds
+The cdsstart and cds end values were taken from the refseqformat bed file, essentially excluding any UTRs. This was checked with the USCS browser.
