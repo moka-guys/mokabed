@@ -154,3 +154,14 @@ This was tested using moka_picard_v1.1
 Whilst it completed ok, it was noticed that there are 3 regions on chromosome 23.
 These have originated from Pan3612 and have been checked and should be chromosome X
 These sites were manually corrected.
+
+### repeat sorting of Pan3973_part1data.bed
+sort the bed file.
+`sort Pan3973_part1data.bed -k1,1V -k2,2n -k3,3n > Pan3973_part1data_sorted.bed; mv Pan3973_part1data.bed Pan3973_part1data_unsorted.bed; mv Pan3973_part1data_sorted.bed Pan3973_part1data.bed; rm Pan3973_part1data_unsorted.bed`
+
+The header was moved back to the top manually
+
+### repeat sort Pan3973_part1dataSambamba.bed
+sort the bed file.
+`sort Pan3973_part1dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3973_part1dataSambamba_sorted.bed; mv Pan3973_part1dataSambamba.bed Pan3973_part1dataSambamba_unsorted.bed; mv Pan3973_part1dataSambamba_sorted.bed Pan3973_part1dataSambamba.bed; rm Pan3973_part1dataSambamba_unsorted.bed`
+This BED file was also tested by running the chanjo app which completed without error.
