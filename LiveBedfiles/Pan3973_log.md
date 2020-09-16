@@ -165,3 +165,7 @@ The header was moved back to the top manually
 sort the bed file.
 `sort Pan3973_part1dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan3973_part1dataSambamba_sorted.bed; mv Pan3973_part1dataSambamba.bed Pan3973_part1dataSambamba_unsorted.bed; mv Pan3973_part1dataSambamba_sorted.bed Pan3973_part1dataSambamba.bed; rm Pan3973_part1dataSambamba_unsorted.bed`
 This BED file was also tested by running the chanjo app which completed without error.
+
+### rename
+mv Pan3973_part1data.bed Pan3973data.bed
+mv Pan3973_part1dataSambamba.bed Pan3973dataSambamba.bed
