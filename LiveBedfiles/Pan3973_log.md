@@ -106,3 +106,13 @@ The bedtools subtract command (below) was used to append SMN1 regions to the Pan
 ```
 bedtools subtract -a '/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_problemdata.bed' -b '/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_part1data.bed' >> '/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_part1data.bed'
 ```
+
+#### Create Pan3973_problemdataSambamba.bed
+This BED file was generated using the existing mokabed function in the python shell (as per lines 1428-1431 of LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py):
+
+```
+>>> from sambambaconvert import Sambamba
+>>> # Create sambamba file
+... sambamba = Sambamba()
+>>> sambamba.create_sambamba_bed(bedfile='/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_problemdata.bed', refseqfile='/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_problemRefSeqFormat.txt' , sambambaoutput='/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_problemdataSambamba.bed')
+```
