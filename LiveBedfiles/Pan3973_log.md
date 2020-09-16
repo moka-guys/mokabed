@@ -169,3 +169,6 @@ This BED file was also tested by running the chanjo app which completed without 
 ### rename
 mv Pan3973_part1data.bed Pan3973data.bed
 mv Pan3973_part1dataSambamba.bed Pan3973dataSambamba.bed
+
+### tidy up
+delete unneeded files
