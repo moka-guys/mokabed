@@ -100,7 +100,7 @@ NM_000344.4
 6606
 ```
 
-#### Add regions to Pan3973_part1data
+#### Add regions to Pan3973_part1data.bed
 The bedtools subtract command (below) was used to append SMN1 regions to the Pan3973_part1data.bed.
 
 ```
@@ -115,4 +115,10 @@ This BED file was generated using the existing mokabed function in the python sh
 >>> # Create sambamba file
 ... sambamba = Sambamba()
 >>> sambamba.create_sambamba_bed(bedfile='/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_problemdata.bed', refseqfile='/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_problemRefSeqFormat.txt' , sambambaoutput='/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_problemdataSambamba.bed')
+```
+
+#### Add regions to Pan3973_part1dataSambamba.bed
+```
+bedtools subtract -a '/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_problemdataSambamba.bed' -b '/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_part1dataSambamba.bed' >> '/home/aled/Documents/mokabed/LiveBedfiles/Pan3973_part1dataSambamba.bed' 
+
 ```
