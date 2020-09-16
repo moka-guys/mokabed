@@ -137,3 +137,4 @@ cat '/home/aled/Documents/mokabed/LiveBedfiles/Pan3604.bed' '/home/aled/Document
 ### update the extra regions in Pan3973_part1dataSambamba.bed
 Changes were made manually to match sambamba format.
 The BED file was tested by running the chanjo app which completed withotu error.
+
