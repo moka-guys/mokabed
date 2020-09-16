@@ -81,3 +81,21 @@ with open('/home/aled/Documents/mokabed/LiveBedfiles Pan3973_problemdata.bed','r
              chr,start,stop=line.split("\t")
              print str(chr)+"\t" + str(int(start)-10) + "\t" + str(int(stop)+10)
 ```
+
+#### Add additional columns to Pan3973_problemdata.bed
+Each line in the bed file contains 12 columns, We already have columns 1-3. Column4 contains the entrezgeneid and column 12 contains the genesymbol;transcript. All other columns are empty.
+
+The rest of the line was manually created, based on an existing line from Pan3793_part1data.bed
+
+The entrez gene ID and accession version number was obtained using the existing mokabed function in the python shell as per lines 633 and 645 of LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py:
+```
+>>> from versionnumber_newtest import Liveaccversion, LiveRefLink
+>>> liveacc = Liveaccversion()
+>>> version = liveacc.versionfinder("NM_000344")
+>>> print version
+NM_000344.4
+>>> liveref = LiveRefLink()
+>>> entrez = liveref.entrezidretrieve("NM_000344")
+>>> print entrez
+6606
+```
