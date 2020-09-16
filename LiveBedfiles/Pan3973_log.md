@@ -65,3 +65,5 @@ list2=[70221011,70234737,70237335,70238385,70238697,70240580,70242003,70247821,7
 combined = zip(list1,list2)for i in combined:
     print "5\t" + str(i[0]) + "\t" + str(i[1])
 ```
+
+NB. the list of coordinates were taken from the refseq format file
