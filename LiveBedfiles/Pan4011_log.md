@@ -18,3 +18,7 @@ sort the bed file.
 `sort Pan4011data.bed -k1,1V -k2,2n -k3,3n > Pan4011data_sorted.bed; mv Pan4011data.bed Pan4011data_unsorted.bed; mv Pan4011data_sorted.bed Pan4011data.bed; rm Pan4011data_unsorted.bed`
 
 The header was moved back to the top manually
+
+## sort Pan4011dataSambamba.bed
+sort the bed file.
+`sort Pan4011dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4011dataSambamba_sorted.bed; mv Pan4011dataSambamba.bed Pan4011dataSambamba_unsorted.bed; mv Pan4011dataSambamba_sorted.bed Pan4011dataSambamba.bed; rm Pan4011dataSambamba_unsorted.bed`
