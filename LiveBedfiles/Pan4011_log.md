@@ -8,3 +8,7 @@ Please refer to Pan3613_LogFile.txt for a trail for how these files were created
 cp /home/aled/Documents/mokabed/LiveBedfiles/Pan3613data.bed /home/aled/Documents/mokabed/LiveBedfiles/Pan4011data.bed
 cp /home/aled/Documents/mokabed/LiveBedfiles/Pan3613dataSambamba.bed /home/aled/Documents/mokabed/LiveBedfiles/Pan4011dataSambamba.bed
 ```
+
+## manually change chromosome 23 to chromosome X
+Pan3612 contained 3 positions labeled as chromosome 23 instead of chromosome X.
+These were manually corrected in Pan4011data.bed and Pan4011dataSambamba.bed
