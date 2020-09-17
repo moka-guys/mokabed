@@ -22,3 +22,6 @@ The header was moved back to the top manually
 ## sort Pan4011dataSambamba.bed
 sort the bed file.
 `sort Pan4011dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4011dataSambamba_sorted.bed; mv Pan4011dataSambamba.bed Pan4011dataSambamba_unsorted.bed; mv Pan4011dataSambamba_sorted.bed Pan4011dataSambamba.bed; rm Pan4011dataSambamba_unsorted.bed`
+
+## testing
+Both BED files have been tested and worked without error.
