@@ -54,3 +54,13 @@ The identifier NM_000344 was provided and the output saved as Pan3974_problemRef
 
 ### selection of transcript record
 The two transcripts were assessed manually and it was found the one at chr5:69345495-69373422 was in the position of it's pseudogene SMN2 and should be ignored. This was confirmed with the requesting scientist, M Yau.
+
+### creation of Pan3973_problemdata.bed
+The following python code was used to create a BED file (using coordinates lists taken from the refseq format file)
+```
+list1=[70220913,70234665,70237215,70238184,70238544,70240484,70241892,70247767,70248265]
+list2=[70221011,70234737,70237335,70238385,70238697,70240580,70242003,70247821,70248842]
+combined = zip(list1,list2)
+for i in combined:
+    print "5\t" + str(i[0]) + "\t" + str(i[1])
+```
