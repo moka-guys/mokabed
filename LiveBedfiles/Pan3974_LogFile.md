@@ -17,3 +17,12 @@ All 4 files were run through mokabed. See each logfile for full logs but the com
 /home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 50 --codingdown 50 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan3974_part3.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan3974_part3data.bed --logfile /home/dnanexus/out/Output_files/Pan3974_part3_LogFile.txt 
 /home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 50 --codingdown 50 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan3974_part4.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan3974_part4data.bed --logfile /home/dnanexus/out/Output_files/Pan3974_part4_LogFile.txt 
 ```
+
+## Combining multiple transcripts
+Where multiple transcripts have been provided, the below BEDtools subtract command adds regions from file a not already covered in file b to the end of file b:
+
+`bedtools subtract -a '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part4data.bed' -b '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part3data.bed' >> '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part3data.bed'`
+
+Adding regions from part4 to part3 does not include any additional regions.
+
+Part4 BED files are deleted
