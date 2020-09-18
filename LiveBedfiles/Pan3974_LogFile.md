@@ -102,3 +102,11 @@ The bedtools subtract command (below) was used to append SMN1 regions to the Pan
 ```
 bedtools subtract -a '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_problem.bed' -b '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part1data.bed' >> '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part1data.bed'
 ```
+
+### sort Pan3974_part1data.bed
+sort the bed file.
+```
+sort Pan3974_part1data.bed -k1,1V -k2,2n -k3,3n > Pan3974_part1data_sorted.bed; mv Pan3974_part1data.bed Pan3974_part1data_unsorted.bed; mv Pan3974_part1data_sorted.bed Pan3974_part1data.bed; rm Pan3974_part1data_unsorted.bed
+```
+
+The header was moved back to the top manually
