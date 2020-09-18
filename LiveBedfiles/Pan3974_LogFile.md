@@ -67,3 +67,13 @@ for i in combined:
 
 #### change to include cds
 The cdsstart and cds end values were taken from the refseqformat bed file, essentially excluding any UTRs. This was checked with the USCS browser.
+
+#### Add padding
+The regions were padding +/-50bp as per the regions produced by MokaBED using the following python code:
+
+```
+with open('/home/aled/Documents/mokabed/LiveBedfiles Pan3974_problem.bed','r') as bedfile:
+     for line in bedfile.readlines():
+             chr,start,stop=line.split("\t")
+             print str(chr)+"\t" + str(int(start)-50) + "\t" + str(int(stop)+50)
+```
