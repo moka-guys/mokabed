@@ -110,3 +110,8 @@ sort Pan3974_part1data.bed -k1,1V -k2,2n -k3,3n > Pan3974_part1data_sorted.bed; 
 ```
 
 The header was moved back to the top manually
+
+### make the RPKM bedfile
+Pan3974_part1data.bed was converted to the RPKM BEDfile format by running the RPKM_bedfile DNANexus app (v1.0) in project 003_200918_Pan3974_bedfile.
+Pan3608 was added in. 
+Logfiles and output saved to repo
