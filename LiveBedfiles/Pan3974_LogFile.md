@@ -64,3 +64,6 @@ combined = zip(list1,list2)
 for i in combined:
     print "5\t" + str(i[0]) + "\t" + str(i[1])
 ```
+
+#### change to include cds
+The cdsstart and cds end values were taken from the refseqformat bed file, essentially excluding any UTRs. This was checked with the USCS browser.
