@@ -31,3 +31,8 @@ Part4 BED files are deleted
 Add regions from part 3 not included in part 2
 
 `bedtools subtract -a '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part3data.bed' -b '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part2data.bed' >> '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part2data.bed'`
+
+#### repeat for parts 2 and 3 sambamba
+`bedtools subtract -a '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part3dataSambamba.bed' -b '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part2dataSambamba.bed' >> '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part2dataSambamba.bed'`
+
+Part3 BED files are deleted
