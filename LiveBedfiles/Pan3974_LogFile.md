@@ -26,3 +26,8 @@ Where multiple transcripts have been provided, the below BEDtools subtract comma
 Adding regions from part4 to part3 does not include any additional regions.
 
 Part4 BED files are deleted
+
+### merging parts 2 and 3
+Add regions from part 3 not included in part 2
+
+`bedtools subtract -a '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part3data.bed' -b '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part2data.bed' >> '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part2data.bed'`
