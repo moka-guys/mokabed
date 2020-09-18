@@ -51,3 +51,6 @@ Mokabed was failing because cruzdb was returning multiple records for the same t
 The UCSC table browser was queried. selecting hg19, NCBI refseq track and the UCSC RefSeq (refGene) table, to match that used by MokaBED.
 
 The identifier NM_000344 was provided and the output saved as Pan3974_problemRefSeqFormat.txt
+
+### selection of transcript record
+The two transcripts were assessed manually and it was found the one at chr5:69345495-69373422 was in the position of it's pseudogene SMN2 and should be ignored. This was confirmed with the requesting scientist, M Yau.
