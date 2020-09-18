@@ -95,3 +95,10 @@ NM_000344.4
 >>> print entrez
 6606
 ```
+
+#### Add regions to Pan3974_part1data.bed
+The bedtools subtract command (below) was used to append SMN1 regions to the Pan3974_part1data.bed.
+
+```
+bedtools subtract -a '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_problem.bed' -b '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part1data.bed' >> '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part1data.bed'
+```
