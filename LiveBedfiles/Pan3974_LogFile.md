@@ -44,3 +44,10 @@ Add regions from part 2 not included in part 1
 ### realised this BED file is for RPKM so sambamba bed file is not required - this won't be processed any further.
 part 2 bedfiles removed
 
+## problematic transcript
+Now all transcripts have been merged we need to add in NM_000344 (SMN1) which was causing mokabed to fail.
+Mokabed was failing because cruzdb was returning multiple records for the same transcript.
+
+The UCSC table browser was queried. selecting hg19, NCBI refseq track and the UCSC RefSeq (refGene) table, to match that used by MokaBED.
+
+The identifier NM_000344 was provided and the output saved as Pan3974_problemRefSeqFormat.txt
