@@ -115,3 +115,10 @@ The header was moved back to the top manually
 Pan3974_part1data.bed was converted to the RPKM BEDfile format by running the RPKM_bedfile DNANexus app (v1.0) in project 003_200918_Pan3974_bedfile.
 Pan3608 was added in. 
 Logfiles and output saved to repo
+
+### rename 
+rename the RPKM BED file
+```
+mv '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part1_RPKM.bed' '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_RPKM.bed' 
+mv '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part1_RPKM_logfile.txt' '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_RPKM_logfile.txt' 
+```
