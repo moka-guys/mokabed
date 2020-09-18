@@ -122,3 +122,6 @@ rename the RPKM BED file
 mv '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part1_RPKM.bed' '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_RPKM.bed' 
 mv '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_part1_RPKM_logfile.txt' '/home/aled/Documents/mokabed/LiveBedfiles/Pan3974_RPKM_logfile.txt' 
 ```
+
+### test
+The BED file was tested using RPKM_using_conifer_v1.6 which ran without error
