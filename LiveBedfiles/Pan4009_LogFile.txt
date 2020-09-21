@@ -12,3 +12,5 @@ awk '{print $1,$2,$3}' FS='\t' Pan4002_copy.bed| gawk 'BEGIN{FS="\t"; OFS="\t"} 
 Remove Pan4002_copy.bed
 
 Rename Pan4002_copy_formatted.bed to Pan4002_copy.bed
+
+Manually submit Pan4002_copy.bed file to Liftover and save new bedfile Pan4009.bed
