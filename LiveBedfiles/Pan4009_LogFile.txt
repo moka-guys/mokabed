@@ -1,7 +1,7 @@
 Pan4009 is a copy of Pan4002 but in build 38 
 
 Save a copy of Pan4002
-cp /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4002.bed /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4002_copy.bed
+cp /LiveBedfiles/Pan4002.bed /LiveBedfiles/Pan4002_copy.bed
 
 Convert Pan4002 from build37 to build38 (Pan4009) using https://genome.ucsc.edu/cgi-bin/hgLiftOver
 Bed file was edited to the required format e.g chrN start end 
@@ -10,3 +10,6 @@ Remove rs id colum and add 'chr' prefix
 awk '{print $1,$2,$3}' FS='\t' Pan4002_copy.bed| gawk 'BEGIN{FS="\t"; OFS="\t"} {$1="chr"$1; print}' > Pan4002_copy_formatted.bed
 
 Manually submit Pan4002_copy_formatted.bed file to Liftover and save new bedfile Pan4009.bed
+
+Sort Pan4009.bed
+sort LiveBedfiles/Pan4009.bed -k1,1V -k2,2n -k3,3n > LiveBedfiles/Pan4009.sorted.bed
