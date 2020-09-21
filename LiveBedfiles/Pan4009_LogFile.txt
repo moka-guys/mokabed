@@ -14,3 +14,6 @@ Remove Pan4002_copy.bed
 Rename Pan4002_copy_formatted.bed to Pan4002_copy.bed
 
 Manually submit Pan4002_copy.bed file to Liftover and save new bedfile Pan4009.bed
+
+Sort Pan4009.bed
+sort LiveBedfiles/Pan4009.bed -k1,1V -k2,2n -k3,3n > LiveBedfiles/Pan4009.sorted.bed
