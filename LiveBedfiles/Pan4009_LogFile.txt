@@ -2,3 +2,9 @@ Pan4009 is a copy of Pan4002 but in build 38
 
 Save a copy of Pan4002
 cp /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4002.bed /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4002_copy.bed
+
+Convert Pan4002 from build37 to build38 (Pan4009) using https://genome.ucsc.edu/cgi-bin/hgLiftOver
+Bed file was edited to the required format e.g chrN start end 
+
+Remove rs id colum and add 'chr' prefix
+awk '{print $1,$2,$3}' FS='\t' Pan4002_copy.bed| gawk 'BEGIN{FS="\t"; OFS="\t"} {$1="chr"$1; print}' > Pan4002_copy_formatted.bed
