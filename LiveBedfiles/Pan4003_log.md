@@ -21,3 +21,6 @@ The header was moved back to the top manually
 ## sort Pan4003dataSambamba.bed
 sort the bed file.
 `sort Pan4003dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4003dataSambambasorted.bed ; mv Pan4003dataSambamba.bed Pan4003dataSambamba_unsorted.bed; mv Pan4003dataSambambasorted.bed Pan4003dataSambamba.bed; rm Pan4003dataSambamba_unsorted.bed`
+
+## Add rs2217652
+A SNP was missing from Pan4002 - this was added in manually.
