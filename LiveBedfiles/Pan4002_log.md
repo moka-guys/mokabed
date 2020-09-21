@@ -9,3 +9,7 @@ NB please see Pan3612_LogFile.txt for how Pan3612.bed was created
 
 ### correct BED file
 The BED file was manually corrected
+
+### Add rs2217652
+After a double checking of the SNPs it was noticed that this SNP was missing
+It was added manually and coordinate checked by loading in UCSC genome browser
