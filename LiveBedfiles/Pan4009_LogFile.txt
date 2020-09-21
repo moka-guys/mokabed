@@ -8,3 +8,5 @@ Bed file was edited to the required format e.g chrN start end
 
 Remove rs id colum and add 'chr' prefix
 awk '{print $1,$2,$3}' FS='\t' Pan4002_copy.bed| gawk 'BEGIN{FS="\t"; OFS="\t"} {$1="chr"$1; print}' > Pan4002_copy_formatted.bed
+
+Manually submit Pan4002_copy_formatted.bed file to Liftover and save new bedfile Pan4009.bed
