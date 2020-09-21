@@ -17,3 +17,6 @@ sort LiveBedfiles/Pan4009.bed -k1,1V -k2,2n -k3,3n > LiveBedfiles/Pan4009.sorted
 Manually add rs ids back. Id's saved in Pan4002_copy.bed
 
 Delete intermediate files: Pan4002_copy.bed, Pan4002_copy_formatted.bed and Pan4009.bed
+
+Rename Pan4009.sorted.bed to Pan4009.bed
+mv LiveBedfiles/Pan4009.sorted.bed LiveBedfiles/Pan4009.bed
