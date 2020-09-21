@@ -1,1 +1,4 @@
 Pan4009 is a copy of Pan4002 but in build 38 
+
+Save a copy of Pan4002
+cp /LiveBedfiles/Pan4002.bed /LiveBedfiles/Pan4002_copy.bed
