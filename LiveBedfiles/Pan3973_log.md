@@ -172,3 +172,8 @@ mv Pan3973_part1dataSambamba.bed Pan3973dataSambamba.bed
 
 ### tidy up
 delete unneeded files
+
+## add rs2217652
+It was noticed this SNP was missing from Pan4003. Added manually.
+
+Both BED files have been tested and worked without error.
