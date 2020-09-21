@@ -25,3 +25,8 @@ sort the bed file.
 
 ## testing
 Both BED files have been tested and worked without error.
+
+## add rs2217652
+It was noticed this SNP was missing from Pan4003. Added manually.
+
+Both BED files have been tested and worked without error.
