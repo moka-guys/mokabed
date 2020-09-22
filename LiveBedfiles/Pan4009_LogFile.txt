@@ -18,3 +18,5 @@ Note: The 'chr' prefix was retained in the CHROM field as it is according to GEL
 
 Sort Pan4009.bed
 sort LiveBedfiles/Pan4009_b38.bed -k1,1V -k2,2n -k3,3n > LiveBedfiles/Pan4009_b38_sorted.bed
+
+Delete intermediate files: Pan4009_b37.bed, Pan4009_b37_formatted.bed and Pan4009_b38.bed
