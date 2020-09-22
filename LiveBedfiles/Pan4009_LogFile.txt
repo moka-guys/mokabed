@@ -1,2 +1,5 @@
 GEL sample matching service (SMS) requires samples to be aligned to build 38 reference genome. Pan4009 is a BED that will be used for the SNP Genotyping SMS pipeline. 
 Pan4009 is a copy of Pan4002 but in build 38.
+
+Save a copy of Pan4002
+cp /LiveBedfiles/Pan4002.bed /LiveBedfiles/Pan4009_b37.bed
