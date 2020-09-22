@@ -22,3 +22,5 @@ sort LiveBedfiles/Pan4009_b38.bed -k1,1V -k2,2n -k3,3n > LiveBedfiles/Pan4009_b3
 Delete intermediate files: Pan4009_b37.bed, Pan4009_b37_formatted.bed and Pan4009_b38.bed
 
 Rename Pan4009_b38_sorted.bed to Pan4009.bed
+
+Pan4009.bed has been tested using the SNP Genotyping SMS pipeline.
