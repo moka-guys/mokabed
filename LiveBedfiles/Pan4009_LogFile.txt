@@ -11,3 +11,7 @@ Remove rs id colum and add 'chr' prefix
 awk '{print $1,$2,$3}' FS='\t' Pan4009_b37.bed| gawk 'BEGIN{FS="\t"; OFS="\t"} {$1="chr"$1; print}' > Pan4009_b37_formatted.bed
 
 Manually submit Pan4009_b37.bed file to Liftover and save new bedfile Pan4009_b38.bed
+
+Some SNPs in Pan4009_b38.bed were manually verified using dbSNP.
+
+Note: The 'chr' prefix was retained in the CHROM field as it is according to GEL SMS specification.
