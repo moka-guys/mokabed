@@ -15,3 +15,6 @@ Manually submit Pan4009_b37.bed file to Liftover and save new bedfile Pan4009_b3
 Some SNPs in Pan4009_b38.bed were manually verified using dbSNP.
 
 Note: The 'chr' prefix was retained in the CHROM field as it is according to GEL SMS specification.
+
+Sort Pan4009.bed
+sort LiveBedfiles/Pan4009_b38.bed -k1,1V -k2,2n -k3,3n > LiveBedfiles/Pan4009_b38_sorted.bed
