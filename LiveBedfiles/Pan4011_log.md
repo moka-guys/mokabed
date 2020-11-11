@@ -30,3 +30,8 @@ Both BED files have been tested and worked without error.
 It was noticed this SNP was missing from Pan4003. Added manually.
 
 Both BED files have been tested and worked without error.
+
+## Pan4011_flat.bed
+The varscan and lofreq variant callers require flattened bedfiles, as any variants called within overlapping regions are called once for each region.
+This bedfile was created using the command:
+`cut -f1-3 /home/aled/Documents/mokabed/LiveBedfiles/Pan4011data.bed | bedtools merge -i - > /home/aled/Documents/mokabed/LiveBedfiles/Pan4011data_flat.bed`
