@@ -29,3 +29,5 @@ These were added manually, using the information provided by the existing amplic
 Only one new line was added, representing the gap between two amplicons where coverage is provided from a super amplicon.
 7	55249090	55249122	1956										EGFR;NM_005228_c.2388-2420_p.796-808
 
+# Pan3638_Sambamba.bed
+This file is used by sambamba/chanjo for variant calling. It is based on Pan1190.bed but had the super amplicon manually added, as per Pan3638data.bed
