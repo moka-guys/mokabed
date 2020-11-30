@@ -31,3 +31,10 @@ Only one new line was added, representing the gap between two amplicons where co
 
 # Pan3638_Sambamba.bed
 This file is used by sambamba/chanjo for variant calling. It is based on Pan1190.bed but had the super amplicon manually added, as per Pan3638data.bed
+
+#Pan3638_flat.bed
+The varscan and lofreq variant callers require flattened bedfiles, as any variants called within overlapping regions are called once for each region.
+This bedfile was created using the command:
+`bedtools merge -i Pan3638.bed > Pan3638_flat.bed`
+
+This only contains three columns chr,start and stop as the name column cannot easily be merged.
