@@ -38,3 +38,8 @@ This bedfile was created using the command:
 `bedtools merge -i Pan3638.bed > Pan3638_flat.bed`
 
 This only contains three columns chr,start and stop as the name column cannot easily be merged.
+
+#Pan3638_PE.bed
+No changes were required to this file.
+
+All BED files were tested - all apps within mokaamp_v1.5 ran without error - see 003_201130_Pan3638_test
