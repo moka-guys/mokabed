@@ -13,7 +13,7 @@ Creation of these annotations are described in the repository https://github.com
 In addition to this a BED file with expected super amplicons was provided by SWIFT (57G_tiled_primers_amplicons_superamps_200415.bed) (the EGFR panel is a subset of the 57G panel)
 
 
-#Pan3638data.bed
+#Pan3638.bed
 This BED file is used to generate QC and was used to create the bed files described below.
 
 This bedfile contains 14 columns.
