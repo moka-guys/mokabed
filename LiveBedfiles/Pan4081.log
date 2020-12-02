@@ -1,0 +1,4 @@
+This documents the generation of the Pan4081 (swift EGFR) bed files.
+These files are a slight modification of Pan3638, but where the bed file used to clip primers and the flattened BED file used for variant calling are adjusted to enable variants at the primer-amplicon border to be detected.
+
+Therefore a copies of Pan3638.bed, Pan3638Sambamba.bed, Pan3638_PE.bed, and Pan3638_flat.bed were taken and renamed with Pan3638.
