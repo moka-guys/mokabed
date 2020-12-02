@@ -14,3 +14,6 @@ This was modification was done by hand (in Excel).
 This file is used to restrict variant calling.
 The start column was reduced by 1 and the stop column increased by 1.
 This was modification was done in Excel.
+
+Both files were tested. 
+There was good coverage in all amplicons, the discarded BAM was no larger than using Pan3638, viewing the BAM in IGV showed clipping was as expected and the insertion mentioned above was called.
