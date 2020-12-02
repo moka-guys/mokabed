@@ -9,3 +9,8 @@ By altering the PE bed file so the last base of the primer is not clipped we can
 
 The stop coordinate for the forward primer (column3) was reduced by1 and the start coordinate of the reverse primer (column5) was increased by 1.
 This was modification was done by hand (in Excel).
+
+# Pan4082_flat.bed
+This file is used to restrict variant calling.
+The start column was reduced by 1 and the stop column increased by 1.
+This was modification was done in Excel.
