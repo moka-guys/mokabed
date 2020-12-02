@@ -3,3 +3,9 @@ These files are a slight modification of Pan3639, but where the bed file used to
 
 Therefore a copies of Pan3639.bed, Pan3639Sambamba.bed, Pan3639_PE.bed, and Pan3639_flat.bed were taken and renamed with Pan4082.
 
+# Pan4082_PE.bed
+This file is used by amplicon filter tool to softclip the primer sequences, to ensure they are not included in variant calling. However, if there are variants between the last base of the primer and the first base of the amplicon (such as the 9bp insertion 7:55248998	A>ATGGCCAGCG) are not called, as any sequences before the first M at the CIGAR string are not included. In the case of this insertion the CIGAR string is 19S9I92M19S.
+By altering the PE bed file so the last base of the primer is not clipped we can ensure this is called, as the CIGAR string becomes 18S1M9I92M19S.
+
+The stop coordinate for the forward primer (column3) was reduced by1 and the start coordinate of the reverse primer (column5) was increased by 1.
+This was modification was done by hand (in Excel).
