@@ -14,3 +14,5 @@ This was modification was done by hand (in Excel).
 This file is used to restrict variant calling.
 The start column was reduced by 1 and the stop column increased by 1.
 This was modification was done in Excel.
+
+The bedtools merge command was run, and the output compared to ensure this extra padding did not result in any overlapping regions.
