@@ -22,3 +22,5 @@ There was good coverage in all amplicons, the discarded BAM was no larger than u
 Above, the start position of the reverse primer was modified, however this is not required.
 The start coordinate of the reverse primer (column5) was decreasd by 1 so it matches Pan3638 again.
 This was modification was done in Excel.
+
+The PE bed file was tested, the discarded BAM was no larger than using Pan3638, viewing the BAM in IGV showed clipping was as expected and the insertion mentioned above was called.
