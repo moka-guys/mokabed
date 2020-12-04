@@ -1,5 +1,5 @@
 This documents the generation of the Pan4082 (swift 57G) bed files.
-These files are a slight modification of Pan3639, but where the bed file used to clip primers and the flattened BED file used for variant calling are adjusted to enable variants at the primer-amplicon border to be detected.
+These files are a slight modification of Pan3639, where the paired end bed file (used to clip primers) and the flattened BED file (used for variant calling) are adjusted to enable variants at the primer-amplicon border to be detected.
 
 Therefore a copies of Pan3639.bed, Pan3639Sambamba.bed, Pan3639_PE.bed, and Pan3639_flat.bed were taken and renamed with Pan4082.
 
