@@ -21,3 +21,5 @@ The bedtools merge command was run, and the output compared to ensure this extra
 Above the start position of the reverse primer was modified, however this is not required.
 The start coordinate of the reverse primer (column5) was decreasd by 1 so it matches Pan3639 again.
 This was modification was done in Excel.
+
+The BED files were checked: the coverage compared with that calculated with Pan2684. The BAM files were clipped as expected. 
