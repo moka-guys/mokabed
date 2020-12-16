@@ -26,3 +26,13 @@ An SNV at -11bp was also added in by changing an existing row:
 17	41256874	41256983	672										BRCA1;NM_007294.4
 Was changed to:
 17	41256874	41256984	672										BRCA1;NM_007294.4
+
+-------------------Manual addition of specified bases to Pan4086dataSambamba.bed--------------------------
+Two further regions were added:
+CHEK2 - This was to cover Chr22:29091857DelC
+22	29091856	29091857	22-29091856-29091857	0	+	CHEK2;NM_007194.3	11200
+
+An SNV at -11bp was also added in by changing an existing row:
+17	41256874	41256983	17-41256874-41256983	0	+	BRCA1;NM_007294.4	672
+Was changed to:
+17	41256874	41256984	17-41256874-41256984	0	+	BRCA1;NM_007294.4	672
