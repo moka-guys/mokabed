@@ -24,3 +24,5 @@ The following region was added CHEK2 - This was to cover Chr22:29091857DelC - th
 -------------------Manual addition of specified bases to Pan4087dataSambamba.bed--------------------------
 The following region was added CHEK2 - This was to cover Chr22:29091857DelC - the only pertinent variant in this gene (others may be incidental findings)
 22	29091856	29091857	22-29091856-29091857	0	+	CHEK2;NM_007194.3	11200
+
+The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus and completed without error.
