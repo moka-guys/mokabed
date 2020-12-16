@@ -38,3 +38,14 @@ The line
 was changed to
 
 22	29091855	29091858	11200										CHEK2;NM_007194.3
+
+## Further changes to chek2 base in Pan4087dataSambamba.bed
+After further tests using the BED to restrict variant calling we found we needed to add some padding to the chek2 variant.
+
+The line
+
+22	29091856	29091857	22-29091856-29091857	0	+	CHEK2;NM_007194.3	11200
+
+was changed to
+
+22	29091855	29091858	22-29091855-29091858	0	+	CHEK2;NM_007194.3	11200
