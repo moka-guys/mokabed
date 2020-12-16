@@ -49,3 +49,22 @@ The line
 was changed to
 
 22	29091855	29091858	22-29091855-29091858	0	+	CHEK2;NM_007194.3	11200
+
+## Creation of a Congenica format csv file
+### part 1 - selection of columns
+To create a panel in congenica the following fields are required:
+
+chr,start,stop,gene,transcript,autosomal_recessive,autosomal_dominant,x_linked,condition
+
+The last 4 fields (autosomal_recessive,autosomal_dominant,x_linked,condition) are optional so will be set as 0 or left blank (condition)
+
+Some bash commands were used to convert the data.bed into the required format:
+
+```
+# create a copy of the cvs template headers, named with the pan number
+cp /home/aled/Documents/mokabed/LiveBedfiles/congenica_csv_template.csv /home/aled/Documents/mokabed/LiveBedfiles/Pan4087dataCongenica.csv
+# take the chr, start, stop and gene;transcript columns from data.bed and convert to a csv
+# split the line on semi colon to split the final field into 2 columns and concatenate onto the header
+cut -f -3,14 /home/aled/Documents/mokabed/LiveBedfiles/Pan4087data.bed --output-delimiter=',' | cut -d ';' -f1,2 --output-delimiter=','  >> /home/aled/Documents/mokabed/LiveBedfiles/Pan4087dataCongenica_temp.csv
+```
+
