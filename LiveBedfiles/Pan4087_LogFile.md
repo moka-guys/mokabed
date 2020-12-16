@@ -68,3 +68,10 @@ cp /home/aled/Documents/mokabed/LiveBedfiles/congenica_csv_template.csv /home/al
 cut -f -3,14 /home/aled/Documents/mokabed/LiveBedfiles/Pan4087data.bed --output-delimiter=',' | cut -d ';' -f1,2 --output-delimiter=','  >> /home/aled/Documents/mokabed/LiveBedfiles/Pan4087dataCongenica_temp.csv
 ```
 
+### part 2 - convert temp file into the csv template, with extra columns
+```
+# loop through temp file, ignore headers and adding four empty columns (denoted by 4 commas) to each row. write to the final csv file
+while read line; do echo -e "${line},,,,"; done < <(grep -v "#" /home/aled/Documents/mokabed/LiveBedfiles/Pan4087dataCongenica_temp.csv) >> /home/aled/Documents/mokabed/LiveBedfiles/Pan4087dataCongenica.csv
+# remove temp file
+rm /home/aled/Documents/mokabed/LiveBedfiles/Pan4087dataCongenica_temp.csv
+```
