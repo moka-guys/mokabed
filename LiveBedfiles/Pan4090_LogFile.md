@@ -15,3 +15,9 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4090
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+
+## Manual addition of specified bases to Pan4090data.bed
+
+The following region was added CHEK2 - This was to cover Chr22:29091857DelC - the only pertinent variant in this gene (others may be incidental findings)
+22	29091856	29091857	11200										CHEK2;NM_007194.3
