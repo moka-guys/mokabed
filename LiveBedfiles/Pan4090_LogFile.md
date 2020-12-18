@@ -21,7 +21,10 @@ version as defined by git tag = v1.2
 The following region was added CHEK2 - This was to cover Chr22:29091857DelC - the only pertinent variant in this gene (others may be incidental findings) (it was padded by 1bp)
 22	29091855	29091858	11200										CHEK2;NM_007194.3
 
-## Manual addition of specified bases to Pan4087dataSambamba.bed
+## Manual addition of specified bases to Pan4090dataSambamba.bed
 
 The following region was added CHEK2 - This was to cover Chr22:29091857DelC (padded by 1bp)- the only pertinent variant in this gene (others may be incidental findings)
 22	29091855	29091858	22-29091855-29091858	0	+	CHEK2;NM_007194.3	11200
+
+## testing
+The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus and completed without error.
