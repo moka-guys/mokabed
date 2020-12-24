@@ -36,3 +36,5 @@ sort Pan4100data.bed -k1,1V -k2,2n -k3,3n > Pan4100data_sorted.bed
 
 rm Pan4100dataSambamba.bed | mv Pan4100dataSambamba_sorted.bed Pan4100dataSambamba.bed
 rm Pan4100data.bed | mv Pan4100data_sorted.bed Pan4100data.bed
+
+##Move header to the top in Pan4100data.bed
