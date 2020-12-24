@@ -15,3 +15,8 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4098
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+## Manual addition of specified bases to Pan4098data.bed
+
+21	47409880	47409881	1291						COL6A1;NM_001848.2
+9	108368856	108368857	2218							FKTN;NM_006731.2
