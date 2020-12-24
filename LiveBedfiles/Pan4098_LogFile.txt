@@ -24,7 +24,7 @@ version as defined by git tag = v1.2
 ## Manual addition of specified bases to Pan4098dataSambamba.bed
 
 21	47409880	47409881	21-47409880-47409881	0	+	COL6A1;NM_001848.2	1291
-9	108368856	108368857	9-108368856-108368857	0	+	FKTN;NM_006731.2
+9	108368856	108368857	9-108368856-108368857	0	+	FKTN;NM_006731.2	2218
 
 ##Sort data.bed and sambamba.bed
 sort Pan4098dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4098dataSambamba_sorted.bed
@@ -36,3 +36,11 @@ rm Pan4098dataSambamba.bed; mv Pan4098dataSambamba_sorted.bed Pan4098dataSambamb
 rm Pan4098data.bed; mv Pan4098data_sorted.bed Pan4098data.bed
 
 ##Manually move header to the top in Pan4098data.bed
+
+## testing
+The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus.
+
+Pan4098data.bed completed without any errors.
+Pan4098dataSambamba.bed failed because of a missing entrez id for 9-108368856-108368857
+
+The error was rectified and Pan4098dataSambamba.bed was tested again 
