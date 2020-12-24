@@ -16,8 +16,14 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4100
 
 version as defined by git tag = v1.2
 
-## Manual addition of specified bases to Pan4090data.bed
+## Manual addition of specified bases to Pan4100data.bed
 
 21	47409880	47409881	1291								COL6A1;NM_001848.2	
 X	149831328	149831329	4534								MTM1;NM_000252.3
 X	149808832	149808833	4534								MTM1;NM_000252.3
+
+## Manual addition of specified bases to Pan4100dataSambamba.bed
+
+21	47409880	47409881	21-47409880-47409881	0	+	COL6A1;NM_001848.2	1291
+X	149831328	149831329	X-149831328-149831329	0	+	MTM1;NM_000252.3	4534
+X	149808832	149808833	X-149808832-149808833	0	+	MTM1;NM_000252.3	4534
