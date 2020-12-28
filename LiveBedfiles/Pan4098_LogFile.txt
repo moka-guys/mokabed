@@ -35,3 +35,6 @@ rm Pan4098dataSambamba.bed; mv Pan4098dataSambamba_sorted.bed Pan4098dataSambamb
 rm Pan4098data.bed; mv Pan4098data_sorted.bed Pan4098data.bed
 
 ##Manually move header to the top in Pan4098data.bed
+
+## testing
+The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus and completed without error.
