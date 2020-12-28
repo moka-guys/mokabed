@@ -1,0 +1,62 @@
+Instructions:,,
+"· Add genes symbols and/or transcripts to a panel in Moka
+· Add panel description to Moka
+· Answer following questions:",VCP3_CMD_R79,
+,,
+1. Pan number of bed file to be created,Pan4098,
+2. Panel description/name (fill in a-c from Moka),"VCP3_CMD_R79, CMD_GreenV2.4_full_SNV -30/+30 Chr21: 47409881, Chr9: 108368857 Viapath",
+2. a) Category,VCP3_CMD_R79 CMD_GreenV2.4_full_SNV,
+2. b) SubCategory,"-30/+30 Chr21: 47409881, Chr9: 108368857 Viapath",
+2. c) Panel,"VCP3_CMD_R79, CMD_GreenV2.4_full_SNV -30/+30 Chr21: 47409881, Chr9: 108368857 ViapathVCP3_CMD_R79 CMD_GreenV2.4_full_SNV-30/+30 Chr21: 47409881, Chr9: 108368857 Viapath",
+3. Is this BED file for RPKM?,No,
+4. a) Is this BED file exclusively based on coordinates provided by a supplier ,No,
+"4. b) If yes, does this need further padding?",N/A,
+5. a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts) Specific transcripts - see Moka,Yes - see below,
+5. b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state),No,
+6. What padding is required around the exons?,"""-30/30""bp",
+7. a) Should UTRs be included for ALL genes?,N/A,
+7. b) Should UTRs be padded?,N/A,
+8. a) Are UTRs required for SOME genes? ,N/A,
+8. b) Please list genes/transcripts,N/A,
+8. c) Should UTRs be padded?,No,
+9. Any additional BED files to be included in this BED file? ,,
+10. Are any further regions required to be added?,"Chr21: 47409881, Chr9: 108368857",
+Requested by:,,
+Requested date:,,
+,,
+,Gene Name,Transcript
+,B3GALNT2,NM_152490
+,B4GAT1,NM_006876
+,CHKB,NM_005198
+,COL12A1,NM_004370
+,COL6A1,NM_001848
+,COL6A2,NM_001849
+,COL6A3,NM_004369
+,DAG1,NM_001165928
+,DMD,NM_004006
+,DOLK,NM_014908
+,DPM2,NM_003863
+,FHL1,NM_001159699
+,FKRP,NM_024301
+,FKTN,NM_001079802
+,GMPPB,NM_013334
+,INPP5K,NM_016532
+,ISPD,NM_001101426
+,ITGA7,NM_002206
+,LAMA2,NM_000426
+,LARGE1,NM_004737
+,LMNA,NM_170707
+,MICU1,NM_006077
+,MSTO1,NM_018116
+,MYMK,NM_001080483
+,PLEC,NM_000445
+,POMGNT1,NM_017739
+,POMGNT2,NM_032806
+,POMK,NM_032237
+,POMT1,NM_007171
+,POMT2,NM_013382
+,SELENON,NM_020451
+,SIL1,NM_022464
+,SYNE1,NM_182961
+,TMEM5 new symbol: RXYLT1,NM_014254
+,TRAPPC11,NM_021942
