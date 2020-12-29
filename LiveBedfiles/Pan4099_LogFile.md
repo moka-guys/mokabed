@@ -15,3 +15,9 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4099
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+# Pan4099
+This BED file contains 4 genes. One of which (LDLR) requires the 5' UTR and another (APOB) only requires a specified exon.
+As dicussed with the requesting scientists 10bp of padding is required.
+
+Mokabed was run twice. Once for LDLR, including the 5' UTR (Pan4099_LDLR*) and another with the remaining genes (excluding LDLR and APOB). 
