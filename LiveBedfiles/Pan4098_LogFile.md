@@ -34,3 +34,6 @@ The following intronic SNVs were added to Pan4098dataSambamba.bed
 
 ### sort Pan4098data.bed
 `sort Pan4098data.bed -k1,1V -k2,2n -k3,3n > Pan4098data_sorted.bed; mv Pan4098data.bed Pan4098data_unsorted.bed; mv Pan4098data_sorted.bed Pan4098data.bed; rm Pan4098data_unsorted.bed`
+
+### move header back to top
+done manually
