@@ -27,3 +27,6 @@ Mokabed was run twice. Once for LDLR, including the 5' UTR (Pan4099_LDLR*) and a
 
 ### concatenating Pan4099*dataSambamba.bed
 `cat Pan4099_LDLRdataSambamba.bed >> Pan4099dataSambamba.bed; rm Pan4099_LDLRdataSambamba.bed`
+
+### delete refseq files
+As these are not used and will not be modified these are deleted - these can be retrieved from version control if required.
