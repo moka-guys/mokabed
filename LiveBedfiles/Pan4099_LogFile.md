@@ -47,3 +47,6 @@ The following line was added to Pan4099dataSambamba.bed
 
 ### move header back to top
 done manually
+
+### sort Pan4099dataSambamba.bed
+`sort Pan4099dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4099dataSambamba_sorted.bed; mv Pan4099dataSambamba.bed Pan4099dataSambamba_unsorted.bed; mv Pan4099dataSambamba_sorted.bed Pan4099dataSambamba.bed; rm Pan4099dataSambamba_unsorted.bed`
