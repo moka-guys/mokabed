@@ -40,3 +40,8 @@ done manually
 
 ### sort Pan4098dataSambamba.bed
 `sort Pan4098dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4098dataSambamba_sorted.bed; mv Pan4098dataSambamba.bed Pan4098dataSambamba_unsorted.bed; mv Pan4098dataSambamba_sorted.bed Pan4098dataSambamba.bed; rm Pan4098dataSambamba_unsorted.bed`
+
+
+### testing statement
+Pan4098dataSambamba.bed and Pan4098data.bed were tested using Moka_picard_v1.1 and coverage_using_sambamba_and_chanjo_v1.10 in 003_201229_Pan4098_10bp.
+Both jobs completed without error.
