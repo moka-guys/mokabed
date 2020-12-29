@@ -21,3 +21,8 @@ This BED file contains genesrelevant to CMD, as described in the request file. A
 As dicussed with the requesting scientists, 10bp of padding is applied.
 
 This logfile is the output of mokabed and has been renamed as a markdown document.
+
+## Manual addition of specified bases to Pan4098data.bed
+The following intronic SNVs were added to Pan4098data.bed
+21	47409880	47409881	1291										COL6A1;NM_001848.2
+9	108368856	108368857	2218										FKTN;NM_001079802.2
