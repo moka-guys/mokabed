@@ -33,3 +33,7 @@ As these are not used and will not be modified these are deleted - these can be 
 
 ### remove duplicate header from Pan4099data.bed
 This was done manually.
+
+### Add APOB region to Pan4099data.bed
+The following line was added to Pan4099data.bed
+2	21227941	21235533	338										APOB;NM_000384
