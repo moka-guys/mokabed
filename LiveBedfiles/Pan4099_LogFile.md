@@ -37,3 +37,7 @@ This was done manually.
 ### Add APOB region to Pan4099data.bed
 The following line was added to Pan4099data.bed
 2	21227941	21235533	338										APOB;NM_000384
+
+### Add APOB region to Pan4099dataSambamba.bed
+The following line was added to Pan4099dataSambamba.bed
+2	21227941	21235533	2-21227941-21235533	0	+	APOB;NM_000384	338
