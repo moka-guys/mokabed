@@ -31,3 +31,6 @@ The following intronic SNVs were added to Pan4098data.bed
 The following intronic SNVs were added to Pan4098dataSambamba.bed
 21	47409880	47409881	21-47409880-47409881	0	+	COL6A1;NM_001848.2	1291
 9	108368856	108368857	9-108368856-108368857	0	+	FKTN;NM_001079802.2	2218
+
+### sort Pan4098data.bed
+`sort Pan4098data.bed -k1,1V -k2,2n -k3,3n > Pan4098data_sorted.bed; mv Pan4098data.bed Pan4098data_unsorted.bed; mv Pan4098data_sorted.bed Pan4098data.bed; rm Pan4098data_unsorted.bed`
