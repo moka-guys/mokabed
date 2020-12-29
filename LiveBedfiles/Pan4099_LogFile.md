@@ -30,3 +30,6 @@ Mokabed was run twice. Once for LDLR, including the 5' UTR (Pan4099_LDLR*) and a
 
 ### delete refseq files
 As these are not used and will not be modified these are deleted - these can be retrieved from version control if required.
+
+### remove duplicate header from Pan4099data.bed
+This was done manually.
