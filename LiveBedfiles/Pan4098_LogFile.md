@@ -26,3 +26,8 @@ This logfile is the output of mokabed and has been renamed as a markdown documen
 The following intronic SNVs were added to Pan4098data.bed
 21	47409880	47409881	1291										COL6A1;NM_001848.2
 9	108368856	108368857	2218										FKTN;NM_001079802.2
+
+## Manual addition of specified bases to Pan4098dataSambamba.bed
+The following intronic SNVs were added to Pan4098dataSambamba.bed
+21	47409880	47409881	21-47409880-47409881	0	+	COL6A1;NM_001848.2	1291
+9	108368856	108368857	9-108368856-108368857	0	+	FKTN;NM_001079802.2	2218
