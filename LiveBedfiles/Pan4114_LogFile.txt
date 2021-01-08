@@ -1,0 +1,6 @@
+It was noticed that Pan3973 was made incorrectly, it was missing 4 intronic SNVs,
+therefore Pan3973 must be retired and recreated NB please see Pan3973_log.md for full instructions how Pan3973.bed was created.
+
+# create copies of the files
+cp /home/natasha/mokabed/LiveBedfiles/Pan3973data.bed /home/natasha/mokabed/LiveBedfiles/Pan4114data.bed
+cp /home/natasha/mokabed/LiveBedfiles/Pan3973dataSambamba.bed /home/natasha/mokabed/LiveBedfiles/Pan4114dataSambamba.bed
