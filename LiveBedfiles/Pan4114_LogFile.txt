@@ -17,3 +17,7 @@ X	149831328	149831329	X-149831328-149831329	0	+	MTM1;NM_000252.3	4534
 X	149808832	149808833	X-149808832-149808833	0	+	MTM1;NM_000252.3	4534
 9	108368856	108368857	9-108368856-108368857	0	+	FKTN;NM_001079802.2	2218
 
+## sort Pan4114data.bed
+sort Pan4114data.bed -k1,1V -k2,2n -k3,3n > Pan4114datasorted.bed ; mv Pan4114data.bed Pan4114data_unsorted.bed; mv Pan4114datasorted.bed Pan4114data.bed; rm Pan4114data_unsorted.bed
+
+The header was moved back to the top manually
