@@ -4,3 +4,9 @@ therefore Pan3973 must be retired and recreated NB please see Pan3973_log.md for
 # create copies of the files
 cp /home/natasha/mokabed/LiveBedfiles/Pan3973data.bed /home/natasha/mokabed/LiveBedfiles/Pan4114data.bed
 cp /home/natasha/mokabed/LiveBedfiles/Pan3973dataSambamba.bed /home/natasha/mokabed/LiveBedfiles/Pan4114dataSambamba.bed
+
+# Manually add 4 intronic SNVs to data.bed
+21	47409880	47409881	1291	COL6A1;NM_001848.2
+X	149831328	149831329	4534	MTM1;NM_000252.3
+X	149808832	149808833	4534	MTM1;NM_000252.3
+9	108368856	108368857	2218	FKTN;NM_001079802.2
