@@ -21,3 +21,6 @@ X	149808832	149808833	X-149808832-149808833	0	+	MTM1;NM_000252.3	4534
 sort Pan4114data.bed -k1,1V -k2,2n -k3,3n > Pan4114datasorted.bed ; mv Pan4114data.bed Pan4114data_unsorted.bed; mv Pan4114datasorted.bed Pan4114data.bed; rm Pan4114data_unsorted.bed
 
 The header was moved back to the top manually
+
+## sort Pan4114dataSambamba.bed
+sort Pan4114dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4114dataSambambasorted.bed ; mv Pan4114dataSambamba.bed Pan4114dataSambamba_unsorted.bed; mv Pan4114dataSambambasorted.bed Pan4114dataSambamba.bed; rm Pan4114dataSambamba_unsorted.bed
