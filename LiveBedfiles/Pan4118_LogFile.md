@@ -15,3 +15,8 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4118
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+## Pan4118
+This BED file contains the same regions as Pan4003 but padded to +/-30bp.
+2 genes have multiple transcripts. These were split into seperate files.
+MokaBED was run for both transcript lists (see above logs and Pan4118_duplicates_logfile.txt)
