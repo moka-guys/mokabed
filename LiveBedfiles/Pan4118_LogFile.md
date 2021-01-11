@@ -23,26 +23,28 @@ MokaBED was run for both transcript lists (see above logs and Pan4118_duplicates
 
 ### Add regions from duplicate transcripts to data.bed
 Use bedtools subtract to add regions from extra transcripts that aren't in main file. 
-bedtools subtract -a Pan4118_duplicatesdata.bed -b Pan4118data.bed >> Pan4118data.bed
+
+`bedtools subtract -a Pan4118_duplicatesdata.bed -b Pan4118data.bed >> Pan4118data.bed`
 
 ### sort and rename to make review easier
-sort Pan4118data.bed -k1,1V -k2,2n -k3,3n > Pan4118data_sorted.bed; mv Pan4118data.bed Pan4118data_unsorted.bed; mv Pan4118data_sorted.bed Pan4118data.bed
+`sort Pan4118data.bed -k1,1V -k2,2n -k3,3n > Pan4118data_sorted.bed; mv Pan4118data.bed Pan4118data_unsorted.bed; mv Pan4118data_sorted.bed Pan4118data.bed`
 
 move header back to top manually
 
 ### Add regions from duplicate transcripts to sambamba.bed
-bedtools subtract -a Pan4118_duplicatesdataSambamba.bed -b Pan4118dataSambamba.bed  >> Pan4118dataSambamba.bed
+`bedtools subtract -a Pan4118_duplicatesdataSambamba.bed -b Pan4118dataSambamba.bed  >> Pan4118dataSambamba.bed`
 
 ### sort and rename to make review easier
-sort Pan4118dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4118dataSambamba_sorted.bed; mv Pan4118dataSambamba.bed Pan4118dataSambamba_unsorted.bed; mv Pan4118dataSambamba_sorted.bed Pan4118dataSambamba.bed; rm Pan4118dataSambamba_unsorted.bed
+`sort Pan4118dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4118dataSambamba_sorted.bed; mv Pan4118dataSambamba.bed Pan4118dataSambamba_unsorted.bed; mv Pan4118dataSambamba_sorted.bed Pan4118dataSambamba.bed; rm Pan4118dataSambamba_unsorted.bed`
 
 ### Delete intermediate and RefSeq files (since it is no longer accurate and not used)
-rm Pan4118dataRefSeqFormat.txt Pan4118_duplicatesdata.bed Pan4118_duplicatesdataRefSeqFormat.txt Pan4118_duplicatesdataSambamba.bed
+`rm Pan4118dataRefSeqFormat.txt Pan4118_duplicatesdata.bed Pan4118_duplicatesdataRefSeqFormat.txt Pan4118_duplicatesdataSambamba.bed`
 
 ### add in the additional panels.
-cat Pan3621.bed Pan3604.bed Pan3605.bed Pan3606.bed Pan3607.bed Pan4002.bed >> Pan4118data.bed
+`cat Pan3621.bed Pan3604.bed Pan3605.bed Pan3606.bed Pan3607.bed Pan4002.bed >> Pan4118data.bed`
 
 ### repeat sort and rename to make review easier
-sort Pan4118data.bed -k1,1V -k2,2n -k3,3n > Pan4118data_sorted.bed; mv Pan4118data.bed Pan4118data_unsorted.bed; mv Pan4118data_sorted.bed Pan4118data.bed; rm Pan4118data_unsorted.bed 
+`sort Pan4118data.bed -k1,1V -k2,2n -k3,3n > Pan4118data_sorted.bed; mv Pan4118data.bed Pan4118data_unsorted.bed; mv Pan4118data_sorted.bed Pan4118data.bed; rm Pan4118data_unsorted.bed `
 
 header moved back to top manually
+
