@@ -21,6 +21,11 @@ This BED file contains the same regions as Pan4003 but padded to +/-30bp.
 2 genes have multiple transcripts. These were split into seperate files.
 MokaBED was run for both transcript lists (see above logs and Pan4118_duplicates_logfile.txt)
 
-# Add regions from duplicate transcripts to data.bed
+### Add regions from duplicate transcripts to data.bed
 Use bedtools subtract to add regions from extra transcripts that aren't in main file. 
 bedtools subtract -a Pan4118_duplicatesdata.bed -b Pan4118data.bed >> Pan4118data.bed
+
+### sort and rename to make review easier
+sort Pan4118data.bed -k1,1V -k2,2n -k3,3n > Pan4118data_sorted.bed; mv Pan4118data.bed Pan4118data_unsorted.bed; mv Pan4118data_sorted.bed Pan4118data.bed
+
+move header back to top manually
