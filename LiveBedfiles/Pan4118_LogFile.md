@@ -38,3 +38,6 @@ sort Pan4118dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4118dataSambamba_sorted.b
 
 ### Delete intermediate and RefSeq files (since it is no longer accurate and not used)
 rm Pan4118dataRefSeqFormat.txt Pan4118_duplicatesdata.bed Pan4118_duplicatesdataRefSeqFormat.txt Pan4118_duplicatesdataSambamba.bed
+
+# add in the additional panels.
+cat Pan3621.bed Pan3604.bed Pan3605.bed Pan3606.bed Pan3607.bed Pan4002.bed >> Pan4118data.bed
