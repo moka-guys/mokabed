@@ -56,3 +56,6 @@ This was done manually in a spreadsheet software
 
 ### repeat sorting on sambamba bed
 `sort Pan4118dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4118dataSambamba_sorted.bed; mv Pan4118dataSambamba.bed Pan4118dataSambamba_unsorted.bed; mv Pan4118dataSambamba_sorted.bed Pan4118dataSambamba.bed; rm Pan4118dataSambamba_unsorted.bed`
+
+### testing
+The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus and completed without error.
