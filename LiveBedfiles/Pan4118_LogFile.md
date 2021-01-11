@@ -29,3 +29,6 @@ bedtools subtract -a Pan4118_duplicatesdata.bed -b Pan4118data.bed >> Pan4118dat
 sort Pan4118data.bed -k1,1V -k2,2n -k3,3n > Pan4118data_sorted.bed; mv Pan4118data.bed Pan4118data_unsorted.bed; mv Pan4118data_sorted.bed Pan4118data.bed
 
 move header back to top manually
+
+### Add regions from duplicate transcripts to sambamba.bed
+bedtools subtract -a Pan4118_duplicatesdataSambamba.bed -b Pan4118dataSambamba.bed  >> Pan4118dataSambamba.bed
