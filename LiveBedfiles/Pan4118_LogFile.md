@@ -48,3 +48,6 @@ move header back to top manually
 
 header moved back to top manually
 
+### add all the SNPs into sambamba bed
+`cat Pan3621.bed Pan3604.bed Pan3605.bed Pan3606.bed Pan3607.bed Pan4002.bed >> Pan4118dataSambamba.bed`
+
