@@ -32,3 +32,6 @@ move header back to top manually
 
 ### Add regions from duplicate transcripts to sambamba.bed
 bedtools subtract -a Pan4118_duplicatesdataSambamba.bed -b Pan4118dataSambamba.bed  >> Pan4118dataSambamba.bed
+
+### sort and rename to make review easier
+sort Pan4118dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4118dataSambamba_sorted.bed; mv Pan4118dataSambamba.bed Pan4118dataSambamba_unsorted.bed; mv Pan4118dataSambamba_sorted.bed Pan4118dataSambamba.bed; rm Pan4118dataSambamba_unsorted.bed
