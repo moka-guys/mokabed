@@ -1,0 +1,32 @@
+Instructions:			
+"· Add genes symbols and/or transcripts to a panel in Moka
+· Add panel description to Moka
+· Answer following questions:"		VCP2_BRCA_All (coverage)	
+			
+1. Pan number of bed file to be created		Pan4148	
+2. Panel description/name (fill in a-c from Moka)		VCP2	
+2. a) Category		BRCA_ALL_SNV	
+2. b) SubCategory		-10/+10, Chr22:29091857	
+2. c) Panel		VCP2BRCA_ALL_SNV-10/+10, Chr22:29091857	
+3. Is this BED file for RPKM?		No	
+4. a) Is this BED file exclusively based on coordinates provided by a supplier 		No	
+4. b) If yes, does this need further padding?		N/A	
+5. a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts) Specific transcripts - see Moka		Yes - see below	
+5. b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state)		No	
+6. What padding is required around the exons?		10bp	
+7. a) Should UTRs be included for ALL genes?		No	
+7. b) Should UTRs be padded?		N/A	
+8. a) Are UTRs required for SOME genes? 		No	
+8. b) Please list genes/transcripts		N/A	
+8. c) Should UTRs be padded?		N/A	
+9. Any additional BED files to be included in this BED file? 			
+10. Are any further regions required to be added?		Chr22:29091857	
+Requested by:			
+Requested date:			
+			
+		Gene Name	Transcript
+		BRCA1	NM_007294
+		BRCA2	NM_000059
+		PALB2	NM_024675
+		CHEK2	
+		TP53	NM_000546
