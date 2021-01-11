@@ -24,3 +24,6 @@ The following region was added CHEK2 - This was to cover Chr22:29091857DelC - th
 
 The following region was added CHEK2 - This was to cover Chr22:29091857DelC (padded by 1bp)- the only pertinent variant in this gene (others may be incidental findings)
 22	29091855	29091858	22-29091855-29091858	0	+	CHEK2;NM_007194.3	11200
+
+## testing
+The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus and completed without error.
