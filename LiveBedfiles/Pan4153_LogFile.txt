@@ -1,0 +1,4 @@
+Additional 2bp padding was decided to add to a duplication (chrX:32042110-32042111) in Pan4118. Therefore Pan4118 will be retired and be replaced with Pan4153.
+Please see Pan4118_LogFile.md for full instructions how Pan4153.bed was created.
+
+
