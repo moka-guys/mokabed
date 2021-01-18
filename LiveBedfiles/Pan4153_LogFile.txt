@@ -7,3 +7,6 @@ cp '/home/natasha/mokabed/LiveBedfiles/Pan4118dataSambamba.bed' '/home/natasha/m
 
 manually correct
 chrX:32042110-32042111 changed to chrX:32042108-32042113; it was padded by 2bp.
+
+testing statement
+The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus and completed without error.
