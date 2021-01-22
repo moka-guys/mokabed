@@ -4,3 +4,11 @@ Please see Pan3604_LogFile.txt for full instructions how Pan4160.bed was created
 
 create copies of the files
 cp /home/natasha/Documents/mokabed/LiveBedfiles/Pan3604.bed /home/natasha/Documents/mokabed/LiveBedfiles/Pan4160.bed
+
+Manually remove intronic variant not in capture kit:
+X 32644478 32644479    DMD_c.1332-11909C>G
+X 32274691 32274692    DMD_c.6290+30954C>T
+
+Manually padd duplication by 2bp:
+X 32042110 32042111 changed to X 32042108 32042113
+
