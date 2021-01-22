@@ -1,0 +1,6 @@
+Additional 2bp padding was added to a duplication in Pan3604. Two intonic variants not included in the Twist capture kit were also removed from Pan3604.
+Therefore Pan3604 will be retired and be replaced with Pan4160.
+Please see Pan3604_LogFile.txt for full instructions how Pan4160.bed was created.
+
+create copies of the files
+cp /home/natasha/Documents/mokabed/LiveBedfiles/Pan3604.bed /home/natasha/Documents/mokabed/LiveBedfiles/Pan4160.bed
