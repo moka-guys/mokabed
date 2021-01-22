@@ -12,3 +12,4 @@ X 32274691 32274692    DMD_c.6290+30954C>T
 Manually padd duplication by 2bp:
 X 32042110 32042111 changed to X 32042108 32042113
 
+# checked for empty new line at end of file
