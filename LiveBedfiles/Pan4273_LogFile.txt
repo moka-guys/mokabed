@@ -1,0 +1,16 @@
+26/1/2021
+This BED file contains intronic variants for tests that will be analysed using VCP3 panel.
+
+This is version 1 of this list of variants.
+
+The coordinates for this BED file were provided by the monogenics team after consulting the Slice document provided by NHSE and with scientists in charge of these tests.
+
+BED file request form saved in /RequestForms
+
+The coordinates were manually converted into BED file 
+The position quoted in the coordinates was used as the stop coord and the start pos was this coord -1.
+These positions were then further padded +/-1bp
+A check was performed to ensure all variants were SNVs (and no additional padding would be required)
+Positions were checked in UCSC by adding the BED file as a track
+
+Also checked for empty new line at end of file.
