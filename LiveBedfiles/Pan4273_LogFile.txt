@@ -9,7 +9,7 @@ BED file request form saved in /RequestForms
 
 The coordinates were manually converted into BED file 
 The position quoted in the coordinates was used as the stop coord and the start pos was this coord -1.
-These positions were then further padded +/-1bp
+These positions were then further padded +/-5bp
 A check was performed to ensure all variants were SNVs (and no additional padding would be required)
 Positions were checked in UCSC by adding the BED file as a track
 
