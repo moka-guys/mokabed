@@ -1,0 +1,8 @@
+27/01/2021
+This BED file contains intronic variants for CF that will be analysed using VCP1 panel.
+
+This is version 1 of this list of variants.
+
+The coordinates for this BED file were provided by the monogenics team after consulting the Slice document provided by NHSE and with scientists in charge of these tests.
+
+BED file request form saved in /RequestForms
