@@ -118,3 +118,17 @@ no header to move
 
 ## correct whitespace issue in sambamba bed
 Done manually, searching for space and converted to tabs
+
+## fix mistake in Pan4284
+Pan4284 was found to be incorrect. these changes were reproduced in the two Pan4278 bed files
+### sambamba.bed
+original
+X	149831323	1498313234	X-149831323-1498313234	0	+	MTM1;NM_000252_c.1468-577	4534
+corrected
+X	149831323	149831334	X-149831323-149831334	0	+	MTM1;NM_000252_c.1468-577	4534
+
+### data.bed
+original
+X	149831323	1498313234	MTM1_NM_000252_c.1468-577
+corrected
+X	149831323	149831334	MTM1_NM_000252_c.1468-577
