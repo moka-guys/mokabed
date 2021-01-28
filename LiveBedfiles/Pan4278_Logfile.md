@@ -38,3 +38,9 @@ Add regions from part 2 not included in part 1
 
 Part2 BED files are deleted
 `rm Pan4278_part2data*`
+
+### combining genes with 5' UTR
+The TH gene also includes the 5' UTR. This gene was not included in parts 1-4 so can be concatenated onto the end.
+`cat /home/aled/Documents/201229_mokabed/mokabed/LiveBedfiles/Pan4278_THdata.bed >> home/aled/Documents/201229_mokabed/mokabed/LiveBedfiles/Pan4278_part1data.bed`
+The header was removed manually
+
