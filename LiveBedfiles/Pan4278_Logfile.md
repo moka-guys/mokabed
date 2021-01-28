@@ -111,3 +111,7 @@ header was moved to the top.
 ## sort sambamba bed file.
 `sort Pan4278_part1dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4278_part1dataSambamba_sorted.bed; mv Pan4278_part1dataSambamba.bed Pan4278_part1dataSambamba_unsorted.bed; mv Pan4278_part1dataSambamba_sorted.bed Pan4278_part1dataSambamba.bed; rm Pan4278_part1dataSambamba_unsorted.bed`
 no header to move
+
+## rename files
+`mv Pan4278_part1data.bed Pan4278data.bed`
+`mv Pan4278_part1dataSambamba.bed Pan4278dataSambamba.bed`
