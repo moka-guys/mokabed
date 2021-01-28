@@ -83,3 +83,7 @@ This was done for both data.bed and sambamba.bed and were saved as Pan3973_probl
 ### add to data.bed
 `cat Pan3973_problemdata.bed >> Pan4278_part1data.bed`
 There was no header to remove
+
+### add to sambamba.bed
+`cat Pan3973_problemdataSambamba.bed.txt >> Pan4278_part1dataSambamba.bed`
+There was no header to remove
