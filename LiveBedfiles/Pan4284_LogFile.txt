@@ -14,3 +14,5 @@ A check was performed to ensure all variants were SNVs (and no additional paddin
 Positions were checked in UCSC by adding the BED file as a track
 
 Also checked for empty new line at end of file.
+
+after checking the sizes of regions a mistake was seen in the MTM1 SNV at X:149831329. this was corrected
