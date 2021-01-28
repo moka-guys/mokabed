@@ -12,3 +12,5 @@ A check was performed to ensure all variants were SNVs (and no additional paddin
 Positions were checked in UCSC by adding the BED file as a track
 
 Note: RS id was not available for this BRCA intronic variant
+
+Also checked for empty new line at end of file.
