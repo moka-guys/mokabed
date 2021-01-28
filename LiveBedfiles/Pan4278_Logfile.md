@@ -115,3 +115,6 @@ no header to move
 ## rename files
 `mv Pan4278_part1data.bed Pan4278data.bed`
 `mv Pan4278_part1dataSambamba.bed Pan4278dataSambamba.bed`
+
+## correct whitespace issue in sambamba bed
+Done manually, searching for space and converted to tabs
