@@ -51,3 +51,15 @@ There is no header to remove
 
 #### remove TH files
 `rm Pan4278_THdata*`
+
+### adding MAPT
+The MAPT gene was requested to have 25bp padding, as opposed to 10bp for the rest of the transcripts. There is also 2 transcripts for MAPT which will need combining before adding to the other main file.
+#### Add regions from part 2 not included in part 1
+The below BED tools subtract command showed there are no differences between the two files
+`bedtools subtract -a 'Pan4278_MAPT_part2data.bed' -b Pan4278_MAPT_part1data.bed`
+
+Therefore, just one BED file needs to be combined with Pan4278_part1 files
+
+### Add MAPT to part1data.bed
+`cat Pan4278_MAPT_part1data.bed >> Pan4278_part1data.bed `
+The header was removed manually (as was the header from the TH step, where the file was not saved after changing)
