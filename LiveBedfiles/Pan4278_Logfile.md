@@ -132,3 +132,6 @@ original
 X	149831323	1498313234	MTM1_NM_000252_c.1468-577
 corrected
 X	149831323	149831334	MTM1_NM_000252_c.1468-577
+
+## Testing statement
+Both data.bed and dataSambamba.bed have been tested using moka_picard and chanjo_sambamba_v1.10 in 003_210126_Pan4278
