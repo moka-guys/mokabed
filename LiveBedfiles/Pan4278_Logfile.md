@@ -97,3 +97,6 @@ This file was not in master when this branch was created so master has been merg
 
 ### add to data.bed
 `cat Pan4284.bed >> Pan4278_part1data.bed`
+
+### add to sambamba.bed
+`cat Pan4284.bed >> Pan4278_part1dataSambamba.bed `
