@@ -48,3 +48,6 @@ The header was removed manually
 repeat for sambamba
 `cat Pan4278_THdataSambamba.bed >> Pan4278_part1dataSambamba.bed`
 There is no header to remove
+
+#### remove TH files
+`rm Pan4278_THdata*`
