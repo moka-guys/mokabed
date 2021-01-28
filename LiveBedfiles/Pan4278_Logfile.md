@@ -87,3 +87,10 @@ There was no header to remove
 ### add to sambamba.bed
 `cat Pan3973_problemdataSambamba.bed.txt >> Pan4278_part1dataSambamba.bed`
 There was no header to remove
+
+### remove Pan3973 problematic beds"
+`rm Pan3973_problemdata*`
+
+## Add intronic SNV sites
+We need to add in Pan4284, v2 of the intronic SNVs (padded to 10bp)
+This file was not in master when this branch was created so master has been merged into this branch
