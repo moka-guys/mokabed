@@ -67,3 +67,8 @@ The header was removed manually (as was the header from the TH step, where the f
 ### Add MAPT to part1dataSambamba.bed
 `cat Pan4278_MAPT_part1data.bed >> Pan4278_part1data.bed `
 There was no header to delete
+
+#### remove MAPT bed files
+`rm Pan4278_MAPT_part1d*`
+`rm Pan4278_MAPT_part2d*`
+
