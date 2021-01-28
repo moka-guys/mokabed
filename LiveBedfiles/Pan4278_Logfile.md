@@ -16,3 +16,8 @@ Adding regions from part4 to part3 does not include any additional regions.
 
 Part4 BED files are deleted
 `rm Pan4278_part4data*`
+
+### merging parts 2 and 3
+Add regions from part 3 not included in part 2
+
+`bedtools subtract -a 'Pan4278_part3data.bed' -b 'Pan4278_part2data.bed' >> 'Pan4278_part2data.bed'`
