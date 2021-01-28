@@ -73,23 +73,23 @@ There was no header to delete
 `rm Pan4278_MAPT_part2d*`
 
 ## problematic transcript
-Now all transcripts have been merged we need to add in NM_000344 (SMN1) which was causing mokabed to fail on a previous iteration of this BED file (Pan3973).
+Now all transcripts have been merged we need to add in NM_000344 (SMN1) which was causing mokabed to fail on a previous iteration of this BED file (Pan4278).
 Mokabed was failing because cruzdb was returning multiple records for the same transcript.
 
 As described in Pan3937_log.md a number of steps were performed to extract the regions from the UCSC table browser, remove the UTRs, pad by 10 bases and convert to the expected format (12 columns)
 
-This was done for both data.bed and sambamba.bed and were saved as Pan3973_problemdataSambamba.bed and Pan3973_problemdata.bed. These two files were downloaded from the git history at commit 982b443698 (https://github.com/moka-guys/mokabed/tree/982b443698683532c2a4a0032e0ae370742ad41a/LiveBedfiles)
+This was done for both data.bed and sambamba.bed and were saved as Pan4278_problemdataSambamba.bed and Pan4278_problemdata.bed. These two files were downloaded from the git history at commit 982b443698 (https://github.com/moka-guys/mokabed/tree/982b443698683532c2a4a0032e0ae370742ad41a/LiveBedfiles)
 
 ### add to data.bed
-`cat Pan3973_problemdata.bed >> Pan4278_part1data.bed`
+`cat Pan4278_problemdata.bed >> Pan4278_part1data.bed`
 There was no header to remove
 
 ### add to sambamba.bed
-`cat Pan3973_problemdataSambamba.bed.txt >> Pan4278_part1dataSambamba.bed`
+`cat Pan4278_problemdataSambamba.bed.txt >> Pan4278_part1dataSambamba.bed`
 There was no header to remove
 
-### remove Pan3973 problematic beds"
-`rm Pan3973_problemdata*`
+### remove Pan4278 problematic beds"
+`rm Pan4278_problemdata*`
 
 ## Add intronic SNV sites
 We need to add in Pan4284, v2 of the intronic SNVs (padded to 10bp)
@@ -103,3 +103,7 @@ This file was not in master when this branch was created so master has been merg
 
 ### fix sambamba bed format
 sambamba bed file was modified manually into the correct format
+
+## sort files
+`sort Pan4278_part1data.bed -k1,1V -k2,2n -k3,3n > Pan4278_part1data_sorted.bed; mv Pan4278_part1data.bed Pan4278_part1data_unsorted.bed; mv Pan4278_part1data_sorted.bed Pan4278_part1data.bed; rm Pan4278_part1data_unsorted.bed`
+header was moved to the top.
