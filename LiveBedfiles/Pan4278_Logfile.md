@@ -107,3 +107,7 @@ sambamba bed file was modified manually into the correct format
 ## sort files
 `sort Pan4278_part1data.bed -k1,1V -k2,2n -k3,3n > Pan4278_part1data_sorted.bed; mv Pan4278_part1data.bed Pan4278_part1data_unsorted.bed; mv Pan4278_part1data_sorted.bed Pan4278_part1data.bed; rm Pan4278_part1data_unsorted.bed`
 header was moved to the top.
+
+## sort sambamba bed file.
+`sort Pan4278_part1dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4278_part1dataSambamba_sorted.bed; mv Pan4278_part1dataSambamba.bed Pan4278_part1dataSambamba_unsorted.bed; mv Pan4278_part1dataSambamba_sorted.bed Pan4278_part1dataSambamba.bed; rm Pan4278_part1dataSambamba_unsorted.bed`
+no header to move
