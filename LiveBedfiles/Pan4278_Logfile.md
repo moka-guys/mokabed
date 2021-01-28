@@ -40,7 +40,11 @@ Part2 BED files are deleted
 `rm Pan4278_part2data*`
 
 ### combining genes with 5' UTR
+#### data.bed
 The TH gene also includes the 5' UTR. This gene was not included in parts 1-4 so can be concatenated onto the end.
 `cat /home/aled/Documents/201229_mokabed/mokabed/LiveBedfiles/Pan4278_THdata.bed >> home/aled/Documents/201229_mokabed/mokabed/LiveBedfiles/Pan4278_part1data.bed`
 The header was removed manually
-
+#### sambamba.bed
+repeat for sambamba
+`cat Pan4278_THdataSambamba.bed >> Pan4278_part1dataSambamba.bed`
+There is no header to remove
