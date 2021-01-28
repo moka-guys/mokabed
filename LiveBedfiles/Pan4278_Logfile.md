@@ -79,3 +79,7 @@ Mokabed was failing because cruzdb was returning multiple records for the same t
 As described in Pan3937_log.md a number of steps were performed to extract the regions from the UCSC table browser, remove the UTRs, pad by 10 bases and convert to the expected format (12 columns)
 
 This was done for both data.bed and sambamba.bed and were saved as Pan3973_problemdataSambamba.bed and Pan3973_problemdata.bed. These two files were downloaded from the git history at commit 982b443698 (https://github.com/moka-guys/mokabed/tree/982b443698683532c2a4a0032e0ae370742ad41a/LiveBedfiles)
+
+### add to data.bed
+`cat Pan3973_problemdata.bed >> Pan4278_part1data.bed`
+There was no header to remove
