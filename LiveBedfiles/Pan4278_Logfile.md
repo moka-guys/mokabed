@@ -32,3 +32,9 @@ Part3 BED files are deleted
 Add regions from part 2 not included in part 1
 
 `bedtools subtract -a 'Pan4278_part2data.bed' -b 'Pan4278_part1data.bed' >> 'Pan4278_part1data.bed'`
+
+#### repeat for sambamba
+`bedtools subtract -a 'Pan4278_part2dataSambamba.bed' -b 'Pan4278_part1dataSambamba.bed' >> 'Pan4278_part1dataSambamba.bed'`
+
+Part2 BED files are deleted
+`rm Pan4278_part2data*`
