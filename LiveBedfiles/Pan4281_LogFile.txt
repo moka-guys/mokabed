@@ -23,4 +23,9 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4281
 
 version as defined by git tag = v1.2
 
+#Add regions from duplicate transcripts to data.bed
+Use bedtools subtract to add regions from extra transcripts that aren't in main file.
 
+bedtools subtract -a Pan4281_duplicatesdata.bed -b Pan4281data.bed >> Pan4281data.bed
+
+There are no regions in Pan4281_duplicatesdata.bed not already in Pan4281data.bed so this step doesn't need to be repeated for sambamba.
