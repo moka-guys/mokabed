@@ -1,0 +1,2 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_016835	MAPT	0
