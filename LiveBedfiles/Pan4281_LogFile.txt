@@ -29,3 +29,5 @@ bedtools subtract -a Pan4281_duplicatesdata.bed -b Pan4281data.bed >> Pan4281dat
 #Add regions from duplicate transcripts to sambamba.bed
 
 bedtools subtract -a Pan4281_duplicatesdataSambamba.bed -b Pan4281dataSambamba.bed >> Pan4281dataSambamba.bed
+
+#Remove any Pan4281_duplicate files: rm Pan4281_duplicatesdata.bed  Pan4281_duplicatesdataSambamba.bed
