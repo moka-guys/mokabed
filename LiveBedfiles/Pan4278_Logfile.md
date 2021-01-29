@@ -65,7 +65,7 @@ Therefore, just one BED file needs to be combined with Pan4278_part1 files
 The header was removed manually (as was the header from the TH step, where the file was not saved after changing)
 
 ### Add MAPT to part1dataSambamba.bed
-`cat Pan4278_MAPT_part1data.bed >> Pan4278_part1data.bed `
+`cat Pan4278_MAPT_part1dataSambamba.bed >> Pan4278_part1dataSambamba.bed `
 There was no header to delete
 
 #### remove MAPT bed files
