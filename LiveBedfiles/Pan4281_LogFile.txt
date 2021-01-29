@@ -54,3 +54,6 @@ cat Pan3621.bed Pan3606.bed Pan3607.bed Pan4002.bed Pan4272.bed Pan4160.bed >> P
 
 manually convert SNPs into sambamba format
 This was done manually in a spreadsheet software
+
+#Sort data.bed
+sort Pan4281data.bed -k1,1V -k2,2n -k3,3n > Pan4281data_sorted.bed; mv Pan4281data.bed Pan4281data_unsorted.bed; mv Pan4281data_sorted.bed Pan4281data.bed; rm Pan4281data_unsorted.bed
