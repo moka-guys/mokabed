@@ -12,7 +12,7 @@ In general there are a number challenges when making this BED file:
 ### parts 4 and 3
 Where multiple transcripts have been provided, the below BEDtools subtract command adds regions from file a not already covered in file b to the end of file b:
 `bedtools subtract -a Pan4278_part4data.bed -b Pan4278_part3data.bed >> Pan4278_part3data.bed`
-Adding regions from part4 to part3 does not include any additional regions.
+There are no regions in part 4 not already in part 3 so this step doesn't need to be repeated for sambamba.
 
 Part4 BED files are deleted
 `rm Pan4278_part4data*`
