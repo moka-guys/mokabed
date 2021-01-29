@@ -31,3 +31,10 @@ bedtools subtract -a Pan4281_duplicatesdata.bed -b Pan4281data.bed >> Pan4281dat
 There are no regions in Pan4281_duplicatesdata.bed not already in Pan4281data.bed so this step doesn't need to be repeated for sambamba.
 
 Remove any Pan4281_duplicate files: rm Pan4281_duplicatesdata.bed  Pan4281_duplicatesdataSambamba.bed
+
+#Combine genes with 5UTR
+The LDLR and PCSK9 genes also includes the 5' UTR.
+
+data.bed
+cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4281_part1data.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4281data.bed 
+Manually move header to the top
