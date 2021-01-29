@@ -58,3 +58,7 @@ This was done manually in a spreadsheet software
 #Sort data.bed
 sort Pan4281data.bed -k1,1V -k2,2n -k3,3n > Pan4281data_sorted.bed; mv Pan4281data.bed Pan4281data_unsorted.bed; mv Pan4281data_sorted.bed Pan4281data.bed; rm Pan4281data_unsorted.bed
 move header to the top 
+
+#Sort sambamba.bed
+sort Pan4281dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4281dataSambamba_sorted.bed; mv Pan4281dataSambamba.bed Pan4281dataSambamba_unsorted.bed; 
+mv Pan4281dataSambamba_sorted.bed Pan4281dataSambamba.bed; rm Pan4281dataSambamba_unsorted.bed
