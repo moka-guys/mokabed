@@ -7,3 +7,6 @@ cp /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4160.bed /home/natasha/Desktop/
 Manually pad duplication by 5bp:
 
 # checked for empty new line at end of file
+
+#ChrX:32042108-32042113 duplication already had a padding of 2bp. Accidently padded it by another 5bp
+Manually subtracted 2bp from the coordinates for that duplication. 
