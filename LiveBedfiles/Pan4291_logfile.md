@@ -5,3 +5,6 @@ This BED file provides+/-5bp padding to these variants in line with current poli
 
 #### A copy of Pan3621.bed was made
 `cp Pan3621.bed Pan4291.bed`
+
+### add padding
+Padding was added manually and a sanity check of the size of each region performed (11bp)
