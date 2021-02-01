@@ -10,3 +10,8 @@ Manually pad duplication by 5bp:
 
 #ChrX:32042108-32042113 duplication already had a padding of 2bp. Accidently padded it by another 5bp
 Manually subtracted 2bp from the coordinates for that duplication. 
+
+#Correct request form:
+    - sign full name   
+    - list all regions in section 10 only
+    - Remove any variants not included from the Panel name
