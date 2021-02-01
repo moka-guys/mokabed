@@ -8,3 +8,7 @@ This BED file provides+/-5bp padding to these variants in line with current poli
 
 ### add padding
 Padding was added manually and a sanity check of the size of each region performed (11bp)
+
+
+### newline check
+An empty newline is present at the end of the file
