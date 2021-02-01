@@ -1,0 +1,4 @@
+This BED file contains the same regions as Pan4281, however this BED is padded +/-10bp 
+5'UTR for 2 genes were also padded by +-10bp
+2 genes have multiple transcripts 
+
