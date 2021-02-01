@@ -2,4 +2,8 @@ All intronic variants for VCP1 will be padded by 5bp, therefore Pan4160 will be 
 Please see Pan4160_LogFile.txt for full instructions how Pan4290.bed was created.
 
 create copies of the files
-cp /home/natasha/Documents/mokabed/LiveBedfiles/Pan4160.bed /home/natasha/Documents/mokabed/LiveBedfiles/Pan4290.bed
+cp /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4160.bed /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4290.bed
+
+Manually pad duplication by 5bp:
+
+# checked for empty new line at end of file
