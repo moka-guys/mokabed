@@ -1,0 +1,3 @@
+All intronic variants for VCP1 will be padded by 5bp, therefore Pan4160 will be retired and be replaced by Pan4290.
+Please see Pan4160_LogFile.txt for full instructions how Pan4290.bed was created.
+
