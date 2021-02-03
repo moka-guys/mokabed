@@ -4,3 +4,9 @@ Addtionally, Nimagen SNP and STR subpanels were also removed.
 5'UTR for 2 genes were also padded by +-30bp
 
 #Save request from 
+
+#Copy Pan4281 transcripts 
+cp Pan4281_duplicates.txt Pan4302_duplicates.txt
+cp Pan4281_part1.txt Pan4302_part1.txt
+cp Pan4281.txt Pan4302.txt
+
