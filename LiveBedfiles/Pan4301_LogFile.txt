@@ -65,3 +65,6 @@ mv Pan4301dataSambamba_sorted.bed Pan4301dataSambamba.bed; rm Pan4301dataSambamb
 
 #Remove PTEN files
 rm Pan4301_PTENdata.bed  Pan4301_PTENdataSambamba.bed
+
+#Testing
+The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus and completed without error
