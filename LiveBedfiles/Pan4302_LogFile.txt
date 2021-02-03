@@ -46,3 +46,7 @@ The LDLR and PCSK9 genes also includes the 5' UTR.
 data.bed
 cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4302_part1data.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4302data.bed 
 Manually move header to the top
+
+repeat for sambamba 
+cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4302_part1dataSambamba.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4302dataSambamba.bed
+There is no header to remove
