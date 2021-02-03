@@ -33,3 +33,11 @@ Manually move header to the top
 repeat for sambamba 
 cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4301_PTENdataSambamba.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4302dataSambamba.bed
 There is no header to remove
+
+Manually add specified bases to data.bed
+
+The following region was added CHEK2 - This was to cover Chr22:29091857DelC - the only pertinent variant in this gene (others may be incidental findings) (it was padded by 1bp) 
+22 29091855 29091858 11200 CHEK2;NM_007194.3
+
+The following region was added to BRCA1- Chr17:41277375 BRCA1 c.-107A>T
+17 41277374 41277375 BRCA1;NM_007294.4
