@@ -50,3 +50,6 @@ Manually move header to the top
 repeat for sambamba 
 cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4302_part1dataSambamba.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4302dataSambamba.bed
 There is no header to remove
+
+remove part1 files
+rm Pan4302_part1data.bed Pan4302_part1dataSambamba.bed
