@@ -47,3 +47,6 @@ The following region was added to BRCA1- Chr17:41277375 BRCA1 c.-107A>T
 Manual addition of specified bases to Pan4301dataSambamba.bed
 22	29091855	29091858	22-29091855-29091858	0	+	CHEK2;NM_007194.3	11200 
 17	41276003	41276143	17-41276003-41276143	0	+	BRCA1;NM_007294.4	672
+
+#Add in the additional panels.
+cat Pan3607.bed Pan3609.bed Pan3611.bed Pan4002.bed >> Pan4301data.bed
