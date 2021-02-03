@@ -53,3 +53,6 @@ cat Pan3607.bed Pan3609.bed Pan3611.bed Pan4002.bed >> Pan4301data.bed
 
 #Add in the additional panels to sambamba.bed
 cat Pan3607.bed Pan3609.bed Pan3611.bed Pan4002.bed >> Pan4301dataSambamba.bed
+
+#Manually convert SNPs into sambamba format
+This was done manually in a spreadsheet software
