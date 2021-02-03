@@ -1,0 +1,6 @@
+This bedfile replaces Pan4281, it was noticed the subpanels with intronic variants were not padded by 5bp. 
+Addtionally, Nimagen SNP and STR subpanels were also removed.
+2 genes have multiple transcripts. These were split into seperate files. 
+5'UTR for 2 genes were also padded by +-30bp
+
+#Save request from 
