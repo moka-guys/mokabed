@@ -1,0 +1,56 @@
+Pan4301 is a BED file for VCP2, 5UTR for PTEN was added and two additional variants in CHEK2 and BRCA1
+
+#Save Request form
+
+#Save transcripts
+
+#Run Mokabed
+Time Stamp:2021-02-04 18:55:35.666932
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4301dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 30 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4301.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4301data.bed --logfile /home/dnanexus/out/Output_files/Pan4301_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+#Combine PTEN bed files
+
+data.bed
+cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4301_PTENdata.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4301data.bed 
+Manually move header to the top
+
+repeat for sambamba 
+cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4301_PTENdataSambamba.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4301dataSambamba.bed
+There is no header to remove
+
+#Remove PTEN files
+rm Pan4301_PTENdata.bed Pan4301_PTENdataSambamba.bed
+
+#Add in the additional panels.
+cat Pan4283.bed >> Pan4301data.bed
+
+#Add in the additional panels to sambamba.bed
+cat Pan4283.bed >> Pan4301dataSambamba.bed
+
+#Manually convert SNPs into sambamba format
+
+#Sort data.bed
+sort Pan4301data.bed -k1,1V -k2,2n -k3,3n > Pan4301data_sorted.bed; mv Pan4301data.bed Pan4301data_unsorted.bed; mv Pan4301data_sorted.bed Pan4301data.bed; rm Pan4301data_unsorted.bed
+move header to the top
+
+#Sort sambamba.bed
+sort Pan4301dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4301dataSambamba_sorted.bed; mv Pan4301dataSambamba.bed Pan4301dataSambamba_unsorted.bed; 
+mv Pan4301dataSambamba_sorted.bed Pan4301dataSambamba.bed; rm Pan4301dataSambamba_unsorted.bed
+
+#Testing
+The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus and completed without error
