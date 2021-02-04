@@ -38,3 +38,6 @@ rm Pan4301_PTENdata.bed Pan4301_PTENdataSambamba.bed
 
 #Add in the additional panels.
 cat Pan4283.bed >> Pan4301data.bed
+
+#Add in the additional panels to sambamba.bed
+cat Pan4283.bed >> Pan4301dataSambamba.bed
