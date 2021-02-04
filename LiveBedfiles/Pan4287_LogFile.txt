@@ -55,3 +55,6 @@ cat Pan4291.bed Pan4290.bed Pan4292.bed Pan4272.bed >> Pan4287data.bed
 
 #Add all the SNPs into sambamba bed
 cat Pan4291.bed Pan4290.bed Pan4292.bed Pan4272.bed >> Pan4287dataSambamba.bed
+
+#Manually convert SNPs into sambamba format
+This was done manually in a spreadsheet software
