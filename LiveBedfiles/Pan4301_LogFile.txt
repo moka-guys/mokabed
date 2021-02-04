@@ -28,3 +28,7 @@ version as defined by git tag = v1.2
 data.bed
 cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4301_PTENdata.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4301data.bed 
 Manually move header to the top
+
+repeat for sambamba 
+cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4301_PTENdataSambamba.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4301dataSambamba.bed
+There is no header to remove
