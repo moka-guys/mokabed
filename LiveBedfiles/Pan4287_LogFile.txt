@@ -49,3 +49,6 @@ There is no header to remove
 
 remove part1 files
 rm Pan4287_part1data.bed Pan4287_part1dataSambamba.bed
+
+#Add in the additional panels.
+cat Pan4291.bed Pan4290.bed Pan4292.bed Pan4272.bed >> Pan4287data.bed
