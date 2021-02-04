@@ -1,0 +1,6 @@
+04/02/2021
+This BED file contains additional variants for that will be analysed using VCP2 panel.
+
+This is version 1 of this list of variants.
+
+The coordinates for this BED file were provided by the monogenics team after consulting the Slice document provided by NHSE and with scientists in charge of these tests.
