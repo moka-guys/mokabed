@@ -48,3 +48,6 @@ cat Pan4283.bed >> Pan4310dataSambamba.bed
 #Sort data.bed
 sort Pan4310data.bed -k1,1V -k2,2n -k3,3n > Pan4310data_sorted.bed; mv Pan4310data.bed Pan4310data_unsorted.bed; mv Pan4310data_sorted.bed Pan4310data.bed; rm Pan4310data_unsorted.bed
 move header to the top
+
+#Sort sambamba.bed
+sort Pan4310dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4310dataSambamba_sorted.bed; mv Pan4310dataSambamba.bed Pan4310dataSambamba_unsorted.bed; mv Pan4310dataSambamba_sorted.bed Pan4310dataSambamba.bed; rm Pan4310dataSambamba_unsorted.bed
