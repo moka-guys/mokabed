@@ -15,3 +15,5 @@ Note: RS id was not available for this BRCA1 variant
 Positions were checked in UCSC by adding the BED file as a track
 
 Add extra line at the end of the file
+
+Further changes were made to ensure whitespace (tabs/vs spaces) were consistent
