@@ -51,3 +51,6 @@ move header to the top
 
 #Sort sambamba.bed
 sort Pan4310dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4310dataSambamba_sorted.bed; mv Pan4310dataSambamba.bed Pan4310dataSambamba_unsorted.bed; mv Pan4310dataSambamba_sorted.bed Pan4310dataSambamba.bed; rm Pan4310dataSambamba_unsorted.bed
+
+#Testing
+The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus and completed without error
