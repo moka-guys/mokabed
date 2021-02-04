@@ -1,0 +1,7 @@
+This BED is padded by +/-10bp and will used to generate coverage of VCP2 panel
+2 genes have multiple transcripts. These were split into seperate files. 
+5'UTR for 2 genes were also padded by +-30bp
+
+#Save request form
+
+
