@@ -59,3 +59,6 @@ mv Pan4301dataSambamba.bed Pan4301dataSambamba_unsorted.bed; mv Pan4301dataSamba
 #Create a flat file 
 The varscan and lofreq variant callers require flattened bedfiles, as any variants called within overlapping regions are called once for each region. 
 This bedfile was created using the command: cut -f1-3 /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4301data.bed | bedtools merge -i - > /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4301data_flat.bed
+
+#Testing
+The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus and completed without error
