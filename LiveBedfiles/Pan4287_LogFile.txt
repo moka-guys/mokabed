@@ -35,3 +35,10 @@ bedtools subtract -a Pan4287_duplicatesdata.bed -b Pan4287data.bed >> Pan4287dat
 bedtools subtract -a Pan4287_duplicatesdataSambamba.bed -b Pan4287dataSambamba.bed >> Pan4287dataSambamba.bed
 
 #Remove any Pan4287_duplicate files: rm Pan4287_duplicatesdata.bed  Pan4287_duplicatesdataSambamba.bed
+
+#Combine genes with 5UTR
+The LDLR and PCSK9 genes also includes the 5' UTR.
+
+data.bed
+cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4287_part1data.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4287data.bed 
+Manually move header to the top
