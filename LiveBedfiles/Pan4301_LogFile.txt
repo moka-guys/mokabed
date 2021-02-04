@@ -62,3 +62,5 @@ This bedfile was created using the command: cut -f1-3 /home/natasha/Desktop/moka
 
 #Testing
 The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus and completed without error
+
+#Removed whitespaces
