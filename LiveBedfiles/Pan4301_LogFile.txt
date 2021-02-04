@@ -22,3 +22,9 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4301
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+#Combine PTEN bed files
+
+data.bed
+cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4301_PTENdata.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4301data.bed 
+Manually move header to the top
