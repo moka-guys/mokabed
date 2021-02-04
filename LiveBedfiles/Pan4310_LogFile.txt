@@ -1,0 +1,4 @@
+Pan4310 is a BED file for VCP2, 5UTR for PTEN was added and subpanel with additional variants. 
+All bases were padded by +-10bp
+
+#Save request form
