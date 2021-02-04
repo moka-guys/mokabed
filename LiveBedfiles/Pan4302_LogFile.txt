@@ -1,0 +1,75 @@
+This bedfile replaces Pan4281, it was noticed the subpanels with intronic variants were not padded by 5bp. 
+Addtionally, Nimagen SNP and STR subpanels were also removed.
+2 genes have multiple transcripts. These were split into seperate files. 
+5'UTR for 2 genes were also padded by +-30bp
+
+#Save request from 
+
+#Copy Pan4281 transcripts 
+cp Pan4281_duplicates.txt Pan4302_duplicates.txt
+cp Pan4281_part1.txt Pan4302_part1.txt
+cp Pan4281.txt Pan4302.txt
+
+#MokaBED was run for all 3 transcript lists (see log below, Pan4302_duplicates_logfile.txt and Pan4302_part1_logfile.txt)
+Time Stamp:2021-02-03 12:53:36.845043
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4302dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 30 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4302.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4302data.bed --logfile /home/dnanexus/out/Output_files/Pan4302_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+#Add regions from duplicate transcripts to data.bed
+Use bedtools subtract to add regions from extra transcripts that aren't in main file.
+
+bedtools subtract -a Pan4302_duplicatesdata.bed -b Pan4302data.bed >> Pan4302data.bed
+
+#Add regions from duplicate transcripts to sambamba.bed
+
+bedtools subtract -a Pan4302_duplicatesdataSambamba.bed -b Pan4302dataSambamba.bed >> Pan4302dataSambamba.bed
+
+#Remove any Pan4302_duplicate files: rm Pan4302_duplicatesdata.bed  Pan4302_duplicatesdataSambamba.bed
+
+#Combine genes with 5UTR
+The LDLR and PCSK9 genes also includes the 5' UTR.
+
+data.bed
+cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4302_part1data.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4302data.bed 
+Manually move header to the top
+
+repeat for sambamba 
+cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4302_part1dataSambamba.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4302dataSambamba.bed
+There is no header to remove
+
+remove part1 files
+rm Pan4302_part1data.bed Pan4302_part1dataSambamba.bed
+
+#Add in the additional panels.
+cat Pan4291.bed Pan4290.bed Pan4292.bed Pan4272.bed >> Pan4302data.bed
+
+#Add all the SNPs into sambamba bed
+cat Pan4291.bed Pan4290.bed Pan4292.bed Pan4272.bed >> Pan4302dataSambamba.bed
+
+#Manually convert SNPs into sambamba format
+This was done manually in a spreadsheet software
+
+#Sort data.bed
+sort Pan4302data.bed -k1,1V -k2,2n -k3,3n > Pan4302data_sorted.bed; mv Pan4302data.bed Pan4302data_unsorted.bed; mv Pan4302data_sorted.bed Pan4302data.bed; rm Pan4302data_unsorted.bed
+move header to the top
+
+#Sort sambamba.bed
+sort Pan4302dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4302dataSambamba_sorted.bed; mv Pan4302dataSambamba.bed Pan4302dataSambamba_unsorted.bed; 
+mv Pan4302dataSambamba_sorted.bed Pan4302dataSambamba.bed; rm Pan4302dataSambamba_unsorted.bed
+
+#Testing
+The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus and completed without error
