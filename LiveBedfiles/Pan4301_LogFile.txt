@@ -41,3 +41,5 @@ cat Pan4283.bed >> Pan4301data.bed
 
 #Add in the additional panel to sambamba.bed
 cat Pan4283.bed >> Pan4301dataSambamba.bed
+
+#Manually convert SNPs into sambamba format
