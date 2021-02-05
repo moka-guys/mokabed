@@ -44,3 +44,7 @@ cat Pan4283.bed >> Pan4310data.bed
 cat Pan4283.bed >> Pan4310dataSambamba.bed
 
 #Manually convert SNPs into right format
+
+#Sort data.bed
+sort Pan4310data.bed -k1,1V -k2,2n -k3,3n > Pan4310data_sorted.bed; mv Pan4310data.bed Pan4310data_unsorted.bed; mv Pan4310data_sorted.bed Pan4310data.bed; rm Pan4310data_unsorted.bed
+move header to the top
