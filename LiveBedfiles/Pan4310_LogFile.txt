@@ -24,3 +24,8 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4310
 
 version as defined by git tag = v1.2
 
+#Combine PTEN bed files
+
+data.bed
+cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4310_PTENdata.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4310data.bed 
+Manually move header to the top
