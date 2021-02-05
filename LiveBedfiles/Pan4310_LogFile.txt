@@ -39,3 +39,6 @@ rm Pan4310_PTENdata.bed Pan4310_PTENdataSambamba.bed
 
 #Add in the additional panel.
 cat Pan4283.bed >> Pan4310data.bed
+
+#Add in the additional panel to sambamba.bed
+cat Pan4283.bed >> Pan4310dataSambamba.bed
