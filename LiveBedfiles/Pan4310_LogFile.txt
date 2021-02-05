@@ -36,3 +36,6 @@ There is no header to remove
 
 #Remove PTEN files
 rm Pan4310_PTENdata.bed Pan4310_PTENdataSambamba.bed
+
+#Add in the additional panel.
+cat Pan4283.bed >> Pan4310data.bed
