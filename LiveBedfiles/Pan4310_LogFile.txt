@@ -1,0 +1,59 @@
+Pan4310 is a BED file for VCP2, 5UTR for PTEN was added and subpanel with additional variants.
+All bases were padded by +-10bp
+
+#Save request form
+
+#Save transcripts
+
+#Run Mokabed
+Time Stamp:2021-02-05 09:23:21.374379
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4310dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4310.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4310data.bed --logfile /home/dnanexus/out/Output_files/Pan4310_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+#Combine PTEN bed files
+
+data.bed
+cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4310_PTENdata.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4310data.bed 
+Manually move header to the top
+
+repeat for sambamba 
+cat /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4310_PTENdataSambamba.bed >> /home/natasha/Desktop/mokabed/LiveBedfiles/Pan4310dataSambamba.bed
+There is no header to remove
+
+#Remove PTEN files
+rm Pan4310_PTENdata.bed Pan4310_PTENdataSambamba.bed
+
+#Add in the additional panel.
+cat Pan4283.bed >> Pan4310data.bed
+
+#Add in the additional panel to sambamba.bed
+cat Pan4283.bed >> Pan4310dataSambamba.bed
+
+#Manually convert SNPs into right format
+
+#Sort data.bed
+sort Pan4310data.bed -k1,1V -k2,2n -k3,3n > Pan4310data_sorted.bed; mv Pan4310data.bed Pan4310data_unsorted.bed; mv Pan4310data_sorted.bed Pan4310data.bed; rm Pan4310data_unsorted.bed
+move header to the top
+
+#Sort sambamba.bed
+sort Pan4310dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4310dataSambamba_sorted.bed; mv Pan4310dataSambamba.bed Pan4310dataSambamba_unsorted.bed; 
+mv Pan4310dataSambamba_sorted.bed Pan4310dataSambamba.bed; rm Pan4310dataSambamba_unsorted.bed
+
+#Testing
+The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus and completed without error
+
+#Add entrez ID for BRCA1 and CHEK2 in sambamba
