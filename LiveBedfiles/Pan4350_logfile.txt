@@ -1,0 +1,2 @@
+regions provided by M Yau (subset of Pan3610)
+converted into tab seperated
