@@ -38,3 +38,5 @@ genepred2exomedepth.sh Pan3614dataRefSeqFormat.txt 0 > Pan3614_CNV.bed
 
 # add the intronic control regions.
 cat Pan3610.bed >> Pan3614_CNV.bed
+
+# remove the header from Pan3614_CNV.bed
