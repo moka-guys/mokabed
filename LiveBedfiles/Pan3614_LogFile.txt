@@ -31,3 +31,7 @@ see Pan3614_RPKM_logfile.txt
 
 #rename the bedfile request form
 git mv RequestForms/Pan3614_BEDfile_creation_request_form.docx RequestForms/Pan3614_request_form.docx
+
+# exome depth BED file
+The bash script genepred2exomedepth.sh was used to convert the refseq file into a exome depth compatible BED file.
+genepred2exomedepth.sh Pan3614dataRefSeqFormat.txt 0 > Pan3614_CNV.bed
