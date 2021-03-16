@@ -18,3 +18,11 @@ version as defined by git tag = v1.2
 
 ## Add Pan4350
 cat Pan4350.bed >> Pan4349data.bed
+
+# sort
+sort Pan4349data.bed -k1,1V -k2,2n -k3,3n > Pan4349_sorted.bed; mv Pan4349data.bed Pan4349_unsorted.bed; mv Pan4349_sorted.bed Pan4349data.bed; rm Pan4349_unsorted.bed
+
+header was removed manually
+
+# inaccurate files removed
+rm Pan4349dataSambamba.bed
