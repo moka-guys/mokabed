@@ -45,4 +45,5 @@ cat Pan3610.bed >> Pan3614_CNV.bed
 sort Pan3614_CNV.bed -k1,1V -k2,2n -k3,3n > Pan3614_CNV.sorted.bed; rm Pan3614_CNV.bed; mv Pan3614_CNV.sorted.bed Pan3614_CNV.bed
 
 # update intronic region descriptions
-intronic region descriptions need to be in the format genename_exonNumber so some extra underscores were replaced with dashes and _1 added where needed
+
+intronic region descriptions need to be in the format genename_exonNumber so some extra underscores were replaced with dashes and _1 added where needed (bring in line with Pan3610_exomedepth.bed)
