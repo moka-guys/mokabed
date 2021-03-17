@@ -29,3 +29,6 @@ rm Pan4349dataSambamba.bed
 
 # edit Pan4350 regions
 underscores manually replaced with dashes to match expected format of gene_exonnumber
+
+# convert to 4 column format
+cut -f 1-4 Pan4349data.bed > Pan4349data_4col.bed; rm Pan4349data.bed; mv Pan4349data_4col.bed Pan4349data.bed
