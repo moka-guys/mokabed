@@ -23,3 +23,13 @@ cp Pan4278dataSambamba.bed Pan4361dataSambamba.bed
 
 ## edit Pan4631data.bed
 The three regions were changed manually after double checking with the genome browser for correct padding and that coordinates are zero based, open ended.
+for clarity the changed lines are:
+
+old - 6	129763356	129763382	3908										LAMA2;NM_000426.4
+new - 6	129764197	129764223	3908										LAMA2;NM_000426.4
+
+old - 5	140915610	140915639	1729										DIAPH1;NM_005219.5
+new - 5	140950984	140951013	1729										DIAPH1;NM_005219.5
+
+old - 13	35739220	35739245	26960										NBEA;NM_015678.5
+new - 13	35743113	35743142	26960										NBEA;NM_015678.5
