@@ -35,3 +35,6 @@ NBEA was changed from
 13	35739180	35739285	26960
 to
 13	35743073	35743182	26960
+
+## Testing
+The BED file have been tested - job completed without error.
