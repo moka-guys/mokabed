@@ -16,3 +16,6 @@ incorrect coordinates - chr13:35739221-35739245
 correct coordinates - chr13:35743113-35743142
 
 These BED files will be based on copies of Pan3974.
+
+## create copy of RPKM BED file
+cp Pan3974_RPKM.bed Pan4362_RPKM.bed
