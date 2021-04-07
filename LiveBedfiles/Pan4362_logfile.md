@@ -19,3 +19,19 @@ These BED files will be based on copies of Pan3974.
 
 ## create copy of RPKM BED file
 cp Pan3974_RPKM.bed Pan4362_RPKM.bed
+
+## manually edit lines
+DIAPH1 was changed from
+5	140915570	140915679	1729
+to
+5	140950944	140951053	1729
+
+LAMA2 was changed from
+6	129763316	129763422	3908
+to
+6	129764157	129764263	3908
+
+NBEA was changed from
+13	35739180	35739285	26960
+to
+13	35743073	35743182	26960
