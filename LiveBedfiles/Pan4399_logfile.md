@@ -10,3 +10,9 @@ correct coordinates - chr6:129764157-129764263
 `cp Pan3624data.bed Pan4399data.bed`
 `cp Pan3624_RPKM.bed Pan4399_RPKM.bed` 
 
+# edit data.bed
+This line was changed 
+6	129763316	129763422	3908										LAMA2;NM_000426.4
+to
+6	129764157	129764263	3908										LAMA2;NM_000426.4
+
