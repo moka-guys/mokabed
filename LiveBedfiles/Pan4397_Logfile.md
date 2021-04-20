@@ -20,3 +20,6 @@ to
 6	129763356	129763382	6-129763356-129763382	0	+	LAMA2;NM_000426.4	3908
 was changed to
 6	129764197	129764223	6-129764197-129764223	0	+	LAMA2;NM_000426.4	3908
+
+## testing
+These BED files were tested using Mokapicard_v1.1, gatk human exome pipeline v1.5 and chanjo_sambamba_v1.6. All jobs completed without error
