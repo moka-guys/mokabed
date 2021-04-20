@@ -10,3 +10,8 @@ correct coordinates - chr6:129764197-129764223
 `cp Pan4287data.bed Pan4397data.bed`
 `cp Pan4287dataSambamba.bed Pan4397dataSambamba.bed`
 
+# edit data.bed
+This line was changed 
+6	129763356	129763382	3908										LAMA2;NM_000426.4
+to
+6	129764197	129764223	3908										LAMA2;NM_000426.4
