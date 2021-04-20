@@ -20,3 +20,6 @@ to
 6	129763316	129763422	3908
 was changed to
 6	129764157	129764263	3908
+
+## testing
+These BED files were tested using Mokapicard_v1.1 and RPKM_using_conifer_v1.6. All jobs completed without error
