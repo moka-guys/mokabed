@@ -16,3 +16,7 @@ This line was changed
 to
 6	129764157	129764263	3908										LAMA2;NM_000426.4
 
+## edit RPKM.bed
+6	129763316	129763422	3908
+was changed to
+6	129764157	129764263	3908
