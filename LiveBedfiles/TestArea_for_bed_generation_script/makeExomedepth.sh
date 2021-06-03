@@ -35,6 +35,7 @@ if [ ! -s ${REFGENE} ]; then
 	echo "Getting UCSC->Ensembl chromosome table..."
 	mysql --user=genome --host=genome-mysql.cse.ucsc.edu -A -N -D $ORG -P 3306 \
 	 -e "select c.ucsc,c.ensembl,i.size from chromInfo as i, ucscToEnsembl as c where c.ucsc = i.chrom;" > ${UCSCENSEMBL}
+	# -A disables autocompletion rehashing, -N disables column name output (to get a clean output)
 	
 	## convert to UCSC chromosome names
 	echo "Converting refGene table to GRCh chromosome names..."
@@ -95,7 +96,7 @@ BEGIN { OFS = "\t" };
 }
 ' ${REFGENE} | ${BEDSORT} -k1,1 -k2n,3n > ${CDSEXONS}
 
-# intersect with capture file
+# intersect with capture file (get exons with any overlap in a capture region, -u flag)
 echo "Intersecting with capture..."
 bedtools intersect -u -a ${CDSEXONS} -b ${CAPTURE} > ${CAPTUREEXONS}
 
