@@ -4,7 +4,7 @@ All exons are numbered as meta-exons and only include coding sequence.
 ## Generating the BED file for Exomedepth
 ./makeExomedepth.sh hg19 output Pan4361.bed Pan4362_extra.bed
                     |    |      |           |
-                    |    |      |           +- additional exons (not included in UCSC dataset)
+                    |    |      |           +- additional exons (eg. not included in UCSC dataset, BED6 format)
                     |    |      +- the capture (BED4 format)
                     |    +- output file name root
                     +- the ucsc database (assembly) to use for annotation retrieval
