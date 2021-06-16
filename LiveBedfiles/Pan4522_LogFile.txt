@@ -35,3 +35,5 @@ cut -f 1-4 Pan4522data.bed > Pan4522data_4col.bed; rm Pan4522data.bed; mv Pan452
 
 #Rename file to make it clear that it's a CNV BED 
 mv Pan4522data.bed Pan4522_CNV.bed
+
+#Rectify fields in request form
