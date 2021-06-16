@@ -37,3 +37,5 @@ cut -f 1-4 Pan4522data.bed > Pan4522data_4col.bed; rm Pan4522data.bed; mv Pan452
 mv Pan4522data.bed Pan4522_CNV.bed
 
 #Rectify fields in request form
+
+#Pan4522_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors.
