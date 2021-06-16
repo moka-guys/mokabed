@@ -30,3 +30,5 @@ header was removed manually
 
 # convert to 4 column format
 cut -f 1-4 Pan4522data.bed > Pan4522data_4col.bed; rm Pan4522data.bed; mv Pan4522data_4col.bed Pan4522data.bed
+
+#Save BED file request format
