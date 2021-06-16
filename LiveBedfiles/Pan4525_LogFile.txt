@@ -27,3 +27,6 @@ cat Pan3608.bed >> Pan4525data.bed
 sort Pan4525data.bed -k1,1V -k2,2n -k3,3n > Pan4525_sorted.bed; mv Pan4525data.bed Pan4525_unsorted.bed; mv Pan4525_sorted.bed Pan4525data.bed; rm Pan4525_unsorted.bed
 
 #Header was removed manually
+
+# convert to 4 column format
+cut -f 1-4 Pan4525data.bed > Pan4525data_4col.bed; rm Pan4525data.bed; mv Pan4525data_4col.bed Pan4522_CNV.bed
