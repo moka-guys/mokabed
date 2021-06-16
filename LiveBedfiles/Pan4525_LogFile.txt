@@ -22,3 +22,6 @@ version as defined by git tag = v1.2
 
 ## Add Pan3608
 cat Pan3608.bed >> Pan4525data.bed
+
+# Sort
+sort Pan4525data.bed -k1,1V -k2,2n -k3,3n > Pan4525_sorted.bed; mv Pan4525data.bed Pan4525_unsorted.bed; mv Pan4525_sorted.bed Pan4525data.bed; rm Pan4525_unsorted.bed
