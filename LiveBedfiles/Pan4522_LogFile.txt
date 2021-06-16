@@ -32,3 +32,6 @@ header was removed manually
 cut -f 1-4 Pan4522data.bed > Pan4522data_4col.bed; rm Pan4522data.bed; mv Pan4522data_4col.bed Pan4522data.bed
 
 #Save BED file request format
+
+#Rename file to make it clear that it's a CNV BED 
+mv Pan4522data.bed Pan4522_CNV.bed
