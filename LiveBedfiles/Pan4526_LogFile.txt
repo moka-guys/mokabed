@@ -30,3 +30,6 @@ sort Pan4526data.bed -k1,1V -k2,2n -k3,3n > Pan4526_sorted.bed; mv Pan4526data.b
 
 # Convert to 4 column format
 cut -f 1-4 Pan4526data.bed > Pan4526data_4col.bed; rm Pan4526data.bed; mv Pan4526data_4col.bed Pan4526_CNV.bed
+
+# Testing statement 
+Pan4526_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors.
