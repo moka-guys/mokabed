@@ -22,3 +22,9 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4531
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+#Problematic SMN1 transcript
+Mokabed was failing because cruzdb was returning multiple records for the same transcript.
+As described in Pan3973_log.md a number of steps were performed to extract the regions from the UCSC table browser
+
+This was done for both data.bed and was saved as Pan4278_problemdata.bed. This file was downloaded from the git history at commit 982b443698 (https://github.com/moka-guys/mokabed/tree/982b443698683532c2a4a0032e0ae370742ad41a/LiveBedfiles)
