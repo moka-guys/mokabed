@@ -1,0 +1,6 @@
+This is a VCP3 R66 test BED file for CNV analysis using ExomeDepth
+
+Save Pan4530 request form and transcript file
+
+From previous attempts to make this file one transcript was found to cause a problem (SMN1) so will again be done manually.
+
