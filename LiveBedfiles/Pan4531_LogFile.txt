@@ -27,4 +27,7 @@ version as defined by git tag = v1.2
 Mokabed was failing because cruzdb was returning multiple records for the same transcript.
 As described in Pan3973_log.md a number of steps were performed to extract the regions from the UCSC table browser
 
-This was done for both data.bed and was saved as Pan4278_problemdata.bed. This file was downloaded from the git history at commit 982b443698 (https://github.com/moka-guys/mokabed/tree/982b443698683532c2a4a0032e0ae370742ad41a/LiveBedfiles)
+This was done for both data.bed and was saved as Pan4531_problemdata.bed. This file was downloaded from the git history at commit 982b443698 (https://github.com/moka-guys/mokabed/tree/982b443698683532c2a4a0032e0ae370742ad41a/LiveBedfiles)
+
+#Add Pan4531_problemdata.bed to Pan4531data.bed
+cat Pan4531_problemdata.bed >> Pan4531_part1data.bed    There was no header to remove
