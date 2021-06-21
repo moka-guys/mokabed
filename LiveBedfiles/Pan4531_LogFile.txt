@@ -1,6 +1,6 @@
 This is a VCP3 R66 test BED file for CNV analysis using ExomeDepth
 
-Save Pan4530 request form and transcript file
+Save Pan4531 request form and transcript file
 
 From previous attempts to make this file one transcript was found to cause a problem (SMN1) so will again be done manually.
 
@@ -37,3 +37,6 @@ rm Pan4531_problemdata.bed
 
 ## Add Pan3608
 cat Pan3608.bed >> Pan4531data.bed
+
+#Sort
+sort Pan4531data.bed -k1,1V -k2,2n -k3,3n > Pan4531_sorted.bed; mv Pan4531data.bed Pan4531_unsorted.bed; mv Pan4531_sorted.bed Pan4531data.bed; rm Pan4531_unsorted.bed
