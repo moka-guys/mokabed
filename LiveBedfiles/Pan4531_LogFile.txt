@@ -33,3 +33,6 @@ cat Pan4531_problemdata.bed >> Pan4531data.bed    There was no header to remove
 
 ##Remove problemdata.bed
 rm Pan4531_problemdata.bed
+
+## Add Pan3608
+cat Pan3608.bed >> Pan4531data.bed
