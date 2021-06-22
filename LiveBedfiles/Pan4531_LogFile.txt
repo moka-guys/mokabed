@@ -1,0 +1,4 @@
+This is a VCP3 R78 test BED file for CNV analysis using ExomeDepth
+
+Save Pan4531 request form and transcript file
+
