@@ -16,3 +16,6 @@ Save Pan4531 request form and transcript file
 
 2) Add regions from Pan4531_duplicatesdata.bed not included in Pan4531data.bed
     bedtools subtract -a Pan4531_duplicatesdata.bed -b Pan4531data.bed >> Pan4531data.bed
+
+#Delete Pan4531_duplicatesdata.bed Pan4531_extradata.bed
+
