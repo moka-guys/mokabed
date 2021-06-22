@@ -36,3 +36,6 @@ rm Pan4531_problemdata.bed
 
 ## Add Pan3608
 cat Pan3608.bed >> Pan4531data.bed
+
+#Sort
+sort Pan4531data.bed -k1,1V -k2,2n -k3,3n > Pan4531_sorted.bed
