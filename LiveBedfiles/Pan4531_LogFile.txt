@@ -2,3 +2,8 @@ This is a VCP3 R78 test BED file for CNV analysis using ExomeDepth
 
 Save Pan4531 request form and transcript file
 
+#Challenges making this BED:
+    - Genes with multiple transcripts - these must be combined without duplicating regions, using bedtools subtract. 
+      To allow for this the transcript list (the mokaBED input) was split into 3 files Pan4531.txt, Pan4531_duplicates.txt, Pan4531_extra.txt
+    - From previous attempts to make this file (Pan4531) one transcript was found to cause a problem (SMN1) so will again be done manually.
+
