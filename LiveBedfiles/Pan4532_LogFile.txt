@@ -31,3 +31,6 @@ Correct
 
 ## Add Pan3608
 cat Pan3608.bed >> Pan4532data.bed
+
+#Sort
+sort Pan4532data.bed -k1,1V -k2,2n -k3,3n > Pan4532_sorted.bed; mv Pan4532data.bed Pan4532_unsorted.bed; mv Pan4532_sorted.bed Pan4532data.bed; rm Pan4532_unsorted.bed
