@@ -28,3 +28,5 @@ Pan3973_problemdata.bed file was downloaded from the git history at commit 982b4
 
 Pan3973_problemdata.bed had +-10bp padding, to match the padding (30bp) in Pan4531data.bed regions were padded further +-20bp
 
+#Add Pan4531_problemdata.bed to Pan4531data.bed
+cat Pan4531_problemdata.bed >> Pan4531data.bed    There was no header to remove
