@@ -47,3 +47,6 @@ mv Pan4531data.bed Pan4531_unsorted.bed; mv Pan4531_sorted.bed Pan4531data.bed
 
 #Convert to 4 column format
 cut -f 1-4 Pan4531data.bed > Pan4531data_4col.bed
+
+#Rename BED file, to make it clear its for Exomedepth
+mv Pan4531data_4col.bed Pan4531_CNV.bed
