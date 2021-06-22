@@ -50,3 +50,6 @@ cut -f 1-4 Pan4531data.bed > Pan4531data_4col.bed
 
 #Rename BED file, to make it clear its for Exomedepth
 mv Pan4531data_4col.bed Pan4531_CNV.bed
+
+#Remove unrequired files
+rm Pan4531data.bed Pan4531_extradataRefSeqFormat.txt Pan4531_duplicatesdataRefSeqFormat.txt Pan4531_unsorted.bed
