@@ -9,3 +9,7 @@ Save Pan4531 request form and transcript file
 
 #Save Mokabed outputs 
 
+#Combining multiple transcripts
+
+1) Merge Pan4531_extradata.bed and Pan4531_duplicatesdata.bed
+    bedtools subtract -a Pan4531_extradata.bed -b Pan4531_duplicatesdata.bed >> Pan4531_duplicatesdata.bed
