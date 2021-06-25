@@ -1,0 +1,35 @@
+This BED file is used for the VCP3 panel to calculate coverage and to restrict variant calling. 
+SNORD118 gene was manually added to this BED file (Pan4535)
+
+Pan4535 is based on an existing VCP3 BED file(Pan4361). For details on how Pan4361 was made, please see Pan4361_logfile.md
+
+# Get copy of an older version of VCP3 BED files Pan4361
+cp Pan4361data.bed Pan4535data.bed
+cp Pan4361dataSambamba.bed Pan4535dataSambamba.bed
+
+# Manually add SNORD118
+SNORD118 gene is non-coding RNA, so doesn't have a NM number. 
+The UCSC and NCBI refeq databases were checked and NR_033294.2 wasn't in the databases used by MokaBED. therefore the BED file couldn't be made using Mokabed.
+
+Coordinates for SNORD118 were retrieved from UCSC chr17:8076771-8076906
+The regions were padded by -10/+10bp to match the padding in Pan4361 
+
+#Manually update Pan4535data.bed
+17  8076761 8076916 727676  SNORD118;NR_033294.2
+
+#Manually update Pan4535dataSambamba.bed
+17  8076761 8076916 17-8076761-8076916  0   +   SNORD118;NR_033294.2    727676
+
+#Sort Pan4535data.bed
+sort Pan4535data.bed -k1,1V -k2,2n -k3,3n > Pan4535data_sorted.bed; mv Pan4535data.bed Pan4535data_unsorted.bed; mv Pan4535data_sorted.bed Pan4535data.bed; rm Pan4535data_unsorted.bed 
+
+#Sort Pan4535dataSambamba.bed
+sort Pan4535dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4535dataSambamba_sorted.bed; mv Pan4535dataSambamba.bed Pan4535dataSambamba_unsorted.bed; mv Pan4535dataSambamba_sorted.bed Pan4535dataSambamba.bed; rm Pan4535dataSambamba_unsorted.bed
+
+Testing statement
+Both data.bed and dataSambamba.bed have been tested using moka_picard and chanjo_sambamba_v1.10 in 003_210625_Pan4535
+
+#Oops forgot to move header back to the top after sorting Pan4535data.bed
+#Also removed extra tabs
+
+#This time actually moved the header to the top
