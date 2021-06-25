@@ -31,3 +31,5 @@ Both data.bed and dataSambamba.bed have been tested using moka_picard and chanjo
 
 #Oops forgot to move header back to the top after sorting Pan4535data.bed
 #Also removed extra tabs
+
+#This time actually moved the header to the top
