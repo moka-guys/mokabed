@@ -3,3 +3,7 @@ SNORD118 gene was manually added to this BED file (Pan4535)
 
 Pan4535 is based on an existing VCP3 BED file(Pan4361). For details on how Pan4361 was made, please see Pan4361_logfile.md
 
+# Get copy of an older version of VCP3 BED files Pan4361
+cp Pan4361data.bed Pan4535data.bed
+cp Pan4361dataSambamba.bed Pan4535dataSambamba.bed
+
