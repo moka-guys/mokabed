@@ -15,4 +15,7 @@ Coordinates for SNORD118 were retrieved from UCSC chr17:8076771-8076906
 The regions were padded by -10/+10bp to match the padding in Pan4361 
 
 #Manually update Pan4535data.bed
-17  8076771 8076906 727676  SNORD118;NR_033294.2
+17  8076761 8076916 727676  SNORD118;NR_033294.2
+
+#Manually update Pan4535dataSambamba.bed
+17  8076761 8076916 17-8076761-8076916  0   +   SNORD118;NR_033294.2    727676      
