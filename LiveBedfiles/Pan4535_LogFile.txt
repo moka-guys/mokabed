@@ -18,4 +18,7 @@ The regions were padded by -10/+10bp to match the padding in Pan4361
 17  8076761 8076916 727676  SNORD118;NR_033294.2
 
 #Manually update Pan4535dataSambamba.bed
-17  8076761 8076916 17-8076761-8076916  0   +   SNORD118;NR_033294.2    727676      
+17  8076761 8076916 17-8076761-8076916  0   +   SNORD118;NR_033294.2    727676
+
+#Sort Pan4535data.bed
+sort Pan4535data.bed -k1,1V -k2,2n -k3,3n > Pan4535data_sorted.bed; mv Pan4535data.bed Pan4535data_unsorted.bed; mv Pan4535data_sorted.bed Pan4535data.bed; rm Pan4535data_unsorted.bed 
