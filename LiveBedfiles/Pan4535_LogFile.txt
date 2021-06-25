@@ -13,3 +13,6 @@ The UCSC and NCBI refeq databases were checked and NR_033294.2 wasn't present in
 
 Coordinates for SNORD118 were retrieved from UCSC chr17:8076771-8076906
 The regions were padded by -10/+10bp to match the padding in Pan4361 
+
+#Manually update Pan4535data.bed
+17  8076771 8076906 727676  SNORD118;NR_033294.2
