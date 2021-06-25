@@ -1,0 +1,5 @@
+This BED file is used for the VCP3 panel to calculate coverage and to restrict variant calling. 
+SNORD118 gene was manually added to this BED file (Pan4535)
+
+Pan4535 is based on an existing VCP3 BED file(Pan4361). For details on how Pan4361 was made, please see Pan4361_logfile.md
+
