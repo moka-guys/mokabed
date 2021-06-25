@@ -9,7 +9,7 @@ cp Pan4361dataSambamba.bed Pan4535dataSambamba.bed
 
 # Manually add SNORD118
 SNORD118 gene is non-coding RNA, so doesn't have a NM number. 
-The UCSC and NCBI refeq databases were checked and NR_033294.2 wasn't present in the databases. therefore the BED file couldn't be made using Mokabed.
+The UCSC and NCBI refeq databases were checked and NR_033294.2 wasn't in the databases used by MokaBED. therefore the BED file couldn't be made using Mokabed.
 
 Coordinates for SNORD118 were retrieved from UCSC chr17:8076771-8076906
 The regions were padded by -10/+10bp to match the padding in Pan4361 
