@@ -1,2 +1,4 @@
 This is a VCP3 R97 test BED file for CNV analysis using ExomeDepth
 Save Pan4553 request form and transcript file
+
+#Add header to Pan4553_dup.txt transcript file
