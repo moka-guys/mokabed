@@ -34,3 +34,6 @@ cat Pan3608.bed >> Pan4549data.bed
 # sort bedfile
 sort Pan4549data.bed -k1,1V -k2,2n -k3,3n > Pan4549_sorted.bed; mv Pan4549data.bed Pan4549_unsorted.bed; mv Pan4549_sorted.bed Pan4549data.bed; rm Pan4549_unsorted.bed
 the header was moved back to the top manually
+
+# convert to 4 column bed file
+cut -f 1-4 Pan4549data.bed > Pan4549data_4col.bed; rm Pan4549data.bed; mv Pan4549data_4col.bed Pan4549data.bed
