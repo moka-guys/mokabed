@@ -39,3 +39,6 @@ the header was removed manually
 
 # convert to 4 column bed file
 cut -f 1-4 Pan4552data.bed > Pan4552data_4col.bed; rm Pan4552data.bed; mv Pan4552data_4col.bed Pan4552data.bed
+
+#Rename file to make it clear that it's a CNV BED 
+mv Pan4552data.bed Pan4552_CNV.bed
