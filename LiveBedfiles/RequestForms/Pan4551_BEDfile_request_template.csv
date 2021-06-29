@@ -1,0 +1,49 @@
+Instructions:,,
+"Add genes symbols and/or transcripts to a panel in Moka
+Add panel description to Moka
+Answer following questions:",VCP3_R229,
+,,
+1. Pan number of bed file to be created,Pan4551,
+2. Panel description/name (fill in a-c from Moka),,
+2. a) Category,VCP3 Viapath,
+2. b) SubCategory,R229 Confirmed Fanconi anaemia or Bloom syndrome CNV +/-30 for all genes + Pan3608 ,
+2. c) Panel,VCP3 Viapath R229 Confirmed Fanconi anaemia or Bloom syndrome CNV +/-30 for all genes + Pan3608 ,
+3. Is this BED file for RPKM?,No,
+3a) Is this BED file used for Exome depth?,YES,
+3b) Is this BED file used to generate read counts or filter calls,filter calls,
+4. a) Is this BED file exclusively based on coordinates provided by a supplier ,No,
+"4. b) If yes, does this need further padding?",N/A,
+5. a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts) Specific transcripts - see Moka,Yes - see below,
+5. b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state),"YES - FANCCD2, FANCL",
+6. What padding is required around the exons?,30,
+7. a) Should UTRs be included for ALL genes?,yes - 5',
+7. b) Should UTRs be padded?,30,
+8. a) Are UTRs required for SOME genes? ,N/A,
+8. b) Please list genes/transcripts,N/A,
+8. c) Should UTRs be padded?,N/A,
+9. Any additional BED files to be included in this BED file? ,3608,
+10. Are any further regions required to be added?,N/A,
+Requested by:,Michael Yau ,
+Requested date:,10/06/2021,
+,,
+,Gene Name,Transcript
+,BLM,NM_000057
+,BRCA1,NM_007294
+,BRCA2,NM_000059
+,BRIP1,NM_032043
+,ERCC4,NM_005236
+,FANCA,NM_000135
+,FANCB,NM_001018113
+,FANCC,NM_000136
+,FANCD2,NM_001018115
+,FANCD2,NM_033084
+,FANCE,NM_021922
+,FANCF,NM_022725
+,FANCG,NM_004629
+,FANCI,NM_001113378
+,FANCL,NM_001114636
+,FANCL,NM_018062
+,PALB2,NM_024675
+,SLX4,NM_032444
+,TOP3A,NM_004618
+,UBE2T,NM_014176

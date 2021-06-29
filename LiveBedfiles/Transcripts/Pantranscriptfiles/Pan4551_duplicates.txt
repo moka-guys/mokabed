@@ -1,0 +1,3 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_018062	FANCL	0
+NM_033084	FANCD2	0
