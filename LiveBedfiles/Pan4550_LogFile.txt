@@ -28,3 +28,7 @@ version as defined by git tag = v1.2
 
 # Add intronic regions/control sites from Pan3608.bed
 cat Pan3608.bed >> Pan4550data.bed
+
+# Add NBN 3' UTR from Pan3610
+The BED file request form requested that the 3' UTR (described in Pan3610) was added - this was added manually
+8	90945564	90945764	NBN_3UTR
