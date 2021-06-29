@@ -26,3 +26,6 @@ version as defined by git tag = v1.2
 Use bedtools subtract to add regions from extra transcripts that aren't in main file.
 
 bedtools subtract -a Pan4553_dupdata.bed -b Pan4553data.bed >> Pan4553data.bed
+
+#Remove duplicate files
+rm Pan4553_dupdata.bed Pan4553_dupdataRefSeqFormat.txt Pan4553_dupdataSambamba.bed

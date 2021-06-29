@@ -1,2 +1,0 @@
-#bin	name	chrom	strand	txStart	txEnd	cdsStart	cdsEnd	exonCount	exonStarts	exonSEnds	score	name2	cdsStartStat	cdsEndStat	exonFrames
-5340	PLG;NM_001168338.1	6	+	161123306	161132257	161123306	161132257	4	161123306,161127408,161128701,161132078	161123415,161127604,161128868,161132257	nan	PLG	nan	nan	0,0,0,0
