@@ -30,3 +30,6 @@ version as defined by git tag = v1.2
 
 # Add intronic regions/control sites from Pan3608.bed
 cat Pan3608.bed >> Pan4552data.bed
+
+# sort bedfile
+sort Pan4552data.bed -k1,1V -k2,2n -k3,3n > Pan4552_sorted.bed; mv Pan4552data.bed Pan4552_unsorted.bed; mv Pan4552_sorted.bed Pan4552data.bed; rm Pan4552_unsorted.bed
