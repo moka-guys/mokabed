@@ -27,3 +27,8 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4551
 version as defined by git tag = v1.2
 
 # add mokabed outputs
+
+## Combining multiple transcripts
+Where multiple transcripts have been provided, the below BEDtools subtract command adds regions from file a not already covered in file b to the end of file b:
+
+`bedtools subtract -a Pan4551_duplicatesdata.bed -b Pan4551data.bed >> Pan4551data.bed`
