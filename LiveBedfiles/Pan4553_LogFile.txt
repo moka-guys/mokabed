@@ -35,3 +35,7 @@ cat Pan3608.bed >> Pan4553data.bed
 
 #Sort BED
 sort Pan4553data.bed -k1,1V -k2,2n -k3,3n > Pan4553_sorted.bed; mv Pan4553data.bed Pan4553_unsorted.bed; mv Pan4553_sorted.bed Pan4553data.bed; rm Pan4553_unsorted.bed
+
+#Remove header
+
+
