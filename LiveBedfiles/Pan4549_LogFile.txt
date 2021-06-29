@@ -1,0 +1,29 @@
+# Pan4549
+This is a BED file used to restrict variant calling within the exome depth CNV calling app. This BED file is for R337 (NOTCH3).
+
+This test consists of a single gene/transcript.
+The transcript was selected from the ngspanel genes table using the query
+`select GuysAccession, Symbol, '0' as GuysAccessionVersion from ngspanelgenes where NGSPanelID=4549`
+This was used to create Pan4549.txt, the inout to moka bed which was run as below:
+
+# run MokaBED
+
+Time Stamp:2021-06-29 11:37:57.405808
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4549dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 30 --up 30 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4549.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4549data.bed --logfile /home/dnanexus/out/Output_files/Pan4549_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+
