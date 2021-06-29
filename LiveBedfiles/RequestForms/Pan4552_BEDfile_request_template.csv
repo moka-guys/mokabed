@@ -1,0 +1,42 @@
+Instructions:,,
+"Add genes symbols and/or transcripts to a panel in Moka
+Add panel description to Moka
+Answer following questions:",VCP3_R227,
+,,
+1. Pan number of bed file to be created,Pan4552,
+2. Panel description/name (fill in a-c from Moka),,
+2. a) Category,VCP3 Viapath,
+2. b) SubCategory,"R227_Xeroderma pigmentosum, Trichothiodystrophy or Cockayne syndrome CNV +/-30 for all genes + Pan3608 ",
+2. c) Panel,"VCP3 Viapath R227_Xeroderma pigmentosum, Trichothiodystrophy or Cockayne syndrome CNV +/-30 for all genes + Pan3608 ",
+3. Is this BED file for RPKM?,No,
+3a) Is this BED file used for Exome depth?,YES,
+3b) Is this BED file used to generate read counts or filter calls,filter calls,
+4. a) Is this BED file exclusively based on coordinates provided by a supplier ,No,
+"4. b) If yes, does this need further padding?",N/A,
+5. a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts) Specific transcripts - see Moka,Yes - see below,
+5. b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state),No,
+6. What padding is required around the exons?,30,
+7. a) Should UTRs be included for ALL genes?,yes 5',
+7. b) Should UTRs be padded?,30,
+8. a) Are UTRs required for SOME genes? ,N/A,
+8. b) Please list genes/transcripts,N/A,
+8. c) Should UTRs be padded?,N/A,
+9. Any additional BED files to be included in this BED file? ,3608,
+10. Are any further regions required to be added?,N/A,
+Requested by:,Michael Yau ,
+Requested date:,10/06/2021,
+,,
+,Gene Name,Transcript
+,DDB2,NM_000107
+,ERCC1,NM_001983
+,ERCC2,NM_000400
+,ERCC3,NM_000122
+,ERCC4,NM_005236
+,ERCC5,NM_000123
+,ERCC6,NM_000124
+,ERCC8,NM_000082
+,GTF2H5,NM_207118
+,MPLKIP,NM_138701
+,POLH,NM_006502
+,XPA,NM_000380
+,XPC,NM_004628
