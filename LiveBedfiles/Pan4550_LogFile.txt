@@ -38,3 +38,6 @@ the 4th column was edited to match the entrez gene ID of the other NBN regions.
 
 # sort bedfile
 sort Pan4550data.bed -k1,1V -k2,2n -k3,3n > Pan4550_sorted.bed; mv Pan4550data.bed Pan4550_unsorted.bed; mv Pan4550_sorted.bed Pan4550data.bed; rm Pan4550_unsorted.bed
+
+# remove header
+the header was removed manually
