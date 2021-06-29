@@ -40,3 +40,6 @@ cut -f 1-4 Pan4549data.bed > Pan4549data_4col.bed; rm Pan4549data.bed; mv Pan454
 
 # remove header
 header was removed manually
+
+#Rename file to make it clear that it's a CNV BED 
+mv Pan4549data.bed Pan4549_CNV.bed
