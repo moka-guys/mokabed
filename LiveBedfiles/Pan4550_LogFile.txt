@@ -23,3 +23,5 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4550
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+# MokaBED output added - the sambamba file is not needed but has been included in the version control at this point and will be deleted before the PR is merged.
