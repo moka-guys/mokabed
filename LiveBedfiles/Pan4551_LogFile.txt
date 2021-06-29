@@ -32,3 +32,6 @@ version as defined by git tag = v1.2
 Where multiple transcripts have been provided, the below BEDtools subtract command adds regions from file a not already covered in file b to the end of file b:
 
 `bedtools subtract -a Pan4551_duplicatesdata.bed -b Pan4551data.bed >> Pan4551data.bed`
+
+# Add intronic regions/control sites from Pan3608.bed
+cat Pan3608.bed >> Pan4551data.bed
