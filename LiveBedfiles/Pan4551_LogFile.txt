@@ -50,3 +50,6 @@ mv Pan4551data.bed Pan4551_CNV.bed
 
 # delete unrequired files
 rm Pan4551dataSambamba.bed Pan4551_duplicatesdata.bed Pan4551_duplicatesdataSambamba.bed
+
+
+# testing placeholder
