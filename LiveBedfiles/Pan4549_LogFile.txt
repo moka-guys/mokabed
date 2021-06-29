@@ -37,3 +37,6 @@ the header was moved back to the top manually
 
 # convert to 4 column bed file
 cut -f 1-4 Pan4549data.bed > Pan4549data_4col.bed; rm Pan4549data.bed; mv Pan4549data_4col.bed Pan4549data.bed
+
+# remove header
+header was removed manually
