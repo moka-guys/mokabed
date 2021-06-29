@@ -50,3 +50,5 @@ mv Pan4550data.bed Pan4550_CNV.bed
 
 # remove sambamba bedfile
 rm Pan4550dataSambamba.bed 
+
+# testing placeholder
