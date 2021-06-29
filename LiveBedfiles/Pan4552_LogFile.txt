@@ -27,3 +27,6 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4552
 version as defined by git tag = v1.2
 
 # add mokabed outputs
+
+# Add intronic regions/control sites from Pan3608.bed
+cat Pan3608.bed >> Pan4552data.bed
