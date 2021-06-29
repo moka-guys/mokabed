@@ -12,7 +12,7 @@ Analogous to the patches applied to the other BED files of the panel (eg. see Pa
 
  	`./makeExomedepth.sh hg19 tmp Pan4398capture.bed`
 
-3. Edit `tmp_missed.bed` to use gene symbol as BED4 column, and rename to `Pan4398_extra.bed`
+3. Edit `tmp_missed.bed` to use gene symbol as BED4 column, and adjust to exact exon boundaries (LAMA2_44). Rename to `Pan4398_extra.bed`.
 
 4. Run makeExomedepth to generate final exomdepth BED file (Pan4398_exomdepth.bed)
 
