@@ -18,3 +18,4 @@ output_cdsexons.bed - Coding exons (RefGene)
 output_captureexons.bed - Exons that intersect capture regions
 output_metaexons.bed - The built meta-exon set
 output_exomedepth.bed - Numbered exons for ExomeDepth
+output_missed.bed - Capture regions not in final exomedepth file

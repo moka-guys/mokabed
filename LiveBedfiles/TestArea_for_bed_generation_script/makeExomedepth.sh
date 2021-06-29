@@ -18,6 +18,7 @@ CAPTUREEXONS=${OUTPUT}'_captureexons.bed'
 CAPTUREEXONSCORRECTED=${OUTPUT}'_captureexonscorrected.bed'
 METAEXONS=${OUTPUT}'_metaexons.bed'
 EXOMEDEPTH=${OUTPUT}'_exomedepth.bed'
+MISSED=${OUTPUT}'_missed.bed'
 UCSCENSEMBL=${OUTPUT}'.chromosomes'
 BEDSORT=sort
 
@@ -127,7 +128,7 @@ NR==FNR {
 ' ${METAEXONS} ${METAEXONS} > ${EXOMEDEPTH}
 
 echo "Missed capture regions:"
-bedtools intersect -v -a ${CAPTURE} -b ${EXOMEDEPTH}
+bedtools intersect -v -a ${CAPTURE} -b ${EXOMEDEPTH} | tee ${MISSED}
 echo ""
 
 echo "Written output to ${EXOMEDEPTH}"
