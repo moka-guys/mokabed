@@ -27,3 +27,9 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4549
 version as defined by git tag = v1.2
 
 # MokaBED output added - the sambamba file is not needed and is not included in the version control
+
+# Add intronic regions/control sites from Pan3608.bed
+cat Pan3608.bed >> Pan4549data.bed
+
+
+
