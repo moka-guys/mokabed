@@ -43,3 +43,6 @@ cut -f 1-4 Pan4553data.bed > Pan4553data_4col.bed; rm Pan4553data.bed; mv Pan455
 
 #Remove Sambamba 
 rm Pan4553dataSambamba.bed
+
+#Testing statement
+Pan4553_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors.
