@@ -37,3 +37,10 @@ version as defined by git tag = v1.2
 Pan4531_part2dataRefSeqFormat.txt Pan4531_part2dataSambamba.bed Pan4531dataSambamba.bed
 
 rm Pan4531_part1data.bed Pan4531_part2data.bed Pan4531_part1dataRefSeqFormat.txt Pan4531_part1dataSambamba.bed Pan4531_part2dataRefSeqFormat.txt Pan4531_part2dataSambamba.bed Pan4531dataSambamba.bed
+
+#Problematic SMN1 transcript
+Mokabed was failing because cruzdb was returning multiple records for the same transcript.
+As described in Pan3973_log.md a number of steps were performed to extract the regions from the UCSC table browser
+
+Pan3973_problemdata.bed file was downloaded from the git history at commit 982b443698 (https://github.com/moka-guys/mokabed/tree/982b443698683532c2a4a0032e0ae370742ad41a/LiveBedfiles)
+Pan3973_problemdata.bed was saved as Pan4531_SMN1data.bed
