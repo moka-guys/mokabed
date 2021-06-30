@@ -50,3 +50,6 @@ Pan3973_problemdata.bed had +-10bp padding, to match the padding (30bp) in Pan45
 
 #Add Pan4531_SMN1data.bed to Pan4531data.bed
 cat Pan4531_SMN1data.bed >> Pan4531data.bed    There was no header to remove
+
+##Remove Pan4531_SMN1data.bed
+rm Pan4531_SMN1data.bed
