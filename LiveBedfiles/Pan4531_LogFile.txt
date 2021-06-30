@@ -29,3 +29,11 @@ version as defined by git tag = v1.2
 
 1) Merge Pan4531_part1data.bed and Pan4531_part2data.bed
     bedtools subtract -a Pan4531_part2data.bed -b Pan4531_part1data.bed >> Pan4531_part1data.bed
+
+2) Add regions from Pan4531_part1data.bed not included in Pan4531data.bed
+    bedtools subtract -a Pan4531_part1data.bed -b Pan4531data.bed >> Pan4531data.bed
+
+#Delete Pan4531_part1data.bed Pan4531_part2data.bed Pan4531_part1dataRefSeqFormat.txt Pan4531_part1dataSambamba.bed 
+Pan4531_part2dataRefSeqFormat.txt Pan4531_part2dataSambamba.bed Pan4531dataSambamba.bed
+
+rm Pan4531_part1data.bed Pan4531_part2data.bed Pan4531_part1dataRefSeqFormat.txt Pan4531_part1dataSambamba.bed Pan4531_part2dataRefSeqFormat.txt Pan4531_part2dataSambamba.bed Pan4531dataSambamba.bed
