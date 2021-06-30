@@ -53,3 +53,6 @@ cat Pan4531_SMN1data.bed >> Pan4531data.bed    There was no header to remove
 
 ##Remove Pan4531_SMN1data.bed
 rm Pan4531_SMN1data.bed
+
+##Add Pan3608
+cat Pan3608.bed >> Pan4531data.bed
