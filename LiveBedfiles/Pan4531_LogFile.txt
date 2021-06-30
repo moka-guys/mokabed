@@ -24,3 +24,8 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4531
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+#Combining multiple transcripts
+
+1) Merge Pan4531_part1data.bed and Pan4531_part2data.bed
+    bedtools subtract -a Pan4531_part2data.bed -b Pan4531_part1data.bed >> Pan4531_part1data.bed
