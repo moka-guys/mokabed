@@ -64,3 +64,6 @@ sort Pan4531data.bed -k1,1V -k2,2n -k3,3n > Pan4531_sorted.bed
 
 #Rename files
 mv Pan4531data.bed Pan4531_unsorted.bed; mv Pan4531_sorted.bed Pan4531data.bed
+
+#Convert to 4 column format
+cut -f 1-4 Pan4531data.bed > Pan4531data_4col.bed
