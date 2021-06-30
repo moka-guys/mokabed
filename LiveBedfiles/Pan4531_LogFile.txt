@@ -44,3 +44,6 @@ As described in Pan3973_log.md a number of steps were performed to extract the r
 
 Pan3973_problemdata.bed file was downloaded from the git history at commit 982b443698 (https://github.com/moka-guys/mokabed/tree/982b443698683532c2a4a0032e0ae370742ad41a/LiveBedfiles)
 Pan3973_problemdata.bed was saved as Pan4531_SMN1data.bed
+
+#Add padding Pan4531_SMN1data.bed
+Pan3973_problemdata.bed had +-10bp padding, to match the padding (30bp) in Pan4531data.bed regions were padded +-20bp further
