@@ -1,3 +1,7 @@
 This is a VCP3 R78 test BED file for CNV analysis using ExomeDepth
 
 Save Pan4531 request form and transcript file
+
+Issues with making Pan4531:
+1) Split genes with multiple transcripts into seperate transcript files (part1-2)
+2) From previous attempts to make this file one transcript was found to cause a problem (SMN1) so will again be done manually.
