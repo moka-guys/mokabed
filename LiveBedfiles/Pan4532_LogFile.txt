@@ -40,3 +40,6 @@ cat Pan3608.bed >> Pan4532data.bed
 sort Pan4532data.bed -k1,1V -k2,2n -k3,3n > Pan4532_sorted.bed;mv Pan4532data.bed Pan4532_unsorted.bed; mv Pan4532_sorted.bed Pan4532data.bed
 
 #Move header to the top in Pan4532data.bed
+
+#Convert to 4 column format
+cut -f 1-4 Pan4532data.bed > Pan4532data_4col.bed
