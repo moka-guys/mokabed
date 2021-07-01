@@ -29,3 +29,6 @@ Correct
 
 #Combining multiple transcripts
 bedtools subtract -a Pan4532_extradata.bed -b Pan4532data.bed >> Pan4532data.bed
+
+#Remove unrequired files
+rm Pan4532_extradata.bed Pan4532_extradataRefSeqFormat.txt Pan4532_extradataSambamba.bed Pan4532dataSambamba.bed
