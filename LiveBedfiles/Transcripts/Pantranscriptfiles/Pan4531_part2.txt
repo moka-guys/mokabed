@@ -1,0 +1,4 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_001304480	FGD4	0
+NM_004984	KIF5A	0
+NM_002529	NTRK1	0
