@@ -27,3 +27,5 @@ Incorrect
 Correct
 6	129764177	129764243	3908										LAMA2;NM_000426.4
 
+#Combining multiple transcripts
+bedtools subtract -a Pan4532_extradata.bed -b Pan4532data.bed >> Pan4532data.bed
