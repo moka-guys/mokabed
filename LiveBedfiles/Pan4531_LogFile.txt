@@ -73,3 +73,6 @@ mv Pan4531data_4col.bed Pan4531_CNV.bed
 
 #Remove unrequired files
 rm Pan4531data.bed Pan4531_unsorted.bed
+
+#Testing statement
+Pan4531_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors.
