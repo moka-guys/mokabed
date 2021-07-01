@@ -19,3 +19,11 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4532
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+#Correct LAMA2
+One region in LAMA2 had been mapped incorrectly in the UCSC refseq database.
+Incorrect 
+6	129763336	129763402	3908										LAMA2;NM_000426.4
+Correct
+6	129764177	129764243	3908										LAMA2;NM_000426.4
+
