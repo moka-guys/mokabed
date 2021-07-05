@@ -26,3 +26,6 @@ version as defined by git tag = v1.2
 
 #Combining multiple transcripts
 bedtools subtract -a Pan4533_extradata.bed -b Pan4533data.bed >> Pan4533data.bed
+
+##Add Pan3608
+cat Pan3608.bed >> Pan4533data.bed
