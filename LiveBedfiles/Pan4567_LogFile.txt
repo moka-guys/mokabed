@@ -1,2 +1,7 @@
 This is a VCP3 R60 test BED file (v2) for CNV analysis using ExomeDepth.
 Previous R60 ExomeDepth BED file (Pan4527) was found to contain an error: Genes with multiple transcripts not split up during mokabed.
+
+#Save query used to extract Transcript file.
+Transcript was selected from the ngspanel genes table using the query
+`select GuysAccession, Symbol, '0' as GuysAccessionVersion from ngspanelgenes where NGSPanelID=4567`
+This was used to create Pan4567.txt
