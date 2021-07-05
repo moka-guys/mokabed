@@ -50,3 +50,6 @@ mv Pan4565CNV_4col.bed Pan4565_CNV.bed
 
 #Remove files
 rm Pan4565_unsorted.bed Pan4565_sorted.bed
+
+#Testing statement
+Pan4565_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
