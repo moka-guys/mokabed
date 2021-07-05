@@ -1,0 +1,5 @@
+This is a VCP3 R62 test BED file (v2) for CNV analysis using ExomeDepth.
+
+Previous R62 ExomeDepth BED file (Pan4528) was found to contain errors:
+1) Genes with multiple transcripts not split up during mokabed.
+2) SNORD118 not included
