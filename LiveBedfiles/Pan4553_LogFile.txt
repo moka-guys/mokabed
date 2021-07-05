@@ -46,3 +46,6 @@ rm Pan4553dataSambamba.bed
 
 #Testing statement
 Pan4553_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors.
+
+#Make request form clearer
+Add info about exon and UTR padding
