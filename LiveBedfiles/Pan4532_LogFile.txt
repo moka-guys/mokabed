@@ -52,3 +52,6 @@ rm Pan4532data.bed Pan4532_unsorted.bed
 
 #Testing statement
 Pan4532_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
+
+#Update Request form
+Add info about exon and UTR padding
