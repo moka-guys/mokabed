@@ -1,0 +1,1 @@
+This is a VCP3 R81 test BED file for CNV analysis using ExomeDepth.
