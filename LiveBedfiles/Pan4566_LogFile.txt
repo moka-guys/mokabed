@@ -44,3 +44,6 @@ cut -f 1-4 Pan4566_sorted.bed> Pan4566CNV_4col.bed
 
 ##Rename BED file, to make it clear its for Exomedepth
 mv Pan4566CNV_4col.bed Pan4566_CNV.bed
+
+#Remove files
+rm Pan4566_unsorted.bed Pan4566_sorted.bed
