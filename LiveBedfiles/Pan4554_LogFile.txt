@@ -30,3 +30,13 @@ bedtools subtract -a Pan4554_extradata.bed -b Pan4554data.bed >> Pan4554data.bed
 
 #Remove unrequired files
 rm Pan4554_extradata.bed Pan4554_extradataRefSeqFormat.txt Pan4554_extradataSambamba.bed Pan4554dataSambamba.bed
+
+#Manually add SNORD118
+SNORD118 gene is non-coding RNA, so doesn't have a NM number. 
+The UCSC and NCBI refeq databases were checked and NR_033294.2 wasn't present in the databases, therefore the BED file couldn't be made using Mokabed.
+
+Coordinates for SNORD118 were retrieved from UCSC chr17:8076771-8076906
+The regions were padded by -30/+30bp
+
+Following line added to Pan4554data.bed
+17	8076741	8076936	727676										SNORD118;NR_033294.2
