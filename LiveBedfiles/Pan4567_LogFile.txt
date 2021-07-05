@@ -1,0 +1,2 @@
+This is a VCP3 R60 test BED file (v2) for CNV analysis using ExomeDepth.
+Previous R60 ExomeDepth BED file (Pan4527) was found to contain an error: Genes with multiple transcripts not split up during mokabed.
