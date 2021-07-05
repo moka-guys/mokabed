@@ -40,3 +40,6 @@ cut -f 1-4 Pan4533_sorted.bed> Pan4533_CNV.bed
 
 #Remove files
 rm Pan4533_unsorted.bed Pan4533_sorted.bed Pan4533_extradata.bed Pan4533_extradataRefSeqFormat.txt Pan4533_extradataSambamba.bed Pan4533dataSambamba.bed
+
+#Testing statement
+Pan4533_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
