@@ -47,3 +47,6 @@ Rename file: mv Pan4561CNV_4col.bed Pan4565CNV_4col.bed
 
 ##Rename BED file, to make it clear its for Exomedepth
 mv Pan4565CNV_4col.bed Pan4565_CNV.bed
+
+#Remove files
+rm Pan4565_unsorted.bed Pan4565_sorted.bed
