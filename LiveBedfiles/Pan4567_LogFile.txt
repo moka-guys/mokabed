@@ -41,3 +41,6 @@ sort Pan4567data.bed -k1,1V -k2,2n -k3,3n > Pan4567_sorted.bed;mv Pan4567data.be
 
 #Convert to 4 column format
 cut -f 1-4 Pan4567_sorted.bed> Pan4567CNV_4col.bed
+
+##Rename BED file, to make it clear its for Exomedepth
+mv Pan4567CNV_4col.bed Pan4567_CNV.bed
