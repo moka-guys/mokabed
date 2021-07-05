@@ -38,3 +38,6 @@ cat Pan3608.bed >> Pan4567data.bed
 sort Pan4567data.bed -k1,1V -k2,2n -k3,3n > Pan4567_sorted.bed;mv Pan4567data.bed Pan4567_unsorted.bed
 
 #Manually remove header from Pan4567_sorted.bed
+
+#Convert to 4 column format
+cut -f 1-4 Pan4567_sorted.bed> Pan4567CNV_4col.bed
