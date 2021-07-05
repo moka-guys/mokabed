@@ -36,3 +36,5 @@ cat Pan3608.bed >> Pan4566data.bed
 
 ##Sort and rename
 sort Pan4566data.bed -k1,1V -k2,2n -k3,3n > Pan4566_sorted.bed;mv Pan4566data.bed Pan4566_unsorted.bed
+
+#Manually remove header from Pan4566_sorted.bed
