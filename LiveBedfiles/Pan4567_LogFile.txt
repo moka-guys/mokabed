@@ -27,3 +27,6 @@ version as defined by git tag = v1.2
 
 #Combining multiple transcripts
 bedtools subtract -a Pan4567_extradata.bed -b Pan4567data.bed >> Pan4567data.bed
+
+#Remove unrequired files
+rm Pan4567_extradata.bed Pan4567_extradataRefSeqFormat.txt Pan4567_extradataSambamba.bed Pan4567dataSambamba.bed
