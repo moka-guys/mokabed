@@ -63,3 +63,8 @@ Pan4554_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finis
 
 #Make Request form clearer
 Add info about exon and UTR padding
+
+#Save query used to extract Transcript file.
+Transcript was selected from the ngspanel genes table using the query
+`select GuysAccession, Symbol, '0' as GuysAccessionVersion from ngspanelgenes where NGSPanelID=4554`
+This was used to create Pan4554.txt
