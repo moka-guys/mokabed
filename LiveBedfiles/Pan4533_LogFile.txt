@@ -37,3 +37,6 @@ sort Pan4533data.bed -k1,1V -k2,2n -k3,3n > Pan4533_sorted.bed;mv Pan4533data.be
 
 #Convert to 4 column format
 cut -f 1-4 Pan4533_sorted.bed> Pan4533_CNV.bed
+
+#Remove files
+rm Pan4533_unsorted.bed Pan4533_sorted.bed Pan4533_extradata.bed Pan4533_extradataRefSeqFormat.txt Pan4533_extradataSambamba.bed Pan4533dataSambamba.bed
