@@ -30,3 +30,6 @@ bedtools subtract -a Pan4561_extradata.bed -b Pan4561data.bed >> Pan4561data.bed
 
 #Remove unrequired files
 rm Pan4561_extradata.bed Pan4561_extradataRefSeqFormat.txt Pan4561_extradataSambamba.bed Pan4561dataSambamba.bed
+
+##Add Pan3608
+cat Pan3608.bed >> Pan4561data.bed
