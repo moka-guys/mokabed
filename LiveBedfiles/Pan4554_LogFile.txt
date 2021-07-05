@@ -60,3 +60,6 @@ rm Pan4554_unsorted.bed
 
 #Testing statement
 Pan4554_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
+
+#Make Request form clearer
+Add info about exon and UTR padding
