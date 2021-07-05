@@ -55,3 +55,6 @@ rm Pan4561_unsorted.bed Pan4561_CNV.bed
 
 #Rename CNV file
 mv Pan4561_CNV_4col.bed Pan4561_CNV.bed
+
+#Testing statement
+Pan4561_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
