@@ -51,5 +51,5 @@ mv Pan4551data.bed Pan4551_CNV.bed
 # delete unrequired files
 rm Pan4551dataSambamba.bed Pan4551_duplicatesdata.bed Pan4551_duplicatesdataSambamba.bed
 
-
-# testing placeholder
+# testing
+testing performed in 003_210629_bedfile_creation_Pan4549_Pan4550_Pan4551_Pan4552. job ran without error.
