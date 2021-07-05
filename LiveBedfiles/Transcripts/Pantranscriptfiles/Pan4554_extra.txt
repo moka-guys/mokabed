@@ -1,0 +1,3 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_001257989	TYMP	0
+NM_024570	RNASEH2B	0
