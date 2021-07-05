@@ -33,3 +33,6 @@ rm Pan4565_extradata.bed Pan4565_extradataRefSeqFormat.txt Pan4565_extradataSamb
 
 ##Add Pan3608
 cat Pan3608.bed >> Pan4565data.bed
+
+##Sort and rename
+sort Pan4565data.bed -k1,1V -k2,2n -k3,3n > Pan4565_sorted.bed;mv Pan4565data.bed Pan4565_unsorted.bed
