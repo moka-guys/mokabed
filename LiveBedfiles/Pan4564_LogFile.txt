@@ -1,0 +1,2 @@
+This is a VCP1 R117 test BED file for CNV analysis using ExomeDepth
+Save Pan4564 request form and transcript file
