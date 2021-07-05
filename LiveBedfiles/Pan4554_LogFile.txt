@@ -40,3 +40,6 @@ The regions were padded by -30/+30bp
 
 Following line added to Pan4554data.bed
 17	8076741	8076936	727676										SNORD118;NR_033294.2
+
+##Add Pan3608
+cat Pan3608.bed >> Pan4554data.bed
