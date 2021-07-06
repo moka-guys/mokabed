@@ -50,3 +50,6 @@ rm Pan4566_unsorted.bed Pan4566_sorted.bed
 
 #Testing statement
 Pan4566_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
+
+#Update Request form
+Answer YES to multiple transcript for genes.
