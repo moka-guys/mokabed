@@ -55,3 +55,6 @@ rm Pan4567_unsorted.bed Pan4567_sorted.bed
 
 #Testing statement
 Pan4567_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
+
+#Update request form
+Answer YES to question 5b
