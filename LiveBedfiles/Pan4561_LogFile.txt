@@ -66,3 +66,6 @@ Pan4561_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finis
 
 #Remove Pan4561dataRefSeqFormat.txt
 rm Pan4561dataRefSeqFormat.txt
+
+#Update request form
+Answer YES to question 5b 
