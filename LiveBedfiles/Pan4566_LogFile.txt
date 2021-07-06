@@ -53,3 +53,6 @@ Pan4566_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finis
 
 #Update Request form
 Answer YES to multiple transcript for genes.
+
+#Delete incomplete Pan4566dataRefSeqFormat.txt
+rm Pan4566dataRefSeqFormat.txt
