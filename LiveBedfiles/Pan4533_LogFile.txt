@@ -43,3 +43,6 @@ rm Pan4533_unsorted.bed Pan4533_sorted.bed Pan4533_extradata.bed Pan4533_extrada
 
 #Testing statement
 Pan4533_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
+
+#Remove incomplete Pan4533dataRefSeqFormat.txt
+rm Pan4533dataRefSeqFormat.txt
