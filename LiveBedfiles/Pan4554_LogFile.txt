@@ -1,0 +1,70 @@
+This is a VCP3 R62 test BED file (v2) for CNV analysis using ExomeDepth.
+
+Previous R62 ExomeDepth BED file (Pan4528) was found to contain errors:
+1) Genes with multiple transcripts not split up during mokabed.
+2) SNORD118 not included
+
+#Save transcripts and Request form
+
+#Save mokabed output
+Time Stamp:2021-07-05 10:45:19.144199
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4554dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 30 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4554.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4554data.bed --logfile /home/dnanexus/out/Output_files/Pan4554_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+#Combining multiple transcripts
+bedtools subtract -a Pan4554_extradata.bed -b Pan4554data.bed >> Pan4554data.bed
+
+#Remove unrequired files
+rm Pan4554_extradata.bed Pan4554_extradataRefSeqFormat.txt Pan4554_extradataSambamba.bed Pan4554dataSambamba.bed
+
+#Manually add SNORD118
+SNORD118 gene is non-coding RNA, so doesn't have a NM number. 
+The UCSC and NCBI refeq databases were checked and NR_033294.2 wasn't present in the databases, therefore the BED file couldn't be made using Mokabed.
+
+Coordinates for SNORD118 were retrieved from UCSC chr17:8076771-8076906
+The regions were padded by -30/+30bp
+
+Following line added to Pan4554data.bed
+17	8076741	8076936	727676										SNORD118;NR_033294.2
+
+##Add Pan3608
+cat Pan3608.bed >> Pan4554data.bed
+
+##Sort and rename
+sort Pan4554data.bed -k1,1V -k2,2n -k3,3n > Pan4554_sorted.bed;mv Pan4554data.bed Pan4554_unsorted.bed; mv Pan4554_sorted.bed Pan4554_CNV.bed
+
+#Move header to the top in Pan4554data.bed
+
+#Convert to 4 column format
+cut -f 1-4 Pan4554_CNV.bed> Pan4554CNV_4col.bed
+
+#Rename BED file, to make it clear its for Exomedepth
+mv Pan4554CNV_4col.bed Pan4554_CNV.bed
+
+#Remove files
+rm Pan4554_unsorted.bed
+
+#Testing statement
+Pan4554_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
+
+#Make Request form clearer
+Add info about exon and UTR padding
+
+#Save query used to extract Transcript file.
+Transcript was selected from the ngspanel genes table using the query
+`select GuysAccession, Symbol, '0' as GuysAccessionVersion from ngspanelgenes where NGSPanelID=4554`
+This was used to create Pan4554.txt
