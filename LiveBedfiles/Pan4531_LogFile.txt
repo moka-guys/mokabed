@@ -1,0 +1,78 @@
+This is a VCP3 R78 test BED file for CNV analysis using ExomeDepth
+
+Save Pan4531 request form and transcript file
+
+Issues with making Pan4531:
+1) Split genes with multiple transcripts into seperate transcript files (part1-2)
+2) From previous attempts to make this file one transcript was found to cause a problem (SMN1) so will again be done manually.
+
+#Save Mokabed outputs 
+Time Stamp:2021-06-30 23:14:03.362527
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4531dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 30 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4531.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4531data.bed --logfile /home/dnanexus/out/Output_files/Pan4531_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+#Combining multiple transcripts
+
+1) Merge Pan4531_part1data.bed and Pan4531_part2data.bed
+    bedtools subtract -a Pan4531_part2data.bed -b Pan4531_part1data.bed >> Pan4531_part1data.bed
+
+2) Add regions from Pan4531_part1data.bed not included in Pan4531data.bed
+    bedtools subtract -a Pan4531_part1data.bed -b Pan4531data.bed >> Pan4531data.bed
+
+#Delete Pan4531_part1data.bed Pan4531_part2data.bed Pan4531_part1dataRefSeqFormat.txt Pan4531_part1dataSambamba.bed 
+Pan4531_part2dataRefSeqFormat.txt Pan4531_part2dataSambamba.bed Pan4531dataSambamba.bed
+
+rm Pan4531_part1data.bed Pan4531_part2data.bed Pan4531_part1dataRefSeqFormat.txt Pan4531_part1dataSambamba.bed Pan4531_part2dataRefSeqFormat.txt Pan4531_part2dataSambamba.bed Pan4531dataSambamba.bed
+
+#Problematic SMN1 transcript
+Mokabed was failing because cruzdb was returning multiple records for the same transcript.
+As described in Pan3973_log.md a number of steps were performed to extract the regions from the UCSC table browser
+
+Pan3973_problemdata.bed file was downloaded from the git history at commit 982b443698 (https://github.com/moka-guys/mokabed/tree/982b443698683532c2a4a0032e0ae370742ad41a/LiveBedfiles)
+Pan3973_problemdata.bed was saved as Pan4531_SMN1data.bed
+
+#Add padding Pan4531_SMN1data.bed
+Pan3973_problemdata.bed had +-10bp padding, to match the padding (30bp) in Pan4531data.bed regions were padded +-20bp further
+
+#Add Pan4531_SMN1data.bed to Pan4531data.bed
+cat Pan4531_SMN1data.bed >> Pan4531data.bed    There was no header to remove
+
+##Remove Pan4531_SMN1data.bed
+rm Pan4531_SMN1data.bed
+
+##Add Pan3608
+cat Pan3608.bed >> Pan4531data.bed
+
+#Sort
+sort Pan4531data.bed -k1,1V -k2,2n -k3,3n > Pan4531_sorted.bed
+
+#Move header to the top in Pan4531_sorted.bed
+
+#Rename files
+mv Pan4531data.bed Pan4531_unsorted.bed; mv Pan4531_sorted.bed Pan4531data.bed
+
+#Convert to 4 column format
+cut -f 1-4 Pan4531data.bed > Pan4531data_4col.bed
+
+#Rename BED file, to make it clear its for Exomedepth
+mv Pan4531data_4col.bed Pan4531_CNV.bed
+
+#Remove unrequired files
+rm Pan4531data.bed Pan4531_unsorted.bed
+
+#Testing statement
+Pan4531_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors.
