@@ -31,3 +31,4 @@ version as defined by git tag = v1.2
 #Combine multiple transcripts
 
 1) bedtools subtract -a Pan4571_part3data.bed -b Pan4571_part2data.bed >> Pan4571_part2data.bed
+2) bedtools subtract -a Pan4571_part2data.bed -b Pan4571_part1data.bed >> Pan4571_part1data.bed
