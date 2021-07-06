@@ -46,3 +46,6 @@ Pan4533_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finis
 
 #Remove incomplete Pan4533dataRefSeqFormat.txt
 rm Pan4533dataRefSeqFormat.txt
+
+#Update Request form
+Answer yes to question 5b
