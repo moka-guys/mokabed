@@ -63,3 +63,6 @@ mv Pan4561_CNV_4col.bed Pan4561_CNV.bed
 
 #Testing statement
 Pan4561_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
+
+#Remove Pan4561dataRefSeqFormat.txt
+rm Pan4561dataRefSeqFormat.txt
