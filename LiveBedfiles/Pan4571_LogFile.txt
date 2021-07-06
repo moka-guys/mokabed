@@ -1,0 +1,70 @@
+This is a VCP3 R90 test BED file for CNV analysis using ExomeDepth.
+
+Things to be careful of when making this BED file:
+1) Few genes had multiple transcripts they were split into different transcript files (Pan4571.txt, Pan4571_part1.txt, Pan4571_part2.txt, Pan4571_part3.txt)
+2) DIAPH1 and NBEA exons mapped incorrectly in the UCSC- had to manually correct this.
+
+#Save query used to extract Transcript file.
+Transcript was selected from the ngspanel genes table using the query
+`select GuysAccession, Symbol, '0' as GuysAccessionVersion from ngspanelgenes where NGSPanelID=4571`
+This was used to create Pan4571.txt
+
+#Save Mokabed output
+Time Stamp:2021-07-05 23:14:10.943153
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4571dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 30 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4571.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4571data.bed --logfile /home/dnanexus/out/Output_files/Pan4571_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+#Combine multiple transcripts
+
+1) bedtools subtract -a Pan4571_part3data.bed -b Pan4571_part2data.bed >> Pan4571_part2data.bed
+2) bedtools subtract -a Pan4571_part2data.bed -b Pan4571_part1data.bed >> Pan4571_part1data.bed
+3) bedtools subtract -a Pan4571_part1data.bed -b Pan4571data.bed >> Pan4571data.bed
+
+#Manually correct incorrect exons in DIAPH1 and NBEA
+These regions were changed manually after double checking with the genome browser for correct padding and that coordinates are zero based, open ended. 
+Regions were padded by +/- 30bp
+
+For clarity the changed lines are:
+
+old - 5 140915590 140915659 1729 DIAPH1;NM_005219.5 new - 5 140950964 140951033 1729 DIAPH1;NM_005219.5
+
+old - 13 35739200 35739265 26960 NBEA;NM_015678.5 new - 13 35743093 35743162 26960 NBEA;NM_015678.5
+
+##Add Pan3608
+cat Pan3608.bed >> Pan4571data.bed
+
+##Sort and rename 
+sort Pan4571data.bed -k1,1V -k2,2n -k3,3n > Pan4571_sorted.bed;mv Pan4571data.bed Pan4571_unsorted.bed
+
+NOTE: PLEASE DO NOT USE THE FOLLOWING ABOVE. It's hard to review changes when file names are changed.
+Instead use: sort Pan4571data.bed -k1,1V -k2,2n -k3,3n > Pan4571_sorted.bed;mv Pan4571data.bed Pan4571_unsorted.bed; mv Pan4571_sorted.bed Pan4571data.bed; rm Pan4571_unsorted.bed
+
+#Manually remove header from Pan4571_sorted.bed
+
+#Convert to 4 column format
+cut -f 1-4 Pan4571_sorted.bed> Pan4571_CNV.bed
+
+#Remove files
+rm Pan4571_unsorted.bed Pan4571_sorted.bed Pan4571_part1data.bed Pan4571_part1dataRefSeqFormat.txt Pan4571_part1dataSambamba.bed Pan4571dataSambamba.bed Pan4571_part2data.bed Pan4571_part2dataRefSeqFormat.txt Pan4571_part2dataSambamba.bed Pan4571_part3data.bed Pan4571_part3dataRefSeqFormat.txt Pan4571_part3dataSambamba.bed
+
+#Testing statement
+Pan4571_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
+
+#Delete incompelte Pan4571dataRefSeqFormat
+
+#Error was found in the request format
+Change answer to YES for if there are multiple transcripts for the same gene?
