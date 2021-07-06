@@ -57,3 +57,6 @@ This was used to create Pan4553.txt
 
 #Remove incomplete Pan4553dataRefSeqFormat.txt
 rm Pan4553dataRefSeqFormat.txt
+
+#Update request form
+Answer YES to question 5b
