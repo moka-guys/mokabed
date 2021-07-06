@@ -3,3 +3,8 @@ This is a VCP3 R90 test BED file for CNV analysis using ExomeDepth.
 Things to be careful of when making this BED file:
 1) Few genes had multiple transcripts they were split into different transcript files (Pan4571.txt, Pan4571_part1.txt, Pan4571_part2.txt, Pan4571_part3.txt)
 2) DIAPH1 and NBEA exons mapped incorrectly in the UCSC- had to manually correct this.
+
+#Save query used to extract Transcript file.
+Transcript was selected from the ngspanel genes table using the query
+`select GuysAccession, Symbol, '0' as GuysAccessionVersion from ngspanelgenes where NGSPanelID=4571`
+This was used to create Pan4571.txt
