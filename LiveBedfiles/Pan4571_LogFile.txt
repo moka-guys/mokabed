@@ -51,7 +51,7 @@ cat Pan3608.bed >> Pan4571data.bed
 sort Pan4571data.bed -k1,1V -k2,2n -k3,3n > Pan4571_sorted.bed;mv Pan4571data.bed Pan4571_unsorted.bed
 
 NOTE: PLEASE DO NOT USE THE FOLLOWING ABOVE. It's hard to review changes when file names are changed.
-Instead use: sort Pan4571data.bed -k1,1V -k2,2n -k3,3n > Pan4571_sorted.bed;mv Pan4571data.bed Pan4571_unsorted.bed; mv Pan4551_sorted.bed Pan4551data.bed; rm Pan4551_unsorted.bed
+Instead use: sort Pan4571data.bed -k1,1V -k2,2n -k3,3n > Pan4571_sorted.bed;mv Pan4571data.bed Pan4571_unsorted.bed; mv Pan4571_sorted.bed Pan4571data.bed; rm Pan4571_unsorted.bed
 
 #Manually remove header from Pan4571_sorted.bed
 
