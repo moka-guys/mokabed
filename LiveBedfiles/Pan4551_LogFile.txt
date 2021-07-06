@@ -1,0 +1,55 @@
+# Pan4551
+This is a BED file used to restrict variant calling within the exome depth CNV calling app. This BED file is for R229 Confirmed Fanconi anaemia or Bloom syndrome
+
+This test consists of a number of genes, some of which had multiple transcripts.
+
+Transcript was selected from the ngspanel genes table using the query
+`select GuysAccession, Symbol, '0' as GuysAccessionVersion from ngspanelgenes where NGSPanelID=4551`
+This was used to create Pan4551.txt and Pan4551_duplicates.txt, which ensured there was only transcript per gene. These were used as inputs to mokabed as below (and also Pan4551_duplicates_LogFile.txt):
+
+# Run MokaBED
+Time Stamp:2021-06-29 11:55:03.491841
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4551dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 30 --up 30 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4551.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4551data.bed --logfile /home/dnanexus/out/Output_files/Pan4551_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+# add mokabed outputs
+
+## Combining multiple transcripts
+Where multiple transcripts have been provided, the below BEDtools subtract command adds regions from file a not already covered in file b to the end of file b:
+
+`bedtools subtract -a Pan4551_duplicatesdata.bed -b Pan4551data.bed >> Pan4551data.bed`
+
+# Add intronic regions/control sites from Pan3608.bed
+cat Pan3608.bed >> Pan4551data.bed
+
+# sort bedfile
+sort Pan4551data.bed -k1,1V -k2,2n -k3,3n > Pan4551_sorted.bed; mv Pan4551data.bed Pan4551_unsorted.bed; mv Pan4551_sorted.bed Pan4551data.bed; rm Pan4551_unsorted.bed
+
+# remove header
+the header was removed manually
+
+# convert to 4 column bed file
+cut -f 1-4 Pan4551data.bed > Pan4551data_4col.bed; rm Pan4551data.bed; mv Pan4551data_4col.bed Pan4551data.bed
+
+#Rename file to make it clear that it's a CNV BED 
+mv Pan4551data.bed Pan4551_CNV.bed
+
+# delete unrequired files
+rm Pan4551dataSambamba.bed Pan4551_duplicatesdata.bed Pan4551_duplicatesdataSambamba.bed
+
+# testing
+testing performed in 003_210629_bedfile_creation_Pan4549_Pan4550_Pan4551_Pan4552. job ran without error.
