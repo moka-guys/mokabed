@@ -37,6 +37,11 @@ cat Pan3608.bed >> Pan4561data.bed
 ##Sort
 sort Pan4561data.bed -k1,1V -k2,2n -k3,3n > Pan4561_sorted.bed;mv Pan4561data.bed Pan4561_unsorted.bed
 
+#########################
+NOTE: PLEASE DO NOT USE THE FOLLOWING ABOVE. It's hard to review changes when file names are changed.
+Instead use: sort Pan4561data.bed -k1,1V -k2,2n -k3,3n > Pan4561_sorted.bed;mv Pan4561data.bed Pan4561_unsorted.bed; mv Pan4561_sorted.bed Pan4561data.bed; rm Pan4561_unsorted.bed
+########################
+
 ##Rename file
 mv Pan4561_sorted.bed Pan4561_CNV.bed
 
