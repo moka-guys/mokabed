@@ -63,3 +63,6 @@ This was used to create Pan4532.txt
 
 #Remove incomplete Pan4532dataRefSeqFormat.txt
 rm Pan4532dataRefSeqFormat.txt
+
+#Update request form
+Answer yes to question 5b
