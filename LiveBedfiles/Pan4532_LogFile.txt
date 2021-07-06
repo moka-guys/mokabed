@@ -60,3 +60,6 @@ Add info about exon and UTR padding
 Transcript was selected from the ngspanel genes table using the query
 `select GuysAccession, Symbol, '0' as GuysAccessionVersion from ngspanelgenes where NGSPanelID=4532`
 This was used to create Pan4532.txt
+
+#Remove incomplete Pan4532dataRefSeqFormat.txt
+rm Pan4532dataRefSeqFormat.txt
