@@ -62,3 +62,6 @@ rm Pan4571_unsorted.bed Pan4571_sorted.bed Pan4571_part1data.bed Pan4571_part1da
 Pan4571_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
 
 #Delete incompelte Pan4571dataRefSeqFormat
+
+#Error was found in the request format
+Change answer to YES for if there are multiple transcripts for the same gene?
