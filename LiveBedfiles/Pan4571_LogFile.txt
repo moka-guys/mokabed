@@ -57,3 +57,6 @@ cut -f 1-4 Pan4571_sorted.bed> Pan4571_CNV.bed
 
 #Remove files
 rm Pan4571_unsorted.bed Pan4571_sorted.bed Pan4571_part1data.bed Pan4571_part1dataRefSeqFormat.txt Pan4571_part1dataSambamba.bed Pan4571dataSambamba.bed Pan4571_part2data.bed Pan4571_part2dataRefSeqFormat.txt Pan4571_part2dataSambamba.bed Pan4571_part3data.bed Pan4571_part3dataRefSeqFormat.txt Pan4571_part3dataSambamba.bed
+
+#Testing statement
+Pan4571_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
