@@ -33,3 +33,11 @@ version as defined by git tag = v1.2
 1) bedtools subtract -a Pan4571_part3data.bed -b Pan4571_part2data.bed >> Pan4571_part2data.bed
 2) bedtools subtract -a Pan4571_part2data.bed -b Pan4571_part1data.bed >> Pan4571_part1data.bed
 3) bedtools subtract -a Pan4571_part1data.bed -b Pan4571data.bed >> Pan4571data.bed
+
+#Manually correct incorrect exons in DIAPH1 and NBEA
+These regions were changed manually after double checking with the genome browser for correct padding and that coordinates are zero based, open ended. 
+Regions were padded by +/- 30bp
+
+For clarity the changed lines are:
+
+old - 5 140915590 140915659 1729 DIAPH1;NM_005219.5 new - 5 140950964 140951033 1729 DIAPH1;NM_005219.5
