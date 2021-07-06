@@ -64,3 +64,6 @@ rm Pan4565dataRefSeqFormat.txt
 
 #Update request form
 Answer YES to question 5b
+
+#Wrong Pan number file found during Testing
+rm Pan4554_sorted.bed
