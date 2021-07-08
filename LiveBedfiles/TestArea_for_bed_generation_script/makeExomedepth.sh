@@ -127,6 +127,7 @@ NR==FNR {
 }
 ' ${METAEXONS} ${METAEXONS} > ${EXOMEDEPTH}
 
+# write and print any miissed capture regions by subtracting the built exomedepth BED file
 echo "Missed capture regions:"
 bedtools intersect -v -a ${CAPTURE} -b ${EXOMEDEPTH} | tee ${MISSED}
 echo ""
