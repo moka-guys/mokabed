@@ -1,0 +1,3 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_001005361	DNM2	0
+NM_213674	TPM2	0
