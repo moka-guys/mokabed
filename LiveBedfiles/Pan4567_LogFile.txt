@@ -1,0 +1,63 @@
+This is a VCP3 R60 test BED file (v2) for CNV analysis using ExomeDepth.
+Previous R60 ExomeDepth BED file (Pan4527) was found to contain an error: Genes with multiple transcripts not split up during mokabed.
+
+#Save query used to extract Transcript file.
+Transcript was selected from the ngspanel genes table using the query
+`select GuysAccession, Symbol, '0' as GuysAccessionVersion from ngspanelgenes where NGSPanelID=4567`
+This was used to create Pan4567.txt
+
+#Save mokabed output
+Time Stamp:2021-07-05 20:32:35.698532
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4567dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 30 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4567.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4567data.bed --logfile /home/dnanexus/out/Output_files/Pan4567_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+#Combining multiple transcripts
+bedtools subtract -a Pan4567_extradata.bed -b Pan4567data.bed >> Pan4567data.bed
+
+#Remove unrequired files
+rm Pan4567_extradata.bed Pan4567_extradataRefSeqFormat.txt Pan4567_extradataSambamba.bed Pan4567dataSambamba.bed
+
+##Add Pan3608
+cat Pan3608.bed >> Pan4567data.bed
+
+##Sort and rename
+sort Pan4567data.bed -k1,1V -k2,2n -k3,3n > Pan4567_sorted.bed;mv Pan4567data.bed Pan4567_unsorted.bed
+
+#########################
+NOTE: PLEASE DO NOT USE THE FOLLOWING ABOVE. It's hard to review changes when file names are changed.
+Instead use: sort Pan4567data.bed -k1,1V -k2,2n -k3,3n > Pan4567_sorted.bed;mv Pan4567data.bed Pan4567_unsorted.bed; mv Pan4567_sorted.bed Pan4567data.bed; rm Pan4567_unsorted.bed
+########################
+
+#Manually remove header from Pan4567_sorted.bed
+
+#Convert to 4 column format
+cut -f 1-4 Pan4567_sorted.bed> Pan4567CNV_4col.bed
+
+##Rename BED file, to make it clear its for Exomedepth
+mv Pan4567CNV_4col.bed Pan4567_CNV.bed
+
+#Remove files
+rm Pan4567_unsorted.bed Pan4567_sorted.bed
+
+#Testing statement
+Pan4567_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
+
+#Update request form
+Answer YES to question 5b
+
+#Delete incomplete Pan4567dataRefSeqFormat.txt
+rm Pan4567dataRefSeqFormat.txt
