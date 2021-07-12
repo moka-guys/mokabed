@@ -1,0 +1,68 @@
+This is a VCP3 R79 test BED file for CNV analysis using ExomeDepth
+Save Pan4532 request form and transcript file
+
+#Save Mokabed output
+Time Stamp:2021-07-01 09:25:34.475078
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4532dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 30 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4532.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4532data.bed --logfile /home/dnanexus/out/Output_files/Pan4532_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+#Correct LAMA2
+One region in LAMA2 had been mapped incorrectly in the UCSC refseq database.
+Incorrect 
+6	129763336	129763402	3908										LAMA2;NM_000426.4
+Correct
+6	129764177	129764243	3908										LAMA2;NM_000426.4
+
+#Combining multiple transcripts
+bedtools subtract -a Pan4532_extradata.bed -b Pan4532data.bed >> Pan4532data.bed
+
+#Remove unrequired files
+rm Pan4532_extradata.bed Pan4532_extradataRefSeqFormat.txt Pan4532_extradataSambamba.bed Pan4532dataSambamba.bed
+
+##Add Pan3608
+cat Pan3608.bed >> Pan4532data.bed
+
+##Sort and rename
+sort Pan4532data.bed -k1,1V -k2,2n -k3,3n > Pan4532_sorted.bed;mv Pan4532data.bed Pan4532_unsorted.bed; mv Pan4532_sorted.bed Pan4532data.bed
+
+#Move header to the top in Pan4532data.bed
+
+#Convert to 4 column format
+cut -f 1-4 Pan4532data.bed > Pan4532data_4col.bed
+
+#Rename BED file, to make it clear its for Exomedepth
+mv Pan4532data_4col.bed Pan4532_CNV.bed
+
+#Remove files
+rm Pan4532data.bed Pan4532_unsorted.bed
+
+#Testing statement
+Pan4532_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors
+
+#Update Request form
+Add info about exon and UTR padding
+
+#Save query used to extract Transcript file.
+Transcript was selected from the ngspanel genes table using the query
+`select GuysAccession, Symbol, '0' as GuysAccessionVersion from ngspanelgenes where NGSPanelID=4532`
+This was used to create Pan4532.txt
+
+#Remove incomplete Pan4532dataRefSeqFormat.txt
+rm Pan4532dataRefSeqFormat.txt
+
+#Update request form
+Answer yes to question 5b
