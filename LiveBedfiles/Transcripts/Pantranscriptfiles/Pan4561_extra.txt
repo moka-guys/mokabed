@@ -1,0 +1,4 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_001301365	LYST	0
+NM_001123066	MAPT	0
+NM_033305	VPS13A	0
