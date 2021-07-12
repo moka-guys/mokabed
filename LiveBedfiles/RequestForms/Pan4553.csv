@@ -17,7 +17,7 @@ Answer following questions:",VCP3_R97,
 6. What padding is required around the exons?,30bp
 7. a) Should UTRs be included for ALL genes?,No,
 7. b) Should UTRs be padded?,No,
-8. a) Are UTRs required for SOME genes? ,N/A,
+8. a) Are UTRs required for SOME genes? ,No
 8. b) Please list genes/transcripts,N/A,
 8. c) Should UTRs be padded?,No,
 9. Any additional BED files to be included in this BED file? ,3608,
