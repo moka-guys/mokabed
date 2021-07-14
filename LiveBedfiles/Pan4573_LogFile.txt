@@ -25,3 +25,7 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4573
 
 version as defined by git tag = v1.2
 
+# No modifications are required to this BED file.
+
+# testing
+This file was tested using sambamba_v1.11 and moka_picard_v1.1. both apps completed without issue.
