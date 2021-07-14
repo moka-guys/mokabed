@@ -1,0 +1,7 @@
+# Pan4577
+# This BED file will be used for M1.2_ovarian Carcinoma. It is padded by +/-30bp.
+
+transcripts were provided by M Yau and the below query used to create the input to MokaBED
+select GuysAccession, Symbol,'0' as GuysAccessionVersion
+from dbo.NGSPanelGenes
+where NGSPanelID = 4577
