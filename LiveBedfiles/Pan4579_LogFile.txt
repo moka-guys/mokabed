@@ -1,0 +1,7 @@
+# Pan4579
+# This BED file will be used for M1.1_Colorectal Carcinoma. It is padded by +/-10bp. This is an amendment to Pan4576, where PMS2 is removed.
+
+transcripts were provided by M Yau and the below query used to create the input to MokaBED
+select GuysAccession, Symbol,'0' as GuysAccessionVersion
+from dbo.NGSPanelGenes
+where NGSPanelID = 4579
