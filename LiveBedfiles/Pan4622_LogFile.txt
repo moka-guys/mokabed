@@ -31,3 +31,9 @@ sort Pan4622data.bed -k1,1V -k2,2n -k3,3n > Pan4622_sorted.bed; mv Pan4622data.b
 
 #Convert to 4 column format
 cut -f 1-4 Pan4622data.bed > Pan4622data_4col.bed; rm Pan4622data.bed; mv Pan4622data_4col.bed Pan4622data.bed
+
+#Rename file to make it clear that it's a CNV BED 
+mv Pan4622data.bed Pan4622_CNV.bed
+
+# delete unrequired files
+rm Pan4622dataSambamba.bed
