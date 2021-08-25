@@ -37,3 +37,6 @@ mv Pan4622data.bed Pan4622_CNV.bed
 
 # delete unrequired files
 rm Pan4622dataSambamba.bed
+
+#Remove incomplete Pan4622dataRefSeqFormat.txt
+rm Pan4622dataRefSeqFormat.txt
