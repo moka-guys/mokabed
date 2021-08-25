@@ -40,3 +40,6 @@ rm Pan4622dataSambamba.bed
 
 #Remove incomplete Pan4622dataRefSeqFormat.txt
 rm Pan4622dataRefSeqFormat.txt
+
+#Testing statement
+Pan4622_CNV.bed has been tested using exomeDepth_cnv_analysis app. The app finished successfully without any errors.
