@@ -6,3 +6,24 @@ I could convert the file S04380110_hs_hg19/S04380110_Regions.bed into agilent_su
 i) Convert chrom from Chr1 fromat to 1 format.
 ii) Remove the two line header
 iii) select only the first 3 columns
+
+I accessed the Agilent SureDesign Website - https://earray.chem.agilent.com/suredesign/home.htm -(Account required) and downloaded the v5 Build 38 bedfiles.
+
+I copied S04380110_Regions.bed from the unzipped folder S04380110_hs_hg38 into this repo (as it is over 100mb in size this file cannot be added to version control).
+
+Convert to three column format using bioawk and rename file (resulting file is < 100mb and can be added to version control):
+head -n 4 S04380110_Regions.bed # original file
+    browser position chr1:65510-65625
+    track name="Target Regions" description="Agilent SureSelect DNA - SureSelectXT Human All Exon V5 - This is same as Covered.bed" color=0,0,128 db=hg38
+    chr1    65509   65625   ens|ENST00000641515,mRNA|AK057951,mRNA|AL137714
+    chr1    65831   65973   ens|ENST00000641515,mRNA|AK057951,mRNA|AL137714
+
+# Convert to 3 column bedfile
+bioawk -c bed '{ print $chrom, $start, $end}' S04380110_Regions.bed > agilent_sureselect_human_all_exon_v5_b38_targets.bed
+
+head  -n 4 agilent_sureselect_human_all_exon_v5_b38_targets.bed # Check change
+    browser position chr1:65510-65625
+    track name="Target Regions" description="Agilent SureSelect DNA - SureSelectXT Human All Exon V5 - This is same as Covered.bed" color=0,0,128 db=hg38
+    chr1    65509   65625
+    chr1    65831   65973
+
