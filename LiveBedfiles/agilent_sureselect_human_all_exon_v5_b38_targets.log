@@ -1,0 +1,69 @@
+The benchmarking tool is being updated to handle build 38, this requires a new default bedfile to use with bams aligned to build 38.
+The current default b37 bedfile, as defined in the apps config file, is agilent_sureselect_human_all_exon_v5_b37_targets.bed (project-ByfFPz00jy1fk6PjpZ95F27J:file-F25VXZj0ybjzxpg0JvppGgQq).  
+I couldn't find instructions for how this file was created so I downloaded the file v5 SureSelect bedfiles from the agilent website and compared them to agilent_sureselect_human_all_exon_v5_b37_targets.bed using diff.
+I could convert the file S04380110_hs_hg19/S04380110_Regions.bed into agilent_sureselect_human_all_exon_v5_b37_targets.bed via three steps:
+
+i) Convert chrom from Chr1 fromat to 1 format.
+ii) Remove the two line header
+iii) select only the first 3 columns
+
+I accessed the Agilent SureDesign Website - https://earray.chem.agilent.com/suredesign/home.htm -(Account required) and downloaded the v5 Build 38 bedfiles.
+
+I copied S04380110_Regions.bed from the unzipped folder S04380110_hs_hg38 into this repo (as it is over 100mb in size this file cannot be added to version control).
+
+Convert to three column format using bioawk and rename file (resulting file is < 100mb and can be added to version control):
+head -n 4 S04380110_Regions.bed # original file
+    browser position chr1:65510-65625
+    track name="Target Regions" description="Agilent SureSelect DNA - SureSelectXT Human All Exon V5 - This is same as Covered.bed" color=0,0,128 db=hg38
+    chr1    65509   65625   ens|ENST00000641515,mRNA|AK057951,mRNA|AL137714
+    chr1    65831   65973   ens|ENST00000641515,mRNA|AK057951,mRNA|AL137714
+
+# Convert to 3 column bedfile
+bioawk -c bed '{ print $chrom, $start, $end}' S04380110_Regions.bed > agilent_sureselect_human_all_exon_v5_b38_targets.bed
+
+head  -n 4 agilent_sureselect_human_all_exon_v5_b38_targets.bed # Check change
+    browser position chr1:65510-65625
+    track name="Target Regions" description="Agilent SureSelect DNA - SureSelectXT Human All Exon V5 - This is same as Covered.bed" color=0,0,128 db=hg38
+    chr1    65509   65625
+    chr1    65831   65973
+
+Remove header from bed file (checking the chnages along the way):
+wc -l agilent_sureselect_human_all_exon_v5_b38_targets.bed
+    230721
+
+head -n 3 agilent_sureselect_human_all_exon_v5_b38_targets.bed
+    browser position chr1:65510-65625
+    track name="Target Regions" description="Agilent SureSelect DNA - SureSelectXT Human All Exon V5 - This is same as Covered.bed" color=0,0,128 db=hg38
+    chr1    65509   65625
+
+# Do inplace change using gawk ignoring first two lines
+gawk -i inplace  'NR > 2 { print }' agilent_sureselect_human_all_exon_v5_b38_targets.bed 
+
+# Compare new file to old:
+wc -l agilent_sureselect_human_all_exon_v5_b38_targets.bed
+    230719 # 2 less than original file
+
+head -n 3 agilent_sureselect_human_all_exon_v5_b38_targets.bed
+    chr1    65509   65625
+    chr1    65831   65973
+    chr1    69481   69600
+
+Convert chrom from "chr1" format to "1" formt using sed:
+
+sed -i 's/^chr//g' agilent_sureselect_human_all_exon_v5_b38_targets.bed
+
+head -n 3 agilent_sureselect_human_all_exon_v5_b38_targets.bed
+    1       65509   65625
+    1       65831   65973
+    1       69481   69600
+shuf -n 10 agilent_sureselect_human_all_exon_v5_b38_targets.bed # Check changes by printing 10 randomly selected lines instead of just using head where all lines will be chr1 > 1
+    10      116427946       116428123
+    15      40980244        40980413
+    1       157596286       157596471
+    22      30649155        30649356
+    15      28168463        28168584
+    3       50118267        50118450
+    17      863909  864029
+    6       83661442        83661619
+    3       122927784       122927987
+    11      2412778 2413114
