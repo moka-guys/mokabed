@@ -1,0 +1,8 @@
+The benchmarking tool is being updated to handle build 38, this requires a new default bedfile to use with bams aligned to build 38.
+The current default b37 bedfile, as defined in the apps config file, is agilent_sureselect_human_all_exon_v5_b37_targets.bed (project-ByfFPz00jy1fk6PjpZ95F27J:file-F25VXZj0ybjzxpg0JvppGgQq).  
+I couldn't find instructions for how this file was created so I downloaded the file v5 SureSelect bedfiles from the agilent website and compared them to agilent_sureselect_human_all_exon_v5_b37_targets.bed using diff.
+I could convert the file S04380110_hs_hg19/S04380110_Regions.bed into agilent_sureselect_human_all_exon_v5_b37_targets.bed via three steps:
+
+i) Convert chrom from Chr1 fromat to 1 format.
+ii) Remove the two line header
+iii) select only the first 3 columns
