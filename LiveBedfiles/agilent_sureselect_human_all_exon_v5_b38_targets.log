@@ -47,3 +47,23 @@ head -n 3 agilent_sureselect_human_all_exon_v5_b38_targets.bed
     chr1    65509   65625
     chr1    65831   65973
     chr1    69481   69600
+
+Convert chrom from "chr1" format to "1" formt using sed:
+
+sed -i 's/^chr//g' agilent_sureselect_human_all_exon_v5_b38_targets.bed
+
+head -n 3 agilent_sureselect_human_all_exon_v5_b38_targets.bed
+    1       65509   65625
+    1       65831   65973
+    1       69481   69600
+shuf -n 10 agilent_sureselect_human_all_exon_v5_b38_targets.bed # Check changes by printing 10 randomly selected lines instead of just using head where all lines will be chr1 > 1
+    10      116427946       116428123
+    15      40980244        40980413
+    1       157596286       157596471
+    22      30649155        30649356
+    15      28168463        28168584
+    3       50118267        50118450
+    17      863909  864029
+    6       83661442        83661619
+    3       122927784       122927987
+    11      2412778 2413114
