@@ -27,3 +27,23 @@ head  -n 4 agilent_sureselect_human_all_exon_v5_b38_targets.bed # Check change
     chr1    65509   65625
     chr1    65831   65973
 
+Remove header from bed file (checking the chnages along the way):
+wc -l agilent_sureselect_human_all_exon_v5_b38_targets.bed
+    230721
+
+head -n 3 agilent_sureselect_human_all_exon_v5_b38_targets.bed
+    browser position chr1:65510-65625
+    track name="Target Regions" description="Agilent SureSelect DNA - SureSelectXT Human All Exon V5 - This is same as Covered.bed" color=0,0,128 db=hg38
+    chr1    65509   65625
+
+# Do inplace change using gawk ignoring first two lines
+gawk -i inplace  'NR > 2 { print }' agilent_sureselect_human_all_exon_v5_b38_targets.bed 
+
+# Compare new file to old:
+wc -l agilent_sureselect_human_all_exon_v5_b38_targets.bed
+    230719 # 2 less than original file
+
+head -n 3 agilent_sureselect_human_all_exon_v5_b38_targets.bed
+    chr1    65509   65625
+    chr1    65831   65973
+    chr1    69481   69600
