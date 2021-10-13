@@ -31,3 +31,6 @@ cat Pan3608.bed >> Pan4703data.bed
 sort Pan4703data.bed -k1,1V -k2,2n -k3,3n > Pan4703_sorted.bed;mv Pan4703data.bed Pan4703_unsorted.bed; mv Pan4703_sorted.bed Pan4703data.bed; rm Pan4703_unsorted.bed
 
 #Manually remove header from Pan4703data.bed
+
+#Convert to 4 column format
+cut -f 1-4 Pan4703data.bed > Pan4703data_4col.bed; rm Pan4703data.bed; mv Pan4703data_4col.bed Pan4703data.bed
