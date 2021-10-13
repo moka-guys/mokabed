@@ -24,3 +24,5 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4705
 
 version as defined by git tag = v1.2
 
+##Add Pan3608
+cat Pan3608.bed >> Pan4705data.bed
