@@ -1,0 +1,45 @@
+This is a VCP1 R73 test BED file for CNV analysis using ExomeDepth.
+
+#Save query used to extract Transcript file.
+Transcript was selected from the ngspanel genes table using the query
+`select GuysAccession, Symbol, '0' as GuysAccessionVersion from ngspanelgenes where NGSPanelID=4705`
+This was used to create Pan4705.txt
+
+#Save mokabed output
+Time Stamp:2021-10-13 11:25:53.301945
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4705dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 30 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4705.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4705data.bed --logfile /home/dnanexus/out/Output_files/Pan4705_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+##Add Pan3608
+cat Pan3608.bed >> Pan4705data.bed
+
+##Sort and rename 
+sort Pan4705data.bed -k1,1V -k2,2n -k3,3n > Pan4705_sorted.bed;mv Pan4705data.bed Pan4705_unsorted.bed; mv Pan4705_sorted.bed Pan4705data.bed; rm Pan4705_unsorted.bed
+
+#Manually remove header from Pan4705data.bed
+
+#Convert to 4 column format
+cut -f 1-4 Pan4705data.bed > Pan4705data_4col.bed; rm Pan4705data.bed; mv Pan4705data_4col.bed Pan4705data.bed
+
+#Rename file to make it clear that it's a CNV BED 
+mv Pan4705data.bed Pan4705_CNV.bed
+
+# delete unrequired files
+rm Pan4705dataSambamba.bed
+
+# testing
+testing performed in 003_211012_Exomedepth_VCP1_mokabed. Job ran without error.
