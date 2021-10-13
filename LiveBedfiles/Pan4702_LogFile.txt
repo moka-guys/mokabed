@@ -29,4 +29,7 @@ cat Pan3608.bed >> Pan4702data.bed
 ##Sort and rename 
 sort Pan4702data.bed -k1,1V -k2,2n -k3,3n > Pan4702_sorted.bed;mv Pan4702data.bed Pan4702_unsorted.bed; mv Pan4702_sorted.bed Pan4702data.bed; rm Pan4702_unsorted.bed
 
-#Manually remove header from Pan4702_sorted.bed
+#Manually remove header from Pan4702data.bed
+
+#Convert to 4 column format
+cut -f 1-4 Pan4702data.bed > Pan4702data_4col.bed; rm Pan4702data.bed; mv Pan4702data_4col.bed Pan4702data.bed
