@@ -43,3 +43,8 @@ rm Pan4705dataSambamba.bed
 
 # testing
 testing performed in 003_211012_Exomedepth_VCP1_mokabed. Job ran without error.
+
+#After the BED file was merged it was noticed Pan4705 for R73 was made earlier for VCP3 (Pan4622).
+#To remain consistent between the use of these BED files, Pan4705 was given a suffix "duplicate"
+
+mv Pan4705_CNV.bed Pan4705_CNV_duplicate.bed
