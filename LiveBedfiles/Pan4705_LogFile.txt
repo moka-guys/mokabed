@@ -40,3 +40,6 @@ mv Pan4705data.bed Pan4705_CNV.bed
 
 # delete unrequired files
 rm Pan4705dataSambamba.bed
+
+# testing
+testing performed in 003_211012_Exomedepth_VCP1_mokabed. Job ran without error.
