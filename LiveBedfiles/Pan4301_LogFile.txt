@@ -54,3 +54,13 @@ mv Pan4301dataSambamba_sorted.bed Pan4301dataSambamba.bed; rm Pan4301dataSambamb
 
 #Testing
 The data.bed and datasambamba.bed files have been tested using moka picard and chanjo coverage apps on DNA Nexus and completed without error
+
+#Pan4301_flat.bed
+Some variant callers (including varscan and lofreq) require flattened bedfiles, as any variants called within overlapping regions are called once for each region.
+This bedfile was created using the command:
+`cut -f1-3 LiveBedfiles/Pan4301data.bed | bedtools merge > LiveBedfiles/Pan4301_flat.bed `
+`cut` was required as bedtools merge raised an error when rows in the BED had differing numbers of columns.
+The flat file only contains three columns (chr,start, stop) as subsequent columns (eg name) cannot always be easily merged.
+
+#Testing
+The flat.bed was been tested using the varscan app on DNA Nexus and completed without error
