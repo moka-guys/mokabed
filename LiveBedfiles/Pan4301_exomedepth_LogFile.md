@@ -30,3 +30,10 @@ This BED file is used for Exomedepth on VCP2 panel. It contains the numbered and
 
 8) Remove any tmp files
         rm *tmp*
+
+9) Remove unrequired intermediate files
+        rm Pan4301_extra.bed Pan4301final_captureexons.bed Pan4301final_cdsexons.bed Pan4301final.chromosomes Pan4301final.genepred Pan4301final_metaexons.bed Pan4301final_cdsexons.bed Pan4301final.genepred.hg19 Pan4301final_missed.bed
+
+10) Rename final BED file
+        mv Pan4301final_exomedepth.bed Pan4301exomedepth.bed
+
