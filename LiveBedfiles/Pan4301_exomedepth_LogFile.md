@@ -10,3 +10,5 @@ This BED file is used for Exomedepth on VCP2 panel. It contains the numbered and
         bash TestArea_for_bed_generation_script/makeExomedepth.sh hg19 tmp Pan4301capture.bed
 
 3) Manually edit tmp_missed.bed to use gene symbol as 4th column. Add 0 and strand info in 5th and 6th column
+
+4) Remove padding on added coding exon in tmp_missed.bed. Since the BRCA1 region is only 11 bp, therefore no padding to remove.
