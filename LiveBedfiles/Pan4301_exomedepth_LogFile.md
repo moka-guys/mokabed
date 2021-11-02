@@ -8,3 +8,5 @@ This BED file is used for Exomedepth on VCP2 panel. It contains the numbered and
 2) Run the makeExomedepth script to identify capture regions not part of the UCSC RefGene Set
 
         bash TestArea_for_bed_generation_script/makeExomedepth.sh hg19 tmp Pan4301capture.bed
+
+3) Manually edit tmp_missed.bed to use gene symbol as 4th column. Add 0 and strand info in 5th and 6th column
