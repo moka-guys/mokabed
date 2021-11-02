@@ -12,3 +12,7 @@ This BED file is used for Exomedepth on VCP2 panel. It contains the numbered and
 3) Manually edit tmp_missed.bed to use gene symbol as 4th column. Add 0 and strand info in 5th and 6th column
 
 4) Remove padding on added coding exon in tmp_missed.bed. Since the BRCA1 region is only 11 bp, therefore no padding to remove.
+
+5) Rename the edited file to Pan4301_extra.bed.
+
+        mv tmp_missed.bed Pan4301_extra.bed
