@@ -16,3 +16,12 @@ This BED file is used for Exomedepth on VCP2 panel. It contains the numbered and
 5) Rename the edited file to Pan4301_extra.bed.
 
         mv tmp_missed.bed Pan4301_extra.bed
+
+6) Run makeExomedepth to generate final exomdepth BED file (Pan4301_exomdepth.bed)
+        bash TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan4301final Pan4301capture.bed Pan4301_extra.bed 
+
+        inputs
+        - the ucsc database (assembly) to use for annotation retrieval
+        - output file name
+        - the capture (BED4 format)
+        - additional exons (not included in UCSC dataset)
