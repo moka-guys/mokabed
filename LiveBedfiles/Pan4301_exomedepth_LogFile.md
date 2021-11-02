@@ -25,3 +25,5 @@ This BED file is used for Exomedepth on VCP2 panel. It contains the numbered and
         - output file name
         - the capture (BED4 format)
         - additional exons (not included in UCSC dataset)
+
+7) Ensure no regions are reported as missed and Pan4301final_missed.bed is empty.
