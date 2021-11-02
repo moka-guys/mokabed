@@ -37,3 +37,9 @@ This BED file is used for Exomedepth on VCP2 panel. It contains the numbered and
 10) Rename final BED file
         mv Pan4301final_exomedepth.bed Pan4301exomedepth.bed
 
+
+## Remove overlapping region
+    The script added a region (TOE1_1:45805924-45805976) not required for VCP2 as it was overlapping with MUTYH_1
+    Manually removed that region from Pan4301exomedepth.bed
+
+
