@@ -33,10 +33,13 @@ cat Pan4350.bed >> Pan4712data.bed
 ## Sort and rename 
 sort Pan4712data.bed -k1,1V -k2,2n -k3,3n > Pan4712_sorted.bed;mv Pan4712data.bed Pan4712_unsorted.bed; mv Pan4712_sorted.bed Pan4712data.bed; rm Pan4712_unsorted.bed
 
-# Manually remove header from Pan4712data.bed
+## Manually remove header from Pan4712data.bed
 
-# Convert to 4 column format
+## Convert to 4 column format
 cut -f 1-4 Pan4712data.bed > Pan4712data_4col.bed; rm Pan4712data.bed; mv Pan4712data_4col.bed Pan4712data.bed
 
-# Rename file to make it clear that it's a CNV BED 
+## Rename file to make it clear that it's a CNV BED 
 mv Pan4712data.bed Pan4712_CNV.bed
+
+## Delete unrequired files
+rm Pan4712dataSambamba.bed
