@@ -1,6 +1,6 @@
 This is a VCP2 R208 test BED file for CNV analysis using ExomeDepth.
 
-#Save query used to extract Transcript file.
+## Save query used to extract Transcript file.
 Transcript was selected from the ngspanel genes table using the query
 `select GuysAccession, Symbol, '0' as GuysAccessionVersion from ngspanelgenes where NGSPanelID=4712`
 This was used to create Pan4712.txt
@@ -23,3 +23,7 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4712
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+## Add Pan3608
+cat Pan3608.bed >> Pan4712data.bed
+
