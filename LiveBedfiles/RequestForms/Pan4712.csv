@@ -1,0 +1,31 @@
+Instructions:,,
+"Add genes symbols and/or transcripts to a panel in Moka
+Add panel description to Moka
+Answer following questions:",VCP2_R208,
+,,
+1. Pan number of bed file to be created,N/A,
+2. Panel description/name (fill in a-c from Moka),,
+2. a) Category,VCP2 Viapath,
+2. b) SubCategory,R208_Inherited breast cancer and ovarian cancer,
+2. c) Panel,VCP2 Viapath R208_Inherited breast cancer and ovarian cancer,
+3a). Is this BED file used for Exome depth?,YES,
+3b). Is this BED file used to generate read counts or filter calls?,filter calls,
+4. a) Is this BED file exclusively based on coordinates provided by a supplier ,No,
+"4. b) If yes, does this need further padding?",N/A,
+5. a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts) Specific transcripts - see Moka,Yes - see below,
+5. b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state),No,
+6. What padding is required around the exons?,30bp,
+7. a) Should UTRs be included for ALL genes?,No,
+7. b) Should UTRs be padded?,No,
+8. a) Are UTRs required for SOME genes? ,No,
+8. b) Please list genes/transcripts,N/A,
+8. c) Should UTRs be padded?,No,
+9. Any additional BED files to be included in this BED file? 3608,4350
+10. Are any further regions required to be added?
+Requested by:,Michael Yau ,
+Requested date:,10/06/2021,
+,,
+,Gene Name,Transcript
+BRCA1,
+BRCA2,
+PALB2,
