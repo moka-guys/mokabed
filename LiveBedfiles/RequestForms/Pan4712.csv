@@ -21,7 +21,7 @@ Answer following questions:",VCP2_R208,
 8. b) Please list genes/transcripts,N/A,
 8. c) Should UTRs be padded?,No,
 9. Any additional BED files to be included in this BED file? 3608,4350
-10. Are any further regions required to be added? BRCA2_3UTR;BRCA1_3UTR;BRCA1_IN12_2;BRCA1_IN12_1;BRCA1_IN11_1;BRCA1_IN11_2;BRCA1_PM_5_1;BRCA1_PM_5_2;BRCA1_PM_5_3;BRCA1_PM_5_4;PALB2_3UTR,
+10. Are any further regions required to be added?
 Requested by:,Michael Yau ,
 Requested date:,10/06/2021,
 ,,

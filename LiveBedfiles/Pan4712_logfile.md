@@ -46,3 +46,5 @@ rm Pan4712dataSambamba.bed
 
 ## Testing
 testing performed in 003_211111_Exomedepth_VCP2_mokabed. Job ran without error.
+
+## Edited requested form to make additional regions clearer 
