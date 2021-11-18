@@ -4,3 +4,7 @@ The coordinates were taken from Pan3610
 ## The following regions were requested by MYau
 MSH2_3UTR;MSH6_3UTR;MLH1_3UTR;EPCAM_3UTR;PMS2_3UTR
 
+## Copy of Pan3610.bed
+cp Pan3610.bed Pan4765.bed
+
+
