@@ -9,3 +9,6 @@ cp Pan3610.bed Pan4765.bed
 
 ## Manually edit Pan4765.bed
 Remove additional intronic regions, only keep regions specified by MYau
+
+# Sort bedfile
+sort LiveBedfiles/Pan4765.bed -k1,1V -k2,2n -k3,3n > LiveBedfiles/Pan4765.sorted.bed && mv LiveBedfiles/Pan4765.sorted.bed LiveBedfiles/Pan4765.bed
