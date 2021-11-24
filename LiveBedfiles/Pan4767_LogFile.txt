@@ -1,1 +1,9 @@
 This documents the generation of the Pan4767 bedfiles as requested in Pan4767_PMS2_request_form.docx, the bedfile will be used to calculate coverage for the PMS2 gene in a long range PCR assay. 
+
+I ran the SQL below in HeidiSQL query the MOKA backend:
+
+select GuysAccession, Symbol, '0' as GuysAccessionVersion
+from dbo.NGSPanelGenes
+where NGSPanelID=4767
+
+I exported this data into a file called Pan4767.txt to use as input to Mokabed when creating the bed file.  I saved the file to this repo.
