@@ -1,0 +1,1 @@
+This documents the generation of the Pan4767 bedfiles as requested in Pan4767_PMS2_request_form.docx, the bedfile will be used to calculate coverage for the PMS2 gene in a long range PCR assay. 
