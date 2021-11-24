@@ -1,0 +1,1 @@
+This documents the generation of the Pan4768 bedfiles as requested in Pan4768_IKBKG_request_form.docx, the bedfile will be used to calculate coverage for the IKBKG gene in a long range PCR assay. 
