@@ -1,1 +1,9 @@
 This documents the generation of the Pan4766 bedfiles as requested in Pan4766_CHEK2_request_form.docx, the bedfile will be used to calculate coverage for the CHEK2 gene in a long range PCR assay. 
+
+I ran the SQL below in HeidiSQL to query the MOKA backend:
+
+select GuysAccession, Symbol, '0' as GuysAccessionVersion
+from dbo.NGSPanelGenes
+where NGSPanelID=4766
+
+I exported this data into a file called Pan4766.txt to use as input to Mokabed when creating the bed file.  I saved the file to this repo.
