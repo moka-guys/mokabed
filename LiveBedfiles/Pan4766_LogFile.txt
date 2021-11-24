@@ -1,0 +1,1 @@
+This documents the generation of the Pan4766 bedfiles as requested in Pan4766_CHEK2_request_form.docx, the bedfile will be used to calculate coverage for the CHEK2 gene in a long range PCR assay. 
