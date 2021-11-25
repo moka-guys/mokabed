@@ -1,0 +1,36 @@
+This documents the generation of the Pan4766 bedfiles as requested in Pan4766_CHEK2_request_form.docx, the bedfile will be used to calculate coverage for the CHEK2 gene in a long range PCR assay. 
+
+I ran the SQL below in HeidiSQL to query the MOKA backend:
+
+select GuysAccession, Symbol, '0' as GuysAccessionVersion
+from dbo.NGSPanelGenes
+where NGSPanelID=4766
+
+I exported this data into a file called Pan4766.txt to use as input to Mokabed when creating the bed file.  I saved the file to this repo.
+
+I ran Mokabed in project 003_Pan_creation:
+
+Time Stamp:2021-11-24 12:14:07.905904
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4766dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 30 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4766.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4766data.bed --logfile /home/dnanexus/out/Output_files/Pan4766_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
+
+
+# No modifications are required to this BED file.
+
+# testing
+This file was tested using chanjo_sambamba_coverage_v1.11 and moka_picard_v1.1, both apps completed without issue.
+
