@@ -33,3 +33,18 @@ version as defined by git tag = v1.2
 # testing
 This file was tested using chanjo_sambamba_coverage_v1.11 and moka_picard_v1.1, both apps completed without issue.
 
+# After creating the Bedfile Michael requested that a different Transcript be used:
+
+Hi Graeme
+
+Sorry I missed this. Thanks for doing this but can I request that IKBKG be changed to NM_001099857 as this is the MANE transcript. I should have double checked
+
+Thanks
+Michael
+
+I deleted the output from Mokabed using git rm:
+
+git rm LiveBedfiles/Pan4768data.bed
+git rm LiveBedfiles/Pan4768dataRefSeqFormat.txt
+git rm LiveBedfiles/Pan4768dataSambamba.bed
+
