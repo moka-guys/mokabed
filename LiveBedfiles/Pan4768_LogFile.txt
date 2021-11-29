@@ -48,3 +48,6 @@ git rm LiveBedfiles/Pan4768data.bed
 git rm LiveBedfiles/Pan4768dataRefSeqFormat.txt
 git rm LiveBedfiles/Pan4768dataSambamba.bed
 
+# I manually altered the LiveBedfiles/Pan4768.txt to add the requested transcript NM_001099857 (I have also updated MOKA to reflect this change).
+
+
