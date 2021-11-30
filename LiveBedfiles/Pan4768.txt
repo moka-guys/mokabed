@@ -1,2 +1,2 @@
 GuysAccession	Symbol	GuysAccessionVersion
-NM_003639	IKBKG	0
+NM_001099857	IKBKG	0
