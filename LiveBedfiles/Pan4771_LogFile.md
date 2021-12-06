@@ -5,6 +5,10 @@ Initially Pan4301exomedepth.bed was created for this but it was noticed the BED 
 
 ## Get a copy of Pan4301data.bed at the commit where additional BED files were being added
 
-Manually get a copy from this commit fcc9bedf2d
+Manually get a copy from this commit fcc9bedf2d and name it as Pan4771data.bed
 https://github.com/moka-guys/mokabed/blob/fcc9bedf2d825c5b159c585f0543f74b19ac6c94/LiveBedfiles/Pan4301data.bed
+
+
+## Add missed intronic variant BED file- Pan3610
+cat Pan3610.bed >> Pan4771data.bed
 
