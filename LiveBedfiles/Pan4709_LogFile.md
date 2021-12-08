@@ -70,3 +70,6 @@ Testing showed that the chromosome must contain chr. This was added in manually
 These bed files were tested using sambamba coverage and moka picard apps.
 The sambamba app was run on the stiched realigned BAM files and completed without error.
 The data.bed file failed, however the same BAM file failed with another BED which usually works, suggesting it's an issue with the BAM. Picard completed without error when using Pan4709data.bed and non-TSO500 BAM suggesting the BED is valid.
+
+# delete any extra files
+`rm Pan4709_part1dataRefSeqFormat.txt`
