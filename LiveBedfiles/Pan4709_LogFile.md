@@ -45,3 +45,5 @@ concatenate intronic regions (Pan4761) into data.bed
 
 concatenate intronic regions (Pan4761) into dataSambamba.bed
 `cat Pan4761.bed >> Pan4709_part1dataSambamba.bed `
+
+intronic regions edited manually to match sambamba format in Pan4709_part1dataSambamba.bed 
