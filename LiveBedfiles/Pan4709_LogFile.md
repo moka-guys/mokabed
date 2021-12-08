@@ -43,6 +43,8 @@ remove part2 files
 concatenate intronic regions (Pan4761) into data.bed
 `cat Pan4761.bed >> Pan4709_part1data.bed `
 
+manually modify the intronic regions to match data.bed format
+
 concatenate intronic regions (Pan4761) into dataSambamba.bed
 `cat Pan4761.bed >> Pan4709_part1dataSambamba.bed `
 
