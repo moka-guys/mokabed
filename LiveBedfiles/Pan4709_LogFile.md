@@ -57,3 +57,8 @@ header moved to top manually
 
 #### dataSambamba.bed
 `mv Pan4709_part1data.bed Pan4709_part1dataSambamba_unsorted.bed; sort Pan4709_part1dataSambamba_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan4709_part1dataSambamba.bed; rm Pan4709_part1dataSambamba_unsorted.bed`
+
+
+## rename
+`mv Pan4709_part1data.bed Pan4709data.bed`
+`mv Pan4709_part1dataSambamba.bed Pan4709dataSambamba.bed`
