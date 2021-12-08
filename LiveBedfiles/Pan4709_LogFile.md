@@ -27,3 +27,6 @@ Part 4 BED files were deleted
 Add regions from part 3 not in part 2 for data.bed and sambamba.bed
 `bedtools subtract -a 'Pan4709_part3data.bed' -b 'Pan4709_part2data.bed' >> Pan4709_part2data.bed`
 `bedtools subtract -a 'Pan4709_part3dataSambamba.bed' -b 'Pan4709_part2dataSambamba.bed' >> Pan4709_part2dataSambamba.bed`
+
+Remove part 3
+` rm Pan4709_part3data*`
