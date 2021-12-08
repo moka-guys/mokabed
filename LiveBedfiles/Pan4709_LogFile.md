@@ -30,3 +30,9 @@ Add regions from part 3 not in part 2 for data.bed and sambamba.bed
 
 Remove part 3
 ` rm Pan4709_part3data*`
+
+### parts 1 & 2
+Add regions from part 2 not in part 1 for data.bed and sambamba.bed
+`bedtools subtract -a 'Pan4709_part2data.bed' -b 'Pan4709_part1data.bed' >> Pan4709_part1data.bed`
+`bedtools subtract -a 'Pan4709_part2dataSambamba.bed' -b 'Pan4709_part1dataSambamba.bed' >> Pan4709_part1dataSambamba.bed`
+
