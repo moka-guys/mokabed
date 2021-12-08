@@ -11,3 +11,13 @@ All 4 sets of transcripts were run through mokabed. See each logfile for full lo
 `/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --up 0 --down 0 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4709_part2.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4709_part2data.bed --logfile /home/dnanexus/out/Output_files/Pan4709_part2_LogFile.txt `
 `/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --up 0 --down 0 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4709_part3.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4709_part3data.bed --logfile /home/dnanexus/out/Output_files/Pan4709_part3_LogFile.txt `
 `/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --up 0 --down 0 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4709_part4.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4709_part4data.bed --logfile /home/dnanexus/out/Output_files/Pan4709_part4_LogFile.txt `
+
+## combining multiple transcripts
+Where multiple transcripts have been provided, the below BEDtools subtract command adds regions from file a not already covered in file b to the end of file b:
+
+`bedtools subtract -a 'Pan4709_part4data.bed' -b 'Pan4709_part3data.bed' >> Pan4709_part3data.bed`
+
+This resulted in no additonal regions being added.
+
+Part 4 BED files were deleted
+` rm Pan4709_part4data*`
