@@ -62,3 +62,6 @@ header moved to top manually
 ## rename
 `mv Pan4709_part1data.bed Pan4709data.bed`
 `mv Pan4709_part1dataSambamba.bed Pan4709dataSambamba.bed`
+
+## Add chr
+Testing showed that the chromosome must contain chr. This was added in manually
