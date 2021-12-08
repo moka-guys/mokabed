@@ -38,3 +38,7 @@ Add regions from part 2 not in part 1 for data.bed and sambamba.bed
 
 remove part2 files
 `rm Pan4709_part2data*`
+
+## Add intronic regions
+concatenate intronic regions (Pan4761) into data.bed
+`cat Pan4761.bed >> Pan4709_part1data.bed `
