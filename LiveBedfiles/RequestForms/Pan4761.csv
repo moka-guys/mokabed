@@ -1,0 +1,36 @@
+"Instructions:"		
+"Add genes symbols and/or transcripts to a panel in Moka
+Add panel description to Moka
+Answer following questions:"		
+		
+"1. Pan number of bed file to be created"	"Pan4761"	
+"2. Panel description/name (fill in a-c from Moka)"		
+"2. a) Category"	"TSO500"	
+"2. b) SubCategory"	"Intronic regions v1"	
+"2. c) Panel"	"TSO500 – Intronic regions v1 "	
+"3a). Is this BED file used for Exome depth?"	"No"	
+"3b). Is this BED file used to generate read counts or filter calls?"	"N/A"	
+"4. a) Is this BED file exclusively based on coordinates provided by a supplier "	"No"	
+"4. b) If yes does this need further padding?"" "	"N/A"	
+"5. a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts for a gene)"	"N/A – intronic regions that are related to specific transcript"	
+"5. b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state)"	"No"	
+"6. What padding is required around the exons?"	"N/A"	
+"7. a) Should UTRs be included for ALL genes?"	"N/A"	
+"7. b) Should UTRs be padded?"	"N/A"	
+"8. a) Are UTRs required for SOME genes? "	"N/A"	
+"8. b) Please list genes/transcripts"	"N/A"	
+"8. c) Should UTRs be padded?"	"N/A"	
+"9. Any additional BED files to be included in this BED file? "	"No"	
+"10. Are any further regions required to be added?"	"MET Intron 13-14 and 14-15 
+7:116411718-116411892 No padding required
+7:116412053-116414924 No padding required
+
+TERT C228T promotor region
+5: 1295228 +/-5bp"	
+"11. Are there any regions in the below transcripts that should be excluded"	"N/A"	
+"Requested by:"	"Charlotte Flanagan"	
+"Requested date:"	"22nd Nov 2021"	
+		
+	"Gene Name"	"Transcript"
+	"MET"	"NM_000245"
+	"TERT"	"NM_198253"
