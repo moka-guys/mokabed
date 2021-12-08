@@ -15,9 +15,15 @@ All 4 sets of transcripts were run through mokabed. See each logfile for full lo
 ## combining multiple transcripts
 Where multiple transcripts have been provided, the below BEDtools subtract command adds regions from file a not already covered in file b to the end of file b:
 
+### parts 3 & 4
 `bedtools subtract -a 'Pan4709_part4data.bed' -b 'Pan4709_part3data.bed' >> Pan4709_part3data.bed`
 
 This resulted in no additonal regions being added.
 
 Part 4 BED files were deleted
 ` rm Pan4709_part4data*`
+
+### parts 2 & 3
+Add regions from part 3 not in part 2 for data.bed and sambamba.bed
+`bedtools subtract -a 'Pan4709_part3data.bed' -b 'Pan4709_part2data.bed' >> Pan4709_part2data.bed`
+`bedtools subtract -a 'Pan4709_part3dataSambamba.bed' -b 'Pan4709_part2dataSambamba.bed' >> Pan4709_part2dataSambamba.bed`
