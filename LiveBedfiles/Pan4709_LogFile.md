@@ -49,3 +49,8 @@ concatenate intronic regions (Pan4761) into dataSambamba.bed
 `cat Pan4761.bed >> Pan4709_part1dataSambamba.bed `
 
 intronic regions edited manually to match sambamba format in Pan4709_part1dataSambamba.bed 
+
+## sort bedfiles
+#### data.bed
+`mv Pan4709_part1data.bed Pan4709_part1data_unsorted.bed; sort Pan4709_part1data_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan4709_part1data.bed; rm Pan4709_part1data_unsorted.bed`
+header moved to top manually
