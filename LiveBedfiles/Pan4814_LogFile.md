@@ -33,3 +33,6 @@ sort Pan4814data.bed -k1,1V -k2,2n -k3,3n > Pan4814_sorted.bed;mv Pan4814data.be
 
 ## Convert to 4 column format
 cut -f 1-4 Pan4814data.bed > Pan4814data_4col.bed; rm Pan4814data.bed; mv Pan4814data_4col.bed Pan4814data.bed
+
+## Rename file to make it clear that it's a CNV BED 
+`git mv Pan4814data.bed Pan4814_CNV.bed`
