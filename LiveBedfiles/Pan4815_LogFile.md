@@ -29,3 +29,6 @@ version as defined by git tag = v1.2
 `sort Pan4815data.bed -k1,1V -k2,2n -k3,3n > Pan4815_sorted.bed;mv Pan4815data.bed Pan4815_unsorted.bed; mv Pan4815_sorted.bed Pan4815data.bed; rm Pan4815_unsorted.bed`
 
 ## Manually remove header from Pan4815data.bed
+
+## Convert to 4 column format
+`cut -f 1-4 Pan4815data.bed > Pan4815data_4col.bed; rm Pan4815data.bed; mv Pan4815data_4col.bed Pan4815data.bed`
