@@ -24,3 +24,4 @@ version as defined by git tag = v1.2
 
 ## concatenate additional BED files
 `cat Pan3608.bed >> Pan4814data.bed`
+`cat Pan4350.bed >> Pan4814data.bed`
