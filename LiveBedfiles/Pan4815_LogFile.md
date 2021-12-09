@@ -24,3 +24,6 @@ version as defined by git tag = v1.2
 ## concatenate additional BED files
 `cat Pan3608.bed >> Pan4815data.bed`
 `cat Pan4350.bed >> Pan4815data.bed`
+
+## sort bedfile
+`sort Pan4815data.bed -k1,1V -k2,2n -k3,3n > Pan4815_sorted.bed;mv Pan4815data.bed Pan4815_unsorted.bed; mv Pan4815_sorted.bed Pan4815data.bed; rm Pan4815_unsorted.bed`
