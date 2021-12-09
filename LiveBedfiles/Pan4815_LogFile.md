@@ -1,3 +1,8 @@
+# Pan4815
+This BED file is to be used for exome depth variant calling for R207.
+In addition to the transcripts listed two additional BED files are to be included (Pan3608 and Pan4350)
+
+## run mokabed
 Time Stamp:2021-12-09 15:16:14.024442
 Command arguments executed:
 RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4815dataRefSeqFormat.txt
