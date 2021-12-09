@@ -35,3 +35,6 @@ version as defined by git tag = v1.2
 
 ## Rename file to make it clear that it's a CNV BED 
 `git mv Pan4815data.bed Pan4815_CNV.bed`
+
+## remove unrequired files
+`git rm Pan4815dataSambamba.bed`
