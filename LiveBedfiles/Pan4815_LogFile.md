@@ -32,3 +32,6 @@ version as defined by git tag = v1.2
 
 ## Convert to 4 column format
 `cut -f 1-4 Pan4815data.bed > Pan4815data_4col.bed; rm Pan4815data.bed; mv Pan4815data_4col.bed Pan4815data.bed`
+
+## Rename file to make it clear that it's a CNV BED 
+`git mv Pan4815data.bed Pan4815_CNV.bed`
