@@ -57,3 +57,5 @@ manually modify the intronic regions to match data.bed format (EntrezID taken fr
 
 concatenate intronic regions (Pan4761) into dataSambamba.bed
 `cat Pan4761.bed >> Pan4841_part1dataSambamba.bed `
+
+intronic regions edited manually to match sambamba format in Pan4841_part1dataSambamba.bed 
