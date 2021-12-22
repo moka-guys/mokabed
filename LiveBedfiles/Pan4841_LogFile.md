@@ -54,3 +54,6 @@ concatenate intronic regions (Pan4761) into data.bed
 `cat Pan4761.bed >> Pan4841_part1data.bed `
 
 manually modify the intronic regions to match data.bed format (EntrezID taken from other MET regions, or from Pan4709 for TERT)
+
+concatenate intronic regions (Pan4761) into dataSambamba.bed
+`cat Pan4761.bed >> Pan4841_part1dataSambamba.bed `
