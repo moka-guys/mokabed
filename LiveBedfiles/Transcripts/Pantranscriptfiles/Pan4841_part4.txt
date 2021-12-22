@@ -1,0 +1,3 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_001077489	GNAS	0
+NM_007298	BRCA1	0

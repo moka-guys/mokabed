@@ -6,3 +6,17 @@ This file is the same as Pan4709 but with the UTRs removed
 
 ## Request form Pan4841.csv
 The Pan4709.csv form was copied and edited to remove UTRs.
+
+## Transcript files
+Four transcript files were created for Pan4709 (Pan4709_part1-4.txt). These files were manually curated, ensuring there were no duplicate transcripts for each gene. A check was also performed for duplicate transcripts. They were copied Pan4841_part1-4.txt (cp Pan4709_part1.txt Pan4841_part1.txt)
+
+## Run mokabed
+All 4 sets of transcripts were run through mokabed. See each logfile for full logs but the commands executed have been extracted and saved below.
+
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4841_part1.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4841_part1data.bed --logfile /home/dnanexus/out/Output_files/Pan4841_part1_LogFile.txt 
+
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4841_part2.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4841_part2data.bed --logfile /home/dnanexus/out/Output_files/Pan4841_part2_LogFile.txt 
+
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4841_part3.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4841_part3data.bed --logfile /home/dnanexus/out/Output_files/Pan4841_part3_LogFile.txt 
+
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4841_part4.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4841_part4data.bed --logfile /home/dnanexus/out/Output_files/Pan4841_part4_LogFile.txt 
