@@ -26,3 +26,9 @@ Where multiple transcripts have been provided, the below BEDtools subtract comma
 
 ### parts 3 and 4
 'bedtools subtract -a 'Pan4841_part4data.bed' -b 'Pan4841_part3data.bed' >> Pan4841_part3data.bed'
+This resulted in no additonal regions being added.
+
+Part 4 BED files were deleted
+'rm Pan4841_part4data*'
+
+*at this stage realised that sambamba.bed files were not included so downloaded all then deleted part4dataSambamba.bed*
