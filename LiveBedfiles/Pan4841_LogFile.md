@@ -78,7 +78,13 @@ Added chr manually- shown to be required in previous testing for Pan4709
 ## testing
 These bed files were tested using sambamba coverage and moka picard apps.
 The sambamba app was run on a stiched realigned BAM files and completed without error.
-When testing Pan4709 moka picard failed on a TSO500 BAM file, also failed with a different BED file known to work. Likely a BAM file issue. Tested with a non-TSO500 BAM which worked- suggests BED file is valid.
 
 ## delete extra files
 `rm Pan4841_part1dataRefSeqFormat.txt `
+
+## further modification of Pan4841data.bed
+when testing with Moka Picard the app failed.
+TERT non coding region had been incorrectly modified in previous step. corrected.
+
+## testing
+When testing Pan4709 moka picard failed on a TSO500 BAM file, also failed with a different BED file known to work. Likely a BAM file issue. Tested with a non-TSO500 BAM which worked- suggests BED file is valid.
