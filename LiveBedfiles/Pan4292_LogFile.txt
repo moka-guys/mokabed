@@ -1,5 +1,5 @@
 Pan3606 is being retired and replaced by Pan4292 
-All FH variants padded by 5bp
+Pan4292 contains all FH intronic variants padded by 5bp
 Please see Pan3606_logfile.tx for further details
 
 Copy Pan3606.bed 
