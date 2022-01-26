@@ -14,3 +14,6 @@ Padding was removed in Excel
 
 ## Sort Pan4909.bed
 sort Pan4909.bed -k1,1V -k2,2n -k3,3n > Pan4909_sorted.bed
+
+#Rename BEDfile
+mv Pan4909_sorted.bed Pan4909.bed
