@@ -9,7 +9,8 @@ cp Pan4292.bed Pan4909.bed
 All SNPs in Pan4909 are padded by +-5bp
 Padding was removed in Excel
 
-# Add additional FH SNPs
+## Add additional FH SNPs
 2:21263900 19:45411941 19:45412079
 
-
+## Sort Pan4909.bed
+sort Pan4909.bed -k1,1V -k2,2n -k3,3n > Pan4909_sorted.bed
