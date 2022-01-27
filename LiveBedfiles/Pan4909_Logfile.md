@@ -28,3 +28,6 @@ incorrect
 
 This was corrected and the BED file was re-sorted
 sort Pan4909.bed -k1,1V -k2,2n -k3,3n > Pan4909_sorted.bed
+
+#Rename BEDfile
+mv Pan4909_sorted.bed Pan4909.bed
