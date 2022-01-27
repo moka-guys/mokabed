@@ -15,5 +15,16 @@ Padding was removed in Excel
 ## Sort Pan4909.bed
 sort Pan4909.bed -k1,1V -k2,2n -k3,3n > Pan4909_sorted.bed
 
-#Rename BEDfile
+## Rename BEDfile
 mv Pan4909_sorted.bed Pan4909.bed
+
+## Re-sort the BEDfike
+During testing it was noticed the chr number and start position were combined in the second column:
+correct: 
+1	55504649
+
+incorrect
+155504649
+
+This was corrected and the BED file was re-sorted
+sort Pan4909.bed -k1,1V -k2,2n -k3,3n > Pan4909_sorted.bed
