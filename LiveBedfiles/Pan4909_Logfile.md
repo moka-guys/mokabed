@@ -31,3 +31,6 @@ sort Pan4909.bed -k1,1V -k2,2n -k3,3n > Pan4909_sorted.bed
 
 #Rename BEDfile
 mv Pan4909_sorted.bed Pan4909.bed
+
+## Testing statement
+The BEDfile has been tested in 003_210707_FH_app. It completed without errors and returned expected outputs.
