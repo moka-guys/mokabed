@@ -41,25 +41,16 @@ Flat bed file used for somatic variant calling.
 ## add pan4283 to sambamba.bed
 `cat Pan4283.bed >> Pan4949dataSambamba.bed`
 remove chek2 variant from Pan4283
+convert intronic BRCA1 region to sambamba format
 
 ## add PTENsambamba.bed to Pan4949sambamba.bed
 `cat Pan4949_PTENdataSambamba.bed >> Pan4949dataSambamba.bed`
 
-## tidy up sambamba.bed
-convert intronic BRCA1 region to sambamba format
-replace spaces with tabs
-
 ## sort sambambadata.bed
 `sort Pan4949dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4949dataSambamba_sorted.bed; mv Pan4949dataSambamba.bed Pan4949dataSambamba_unsorted.bed; mv Pan4949dataSambamba_sorted.bed Pan4949dataSambamba.bed; rm Pan4949dataSambamba_unsorted.bed`
 
-
 ## delete intermediate/incomplete files
 `rm Pan4949_PTENdata.bed Pan4949_PTENdataRefSeqFormat.txt Pan4949dataRefSeqFormat.txt Pan4949_PTENdataSambamba.bed`
-
-## repeat sorting of sambamba
-
-`sort Pan4949dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4949dataSambamba_sorted.bed; mv Pan4949dataSambamba.bed Pan4949dataSambamba_unsorted.bed; mv Pan4949dataSambamba_sorted.bed Pan4949dataSambamba.bed; rm Pan4949dataSambamba_unsorted.bed`
-also manually remove an abberant change in 4th column of samabmba.bed
 
 ## testing
 Pan4949dataSambamba.bed was tested using sambamba_v1.13 - the app completed sucessfully
