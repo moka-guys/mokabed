@@ -42,3 +42,6 @@ Flat bed file used for somatic variant calling.
 `cat Pan4283.bed >> Pan4949dataSambamba.bed`
 remove chek2 variant from Pan4283
 convert intronic BRCA1 region to sambamba format
+
+## add PTENsambamba.bed to Pan4949sambamba.bed
+`cat Pan4949_PTENdataSambamba.bed >> Pan4949dataSambamba.bed`
