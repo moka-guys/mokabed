@@ -57,3 +57,6 @@ remove PTEN regions as wrong bedfile was concatenated
 ## tidy up sambamba.bed
 convert intronic BRCA1 region to sambamba format
 replace spaces with tabs
+
+## sort sambambadata.bed
+`sort Pan4948dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4948dataSambamba_sorted.bed; mv Pan4948dataSambamba.bed Pan4948dataSambamba_unsorted.bed; mv Pan4948dataSambamba_sorted.bed Pan4948dataSambamba.bed; rm Pan4948dataSambamba_unsorted.bed`
