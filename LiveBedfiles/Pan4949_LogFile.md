@@ -45,3 +45,6 @@ convert intronic BRCA1 region to sambamba format
 
 ## add PTENsambamba.bed to Pan4949sambamba.bed
 `cat Pan4949_PTENdataSambamba.bed >> Pan4949dataSambamba.bed`
+
+## sort sambambadata.bed
+`sort Pan4949dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4949dataSambamba_sorted.bed; mv Pan4949dataSambamba.bed Pan4949dataSambamba_unsorted.bed; mv Pan4949dataSambamba_sorted.bed Pan4949dataSambamba.bed; rm Pan4949dataSambamba_unsorted.bed`
