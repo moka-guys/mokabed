@@ -1,3 +1,9 @@
+# Pan4949
+
+This BEDfile is a rename of Pan4301, the VCP2 +/-10bp panel, but this time with the whole of CHEK2 gene.
+
+This panel consists of a number of genes which are to be padded +/-10 and one gene, PTEN which also requires the 5' UTR (also padded 10bp).
+## Run MokaBED (This covers all genes except for PTEN - see Pan4949_PTEN_logfile.txt)
 Time Stamp:2022-04-20 12:16:26.211789
 Command arguments executed:
 RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4949dataRefSeqFormat.txt
