@@ -60,3 +60,6 @@ replace spaces with tabs
 
 ## sort sambambadata.bed
 `sort Pan4948dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4948dataSambamba_sorted.bed; mv Pan4948dataSambamba.bed Pan4948dataSambamba_unsorted.bed; mv Pan4948dataSambamba_sorted.bed Pan4948dataSambamba.bed; rm Pan4948dataSambamba_unsorted.bed`
+
+## delete intermediate/incomplete files
+`rm Pan4948_PTENdata.bed Pan4948_PTENdataRefSeqFormat.txt Pan4948dataRefSeqFormat.txt Pan4948_PTENdataSambamba.bed`
