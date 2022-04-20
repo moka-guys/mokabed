@@ -30,3 +30,6 @@ version as defined by git tag = v1.2
 
 ## remove duplicate chek2 region and extra header
 Pan4283 contains a region of chek2. The whole of chek2 is now included so this region does not need to be specified so it was removed manually.
+## sort Pan4949data.bed
+`sort Pan4949data.bed -k1,1V -k2,2n -k3,3n > Pan4949data_sorted.bed; mv Pan4949data.bed Pan4949data_unsorted.bed; mv Pan4949data_sorted.bed Pan4949data.bed; rm Pan4949data_unsorted.bed`
+move header to the top manually
