@@ -49,3 +49,6 @@ remove chek2 variant from Pan4283
 
 ## add PTENsambamba.bed to Pan4949sambamba.bed
 `cat Pan4949_PTENdataSambamba.bed >> Pan4949dataSambamba.bed`
+
+## tidy up sambamba.bed
+convert intronic BRCA1 region to sambamba format
