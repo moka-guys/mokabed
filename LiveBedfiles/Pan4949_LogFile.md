@@ -55,3 +55,11 @@ convert intronic BRCA1 region to sambamba format
 
 ## sort sambambadata.bed
 `sort Pan4949dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4949dataSambamba_sorted.bed; mv Pan4949dataSambamba.bed Pan4949dataSambamba_unsorted.bed; mv Pan4949dataSambamba_sorted.bed Pan4949dataSambamba.bed; rm Pan4949dataSambamba_unsorted.bed`
+
+## delete intermediate/incomplete files
+`rm Pan4949_PTENdata.bed Pan4949_PTENdataRefSeqFormat.txt Pan4949dataRefSeqFormat.txt Pan4949_PTENdataSambamba.bed`
+
+## testing
+Pan4949dataSambamba.bed was tested using sambamba_v1.13 - the app completed sucessfully
+Pan4949data.bed was tested using filter_vcf_with_bedfile_v1.1 and moka_picard)_v1.1 - both jobs completed sucessfully
+Pan4949data_flat.bed was tested using filter_vcf_with_bedfile_v1.1 and varscan2_v1.7.1 - both jobs completed sucessfully
