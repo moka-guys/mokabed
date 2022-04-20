@@ -46,3 +46,6 @@ Flat bed file used for somatic variant calling.
 ## add pan4283 to sambamba.bed
 `cat Pan4283.bed >> Pan4949dataSambamba.bed`
 remove chek2 variant from Pan4283
+
+## add PTENsambamba.bed to Pan4949sambamba.bed
+`cat Pan4949_PTENdataSambamba.bed >> Pan4949dataSambamba.bed`
