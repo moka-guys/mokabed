@@ -59,3 +59,4 @@ replace spaces with tabs
 ## repeat sorting of sambamba
 
 `sort Pan4949dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4949dataSambamba_sorted.bed; mv Pan4949dataSambamba.bed Pan4949dataSambamba_unsorted.bed; mv Pan4949dataSambamba_sorted.bed Pan4949dataSambamba.bed; rm Pan4949dataSambamba_unsorted.bed`
+also manually remove an abberant change in 4th column of samabmba.bed
