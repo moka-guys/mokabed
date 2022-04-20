@@ -40,4 +40,10 @@ move header to the top manually
 Flat bed file used for somatic variant calling.
 
 ## make Pan4948dataSambamba.bed
+## add pan4283 to sambamba.bed
 `cat Pan4283.bed >> Pan4948dataSambamba.bed`
+
+## add pten to sambamba.bed
+`cat Pan4948_PTENdata.bed >> Pan4948dataSambamba.bed`
+
+
