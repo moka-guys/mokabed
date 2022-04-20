@@ -25,3 +25,5 @@ version as defined by git tag = v1.2
 ## Add PTEN
 `cat Pan4949_PTENdata.bed >> Pan4949data.bed`
 (header and sorting to follow)
+## Add Pan4283
+`cat Pan4283.bed >> Pan4948data.bed`
