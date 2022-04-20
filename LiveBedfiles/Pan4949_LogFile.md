@@ -52,3 +52,6 @@ remove chek2 variant from Pan4283
 
 ## tidy up sambamba.bed
 convert intronic BRCA1 region to sambamba format
+
+## sort sambambadata.bed
+`sort Pan4949dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4949dataSambamba_sorted.bed; mv Pan4949dataSambamba.bed Pan4949dataSambamba_unsorted.bed; mv Pan4949dataSambamba_sorted.bed Pan4949dataSambamba.bed; rm Pan4949dataSambamba_unsorted.bed`
