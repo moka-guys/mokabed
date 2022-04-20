@@ -51,3 +51,5 @@ mistake do not copy this - see below for correct step
 manually remove chek2 intronic region
 remove PTEN regions as wrong bedfile was concatenated
 
+## add PTENsambamba.bed to pan4948sambamba.bed
+`cat Pan4948_PTENdataSambamba.bed >> Pan4948dataSambamba.bed`
