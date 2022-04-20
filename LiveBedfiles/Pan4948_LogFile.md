@@ -44,6 +44,10 @@ Flat bed file used for somatic variant calling.
 `cat Pan4283.bed >> Pan4948dataSambamba.bed`
 
 ## add pten to sambamba.bed
+mistake do not copy this - see below for correct step
 `cat Pan4948_PTENdata.bed >> Pan4948dataSambamba.bed`
 
+## sort out sambamba.bed
+manually remove chek2 intronic region
+remove PTEN regions as wrong bedfile was concatenated
 
