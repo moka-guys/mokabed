@@ -1,3 +1,9 @@
+# Pan4948
+
+This BEDfile is a rename of Pan4310, the VCP2 +/-30bp panel, but this time with the whole of CHEK2 gene.
+
+This panel consists of a number of genes which are to be padded +/-30 and one gene, PTEN which also requires the 5' UTR (also padded 30bp).
+## Run MokaBED (This covers all genes except for PTEN - see Pan4948_PTEN_logfile.txt)
 Time Stamp:2022-04-19 14:49:22.883977
 Command arguments executed:
 RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4948dataRefSeqFormat.txt
@@ -15,3 +21,7 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4948
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+## Add PTEN
+`cat Pan4948_PTENdata.bed >> Pan4948data.bed`
+(header and sorting to follow)
