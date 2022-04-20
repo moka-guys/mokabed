@@ -60,3 +60,8 @@ replace spaces with tabs
 
 `sort Pan4949dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4949dataSambamba_sorted.bed; mv Pan4949dataSambamba.bed Pan4949dataSambamba_unsorted.bed; mv Pan4949dataSambamba_sorted.bed Pan4949dataSambamba.bed; rm Pan4949dataSambamba_unsorted.bed`
 also manually remove an abberant change in 4th column of samabmba.bed
+
+## testing
+Pan4949dataSambamba.bed was tested using sambamba_v1.13 - the app completed sucessfully
+Pan4949data.bed was tested using filter_vcf_with_bedfile_v1.1 and moka_picard)_v1.1 - both jobs completed sucessfully
+Pan4949data_flat.bed was tested using filter_vcf_with_bedfile_v1.1, varscan2_v1.7.1 and vardict_v1.3.1 - both jobs completed sucessfully
