@@ -56,3 +56,9 @@ delete chek2 region and convert BRCA region into sambamba format
 
 ## delete intermediate/incomplete files
 `rm Pan4948_PTENdata.bed Pan4948_PTENdataRefSeqFormat.txt Pan4948dataRefSeqFormat.txt Pan4948_PTENdataSambamba.bed`
+
+
+## testing
+Pan4948dataSambamba.bed was tested using sambamba_v1.13 - the app completed sucessfully
+Pan4948data.bed was tested using filter_vcf_with_bedfile_v1.1 and moka_picard_v1.1 - both jobs completed sucessfully
+Pan4948data_flat.bed was tested using varscan2_v1.7.1 and filter_vcf_with_bedfile_v1.1 - both jobs completed sucessfully
