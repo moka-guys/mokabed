@@ -39,3 +39,7 @@ move header to the top manually
 # Pan4949_flat.bed
 Flat bed file used for somatic variant calling.
 `cut -f1-3 Pan4949data.bed | bedtools merge > Pan4949_flat.bed`
+
+# Pan4949dataSambamba.bed
+## add pan4283 to sambamba.bed
+`cat Pan4283.bed >> Pan4949dataSambamba.bed`
