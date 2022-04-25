@@ -62,3 +62,15 @@ delete chek2 region and convert BRCA region into sambamba format
 Pan4948dataSambamba.bed was tested using sambamba_v1.13 - the app completed sucessfully
 Pan4948data.bed was tested using filter_vcf_with_bedfile_v1.1 and moka_picard_v1.1 - both jobs completed sucessfully
 Pan4948data_flat.bed was tested using varscan2_v1.7.1 and filter_vcf_with_bedfile_v1.1 - both jobs completed sucessfully
+
+## fix data.bed+picard
+Actually Picard did not complete properly with data.bed. 
+an empty newline was removed from the bottom of the file.
+
+Some additional testing was done incorrectly, as on the DNANexus UI some previous jobs were re-launched, but with the BED files replaced, however on closer inspection the jobs were not re-run with the newly made BED files.
+testing was repeated
+
+## testing
+Pan4948dataSambamba.bed was tested using sambamba_v1.13 - the app completed sucessfully
+Pan4948data.bed was tested using filter_vcf_with_bedfile_v1.1 and moka_picard_v1.1 - both jobs completed sucessfully
+Pan4948data_flat.bed was tested using varscan2_v1.7.1 and filter_vcf_with_bedfile_v1.1 - both jobs completed sucessfully
