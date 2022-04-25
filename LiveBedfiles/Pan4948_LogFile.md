@@ -47,3 +47,6 @@ Flat bed file used for somatic variant calling.
 
 ## manually modify intronic regions.
 delete chek2 region and convert BRCA region into sambamba format
+
+## add PTENsambamba.bed to pan4948sambamba.bed
+`cat Pan4948_PTENdataSambamba.bed >> Pan4948dataSambamba.bed`
