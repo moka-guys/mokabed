@@ -26,3 +26,6 @@ version as defined by git tag = v1.2
 `cat Pan4948_PTENdata.bed >> Pan4948data.bed`
 (header and sorting to follow)
 remove header manually
+
+## Add Pan4283
+`cat Pan4283.bed >> Pan4948data.bed`
