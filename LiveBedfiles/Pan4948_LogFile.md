@@ -36,3 +36,7 @@ Pan4283 contains a region of chek2. The whole of chek2 is now included so this r
 ## sort Pan4948data.bed
 `sort Pan4948data.bed -k1,1V -k2,2n -k3,3n > Pan4948data_sorted.bed; mv Pan4948data.bed Pan4948data_unsorted.bed; mv Pan4948data_sorted.bed Pan4948data.bed; rm Pan4948data_unsorted.bed`
 move header to the top manually
+
+# make Pan4948_flat.bed
+`cut -f1-3 Pan4948data.bed | bedtools merge > Pan4948_flat.bed`
+Flat bed file used for somatic variant calling.
