@@ -54,3 +54,8 @@ convert BRCA variant into sambamba format
 
 ## delete intermediate/incomplete files
 `rm Pan4949_PTENdata.bed Pan4949_PTENdataRefSeqFormat.txt Pan4949dataRefSeqFormat.txt Pan4949_PTENdataSambamba.bed`
+
+## testing
+Pan4949dataSambamba.bed was tested using sambamba_v1.13 - the app completed sucessfully
+Pan4949data.bed was tested using filter_vcf_with_bedfile_v1.1 and moka_picard_v1.1 - both jobs completed sucessfully
+Pan4949data_flat.bed was tested using filter_vcf_with_bedfile_v1.1 and varscan2_v1.7.1 - both jobs completed sucessfully
