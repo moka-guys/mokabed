@@ -29,3 +29,6 @@ remove header manually
 
 ## Add Pan4283
 `cat Pan4283.bed >> Pan4948data.bed`
+
+## remove duplicate chek2 region 
+Pan4283 contains a region of chek2. The whole of chek2 is now included so this region does not need to be specified so it was removed manually.
