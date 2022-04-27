@@ -16,3 +16,13 @@ Correct TERT promoter regions added and incorrect region deleted from Pan4963dat
 
 ## add correct TERT promoter regions to dataSambamba.bed
 Correct TERT promoter regions added and incorrect region deleted from Pan4963dataSambamba.bed (manually).
+
+## sort bed files
+### sort Pan4963data.bed
+`mv Pan4963data.bed Pan4963data_unsorted.bed; sort Pan4963data_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan4963data.bed; rm Pan4963data_unsorted.bed`
+
+### sort Pan4962dataSambamba.bed
+`mv Pan4963dataSambamba.bed Pan4963dataSambamba_unsorted.bed; sort Pan4963dataSambamba_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan4963dataSambamba.bed; rm Pan4963dataSambamba_unsorted.bed`
+
+## move header
+manually moved header of Pan4963data.bed back to top
