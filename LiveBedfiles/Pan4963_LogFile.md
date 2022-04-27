@@ -6,3 +6,7 @@ This file is the same as Pan4841 but with the TERT promoter regions changed
 
 ## Request form
 The Pan4841.csv form was copied and edited to include the TERT promoter regions as discussed with the cancer team.
+
+## copy Pan4841 files
+`cp Pan4841data.bed Pan4963data.bed`
+`cp Pan4841dataSambamba.bed Pan4963dataSambamba.bed`
