@@ -34,4 +34,4 @@ tested Pan4963dataSambamba.bed with HD200 sample from TSO22014 running chanjo_sa
 Some fields were separated with spaces not tabs, which may have caused the testing to fail.
 
 ## Further testing
-tested Pan4963dataSambamba.bed with HD200 sample from TSO22014 running chanjo_sambamba_coverage_v1.13 applet. 
+tested Pan4963dataSambamba.bed with HD200 sample from TSO22014 running chanjo_sambamba_coverage_v1.13 applet. App completed succesfully and result compared to previous running of sambamba coverage on this sample with Pan4841. Results (exon_level.txt) identical except for one extra row for a region of TERT promoter. 
