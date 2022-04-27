@@ -10,3 +10,6 @@ The Pan4841.csv form was copied and edited to include the TERT promoter regions 
 ## copy Pan4841 files
 `cp Pan4841data.bed Pan4963data.bed`
 `cp Pan4841dataSambamba.bed Pan4963dataSambamba.bed`
+
+## add correct TERT promoter regions to data.bed
+Correct TERT promoter regions added and incorrect region deleted from Pan4963data.bed (manually).
