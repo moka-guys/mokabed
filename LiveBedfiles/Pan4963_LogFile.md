@@ -26,3 +26,12 @@ Correct TERT promoter regions added and incorrect region deleted from Pan4963dat
 
 ## move header
 manually moved header of Pan4963data.bed back to top
+
+## Testing
+tested Pan4963dataSambamba.bed with HD200 sample from TSO22014 running chanjo_sambamba_coverage_v1.13 applet. App failed
+
+## replace spaces with tabs
+Some fields were separated with spaces not tabs, which may have caused the testing to fail.
+
+## Further testing
+tested Pan4963dataSambamba.bed with HD200 sample from TSO22014 running chanjo_sambamba_coverage_v1.13 applet. 
