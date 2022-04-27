@@ -13,3 +13,6 @@ The Pan4841.csv form was copied and edited to include the TERT promoter regions 
 
 ## add correct TERT promoter regions to data.bed
 Correct TERT promoter regions added and incorrect region deleted from Pan4963data.bed (manually).
+
+## add correct TERT promoter regions to dataSambamba.bed
+Correct TERT promoter regions added and incorrect region deleted from Pan4963dataSambamba.bed (manually).
