@@ -1,0 +1,151 @@
+Instructions:,,
+"Add genes symbols and/or transcripts to a panel in Moka
+Add panel description to Moka
+Answer following questions:",,
+,,
+1. Pan number of bed file to be created,Pan4963,
+2. Panel description/name (fill in a-c from Moka),,
+2. a) Category,TSO500,
+2. b) SubCategory,"+/-10bp. UTRs not included. Pan4761 (TSO500 intronic regions v1) based on Pan4841 TERT promoter regions changed, see below",
+2. c) Panel,TSO500 +/-10bp. UTRs not included. Pan4761 (TSO500 intronic regions v1) ,
+3a). Is this BED file used for Exome depth?,No,
+3b). Is this BED file used to generate read counts or filter calls?,N/A,
+4. a) Is this BED file exclusively based on coordinates provided by a supplier ,No,
+"4. b) If yes does this need further padding?"" ",N/A,
+5. a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts for a gene),YES,
+5. b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state),YES – see below,
+6. What padding is required around the exons?,10bp,
+7. a) Should UTRs be included for ALL genes?,no,
+7. b) Should UTRs be padded?,No,
+8. a) Are UTRs required for SOME genes? ,No,
+8. b) Please list genes/transcripts,N/A,
+8. c) Should UTRs be padded?,N/A,
+9. Any additional BED files to be included in this BED file? ,Pan4761 (intronic regions for MET and TERT 5’ UTR only.) TERT promoter region changed,
+10. Are any further regions required to be added?,No,
+11. Are there any regions in the below transcripts that should be excluded, update later after reporting and see if any artefacts ,
+Requested by:,Rebecca Haines,
+Requested date:,21/12/21,
+,,
+,Gene Name,Transcript
+,AKT1,NM_001014431
+,AKT1,NM_005163
+,ALK,NM_004304
+,APC,NM_001127511
+,APC,NM_001127510
+,AR,NM_000044
+,AR,NM_001011645
+,ARAF,NM_001256196
+,ARID1A,NM_006015
+,ATM,NM_000051
+,BRAF,NM_004333
+,BRCA1,NM_007297
+,BRCA1,NM_007300
+,BRCA1,NM_007298
+,BRCA2,NM_000059
+,CDK12,NM_015083
+,CDK12,NM_016507
+,CDKN2A,NM_000077
+,CDKN2A,NM_001195132
+,CDKN2A,NM_058195
+,CHEK2,NM_145862
+,CTNNB1,NM_001098209
+,CTNNB1,NM_001098210
+,CXCR4,NM_003467
+,DDR2,NM_006182
+,EGFR,NM_005228
+,EPCAM,NM_002354
+,ERBB2,NM_001289936
+,ERBB2,NM_004448
+,ERBB2,NM_001289938
+,ERBB3,NM_001005915
+,ERBB3,NM_001982
+,ERBB4,NM_001042599
+,ERBB4,NM_005235
+,ESR1,NM_000125
+,FBXW7,NM_033632
+,FBXW7,NM_018315
+,FGFR1,NM_001174066
+,FGFR1,NM_001174067
+,FGFR1,NM_001174064
+,FGFR2,NM_001144913
+,FGFR2,NM_022970
+,FGFR2,NM_001144916
+,FGFR3,NM_000142
+,FGFR3,NM_001163213
+,FGFR3,NM_022965
+,GATA3,NM_001002295
+,GNAQ,NM_002072
+,GNAS,NM_016592
+,GNAS,NM_080425
+,GNAS,NM_080426
+,GNAS,NM_001077489
+,HRAS,NM_005343
+,IDH1,NM_001282386
+,IDH1,NM_001282387
+,IDH2,NM_001289910
+,IDH2,NM_002168
+,KIT,NM_000222
+,KRAS,NM_004985
+,MAP2K1,NM_002755
+,MAP2K2,NM_030662
+,MET,NM_000245
+,MLH1,NM_000249
+,MSH2,NM_000251
+,MSH6,NM_000179
+,MSH6,NM_001281494
+,MYD88,NM_001172567
+,NF1,NM_000267
+,NF1,NM_001042492
+,NRAS,NM_002524
+,NTRK1,NM_001007792
+,NTRK1,NM_002529
+,NTRK1,NM_001012331
+,NTRK2,NM_006180
+,NTRK2,NM_001007097
+,NTRK2,NM_001018066
+,NTRK3,NM_001012338
+,NTRK3,NM_001007156
+,PALB2,NM_024675
+,PDGFRA,NM_006206
+,PIK3CA,NM_006218
+,PMS2,NM_000535
+,POLD1,NM_002691
+,POLD1,NM_001256849
+,POLE,NM_006231
+,PTEN,NM_000314
+,RAF1,NM_002880
+,RB1,NM_000321
+,RET,NM_020630
+,RET,NM_020975
+,ROS1,NM_002944
+,SDHA,NM_001294332
+,SDHA,NM_004168
+,SDHB,NM_003000
+,SDHC,NM_001035511
+,SDHC,NM_003001
+,SDHC,NM_001278172
+,SDHD,NM_001276503
+,SDHD,NM_003002
+,SMAD4,NM_005359
+,SMARCA4,NM_001128845
+,SMARCA4,NM_001128849
+,TCEB1,NM_001204863
+,TCEB1,NM_005648
+,TCEB1,NM_001204857
+,TP53,NM_001126118
+,TSC1,NM_001162427
+,TSC1,NM_000368
+,TSC1,NM_001162426
+,TSC2,NM_000548
+,TSC2,NM_001077183
+,VHL,NM_000551
+,VHL,NM_198156
+,,
+,TERT promoter regions,
+,chr5:1295227-1295229  (hotspot “C228T” variant at chr5:1295228),
+,chr5:1295249-1295251 (hotspot “C250T” variant at chr5:1295250)Windows over the whole region,
+,chr5:1295105-1295204,
+,chr5:1295205-1295304,
+,chr5:1295305-1295404,
+,chr5:1295405-1295504,
+,chr5:1295505-1295605,
