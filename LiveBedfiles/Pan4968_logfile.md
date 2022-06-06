@@ -13,3 +13,6 @@ Manually delete TERT region from Pan4968.bed
 
 ## TERT regions
 Manually copy required TERT regions from Pan4963data.bed
+
+## Formatting
+manually modify TERT promoter regions to match format of MET regions already present
