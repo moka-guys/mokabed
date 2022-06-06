@@ -6,3 +6,7 @@ The TERT regions are specified in the BED file for PAN4963
 
 ## Create bed file
 Copy Pan4761.bed as base file `cp Pan4761.bed Pan4968.bed`
+
+## MET regions
+Required MET regions are unchanged from Pan4761 but TERT regions are different.
+Manually delete TERT region from Pan4968.bed
