@@ -8,3 +8,4 @@ delete TERT regions
 
 ## add TERT promoter regions
 copy TERT promoter regions from Pan4963data.bed
+manually modify TERT promoter regions to match format of MET regions already present
