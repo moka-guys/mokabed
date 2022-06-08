@@ -7,3 +7,4 @@ This new version of the TSO500 coverage bedfile contains additional genes and th
 ## Transcript files
 There are multiple transcripts for several of the genes request. Four transcript files were created manually to ensure no duplicate transcripts were included. These are saved as Pan4969_transcripts1-4.txt/
 Files reformated with amended headers to match format required by mokabed. Accession added as 0 as will not be used by script anyway.
+Transcripts2 and transcripts4 files were still in incorrect format- updated.
