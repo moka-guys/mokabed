@@ -1,0 +1,2 @@
+Transcript	GeneName
+NM_001077489    GNAS
