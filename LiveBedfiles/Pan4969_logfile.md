@@ -37,5 +37,12 @@ Part 4 BED files were deleted
 `bedtools subtract -a 'Pan4969_transcripts3data.bed' -b 'Pan4969_transcripts2data.bed' >> Pan4969_transcripts2data.bed`
 `bedtools subtract -a 'Pan4969_transcripts3dataSambamba.bed' -b 'Pan4969_transcripts2dataSambamba.bed' >> Pan4969_transcripts2dataSambamba.bed`
 
-Remove part 2
+Remove part 3 bed files
 `rm Pan4969_transcripts3data*`
+
+### parts 1 and 2
+`bedtools subtract -a 'Pan4969_transcripts2data.bed' -b 'Pan4969_transcripts1data.bed' >> Pan4969_transcripts1data.bed`
+`bedtools subtract -a 'Pan4969_transcripts2dataSambamba.bed' -b 'Pan4969_transcripts1dataSambamba.bed' >> Pan4969_transcripts1dataSambamba.bed`
+
+Remove part 2 bed files
+`rm Pan4969_transcripts2data*`
