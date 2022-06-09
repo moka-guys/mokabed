@@ -57,3 +57,5 @@ concatenate intronic regions (Pan4968) into dataSambamba.bed
 `cat Pan4968.bed >> Pan4969_transcripts1dataSambamba.bed`
 
 intronic regions edited manually to match sambamba format in Pan4963_part1dataSambamba.bed 
+
+files not saved after manual modification. Saved now.
