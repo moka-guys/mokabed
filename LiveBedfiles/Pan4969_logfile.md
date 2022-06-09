@@ -9,6 +9,8 @@ There are multiple transcripts for several of the genes request. Four transcript
 Files reformated with amended headers to match format required by mokabed. Accession added as 0 as will not be used by script anyway.
 Transcripts2 and transcripts4 files were still in incorrect format- updated.
 
+The transcript files were checked by comparing the number of transcripts in the request form with the total number across the 4 transcript files (122). The files were also visually inspected to check for duplicates and errors. 
+
 ## Run mokabed
 mokabed run in DNAnexus 003_220608_Pan4969
 Example command: 
