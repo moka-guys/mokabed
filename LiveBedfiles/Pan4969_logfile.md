@@ -59,3 +59,11 @@ concatenate intronic regions (Pan4968) into dataSambamba.bed
 intronic regions edited manually to match sambamba format in Pan4963_part1dataSambamba.bed 
 
 files not saved after manual modification. Saved now.
+
+## sort bedfiles
+### data.bed
+`mv Pan4969_transcripts1data.bed Pan4969_transcripts1data_unsorted.bed; sort Pan4969_transcripts1data_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan4969_transcripts1data.bed; rm Pan4969_transcripts1data_unsorted.bed`
+header moved to top manually
+
+### dataSambamba.bed
+`mv Pan4969_transcripts1dataSambamba.bed Pan4969_transcripts1dataSambamba_unsorted.bed; sort Pan4969_transcripts1dataSambamba_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan4969_transcripts1dataSambamba.bed; rm Pan4969_transcripts1dataSambamba_unsorted.bed`
