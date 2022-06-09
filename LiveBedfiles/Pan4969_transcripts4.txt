@@ -1,0 +1,2 @@
+GuysAccession	ApprovedSymbol	GuysAccessionVersion
+NM_001077489	GNAS	0
