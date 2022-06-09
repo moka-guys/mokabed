@@ -74,3 +74,11 @@ Added chr manually- shown to be required in previous testing for Pan4709
 ## rename
 `mv Pan4969_transcripts1data.bed Pan4969data.bed`
 `mv Pan4969_transcripts1dataSambamba.bed Pan4969dataSambamba.bed`
+
+## testing
+These bed files were tested using sambamba coverage and moka picard apps.
+The sambamba app was run on a stiched realigned BAM file from TSO22019 and completed without error.
+The MokaPicard app was previously found to fail with TSO500 bam files, presumed to be due to an issue with the bam. Therefor this bed file was tested with the NA12878 bam file from NGS482B (VCP3). App completed successfully suggesting the bed file is valid.
+
+## delete extra files
+`rm Pan4969_transcripts1dataRefSeqFormat.txt`
