@@ -46,3 +46,14 @@ Remove part 3 bed files
 
 Remove part 2 bed files
 `rm Pan4969_transcripts2data*`
+
+## Add intronic regions
+concatenate intronic regions (Pan4968) into data.bed
+`cat Pan4968.bed >> Pan4969_transcripts1data.bed`
+
+manually modify the intronic regions to match data.bed format (EntrezID taken from other MET regions, or from Pan4963 for TERT)
+
+concatenate intronic regions (Pan4968) into dataSambamba.bed
+`cat Pan4968.bed >> Pan4969_transcripts1dataSambamba.bed`
+
+intronic regions edited manually to match sambamba format in Pan4963_part1dataSambamba.bed 
