@@ -67,3 +67,6 @@ header moved to top manually
 
 ### dataSambamba.bed
 `mv Pan4969_transcripts1dataSambamba.bed Pan4969_transcripts1dataSambamba_unsorted.bed; sort Pan4969_transcripts1dataSambamba_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan4969_transcripts1dataSambamba.bed; rm Pan4969_transcripts1dataSambamba_unsorted.bed`
+
+## add chr
+Added chr manually- shown to be required in previous testing for Pan4709
