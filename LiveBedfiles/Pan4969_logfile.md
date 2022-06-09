@@ -70,3 +70,7 @@ header moved to top manually
 
 ## add chr
 Added chr manually- shown to be required in previous testing for Pan4709
+
+## rename
+`mv Pan4969_transcripts1data.bed Pan4969data.bed`
+`mv Pan4969_transcripts1dataSambamba.bed Pan4969dataSambamba.bed`
