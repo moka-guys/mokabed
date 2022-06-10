@@ -30,3 +30,13 @@ NM_000344.4
 >>> print entrez
 6606
 ```
+
+#### Add padding
+The regions were padding +/-10bp as per those regions produced by MokaBED using the following python code:
+
+```
+with open('/home/aled/Documents/201229_mokabed/mokabed/LiveBedfiles/Pan4971.bed','r') as bedfile:
+    for line in bedfile.readlines():
+            chr,start,stop=line.split("\t")[0:3]
+            print str(chr)+"\t" + str(int(start)-10) + "\t" + str(int(stop)+10)+\t"+"\t".join(line.rstrip().split("\t")[3:])
+```
