@@ -54,3 +54,5 @@ Add intronic regions
 
 ### format intronic regions in bedfile
 This was done manually. In Pan4971.bed it was copied from the line above, but preserving the RSID in place of the entrezgeneid. It's unlikely these columns are used for grouping - this is more relevant for the sambamba.bed.
+
+For the sambamba bedfile the rsid was used inplace of the transcript. The entrezgeneid is used to group lines in the BEDfile into gene level coverage.
