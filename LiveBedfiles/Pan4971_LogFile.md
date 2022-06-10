@@ -65,3 +65,7 @@ For the sambamba bedfile the rsid was used inplace of the transcript. The entrez
 
 ### sort Pan4971dataSambamba.bed
 `mv Pan4971dataSambamba.bed Pan4971dataSambamba_unsorted.bed; sort Pan4971dataSambamba_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan4971dataSambamba.bed; rm Pan4971dataSambamba_unsorted.bed`
+
+### testing
+These BEDfiles were tested using sambamba and the filter_vcf_using_bedfile apps.
+Both completed without error.
