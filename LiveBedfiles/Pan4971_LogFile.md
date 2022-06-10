@@ -51,3 +51,6 @@ This file was saved as Pan4971dataSambamba.bed
 Add intronic regions
 `cat Pan4972.bed >> Pan4971.bed`
 `cat Pan4972.bed >> Pan4971dataSambamba.bed` 
+
+### format intronic regions in bedfile
+This was done manually. In Pan4971.bed it was copied from the line above, but preserving the RSID in place of the entrezgeneid. It's unlikely these columns are used for grouping - this is more relevant for the sambamba.bed.
