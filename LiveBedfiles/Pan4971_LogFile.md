@@ -56,3 +56,9 @@ Add intronic regions
 This was done manually. In Pan4971.bed it was copied from the line above, but preserving the RSID in place of the entrezgeneid. It's unlikely these columns are used for grouping - this is more relevant for the sambamba.bed.
 
 For the sambamba bedfile the rsid was used inplace of the transcript. The entrezgeneid is used to group lines in the BEDfile into gene level coverage.
+
+### sort Pan4971data.bed
+`mv Pan4971.bed Pan4971data_unsorted.bed; sort Pan4971data_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan4971.bed; rm Pan4971data_unsorted.bed`
+
+### rename to data.bed
+`git mv Pan4971.bed Pan4971data.bed`
