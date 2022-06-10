@@ -11,3 +11,22 @@ combined = zip(list1,list2)
 for i in combined:
     print "5\t" + str(i[0]) + "\t" + str(i[1])
 ```
+
+# Add additional columns to Pan4971.bed
+Each line in the bed file contains 12 columns, We already have columns 1-3. Column4 contains the entrezgeneid and column 12 contains the genesymbol;transcript. All other columns are empty.
+
+The rest of the line was manually created, based on an existing line from another data.bed
+
+The entrez gene ID and accession version number was obtained using the existing mokabed function in the python shell as per lines 633 and 645 of LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py:
+
+```
+>>> from versionnumber_newtest import Liveaccversion, LiveRefLink
+>>> liveacc = Liveaccversion()
+>>> version = liveacc.versionfinder("NM_000344")
+>>> print version
+NM_000344.4
+>>> liveref = LiveRefLink()
+>>> entrez = liveref.entrezidretrieve("NM_000344")
+>>> print entrez
+6606
+```
