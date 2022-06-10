@@ -40,3 +40,7 @@ with open('/home/aled/Documents/201229_mokabed/mokabed/LiveBedfiles/Pan4971.bed'
             chr,start,stop=line.split("\t")[0:3]
             print str(chr)+"\t" + str(int(start)-10) + "\t" + str(int(stop)+10)+\t"+"\t".join(line.rstrip().split("\t")[3:])
 ```
+
+#### Create sambamba file
+This file was taken from the git history from Pan3973 - see https://github.com/moka-guys/mokabed/blob/8a4899668e82b6dd201f50a3c58e15b302164e9a/LiveBedfiles/Pan3973_problemdataSambamba.bed
+This file was saved as Pan4971dataSambamba.bed
