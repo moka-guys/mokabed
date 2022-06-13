@@ -72,4 +72,8 @@ Both completed without error.
 
 ### code review changes.
 It was noticed that there were discrepancies between the sambamba and data.bed files.
-Firstly, the start coordinate for the first exon in the data.bed was incorrect. This was changed to be inline with the sambamba.bed after inspecting the genome browser.
+These are linked to the inclusion of the UTR regions in the coordinates used in section `### Create Pan4971.bed`
+
+Firstly, the start coordinate for the first exon in the data.bed was incorrect. This was changed to be inline with the sambamba.bed after inspecting the genome browser. 
+
+Secondly remove the final 3' UTR segment
