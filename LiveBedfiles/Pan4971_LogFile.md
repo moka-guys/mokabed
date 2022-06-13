@@ -69,3 +69,7 @@ For the sambamba bedfile the rsid was used inplace of the transcript. The entrez
 ### testing
 These BEDfiles were tested using sambamba and the filter_vcf_using_bedfile apps.
 Both completed without error.
+
+### code review changes.
+It was noticed that there were discrepancies between the sambamba and data.bed files.
+Firstly, the start coordinate for the first exon in the data.bed was incorrect. This was changed to be inline with the sambamba.bed after inspecting the genome browser.
