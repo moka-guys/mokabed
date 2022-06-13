@@ -77,3 +77,6 @@ These are linked to the inclusion of the UTR regions in the coordinates used in 
 Firstly, the start coordinate for the first exon in the data.bed was incorrect. This was changed to be inline with the sambamba.bed after inspecting the genome browser. 
 
 Secondly remove the final 3' UTR segment
+
+### testing
+The amended data.bed file were tested with the filter_vcf_using_bedfile app which completed without error.
