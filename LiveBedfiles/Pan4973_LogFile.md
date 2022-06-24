@@ -1,0 +1,22 @@
+# Pan4973
+This BED file is used to do read count step of exome depth for CNV analysis of VCP2.
+This BED file has been previously made in Pan4301 and Pan4771. This BED file includes the entirety of CHEK2, not just the intronic region listed in Pan4283 (rs555607708). This will also have the CNV control sites added (Pan3608).
+
+# run mokabed
+Time Stamp:2022-06-24 13:30:35.761741
+Command arguments executed:
+RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4973dataRefSeqFormat.txt
+/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 30 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4973.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4973data.bed --logfile /home/dnanexus/out/Output_files/Pan4973_LogFile.txt 
+
+ Python version: 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+ getopt module file path: /home/dnanexus/anaconda2/lib/python2.7/getopt.py
+
+ os module file path: /home/dnanexus/anaconda2/lib/python2.7/os.py
+
+ pd class file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/pandas/__init__.py
+
+ cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
+
+version as defined by git tag = v1.2
