@@ -24,6 +24,7 @@ version as defined by git tag = v1.2
 
 ## Combine PTEN bed files
 `cat Pan4973_PTENdata.bed >> Pan4973data.bed`
+remove header
 ## add Pan4283, Pan3610 and Pan3608
 ## generate intermediary BED4 file for capture regions
 ## generate intermediary exomedepth files for exons
