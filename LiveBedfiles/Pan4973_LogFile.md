@@ -31,7 +31,11 @@ remove the chek2 variant from Pan4283 that overlaps with chek2 variant
 `cat Pan3608.bed >> Pan4973data.bed`
 `cat Pan3610.bed >> Pan4973data.bed`
 ## generate intermediary BED4 file for capture regions
+Need to make a 4 column bed file, where the 4th column:
+1) contains no underscores - replace any underscores with dashes.
+2) contains the gene symbols, not entrezgene ids.
 
+first, in excel split the 12th column on semi colon and then replace entrez gene id with gene symbols
 
 ## generate intermediary exomedepth files for exons
 
