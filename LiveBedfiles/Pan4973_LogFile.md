@@ -40,6 +40,7 @@ first, in excel split the 12th column on semi colon and then replace entrez gene
 
 next, in vscode, replace underscores and quotation marks (produced by spreadsheet software)
 ## generate intermediary exomedepth files for exons
+`TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan4973 Pan4973data.bed`
 
 ## set sorted list of missed (non-exonic) capture regions
 ## amend missed (non-exonic) regions with:
