@@ -58,3 +58,6 @@ note after this stage there are no missed regions (_missed.bed is empty)
 
 ## set sorted list of missed (non-exonic) capture regions
 `mv _Pan4973_exomedepth.bed _Pan4973_exomedepth_unsorted.bed; sort -k1n,1 -k2n,3n _Pan4973_exomedepth_unsorted.bed > _Pan4973_exomedepth.bed; rm _Pan4973_exomedepth_unsorted.bed`
+
+## rename exome depth
+`git mv _Pan4973_exomedepth.bed Pan4973_exomedepth.bed`
