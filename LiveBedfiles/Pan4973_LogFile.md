@@ -36,9 +36,9 @@ Need to make a 4 column bed file, where the 4th column:
 2) contains the gene symbols, not entrezgene ids.
 
 first, in excel split the 12th column on semi colon and then replace entrez gene id with gene symbols
-`cut -f1-4 Pan4973data.bed > Pan4973data.bed`
+`mv Pan4973data.bed Pan4973data_12col.bed; cut -f1-4 Pan4973data_12col.bed > Pan4973data.bed; rm Pan4973data_12col.bed`
 
-
+next, in vscode, replace underscores and quotation marks (produced by spreadsheet software)
 ## generate intermediary exomedepth files for exons
 
 ## set sorted list of missed (non-exonic) capture regions
