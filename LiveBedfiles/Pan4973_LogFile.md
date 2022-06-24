@@ -46,7 +46,11 @@ next, in vscode, replace underscores and quotation marks (produced by spreadshee
 `mv _Pan4973_missed.bed _Pan4973_missed_unsorted.bed; sort -k1n,1 -k2n,3n _Pan4973_missed_unsorted.bed > _Pan4973_missed.bed; rm Pan4973_missed_unsorted.bed`
 repeat but statuing chr column is numeric
 ## amend missed (non-exonic) regions with:
-### 1. exomedepth compatible names (no underscores)
-### 2. strand information (BED6)
+### 1. strand information (BED6)
+Performed in vscode.
+5th column was set to 0
+6th column was set to + or -.
+This was taken from _Pan4771_extra.bed.
+All CNVs from Pan3608 were given as + strand but this shouldn't have any effect as they will not be grouped.
 ## regenerate (final) exomedepth files giving the additional non-exonic regions from last step
 ## NB the final step should not yield any missed regions
