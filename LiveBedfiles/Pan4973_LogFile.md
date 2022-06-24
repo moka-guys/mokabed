@@ -43,6 +43,7 @@ next, in vscode, replace underscores and quotation marks (produced by spreadshee
 `TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan4973 Pan4973data.bed`
 
 ## set sorted list of missed (non-exonic) capture regions
+`mv _Pan4973_missed.bed _Pan4973_missed_unsorted.bed; sort -k1,1 -k2n,3n _Pan4973_missed_unsorted.bed > _Pan4973_missed.bed; rm Pan4973_missed_unsorted.bed`
 ## amend missed (non-exonic) regions with:
 ### 1. exomedepth compatible names (no underscores)
 ### 2. strand information (BED6)
