@@ -29,10 +29,12 @@ remove header
 `cat Pan4283.bed >> Pan4973data.bed`
 remove the chek2 variant from Pan4283 that overlaps with chek2 variant
 `cat Pan3608.bed >> Pan4973data.bed`
+`cat Pan3610.bed >> Pan4973data.bed`
 ## generate intermediary BED4 file for capture regions
-`cut -f1-4 Pan4973data.bed > _Pan4973.bed`
+
 
 ## generate intermediary exomedepth files for exons
+
 ## set sorted list of missed (non-exonic) capture regions
 ## amend missed (non-exonic) regions with:
 ### 1. exomedepth compatible names (no underscores)
