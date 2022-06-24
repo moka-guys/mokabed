@@ -27,7 +27,7 @@ version as defined by git tag = v1.2
 remove header
 ## add Pan4283, Pan3610 and Pan3608
 `cat Pan4283.bed >> Pan4973data.bed`
-
+remove the chek2 variant from Pan4283 that overlaps with chek2 variant
 ## generate intermediary BED4 file for capture regions
 ## generate intermediary exomedepth files for exons
 ## set sorted list of missed (non-exonic) capture regions
