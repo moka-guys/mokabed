@@ -55,3 +55,6 @@ All CNVs from Pan3608 were given as + strand but this shouldn't have any effect 
 ## regenerate (final) exomedepth files giving the additional non-exonic regions from last step
 `TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan4973 Pan4973data.bed _Pan4973_missed.bed`
 note after this stage there are no missed regions (_missed.bed is empty)
+
+## set sorted list of missed (non-exonic) capture regions
+`mv _Pan4973_exomedepth.bed _Pan4973_exomedepth_unsorted.bed; sort -k1n,1 -k2n,3n _Pan4973_exomedepth_unsorted.bed > _Pan4973_exomedepth.bed; rm _Pan4973_exomedepth_unsorted.bed`
