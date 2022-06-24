@@ -20,3 +20,16 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4973
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+
+## Combine PTEN bed files
+`cat Pan4973_PTENdata.bed >> Pan4973data.bed`
+## add Pan4283, Pan3610 and Pan3608
+## generate intermediary BED4 file for capture regions
+## generate intermediary exomedepth files for exons
+## set sorted list of missed (non-exonic) capture regions
+## amend missed (non-exonic) regions with:
+### 1. exomedepth compatible names (no underscores)
+### 2. strand information (BED6)
+## regenerate (final) exomedepth files giving the additional non-exonic regions from last step
+## NB the final step should not yield any missed regions
