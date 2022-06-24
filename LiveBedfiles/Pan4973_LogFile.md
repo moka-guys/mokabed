@@ -61,3 +61,6 @@ note after this stage there are no missed regions (_missed.bed is empty)
 
 ## rename exome depth
 `git mv _Pan4973_exomedepth.bed Pan4973_exomedepth.bed`
+
+## remove intermediate files
+`rm _Pan4973*`
