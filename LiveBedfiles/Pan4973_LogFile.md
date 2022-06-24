@@ -53,4 +53,5 @@ Performed in vscode.
 This was taken from _Pan4771_extra.bed.
 All CNVs from Pan3608 were given as + strand but this shouldn't have any effect as they will not be grouped.
 ## regenerate (final) exomedepth files giving the additional non-exonic regions from last step
-## NB the final step should not yield any missed regions
+`TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan4973 Pan4973data.bed _Pan4973_missed.bed`
+note after this stage there are no missed regions (_missed.bed is empty)
