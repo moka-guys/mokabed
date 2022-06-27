@@ -68,3 +68,7 @@ note after this stage there are no missed regions (_missed.bed is empty)
 ## testing
 Pan4973_exomedepth.bed was tested using DNANexus app `ED_readcount_analysis_v1.0.0` in project 003_220624_Pan4973.
 The app completed sucessfully.
+
+## remove intermediate files
+`rm Pan4973_PTENdata*`
+`rm Pan4973_data*`
