@@ -1,3 +1,9 @@
+## Pan4991
+This BED file will be used to filter CNV variant calls for R120. It contains 1 gene which is to be padded +/-30bp and include the 5' UTR, also padded by 30bp.
+The VCP_CNV_control_sites (Pan3608) will also be added.
+The CNV bedfile is a 4 column bedfile, named Panxxx_CNV.bed
+
+### Run Mokabed
 Time Stamp:2022-06-28 07:43:25.909489
 Command arguments executed:
 RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4991dataRefSeqFormat.txt
@@ -15,3 +21,6 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4991
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+### Add Pan3608
+`cat Pan3608.bed >> Pan4991data.bed`
