@@ -45,3 +45,6 @@ Job completed without error
 ## clean up
 move transcripts file to Transcripts folder and rename to Pan4988.txt
 `mv Pan4988_transcripts.txt Transcripts/Pan4988.txt`
+
+move transcripts file to Transcripts/Pantranscriptfiles
+`mv Transcripts/Pan4988.txt Transcripts/Pantranscriptfiles/Pan4988.txt`
