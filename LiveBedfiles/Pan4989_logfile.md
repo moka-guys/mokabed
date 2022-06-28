@@ -22,3 +22,6 @@ Outputs downloaded Pan4989_transcripts_LogFile.txt and Pan4989_transcriptsdata.b
 
 ## Add Pan3608
 `cat Pan3608.bed >> Pan4989data.bed`
+
+## Sort and rename
+`sort Pan4989data.bed -k1,1V -k2,2n -k3,3n > Pan4989_sorted.bed;mv Pan4989data.bed Pan4989_unsorted.bed; mv Pan4989_sorted.bed Pan4989data.bed; rm Pan4989_unsorted.bed`
