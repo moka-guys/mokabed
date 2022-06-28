@@ -38,3 +38,6 @@ version as defined by git tag = v1.2
 
 ### delete unrequired files
 `git rm Pan4993dataSambamba.bed Pan4993dataRefSeqFormat.txt`
+
+### testing
+The bedfile was tested with ED_cnv_calling_v1.0.0 in 003_220628_Pan4991-4994 and the job ran without error
