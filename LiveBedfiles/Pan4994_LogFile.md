@@ -30,3 +30,6 @@ version as defined by git tag = v1.2
 `sort Pan4994data.bed -k1,1V -k2,2n -k3,3n > Pan4994_sorted.bed;mv Pan4994data.bed Pan4994_unsorted.bed; mv Pan4994_sorted.bed Pan4994data.bed; rm Pan4994_unsorted.bed`
 
 ### remove header manually
+
+### Convert to 4 column format
+`cut -f 1-4 Pan4994data.bed > Pan4994data_4col.bed; rm Pan4994data.bed; mv Pan4994data_4col.bed Pan4994data.bed`
