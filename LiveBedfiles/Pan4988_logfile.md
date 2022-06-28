@@ -26,3 +26,6 @@ cat Pan3608.bed >> Pan4988data.bed
 
 ## Sort and rename
 sort Pan4988data.bed -k1,1V -k2,2n -k3,3n > Pan4988_sorted.bed;mv Pan4988data.bed Pan4988_unsorted.bed; mv Pan4988_sorted.bed Pan4988data.bed; rm Pan4988_unsorted.bed
+
+## remove header
+manually removed headers from Pan4988data.bed
