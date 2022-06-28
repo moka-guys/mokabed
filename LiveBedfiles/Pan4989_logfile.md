@@ -31,3 +31,6 @@ manually removed headers from Pan4989data.bed
 
 ## convert to 4 column format
 `cut -f 1-4 Pan4989data.bed > Pan4989data_4col.bed; rm Pan4989data.bed; mv Pan4989data_4col.bed Pan4989data.bed`
+
+## Rename to make clear it's a CNV BED file
+`mv Pan4989data.bed Pan4989_CNV.bed`
