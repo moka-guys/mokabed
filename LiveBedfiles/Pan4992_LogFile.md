@@ -1,3 +1,9 @@
+## Pan4992
+This BED file will be used to filter CNV variant calls for R122. It contains 2 genes which is to be padded +/-30bp and include the 5' UTR, also padded by 30bp.
+The VCP_CNV_control_sites (Pan3608) will also be added.
+The CNV bedfile is a 4 column bedfile, named Panxxx_CNV.bed
+
+### Run Mokabed
 Time Stamp:2022-06-28 07:44:11.709187
 Command arguments executed:
 RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4992dataRefSeqFormat.txt
