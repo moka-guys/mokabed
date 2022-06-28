@@ -31,3 +31,9 @@ manually removed headers from Pan4990data.bed
 
 ## Rename to make clear it's a CNV BED file
 `mv Pan4990data.bed Pan4990_CNV.bed`
+
+## Testing
+Tested in 003_220628_Pan4988_Pan4989_Pan4990 with exome depth
+`dx run project-G8v9kbj0bfZ7vzYy5byGXGFX:applet-G8xQVQ80bfZ2kvGV1bPbBvQv -iproject_name=003_220321_ED_cnv_calling_v1.1.0 -ireadcount_file=project-G8v9kbj0bfZ7vzYy5byGXGFX:file-G9QZK100qZgVZybY4g387255 -ibamfile_pannumbers="Pan4119,Pan4044" -iQC_file=project-G8v9kbj0bfZ7vzYy5byGXGFX:file-G8xKgZ80bfZ5zpJ0F4xb90xb -isubpanel_bed=project-GBxFZvQ0j2pZJJ8x50Q5Kq0x:file-GBxPQv00j2pzG67YK2Pg4543`
+
+Job completed without error
