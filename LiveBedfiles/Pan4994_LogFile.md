@@ -33,3 +33,9 @@ version as defined by git tag = v1.2
 
 ### Convert to 4 column format
 `cut -f 1-4 Pan4994data.bed > Pan4994data_4col.bed; rm Pan4994data.bed; mv Pan4994data_4col.bed Pan4994data.bed`
+
+### rename to _cnv.bed
+`git mv Pan4994data.bed Pan4994_CNV.bed`
+
+### delete unrequired files
+`git rm Pan4994dataSambamba.bed Pan4994dataRefSeqFormat.txt`
