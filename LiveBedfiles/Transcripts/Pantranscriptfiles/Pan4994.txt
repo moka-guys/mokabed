@@ -1,0 +1,3 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_005570	LMAN1	0
+NM_139279	MCFD2	0
