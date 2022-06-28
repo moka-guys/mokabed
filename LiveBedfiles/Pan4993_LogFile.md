@@ -35,3 +35,6 @@ version as defined by git tag = v1.2
 
 ### rename to _cnv.bed
 `git mv Pan4993data.bed Pan4993_CNV.bed`
+
+### delete unrequired files
+`git rm Pan4993dataSambamba.bed Pan4993dataRefSeqFormat.txt`
