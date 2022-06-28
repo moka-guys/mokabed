@@ -24,3 +24,8 @@ version as defined by git tag = v1.2
 
 ### Add Pan3608
 `cat Pan3608.bed >> Pan4992data.bed`
+
+### Sort data.bed
+`sort Pan4992data.bed -k1,1V -k2,2n -k3,3n > Pan4992_sorted.bed;mv Pan4992data.bed Pan4992_unsorted.bed; mv Pan4992_sorted.bed Pan4992data.bed; rm Pan4992_unsorted.bed`
+
+### remove header manually
