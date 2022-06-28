@@ -3,6 +3,7 @@ This BED file will be used to filter CNV variant calls for R112. It contains 1 g
 The VCP_CNV_control_sites (Pan3608) will also be added.
 The CNV bedfile is a 4 column bedfile, named Panxxx_CNV.bed
 
+#Run mokabed
 Time Stamp:2022-06-28 16:10:30.741707
 Command arguments executed:
 RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4985dataRefSeqFormat.txt
@@ -20,3 +21,6 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4985
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+#Add Pan3608
+cat Pan3608.bed >> Pan4985data.bed
