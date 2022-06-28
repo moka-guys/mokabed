@@ -16,3 +16,6 @@ command (see logfile for more details):
 `/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 30 --up 30 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4990.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4990data.bed --logfile /home/dnanexus/out/Output_files/Pan4990_LogFile.txt `
 
 outputs downloaded Pan4990_LogFile.txt and Pan4990data.bed
+
+## Add Pan3608
+`cat Pan3608.bed >> Pan4990data.bed`
