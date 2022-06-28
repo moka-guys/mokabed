@@ -1,0 +1,2 @@
+GuysAccession	ApprovedSymbol	GuysAccessionVersion
+NM_000504	F10	0
