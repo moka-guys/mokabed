@@ -19,3 +19,6 @@ Outputs downloaded Pan4989_transcripts_LogFile.txt and Pan4989_transcriptsdata.b
 
 ## Rename data.bed
 `mv Pan4989_transcriptsdata.bed Pan4989data.bed`
+
+## Add Pan3608
+`cat Pan3608.bed >> Pan4989data.bed`
