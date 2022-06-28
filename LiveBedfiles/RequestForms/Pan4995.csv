@@ -1,0 +1,71 @@
+"DOC333","Revision1",
+"Instructions:",,
+"Add genes symbols and/or transcripts to a panel in Moka",,
+"Add panel description to Moka",,
+"Answer following questions",,
+"Please save this as a CSV file.",,
+,,
+"1. Pan number of bed file to be created","Pan4995",
+"2. Panel description/name (fill in a-c from Moka)",,
+"2. a) Category","VCP3",
+"2. b) SubCategory","+/-10bp. TD update July 2022. Pan4535 with additional genes. Some genes include 5' UTRs (+/-10bp)",
+"2. c) Panel","VCP3 +/-10bp. TD update July 2022. Pan4535 with additional genes. Some genes include 5' UTRs (+/-10bp)",
+"3a). Is this BED file used for Exome depth?","No",
+"3b). Is this BED file used to generate read counts or filter calls?","N/A",
+"4. a) Is this BED file exclusively based on coordinates provided by a supplier? ","No",
+"4. b) If yes does this need further padding?","No",
+"5. a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts for a gene)","Yes",
+"5. b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state)","No",
+"6. What padding is required around the exons?(usually 10,30 or 50bp)",10,
+"7. a) Should UTRs be included for ALL genes?","No",
+"7. b) Should UTRs be padded? and if so by how much","N/A",
+"8. a) Are UTRs required for SOME genes? ","Yes (note these are also listed below)",
+"8. b) Please list genes/transcripts","NM_014915 NM_000128 NM_000129 NM_000130 NM_000132 NM_000821 NM_139279 NM_000313 NM_000552 ",
+"8. c) Should UTRs be padded? and if so by how much","10bp",
+"9. Any additional BED files to be included in this BED file?","these genes should be added to Pan4535",
+"10. Are any further regions required to be added?","No",
+"11. Are there any regions in the below transcripts that should be excluded?","No",
+"Requested by:","Michael Yau",
+"Requested date:","24/06/2022",
+,,
+"Please list gene and transcripts below.",,
+"HGNC approved symbol","Transcript","HGNC ID"
+"IKZF5","NM_001372123","HGNC:14283"
+"BLOC1S5","NM_201280","HGNC:18561"
+"GTF2E1","NM_005513","HGNC:4650"
+"PRIMPOL","NM_152683","HGNC:26575"
+"NSUN2","NM_017755","HGNC:25994"
+"RFC1","NM_002913","HGNC:9969"
+"RFC2","NM_181471","HGNC:9970"
+"RFC3","NM_002915","HGNC:9971"
+"RFC4","NM_002916","HGNC:9972"
+"RFC5","NM_007370","HGNC:9973"
+"WDR4","NM_018669","HGNC:12756"
+"NEDD4","NM_006154","HGNC:7727"
+"CHTF18","NM_022092","HGNC:18435"
+"MTMR1","NM_001306144","HGNC:7449"
+"XIRP2","NM_152381","HGNC:14303"
+"COL25A1","NM_198721","HGNC:18603"
+"GGPS1","NM_004837","HGNC:4249"
+"CAVIN1","NM_012232","HGNC:9688"
+"JAG2","NM_002226","HGNC:6189"
+"ASCC3","NM_006828","HGNC:18697"
+"DHX16","NM_003587","HGNC:2739"
+"GFER","NM_005262","HGNC:4236"
+"MYL2","NM_000432","HGNC:7583"
+"MYOD1","NM_002478","HGNC:7611"
+"SLC25A42","NM_178526","HGNC:28380"
+"SVIL","NM_021738","HGNC:11480"
+"TNNC2","NM_003279","HGNC:11944"
+"RAD51","NM_002875","HGNC:9817"
+"XRCC2","NM_005431","HGNC:12829"
+"The following genes require 5’ UTRs",,
+"ANKRD26","NM_014915","HGNC:29186"
+"F11","NM_000128","HGNC:3529"
+"F13A1","NM_000129","HGNC:3531"
+"F5","NM_000130","HGNC:3542"
+"F8","NM_000132","HGNC:3546"
+"GGCX","NM_000821","HGNC:4247"
+"MCFD2","NM_139279","HGNC:18451"
+"PROS1","NM_000313","HGNC:9456"
+"VWF","NM_000552","HGNC:12726"
