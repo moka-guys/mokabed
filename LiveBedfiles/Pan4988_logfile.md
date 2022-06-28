@@ -17,3 +17,6 @@ command (see logfile for more details):
 `/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 30 --codingdown 30 --up 30 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan4988_transcripts.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan4988_transcriptsdata.bed --logfile /home/dnanexus/out/Output_files/Pan4988_transcripts_LogFile.txt `
 
 Outputs downloaded Pan4988_transcripts_LogFile.txt and Pan4988_transcriptsdata.bed
+
+## Rename data.bed
+mv Pan4988_transcriptsdata.bed Pan4988data.bed
