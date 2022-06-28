@@ -19,13 +19,16 @@ command (see logfile for more details):
 Outputs downloaded Pan4988_transcripts_LogFile.txt and Pan4988_transcriptsdata.bed
 
 ## Rename data.bed
-mv Pan4988_transcriptsdata.bed Pan4988data.bed
+`mv Pan4988_transcriptsdata.bed Pan4988data.bed`
 
 ## Add Pan3608
-cat Pan3608.bed >> Pan4988data.bed
+`cat Pan3608.bed >> Pan4988data.bed`
 
 ## Sort and rename
-sort Pan4988data.bed -k1,1V -k2,2n -k3,3n > Pan4988_sorted.bed;mv Pan4988data.bed Pan4988_unsorted.bed; mv Pan4988_sorted.bed Pan4988data.bed; rm Pan4988_unsorted.bed
+`sort Pan4988data.bed -k1,1V -k2,2n -k3,3n > Pan4988_sorted.bed;mv Pan4988data.bed Pan4988_unsorted.bed; mv Pan4988_sorted.bed Pan4988data.bed; rm Pan4988_unsorted.bed`
 
 ## remove header
 manually removed headers from Pan4988data.bed
+
+## convert to 4 column format
+`cut -f 1-4 Pan4988data.bed > Pan4988data_4col.bed; rm Pan4988data.bed; mv Pan4988data_4col.bed Pan4988data.bed`
