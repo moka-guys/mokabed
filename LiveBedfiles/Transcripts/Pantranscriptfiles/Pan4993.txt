@@ -1,0 +1,3 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_024006	VKORC1	0
+NM_000821	GGCX	0
