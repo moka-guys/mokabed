@@ -25,3 +25,9 @@ Outputs downloaded Pan4989_transcripts_LogFile.txt and Pan4989_transcriptsdata.b
 
 ## Sort and rename
 `sort Pan4989data.bed -k1,1V -k2,2n -k3,3n > Pan4989_sorted.bed;mv Pan4989data.bed Pan4989_unsorted.bed; mv Pan4989_sorted.bed Pan4989data.bed; rm Pan4989_unsorted.bed`
+
+## remove header
+manually removed headers from Pan4989data.bed
+
+## convert to 4 column format
+`cut -f 1-4 Pan4989data.bed > Pan4989data_4col.bed; rm Pan4989data.bed; mv Pan4989data_4col.bed Pan4989data.bed`
