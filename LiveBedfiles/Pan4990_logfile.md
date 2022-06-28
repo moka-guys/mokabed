@@ -22,3 +22,6 @@ outputs downloaded Pan4990_LogFile.txt and Pan4990data.bed
 
 ## Sort and rename
 `sort Pan4990data.bed -k1,1V -k2,2n -k3,3n > Pan4990_sorted.bed;mv Pan4990data.bed Pan4990_unsorted.bed; mv Pan4990_sorted.bed Pan4990data.bed; rm Pan4990_unsorted.bed`
+
+## remove header
+manually removed headers from Pan4990data.bed
