@@ -30,3 +30,5 @@ version as defined by git tag = v1.2
 
 ### remove header manually
 
+### Convert to 4 column format and rename (using git to preserve tracking (hopefully))
+`cut -f 1-4 Pan4991data.bed > Pan4991data_4col.bed; rm Pan4991data.bed; mv Pan4991data_4col.bed Pan4991data.bed; git mv Pan4991data.bed Pan4991_CNV.bed`
