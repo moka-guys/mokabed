@@ -62,6 +62,7 @@ Find the regions in Pan4995_extras_UTRs with BEDtools subtract. However we first
 `cut -f 1-4 Pan4995data.bed > Pan4995data_4col.bed; cut -f 1-4 Pan4995_extras_UTRsdata.bed > Pan4995_extras_UTRsdata_4col.bed; bedtools subtract -a Pan4995_extras_UTRsdata_4col.bed -b Pan4995data_4col.bed > Pan4995_extras_UTRs_extraregions.bed`
 add these regions back to Pan4995data.bed
 `cat Pan4995_extras_UTRs_extraregions.bed >> Pan4995data.bed `
+Manually add in the rest of the row by searching for entrez gene id in rest of the file
 ## sort
 ## repeat for sambamba.bed - create copy of Pan4535dataSambamba.bed
 ## add Pan4995_extras to Pan4995dataSambamba.bed
