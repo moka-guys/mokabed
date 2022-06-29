@@ -53,6 +53,8 @@ version as defined by git tag = v1.2
 before adding Pan4995_extrasdata.bed to Pan4995data.bed the header was removed from Pan4995_extrasdata.bed (manually)
 and a check was performed to look for shared regions 
 `cut -f 1-4 Pan4995data.bed > Pan4995data_4col.bed; cut -f 1-4 Pan4995_extrasdata.bed > Pan4995_extras.data_4col.bed; bedtools intersect -a Pan4995data_4col.bed -b Pan4995_extras.data_4col.bed > Pan4995_extras_overlap.bed`
+note Pan4995_extras_overlap.bed is empty denoting the new regions do not overlap any existing regions
+
 remove these testing files
 `git rm  Pan4995_extras_overlap.bed Pan4995_extras.data_4col.bed Pan4995data_4col.bed`
 cat Pan4995_extrasdata.bed to Pan4995data.bed
@@ -65,6 +67,12 @@ add these regions back to Pan4995data.bed
 Manually add in the rest of the row by searching for entrez gene id in rest of the file
 ## sort
 `sort Pan4995data.bed -k1,1V -k2,2n -k3,3n > Pan4995_sorted.bed;mv Pan4995data.bed Pan4995_unsorted.bed; mv Pan4995_sorted.bed Pan4995data.bed; rm Pan4995_unsorted.bed`
+
+## tidy up some testing files
+`git rm Pan4995data_4col.bed Pan4995_extras_UTRsdata_4col.bed Pan4995_extras_UTRs_extraregions.bed`
+
+## move header back to top in Pan4995data.bed
+Done manually in vs code
 ## repeat for sambamba.bed - create copy of Pan4535dataSambamba.bed
 ## add Pan4995_extras to Pan4995dataSambamba.bed
 ## bedtools subtract to find regions in Pan4995_extras_UTRs not in Pan4995dataSambamba.bed.
