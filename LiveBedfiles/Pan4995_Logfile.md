@@ -50,6 +50,11 @@ version as defined by git tag = v1.2
 ## create copy of Pan4535data.bed
 `cp Pan4535data.bed Pan4995data.bed`
 ## add Pan4995_extras to Pan4995data.bed
+before adding Pan4995_extrasdata.bed to Pan4995data.bed the header was removed from Pan4995_extrasdata.bed (manually)
+and a check was performed to look for shared regions 
+`cut -f 1-4 Pan4995data.bed > Pan4995data_4col.bed; cut -f 1-4 Pan4995_extrasdata.bed > Pan4995_extras.data_4col.bed; bedtools intersect -a Pan4995data_4col.bed -b Pan4995_extras.data_4col.bed > Pan4995_extras_overlap.bed`
+
+## remove header manually
 ## bedtools subtract to find regions in Pan4995_extras_UTRs not in Pan4995data.bed.
 ## sort
 ## repeat for sambamba.bed - create copy of Pan4535dataSambamba.bed
