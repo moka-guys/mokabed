@@ -78,6 +78,9 @@ Done manually in vs code
 ## add Pan4995_extras to Pan4995dataSambamba.bed
 no need to repeat the test for overlapping regions as these regions are the same as in the data.bed file
 `cat Pan4995_extrasdataSambamba.bed >> Pan4995dataSambamba.bed`
-
 ## bedtools subtract to find regions in Pan4995_extras_UTRs not in Pan4995dataSambamba.bed.
+`bedtools subtract -a Pan4995_extras_UTRsdataSambamba.bed -b Pan4995dataSambamba.bed > Pan4995_extras_UTRsdataSambamba_subtracted.bed`
+## add these regions to Pan4995dataSambamba.bed
+`cat Pan4995_extras_UTRsdataSambamba_subtracted.bed >> Pan4995dataSambamba.bed`
+
 ## sort
