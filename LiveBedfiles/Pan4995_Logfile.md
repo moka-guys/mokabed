@@ -84,3 +84,4 @@ no need to repeat the test for overlapping regions as these regions are the same
 `cat Pan4995_extras_UTRsdataSambamba_subtracted.bed >> Pan4995dataSambamba.bed`
 
 ## sort
+`sort Pan4995dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4995sambamba_sorted.bed;mv Pan4995dataSambamba.bed Pan4995sambamba_unsorted.bed; mv Pan4995sambamba_sorted.bed Pan4995dataSambamba.bed; rm Pan4995sambamba_unsorted.bed`
