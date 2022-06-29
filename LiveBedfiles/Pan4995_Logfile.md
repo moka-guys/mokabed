@@ -74,6 +74,7 @@ Manually add in the rest of the row by searching for entrez gene id in rest of t
 ## move header back to top in Pan4995data.bed
 Done manually in vs code
 ## repeat for sambamba.bed - create copy of Pan4535dataSambamba.bed
+`cp Pan4535dataSambamba.bed Pan4995dataSambamba.bed`
 ## add Pan4995_extras to Pan4995dataSambamba.bed
 ## bedtools subtract to find regions in Pan4995_extras_UTRs not in Pan4995dataSambamba.bed.
 ## sort
