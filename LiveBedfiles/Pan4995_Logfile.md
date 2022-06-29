@@ -64,6 +64,7 @@ add these regions back to Pan4995data.bed
 `cat Pan4995_extras_UTRs_extraregions.bed >> Pan4995data.bed `
 Manually add in the rest of the row by searching for entrez gene id in rest of the file
 ## sort
+`sort Pan4995data.bed -k1,1V -k2,2n -k3,3n > Pan4995_sorted.bed;mv Pan4995data.bed Pan4995_unsorted.bed; mv Pan4995_sorted.bed Pan4995data.bed; rm Pan4995_unsorted.bed`
 ## repeat for sambamba.bed - create copy of Pan4535dataSambamba.bed
 ## add Pan4995_extras to Pan4995dataSambamba.bed
 ## bedtools subtract to find regions in Pan4995_extras_UTRs not in Pan4995dataSambamba.bed.
