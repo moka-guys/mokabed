@@ -61,7 +61,7 @@ cat Pan4995_extrasdata.bed to Pan4995data.bed
 Find the regions in Pan4995_extras_UTRs with BEDtools subtract. However we first need to create 4 column BED files as bedtools errors if there are differing numbers of columns in a BED file.
 `cut -f 1-4 Pan4995data.bed > Pan4995data_4col.bed; cut -f 1-4 Pan4995_extras_UTRsdata.bed > Pan4995_extras_UTRsdata_4col.bed; bedtools subtract -a Pan4995_extras_UTRsdata_4col.bed -b Pan4995data_4col.bed > Pan4995_extras_UTRs_extraregions.bed`
 add these regions back to Pan4995data.bed
-
+`cat Pan4995_extras_UTRs_extraregions.bed >> Pan4995data.bed `
 ## sort
 ## repeat for sambamba.bed - create copy of Pan4535dataSambamba.bed
 ## add Pan4995_extras to Pan4995dataSambamba.bed
