@@ -85,3 +85,7 @@ no need to repeat the test for overlapping regions as these regions are the same
 
 ## sort
 `sort Pan4995dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan4995sambamba_sorted.bed;mv Pan4995dataSambamba.bed Pan4995sambamba_unsorted.bed; mv Pan4995sambamba_sorted.bed Pan4995dataSambamba.bed; rm Pan4995sambamba_unsorted.bed`
+
+## Testing
+The app chanjo_sambamba_coverage_v1.13 and moka_picard_v1.1 were used to test these files using data from NGS487B_01_136819_NA12878_U_VCP3R81Via_Pan4146_S1 in 003_220628_Pan4995.
+Both jobs completed without error.
