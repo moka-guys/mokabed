@@ -46,3 +46,13 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan4995
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+## create copy of Pan4535data.bed
+`cp Pan4535data.bed Pan4995data.bed`
+## add Pan4995_extras to Pan4995data.bed
+## bedtools subtract to find regions in Pan4995_extras_UTRs not in Pan4995data.bed.
+## sort
+## repeat for sambamba.bed - create copy of Pan4535dataSambamba.bed
+## add Pan4995_extras to Pan4995dataSambamba.bed
+## bedtools subtract to find regions in Pan4995_extras_UTRs not in Pan4995dataSambamba.bed.
+## sort
