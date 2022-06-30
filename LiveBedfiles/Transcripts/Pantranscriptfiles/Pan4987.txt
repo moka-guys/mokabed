@@ -1,0 +1,2 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_000131	F7	0
