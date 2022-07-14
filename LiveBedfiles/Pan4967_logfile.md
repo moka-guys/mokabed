@@ -28,3 +28,4 @@ Pan4967_reference.bed has been created using the primer sequences which was prov
 
 ## create Pan4967_reference.bed
 Take a copy of the above table
+convert table into a list of amplicons
