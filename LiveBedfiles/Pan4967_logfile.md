@@ -30,5 +30,20 @@ Pan4967_reference.bed has been created using the primer sequences which was prov
 Take a copy of the above table
 convert table into a list of amplicons
 convert to tab delimited, removing chr
-sort bedfile
+### sort bedfile
 `sort Pan4967_reference.bed -k1,1V -k2,2n -k3,3n > Pan4967_reference_sorted.bed;mv Pan4967_reference.bed Pan4967_reference_unsorted.bed; mv Pan4967_reference_sorted.bed Pan4967_reference.bed; rm Pan4967_reference_unsorted.bed`
+
+### collapse BED
+`bedtools merge -i Pan4967_reference.bed > Pan4967_reference_flat.bed; rm Pan4967_reference.bed; mv Pan4967_reference_flat.bed Pan4967_reference.bed`
+
+## complement BED
+We want to mask all bits of the reference genome except for genes of interest
+To do this we need to create a BED file containing all the regions we are not interested in.
+Can use bedtools complement but this requires a .genome file
+A .genome file is 2 column tab delimited file chr<\t>length
+Once we have this can then use bedtools maskfasta and then index using bwa.
+
+### create .genome file
+`awk -v OFS='\t' {'print $1,$2'} hs37d5.fa.fai > hs37d5.genome`
+
+
