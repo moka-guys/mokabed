@@ -1,5 +1,4 @@
 # Pan4967
-
 Pan4967 is used to create a masked reference genome used for the LRPCR.
 
 ## Pan4967_reference.bed
@@ -50,3 +49,14 @@ Once we have this can then use bedtools maskfasta and then index using bwa.
 `bedtools complement -i Pan4967_reference.bed -g hs37d5.genome > Pan4967_complement.bed`
 note the coordinates in complement file match those in Pan4967
 
+### 3. Create masked fasta file
+`bedtools maskfasta -fi ~/resources/reference/hs37d5.fa -bed Pan4967_complement.bed -fo Pan4967_reference.fa`
+This FASTA will have all regions in the complement file masked, leaving just the targets from Pan4967
+this fasta will not be included in the github repo.
+
+### 4. Create masked bwa index
+`bwa index Pan4967_reference.fa`
+This creates a number of files named Pan4967_reference.fa*
+
+### 5. Tar these into a bwa.index.tar.gz
+tar -cvzf  hs37d5_Pan4967.bwa-index.tar.gz  Pan4967_reference.fa*
