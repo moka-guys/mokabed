@@ -30,3 +30,5 @@ Pan4967_reference.bed has been created using the primer sequences which was prov
 Take a copy of the above table
 convert table into a list of amplicons
 convert to tab delimited, removing chr
+sort bedfile
+`sort Pan4967_reference.bed -k1,1V -k2,2n -k3,3n > Pan4967_reference_sorted.bed;mv Pan4967_reference.bed Pan4967_reference_unsorted.bed; mv Pan4967_reference_sorted.bed Pan4967_reference.bed; rm Pan4967_reference_unsorted.bed`
