@@ -46,4 +46,7 @@ Once we have this can then use bedtools maskfasta and then index using bwa.
 ### create .genome file
 `awk -v OFS='\t' {'print $1,$2'} hs37d5.fa.fai > hs37d5.genome`
 
+### 2. Create complement bed file
+`bedtools complement -i Pan4967_reference.bed -g hs37d5.genome > Pan4967_complement.bed`
+note the coordinates in complement file match those in Pan4967
 
