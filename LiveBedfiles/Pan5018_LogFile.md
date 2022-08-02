@@ -34,3 +34,8 @@ move header to top manually
 
 ## add smn1 to sambamba
 `cat Pan4971dataSambamba.bed >> Pan5018dataSambamba.bed`
+
+## sort sambamba bed
+`sort Pan5018dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan5018dataSambambasorted.bed; mv Pan5018dataSambamba.bed Pan5018dataSambambaunsorted.bed;  mv Pan5018dataSambambasorted.bed Pan5018dataSambamba.bed; rm Pan5018dataSambambaunsorted.bed`
+
+## testing
