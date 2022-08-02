@@ -39,3 +39,6 @@ move header to top manually
 `sort Pan5018dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan5018dataSambambasorted.bed; mv Pan5018dataSambamba.bed Pan5018dataSambambaunsorted.bed;  mv Pan5018dataSambambasorted.bed Pan5018dataSambamba.bed; rm Pan5018dataSambambaunsorted.bed`
 
 ## testing
+Data.bed was tested using mokapicard_v1.2 in 003_220802_Pan5018
+sambamba.bed was tested using chanjo_sambamba_coverage_v1.13 in 003_220802_Pan5018
+both jobs completed without error
