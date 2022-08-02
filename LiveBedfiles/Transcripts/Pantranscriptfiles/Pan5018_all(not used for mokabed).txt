@@ -1,0 +1,5 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_000535	PMS2	0
+NM_001099857	IKBKG	0
+NM_007194	CHEK2	0
+NM_000344	SMN1	0
