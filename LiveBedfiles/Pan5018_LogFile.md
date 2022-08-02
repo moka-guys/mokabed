@@ -31,3 +31,6 @@ version as defined by git tag = v1.2
 `sort Pan5018data.bed -k1,1V -k2,2n -k3,3n > Pan5018datasorted.bed; mv Pan5018data.bed Pan5018dataunsorted.bed;  mv Pan5018datasorted.bed Pan5018data.bed; rm Pan5018dataunsorted.bed`
 
 move header to top manually
+
+## add smn1 to sambamba
+`cat Pan4971dataSambamba.bed >> Pan5018dataSambamba.bed`
