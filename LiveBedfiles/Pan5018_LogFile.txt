@@ -1,11 +1,3 @@
-## Pan5018
-This BED file will be used to calculate coverage for the 4 genes currently targetted by the LRPCR assay (as per Pan4967)
-
-As described in Pan4971 this transcript of SMN1 cuases issues with MokeBED so in this case the SMN1 gene will be added by concatenating the existing Pan4971 BED files.
-
-### run mokabed for PMS2, CHEK2 and IKBKG
-with no UTRs and 10bp paddings
-
 Time Stamp:2022-08-02 14:16:12.507374
 Command arguments executed:
 RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5018dataRefSeqFormat.txt
