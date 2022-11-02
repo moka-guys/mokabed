@@ -42,3 +42,6 @@ mv Pan5087data.bed Pan5087_CNV.bed
 
 ## Delete unrequired files
 rm Pan5087dataSambamba.bed
+
+## Testing
+Testing performed in 003_221102_mokabed_Pan5087. Job ran without error.
