@@ -33,3 +33,6 @@ cat Pan4350.bed >> Pan5088data.bed
 sort Pan5088data.bed -k1,1V -k2,2n -k3,3n > Pan5088_sorted.bed;mv Pan5088data.bed Pan5088_unsorted.bed; mv Pan5088_sorted.bed Pan5088data.bed; rm Pan5088_unsorted.bed
 
 ## Manually remove header from Pan5088data.bed
+
+## Convert to 4 column format
+cut -f 1-4 Pan5088data.bed > Pan5088data_4col.bed; rm Pan5088data.bed; mv Pan5088data_4col.bed Pan5088data.bed
