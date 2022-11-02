@@ -28,3 +28,6 @@ cat Pan3608.bed >> Pan5088data.bed
 
 ## Add Pan4350
 cat Pan4350.bed >> Pan5088data.bed
+
+## Sort and rename
+sort Pan5088data.bed -k1,1V -k2,2n -k3,3n > Pan5088_sorted.bed;mv Pan5088data.bed Pan5088_unsorted.bed; mv Pan5088_sorted.bed Pan5088data.bed; rm Pan5088_unsorted.bed
