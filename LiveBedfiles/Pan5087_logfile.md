@@ -39,3 +39,6 @@ cut -f 1-4 Pan5087data.bed > Pan5087data_4col.bed; rm Pan5087data.bed; mv Pan508
 
 ## Rename file to make it clear that it's a CNV BED
 mv Pan5087data.bed Pan5087_CNV.bed
+
+## Delete unrequired files
+rm Pan5087dataSambamba.bed
