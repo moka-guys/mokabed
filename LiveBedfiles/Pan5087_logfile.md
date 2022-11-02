@@ -29,5 +29,8 @@ cat Pan3608.bed >> Pan5087data.bed
 ## Add Pan4350
 cat Pan4350.bed >> Pan5087data.bed
 
-Sort and rename
+## Sort and rename
 sort Pan5087data.bed -k1,1V -k2,2n -k3,3n > Pan5087_sorted.bed;mv Pan5087data.bed Pan5087_unsorted.bed; mv Pan5087_sorted.bed Pan5087data.bed; rm Pan5087_unsorted.bed
+
+## Manually remove header from Pan4712data.bed
+
