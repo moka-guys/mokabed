@@ -25,3 +25,6 @@ version as defined by git tag = v1.2
 
 ## Add Pan3608
 cat Pan3608.bed >> Pan5087data.bed
+
+## Add Pan4350
+cat Pan4350.bed >> Pan5087data.bed
