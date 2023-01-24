@@ -13,6 +13,7 @@ CAPTURE=$3
 EXTRA=$4
 REFGENE=${OUTPUT}.genepred
 BED12=${OUTPUT}'.bed'
+TXEXONS=${OUTPUT}'.txexons.bed'
 CDSEXONS=${OUTPUT}'_cdsexons.bed'
 CAPTUREEXONS=${OUTPUT}'_captureexons.bed'
 CAPTUREEXONSCORRECTED=${OUTPUT}'_captureexonscorrected.bed'
@@ -96,6 +97,24 @@ BEGIN { OFS = "\t" };
   }
 }
 ' ${REFGENE} | ${BEDSORT} -k1,1 -k2n,3n > ${CDSEXONS}
+
+# BED transcript exons file
+echo "Building RefSeq Transcript Exons..."
+awk 'BEGIN { OFS = "\t" };
+{
+  delete astarts;
+  delete aends;
+  split($10, astarts, /,/);
+  split($11, aends, /,/);
+  starts=""
+  sizes=""
+  exonCount=0
+  for(i=1; i in astarts; i++){
+    if (! astarts[i]) continue
+    print $3,astarts[i],aends[i],($4 == "-" ? $2"-"length(astarts)-i : $2"-"i),$12,$4
+  }
+}
+' ${REFGENE} | ${BEDSORT} -k1,1 -k2n,3n > ${TXEXONS}
 
 # intersect with capture file (get exons with any overlap in a capture region, -u flag)
 echo "Intersecting with capture..."
