@@ -132,3 +132,8 @@ part 7 files deleted `rm Pan5110_transcripts7data*`
 
 part 7 files deleted `rm Pan5110_transcripts6data*`
 
+### parts 4 and 5
+`bedtools subtract -a 'Pan5110_transcripts5data.bed' -b 'Pan5110_transcripts4data.bed' >> Pan5110_transcripts4data.bed`
+`bedtools subtract -a 'Pan5110_transcripts5dataSambamba.bed' -b 'Pan5110_transcripts4dataSambamba.bed' >> Pan5110_transcripts4dataSambamba.bed`
+
+part 7 files deleted `rm Pan5110_transcripts5data*`
