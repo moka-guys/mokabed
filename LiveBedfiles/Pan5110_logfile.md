@@ -149,3 +149,9 @@ part 7 files deleted `rm Pan5110_transcripts4data*`
 `bedtools subtract -a 'Pan5110_transcripts3dataSambamba.bed' -b 'Pan5110_transcripts2dataSambamba.bed' >> Pan5110_transcripts2dataSambamba.bed`
 
 part 7 files deleted `rm Pan5110_transcripts3data*`
+
+### parts 1 and 2
+`bedtools subtract -a 'Pan5110_transcripts2data.bed' -b 'Pan5110_transcripts1data.bed' >> Pan5110_transcripts1data.bed`
+`bedtools subtract -a 'Pan5110_transcripts2dataSambamba.bed' -b 'Pan5110_transcripts1dataSambamba.bed' >> Pan5110_transcripts1dataSambamba.bed`
+
+part 7 files deleted `rm Pan5110_transcripts2data*`
