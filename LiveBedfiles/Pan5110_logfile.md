@@ -101,3 +101,12 @@ NM_001198633
 
 ## Make new transcript files
 Pan5110_transcripts3-8 files created for the CIC and RUNX1T1 transcripts
+
+## Run mokabed with transcript files 3-8
+Run mokabed using same command as above, e.g.
+`dx run project-ByfFPz00jy1fk6PjpZ95F27J:applet-FfjkPy80Vy31YK619YK1Yf4x -itranscript_file=003_230126_Pan5110:Pan5110_transcripts3.txt -icoding_up=10 -icoding_down=10 -igenes_or_transcripts=TRANSCRIPTS -imergeboundaries=false
+
+### logs
+See each logfile for full logs, example command executed has been extracted and saved below.
+
+`/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan5110_transcripts3.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan5110_transcripts3data.bed --logfile /home/dnanexus/out/Output_files/Pan5110_transcripts3_LogFile.txt `
