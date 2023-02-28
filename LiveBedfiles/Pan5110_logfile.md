@@ -110,3 +110,12 @@ Run mokabed using same command as above, e.g.
 See each logfile for full logs, example command executed has been extracted and saved below.
 
 `/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan5110_transcripts3.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan5110_transcripts3data.bed --logfile /home/dnanexus/out/Output_files/Pan5110_transcripts3_LogFile.txt `
+
+## combining multiple transcripts
+Where multiple transcripts have been provided, the below BEDtools subtract command adds regions from file a not already covered in file b to the end of file b:
+
+### parts 7 and 8
+`bedtools subtract -a 'Pan5110_transcripts8data.bed' -b 'Pan5110_transcripts7data.bed' >> Pan5110_transcripts7data.bed`
+`bedtools subtract -a 'Pan5110_transcripts8dataSambamba.bed' -b 'Pan5110_transcripts7dataSambamba.bed' >> Pan5110_transcripts7dataSambamba.bed`
+
+part 8 files deleted `rm Pan5110_transcripts8data*`
