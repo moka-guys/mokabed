@@ -119,3 +119,16 @@ Where multiple transcripts have been provided, the below BEDtools subtract comma
 `bedtools subtract -a 'Pan5110_transcripts8dataSambamba.bed' -b 'Pan5110_transcripts7dataSambamba.bed' >> Pan5110_transcripts7dataSambamba.bed`
 
 part 8 files deleted `rm Pan5110_transcripts8data*`
+
+### parts 6 and 7
+`bedtools subtract -a 'Pan5110_transcripts7data.bed' -b 'Pan5110_transcripts6data.bed' >> Pan5110_transcripts6data.bed`
+`bedtools subtract -a 'Pan5110_transcripts7dataSambamba.bed' -b 'Pan5110_transcripts6dataSambamba.bed' >> Pan5110_transcripts6dataSambamba.bed`
+
+part 7 files deleted `rm Pan5110_transcripts7data*`
+
+### parts 5 and 6
+`bedtools subtract -a 'Pan5110_transcripts6data.bed' -b 'Pan5110_transcripts5data.bed' >> Pan5110_transcripts5data.bed`
+`bedtools subtract -a 'Pan5110_transcripts6dataSambamba.bed' -b 'Pan5110_transcripts5dataSambamba.bed' >> Pan5110_transcripts5dataSambamba.bed`
+
+part 7 files deleted `rm Pan5110_transcripts6data*`
+
