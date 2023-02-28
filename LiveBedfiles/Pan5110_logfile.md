@@ -32,6 +32,12 @@ Delete these transcripts from Pan5110_transcripts1.txt and re-run mokabed
 #### Pan5110_transcripts2.txt
 NM_001387283	SMARCA4	0	transcript not available in hg19
 one exon different between this transcript and the MANEselect NM_003072. Add this exon manually later.
+exon 30
+| chr19        | Start    | Stop     |
+|--------------|----------|----------|
+| ensembl pos  | 11150133 | 11150229 |
+| 10bp padding | 11150123 | 11150239 |
+
 Delete this transcript from Pan5110_transcripts2.txt and re-run mokabed
 
 ### logs
@@ -53,7 +59,7 @@ output from UCSC table browser:
 ```
 The ensembl coordinates overlap with bin 1727, so select this.
 Gene has single exon, can be added manually:
-|              | Start     | Stop      |
+| chr1         | Start     | Stop      |
 |--------------|-----------|-----------|
 | UCSC exon    | 149812318 | 149812729 |
 | 10bp padding | 149812308 | 149812739 |
@@ -67,7 +73,7 @@ output from UCSC table browser:
 ```
 The ensembl coordinates overlap with bin 1728, so select this
 Gene has single exon, can be added manually using cdsStart anf cdsStop:
-|              | Start     | Stop      |
+| chr1         | Start     | Stop      |
 |--------------|-----------|-----------|
 | UCSC exon    | 149824216 | 149824627 |
 | 10bp padding | 149824206 | 149824617 |
@@ -130,28 +136,41 @@ part 7 files deleted `rm Pan5110_transcripts7data*`
 `bedtools subtract -a 'Pan5110_transcripts6data.bed' -b 'Pan5110_transcripts5data.bed' >> Pan5110_transcripts5data.bed`
 `bedtools subtract -a 'Pan5110_transcripts6dataSambamba.bed' -b 'Pan5110_transcripts5dataSambamba.bed' >> Pan5110_transcripts5dataSambamba.bed`
 
-part 7 files deleted `rm Pan5110_transcripts6data*`
+part 6 files deleted `rm Pan5110_transcripts6data*`
 
 ### parts 4 and 5
 `bedtools subtract -a 'Pan5110_transcripts5data.bed' -b 'Pan5110_transcripts4data.bed' >> Pan5110_transcripts4data.bed`
 `bedtools subtract -a 'Pan5110_transcripts5dataSambamba.bed' -b 'Pan5110_transcripts4dataSambamba.bed' >> Pan5110_transcripts4dataSambamba.bed`
 
-part 7 files deleted `rm Pan5110_transcripts5data*`
+part 5 files deleted `rm Pan5110_transcripts5data*`
 
 ### parts 3 and 4
 `bedtools subtract -a 'Pan5110_transcripts4data.bed' -b 'Pan5110_transcripts3data.bed' >> Pan5110_transcripts3data.bed`
 `bedtools subtract -a 'Pan5110_transcripts4dataSambamba.bed' -b 'Pan5110_transcripts3dataSambamba.bed' >> Pan5110_transcripts3dataSambamba.bed`
 
-part 7 files deleted `rm Pan5110_transcripts4data*`
+part 4 files deleted `rm Pan5110_transcripts4data*`
 
 ### parts 2 and 3
 `bedtools subtract -a 'Pan5110_transcripts3data.bed' -b 'Pan5110_transcripts2data.bed' >> Pan5110_transcripts2data.bed`
 `bedtools subtract -a 'Pan5110_transcripts3dataSambamba.bed' -b 'Pan5110_transcripts2dataSambamba.bed' >> Pan5110_transcripts2dataSambamba.bed`
 
-part 7 files deleted `rm Pan5110_transcripts3data*`
+part 3 files deleted `rm Pan5110_transcripts3data*`
 
 ### parts 1 and 2
 `bedtools subtract -a 'Pan5110_transcripts2data.bed' -b 'Pan5110_transcripts1data.bed' >> Pan5110_transcripts1data.bed`
 `bedtools subtract -a 'Pan5110_transcripts2dataSambamba.bed' -b 'Pan5110_transcripts1dataSambamba.bed' >> Pan5110_transcripts1dataSambamba.bed`
 
-part 7 files deleted `rm Pan5110_transcripts2data*`
+part 2 files deleted `rm Pan5110_transcripts2data*`
+
+## coding exons to be added manually
+SMARCA4, H3C14 and H3C15 to be added manually as described above.
+
+lines for data.bed
+19	11150123	11150239	6597										SMARCA4;NM_001387283
+1	149812308	149812739	126961										H3C14;NM_021059
+1	149824206	149824617	333932										H3C15;NM_001005464
+
+lines for sambambadata.bed
+19	11150123	11150239	19-11150123-11150239	0	+	SMARCA4;NM_001387283	6597
+1	149812308	149812739	1-149812308-149812739	0	+	H3C14;NM_021059	126961
+1	149824206	149824617	1-149824206-149824617	0	+	H3C15;NM_001005464	333932
