@@ -187,3 +187,11 @@ concatenate intronic regions (Pan4968) into dataSambamba.bed
 `cat Pan4968.bed >> Pan5110_transcripts1dataSambamba.bed`
 
 intronic regions edited manually to match sambamba format in Pan4963_part1dataSambamba.bed 
+
+## sort bedfiles
+### data.bed
+`mv Pan5110_transcripts1data.bed Pan5110_transcripts1data_unsorted.bed; sort Pan5110_transcripts1data_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan5110_transcripts1data.bed; rm Pan5110_transcripts1data_unsorted.bed`
+header moved to top manually
+
+### dataSambamba.bed
+`mv Pan5110_transcripts1dataSambamba.bed Pan5110_transcripts1dataSambamba_unsorted.bed; sort Pan5110_transcripts1dataSambamba_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan5110_transcripts1dataSambamba.bed; rm Pan5110_transcripts1dataSambamba_unsorted.bed`
