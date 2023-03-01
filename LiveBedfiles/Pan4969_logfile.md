@@ -36,7 +36,8 @@ Part 4 BED files were deleted
 `rm Pan4969_transcripts4data*`
 
 ### parts 2 and 3
-    
+`bedtools subtract -a 'Pan4969_transcripts3data.bed' -b 'Pan4969_transcripts2data.bed' >> Pan4969_transcripts2data.bed`
+`bedtools subtract -a 'Pan4969_transcripts3dataSambamba.bed' -b 'Pan4969_transcripts2dataSambamba.bed' >> Pan4969_transcripts2dataSambamba.bed`
 
 Remove part 3 bed files
 `rm Pan4969_transcripts3data*`
@@ -78,10 +79,7 @@ Added chr manually- shown to be required in previous testing for Pan4709
 
 ## testing
 These bed files were tested using sambamba coverage and moka picard apps.
-The sambamba app was run on the HD200 sample from TSO23006 using the original dx run command, modified to use the correct BED file and output to the Pan5110 test project. App completed without error.
-
-`dx run project-ByfFPz00jy1fk6PjpZ95F27J:applet-G6vyyf00jy1kPkX9PJ1YkxB1 --detach -y --brief --name=TSO23006_01_220246_HD200_Pan5085.bam -ibam_index=file-GPZJF380f81Z1zK8yy6F5p6k -ibamfile=file-GPZJF380f81XJq0f6xP19xJP -icoverage_level=100 -isambamba_bed=003_230126_Pan5110:/Pan5110dataSambamba.bed -imerge_overlapping_mate_reads=true -iexclude_failed_quality_control=true -iexclude_duplicate_reads=true -imin_base_qual=25 -imin_mapping_qual=30 --dest=003_230126_Pan5110`
-
+The sambamba app was run on a stiched realigned BAM file from TSO22019 and completed without error.
 The MokaPicard app was previously found to fail with TSO500 bam files, presumed to be due to an issue with the bam. Therefor this bed file was tested with the NA12878 bam file from NGS482B (VCP3). App completed successfully suggesting the bed file is valid.
 
 ## delete extra files
