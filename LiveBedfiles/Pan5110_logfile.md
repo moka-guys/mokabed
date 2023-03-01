@@ -198,3 +198,22 @@ header moved to top manually
 
 ## add chr
 Added chr manually- shown to be required in previous testing for Pan4709
+
+## rename
+`mv Pan5110_transcripts1data.bed Pan5110data.bed`
+`mv Pan5110_transcripts1dataSambamba.bed Pan5110dataSambamba.bed`
+
+## testing
+These bed files were tested using sambamba coverage and moka picard apps.
+The sambamba app was run on the HD200 sample from TSO23006 using the original dx run command, modified to use the correct BED file and output to the Pan5110 test project. App completed without error.
+
+`dx run project-ByfFPz00jy1fk6PjpZ95F27J:applet-G6vyyf00jy1kPkX9PJ1YkxB1 --detach -y --brief --name=TSO23006_01_220246_HD200_Pan5085.bam -ibam_index=file-GPZJF380f81Z1zK8yy6F5p6k -ibamfile=file-GPZJF380f81XJq0f6xP19xJP -icoverage_level=100 -isambamba_bed=003_230126_Pan5110:/Pan5110dataSambamba.bed -imerge_overlapping_mate_reads=true -iexclude_failed_quality_control=true -iexclude_duplicate_reads=true -imin_base_qual=25 -imin_mapping_qual=30 --dest=003_230126_Pan5110`
+
+The MokaPicard app (v1.1) was previously found to fail with TSO500 bam files, presumed to be due to an issue with the bam. Therefore this bed file was tested with the NA12878 bam file from NGS536B (VCP3). App completed successfully suggesting the bed file is valid.
+
+`dx run project-ByfFPz00jy1fk6PjpZ95F27J:applet-FPv2Q1Q0jy1pBk9bG7GZ5zQp --detach -y --brief --name=NGS536B_NA12878 -iCapture_panel=Hybridisation -isorted_bam=project-GPGYP2Q0PqFg20FY4J4Y51K3:file-GPGb0Fj00py9bGfq1jJ22zfv -ifasta_index=project-FVpfGp00vgV46F1xJx7y4YJ7:file-ByYgX700b80gf4ZY1GxvF3Jv -ivendor_exome_bedfile=project-GP98qV00fQvYGyQJFBx6yFGv:/Pan5110data.bed --dest=003_230126_Pan5110`
+
+## delete extra files and tidy up project
+`rm Pan5110_transcripts1dataRefSeqFormat.txt`
+move transcript files to correct location, example command:
+`mv Pan5110_transcripts8.txt Transcripts/Pantranscriptfiles/Pan5110_transcripts8.txt`
