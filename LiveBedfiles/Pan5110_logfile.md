@@ -217,6 +217,8 @@ The MokaPicard app (v1.1) was previously found to fail with TSO500 bam files, pr
 `rm Pan5110_transcripts1dataRefSeqFormat.txt`
 move transcript files to correct location, example command:
 `mv Pan5110_transcripts8.txt Transcripts/Pantranscriptfiles/Pan5110_transcripts8.txt`
+move genes list to transcript files folder
+`mv Pan5110_genelist.txt Transcripts/Pantranscriptfiles/Pan5110_genelist.txt`
 
 ## Add TERC
 Forgot to add TERC (RNA gene) previously
