@@ -181,6 +181,9 @@ Lines manually added to Pan5110_transcripts1data.bed and Pan5110_transcripts1dat
 concatenate intronic regions (Pan4968) into data.bed
 `cat Pan4968.bed >> Pan5110_transcripts1data.bed`
 
+manually modify the intronic regions to match data.bed format (EntrezID taken from other MET regions, or from Pan4963 for TERT)
+
 concatenate intronic regions (Pan4968) into dataSambamba.bed
 `cat Pan4968.bed >> Pan5110_transcripts1dataSambamba.bed`
 
+intronic regions edited manually to match sambamba format in Pan4963_part1dataSambamba.bed 
