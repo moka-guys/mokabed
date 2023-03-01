@@ -76,7 +76,7 @@ Gene has single exon, can be added manually using cdsStart anf cdsStop:
 | chr1         | Start     | Stop      |
 |--------------|-----------|-----------|
 | UCSC exon    | 149824216 | 149824627 |
-| 10bp padding | 149824206 | 149824617 |
+| 10bp padding | 149824206 | 149824637 |
 
 ### CIC
 Transcripts reviewed in ensembl and from UCSC table browser output
@@ -168,12 +168,12 @@ SMARCA4, H3C14 and H3C15 to be added manually as described above.
 lines for data.bed
 19	11150123	11150239	6597										SMARCA4;NM_001387283
 1	149812308	149812739	126961										H3C14;NM_021059
-1	149824206	149824617	333932										H3C15;NM_001005464
+1	149824206	149824637	333932										H3C15;NM_001005464
 
 lines for dataSambamba.bed
 19	11150123	11150239	19-11150123-11150239	0	+	SMARCA4;NM_001387283	6597
 1	149812308	149812739	1-149812308-149812739	0	+	H3C14;NM_021059	126961
-1	149824206	149824617	1-149824206-149824617	0	+	H3C15;NM_001005464	333932
+1	149824206	149824637	1-149824206-149824637	0	+	H3C15;NM_001005464	333932
 
 Lines manually added to Pan5110_transcripts1data.bed and Pan5110_transcripts1dataSambamba.bed
 
@@ -243,3 +243,17 @@ Region added to BED file manually
 ## repeat testing
 testing repeated as above (sambamba and picard apps).
 Both apps completed successfully. Gene level coverage report checked, TERC present.
+
+## Updates following code review
+corrected padding for H3C15
+Corrected GeneID for TERT to 7015 (prev was the HGNC ID 11730)
+
+## check all trasncripts included
+Added full list of transcripts included.
+`bash /home/rebecca/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/transcript_checker.sh /home/rebecca/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5110_all_transcripts.csv /home/rebecca/mokabed/LiveBedfiles/Pan5110data.bed`
+output:
+`Transcripts missing from bed file: NR_001566.1  NM_001379482 NM_001198634`
+
+NR_001566 is included without the version number (.1)
+NM_001379482 all regions were found to overlap with other transcripts- last region lost in merge of parts 3 and 4
+NM_001198634 all regions were found to overlap with other transcripts- last region lost in merge of parts 4 and 5
