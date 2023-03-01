@@ -217,3 +217,27 @@ The MokaPicard app (v1.1) was previously found to fail with TSO500 bam files, pr
 `rm Pan5110_transcripts1dataRefSeqFormat.txt`
 move transcript files to correct location, example command:
 `mv Pan5110_transcripts8.txt Transcripts/Pantranscriptfiles/Pan5110_transcripts8.txt`
+
+## Add TERC
+Forgot to add TERC (RNA gene) previously
+
+output from UCSC table browser:
+```
+#bin	name	chrom	strand	txStart	txEnd	cdsStart	cdsEnd	exonCount	exonStarts	exonEnds	score	name2	cdsStartStat	cdsEndStat	exonFrames
+1878	NR_001566	chr3	-	169482397	169482848	169482848	169482848	1	169482397,	169482848,	0	TERC	unk	unk	-1,
+```
+
+Single exon, coordinates taken from UCSC, 10bp padding added:
+
+| chr3         | Start     | Stop      |
+|--------------|-----------|-----------|
+| UCSC         | 169482397 | 169482848 |
+| 10bp padding | 169482387 | 169482858 |
+
+GeneID 7012
+
+Region added to BED file manually
+
+## repeat testing
+testing repeated as above (sambamba and picard apps).
+Both apps completed successfully. Gene level coverage report checked, TERC present.
