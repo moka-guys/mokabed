@@ -170,7 +170,17 @@ lines for data.bed
 1	149812308	149812739	126961										H3C14;NM_021059
 1	149824206	149824617	333932										H3C15;NM_001005464
 
-lines for sambambadata.bed
+lines for dataSambamba.bed
 19	11150123	11150239	19-11150123-11150239	0	+	SMARCA4;NM_001387283	6597
 1	149812308	149812739	1-149812308-149812739	0	+	H3C14;NM_021059	126961
 1	149824206	149824617	1-149824206-149824617	0	+	H3C15;NM_001005464	333932
+
+Lines manually added to Pan5110_transcripts1data.bed and Pan5110_transcripts1dataSambamba.bed
+
+## add intronic regions
+concatenate intronic regions (Pan4968) into data.bed
+`cat Pan4968.bed >> Pan5110_transcripts1data.bed`
+
+concatenate intronic regions (Pan4968) into dataSambamba.bed
+`cat Pan4968.bed >> Pan5110_transcripts1dataSambamba.bed`
+
