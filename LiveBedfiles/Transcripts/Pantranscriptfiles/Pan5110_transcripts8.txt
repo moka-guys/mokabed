@@ -1,0 +1,2 @@
+GuysAccession	ApprovedSymbol	GuysAccessionVersion
+NM_001198633	RUNX1T1	0
