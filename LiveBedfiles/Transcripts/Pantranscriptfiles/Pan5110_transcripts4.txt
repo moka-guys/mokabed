@@ -1,0 +1,3 @@
+GuysAccession	ApprovedSymbol	GuysAccessionVersion
+NM_001379482	CIC	0
+NM_001198679	RUNX1T1	0
