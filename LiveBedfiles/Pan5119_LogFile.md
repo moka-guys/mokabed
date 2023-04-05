@@ -26,3 +26,7 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5119
 
 version as defined by git tag = v1.2
 
+## Add PTEN
+cat Pan5119_PTENdata.bed >> Pan5119data.bed
+
+
