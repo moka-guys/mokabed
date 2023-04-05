@@ -30,3 +30,6 @@ version as defined by git tag = v1.2
 cat Pan5119_PTENdata.bed >> Pan5119data.bed
 
 remove header manually
+
+## Add Pan4283
+cat Pan4283.bed >> Pan5119data.bed
