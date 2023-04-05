@@ -66,3 +66,5 @@ delete chek2 region and convert additional regions into sambamba format
 # add PTENsambamba.bed to pan5119dataSambamba.bed
 cat Pan5119_PTENdataSambamba.bed >> Pan5119dataSambamba.bed
 
+# sort sambambadata.bed
+sort Pan5119dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan5119dataSambamba_sorted.bed; mv Pan5119dataSambamba.bed Pan5119dataSambamba_unsorted.bed; mv Pan5119dataSambamba_sorted.bed Pan5119dataSambamba.bed; rm Pan5119dataSambamba_unsorted.bed
