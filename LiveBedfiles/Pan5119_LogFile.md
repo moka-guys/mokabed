@@ -56,3 +56,6 @@ cat Pan4283.bed >> Pan5119dataSambamba.bed
 
 # add Pan5117 to sambamba.bed
 cat Pan5117.bed >> Pan5119dataSambamba.bed
+
+# add Pan5120 to sambamba.bed
+cat Pan5120.bed >> Pan5119dataSambamba.bed
