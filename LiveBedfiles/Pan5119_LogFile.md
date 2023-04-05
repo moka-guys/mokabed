@@ -1,4 +1,4 @@
-This BED file is a remake of Pan4948, the VCP2 +/-30bp panel, but with the following changes:
+This BED file is a remake of Pan5119, the VCP2 +/-30bp panel, but with the following changes:
 - whole of SCG5 gene,
 - 6 genomic targets that lie between SCG5 and GREM1 (Pan5117)
 - extra UTR regions (Pan5120)
@@ -39,3 +39,6 @@ Pan4283 contains a region of chek2. The whole of chek2 is now included so this r
 
 ## Add Pan5117
 cat Pan5117.bed >> Pan5119data.bed
+
+## Add Pan5120
+cat Pan5120.bed >> Pan5119data.bed
