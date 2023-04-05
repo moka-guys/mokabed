@@ -45,3 +45,6 @@ cat Pan5120.bed >> Pan5119data.bed
 
 ## Sort Pan5119data.bed
 sort Pan5119data.bed -k1,1V -k2,2n -k3,3n > Pan5119data_sorted.bed; mv Pan5119data.bed Pan5119data_unsorted.bed; mv Pan5119data_sorted.bed Pan5119data.bed; rm Pan5119data_unsorted.bed move header to the top manually
+
+## Make Pan5119_flat.bed
+cut -f1-3 Pan5119data.bed | bedtools merge > Pan5119_flat.bed Flat bed file used for somatic variant calling.
