@@ -48,3 +48,8 @@ sort Pan5123data.bed -k1,1V -k2,2n -k3,3n > Pan5123data_sorted.bed; mv Pan5123da
 
 ## Make Pan5123_flat.bed
 cut -f1-3 Pan5123data.bed | bedtools merge > Pan5123_flat.bed Flat bed file used for somatic variant calling.
+
+## Make Pan5123dataSambamba.
+
+# add Pan4283 to sambamba.bed
+cat Pan4283.bed >> Pan5123dataSambamba.bed
