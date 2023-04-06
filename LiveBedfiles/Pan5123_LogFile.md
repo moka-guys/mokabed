@@ -36,3 +36,6 @@ cat Pan4283.bed >> Pan5123data.bed
 
 ## Remove duplicate chek2 region
 Pan4283 contains a region of chek2. The whole of chek2 is now included so this region does not need to be specified so it was removed manually.
+
+## Add Pan5117
+cat Pan5117.bed >> Pan5123data.bed
