@@ -7,7 +7,7 @@ This BED file is a remake of Pan4948, the VCP2 +/-10bp panel, but with the follo
 ## Save transcripts
 PTEN gene included separetly as it also requires the 5' UTR (also padded 10bp).
 
-## Run mokabed- This covers all genes except for PTEN - see Pan5123_PTEN_logfile.txt
+## Run mokabed- This covers all genes except for PTEN - see Pan5123_PTEN_LogFile.txt
 Time Stamp:2023-04-06 14:37:51.008320
 Command arguments executed:
 RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5123dataRefSeqFormat.txt
@@ -25,3 +25,8 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5123
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+## Add PTEN
+cat Pan5123_PTENdata.bed >> Pan5123data.bed
+
+remove header manually
