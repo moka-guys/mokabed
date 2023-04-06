@@ -1,4 +1,4 @@
-This BED file is a remake of Pan5119, the VCP2 +/-30bp panel, but with the following changes:
+This BED file is a remake of Pan4948, the VCP2 +/-30bp panel, but with the following changes:
 - whole of SCG5 gene,
 - 6 genomic targets that lie between SCG5 and GREM1 (Pan5117)
 - extra UTR regions (Pan5120)
@@ -71,3 +71,14 @@ sort Pan5119dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan5119dataSambamba_sorted.b
 
 # delete intermediate/incomplete files
 rm Pan5119_PTENdata.bed Pan5119_PTENdataRefSeqFormat.txt Pan5119dataRefSeqFormat.txt Pan5119_PTENdataSambamba.bed
+
+## Testing
+Pan5119dataSambamba.bed was tested using sambamba_v1.13
+Sambamba file had to be manually edited to meet required format
+Col 7 gene name had to be followed by transcript number e.g e.g GREM1_SCG5;NM_001144757.2 and a single gene id had to be provided in Col 8 
+The app completed sucessfully once the changes were made
+
+Pan5119data.bed was tested using filter_vcf_with_bedfile_v1.1 and moka_picard_v1.2.1 - both jobs completed sucessfully 
+
+Pan5119data_flat.bed was tested using varscan2_v1.7.1 and filter_vcf_with_bedfile_v1.1 - both jobs completed sucessfully
+
