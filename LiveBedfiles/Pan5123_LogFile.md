@@ -53,3 +53,6 @@ cut -f1-3 Pan5123data.bed | bedtools merge > Pan5123_flat.bed Flat bed file used
 
 # add Pan4283 to sambamba.bed
 cat Pan4283.bed >> Pan5123dataSambamba.bed
+
+# add Pan5117 to sambamba.bed
+cat Pan5117.bed >> Pan5123dataSambamba.bed
