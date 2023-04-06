@@ -62,3 +62,6 @@ cat Pan5120.bed >> Pan5123dataSambamba.bed
 
 # manually modify intronic regions.
 delete chek2 region and convert additional regions into sambamba format
+
+# add PTENsambamba.bed to pan5123dataSambamba.bed
+cat Pan5123_PTENdataSambamba.bed >> Pan5123dataSambamba.bed
