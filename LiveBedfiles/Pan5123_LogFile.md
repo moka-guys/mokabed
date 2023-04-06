@@ -42,3 +42,6 @@ cat Pan5117.bed >> Pan5123data.bed
 
 ## Add Pan5120
 cat Pan5120.bed >> Pan5123data.bed
+
+## Sort Pan5123data.bed
+sort Pan5123data.bed -k1,1V -k2,2n -k3,3n > Pan5123data_sorted.bed; mv Pan5123data.bed Pan5123data_unsorted.bed; mv Pan5123data_sorted.bed Pan5123data.bed; rm Pan5123data_unsorted.bed move header to the top manually
