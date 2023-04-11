@@ -68,3 +68,6 @@ cat Pan5123_PTENdataSambamba.bed >> Pan5123dataSambamba.bed
 
 # sort sambambadata.bed
 sort Pan5123dataSambamba.bed -k1,1V -k2,2n -k3,3n > Pan5123dataSambamba_sorted.bed; mv Pan5123dataSambamba.bed Pan5123dataSambamba_unsorted.bed; mv Pan5123dataSambamba_sorted.bed Pan5123dataSambamba.bed; rm Pan5123dataSambamba_unsorted.bed
+
+# delete intermediate/incomplete files
+rm Pan5123_PTENdata.bed Pan5123_PTENdataRefSeqFormat.txt Pan5123dataRefSeqFormat.txt Pan5123_PTENdataSambamba.bed
