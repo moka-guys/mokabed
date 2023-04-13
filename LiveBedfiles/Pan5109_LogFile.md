@@ -30,3 +30,7 @@ Pan5109_RPKM.bed was tested using RPKM_using_conifer_v1.6. The app finished succ
 
 # sorting the BED file to ease analysis
 sort Pan5109_RPKM.bed -k1,1V -k2,2n -k3,3n > Pan5109_RPKM_sorted.bed; mv Pan5109_RPKM.bed Pan5109_RPKM_unsorted.bed; mv Pan5109_RPKM_sorted.bed Pan5109_RPKM.bed; rm Pan5109_RPKM_unsorted.bed
+
+# testing
+
+Pan5109_RPKM.bed tested again after sorting using RPKM_using_conifer_v1.6 and the app finished successfully.
