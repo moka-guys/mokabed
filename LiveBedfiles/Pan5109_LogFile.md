@@ -25,3 +25,5 @@ version as defined by git tag = v1.2
 performed in 003_230303_R211_mokabed
 see Pan5109_RPKM_logfile.txt
 
+# testing statement
+Pan5109_RPKM.bed was tested using RPKM_using_conifer_v1.6. The app finished successfully.
