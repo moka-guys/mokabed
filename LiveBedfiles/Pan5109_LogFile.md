@@ -20,3 +20,8 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5109
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+# run nexus app to create RPKM Bedfile
+performed in 003_230303_R211_mokabed
+see Pan5109_RPKM_logfile.txt
+
