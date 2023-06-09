@@ -21,3 +21,15 @@ Taken from Pan5110_logfile.md:
 
 Removed NM_001387283 from Pan5130_MANEplusClinicaltranscripts.txt
 Take the missing exons from Pan5110 bed files to add manually later.
+
+## Run mokabed
+mokabed run in DNAnexus project 003_230602_Pan5130
+
+`dx run project-ByfFPz00jy1fk6PjpZ95F27J:applet-FfjkPy80Vy31YK619YK1Yf4x -itranscript_file=003_230602_Pan5130:Pan5130_MANEtranscripts.txt -icoding_up=10 -icoding_down=10 -igenes_or_transcripts=TRANSCRIPTS -imergeboundaries=false`
+
+`dx run project-ByfFPz00jy1fk6PjpZ95F27J:applet-FfjkPy80Vy31YK619YK1Yf4x -itranscript_file=003_230602_Pan5130:Pan5130_MANEplusClinicaltranscripts.txt -icoding_up=10 -icoding_down=10 -igenes_or_transcripts=TRANSCRIPTS -imergeboundaries=false`
+
+### log files
+see Pan5130_MANEtranscripts_LogFile.txt and Pan5130_MANEplusClinicaltranscripts_LogFile.txt for full details. Example command:
+`/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan5130_MANEplusClinicaltranscripts.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan5130_MANEplusClinicaltranscriptsdata.bed --logfile /home/dnanexus/out/Output_files/Pan5130_MANEplusClinicaltranscripts_LogFile.txt`
+
