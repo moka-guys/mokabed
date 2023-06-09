@@ -41,3 +41,10 @@ Run BEDtools subtract command to add regions from file a not already covered in 
 
 Pan5130_MANEplusClinical BED files were deleted
 `rm Pan5130_MANEplusClinicaltranscriptsdata*`
+
+## Add intronic regions
+concatenate intronic regions (Pan4968) into data.bed
+`cat Pan4968.bed >> Pan5130_MANEtranscriptsdata.bed`
+
+concatenate intronic regions (Pan4968) into dataSambamba.bed
+`cat Pan4968.bed >> Pan5130_MANEtranscriptsdataSambamba.bed`
