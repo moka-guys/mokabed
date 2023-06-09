@@ -84,3 +84,23 @@ output:
 
 ## correct gene name in request form
 KDM6A gene spelling error in request form. Had been corrected but not saved. Saved at this stage.
+
+## testing
+These bed files were tested using sambamba coverage and moka picard apps.
+
+### Sambamba
+The sambamba app was run on the HD200 sample from TSO23021 using the original dx run command, modified to use the correct BED file and output to the Pan5130 test project. 
+
+`dx run project-ByfFPz00jy1fk6PjpZ95F27J:applet-G6vyyf00jy1kPkX9PJ1YkxB1 --detach -y --brief --name=TSO23021_01_230069_HD200_Pan5114.bam -ibam_index=project-GVk4zYj0FJGXXpjf8XGzpzfz:file-GVp8g1Q0zy03YKqGPxGXBFQ9 -ibamfile=project-GVk4zYj0FJGXXpjf8XGzpzfz:file-GVp8g1Q0zy043073qq0xbZqV -icoverage_level=100 -isambamba_bed=003_230602_Pan5130:/Pan5130dataSambamba.bed -imerge_overlapping_mate_reads=true -iexclude_failed_quality_control=true -iexclude_duplicate_reads=true -imin_base_qual=25 -imin_mapping_qual=30 --dest=003_230602_Pan5130`
+
+app failed, last line of error: `AttributeError: gene id not in database: 11730`
+
+11730 was the entrez id for TERT intronic regions, but it differs from the entrez id for the rest of TERT (newly added in Pan5130). 7130 is the GeneID in NCBI, 11730 is the HGNC id.
+Manually changed all TERT regions to 7130 in both bed files and re-ran test. App completed successfully.
+
+gene_level.txt report was checked and the correct number of genes was present.
+
+### Picard
+The MokaPicard app was previously found to fail with TSO500 bam files, presumed to be due to an issue with the bam. Therefore this bed file was tested with the NA12878 bam file from NGS536B (VCP3). App (v1.2) completed successfully suggesting the bed file is valid.
+
+`dx run project-ByfFPz00jy1fk6PjpZ95F27J:applet-G9yJ57j0jy1ZV0fxPZZXJ8FJ --detach -y --brief --name=NGS536B_NA12878 -iCapture_panel=Hybridisation -isorted_bam=project-GPGYP2Q0PqFg20FY4J4Y51K3:file-GPGb0Fj00py9bGfq1jJ22zfv -ifasta_index=project-FVpfGp00vgV46F1xJx7y4YJ7:file-ByYgX700b80gf4ZY1GxvF3Jv -ivendor_exome_bedfile=Pan5130data.bed --dest=003_230602_Pan5130`
