@@ -48,3 +48,5 @@ concatenate intronic regions (Pan4968) into data.bed
 
 concatenate intronic regions (Pan4968) into dataSambamba.bed
 `cat Pan4968.bed >> Pan5130_MANEtranscriptsdataSambamba.bed`
+
+Manually modify Pan5130_MANEtranscriptsdata.bed and Pan5130_MANEplusClinicaltranscriptsdata.bed to match formatting (copied from Pan4969 bed files)
