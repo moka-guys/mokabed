@@ -50,3 +50,11 @@ concatenate intronic regions (Pan4968) into dataSambamba.bed
 `cat Pan4968.bed >> Pan5130_MANEtranscriptsdataSambamba.bed`
 
 Manually modify Pan5130_MANEtranscriptsdata.bed and Pan5130_MANEplusClinicaltranscriptsdata.bed to match formatting (copied from Pan4969 bed files)
+
+## sort bedfiles
+### data.bed
+`mv Pan5130_MANEtranscriptsdata.bed Pan5130_MANEtranscriptsdata_unsorted.bed; sort Pan5130_MANEtranscriptsdata_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan5130_MANEtranscriptsdata.bed; rm Pan5130_MANEtranscriptsdata_unsorted.bed`
+header moved to top manually
+
+### dataSambamba.bed
+`mv Pan5130_MANEtranscriptsdataSambamba.bed Pan5130_MANEtranscriptsdataSambamba_unsorted.bed; sort Pan5130_MANEtranscriptsdataSambamba_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan5130_MANEtranscriptsdataSambamba.bed; rm Pan5130_MANEtranscriptsdataSambamba_unsorted.bed`
