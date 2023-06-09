@@ -33,3 +33,11 @@ mokabed run in DNAnexus project 003_230602_Pan5130
 see Pan5130_MANEtranscripts_LogFile.txt and Pan5130_MANEplusClinicaltranscripts_LogFile.txt for full details. Example command:
 `/home/dnanexus/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/OOBed7_uses_mirrored_database_.py --codingup 10 --codingdown 10 --useaccessions --transcripts /home/dnanexus/in/transcript_file/Pan5130_MANEplusClinicaltranscripts.txt --minuschr --outputfile /home/dnanexus/out/Output_files/Pan5130_MANEplusClinicaltranscriptsdata.bed --logfile /home/dnanexus/out/Output_files/Pan5130_MANEplusClinicaltranscripts_LogFile.txt`
 
+## combining multiple transcripts
+Run BEDtools subtract command to add regions from file a not already covered in file a to the end of file b:
+
+`bedtools subtract -a 'Pan5130_MANEplusClinicaltranscriptsdata.bed' -b 'Pan5130_MANEtranscriptsdata.bed' >> Pan5130_MANEtranscriptsdata.bed`
+`bedtools subtract -a 'Pan5130_MANEplusClinicaltranscriptsdataSambamba.bed' -b 'Pan5130_MANEtranscriptsdataSambamba.bed' >> Pan5130_MANEtranscriptsdataSambamba.bed`
+
+Pan5130_MANEplusClinical BED files were deleted
+`rm Pan5130_MANEplusClinicaltranscriptsdata*`
