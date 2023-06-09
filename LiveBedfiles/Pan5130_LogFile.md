@@ -65,3 +65,13 @@ Added chr manually- shown to be required in previous testing for Pan4709
 ## rename
 `mv Pan5130_MANEtranscriptsdata.bed Pan5130data.bed`
 `mv Pan5130_MANEtranscriptsdataSambamba.bed Pan5130dataSambamba.bed`
+
+## add extra SMARCA4 exon
+copy line from Pan5110 bed files and re-sort
+
+### data.bed
+`mv Pan5130data.bed Pan5130data_unsorted.bed; sort Pan5130data_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan5130data.bed; rm Pan5130data_unsorted.bed`
+header moved to top manually
+
+### dataSambamba.bed
+`mv Pan5130dataSambamba.bed Pan5130dataSambamba_unsorted.bed; sort Pan5130dataSambamba_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan5130dataSambamba.bed; rm Pan5130dataSambamba_unsorted.bed`
