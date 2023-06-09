@@ -75,3 +75,12 @@ header moved to top manually
 
 ### dataSambamba.bed
 `mv Pan5130dataSambamba.bed Pan5130dataSambamba_unsorted.bed; sort Pan5130dataSambamba_unsorted.bed -k1,1V -k2,2n -k3,3n > Pan5130dataSambamba.bed; rm Pan5130dataSambamba_unsorted.bed`
+
+## check all trasncripts included
+Added full list of transcripts included.
+`bash /home/rebecca/Documents/mokabed/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/transcript_checker.sh /home/rebecca/Documents/mokabed/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5130_all_transcripts.csv /home/rebecca/Documents/mokabed/mokabed/LiveBedfiles/Pan5130data.bed`
+output:
+`Bed file as expected (all transcripts present)`
+
+## correct gene name in request form
+KDM6A gene spelling error in request form. Had been corrected but not saved. Saved at this stage.
