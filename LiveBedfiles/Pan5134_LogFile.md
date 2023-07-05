@@ -43,3 +43,7 @@ The incorrect coordinates are: chr6:129763336-129763402 and the correct coordina
 ## Testing
 Pan5134data.bed was test using mokapicard, job completed without error.
 
+## Creating Exomedepth readcount BED file
+
+1. Convert the capture BED to BED4 format 
+cut -f1-4 Pan5134data.bed > Pan5134capture.bed
