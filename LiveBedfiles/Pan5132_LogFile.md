@@ -27,3 +27,6 @@ Pan4283 contains a region of chek2. The whole of chek2(rs555607708) is now inclu
 
 ## Add Pan5117
 cat Pan5117.bed >> Pan5132data.bed
+
+## Add Pan3610
+cat Pan3610.bed >> Pan5132data.bed
