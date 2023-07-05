@@ -21,3 +21,6 @@ version as defined by git tag = v1.2
 
 ## Add Pan4283
 cat Pan4283.bed >> Pan5132data.bed
+
+## Remove duplicate chek2 region
+Pan4283 contains a region of chek2. The whole of chek2(rs555607708) is now included so this region does not need to be specified so it was removed manually.
