@@ -30,3 +30,6 @@ cat Pan5117.bed >> Pan5132data.bed
 
 ## Add Pan3610
 cat Pan3610.bed >> Pan5132data.bed
+
+## Sort Pan5132data.bed
+sort Pan5132data.bed -k1,1V -k2,2n -k3,3n > Pan5132data_sorted.bed; mv Pan5132data.bed Pan5132data_unsorted.bed; mv Pan5132data_sorted.bed Pan5132data.bed; rm Pan5132data_unsorted.bed 
