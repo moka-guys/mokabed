@@ -62,5 +62,5 @@ Then open in VSCode and replace "," with tabs
 
 6. Ensure no regions are reported as missed and Pan5134final_missed.bed is empty.
 
-
-
+7. Final exomedepth BED file is written as Pan5134final_exomedepth.bed renamed to Pan5134exomedepth.bed
+    mv Pan5134final_exomedepth.bed Pan5134exomedepth.bed
