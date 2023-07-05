@@ -51,3 +51,13 @@ cut -f1-4 Pan5134data.bed > Pan5134capture.bed
 2. Replace entrez id with gene symbol
 Open Pan5134capture.bed file in Excel and manually replace the Entrez ids 
 Then open in VSCode and replace "," with tabs
+
+3. Run makeExomedepth script again with correct input
+   TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan5134 Pan5134capture.bed
+
+4. Edit _Pan5134_missed.bed to add strand info
+
+
+
+
+
