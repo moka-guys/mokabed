@@ -33,3 +33,5 @@ cat Pan4291.bed Pan4290.bed Pan4292.bed Pan4272.bed >> Pan5134data.bed
 
 ## Sort data.bed
 sort Pan5134data.bed -k1,1V -k2,2n -k3,3n > Pan5134data_sorted.bed; mv Pan5134data.bed Pan5134data_unsorted.bed; mv Pan5134data_sorted.bed Pan5134data.bed; rm Pan5134data_unsorted.bed
+
+move header to the top
