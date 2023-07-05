@@ -64,3 +64,6 @@ Then open in VSCode and replace "," with tabs
 
 7. Final exomedepth BED file is written as Pan5134final_exomedepth.bed renamed to Pan5134exomedepth.bed
     mv Pan5134final_exomedepth.bed Pan5134exomedepth.bed
+
+8. Remove unrequired files
+    rm *_Pan5134* *Pan5134final* Pan5134capture.bed
