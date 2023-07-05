@@ -47,3 +47,7 @@ Pan5134data.bed was test using mokapicard, job completed without error.
 
 1. Convert the capture BED to BED4 format 
 cut -f1-4 Pan5134data.bed > Pan5134capture.bed
+
+2. Replace entrez id with gene symbol
+Open Pan5134capture.bed file in Excel and manually replace the Entrez ids 
+Then open in VSCode and replace "," with tabs
