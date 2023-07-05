@@ -57,7 +57,10 @@ Then open in VSCode and replace "," with tabs
 
 4. Edit _Pan5134_missed.bed to add strand info
 
+5. Run makeExomedepth to generate final exomdepth BED file
+    TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5134final Pan5134capture.bed _Pan5134_missed.bed
 
+6. Ensure no regions are reported as missed and Pan5134final_missed.bed is empty.
 
 
 
