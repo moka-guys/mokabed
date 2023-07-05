@@ -67,3 +67,6 @@ Then open in VSCode and replace "," with tabs
 
 8. Remove unrequired files
     rm *_Pan5134* *Pan5134final* Pan5134capture.bed
+
+## Testing
+Pan5134exomedepth.bed was test using ED_readcount_analysis_v1.0.0, job completed without error.
