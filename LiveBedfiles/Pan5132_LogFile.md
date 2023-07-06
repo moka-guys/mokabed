@@ -49,7 +49,7 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 
 2. Replace Entrez IDs with gene symbols
     Open Pan5132_capture.bed in Excel, first in split the GeneAccession column on semi colon and create a column concatenating EntrezID;GeneSymbol.
-    Delete Gene Accession column
+    Delete Gene Accession column- changes to 4 column format
 
     Excel saves file as a csv, so open file in VS code and replace "," with a tab
     This helps visualise changes during code review
@@ -64,5 +64,4 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 
 3. Underscores create issues with makeexomdepth.sh script, so in VScode replace any underscores with dashes. 
 
-        
 
