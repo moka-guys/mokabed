@@ -55,3 +55,6 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
     This helps visualise changes during code review
 
     Delete EntrezID column
+
+    In Excel format Entrez;Gene_Accession to only include gene symbol
+        a) Remove ";" at the end of intronic regions in Entrez;Gene_Accession column (if not done, leaves empty cells in the next step)
