@@ -46,3 +46,8 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 
 1. Create a copy of Pan5132data.bed to make changes
     cp Pan5132data.bed Pan5132_capture.bed
+
+2. Replace Entrez IDs with gene symbols
+    Open Pan5132_capture.bed in Excel, first in split the GeneAccession column on semi colon and create a column concatenating EntrezID;GeneSymbol.
+    Delete Gene Accession column
+
