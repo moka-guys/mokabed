@@ -53,3 +53,5 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 
     Excel saves file as a csv, so open file in VS code and replace "," with a tab
     This helps visualise changes during code review
+
+    Delete EntrezID column
