@@ -40,3 +40,9 @@ rm Pan5132dataRefSeqFormat.txt Pan5132dataSambamba.bed
 
 ## Testing
 Pan5132data.bed was tested using moka_picard_v1.2.1 - job completed sucessfully
+
+## Creating Exomedepth BED file
+This BED file is used to do read count step of exome depth for CNV analysis of VCP2.
+
+1. Create a copy of Pan5132data.bed to make changes
+    cp Pan5132data.bed Pan5132_capture.bed
