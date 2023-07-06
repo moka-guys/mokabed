@@ -62,5 +62,7 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
                 Find *; and and leave replace field empty (remember to select wildcard option)
                 Excel saves output as csv, replace "," with a tab
 
+3. Underscores create issues with makeexomdepth.sh script, so in VScode replace any underscores with dashes. 
+
         
 
