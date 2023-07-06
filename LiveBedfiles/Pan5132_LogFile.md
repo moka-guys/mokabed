@@ -58,3 +58,9 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 
     In Excel format Entrez;Gene_Accession to only include gene symbol
         a) Remove ";" at the end of intronic regions in Entrez;Gene_Accession column (if not done, leaves empty cells in the next step)
+        b) Use find and replace to edit Entrez;Gene_Accession column to only include Gene symbols.
+                Find *; and and leave replace field empty (remember to select wildcard option)
+                Excel saves output as csv, replace "," with a tab
+
+        
+
