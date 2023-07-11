@@ -79,3 +79,8 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
     CHEK2,TP53 set to - as gene is on reverse strand 
     Strand information obtained from Ensembl
     Diff performed in vscode between _Pan5132_missed.bed and _Pan4973_missed.bed, no differences in shared regions
+
+7. Regenerate (final) exomedepth files giving the additional non-exonic regions from last step
+    TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5132_final Pan5132data_4col.bed _Pan5132_missed.bed
+
+    - note after this stage there are no missed regions (Pan5132_final_missed.bed is empty)
