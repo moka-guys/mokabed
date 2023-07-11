@@ -47,3 +47,9 @@ Pan5134data.bed was test using mokapicard, job completed without error.
 
 1. Create a copy of Pan5134data.bed to make changes
     cp Pan5134data.bed Pan5134_capture.bed
+
+2. Replace Entrez IDs with gene symbols
+    Open Pan5134_capture.bed in Excel, first split the GeneAccession column on semi colon and create a column concatenating 
+    EntrezID;GeneSymbol.
+    Excel saves file as a csv, so open file in VS code and replace "," with a tab
+    This helps visualise changes during code review
