@@ -24,3 +24,9 @@ version as defined by git tag = v1.2
 Use bedtools subtract to add regions from extra transcripts that aren't in main file.
 
 bedtools subtract -a Pan5134_duplicatesdata.bed -b Pan5134data.bed >> Pan5134data.bed
+
+# Delete any unrequired files
+rm Pan5134dataRefSeqFormat.txt Pan5134_duplicatesdataSambamba.bed Pan5134_duplicatesdataRefSeqFormat.txt Pan5134dataSambamba.bed Pan5134_duplicatesdata.bed Pan5134_duplicates_LogFile.txt
+
+## Add in the additional panels.
+cat Pan4291.bed Pan4290.bed Pan4292.bed Pan4272.bed Pan3608.bed >> Pan5134data.bed
