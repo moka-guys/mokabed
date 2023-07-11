@@ -25,5 +25,8 @@ NOTE: Pan4283 no longer added as entire CHEK2 gene now included and BRAC1 UTRs p
 # Add Pan5117
 cat Pan5117.bed >> Pan5132data.bed
 
-## Add Pan3610
+# Add Pan3610
 cat Pan3610.bed >> Pan5132data.bed
+
+# Add Pan3608
+cat Pan3608.bed >> Pan5132data.bed
