@@ -85,3 +85,6 @@ Pan5134data.bed was test using mokapicard, job completed without error.
 
 8. Sort and rename final file
     mv Pan5134_final_exomedepth.bed Pan5134_final_exomedepth_unsorted.bed; sort -k1n,1 -k2n,3n Pan5134_final_exomedepth_unsorted.bed > Pan5134_final_exomedepth.bed; rm Pan5134_final_exomedepth_unsorted.bed
+
+9. rename exome depth
+    git mv Pan5134_final_exomedepth.bed Pan5134_exomedepth.bed
