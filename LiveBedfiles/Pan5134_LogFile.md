@@ -68,3 +68,6 @@ Pan5134data.bed was test using mokapicard, job completed without error.
     cut -f1-4 Pan5134_capture.bed > Pan5134data_4col.bed
 
 4. Underscores create issues with makeexomdepth.sh script, so in VScode replace any underscores with dashes.
+
+5. Generate intermediary exomedepth files for exons
+    TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan5134 Pan5134data_4col.bed
