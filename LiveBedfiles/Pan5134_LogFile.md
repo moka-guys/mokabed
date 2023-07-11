@@ -88,3 +88,6 @@ Pan5134data.bed was test using mokapicard, job completed without error.
 
 9. rename exome depth
     git mv Pan5134_final_exomedepth.bed Pan5134_exomedepth.bed
+
+10. remove intermediate files
+    rm _Pan5134* Pan5134_final*
