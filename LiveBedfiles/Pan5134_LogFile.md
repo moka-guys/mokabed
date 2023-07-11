@@ -66,3 +66,5 @@ Pan5134data.bed was test using mokapicard, job completed without error.
 3. Convert 4 column format
     Excel saves output as csv, in VScode replace "," with a tab
     cut -f1-4 Pan5134_capture.bed > Pan5134data_4col.bed
+
+4. Underscores create issues with makeexomdepth.sh script, so in VScode replace any underscores with dashes.
