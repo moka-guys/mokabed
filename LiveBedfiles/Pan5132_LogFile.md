@@ -97,3 +97,6 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 11. Testing
     Pan5132_exomedepth.bed was tested using DNANexus app `ED_readcount_analysis_v1.0.0` in project 003_230627_Exomedepth_BEDfiles.
     The app completed sucessfully.
+
+12. remove intermediate files
+    rm Pan5132_capture.bed Pan5132data_4col.bed
