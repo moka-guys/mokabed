@@ -60,3 +60,5 @@ Pan5134data.bed was test using mokapicard, job completed without error.
                 Excel saves output as csv, in VScode replace "," with a tab
 
     b) Step above left additionally added regions with empty cells in Gene_Accession column. Manually copy EntrezID field into      Gene_accession column.
+
+    c) Delete Entrez ID column
