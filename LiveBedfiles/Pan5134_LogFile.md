@@ -77,6 +77,7 @@ Pan5134data.bed was test using mokapicard, job completed without error.
     Strand information obtained from Ensembl
     Diff performed in vscode between _Pan5134_missed.bed and Pan4398_extra.bed, no differences in shared regions
 
-    - Simplify DMD region naming; replace description with DMD_INTRONIC
+    - Simplify DMD region naming; replace description with DMD-INTRONIC
 
-    
+7. Regenerate (final) exomedepth files giving the additional non-exonic regions from last step
+    TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5134_final Pan5134data_4col.bed _Pan5134_missed.bed
