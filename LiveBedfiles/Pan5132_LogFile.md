@@ -22,3 +22,5 @@ version as defined by git tag = v1.2
 ## Add additional regions
 NOTE: Pan4283 no longer added as entire CHEK2 gene now included and BRAC1 UTRs padded by 30bp, therefore all regions in Pan4283 are covered.
 
+# Add Pan5117
+cat Pan5117.bed >> Pan5132data.bed
