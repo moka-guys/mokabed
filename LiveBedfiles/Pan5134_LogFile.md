@@ -71,3 +71,8 @@ Pan5134data.bed was test using mokapicard, job completed without error.
 
 5. Generate intermediary exomedepth files for exons
     TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan5134 Pan5134data_4col.bed
+
+6. Edit missing regions file (_Pan5134_missed.bed)
+    strand information (BED6)
+    Strand information obtained from Ensembl
+    Diff performed in vscode between _Pan5134_missed.bed and Pan4398_extra.bed, no differences in shared regions
