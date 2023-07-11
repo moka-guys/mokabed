@@ -91,3 +91,7 @@ Pan5134data.bed was test using mokapicard, job completed without error.
 
 10. remove intermediate files
     rm _Pan5134* Pan5134_final*
+
+11. Testing
+    Pan5134_exomedepth.bed was tested using DNANexus app `ED_readcount_analysis_v1.0.0` in project 003_230627_Exomedepth_BEDfiles.
+    The app completed sucessfully.
