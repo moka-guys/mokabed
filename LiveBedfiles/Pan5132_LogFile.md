@@ -66,3 +66,5 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 3. Convert 4 column format
     Excel saves output as csv, in VScode replace "," with a tab
     cut -f1-4 Pan5132_capture.bed > Pan5132data_4col.bed
+
+4. Underscores create issues with makeexomdepth.sh script, so in VScode replace any underscores with dashes.
