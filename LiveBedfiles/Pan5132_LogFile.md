@@ -100,3 +100,9 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 
 12. remove intermediate files
     rm Pan5132_capture.bed Pan5132data_4col.bed
+
+## Fix multiple naming
+It was noticed few regions had two labels i.e STK11,STK11-3UTR_1.
+This was caused due to duplicate regions in Pan5117.bed, Pan3610.bed and Pan3608.bed
+Naming of 6 GREM1_SCG5 region from Pan5117 also simplified.
+
