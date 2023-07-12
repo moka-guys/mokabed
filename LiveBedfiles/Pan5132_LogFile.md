@@ -80,6 +80,8 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
     Strand information obtained from Ensembl
     Diff performed in vscode between _Pan5132_missed.bed and _Pan4973_missed.bed, no differences in shared regions
 
+    ## NOTE: fix the naming of the GREM1_SCG5 intronic regions. It doesn't need to have the additional details.
+
 7. Regenerate (final) exomedepth files giving the additional non-exonic regions from last step
     TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5132_final Pan5132data_4col.bed _Pan5132_missed.bed
 
