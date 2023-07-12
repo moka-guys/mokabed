@@ -98,3 +98,8 @@ Pan5134data.bed was test using mokapicard, job completed without error.
 
 12. remove intermediate files
     rm Pan5134_capture.bed Pan5134data_4col.bed
+
+## Noticed issue with final sort
+X chromosome regions listed at the top of file, resort to begin with chr1 
+    mv Pan5134_exomedepth.bed Pan5134_exomedepth_unsorted.bed; sort -k1,1V -k2n,3n Pan5134_exomedepth_unsorted.bed > Pan5134_exomedepth.bed; rm Pan5134_exomedepth_unsorted.bed
+
