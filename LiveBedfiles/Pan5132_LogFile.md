@@ -106,3 +106,5 @@ It was noticed few regions had two labels i.e STK11,STK11-3UTR_1.
 This was caused due to duplicate regions in Pan5117.bed, Pan3610.bed and Pan3608.bed
 Naming of 6 GREM1_SCG5 region from Pan5117 also simplified.
 
+## Add warning
+Warning added to Logfile in earlier steps to avoid repeating similar error in future BED files.
