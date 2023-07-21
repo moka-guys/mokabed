@@ -1,6 +1,7 @@
 # Pan5151
+This BEDfile is a subset of Pan3610 that is specific to R207. 
+These regions were provided by Michael Yau and Lorraine Hawkes towards the bottom of the BED file request form for Pan5152 (R207 exome depth CNV filtering stage). This has also been saved as Pan5151_request_form.csv, but note the  majjority of that request form relates to Pan5152
 
-This BEDfile is a subset of Pan3610 that is specific to R207. These regions were provided by Michael Yau and Lorraine Hawkes within the BED file request form for R207 exome depth CNV filtering stage. This is included in this PR but might be deleted by the end so it can also be included when that BED file is made.
 
 ## Take a copy of Pan3610
 `cp Pan3610.bed Pan5151.bed`
