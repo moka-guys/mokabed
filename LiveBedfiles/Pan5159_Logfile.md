@@ -31,3 +31,12 @@ This was done manually
 
 # Convert to 4 column format
 `cut -f 1-4 Pan5159data.bed > Pan5159data_4col.bed; rm Pan5159data.bed; mv Pan5159data_4col.bed Pan5159data.bed`
+
+# Rename to _cnv.bed
+`git mv Pan5159data.bed Pan5159_CNV.bed`
+
+# Delete unrequired files
+`git rm Pan5159dataSambamba.bed Pan5159dataRefSeqFormat.txt`
+
+# Testing
+The bedfile was tested with ED_cnv_calling_v1.1.0 in 003_230725_VCP2_exome_depth_BEDfiles and the job ran without error
