@@ -1,3 +1,7 @@
+# Pan5162
+This bedfile will be used to perform the variant filtering step of exome depth for R414. It contains genes for this test (as of Summer 2023) padded by +/-30 bp. 5' UTRs are also included, and padded +/-30bp. Two BEDfiles containing additional regions are also inlcuded - Pan3608 (control sites) and Pan5156 (intronic regions specific to R414 genes)
+# run mokabed
+
 Time Stamp:2023-07-26 16:31:29.147798
 Command arguments executed:
 RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5162dataRefSeqFormat.txt
