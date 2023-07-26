@@ -34,3 +34,6 @@ This was done manually
 
 # Rename to _cnv.bed
 `git mv Pan5158data.bed Pan5158_CNV.bed`
+
+# Delete unrequired files
+`git rm Pan5158dataSambamba.bed Pan5158dataRefSeqFormat.txt`
