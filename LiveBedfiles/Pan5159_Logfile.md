@@ -28,3 +28,6 @@ version as defined by git tag = v1.2
 
 # Remove header 
 This was done manually
+
+# Convert to 4 column format
+`cut -f 1-4 Pan5159data.bed > Pan5159data_4col.bed; rm Pan5159data.bed; mv Pan5159data_4col.bed Pan5159data.bed`
