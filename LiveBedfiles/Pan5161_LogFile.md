@@ -24,3 +24,6 @@ version as defined by git tag = v1.2
 
 ## Add in the additional panels.
 `cat Pan5155.bed Pan3608.bed  >> Pan5161data.bed`
+
+## Sort data.bed
+`sort Pan5161data.bed -k1,1V -k2,2n -k3,3n > Pan5161_sorted.bed;mv Pan5161data.bed Pan5161_unsorted.bed; mv Pan5161_sorted.bed Pan5161data.bed; rm Pan5161_unsorted.bed`
