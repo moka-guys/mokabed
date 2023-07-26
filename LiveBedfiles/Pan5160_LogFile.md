@@ -1,3 +1,6 @@
+# Pan5160
+This bedfile will be used to perform the variant filtering step of exome depth for R211. It contains genes for this test (as of Summer 2023) padded by +/-30 bp. 5' UTRs are also included, and padded +/-30bp. Two BEDfiles containing additional regions are also inlcuded - Pan3608 (control sites), SCG5-GREM1 intronic sites (Pan5117) and Pan5154 (intronic regions specific to R211 genes)
+# run mokabed
 Time Stamp:2023-07-26 12:46:00.503772
 Command arguments executed:
 RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5160dataRefSeqFormat.txt
