@@ -1,3 +1,7 @@
+# Pan5158
+This bedfile will be used to perform the variant filtering step of exome depth for R208. It contains genes for this test (as of Summer 2023) padded by +/-30 bp. 5' UTRs are also included, and padded +/-30bp. Two BEDfiles containing additional regions are also inlcuded - Pan3608 (control sites) and Pan5153 (intronic regions specific to R208 genes)
+
+# run mokabed
 Time Stamp:2023-07-26 10:26:38.704810
 Command arguments executed:
 RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5158dataRefSeqFormat.txt
