@@ -30,3 +30,5 @@ This was done manually
 `cut -f 1-4 Pan5163data.bed > Pan5163data_4col.bed; rm Pan5163data.bed; mv Pan5163data_4col.bed Pan5163data.bed`
 # rename as cnv.bed
 `git mv Pan5163data.bed Pan5163_CNV.bed`
+# Delete unrequired files
+`git rm Pan5163dataSambamba.bed Pan5163dataRefSeqFormat.txt`
