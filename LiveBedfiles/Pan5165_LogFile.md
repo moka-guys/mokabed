@@ -37,3 +37,5 @@ This was done manually
 
 # Delete unrequired files
 `git rm Pan5165dataSambamba.bed Pan5165dataRefSeqFormat.txt`
+# Testing
+The bedfile was tested with ED_cnv_calling_v1.1.0 in 003_230725_VCP2_exome_depth_BEDfiles and the job ran without error
