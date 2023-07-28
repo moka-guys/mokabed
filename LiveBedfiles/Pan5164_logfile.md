@@ -6,3 +6,5 @@ Note this was previously made in Pan5157 but it incorrectly included RAD51D, whi
 ## Take a copy of Pan3610
 `cp Pan3610.bed Pan5164.bed`
 
+## manually remove unwanted regions
+This was performed manually. There are 15 rows, matching the request form and the coordinates were checked. There is an empty new line at the end.
