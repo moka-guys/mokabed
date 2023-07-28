@@ -25,3 +25,6 @@ version as defined by git tag = v1.2
 
 ## Sort data.bed
 `sort Pan5165data.bed -k1,1V -k2,2n -k3,3n > Pan5165_sorted.bed;mv Pan5165data.bed Pan5165_unsorted.bed; mv Pan5165_sorted.bed Pan5165data.bed; rm Pan5165_unsorted.bed`
+
+# Remove header 
+This was done manually
