@@ -8,3 +8,6 @@ These regions were provided by Michael Yau and Lorraine Hawkes when requesting a
 
 ## manually remove unwanted regions
 This was performed manually. There are 16 rows, matching the request form and the coordinates were checked. There is an empty new line at the end.
+
+WARNING.
+NOTE THIS BEDFILE INCORRECTLY CONTAINS RAD51D. USE OF THIS BEDFILE COULD RESULT IN CNVS OVERLAPPING WITH THIS REGION BEING INCORRECTLY INCLUDED IN A REPORT. PLEASE USE PAN5164 INSTEAD
