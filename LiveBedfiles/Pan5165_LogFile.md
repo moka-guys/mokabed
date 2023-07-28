@@ -31,3 +31,6 @@ This was done manually
 
 # Convert to 4 column format
 `cut -f 1-4 Pan5165data.bed > Pan5165data_4col.bed; rm Pan5165data.bed; mv Pan5165data_4col.bed Pan5165data.bed`
+
+# Rename to _cnv.bed
+`git mv Pan5165data.bed Pan5165_CNV.bed`
