@@ -45,6 +45,13 @@ The SMN1 regions were paded by 10 bases as this was the requirement back then, h
         mv Pan3973_problemdata.bed Pan5149_SMN1problemdata.bed
 
 2) Add padding
-The regions were further padded +/-20bp as per those regions produced by MokaBED using the following python code: 
     a) convert file to 3 column format
         awk -F'\t' '{print $1 "\t" $2 "\t" $3}' Pan5149_SMN1problemdata.bed > Pan5149_SMN1_3col.bed
+
+    b) padding
+    The regions were padding +/-20bp as per those regions produced by MokaBED using the following python code:
+
+    with open('/home/natasha/Desktop/mokabed/LiveBedfiles/Pan5149_SMN1_3col.bed','r') as bedfile:
+        for line in bedfile.readlines():
+            chr,start,stop=line.split("\t")
+            print str(chr)+"\t" + str(int(start)-20) + "\t" + str(int(stop)+20)        
