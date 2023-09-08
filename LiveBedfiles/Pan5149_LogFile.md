@@ -103,3 +103,9 @@ cat Pan5167.bed >> Pan5149data.bed
 
 # Add Pan3608.bed
 cat Pan3608.bed >> Pan5149data.bed
+
+## check all trasncripts included
+Added full list of transcripts included.
+`bash /home/natasha/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/transcript_checker.sh /home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5149_all_transcripts.csv /home/natasha/Desktop/mokabed/LiveBedfiles/Pan5149data.bed`
+output:
+`Bed file as expected (all transcripts present)`
