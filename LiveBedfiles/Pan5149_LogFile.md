@@ -60,3 +60,13 @@ The SMN1 regions were paded by 10 bases as this was the requirement back then, h
 
 # add to data.bed
 cat Pan5149_SMN1problemdata.bed >> Pan5149data.bed There was no header to remove
+
+## Add SNORD118 
+SNORD118 gene is non-coding RNA, so doesn't have a NM number. 
+The UCSC and NCBI refeq databases were checked and NR_033294.2 wasn't in the databases used by MokaBED. therefore the BED file couldn't be made using Mokabed.
+
+Coordinates for SNORD118 were retrieved from UCSC chr17:8076771-8076906
+The regions were padded by -/+30bp to match the padding in Pan5149
+
+# Manually update Pan4535data.bed
+17  8076741 8076936 727676  SNORD118;NR_033294.2
