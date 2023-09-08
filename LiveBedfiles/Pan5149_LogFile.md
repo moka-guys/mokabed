@@ -70,3 +70,22 @@ The regions were padded by -/+30bp to match the padding in Pan5149
 
 # Manually update Pan4535data.bed
 17  8076741 8076936 727676  SNORD118;NR_033294.2
+
+## Fix LAMA2,DIAPH1 and NBEA
+Errors were noticed where small exons had been mapped incorrectly in the UCSC refseq database. 
+The coordinated were retrived from Pan4361. Please note Pan4361 was padded by =/-10bp and this BED file is padded by +/-30bp. LAMA2, DIAPH1 and NBEA regions were amended accordingly.
+
+Three areas were identified: 
+LAMA2;NM_000426.4
+old - 6 129763336 129763402
+new - 6 129764177 129764243
+
+DIAPH1;NM_005219.5
+
+old - 5 140915590 140915659
+new - 5 140950964 140951033
+
+NBEA;NM_015678.5
+old - 13 35739200 35739265
+new - 13 35739180 35743162
+
