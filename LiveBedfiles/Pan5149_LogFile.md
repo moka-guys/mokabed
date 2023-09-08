@@ -40,3 +40,6 @@ As described in Pan3973_log.md a number of steps were performed to extract the r
 The SMN1 regions were paded by 10 bases as this was the requirement back then, however now regions are padded by 30bp. SMN1 regions will be padded by 20bp to be consisted with this bedfile (Pan5149). The SMN1 BED file was also converted to the expected format (12 columns). This was done for data.bed and were saved as Pan5149_SMN1problemdata.bed. 
 
 1) Pan3973_problemdata.bed was downloaded from the git history at commit 982b443698 (https://github.com/moka-guys/mokabed/tree/982b443698683532c2a4a0032e0ae370742ad41a/LiveBedfiles)
+
+    rename Pan3973_problemdata.bed to Pan5149_SMN1problemdata.bed before padding
+        mv Pan3973_problemdata.bed Pan5149_SMN1problemdata.bed
