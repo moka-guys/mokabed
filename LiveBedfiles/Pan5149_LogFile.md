@@ -132,3 +132,8 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
     EntrezID;GeneSymbol.
     Excel saves file as a csv, so open file in VS code and replace "," with a tab
     This helps visualise changes during code review
+
+    In Excel format Entrez;Gene_Accession to only include gene symbol
+    a) Use find and replace to edit Entrez;GeneSymbol column to only include Gene symbols.
+                Find *; and and leave replace field empty (remember to select wildcard option)
+                Excel saves output as csv, in VScode replace "," with a tab
