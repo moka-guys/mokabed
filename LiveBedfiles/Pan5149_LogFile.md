@@ -100,3 +100,6 @@ Oops forgot to add the additional inronic regions and CNV sites
 
 # Add Pan5167.bed
 cat Pan5167.bed >> Pan5149data.bed
+
+# Add Pan3608.bed
+cat Pan3608.bed >> Pan5149data.bed
