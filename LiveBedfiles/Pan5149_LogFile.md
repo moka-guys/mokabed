@@ -91,3 +91,5 @@ new - 13 35739180 35743162
 
 ## Sort Pan5149data.bed
 sort Pan5149data.bed -k1,1V -k2,2n -k3,3n > Pan5149data_sorted.bed; mv Pan5149data.bed Pan5149data_unsorted.bed; mv Pan5149data_sorted.bed Pan5149data.bed; rm Pan5149data_unsorted.bed
+
+# movw header to top
