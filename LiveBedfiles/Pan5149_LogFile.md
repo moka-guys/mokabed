@@ -117,3 +117,6 @@ sort Pan5149data.bed -k1,1V -k2,2n -k3,3n > Pan5149data_sorted.bed; mv Pan5149da
 
 ## Remove unrequired files
 rm  Pan5149_extradata.bed Pan5149_extra_part1dataSambamba.bed Pan5149_SMN1_30padding.bed Pan5149dataRefSeqFormat.txt Pan5149_extradataRefSeqFormat.txt  Pan5149_extra_part1data.bed Pan5149_SMN1_3col.bed Pan5149dataSambamba.bed     Pan5149_extradataSambamba.bed Pan5149_extra_part1dataRefSeqFormat.txt Pan5149_SMN1problemdata.bed
+
+## Testing
+Pan5149data.bed was tested using moka_picard_v1.2.1 - job completed sucessfully
