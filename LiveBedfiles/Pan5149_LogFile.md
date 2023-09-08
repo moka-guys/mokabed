@@ -147,3 +147,6 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
     cut -f1-4 Pan5149_capture.bed > Pan5149data_4col.bed
 
 4. Underscores create issues with makeexomdepth.sh script, so in VScode replace any underscores with dashes.
+
+5. Generate intermediary exomedepth files for exons
+    TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan5149 Pan5149data_4col.bed
