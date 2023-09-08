@@ -25,4 +25,8 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5149
 
 version as defined by git tag = v1.2
 
+## Combine duplicate transcripts
+
+# merge Pan5149_extra_part1data.bed and Pan5149_extradata.bed
+bedtools subtract -a Pan5149_extra_part1data.bed -b Pan5149_extradata.bed >> Pan5149_extradata.bed
 
