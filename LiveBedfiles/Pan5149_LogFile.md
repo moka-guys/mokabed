@@ -55,3 +55,7 @@ The SMN1 regions were paded by 10 bases as this was the requirement back then, h
         for line in bedfile.readlines():
             chr,start,stop=line.split("\t")
             print str(chr)+"\t" + str(int(start)-20) + "\t" + str(int(stop)+20)        
+
+    c) In Excel Pan5149_SMN1_30padding.bed was used to update Pan5149_SMN1problemdata.bed to convert back into a 12 column format.
+
+    
