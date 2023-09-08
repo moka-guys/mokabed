@@ -141,3 +141,7 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
     b) Step above left additionally added regions with empty cells in Gene_Accession column. Manually copy EntrezID field into      Gene_accession column.
 
     c) Delete Entrez ID column
+
+3. Convert 4 column format
+    Excel saves output as csv, in VScode replace "," with a tab
+    cut -f1-4 Pan5149_capture.bed > Pan5149data_4col.bed
