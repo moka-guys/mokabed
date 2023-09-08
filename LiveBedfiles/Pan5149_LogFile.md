@@ -93,3 +93,10 @@ new - 13 35739180 35743162
 sort Pan5149data.bed -k1,1V -k2,2n -k3,3n > Pan5149data_sorted.bed; mv Pan5149data.bed Pan5149data_unsorted.bed; mv Pan5149data_sorted.bed Pan5149data.bed; rm Pan5149data_unsorted.bed
 
 # movw header to top
+
+## Add intronic regions and CNV sites
+
+Oops forgot to add the additional inronic regions and CNV sites
+
+# Add Pan5167.bed
+cat Pan5167.bed >> Pan5149data.bed
