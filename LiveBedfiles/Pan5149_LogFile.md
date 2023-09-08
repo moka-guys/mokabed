@@ -58,4 +58,5 @@ The SMN1 regions were paded by 10 bases as this was the requirement back then, h
 
     c) In Excel Pan5149_SMN1_30padding.bed was used to update Pan5149_SMN1problemdata.bed to convert back into a 12 column format.
 
-    
+# add to data.bed
+cat Pan5149_SMN1problemdata.bed >> Pan5149data.bed There was no header to remove
