@@ -30,5 +30,8 @@ As there is a potential need to list the genes and transcripts assessed on the C
 ## add extra regions to CNV BED
 `cat Pan5182.bed Pan3608.bed  >> Pan5184_CNV.bed`
 
-## Sort data.bed
+## Sort CNV.bed
 `sort Pan5184_CNV.bed -k1,1V -k2,2n -k3,3n > Pan5184_CNV_sorted.bed;mv Pan5184_CNV.bed Pan5184_CNV_unsorted.bed; mv Pan5184_CNV_sorted.bed Pan5184_CNV.bed; rm Pan5184_CNV_unsorted.bed`
+
+## Remove header 
+This was done manually
