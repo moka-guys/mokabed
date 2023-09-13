@@ -19,3 +19,9 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5183
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+## convert to four column.
+As there is a potential need to list the genes and transcripts assessed on the CNV report this BED file will be made in a slightly different way to previous. The end BED file should be a 4 column file, but in this instance the 4th column should be the 15th column, stating the gene symbol and transcript
+
+`cut -f 1-3,14 Pan5183data.bed > Pan5183_CNV.bed`
+
