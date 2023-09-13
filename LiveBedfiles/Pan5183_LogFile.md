@@ -1,4 +1,4 @@
-# Pan5165
+# Pan5183_CNV
 This bedfile will be used to perform the variant filtering step of exome depth for R444.1. It contains genes for this test (as of Summer 2023) padded by +/-30 bp. 5' UTRs are also included, and padded +/-30bp. Two BEDfiles containing additional regions are also included - Pan3608 (control sites) and Pan5181 (intronic regions specific to R444.1 genes)
 
 ## run mokabed
@@ -27,3 +27,6 @@ As there is a potential need to list the genes and transcripts assessed on the C
 
 ## add extra regions to CNV BED
 `cat Pan5181.bed Pan3608.bed  >> Pan5183_CNV.bed`
+
+## Sort data.bed
+`sort Pan5183_CNV.bed -k1,1V -k2,2n -k3,3n > Pan5183_CNV_sorted.bed;mv Pan5183_CNV.bed Pan5183_CNV_unsorted.bed; mv Pan5183_CNV_sorted.bed Pan5183_CNV.bed; rm Pan5183_CNV_unsorted.bed`
