@@ -1,0 +1,41 @@
+Instructions:,,,,
+"Add genes symbols and/or transcripts to a panel in Moka
+Add panel description to Moka
+Answer following questions:",VCP2_R444.2,,,
+,,,,
+1. Pan number of bed file to be created,Pan5182,,,
+2. Panel description/name (fill in a-c from Moka),,,,
+2. a) Category,VCP2,,,
+2. b) SubCategory,R444.2 intronic regions,,,
+2. c) Panel,VCP2 R444.2 intronic regions,,,
+3. Is this BED file for RPKM?,Exome depth variant calling,,,
+4. a) Is this BED file exclusively based on coordinates provided by a supplier ,No,,,
+"4. b) If yes, does this need further padding?",N/A,,,
+5. a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts) Specific transcripts - see Moka,N/A,,,
+5. b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state),No,,,
+6. What padding is required around the exons?,n/a,,,
+7. a) Should UTRs be included for ALL genes?,n/a,,,
+7. b) Should UTRs be padded?,n/a,,,
+8. a) Are UTRs required for SOME genes? ,n/a,,,
+8. b) Please list genes/transcripts,N/A,,,
+8. c) Should UTRs be padded?,N/A,,,
+9. Any additional BED files to be included in this BED file? ,No,,,
+10. Are any further regions required to be added?,Yes - see below,,,
+Requested by:,L.Hawkes,,,
+Requested date:,14/07/2023,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,chr,start,end,target
+,13,32973679,32973839,BRCA2_3UTR
+,17,41196280,41196440,BRCA1_3UTR
+,17,41233848,41234008,BRCA1_IN12_2
+,17,41234197,41234357,BRCA1_IN12_1
+,17,41234663,41234823,BRCA1_IN11_1
+,17,41235012,41235172,BRCA1_IN11_2
+,17,41281042,41281202,BRCA1_PM_5_1
+,17,41286238,41286398,BRCA1_PM_5_2
+,17,41297651,41297811,BRCA1_PM_5_3
+,17,41322636,41322796,BRCA1_PM_5_4
