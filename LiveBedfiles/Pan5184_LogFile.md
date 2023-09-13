@@ -26,3 +26,6 @@ version as defined by git tag = v1.2
 As there is a potential need to list the genes and transcripts assessed on the CNV report this BED file will be made in a slightly different way to previous. The end BED file should be a 4 column file, but in this instance the 4th column should be the last column of the data.bed, stating the gene symbol and transcript
 
 `cut -f 1-3,14 Pan5184data.bed > Pan5184_CNV.bed`
+
+## add extra regions to CNV BED
+`cat Pan5182.bed Pan3608.bed  >> Pan5184_CNV.bed`
