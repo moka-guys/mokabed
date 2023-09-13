@@ -35,3 +35,6 @@ As there is a potential need to list the genes and transcripts assessed on the C
 
 ## Remove header 
 This was done manually
+
+## remove unrequired files
+`git rm Pan5184dataRefSeqFormat.txt Pan5184dataSambamba.bed Pan5184data.bed`
