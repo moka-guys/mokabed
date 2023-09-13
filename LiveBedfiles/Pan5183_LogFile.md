@@ -25,3 +25,5 @@ As there is a potential need to list the genes and transcripts assessed on the C
 
 `cut -f 1-3,14 Pan5183data.bed > Pan5183_CNV.bed`
 
+## add extra regions to CNV BED
+`cat Pan5181.bed Pan3608.bed  >> Pan5183_CNV.bed`
