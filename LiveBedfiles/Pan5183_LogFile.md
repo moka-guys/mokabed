@@ -31,5 +31,8 @@ As there is a potential need to list the genes and transcripts assessed on the C
 ## Sort data.bed
 `sort Pan5183_CNV.bed -k1,1V -k2,2n -k3,3n > Pan5183_CNV_sorted.bed;mv Pan5183_CNV.bed Pan5183_CNV_unsorted.bed; mv Pan5183_CNV_sorted.bed Pan5183_CNV.bed; rm Pan5183_CNV_unsorted.bed`
 
-# Remove header 
+## Remove header 
 This was done manually
+
+## remove unrequired files
+`git rm Pan5183dataRefSeqFormat.txt Pan5183dataSambamba.bed Pan5183data.bed`
