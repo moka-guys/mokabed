@@ -150,3 +150,10 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 
 5. Generate intermediary exomedepth files for exons
     TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan5149 Pan5149data_4col.bed
+
+6. Edit missing regions file (_Pan5149_missed.bed)
+    strand information (BED6)
+    5th column was set to 0 6th column was set to + or -. Strand information was obtained from _Pan5149.bed, findstrand.py was used to join files using transcript numbers. 
+    
+    First update Pan5149_all_transcripts.csv to contain gene symbol column
+    Add headers to Pan5149_all_transcripts.csv and _Pan5149_missed.bed- needed to run findstrand.py
