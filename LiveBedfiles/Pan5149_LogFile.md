@@ -173,3 +173,6 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
     Open file in vscode and replace "," with "\t"
 
     Remove header from Pan5149_merged_file_final.csv
+
+    Rename file from .csv to .bed
+        mv Pan5149_merged_file_final.csv _Pan5149_missing_updated.bed
