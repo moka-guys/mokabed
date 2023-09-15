@@ -160,3 +160,6 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
     Convert _Pan5149.bed into 6 columns
         `cut -f 1-6  _Pan5149.bed > _Pan5149_6col.bed`
         Open _Pan5149_6col.bed in Excel, use "." as a seperator and add headers to file
+    
+    Run findstrand.py 
+        python3 /home/natasha/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/findstrand.py
