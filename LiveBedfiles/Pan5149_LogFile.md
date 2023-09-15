@@ -157,3 +157,5 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
     
     First update Pan5149_all_transcripts.csv to contain gene symbol column
     Add headers to Pan5149_all_transcripts.csv and _Pan5149_missed.bed- needed to run findstrand.py
+    Convert _Pan5149.bed into 6 columns
+        `cut -f 1-6  _Pan5149.bed > _Pan5149_6col.bed`
