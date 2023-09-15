@@ -163,3 +163,7 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
     
     Run findstrand.py 
         python3 /home/natasha/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/findstrand.py
+
+    Rename output so its easier to track
+    mv merged_file.csv Pan5149_merged_file.csv
+    mv merged_file_final.csv Pan5149_merged_file_final.csv
