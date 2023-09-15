@@ -176,3 +176,8 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 
     Rename file from .csv to .bed
         mv Pan5149_merged_file_final.csv _Pan5149_missing_updated.bed
+
+7. Regenerate (final) exomedepth files giving the additional non-exonic regions from last step
+    TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5149_final Pan5149data_4col.bed _Pan5149_missing_updated.bed
+
+    - note after this stage there are no missed regions (Pan5149_final_missed.bed is empty)
