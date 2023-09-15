@@ -168,4 +168,6 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
     mv merged_file.csv Pan5149_merged_file.csv
     mv merged_file_final.csv Pan5149_merged_file_final.csv
 
-    Open Pan5149_merged_file_final.csv in Excel and remove Transcript column as its not required 
+    Open Pan5149_merged_file_final.csv in Excel and remove Transcript column as its not required
+
+    Open file in vscode and replace "," with "\t"
