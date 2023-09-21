@@ -193,3 +193,8 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 
 11. Sort and rename
     sort _Pan5149_missing_updated.bed -k1,1V -k2,2n -k3,3n > _Pan5149_missing_updated_sorted.bed; mv _Pan5149_missing_updated.bed _Pan5149_missing_updated_unsorted.bed; mv _Pan5149_missing_updated_sorted.bed _Pan5149_missing_updated.bed; rm _Pan5149_missing_updated_unsorted.bed
+
+12. Duplicate SNORD118 region (17:8076741-8076936) present without strand information. Delete the line without info.
+
+
+
