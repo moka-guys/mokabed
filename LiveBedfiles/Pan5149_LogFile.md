@@ -180,4 +180,8 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 7. Regenerate (final) exomedepth files giving the additional non-exonic regions from last step
     TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5149_final Pan5149data_4col.bed _Pan5149_missing_updated.bed
 
-    - note after this stage there are no missed regions (Pan5149_final_missed.bed is empty)
+8. Pan5149_final_missed.bed was not empty, findstrand.py script could not find strand information for regions added from Pan5167.bed and Pan3608.bed.
+
+    Strand information for this information was manually added. Strand information obtained from Ensembl
+    NOTE: Mokabed named HYCC1 to its gene synonym FAM126A
+
