@@ -200,3 +200,6 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
         TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5149_final_v2 Pan5149data_4col.bed _Pan5149_missing_updated.bed
 
     Pan5149_final_v2_missed.bed should now be empty
+
+11. rename exome depth
+    git mv Pan5149_final_v2_exomedepth.bed Pan5149_exomedepth.bed
