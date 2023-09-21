@@ -203,3 +203,6 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 
 11. rename exome depth
     git mv Pan5149_final_v2_exomedepth.bed Pan5149_exomedepth.bed
+
+12. Delete unrequired files
+    rm _Pan5149* Pan5149_final* Pan5149_final_v2*
