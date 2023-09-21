@@ -187,4 +187,6 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 
 9. Accidentally overwrote required file _Pan5149_missing_updated.bed.
     _Pan5149_missing_updated.bed downloaded from commit 3fbb917
-    
+
+10. Combine Pan5149_final_missed.bed and _Pan5149_missing_updated.bed
+    cat Pan5149_final_missed.bed >> _Pan5149_missing_updated.bed
