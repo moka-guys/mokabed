@@ -186,3 +186,5 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
     NOTE: Mokabed named HYCC1 to its gene synonym FAM126A
 
 9. Accidentally overwrote required file _Pan5149_missing_updated.bed.
+    _Pan5149_missing_updated.bed downloaded from commit 3fbb917
+    
