@@ -196,5 +196,7 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 
 12. Duplicate SNORD118 region (17:8076741-8076936) present without strand information. Delete the line without info.
 
+13. Rerun exomedepth script
+        TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5149_final_v2 Pan5149data_4col.bed _Pan5149_missing_updated.bed
 
-
+    Pan5149_final_v2_missed.bed should now be empty
