@@ -37,3 +37,6 @@ git mv Pan5177data.bed Pan5177_CNV.bed
 
 # Delete unrequired files
 git rm Pan5177dataSambamba.bed Pan5177dataRefSeqFormat.txt
+
+# Testing
+The bedfile was tested with ED_cnv_calling_v1.1.0 in 230822_VCP3_exomedepth_bedfiles and the job ran without error
