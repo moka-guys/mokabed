@@ -31,3 +31,6 @@ remove header
 # Convert to 4 column format
 cut -f 1-4 Pan5173data.bed > Pan5173data_4col.bed; rm Pan5173data.bed; mv Pan5173data_4col.bed Pan5173data.bed
 
+# Rename to _cnv.bed
+git mv Pan5173data.bed Pan5173_CNV.bed
+
