@@ -26,5 +26,5 @@ cat Pan5168data.bed Pan3608.bed  >> Pan5168data.bed
 ## Sort data.bed
 sort Pan5168data.bed -k1,1V -k2,2n -k3,3n > Pan5168_sorted.bed;mv Pan5168data.bed Pan5168_unsorted.bed; mv Pan5168_sorted.bed Pan5168data.bed; rm Pan5168_unsorted.bed
 
-move header to top
+Remove header
 
