@@ -1,5 +1,5 @@
 # Pan5168
-This bedfile will be used to perform the variant filtering step of exome depth for R227. It contains genes for this test (as of Summer 2023) padded by +/-30 bp. Pan3608 (control sites) has also been included.
+This bedfile will be used to perform the variant filtering step of exome depth for R79. It contains genes for this test (as of Summer 2023) padded by +/-30 bp. Pan3608 (control sites) has also been included.
 
 # Run Mokabed
 Time Stamp:2023-09-29 16:40:57.414260
@@ -19,3 +19,6 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5168
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+## Add in the additional panels.
+cat Pan5168data.bed Pan3608.bed  >> Pan5168data.bed
