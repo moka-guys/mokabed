@@ -28,3 +28,6 @@ sort Pan5173data.bed -k1,1V -k2,2n -k3,3n > Pan5173_sorted.bed;mv Pan5173data.be
 
 remove header
 
+# Convert to 4 column format
+cut -f 1-4 Pan5173data.bed > Pan5173data_4col.bed; rm Pan5173data.bed; mv Pan5173data_4col.bed Pan5173data.bed
+
