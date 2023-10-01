@@ -27,3 +27,6 @@ cat Pan5171data.bed Pan3608.bed  >> Pan5171data.bed
 sort Pan5171data.bed -k1,1V -k2,2n -k3,3n > Pan5171_sorted.bed;mv Pan5171data.bed Pan5171_unsorted.bed; mv Pan5171_sorted.bed Pan5171data.bed; rm Pan5171_unsorted.bed
 
 remove header
+
+# Convert to 4 column format
+cut -f 1-4 Pan5171data.bed > Pan5171data_4col.bed; rm Pan5171data.bed; mv Pan5171data_4col.bed Pan5171data.bed
