@@ -25,3 +25,5 @@ cat Pan5171data.bed Pan3608.bed  >> Pan5171data.bed
 
 ## Sort data.bed
 sort Pan5171data.bed -k1,1V -k2,2n -k3,3n > Pan5171_sorted.bed;mv Pan5171data.bed Pan5171_unsorted.bed; mv Pan5171_sorted.bed Pan5171data.bed; rm Pan5171_unsorted.bed
+
+remove header
