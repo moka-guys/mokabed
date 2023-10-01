@@ -34,3 +34,5 @@ cut -f 1-4 Pan5173data.bed > Pan5173data_4col.bed; rm Pan5173data.bed; mv Pan517
 # Rename to _cnv.bed
 git mv Pan5173data.bed Pan5173_CNV.bed
 
+# Delete unrequired files
+git rm Pan5173dataSambamba.bed Pan5173dataRefSeqFormat.txt
