@@ -43,5 +43,7 @@ One of the LAMA2 exons was mapped incorrectly. The incorrect coordinates are: ch
 Pan5191data.bed was test using mokapicard, job completed without error.
 
 ## Creating Exomedepth readcount BED file
-Create a copy of Pan5191data.bed to make changes 
+1. Create a copy of Pan5191data.bed to make changes 
     cp Pan5191data.bed Pan5191_capture.bed
+
+2. Replace Entrez IDs with gene symbols Open Pan5191_capture.bed in Excel, first split the GeneAccession column on semi colon and   create a column concatenating EntrezID;GeneSymbol. Excel saves file as a csv, so open file in VS code and replace "," with a tab This helps visualise changes during code review
