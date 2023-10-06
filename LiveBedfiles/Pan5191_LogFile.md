@@ -27,3 +27,7 @@ bedtools subtract -a Pan5191_duplicatesdata.bed -b Pan5191data.bed >> Pan5191dat
 
 # Delete any unrequired files
 rm Pan5191dataRefSeqFormat.txt Pan5191_duplicatesdataSambamba.bed Pan5191_duplicatesdataRefSeqFormat.txt Pan5191dataSambamba.bed Pan5191_duplicatesdata.bed Pan5191_duplicates_LogFile.txt
+
+# Add in the additional panels.
+cat Pan4291.bed Pan4290.bed Pan4292.bed Pan4272.bed Pan3608.bed >> Pan5191data.bed
+
