@@ -72,4 +72,7 @@ c) Delete Entrez ID column
 note after this stage there are no missed regions (Pan5191_final_missed.bed is empty)
 
 9. Sort and rename final file 
-mv Pan5191_final_exomedepth.bed Pan5191_final_exomedepth_unsorted.bed; sort -k1n,1 -k2n,3n Pan5191_final_exomedepth_unsorted.bed > Pan5191_final_exomedepth.bed; rm Pan5191_final_exomedepth_unsorted.bed
+    mv Pan5191_final_exomedepth.bed Pan5191_final_exomedepth_unsorted.bed; sort -k1n,1 -k2n,3n Pan5191_final_exomedepth_unsorted.bed > Pan5191_final_exomedepth.bed; rm Pan5191_final_exomedepth_unsorted.bed
+
+10. rename exome depth 
+    git mv Pan5191_final_exomedepth.bed Pan5191_exomedepth.bed
