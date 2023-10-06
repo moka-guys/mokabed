@@ -38,3 +38,7 @@ move header to the top
 
 # Fix LAMA2 exon
 One of the LAMA2 exons was mapped incorrectly. The incorrect coordinates are: chr6:129763336-129763402 and the correct coordinates - chr6:129764177-129764243
+
+# Testing
+Pan5191data.bed was test using mokapicard, job completed without error.
+
