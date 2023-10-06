@@ -86,3 +86,8 @@ mv Pan5191_exomedepth.bed Pan5191_exomedepth_unsorted.bed; sort -k1,1V -k2n,3n P
 
 # Testing 
 Pan5191_exomedepth.bed was tested using DNANexus app ED_readcount_analysis_v1.0.0 in project 003_230627_Exomedepth_BEDfiles. The app completed sucessfully.
+
+# Remove unrequired files
+remove intermediate files 
+    rm Pan5191_capture.bed Pan5191data_4col.bed
+
