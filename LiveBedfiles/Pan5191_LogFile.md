@@ -51,3 +51,5 @@ Pan5191data.bed was test using mokapicard, job completed without error.
 In Excel format Entrez;Gene_Accession to only include gene symbol:
 a) Use find and replace to edit Entrez;Gene_Accession column to only include Gene symbols. Find *; and and leave replace field empty (remember to select wildcard option) Excel saves output as csv, in VScode replace "," with a tab
 
+b) Step above left additionally added regions with empty cells in Gene_Accession column. Manually copy EntrezID field into Gene_accession column.
+
