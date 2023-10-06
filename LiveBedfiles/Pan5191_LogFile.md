@@ -76,3 +76,6 @@ note after this stage there are no missed regions (Pan5191_final_missed.bed is e
 
 10. rename exome depth 
     git mv Pan5191_final_exomedepth.bed Pan5191_exomedepth.bed
+
+11. remove intermediate files 
+    rm _Pan5191* Pan5191_final*
