@@ -42,3 +42,6 @@ One of the LAMA2 exons was mapped incorrectly. The incorrect coordinates are: ch
 # Testing
 Pan5191data.bed was test using mokapicard, job completed without error.
 
+## Creating Exomedepth readcount BED file
+Create a copy of Pan5191data.bed to make changes 
+    cp Pan5191data.bed Pan5191_capture.bed
