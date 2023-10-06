@@ -56,5 +56,7 @@ b) Step above left additionally added regions with empty cells in Gene_Accession
 c) Delete Entrez ID column
 
 4. Convert 4 column format 
+    Open Pan5191_capture.bed in VScode replace "," with tab
     cut -f1-4 Pan5191_capture.bed > Pan5191data_4col.bed
 
+5. Underscores create issues with makeexomdepth.sh script, so in VScode replace any underscores with dashes.
