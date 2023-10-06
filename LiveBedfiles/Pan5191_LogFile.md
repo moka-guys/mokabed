@@ -79,3 +79,7 @@ note after this stage there are no missed regions (Pan5191_final_missed.bed is e
 
 11. remove intermediate files 
     rm _Pan5191* Pan5191_final*
+
+# Noticed issue with final sort
+X chromosome regions listed at the top of file, resort to begin with chr1 
+mv Pan5191_exomedepth.bed Pan5191_exomedepth_unsorted.bed; sort -k1,1V -k2n,3n Pan5191_exomedepth_unsorted.bed > Pan5191_exomedepth.bed; rm Pan5191_exomedepth_unsorted.bed
