@@ -35,3 +35,6 @@ cat Pan4291.bed Pan4290.bed Pan4292.bed Pan4272.bed Pan3608.bed >> Pan5191data.b
 sort Pan5191data.bed -k1,1V -k2,2n -k3,3n > Pan5191data_sorted.bed; mv Pan5191data.bed Pan5191data_unsorted.bed; mv Pan5191data_sorted.bed Pan5191data.bed; rm Pan5191data_unsorted.bed
 
 move header to the top
+
+# Fix LAMA2 exon (without padding)
+One of the LAMA2 exons was mapped incorrectly. The incorrect coordinates are: chr6:129763366-129763372 and the correct coordinates - chr6:129764207-129764213
