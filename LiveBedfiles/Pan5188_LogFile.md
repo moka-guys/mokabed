@@ -32,3 +32,6 @@ move header to the top manually
 
 ## delete intermediate/incomplete files
 rm Pan5188dataRefSeqFormat.txt Pan5188dataSambamba.bed
+
+## Testing
+Pan5188data.bed was tested using moka_picard_v1.2.1 - job completed sucessfully
