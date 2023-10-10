@@ -64,3 +64,5 @@ c) Delete Entrez ID column
 6. Generate intermediary exomedepth files for exons TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan5191 Pan5191data_4col.bed
 
 7. Edit missing regions file (_Pan5191_missed.bed) strand information (BED6) Strand information obtained from Ensembl Diff performed in vscode between _Pan5191_missed.bed and Pan4398_extra.bed, no differences in shared regions
+
+    - Simplify DMD region naming; replace description with DMD-INTRONIC
