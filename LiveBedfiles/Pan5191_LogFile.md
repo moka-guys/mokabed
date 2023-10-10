@@ -60,3 +60,5 @@ c) Delete Entrez ID column
     cut -f1-4 Pan5191_capture.bed > Pan5191data_4col.bed
 
 5. Underscores create issues with makeexomdepth.sh script, so in VScode replace any underscores with dashes.
+
+6. Generate intermediary exomedepth files for exons TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan5191 Pan5191data_4col.bed
