@@ -19,3 +19,8 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5191
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+# Add regions from duplicate transcripts to data.bed
+Use bedtools subtract to add regions from extra transcripts that aren't in main file.
+
+bedtools subtract -a Pan5191_duplicatesdata.bed -b Pan5191data.bed >> Pan5191data.bed
