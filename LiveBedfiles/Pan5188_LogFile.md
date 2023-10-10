@@ -19,3 +19,8 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5188
  cruzdb module file path: /home/dnanexus/anaconda2/lib/python2.7/site-packages/cruzdb/__init__.py
 
 version as defined by git tag = v1.2
+
+## Add additional regions
+NOTE: Pan4283 no longer added as entire CHEK2 gene now included and BRAC1 UTRs are included, therefore all regions in Pan4283 are covered.
+
+cat Pan5117.bed Pan3610.bed Pan3608.bed >> Pan5188data.bed
