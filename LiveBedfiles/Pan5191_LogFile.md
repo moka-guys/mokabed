@@ -55,3 +55,6 @@ a) Use find and replace to edit Entrez;Gene_Accession column to only include Gen
 b) Step above left additionally added regions with empty cells in Gene_Accession column. Manually copy EntrezID field into Gene_accession column.
 
 c) Delete Entrez ID column
+
+4. Convert 4 column format 
+    cut -f1-4 Pan5191_capture.bed > Pan5191data_4col.bed
