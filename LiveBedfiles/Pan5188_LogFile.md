@@ -29,3 +29,6 @@ cat Pan5117.bed Pan3610.bed Pan3608.bed >> Pan5188data.bed
 sort Pan5188data.bed -k1,1V -k2,2n -k3,3n > Pan5188data_sorted.bed; mv Pan5188data.bed Pan5188data_unsorted.bed; mv Pan5188data_sorted.bed Pan5188data.bed; rm Pan5188data_unsorted.bed
 
 move header to the top manually
+
+## delete intermediate/incomplete files
+rm Pan5188dataRefSeqFormat.txt Pan5188dataSambamba.bed
