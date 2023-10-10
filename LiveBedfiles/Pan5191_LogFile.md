@@ -69,3 +69,5 @@ c) Delete Entrez ID column
 
 8. Regenerate (final) exomedepth files giving the additional non-exonic regions from last step 
 TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5191_final Pan5191data_4col.bed _Pan5191_missed.bed
+
+note after this stage there are no missed regions (Pan5191_final_missed.bed is empty)
