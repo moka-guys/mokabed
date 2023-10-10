@@ -20,18 +20,24 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5188
 
 version as defined by git tag = v1.2
 
-## Add additional regions
+# Add additional regions
 NOTE: Pan4283 no longer added as entire CHEK2 gene now included and BRAC1 UTRs are included, therefore all regions in Pan4283 are covered.
 
 cat Pan5117.bed Pan3610.bed Pan3608.bed >> Pan5188data.bed
 
-## Sort Pan5188data.bed
+# Sort Pan5188data.bed
 sort Pan5188data.bed -k1,1V -k2,2n -k3,3n > Pan5188data_sorted.bed; mv Pan5188data.bed Pan5188data_unsorted.bed; mv Pan5188data_sorted.bed Pan5188data.bed; rm Pan5188data_unsorted.bed
 
 move header to the top manually
 
-## delete intermediate/incomplete files
+# delete intermediate/incomplete files
 rm Pan5188dataRefSeqFormat.txt Pan5188dataSambamba.bed
 
-## Testing
+# Testing
 Pan5188data.bed was tested using moka_picard_v1.2.1 - job completed sucessfully
+
+## Creating Exomedepth BED file
+This BED file is used to do read count step of exome depth for CNV analysis of VCP2.
+
+1. Create a copy of Pan5188data.bed to make changes
+    cp Pan5188data.bed Pan5188_capture.bed
