@@ -80,3 +80,6 @@ note after this stage there are no missed regions (Pan5191_final_missed.bed is e
 
 # Remove unrequired files
 rm _Pan5191* Pan5191_final* Pan5191_capture.bed Pan5191data_4col.bed
+
+# Testing 
+Pan5191_exomedepth.bed was tested using DNANexus app ED_readcount_analysis_v1.0.0 in project 003_230627_Exomedepth_BEDfiles. The app completed sucessfully.
