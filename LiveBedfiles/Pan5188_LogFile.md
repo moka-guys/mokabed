@@ -24,3 +24,6 @@ version as defined by git tag = v1.2
 NOTE: Pan4283 no longer added as entire CHEK2 gene now included and BRAC1 UTRs are included, therefore all regions in Pan4283 are covered.
 
 cat Pan5117.bed Pan3610.bed Pan3608.bed >> Pan5188data.bed
+
+## Sort Pan5188data.bed
+sort Pan5188data.bed -k1,1V -k2,2n -k3,3n > Pan5188data_sorted.bed; mv Pan5188data.bed Pan5188data_unsorted.bed; mv Pan5188data_sorted.bed Pan5188data.bed; rm Pan5188data_unsorted.bed
