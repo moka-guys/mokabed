@@ -83,3 +83,10 @@ mv Pan5188_final_exomedepth.bed Pan5188_final_exomedepth_unsorted.bed; sort -k1n
 
 # Fix naming
 It was noticed few regions had two labels i.e ARHGAP11A-SCG5,SCG5_1. This was caused due to duplicate regions in Pan5117.bed, Pan3610.bed and Pan3608.bed. 
+
+# Testing
+ Pan5144_exomedepth.bed was tested using DNANexus app ED_readcount_analysis_v1.0.0 in project 003_230627_Exomedepth_BEDfiles. The app completed sucessfully.
+
+Bedtools substract was also perfomed on Pan5188_exomedepth.bed -b Pan5188_capture.bed, to identify any extra regions in Pan5188_exomedepth.bed.
+
+bedtools subtract -A -a Pan5191_exomedepth.bed -b Pan5191_capture.bed
