@@ -1,5 +1,12 @@
 ## Pan5191
-This VCP1 BED file is based on Pan4398, 5UTR was included- no regions have been padded.
+This VCP1 Exomedepth readcount BED file is based on Pan4398, 5UTR was included- no regions have been padded. 
+
+Additional regions were included in this BED file:
+Pan4291.bed- intronic variants relevant to Haematological genes
+Pan4290.bed- intronic variants for VCP1 regions
+Pan4292.bed- FH intronic variants padded by 5bp
+Pan4272.bed- intronic variants for CF
+Pan3608.bed- additional CNV regions
 
 # Run Mokabed
 Time Stamp:2023-10-10 10:41:41.354574
@@ -77,6 +84,11 @@ note after this stage there are no missed regions (Pan5191_final_missed.bed is e
 
 10. rename exome depth 
     git mv Pan5191_final_exomedepth.bed Pan5191_exomedepth.bed
+
+# BEDtool subdtract
+Bedtools substract was also perfomed on Pan5191_exomedepth.bed -b Pan5191_capture.bed, to identify any extra regions in Pan5191_exomedepth.bed.
+
+bedtools subtract -A -a Pan5191_exomedepth.bed -b Pan5191_capture.bed
 
 # Remove unrequired files
 rm _Pan5191* Pan5191_final* Pan5191_capture.bed Pan5191data_4col.bed
