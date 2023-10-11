@@ -80,3 +80,6 @@ mv Pan5188_final_exomedepth.bed Pan5188_final_exomedepth_unsorted.bed; sort -k1n
 9. rename exome depth git mv Pan5188_final_exomedepth.bed Pan5188_exomedepth.bed
 
 10. remove intermediate files rm _Pan5188* Pan5188_final*
+
+# Fix naming
+It was noticed few regions had two labels i.e ARHGAP11A-SCG5,SCG5_1. This was caused due to duplicate regions in Pan5117.bed, Pan3610.bed and Pan3608.bed. 
