@@ -78,3 +78,5 @@ note after this stage there are no missed regions (Pan5188_final_missed.bed is e
 mv Pan5188_final_exomedepth.bed Pan5188_final_exomedepth_unsorted.bed; sort -k1n,1 -k2n,3n Pan5188_final_exomedepth_unsorted.bed > Pan5188_final_exomedepth.bed; rm Pan5188_final_exomedepth_unsorted.bed
 
 9. rename exome depth git mv Pan5188_final_exomedepth.bed Pan5188_exomedepth.bed
+
+10. remove intermediate files rm _Pan5188* Pan5188_final*
