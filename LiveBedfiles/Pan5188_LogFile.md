@@ -64,3 +64,6 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 
 5. Generate intermediary exomedepth files for exons
     TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan5188 Pan5188data_4col.bed
+
+6. Edit missing regions file (_Pan5188_missed.bed) strand information (BED6) 5th column was set to 0 6th column was set to + or -. This was taken from _Pan4973_missed.bed. The GREM1_SCG5 regions were given set to + since both genes are on the forward strand. CHEK2,TP53 set to - as gene is on reverse strand Strand information obtained from Ensembl Diff performed in vscode between _Pan5188_missed.bed and _Pan4973_missed.bed, no differences in shared regions.
+
