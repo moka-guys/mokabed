@@ -88,7 +88,11 @@ note after this stage there are no missed regions (Pan5191_final_missed.bed is e
 # BEDtool subdtract
 Bedtools substract was also perfomed on Pan5191_exomedepth.bed -b Pan5191_capture.bed, to identify any extra regions in Pan5191_exomedepth.bed.
 
-bedtools subtract -A -a Pan5191_exomedepth.bed -b Pan5191_capture.bed
+bedtools subtract -A -a Pan5191_exomedepth.bed -b Pan5191data_4col.bed
+AND
+bedtools subtract -A -b Pan5191_exomedepth.bed -a Pan5191data_4col.bed
+
+No differences were observed.
 
 # Remove unrequired files
 rm _Pan5191* Pan5191_final* Pan5191_capture.bed Pan5191data_4col.bed
