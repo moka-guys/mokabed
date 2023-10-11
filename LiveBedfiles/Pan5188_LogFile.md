@@ -73,3 +73,6 @@ This BED file is used to do read count step of exome depth for CNV analysis of V
 TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5188_final Pan5188data_4col.bed _Pan5188_missed.bed
 
 note after this stage there are no missed regions (Pan5188_final_missed.bed is empty)
+
+8. Sort and rename
+mv Pan5188_final_exomedepth.bed Pan5188_final_exomedepth_unsorted.bed; sort -k1n,1 -k2n,3n Pan5188_final_exomedepth_unsorted.bed > Pan5188_final_exomedepth.bed; rm Pan5188_final_exomedepth_unsorted.bed
