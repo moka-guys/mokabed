@@ -1,7 +1,7 @@
 ## Pan5193
 This bedfile will be used to perform the variant filtering step of exome depth for R211. It contains genes for this test (as of Summer 2023) 5' UTRs are also included but no regions are padded. Two BEDfiles containing additional regions are also inlcuded - Pan3608 (control sites), SCG5-GREM1 intronic sites (Pan5117) and Pan5154 (intronic regions specific to R211 genes).
 
-NOTE: this is a remake of Pan5160 as it was noticed GREM1 gene was missing from the BED file. 
+NOTE: this is a remake of Pan5193 as it was noticed GREM1 gene was missing from the BED file. 
 
 # Run mokabed
 Time Stamp:2023-10-13 12:10:44.163297
@@ -24,3 +24,6 @@ version as defined by git tag = v1.2
 
 # Add in the additional panels.
 cat Pan5117.bed Pan5154.bed Pan3608.bed  >> Pan5193data.bed
+
+# Sort data.bed
+sort Pan5193data.bed -k1,1V -k2,2n -k3,3n > Pan5193_sorted.bed;mv Pan5193data.bed Pan5193_unsorted.bed; mv Pan5193_sorted.bed Pan5193data.bed; rm Pan5193_unsorted.bed
