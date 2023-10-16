@@ -138,3 +138,5 @@ cp Pan5192data.bed Pan5192_capture.bed
 
     - Remove transcript version column
 
+9. Regenerate (final) exomedepth files giving the additional non-exonic regions from last step TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5192_part1 Pan5192data_4col.bed _Pan5192_missing_updated.bed
+
