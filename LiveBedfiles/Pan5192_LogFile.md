@@ -76,3 +76,5 @@ old - 13 35739230-35739235 new - 13 35739190-35743152
 
 Sort Pan5192data.bed
 sort Pan5192data.bed -k1,1V -k2,2n -k3,3n > Pan5192data_sorted.bed; mv Pan5192data.bed Pan5192data_unsorted.bed; mv Pan5192data_sorted.bed Pan5192data.bed; rm Pan5192data_unsorted.bed
+
+# move header to top
