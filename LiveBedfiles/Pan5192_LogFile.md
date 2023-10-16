@@ -127,3 +127,7 @@ cp Pan5192data.bed Pan5192_capture.bed
       Open _Pan5192_6col.bed in Excel, use "." as a seperator and add headers to file
 
 7. Run findstrand.py python3 /home/natasha/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/findstrand.py
+
+8. Open Pan5192_merged_file_final.csv in Excel and remove Transcript column as its not required
+
+
