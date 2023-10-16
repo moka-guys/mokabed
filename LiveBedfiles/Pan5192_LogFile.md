@@ -97,5 +97,5 @@ sort Pan5192data.bed -k1,1V -k2,2n -k3,3n > Pan5192data_sorted.bed; mv Pan5192da
 # Remove unrequired files
 rm Pan5192_extradata.bed Pan5192_extra_part1dataSambamba.bed Pan5192_SMN1_nopadding.bed Pan5192dataRefSeqFormat.txt Pan5192_extradataRefSeqFormat.txt Pan5192_extra_part1data.bed Pan5192_SMN1_3col.bed Pan5192dataSambamba.bed Pan5192_extradataSambamba.bed Pan5192_extra_part1dataRefSeqFormat.txt Pan5192_SMN1problemdata.bed
 
-
-
+# Testing
+Pan5192data.bed was tested using moka_picard_v1.2.1 - job completed sucessfully
