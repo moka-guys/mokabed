@@ -120,4 +120,7 @@ cp Pan5192data.bed Pan5192_capture.bed
 
 6. Edit missing regions file (_Pan5192_missed.bed) strand information (BED6) 5th column was set to 0 6th column was set to + or -. Strand information was obtained from _Pan5192.bed, findstrand.py was used to join files using transcript numbers.
 
-Add headers to _Pan5192_missed.bed- needed to run findstrand.py 
+    - Add headers to _Pan5192_missed.bed- needed to run findstrand.py 
+
+    - Convert _Pan5192.bed into 6 columns
+      cut -f 1-6  _Pan5192.bed > _Pan5192_6col.bed 
