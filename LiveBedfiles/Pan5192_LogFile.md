@@ -32,3 +32,10 @@ bedtools subtract -a Pan5192_extra_part1data.bed -b Pan5192_extradata.bed >> Pan
 
 merge Pan5192_extradata_merged.bed with Pan5192data.bed
 bedtools subtract -a Pan5192_extradata.bed -b Pan5192data.bed >> Pan5192data.bed
+
+# Add SMN1 problematic transcript
+Now all transcripts have been merged we need to add in NM_000344 (SMN1) which was causing mokabed to fail on a previous iteration of this BED file (Pan5192). Mokabed was failing because cruzdb was returning multiple records for the same transcript.
+
+As described in Pan3973_log.md a number of steps were performed to extract the regions from the UCSC table browser, remove the UTRs. The SMN1 regions were paded by 10 bases as this was the requirement back then, however now regions are padded by 30bp. SMN1 regions will be padded by 20bp to be consisted with this bedfile (Pan5149). The SMN1 BED file was also converted to the expected format (12 columns). This was done for data.bed and was saved as Pan5192_SMN1problemdata.bed.
+
+1. Pan3973_problemdata.bed was downloaded from the git history at commit 982b443698 (https://github.com/moka-guys/mokabed/tree/982b443698683532c2a4a0032e0ae370742ad41a/LiveBedfiles)
