@@ -83,3 +83,9 @@ sort Pan5192data.bed -k1,1V -k2,2n -k3,3n > Pan5192data_sorted.bed; mv Pan5192da
 Oops forgot to add the additional inronic regions and CNV sites
 
 cat Pan5167.bed Pan3608.bed >> Pan5192data.bed
+
+# check all trasncripts included
+Added full list of transcripts included. 
+bash /home/natasha/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/transcript_checker.sh /home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5192_all_transcripts.csv /home/natasha/Desktop/mokabed/LiveBedfiles/Pan5192data.bed 
+output: Bed file as expected (all transcripts present)
+
