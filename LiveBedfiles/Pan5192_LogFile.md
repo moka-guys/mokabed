@@ -115,3 +115,5 @@ cp Pan5192data.bed Pan5192_capture.bed
     cut -f1,2,3,5 Pan5192_capture.bed > Pan5192data_4col.bed
 
 4. Underscores create issues with makeexomdepth.sh script, so in VScode replace any underscores with dashes.
+
+5. Generate intermediary exomedepth files for exons TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan5192 Pan5192data_4col.bed
