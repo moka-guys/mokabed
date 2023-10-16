@@ -99,3 +99,9 @@ rm Pan5192_extradata.bed Pan5192_extra_part1dataSambamba.bed Pan5192_SMN1_nopadd
 
 # Testing
 Pan5192data.bed was tested using moka_picard_v1.2.1 - job completed sucessfully
+
+## Creating Exomedepth BED file
+This BED file is used to do read count step of exome depth for CNV analysis of VCP3.
+
+Create a copy of Pan5192data.bed to make changes 
+cp Pan5192data.bed Pan5192_capture.bed
