@@ -114,3 +114,4 @@ cp Pan5192data.bed Pan5192_capture.bed
 3. Convert 4 column format Excel saves output as csv, in VScode replace "," with a tab 
     cut -f1,2,3,5 Pan5192_capture.bed > Pan5192data_4col.bed
 
+4. Underscores create issues with makeexomdepth.sh script, so in VScode replace any underscores with dashes.
