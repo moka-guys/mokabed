@@ -117,3 +117,7 @@ cp Pan5192data.bed Pan5192_capture.bed
 4. Underscores create issues with makeexomdepth.sh script, so in VScode replace any underscores with dashes.
 
 5. Generate intermediary exomedepth files for exons TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan5192 Pan5192data_4col.bed
+
+6. Edit missing regions file (_Pan5192_missed.bed) strand information (BED6) 5th column was set to 0 6th column was set to + or -. Strand information was obtained from _Pan5192.bed, findstrand.py was used to join files using transcript numbers.
+
+Add headers to _Pan5192_missed.bed- needed to run findstrand.py 
