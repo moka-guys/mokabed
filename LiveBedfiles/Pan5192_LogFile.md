@@ -140,3 +140,6 @@ cp Pan5192data.bed Pan5192_capture.bed
 
 9. Regenerate (final) exomedepth files giving the additional non-exonic regions from last step TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5192_part1 Pan5192data_4col.bed _Pan5192_missing_updated.bed
 
+10. Pan5192_final_missed.bed was not empty, findstrand.py script could not find strand information for regions added from Pan5167.bed and Pan3608.bed.
+
+Strand information for this information was manually added. Strand information obtained from Ensembl NOTE: Mokabed named HYCC1 to its gene synonym FAM126A
