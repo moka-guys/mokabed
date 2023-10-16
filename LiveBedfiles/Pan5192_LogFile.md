@@ -78,3 +78,8 @@ Sort Pan5192data.bed
 sort Pan5192data.bed -k1,1V -k2,2n -k3,3n > Pan5192data_sorted.bed; mv Pan5192data.bed Pan5192data_unsorted.bed; mv Pan5192data_sorted.bed Pan5192data.bed; rm Pan5192data_unsorted.bed
 
 # move header to top
+
+# Add intronic regions and CNV sites
+Oops forgot to add the additional inronic regions and CNV sites
+
+cat Pan5167.bed Pan3608.bed >> Pan5192data.bed
