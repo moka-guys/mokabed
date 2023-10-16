@@ -130,4 +130,9 @@ cp Pan5192data.bed Pan5192_capture.bed
 
 8. Open Pan5192_merged_file_final.csv in Excel and remove Transcript column as its not required
 
+    - Open file in vscode and replace "," with "\t"
+
+    - Remove header from Pan5192_merged_file_final.csv
+
+
 
