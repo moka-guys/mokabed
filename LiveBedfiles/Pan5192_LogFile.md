@@ -53,3 +53,8 @@ mv Pan3973_problemdata.bed Pan5192_SMN1problemdata.bed
 
 # add to data.bed
 cat Pan5192_SMN1problemdata.bed >> Pan5192data.bed There was no header to remove
+
+# Add SNORD118
+SNORD118 gene is non-coding RNA, so doesn't have a NM number. The UCSC and NCBI refeq databases were checked and NR_033294.2 wasn't in the databases used by MokaBED. therefore the BED file couldn't be made using Mokabed.
+
+Coordinates for SNORD118 were retrieved from UCSC chr17:8076771-8076906. No padding was added to these regions
