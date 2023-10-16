@@ -42,3 +42,6 @@ As described in Pan3973_log.md a number of steps were performed to extract the r
 
 2. rename Pan3973_problemdata.bed to Pan5192_SMN1problemdata.bed before removing padding 
 mv Pan3973_problemdata.bed Pan5192_SMN1problemdata.bed
+
+3. Remove padding 
+    a) convert file to 3 column format awk -F'\t' '{print $1 "\t" $2 "\t" $3}' Pan5192_SMN1problemdata.bed > Pan5192_SMN1_3col.bed
