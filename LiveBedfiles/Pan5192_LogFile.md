@@ -110,3 +110,7 @@ cp Pan5192data.bed Pan5192_capture.bed
     a) In Excel format Entrez;Gene_Accession to only include gene symbol a) Use find and replace to edit Entrez;GeneSymbol column to only include Gene symbols. Find *; and and leave replace field empty (remember to select wildcard option) Excel saves output as csv, in VScode replace "," with a tab
 
     b) Step above left additionally added regions with empty cells in Gene_Accession column. Manually copy EntrezID field into Gene_accession column.
+
+3. Convert 4 column format Excel saves output as csv, in VScode replace "," with a tab 
+    cut -f1,2,3,5 Pan5192_capture.bed > Pan5192data_4col.bed
+
