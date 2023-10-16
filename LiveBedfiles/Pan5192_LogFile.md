@@ -48,3 +48,5 @@ mv Pan3973_problemdata.bed Pan5192_SMN1problemdata.bed
 
     b) 10bp was removed, as per those regions produced by MokaBED using the following python code:
         with open('/home/natasha/Desktop/mokabed/LiveBedfiles/Pan5192_SMN1_3col.bed','r') as bedfile: for line in bedfile.readlines(): chr,start,stop=line.split("\t") print str(chr)+"\t" + str(int(start)+10) + "\t" + str(int(stop)-10)
+
+    c) In Excel Pan5192_SMN1_nopadding.bed was used to update Pan5192_SMN1problemdata.bed to convert back into a 12 column format.
