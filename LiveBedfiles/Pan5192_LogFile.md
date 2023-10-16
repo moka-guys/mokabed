@@ -124,3 +124,6 @@ cp Pan5192data.bed Pan5192_capture.bed
 
     - Convert _Pan5192.bed into 6 columns
       cut -f 1-6  _Pan5192.bed > _Pan5192_6col.bed 
+      Open _Pan5192_6col.bed in Excel, use "." as a seperator and add headers to file
+
+7. Run findstrand.py python3 /home/natasha/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/findstrand.py
