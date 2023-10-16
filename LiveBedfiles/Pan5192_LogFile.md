@@ -58,3 +58,21 @@ cat Pan5192_SMN1problemdata.bed >> Pan5192data.bed There was no header to remove
 SNORD118 gene is non-coding RNA, so doesn't have a NM number. The UCSC and NCBI refeq databases were checked and NR_033294.2 wasn't in the databases used by MokaBED. therefore the BED file couldn't be made using Mokabed.
 
 Coordinates for SNORD118 were retrieved from UCSC chr17:8076771-8076906. No padding was added to these regions
+
+# Fix LAMA2,DIAPH1 and NBEA
+Errors were noticed where small exons had been mapped incorrectly in the UCSC refseq database. The coordinated were retrived from Pan4361. Please note Pan4361 was padded by +/-10bp and this BED file has no padding. 10bp padding was removed from LAMA2, DIAPH1 and NBEA regions
+
+Three areas were identified: 
+LAMA2;NM_000426.4 
+old - 6 129763366-129763372 new - 6	129764197-129764213
+
+DIAPH1;NM_005219.5
+
+old - 5	140915620-140915629 new - 5	140950984-140951013
+
+
+NBEA;NM_015678.5 
+old - 13 35739230-35739235 new - 13 35739190-35743152
+
+Sort Pan5192data.bed
+sort Pan5192data.bed -k1,1V -k2,2n -k3,3n > Pan5192data_sorted.bed; mv Pan5192data.bed Pan5192data_unsorted.bed; mv Pan5192data_sorted.bed Pan5192data.bed; rm Pan5192data_unsorted.bed
