@@ -134,5 +134,5 @@ cp Pan5192data.bed Pan5192_capture.bed
 
     - Remove header from Pan5192_merged_file_final.csv
 
-
+    - Rename file from .csv to .bed mv Pan5192_merged_file_final.csv _Pan5192_missing_updated.bed
 
