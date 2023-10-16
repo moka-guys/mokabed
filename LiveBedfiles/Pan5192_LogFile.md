@@ -103,5 +103,8 @@ Pan5192data.bed was tested using moka_picard_v1.2.1 - job completed sucessfully
 ## Creating Exomedepth BED file
 This BED file is used to do read count step of exome depth for CNV analysis of VCP3.
 
-Create a copy of Pan5192data.bed to make changes 
+1. Create a copy of Pan5192data.bed to make changes 
 cp Pan5192data.bed Pan5192_capture.bed
+
+2. Replace Entrez IDs with gene symbols Open Pan5192_capture.bed in Excel, first split the GeneAccession column on semi colon and create a column concatenating EntrezID;GeneSymbol. Excel saves file as a csv, so open file in VS code and replace "," with a tab This helps visualise changes during code review
+
