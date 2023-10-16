@@ -1,4 +1,4 @@
-This VCP3 BED file is a remake of Pan5192, but with no padding to the exons and only the 5 UTR included.
+This VCP3 BED file is a remake of Pan5149, but with no padding to the exons and only the 5 UTR included.
 
 From past attempts of making this BED file there are additional steps required to create this BED file: 
     - SNORD118 gene is non-coding RNA, so doesn't have a NM number. Therefore must be added manually.
@@ -29,3 +29,6 @@ version as defined by git tag = v1.2
 merge Pan5192_extra_part1data.bed and Pan5192_extradata.bed
 
 bedtools subtract -a Pan5192_extra_part1data.bed -b Pan5192_extradata.bed >> Pan5192_extradata.bed
+
+merge Pan5192_extradata_merged.bed with Pan5192data.bed
+bedtools subtract -a Pan5192_extradata.bed -b Pan5192data.bed >> Pan5192data.bed
