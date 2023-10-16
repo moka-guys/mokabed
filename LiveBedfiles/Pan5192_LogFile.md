@@ -92,3 +92,6 @@ output: Bed file as expected (all transcripts present)
 # Sort and rename again Pan5149data.bed
 sort Pan5192data.bed -k1,1V -k2,2n -k3,3n > Pan5192data_sorted.bed; mv Pan5192data.bed Pan5192data_unsorted.bed; mv Pan5192data_sorted.bed Pan5192data.bed; rm Pan5192data_unsorted.bed
 
+# move header
+
+
