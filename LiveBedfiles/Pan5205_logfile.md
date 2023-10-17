@@ -11,3 +11,6 @@ This new bedfile will be made by deleting the regions from the existing Pan5130.
 ## Copy original bedfile
 `cp Pan5130data.bed Pan5205data.bed`
 `cp Pan5130dataSambamba.bed Pan5205dataSambamba.bed`
+
+## Remove regions
+manually delete two regions from each bedfile
