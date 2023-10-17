@@ -7,3 +7,7 @@ chr7	140426283	140426326	7-140426283-140426326	0	+	BRAF;NM_001374258.1	673
 chr7	140485478	140485618	7-140485478-140485618	0	+	BRAF;NM_001374258.1	673
 
 This new bedfile will be made by deleting the regions from the existing Pan5130.
+
+## Copy original bedfile
+`cp Pan5130data.bed Pan5205data.bed`
+`cp Pan5130dataSambamba.bed Pan5205dataSambamba.bed`
