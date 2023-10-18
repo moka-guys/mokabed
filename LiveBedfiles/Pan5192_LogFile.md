@@ -150,3 +150,8 @@ cp Pan5192data.bed Pan5192_capture.bed
 12. Sort and rename sort _Pan5192_missing_updated.bed -k1,1V -k2,2n -k3,3n > _Pan5192_missing_updated_sorted.bed; mv _Pan5192_missing_updated.bed _Pan5192_missing_updated_unsorted.bed; mv _Pan5192_missing_updated_sorted.bed _Pan5192_missing_updated.bed; rm _Pan5192_missing_updated_unsorted.bed
 
 13. Duplicate SNORD118 region (17:8076741-8076936) present without strand information. Delete the line without info.
+
+14. Rerun exomedepth script TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5192_final Pan5192data_4col.bed _Pan5192_missing_updated.bed
+
+Pan5192_final_missed.bed should now be empty
+
