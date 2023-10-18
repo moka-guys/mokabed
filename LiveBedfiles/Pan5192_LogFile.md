@@ -146,3 +146,5 @@ cp Pan5192data.bed Pan5192_capture.bed
     Strand information for this information was manually added. Strand information obtained from Ensembl NOTE: Mokabed named HYCC1 to its gene synonym FAM126A
 
 11. Combine Pan5192_part1_missed.bed and _Pan5192_missing_updated.bed cat Pan5192_part1_missed.bed >> _Pan5192_missing_updated.bed
+
+12. Sort and rename sort _Pan5192_missing_updated.bed -k1,1V -k2,2n -k3,3n > _Pan5192_missing_updated_sorted.bed; mv _Pan5192_missing_updated.bed _Pan5192_missing_updated_unsorted.bed; mv _Pan5192_missing_updated_sorted.bed _Pan5192_missing_updated.bed; rm _Pan5192_missing_updated_unsorted.bed
