@@ -59,6 +59,7 @@ SNORD118 gene is non-coding RNA, so doesn't have a NM number. The UCSC and NCBI 
 
 Coordinates for SNORD118 were retrieved from UCSC chr17:8076771-8076906. No padding was added to these regions
 
+## NOTE: THESE (LAMA2, DIAPH1 and NBEA) REGIONS WERE UPDATED INCORRECTLY, SEE END OF LOGFILE!!
 # Fix LAMA2,DIAPH1 and NBEA
 Errors were noticed where small exons had been mapped incorrectly in the UCSC refseq database. The coordinated were retrived from Pan4361. Please note Pan4361 was padded by +/-10bp and this BED file has no padding. 10bp padding was removed from LAMA2, DIAPH1 and NBEA regions
 
@@ -162,3 +163,20 @@ Pan5192_final_missed.bed should now be empty
 17. Pan5192_exomedepth.bed was tested using DNANexus app ED_readcount_analysis_v1.1.0 in project 230822_VCP3_exomedepth_bedfiles. App completed successfully
 
 18. Delete further unrequired files rm Pan5192_capture.bed Pan5192data_4col.bed merged_file.csv
+
+# During codereview it was noted LAMA2;NM_000426.4 and NBEA;NM_015678.5 region was not corrected
+EDIT Pan5192data.bed and Pan5192_exomedepth.bed
+LAMA2 start position was padded by -/+10bp
+LAMA2 6:129764197-129764213 corrected to 6:129764207-129764213
+
+DIAPH1;NM_005219.5 nothing needs to be changed.
+correct coordinates without padding are 5:140950994-140951003
+
+NBEA;NM_015678.5 
+Pan5192_exomedepth.bed
+old - 13 35739230-35739235 
+new - 13 35743123-35743132
+
+Pan5192data.bed
+incorrect 13:35739190-35743152
+correct: 13:35743123-35743132
