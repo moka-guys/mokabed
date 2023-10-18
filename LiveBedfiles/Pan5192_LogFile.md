@@ -145,4 +145,4 @@ cp Pan5192data.bed Pan5192_capture.bed
 10. Pan5192_part1_missed.bed was not empty, findstrand.py script could not find strand information for regions added from Pan5167.bed and Pan3608.bed.
     Strand information for this information was manually added. Strand information obtained from Ensembl NOTE: Mokabed named HYCC1 to its gene synonym FAM126A
 
-
+11. Combine Pan5192_part1_missed.bed and _Pan5192_missing_updated.bed cat Pan5192_part1_missed.bed >> _Pan5192_missing_updated.bed
