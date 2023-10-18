@@ -3,32 +3,32 @@ Instructions:,,
 Add genes symbols and/or transcripts to a panel in Moka,,
 Add panel description to Moka,,
 Answer following questions,,
-Please save this as a CSV file.,,
+Please save this as a CSV file,,
 ,,
-1. Pan number of bed file to be created,Pan5192,
-2. Panel description/name (fill in a-c from Moka),,
-2. a) Category,VCP3,
-2. b) SubCategory,No padding +5UTR+Pan4535 with additional genes,
-2. c) Panel,VCP3_Variant_No padding+5UTR+Pan4535 with additional genes,
-3a). Is this BED file used for Exome depth?,Yes,
-3b). Is this BED file used to generate read counts or filter calls?,Readcount,
-4. a) Is this BED file exclusively based on coordinates provided by a supplier? ,No,
-4. b) If yes does this need further padding?,No,
-5. a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts for a gene),Yes,
-5. b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state),No,
+1, Pan number of bed file to be created,Pan5192
+2, Panel description/name (fill in a-c from Moka),
+2, a) Category,VCP3
+2, b) SubCategory,No padding +5UTR+Pan4535 with additional genes
+2, c) Panel,VCP3_Variant_No padding+5UTR+Pan4535 with additional genes
+3a), Is this BED file used for Exome depth?,Yes
+3b), Is this BED file used to generate read counts or filter calls?,Readcount
+4, a) Is this BED file exclusively based on coordinates provided by a supplier? ,No
+4, b) If yes does this need further padding?,No
+5, a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts for a gene),Yes
+5, b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state),No
 "6. What padding is required around the exons?(usually 10,30 or 50bp)",No,
-7. a) Should UTRs be included for ALL genes?,Yes,
-7. b) Should UTRs be padded? and if so by how much,5UTR,
-8. a) Are UTRs required for SOME genes? ,NA,
-8. b) Please list genes/transcripts,NA,
-8. c) Should UTRs be padded? and if so by how much,,
-9. Any additional BED files to be included in this BED file?,Pan4535,
-10. Are any further regions required to be added?,No,
-11. Are there any regions in the below transcripts that should be excluded?,No,
+7, a) Should UTRs be included for ALL genes?,Yes
+7, b) Should UTRs be padded? and if so by how much,5UTR
+8, a) Are UTRs required for SOME genes? ,NA
+8, b) Please list genes/transcripts,NA
+8, c) Should UTRs be padded? and if so by how much,
+9, Any additional BED files to be included in this BED file?,"Pan3608, Pan5167"
+10, Are any further regions required to be added?,No
+11, Are there any regions in the below transcripts that should be excluded?,No
 Requested by:,,
 Requested date:,,
 ,,
-Please list gene and transcripts below.,,
+Please list gene and transcripts below,,
 HGNC approved symbol,Transcript,HGNC ID
 IKZF5,NM_001372123,HGNC:14283
 BLOC1S5,NM_201280,HGNC:18561
@@ -68,7 +68,7 @@ GGCX,NM_000821,HGNC:4247
 MCFD2,NM_139279,HGNC:18451
 PROS1,NM_000313,HGNC:9456
 VWF,NM_000552,HGNC:12726
-SNORD118,NR_033294.2,
+SNORD118,NR_033294,2
 AAAS,NM_001173466,
 AAAS,NM_015665,
 AARS1,NM_001605,
