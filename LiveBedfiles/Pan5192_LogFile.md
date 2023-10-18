@@ -155,3 +155,4 @@ cp Pan5192data.bed Pan5192_capture.bed
 
 Pan5192_final_missed.bed should now be empty
 
+15. Rename exome depth git mv Pan5192_final_exomedepth.bed Pan5192_exomedepth.bed
