@@ -161,3 +161,4 @@ Pan5192_final_missed.bed should now be empty
 
 17. Pan5192_exomedepth.bed was tested using DNANexus app ED_readcount_analysis_v1.1.0 in project 230822_VCP3_exomedepth_bedfiles. App completed successfully
 
+18. Delete further unrequired files rm Pan5192_capture.bed Pan5192data_4col.bed merged_file.csv
