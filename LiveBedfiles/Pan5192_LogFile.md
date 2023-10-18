@@ -180,3 +180,13 @@ new - 13 35743123-35743132
 Pan5192data.bed
 incorrect 13:35739190-35743152
 correct: 13:35743123-35743132
+
+
+# Testing
+Bedtools substract was also perfomed on Pan5192_exomedepth.bed -b Pan5192_capture.bed (4 column format), to identify any extra regions in Pan5192_exomedepth.bed.
+
+bedtools subtract -A -a Pan5192_exomedepth.bed -b Pan5192data_4col.bed AND bedtools subtract -A -b Pan5192_exomedepth.bed -a Pan5192data_4col.bed
+
+No differences were observed.
+
+Pan5192_exomedepth.bed was tested again using DNANexus app ED_readcount_analysis_v1.0.0 in project 003_230627_Exomedepth_BEDfiles. The app completed sucessfully.
