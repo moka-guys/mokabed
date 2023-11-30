@@ -1,0 +1,46 @@
+Instructions:,,
+"Add genes symbols and/or transcripts to a panel in Moka
+Add panel description to Moka
+Answer following questions:",VCP3_R66,
+,,
+1. Pan number of bed file to be created,N/A,
+2. Panel description/name (fill in a-c from Moka),,
+2. a) Category,VCP3 Viapath,
+2. b) SubCategory,"R66_Paroxysmal neurological disorders, pain disorders and sleep disorders",
+2. c) Panel,"VCP3 Viapath R66_Paroxysmal neurological disorders, pain disorders and sleep disorders",
+3. Is this BED file for RPKM?,No,
+4. a) Is this BED file exclusively based on coordinates provided by a supplier ,No,
+"4. b) If yes, does this need further padding?",N/A,
+5. a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts) Specific transcripts - see Moka,Yes - see below,
+5. b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state),No,
+6. What padding is required around the exons?,30,
+7. a) Should UTRs be included for ALL genes?,N/A,
+7. b) Should UTRs be padded?,N/A,
+8. a) Are UTRs required for SOME genes? ,N/A,
+8. b) Please list genes/transcripts,N/A,
+8. c) Should UTRs be padded?,No,
+9. Any additional BED files to be included in this BED file? ,3608,
+10. Are any further regions required to be added?,No,
+Requested by:,Lorraine Hawkes,
+Requested date:,05.07.2023,
+,,
+,Gene Name,Transcript
+,ADCY5,NM_183357
+,ATAD1,NM_032810
+,ATP1A2,NM_000702
+,ATP1A3,NM_152296
+,CACNA1A,NM_001127221
+,DNMT1,NM_001130823
+,GLRA1,NM_001146040
+,GLRB,NM_000824
+,KCNA1,NM_000217
+,KCNMA1,NM_001161352
+,KCNQ2,NM_172107
+,PDE10A,NM_001130690
+,PNKD,NM_015488
+,PRRT2,NM_145239
+,SCN1A,NM_006920
+,SLC1A3,NM_004172
+,SLC2A1,NM_006516
+,SLC6A5,NM_004211
+,VAMP2,NM_014232
