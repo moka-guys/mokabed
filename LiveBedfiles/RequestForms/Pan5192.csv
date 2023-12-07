@@ -8,8 +8,8 @@ Please save this as a CSV file,,
 1, Pan number of bed file to be created,Pan5192
 2, Panel description/name (fill in a-c from Moka),
 2, a) Category,VCP3
-2, b) SubCategory,No padding +5UTR+Pan4535 with additional genes
-2, c) Panel,VCP3_Variant_No padding+5UTR+Pan4535 with additional genes
+2, b) SubCategory,No padding +5UTR+Pan3608+Pan5167 with additional genes
+2, c) Panel,VCP3_Variant_No padding+5UTR+Pan3608+Pan5167 with additional genes
 3a), Is this BED file used for Exome depth?,Yes
 3b), Is this BED file used to generate read counts or filter calls?,Readcount
 4, a) Is this BED file exclusively based on coordinates provided by a supplier? ,No

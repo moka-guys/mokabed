@@ -190,3 +190,7 @@ bedtools subtract -A -a Pan5192_exomedepth.bed -b Pan5192data_4col.bed AND bedto
 No differences were observed.
 
 Pan5192_exomedepth.bed was tested again using DNANexus app ED_readcount_analysis_v1.0.0 in project 003_230627_Exomedepth_BEDfiles. The app completed sucessfully.
+
+# Make changes identifies in the PR
+Fix LAMA, NBEA regions
+Correct request form
