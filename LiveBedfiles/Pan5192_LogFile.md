@@ -194,3 +194,7 @@ Pan5192_exomedepth.bed was tested again using DNANexus app ED_readcount_analysis
 # Make changes identifies in the PR
 Fix LAMA, NBEA regions
 Correct request form
+
+# Test changes
+Pan5192_exomedepth.bed tested in 003_231117_exomedepth_apps_v1.3.0 using ED_readcount_analysis_v1.3.0 and ED_cnv_calling_v1.3.0
+The apps completed successfully
