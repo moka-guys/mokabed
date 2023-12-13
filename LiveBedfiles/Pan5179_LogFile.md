@@ -24,3 +24,4 @@ version as defined by git tag = v1.2
 # Add in the additional panels.
 cat Pan3608.bed >> Pan5179data.bed
 
+cat Pan5167.bed >> Pan5179data.bed
