@@ -36,3 +36,9 @@ cut -f 1-4 Pan5179data.bed > Pan5179data_4col.bed; rm Pan5179data.bed; mv Pan517
 
 # Rename to _cnv.bed
 git mv Pan5179data.bed Pan5179_CNV.bed
+
+# Delete unrequired files
+git rm Pan5179dataSambamba.bed Pan5179dataRefSeqFormat.txt
+
+# Testing
+The bedfile was tested with ED_cnv_calling_v1.2.0 in 230822_VCP3_exomedepth_bedfiles and the job ran without error
