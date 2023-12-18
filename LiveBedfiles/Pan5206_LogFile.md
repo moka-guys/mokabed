@@ -1,0 +1,2 @@
+# Pan5206
+This bedfile will be used to perform the variant filtering step of exome depth for R210. It contains genes for this test (as of Summer 2023) 5' UTRs are also included but no regions are padded. Two BEDfiles containing additional regions are also inlcuded - Pan3608 (control sites) and Pan4765 (intronic regions specific to R210 genes).
