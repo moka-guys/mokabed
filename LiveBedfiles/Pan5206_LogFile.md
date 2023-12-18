@@ -20,3 +20,5 @@ RefSeq table format version generated as /home/dnanexus/out/Output_files/Pan5206
 
 version as defined by git tag = v1.2
 
+# Add in the additional panels.
+cat Pan4765.bed Pan3608.bed >> Pan5206data.bed
