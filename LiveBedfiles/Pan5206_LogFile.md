@@ -28,3 +28,6 @@ sort Pan5206data.bed -k1,1V -k2,2n -k3,3n > Pan5206_sorted.bed;mv Pan5206data.be
 
 # Remove header
 This was done manually
+
+# Convert to 4 column format
+cut -f 1-4 Pan5206data.bed > Pan5206data_4col.bed; rm Pan5206data.bed; mv Pan5206data_4col.bed Pan5206data.bed
