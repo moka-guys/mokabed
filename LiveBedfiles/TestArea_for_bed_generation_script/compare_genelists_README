@@ -3,7 +3,7 @@
 Script compares genes listed in a BED file and genes listed in a BED file request form to identify missing genes.
 Input files have to be in csv format
 
-Usage: python3 script.py bedfile, transcriptfile, bedfile_column, transcriptfile_column
+Usage: python3 compare_genelists.py bedfile, transcriptfile, bedfile_column, transcriptfile_column
 
 # How does the app work
 
@@ -12,7 +12,7 @@ The columns are then compared to find missing genes from the BED file
 
 To identify extra genes in BED file not present in the BED file request form provide the transcript file as the first input and the bedfile as the second input file
 
-usage: python3 script.py transcriptfile, bedfile, transcriptfile_column, bedfile_column
+usage: python3 compare_genelists.py transcriptfile, bedfile, transcriptfile_column, bedfile_column
 
 # Inputs
 BEDfile (csv): 6 column format Chr, Start, Stop, EntrezID, Gene, Transcript

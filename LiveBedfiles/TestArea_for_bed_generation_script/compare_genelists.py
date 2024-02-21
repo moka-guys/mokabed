@@ -20,7 +20,7 @@ def compare_columns(bedfile, transcriptfile, bedfile_column, transcriptfile_colu
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print("Usage: python script.py bedfile, transcriptfile, bedfile_column, transcriptfile_column")
+        print("Usage: python compare_genelists.py bedfile, transcriptfile, bedfile_column, transcriptfile_column")
         sys.exit(1)
 
     bedfile = sys.argv[1]
