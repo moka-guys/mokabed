@@ -1,0 +1,31 @@
+##  compare_genelists.py 
+
+Script compares genes listed in a BED file and genes listed in a BED file request form to identify missing genes.
+Input files have to be in csv format
+
+Usage: python3 compare_genelists.py bedfile, transcriptfile, bedfile_column, transcriptfile_column
+
+# How does the app work
+
+Script reads the two csv files into a Pandas data frame and extracts the specified columns from the data frame.
+The columns are then compared to find missing genes from the BED file
+
+To identify extra genes in BED file not present in the BED file request form provide the transcript file as the first input and the bedfile as the second input file
+
+usage: python3 compare_genelists.py transcriptfile, bedfile, transcriptfile_column, bedfile_column
+
+# Inputs
+BEDfile (csv): 6 column format Chr, Start, Stop, EntrezID, Gene, Transcript
+Transcript file (csv): Create a seperate csv file using the information given in the BEDfile request form. Should have two columns Gene, Transcript
+bedfile_column: This is the column with gene names (Gene)
+transcriptfile_column: This is the column with gene names (Gene)
+
+# Output 
+Missing genes will be printed on command line:
+e.g Genes missing:
+{'PCSK9', 'LDLR'}
+If no genes are missing, the following statement will be printed:
+Genes missing:
+{nan}
+
+
