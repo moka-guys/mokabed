@@ -80,3 +80,11 @@ rm Pan5208data_6col.csv Pan5208dataRefSeqFormat.txt Pan5208dataSambamba.bed Pan5
 # Testing
 Pan5208data.bed was test using mokapicard, job completed without error. Save request form
 
+############################################################################################################################
+Exomedepth Readcount BED file
+############################################################################################################################
+
+# Copy data.bed
+Take a copy of the data.bed file, any changes will be made to the copy of data.bed and not the original
+
+cp Pan5208data.bed Pan5208_capture.bed
