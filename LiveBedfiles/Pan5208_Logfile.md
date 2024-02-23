@@ -120,3 +120,6 @@ Edit missing regions file (_Pan5208_missed.bed) strand information (BED6) Strand
 Diff performed in vscode between _Pan5208_missed.bed and _Pan5191_missed.bed, no differences in shared regions.
 
 Simplify DMD region naming; replace description with DMD-INTRONIC
+
+# Rerun makeExomedepth.sh
+Regenerate (final) exomedepth files giving the additional non-exonic regions from last step TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5208_final Pan5208data_4col.bed _Pan5208_missed.bed
