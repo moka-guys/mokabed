@@ -58,3 +58,18 @@ d) Rename header to: Chr, Start, Stop, EntrezID, Gene, Transcript
 e) Create second input file; copy the genes and transcript list in the request form into an empty Excel file and save it as a CSV file
 
 f) Add headers to columns: Gene, Transcript
+
+g) Run compare_genelists.py
+
+First check if any genes are missing in the data.bed file
+
+    python3 ~/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/compare_genelists.py Pan5208data_6col.csv /home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5208_alltranscripts.csv Gene Gene
+
+NOTE: Output showed no genes were missing
+
+Script was run a second time to check addiotional genes present in data.bed which weren't requested
+
+    python3 ~/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/compare_genelists.py /home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5208_alltranscripts.csv Pan5208data_6col.csv Gene Gene
+
+NOTE: Output showed no additional genes were present
+
