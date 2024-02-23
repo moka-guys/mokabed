@@ -56,3 +56,5 @@ c) Delete first row, contains date e.g #2023-10-10 10:41:52.716212
 d) Rename header to: Chr, Start, Stop, EntrezID, Gene, Transcript
 
 e) Create second input file; copy the genes and transcript list in the request form into an empty Excel file and save it as a CSV file
+
+f) Add headers to columns: Gene, Transcript
