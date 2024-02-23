@@ -88,3 +88,8 @@ Exomedepth Readcount BED file
 Take a copy of the data.bed file, any changes will be made to the copy of data.bed and not the original
 
 cp Pan5208data.bed Pan5208_capture.bed
+
+# Replace Entrez ID with gene symbols
+
+Open Pan5191_capture.bed in Excel, first split the GeneAccession column on semi colon and create a column concatenating EntrezID;GeneSymbol. Excel saves file as a csv, so open file in VS code and replace "," with a tab This helps visualise changes during code review
+
