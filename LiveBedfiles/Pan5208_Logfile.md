@@ -98,3 +98,4 @@ b) Use find and replace to edit Entrez;Gene_Accession column to only include Gen
 
 NOTE: Noticed the concatenation didn't apply for majority of the regions, so starting from step A again.
 
+Repeat step B (find and replace)
