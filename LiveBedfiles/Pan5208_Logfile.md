@@ -43,3 +43,9 @@ Move header to the top
 
 # Fix LAMA2 exon (without padding)
 One of the LAMA2 exons was mapped incorrectly. The incorrect coordinates are: chr6:129763366-129763372 and the correct coordinates - chr6:129764207-129764213
+
+# Check all requested genes present 
+
+a) Take a copy of Pan5208data.bed to convert into a 6 column bed file.
+    cp Pan5208data.bed Pan5208data_6col.csv
+
