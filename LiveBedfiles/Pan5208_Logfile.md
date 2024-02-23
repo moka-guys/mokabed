@@ -73,3 +73,6 @@ Script was run a second time to check addiotional genes present in data.bed whic
 
 NOTE: Output showed no additional genes were present
 
+# Delete unrequired files
+
+rm Pan5208data_6col.csv Pan5208dataRefSeqFormat.txt Pan5208dataSambamba.bed Pan5208_extradata.bed Pan5208_extradataRefSeqFormat.txt Pan5208_extradataSambamba.bed
