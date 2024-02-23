@@ -51,3 +51,4 @@ a) Take a copy of Pan5208data.bed to convert into a 6 column bed file.
 
 b) Open Pan5208data_6col.csv in Excel, separating the GeneAccession column on “;” and delete empty columns between EntrezID column  and GeneAccession column
 
+c) Delete first row, contains date e.g #2023-10-10 10:41:52.716212
