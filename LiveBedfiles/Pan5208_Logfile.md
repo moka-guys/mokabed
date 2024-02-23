@@ -131,3 +131,7 @@ mv Pan5208_final_exomedepth.bed Pan5208_final_exomedepth_unsorted.bed; sort -k1,
 
 # rename exome depth 
 git mv Pan5208_final_exomedepth.bed Pan5208_exomedepth.bed
+
+# Remove intermediate files that will not be used.
+
+ rm _Pan5208* Pan5208_final*
