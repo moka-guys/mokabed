@@ -49,3 +49,5 @@ One of the LAMA2 exons was mapped incorrectly. The incorrect coordinates are: ch
 a) Take a copy of Pan5208data.bed to convert into a 6 column bed file.
     cp Pan5208data.bed Pan5208data_6col.csv
 
+b) Open Pan5208data_6col.csv in Excel, separating the GeneAccession column on “;” and delete empty columns between EntrezID column  and GeneAccession column
+
