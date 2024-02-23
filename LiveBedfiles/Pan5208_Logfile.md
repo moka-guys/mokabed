@@ -115,5 +115,6 @@ Noticed 7:117179036-117179049 had a missing GeneSymbol column, fix that by addin
 # Run makeExomedepth.sh
 Generate intermediary exomedepth files for exons TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan5208 Pan5208data_4col.bed
 
-
-
+# Edit missing regions file
+Edit missing regions file (_Pan5208_missed.bed) strand information (BED6) Strand information obtained from Ensembl 
+Diff performed in vscode between _Pan5208_missed.bed and _Pan5191_missed.bed, no differences in shared regions.
