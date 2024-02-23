@@ -111,3 +111,9 @@ cut -f1-4 Pan5208_capture.bed > Pan5208data_4col.bed
 Underscores create issues with makeexomdepth.sh script, so in VScode replace any underscores with dashes.
 
 Noticed 7:117179036-117179049 had a missing GeneSymbol column, fix that by adding rs397508809 to the cell
+
+# Run makeExomedepth.sh
+Generate intermediary exomedepth files for exons TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan5208 Pan5208data_4col.bed
+
+
+
