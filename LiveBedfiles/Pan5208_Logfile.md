@@ -101,3 +101,5 @@ NOTE: Noticed the concatenation didn't apply for majority of the regions, so sta
 Repeat step B (find and replace)
 
 c) Step above left additionally added regions with empty cells in GeneSymbol column. Manually copy EntrezID field into GeneSymbol column.
+
+d) Delete Entrez ID column
