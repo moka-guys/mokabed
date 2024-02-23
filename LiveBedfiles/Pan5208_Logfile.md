@@ -128,3 +128,6 @@ Check if Pan5208_final_missed.bed is empty, before proceeding.
 
 # Sort and rename
 mv Pan5208_final_exomedepth.bed Pan5208_final_exomedepth_unsorted.bed; sort -k1,1V -k2n,3n Pan5208_final_exomedepth_unsorted.bed > Pan5208_final_exomedepth.bed; rm Pan5208_final_exomedepth_unsorted.bed
+
+# rename exome depth 
+git mv Pan5208_final_exomedepth.bed Pan5208_exomedepth.bed
