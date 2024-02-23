@@ -99,3 +99,5 @@ b) Use find and replace to edit Entrez;Gene_Accession column to only include Gen
 NOTE: Noticed the concatenation didn't apply for majority of the regions, so starting from step A again.
 
 Repeat step B (find and replace)
+
+c) Step above left additionally added regions with empty cells in GeneSymbol column. Manually copy EntrezID field into GeneSymbol column.
