@@ -32,3 +32,6 @@ version as defined by git tag = v1.2
 Use bedtools subtract to add regions from extra transcripts that aren't in main file.
 
 bedtools subtract -a Pan5208_extradata.bed -b Pan5208data.bed >> Pan5208data.bed
+
+# Add additional panels
+cat Pan4291.bed Pan4290.bed Pan4292.bed Pan4272.bed Pan3608.bed >> Pan5208data.bed
