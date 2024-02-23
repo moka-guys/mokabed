@@ -123,3 +123,8 @@ Simplify DMD region naming; replace description with DMD-INTRONIC
 
 # Rerun makeExomedepth.sh
 Regenerate (final) exomedepth files giving the additional non-exonic regions from last step TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5208_final Pan5208data_4col.bed _Pan5208_missed.bed
+
+Check if Pan5208_final_missed.bed is empty, before proceeding.
+
+# Sort and rename
+mv Pan5208_final_exomedepth.bed Pan5208_final_exomedepth_unsorted.bed; sort -k1,1V -k2n,3n Pan5208_final_exomedepth_unsorted.bed > Pan5208_final_exomedepth.bed; rm Pan5208_final_exomedepth_unsorted.bed
