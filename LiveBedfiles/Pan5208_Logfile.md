@@ -118,3 +118,5 @@ Generate intermediary exomedepth files for exons TestArea_for_bed_generation_scr
 # Edit missing regions file
 Edit missing regions file (_Pan5208_missed.bed) strand information (BED6) Strand information obtained from Ensembl 
 Diff performed in vscode between _Pan5208_missed.bed and _Pan5191_missed.bed, no differences in shared regions.
+
+Simplify DMD region naming; replace description with DMD-INTRONIC
