@@ -91,7 +91,10 @@ cp Pan5208data.bed Pan5208_capture.bed
 
 # Replace Entrez ID with gene symbols
 
-Open Pan5191_capture.bed in Excel, first split the GeneAccession column on semi colon and create a column concatenating EntrezID;GeneSymbol. Excel saves file as a csv, so open file in VS code and replace "," with a tab This helps visualise changes during code review
+a) Open Pan5191_capture.bed in Excel, first split the GeneAccession column on semi colon and create a column concatenating EntrezID;GeneSymbol. Excel saves file as a csv, so open file in VS code and replace "," with a tab This helps visualise changes during code review
 
 In Excel format Entrez;Gene_Accession to only include gene symbol: 
-a) Use find and replace to edit Entrez;Gene_Accession column to only include Gene symbols. Find *; and and leave replace field empty (remember to select wildcard option) Excel saves output as csv, in VScode replace "," with a tab
+b) Use find and replace to edit Entrez;Gene_Accession column to only include Gene symbols. Find *; and and leave replace field empty (remember to select wildcard option) Excel saves output as csv, in VScode replace "," with a tab
+
+NOTE: Noticed the concatenation didn't apply for majority of the regions, so starting from step A again.
+
