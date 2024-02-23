@@ -6,3 +6,5 @@ Pan4291.bed- intronic variants relevant to Haematological genes
 Pan4290.bed- intronic variants for VCP1 regions 
 Pan4292.bed- FH intronic variants padded by 5bp Pan4272.bed- intronic variants for CF 
 Pan3608.bed- additional CNV regions
+
+# Save transcript files
