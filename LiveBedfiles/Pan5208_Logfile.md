@@ -2,10 +2,10 @@
 This VCP1 Exomedepth readcount BED file it is a remake of Pan5191. LDLR and PCSK9 were accidentally excluded from the bed file. Pan5206 will have up and down coding regions included and the 5UTR - no regions have been padded.
 
 Additional regions were included in this BED file: 
-Pan4291.bed- intronic variants relevant to Haematological genes 
-Pan4290.bed- intronic variants for VCP1 regions 
-Pan4292.bed- FH intronic variants padded by 5bp Pan4272.bed- intronic variants for CF 
-Pan3608.bed- additional CNV regions
+    Pan4291.bed- intronic variants relevant to Haematological genes 
+    Pan4290.bed- intronic variants for VCP1 regions 
+    Pan4292.bed- FH intronic variants padded by 5bp Pan4272.bed- intronic variants for CF 
+    Pan3608.bed- additional CNV regions
 
 # Save transcript files
 
@@ -135,3 +135,6 @@ git mv Pan5208_final_exomedepth.bed Pan5208_exomedepth.bed
 # Remove intermediate files that will not be used.
 
  rm _Pan5208* Pan5208_final*
+
+# Testing
+Pan5208_exomedepth.bed was tested using DNANexus app ED_readcount_analysis_v1.3.0 and the output RDATA file was tested using ED_cnv_calling_v1.3.0 to confirm compatibility in project 003_240223_exomedepth_bedfiles. The apps completed sucessfully.
