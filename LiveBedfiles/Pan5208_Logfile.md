@@ -178,5 +178,10 @@ To recitify this the Pan5208_exomedepth.bed was manually corrected.
 NYNRIN:
 14	24883801	24886652	NYNRIN_1
 
-changed to: 14 24883881     24883892   rs8017377 
+changed to: 14 24883881     24883892   rs8017377_1
+
+HFE:
+6	26092912	26093188	HFE_1
+
+changed to: 6   26093135    26093146    rs1800562_1
 
