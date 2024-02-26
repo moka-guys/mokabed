@@ -162,3 +162,21 @@ Script was run a second time to check addiotional genes present in data.bed whic
     python3 ~/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/compare_genelists.py /home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5208_alltranscripts.csv Pan5208_genecheck.csv Gene Gene
 
 NOTE: Output showed the additional regions were from CNV control site and intronic regions. Additionally 3 genes (HFE SLCO1B1 NYNRIN) were also highlighted.
+
+# Fix extra genes
+
+compare_genelists.py identified 3 genes were extra in the final exomedepth bedfile. Upon investigation, these genes were included by the makeExomedepth.sh
+
+We were requested to include the following addional regions: 
+rs8017377 14:24883881-24883892 (NYNRIN)
+rs1800562 6:26093135-26093146 (HFE)
+rs4149056 12:21331543-21331554 (SLCO1B1)
+
+Rather than only including the specific regions, makeExomedepth.sh included the entire exon of the genes. This only affects specified regions in exons.
+
+To recitify this the Pan5208_exomedepth.bed was manually corrected.
+NYNRIN:
+14	24883801	24886652	NYNRIN_1
+
+changed to: 14 24883881     24883892   rs8017377 
+
