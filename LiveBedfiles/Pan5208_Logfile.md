@@ -148,3 +148,17 @@ Check all requested genes present in the exomedepth bed file
 2) Open Pan5208_genecheck.csv use "_" to seperate gene name from exon number and delete the exon number column
 
 3) Add headers: Chr,Start,Stop,Gene
+
+4) Run compare_genelists.py
+
+First check if any genes are missing in the data.bed file
+
+    python3 ~/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/compare_genelists.py Pan5208_genecheck.csv /home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5208_alltranscripts.csv Gene Gene
+
+NOTE: Output showed no genes were missing
+
+Script was run a second time to check addiotional genes present in data.bed which weren't requested
+
+    python3 ~/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/compare_genelists.py /home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5208_alltranscripts.csv Pan5208_genecheck.csv Gene Gene
+
+NOTE: Output showed the additional regions were from CNV control site and intronic regions. Additionally 3 genes (HFE SLCO1B1 NYNRIN) were also highlighted.
