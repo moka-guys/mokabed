@@ -1,0 +1,3 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_001163213	FGFR3	0
+NM_021870	FGG	0
