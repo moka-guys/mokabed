@@ -193,4 +193,5 @@ changed to: 12  21331543    21331554    rs4149056_1
 # Testing 
 Pan5208_exomedepth.bed was tested using DNANexus app ED_readcount_analysis_v1.3.0 and the output RDATA file was tested using ED_cnv_calling_v1.3.0 to confirm compatibility in project 003_240223_exomedepth_bedfiles. The apps completed sucessfully.
 
-
+# Delete unrequired files
+rm Pan5208_capture.bed Pan5208data_4col.bed Pan5208_genecheck.csv
