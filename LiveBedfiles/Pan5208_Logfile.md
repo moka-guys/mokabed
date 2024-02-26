@@ -144,3 +144,6 @@ Check all requested genes present in the exomedepth bed file
 
 1) Take a copy of Pan5208_exomedepth.bed
     cp Pan5208_exomedepth.bed Pan5208_genecheck.csv
+
+2) Open Pan5208_genecheck.csv use "_" to seperate gene name from exon number and delete the exon number column
+
