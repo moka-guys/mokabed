@@ -138,3 +138,9 @@ git mv Pan5208_final_exomedepth.bed Pan5208_exomedepth.bed
 
 # Testing
 Pan5208_exomedepth.bed was tested using DNANexus app ED_readcount_analysis_v1.3.0 and the output RDATA file was tested using ED_cnv_calling_v1.3.0 to confirm compatibility in project 003_240223_exomedepth_bedfiles. The apps completed sucessfully.
+
+# Final gene list check
+Check all requested genes present in the exomedepth bed file
+
+1) Take a copy of Pan5208_exomedepth.bed
+    cp Pan5208_exomedepth.bed Pan5208_genecheck.csv
