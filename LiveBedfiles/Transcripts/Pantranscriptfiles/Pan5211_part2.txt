@@ -1,0 +1,5 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_002017	FLI1	0
+NM_001083899	GP6	0
+NM_001122606	LAMP2	0
+NM_002529	NTRK1	0
