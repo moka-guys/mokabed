@@ -37,3 +37,11 @@ bedtools subtract -a Pan5211_part2data.bed -b Pan5211_part1data.bed  >> Pan5211_
 merge Pan5211_part1data.bed with Pan5211data.bed 
 
 bedtools subtract -a Pan5211_part1data.bed -b Pan5211data.bed >> Pan5211data.bed
+
+# Fix missing genes
+
+From previous iterations of making this BEDfile we noticed Mokabed excludes certain genes from its output, to obtain a conclusive list of missing genes, compare_genelists.py was run
+
+a) Take a copy of Pan5211ata.bed to convert into a 6 column csv file.
+    cp Pan5211data.bed Pan5211data_6col.csv
+
