@@ -33,3 +33,7 @@ version as defined by git tag = v1.2
 merge Pan5211_part1data.bed and Pan5211_part2data.bed
 
 bedtools subtract -a Pan5211_part2data.bed -b Pan5211_part1data.bed  >> Pan5211_part1data.bed
+
+merge Pan5211_part1data.bed with Pan5211data.bed 
+
+bedtools subtract -a Pan5211_part1data.bed -b Pan5211data.bed >> Pan5211data.bed
