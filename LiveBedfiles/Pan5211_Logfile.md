@@ -53,3 +53,4 @@ d) Rename header to: Chr, Start, Stop, EntrezID, Gene, Transcript
 
 e) Prepare the second input; copy the genes and transcript list in the request form into an empty Excel file and save it as a CSV file
 
+f) Add headers to columns: Gene, Transcript
