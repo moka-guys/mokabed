@@ -54,3 +54,27 @@ d) Rename header to: Chr, Start, Stop, EntrezID, Gene, Transcript
 e) Prepare the second input; copy the genes and transcript list in the request form into an empty Excel file and save it as a CSV file
 
 f) Add headers to columns: Gene, Transcript
+
+g) Run the script:
+    
+    python3 ~/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/compare_genelists.py Pan5211data_6col.csv /home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5211_alltranscripts.csv Gene Gene
+
+    Script output:
+   Genes missing: {'RNF113A', 'RNU4ATAC', 'NHLRC1', 'PRKACG', 'FANCF', 'SNORD118', 'SMN1', 'THBD', 'DOLK'}
+
+ The script was run again to check for additional genes in Pan5211data_6col.csv
+     python3 ~/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/compare_genelists.py /home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5211_alltranscripts.csv Pan5211data_6col.csv Gene Gene
+
+     No additional genes found
+
+h) The output from compare_genelists.py was investigated:
+    'RNF113A'= Not included by mokabed
+    'RNU4ATAC' = Will be manually included since its an RNA gene
+    'NHLRC1'=  Not included by mokabed
+    'PRKACG'= Not included by mokabed
+    'FANCF'= Not included by mokabed
+    'SNORD118'= Will be manually included since its an RNA gene
+    'SMN1'= Problematic with mokabed will be included manually.
+    'THBD'= Not included by mokabed
+    'DOLK'= Not included by mokabed
+
