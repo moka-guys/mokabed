@@ -78,3 +78,9 @@ h) The output from compare_genelists.py was investigated:
     'THBD'= Not included by mokabed
     'DOLK'= Not included by mokabed
 
+# Add missing genes bed file
+MokaBED fails to add certain single exon genes in the data.bed output, padding the genes didn’t solve the issue. A seperate bedfile (Pan5213) for: RNF113A, NHLRC1, PRKACG, FANCF, THBD, and DOLK was manually created and this will be merged with Pan5211data.bed
+
+Please see https://github.com/moka-guys/mokabed/blob/master/LiveBedfiles/Pan5213_LogFile.md for further details on how this bedfile was created.
+
+
