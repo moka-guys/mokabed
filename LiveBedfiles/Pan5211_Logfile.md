@@ -97,3 +97,5 @@ As described in Pan3973_log.md a number of steps were performed to extract the r
 
 3) Remove padding 
     a) convert file to 3 column format awk -F'\t' '{print $1 "\t" $2 "\t" $3}' Pan5211_SMN1problemdata.bed > Pan5211_SMN1_3col.bed
+
+    b) 10bp was removed, as per those regions produced by MokaBED using the following python code: with open('/home/natasha/Desktop/mokabed/LiveBedfiles/Pan5211_SMN1_3col.bed','r') as bedfile: for line in bedfile.readlines(): chr,start,stop=line.split("\t") print str(chr)+"\t" + str(int(start)+10) + "\t" + str(int(stop)-10)
