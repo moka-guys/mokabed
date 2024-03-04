@@ -92,6 +92,8 @@ As described in Pan3973_log.md a number of steps were performed to extract the r
 
 1) Pan3973_problemdata.bed was downloaded from the git history at commit 982b443698 (https://github.com/moka-guys/mokabed/tree/982b443698683532c2a4a0032e0ae370742ad41a/LiveBedfiles)
 
-2) rename Pan3973_problemdata.bed to Pan5211_SMN1problemdata.bed before removing padding 
+2) Rename Pan3973_problemdata.bed to Pan5211_SMN1problemdata.bed before removing padding 
     mv Pan3973_problemdata.bed Pan5211_SMN1problemdata.bed
 
+3) Remove padding 
+    a) convert file to 3 column format awk -F'\t' '{print $1 "\t" $2 "\t" $3}' Pan5211_SMN1problemdata.bed > Pan5211_SMN1_3col.bed
