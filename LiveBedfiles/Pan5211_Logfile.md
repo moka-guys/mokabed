@@ -83,4 +83,5 @@ MokaBED fails to add certain single exon genes in the data.bed output, padding t
 
 Please see https://github.com/moka-guys/mokabed/blob/master/LiveBedfiles/Pan5213_LogFile.md for further details on how this bedfile was created.
 
+cat Pan5213.bed >> Pan5211data.bed
 
