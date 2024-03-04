@@ -85,3 +85,10 @@ Please see https://github.com/moka-guys/mokabed/blob/master/LiveBedfiles/Pan5213
 
 cat Pan5213.bed >> Pan5211data.bed
 
+# Add SMN1 problematic transcript
+Now all transcripts have been merged we need to add in NM_000344 (SMN1) which is known to cause mokabed to fail on a previous iterations. Mokabed was failing because cruzdb was returning multiple records for the same transcript.
+
+As described in Pan3973_log.md a number of steps were performed to extract the regions from the UCSC table browser, remove the UTRs. The SMN1 regions were padded by 10 bases as this was the requirement back then, however now no padding is added to regions. SMN1 regions 10bp padding will be removed to be consisted with this bedfile (Pan5211). The SMN1 BED file was also converted to the expected format (12 columns). This was done for data.bed and was saved as Pan5211_SMN1problemdata.bed.
+
+1) Pan3973_problemdata.bed was downloaded from the git history at commit 982b443698 (https://github.com/moka-guys/mokabed/tree/982b443698683532c2a4a0032e0ae370742ad41a/LiveBedfiles)
+
