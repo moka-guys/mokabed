@@ -210,7 +210,6 @@ Edit missing regions file (_Pan5211_missed.bed) strand information (BED6) 5th co
 
     - Convert _Pan5211.bed into 6 columns 
         cut -f 1-6 _Pan5211.bed > _Pan5211_6col.bed
-
-
+        Open _Pan5211_6col.bed in Excel, use "." as a seperator and add headers to file
 
 
