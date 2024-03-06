@@ -151,3 +151,4 @@ move header
 a) Take a copy of Pan5211data.bed to convert into a 6 column bed file. 
     cp Pan5211data.bed Pan5211data_6col.csv
 
+b) Open Pan5211data_6col.csv in Excel, separating the GeneAccession column on “;” and delete empty columns between EntrezID column and GeneAccession column
