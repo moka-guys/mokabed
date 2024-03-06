@@ -190,3 +190,5 @@ b) In Excel format Entrez;Gene_Accession to only include gene symbol.
  Use find and replace to edit Entrez;Gene_Accession column to only include Gene symbols. Find *; and and leave replace field empty (remember to select wildcard option) Excel saves output as csv, in VScode replace "," with a tab
 
 c) Step above left additionally added regions with empty cells in GeneSymbol column. Manually copy EntrezID field into GeneSymbol column.
+
+d) Delete Entrez ID column
