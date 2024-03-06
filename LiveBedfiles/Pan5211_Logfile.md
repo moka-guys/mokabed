@@ -145,3 +145,9 @@ cat Pan5167.bed Pan3608.bed >> Pan5211data.bed
 sort Pan5211data.bed -k1,1V -k2,2n -k3,3n > Pan5211data_sorted.bed; mv Pan5211data.bed Pan5211data_unsorted.bed; mv Pan5211data_sorted.bed Pan5211data.bed; rm Pan5211data_unsorted.bed
 
 move header
+
+# Check all requested genes are present
+
+a) Take a copy of Pan5211data.bed to convert into a 6 column bed file. 
+    cp Pan5211data.bed Pan5211data_6col.csv
+
