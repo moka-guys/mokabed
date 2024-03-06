@@ -236,3 +236,8 @@ Regenerate exomedepth files giving the additional non-exonic regions from last s
 Pan5211_part1_missed.bed was not empty, findstrand.py script could not find strand information for regions added from Pan5167.bed and Pan3608.bed. 
 Strand information for this information was manually added. Strand information obtained from Ensembl.
 
+# Combine missing strand info files
+    cat Pan5211_part1_missed.bed >> _Pan5211_missing_updated.bed
+
+
+
