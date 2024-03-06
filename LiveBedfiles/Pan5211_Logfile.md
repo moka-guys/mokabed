@@ -133,3 +133,6 @@ correct 13:35743123-35743132
 
 sort Pan5211data.bed -k1,1V -k2,2n -k3,3n > Pan5211data_sorted.bed; mv Pan5211data.bed Pan5211data_unsorted.bed; mv Pan5211data_sorted.bed Pan5211data.bed; rm Pan5211data_unsorted.bed
 
+move header to the top
+
+
