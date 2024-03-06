@@ -267,3 +267,19 @@ Check all requested genes present in the exomedepth bed file
 2. Open Pan5211_genecheck.csv use "_" to seperate gene name from exon number and delete the exon number column
 
 3. Add header: Chr,Start,Stop,Gene
+
+4. Run compare_genelists.py
+
+First check if any genes are missing in the data.bed file
+
+    python3 ~/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/compare_genelists.py Pan5211_genecheck.csv /home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5211_alltranscripts.csv Gene Gene
+
+NOTE: Output showed no genes were missing
+
+Script was run a second time to check additional genes present in data.bed which weren't requested
+
+    python3 ~/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/compare_genelists.py /home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5211_alltranscripts.csv Pan5211_genecheck.csv Gene Gene
+
+NOTE: Output showed the additional regions were from CNV control site and intronic regions. Additionally 5 genes (COL4A2-AS2,LURAP1,METTL8,BIVM-ERCC5,INSRR) were also highlighted.
+Genes missing:
+{'BRCA1-IN11-1', 'COL4A2-AS2', 'BRCA1-PM-5-3', 'LURAP1', 'CNV12-1', 'METTL8', 'CNV14-1', 'CNV11', 'CNV15', 'BRCA1-IN12-2', 'CNV03', 'BIVM-ERCC5', 'CNV13', 'CNV16-1', 'CNV07', 'CNV08', 'INSRR', 'BRCA1-IN12-1', 'BRCA1-PM-5-2', 'BRCA1-IN11-2', 'CNV09-1', 'BRCA1-PM-5-1', 'BRCA1-PM-5-4', 'CNV10-1', 'CNV02-1'}
