@@ -243,5 +243,6 @@ Strand information for this information was manually added. Strand information o
 
 Duplicate SNORD118 regions (17:8076741-8076936) and RNU4ATAC (2:122288456-122288585) present without strand information. Delete the lines without info.
 
-
+# Sort and rename
+sort _Pan5211_missing_updated.bed -k1,1V -k2,2n -k3,3n > _Pan5211_missing_updated_sorted.bed; mv _Pan5211_missing_updated.bed _Pan5211_missing_updated_unsorted.bed; mv _Pan5211_missing_updated_sorted.bed _Pan5211_missing_updated.bed; rm _Pan5211_missing_updated_unsorted.bed
 
