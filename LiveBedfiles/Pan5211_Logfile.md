@@ -231,3 +231,8 @@ Open Pan5211_merged_file_final.csv in Excel and remove Transcript column as its 
 # Rerun makeExomedepth.sh
 Regenerate exomedepth files giving the additional non-exonic regions from last step 
     TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5211_part1 Pan5211data_4col.bed _Pan5211_missing_updated.bed
+
+# Manually update missing strand info
+Pan5211_part1_missed.bed was not empty, findstrand.py script could not find strand information for regions added from Pan5167.bed and Pan3608.bed. 
+Strand information for this information was manually added. Strand information obtained from Ensembl.
+
