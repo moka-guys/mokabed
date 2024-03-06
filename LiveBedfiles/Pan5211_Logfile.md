@@ -248,3 +248,10 @@ sort _Pan5211_missing_updated.bed -k1,1V -k2,2n -k3,3n > _Pan5211_missing_update
 
 # Rerun makeExomedepth.sh
 TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5211_final Pan5211data_4col.bed _Pan5211_missing_updated.bed
+
+Pan5211_final_missed.bed should now be empty
+
+# Rename exomedepth file
+
+    git mv Pan5211_final_exomedepth.bed Pan5211_exomedepth.bed
+
