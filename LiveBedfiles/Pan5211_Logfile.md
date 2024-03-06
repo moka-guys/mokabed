@@ -113,3 +113,18 @@ Coordinates for SNORD118 and RNU4ATAC were retrieved from UCSC. No padding was a
 SNORD118 chr17:8076770 - 8076906
 RNU4ATAC chr2: 122288456-122288585
 
+# Fix LAMA2, DIAPH1 and NBEA
+
+Errors were noticed where small exons had been mapped incorrectly in the UCSC refseq database. The coordinates were retrived from Pan4361. Please note Pan4361 was padded by +/-10bp and this BED file has no padding. 10bp padding was removed from LAMA2, DIAPH1 and NBEA regions
+
+LAMA2
+incorrect 6:129763366-129763372
+correct 6:129764207-129764213
+
+DIAPH1
+incorrect 5:140915620-140915629
+correct 5:140950994-140951003
+
+NBEA
+incorrect 13:35739230-35739235
+correct 13:35743123-35743132
