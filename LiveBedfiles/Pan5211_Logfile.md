@@ -106,3 +106,10 @@ As described in Pan3973_log.md a number of steps were performed to extract the r
 cat Pan5211_SMN1problemdata.bed >> Pan5211data.bed 
 There was no header to remove
 
+# Add SNORD118 and RNU4ATAC
+SNORD118 and RNU4ATAC are non-coding RNA genes, so doesn't have a NM number, therefore the BED file couldn't be made using Mokabed.
+
+Coordinates for SNORD118 and RNU4ATAC were retrieved from UCSC. No padding was added to these regions
+SNORD118 chr17:8076770 - 8076906
+RNU4ATAC chr2: 122288456-122288585
+
