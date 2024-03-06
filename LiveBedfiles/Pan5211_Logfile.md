@@ -192,3 +192,6 @@ b) In Excel format Entrez;Gene_Accession to only include gene symbol.
 c) Step above left additionally added regions with empty cells in GeneSymbol column. Manually copy EntrezID field into GeneSymbol column.
 
 d) Delete Entrez ID column
+
+# Convert 4 column format
+cut -f1-4 Pan5211_capture.bed > Pan5211data_4col.bed
