@@ -143,3 +143,5 @@ cat Pan5167.bed Pan3608.bed >> Pan5211data.bed
 # sort and rename again 
 
 sort Pan5211data.bed -k1,1V -k2,2n -k3,3n > Pan5211data_sorted.bed; mv Pan5211data.bed Pan5211data_unsorted.bed; mv Pan5211data_sorted.bed Pan5211data.bed; rm Pan5211data_unsorted.bed
+
+move header
