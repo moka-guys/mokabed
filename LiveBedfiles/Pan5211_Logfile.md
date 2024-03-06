@@ -239,5 +239,9 @@ Strand information for this information was manually added. Strand information o
 # Combine missing strand info files
     cat Pan5211_part1_missed.bed >> _Pan5211_missing_updated.bed
 
+# Delete duplicate regions
+
+Duplicate SNORD118 regions (17:8076741-8076936) and RNU4ATAC (2:122288456-122288585) present without strand information. Delete the lines without info.
+
 
 
