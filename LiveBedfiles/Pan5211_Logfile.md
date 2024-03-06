@@ -195,3 +195,8 @@ d) Delete Entrez ID column
 
 # Convert 4 column format
 cut -f1-4 Pan5211_capture.bed > Pan5211data_4col.bed
+
+# Replace underscores
+Underscores create issues with makeexomdepth.sh script, so in VScode replace any underscores with dashes.
+
+
