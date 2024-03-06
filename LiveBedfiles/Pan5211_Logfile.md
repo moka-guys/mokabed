@@ -257,3 +257,10 @@ Pan5211_final_missed.bed should now be empty
 
 # Delete unrequired files
 rm _Pan5211* Pan5211_part1* Pan5211_final*
+
+# Final gene list check
+Check all requested genes present in the exomedepth bed file
+
+Take a copy of Pan5211_exomedepth.bed 
+    cp Pan5211_exomedepth.bed Pan5211_genecheck.csv
+
