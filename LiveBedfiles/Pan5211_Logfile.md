@@ -208,7 +208,8 @@ Edit missing regions file (_Pan5211_missed.bed) strand information (BED6) 5th co
 
     - Add headers (chr,start,stop,Gene) to _Pan5211_missed.bed- needed to run findstrand.py
 
-
+    - Convert _Pan5211.bed into 6 columns 
+        cut -f 1-6 _Pan5211.bed > _Pan5211_6col.bed
 
 
 
