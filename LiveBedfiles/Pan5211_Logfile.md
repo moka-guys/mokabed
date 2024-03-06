@@ -135,4 +135,9 @@ sort Pan5211data.bed -k1,1V -k2,2n -k3,3n > Pan5211data_sorted.bed; mv Pan5211da
 
 move header to the top
 
+# Add intronic regions and CNV sites
+Oops forgot to add the additional inronic regions and CNV sites
+
+cat Pan5167.bed Pan3608.bed >> Pan5211data.bed
+
 
