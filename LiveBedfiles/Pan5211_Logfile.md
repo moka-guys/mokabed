@@ -215,4 +215,7 @@ Edit missing regions file (_Pan5211_missed.bed) strand information (BED6) 5th co
 # Run findstrand.py 
     python3 /home/natasha/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/findstrand.py
 
+# Remove transcript file
+Open Pan5192_merged_file_final.csv in Excel and remove Transcript column as its not required
+
 
