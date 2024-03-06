@@ -171,3 +171,7 @@ e) Second input file already exists, run compare_genelists.py
 # Delete unrequired files
 
 rm Pan5211data_6col.csv Pan5211dataRefSeqFormat.txt Pan5211dataRefSeqFormat.txt Pan5211dataRefSeqFormat.txt Pan5211_part1data.bed Pan5211_part1dataRefSeqFormat.txt Pan5211_part1dataSambamba.bed Pan5211_part2data.bed Pan5211_part2dataRefSeqFormat.txt Pan5211_part2dataSambamba.bed Pan5211_SMN1_3col.bed Pan5211_SMN1problemdata.bed
+
+# Testing
+Pan5211data.bed was test using mokapicard, job completed without error.
+
