@@ -212,4 +212,7 @@ Edit missing regions file (_Pan5211_missed.bed) strand information (BED6) 5th co
         cut -f 1-6 _Pan5211.bed > _Pan5211_6col.bed
         Open _Pan5211_6col.bed in Excel, use "." as a seperator and add headers to file
 
+# Run findstrand.py 
+    python3 /home/natasha/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/findstrand.py
+
 
