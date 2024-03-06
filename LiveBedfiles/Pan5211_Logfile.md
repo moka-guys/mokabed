@@ -156,3 +156,14 @@ b) Open Pan5211data_6col.csv in Excel, separating the GeneAccession column on â€
 c) Delete first row, contains date e.g #2023-10-10 10:41:52.716212
 
 d) Rename header to: Chr, Start, Stop, EntrezID, Gene, Transcript
+
+e) Second input file already exists, run compare_genelists.py
+    First check if any genes are missing in the data.bed file
+        python3 ~/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/compare_genelists.py Pan5211data_6col.csv /home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5211_alltranscripts.csv Gene Gene
+
+    NOTE: Output showed no genes were missing
+
+    Script was run a second time to check addiotional genes present in data.bed which weren't requested
+        python3 ~/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/compare_genelists.py /home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5211_alltranscripts.csv Pan5211data_6col.csv Gene Gene
+
+    NOTE: Output showed no genes were missing
