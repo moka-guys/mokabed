@@ -175,3 +175,13 @@ rm Pan5211data_6col.csv Pan5211dataRefSeqFormat.txt Pan5211dataRefSeqFormat.txt 
 # Testing
 Pan5211data.bed was test using mokapicard, job completed without error.
 
+#####################################################
+# **Creating Exomedepth BED file**
+######################################################
+
+# Create a copy of Pan5211data.bed to make changes 
+    cp Pan5211data.bed Pan5211_capture.bed
+
+# Replace Entrez ID with gene symbols
+
+a) Open Pan5211_capture.bed in Excel, first split the GeneAccession column on semi colon and create a column concatenating EntrezID;GeneSymbol. Excel saves file as a csv, so open file in VS code and replace "," with a tab This helps visualise changes during code review
