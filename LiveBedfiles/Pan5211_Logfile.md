@@ -261,6 +261,7 @@ rm _Pan5211* Pan5211_part1* Pan5211_final*
 # Final gene list check
 Check all requested genes present in the exomedepth bed file
 
-Take a copy of Pan5211_exomedepth.bed 
-    cp Pan5211_exomedepth.bed Pan5211_genecheck.csv
+1. Take a copy of Pan5211_exomedepth.bed 
+        cp Pan5211_exomedepth.bed Pan5211_genecheck.csv
 
+2. Open Pan5211_genecheck.csv use "_" to seperate gene name from exon number and delete the exon number column
