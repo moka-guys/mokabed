@@ -222,6 +222,9 @@ Open Pan5211_merged_file_final.csv in Excel and remove Transcript column as its 
 
 - Remove header from Pan5211_merged_file_final.csv
 
+# Rename file
+- Rename file from .csv to .bed 
+    mv Pan5211_merged_file_final.csv _Pan5211_missing_updated.bed
 
 
 
