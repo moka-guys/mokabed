@@ -167,3 +167,7 @@ e) Second input file already exists, run compare_genelists.py
         python3 ~/Desktop/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/compare_genelists.py /home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5211_alltranscripts.csv Pan5211data_6col.csv Gene Gene
 
     NOTE: Output showed no genes were missing
+
+# Delete unrequired files
+
+rm Pan5211data_6col.csv Pan5211dataRefSeqFormat.txt Pan5211dataRefSeqFormat.txt Pan5211dataRefSeqFormat.txt Pan5211_part1data.bed Pan5211_part1dataRefSeqFormat.txt Pan5211_part1dataSambamba.bed Pan5211_part2data.bed Pan5211_part2dataRefSeqFormat.txt Pan5211_part2dataSambamba.bed Pan5211_SMN1_3col.bed Pan5211_SMN1problemdata.bed
