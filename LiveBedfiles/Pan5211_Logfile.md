@@ -203,3 +203,13 @@ Underscores create issues with makeexomdepth.sh script, so in VScode replace any
 Generate intermediary exomedepth files for exons 
     TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _Pan5211 Pan5211data_4col.bed
 
+# Edit missing regions file
+Edit missing regions file (_Pan5211_missed.bed) strand information (BED6) 5th column was set to 0 6th column was set to + or -. Strand information was obtained from _Pan5211.bed, findstrand.py was used to join files using transcript numbers.
+
+    - Add headers (chr,start,stop,Gene) to _Pan5211_missed.bed- needed to run findstrand.py
+
+
+
+
+
+
