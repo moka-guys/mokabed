@@ -255,3 +255,5 @@ Pan5211_final_missed.bed should now be empty
 
     git mv Pan5211_final_exomedepth.bed Pan5211_exomedepth.bed
 
+# Delete unrequired files
+rm _Pan5211* Pan5211_part1* Pan5211_final*
