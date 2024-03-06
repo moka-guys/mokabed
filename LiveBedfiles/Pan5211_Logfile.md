@@ -228,3 +228,6 @@ Open Pan5211_merged_file_final.csv in Excel and remove Transcript column as its 
 
 # Remove transcript version column
 
+# Rerun makeExomedepth.sh
+Regenerate exomedepth files giving the additional non-exonic regions from last step 
+    TestArea_for_bed_generation_script/makeExomedepth.sh hg19 Pan5211_part1 Pan5211data_4col.bed _Pan5211_missing_updated.bed
