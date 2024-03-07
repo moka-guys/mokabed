@@ -307,3 +307,6 @@ incorrect coordinates:1:46685370-46685892
 
 this was fixed manually
 
+# Testing
+Pan5211_exomedepth.bed was tested using DNANexus app ED_readcount_analysis_v1.3.0 and the output RDATA file was tested using ED_cnv_calling_v1.3.0 to confirm compatibility in project 003_240223_exomedepth_bedfiles. The apps completed sucessfully.
+
