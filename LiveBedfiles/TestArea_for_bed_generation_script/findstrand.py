@@ -1,11 +1,11 @@
 import pandas as pd
 
 # Load the first CSV file
-missing_regions = '_Pan5149_missed.bed'
+missing_regions = '_Pan5211_missed.bed'
 df1 = pd.read_csv(missing_regions)
 
 # Load the second CSV file
-all_transcripts = '/home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5149_all_transcripts.csv'
+all_transcripts = '/home/natasha/Desktop/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5211_alltranscripts.csv'
 df2 = pd.read_csv(all_transcripts)
 
 # Specify the common column to join on
@@ -19,7 +19,7 @@ merged_file = 'merged_file.csv'
 merged_df.to_csv(merged_file, index=False)
 
 #Load file with strand information
-strand_info = '_Pan5149_6col.bed'
+strand_info = '_Pan5211_6col.bed'
 df3 = pd.read_csv(strand_info)
 
 # Load file created in first merge
