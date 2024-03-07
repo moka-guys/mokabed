@@ -283,3 +283,17 @@ Script was run a second time to check additional genes present in data.bed which
 NOTE: Output showed the additional regions were from CNV control site and intronic regions. Additionally 5 genes (COL4A2-AS2,LURAP1,METTL8,BIVM-ERCC5,INSRR) were also highlighted.
 Genes missing:
 {'BRCA1-IN11-1', 'COL4A2-AS2', 'BRCA1-PM-5-3', 'LURAP1', 'CNV12-1', 'METTL8', 'CNV14-1', 'CNV11', 'CNV15', 'BRCA1-IN12-2', 'CNV03', 'BIVM-ERCC5', 'CNV13', 'CNV16-1', 'CNV07', 'CNV08', 'INSRR', 'BRCA1-IN12-1', 'BRCA1-PM-5-2', 'BRCA1-IN11-2', 'CNV09-1', 'BRCA1-PM-5-1', 'BRCA1-PM-5-4', 'CNV10-1', 'CNV02-1'}
+
+# Fix extra genes
+
+compare_genelists.py identified 5 genes were extra in the final exomedepth bedfile. Upon investigation, these genes were included by the makeExomedepth.sh
+
+LURAP1 (1:46685370-46685892) overlaps with POMGNT1_1. The gene name and the exon numbering was manually updated.
+
+BIVM-ERCC5- was added as an additional label along with ERCC5. The additional label was removed
+
+METTL8: 2:172291183-172291191 was included in the bed file because it overlapped with DCAF17_1. Since METTL8 is not required in VCP3, the overlapping region was removed. 
+
+COL4A2-AS2 (13:111109120-111109703) is an RNA gene and part of it overlaps with COL4A2_21. COL4A2-AS2 is not required in VCP3, therefore it was manually removed.
+
+INSRR (1:156811903-156812063) was included in the bed file because it overlapped with NTRK1_2. Since INSRR is not required in VCP3, the overlapping region was removed. 
