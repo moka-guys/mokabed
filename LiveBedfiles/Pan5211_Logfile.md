@@ -290,10 +290,20 @@ compare_genelists.py identified 5 genes were extra in the final exomedepth bedfi
 
 LURAP1 (1:46685370-46685892) overlaps with POMGNT1_1. The gene name and the exon numbering was manually updated.
 
-BIVM-ERCC5- was added as an additional label along with ERCC5. The additional label was removed
+BIVM-ERCC5- was added as an additional label along with ERCC5. The additional label was removed and exon numbering was fixed 
 
 METTL8: 2:172291183-172291191 was included in the bed file because it overlapped with DCAF17_1. Since METTL8 is not required in VCP3, the overlapping region was removed. 
 
 COL4A2-AS2 (13:111109120-111109703) is an RNA gene and part of it overlaps with COL4A2_21. COL4A2-AS2 is not required in VCP3, therefore it was manually removed.
 
 INSRR (1:156811903-156812063) was included in the bed file because it overlapped with NTRK1_2. Since INSRR is not required in VCP3, the overlapping region was removed. 
+
+
+# Fix POMGNT1_1
+After fixing the additionally added LURAP1 it was noted the coordinates in the bed file don't match POMGNT1 exon 
+
+correct coordinates are 1:46685376-46685977
+incorrect coordinates:1:46685370-46685892
+
+this was fixed manually
+
