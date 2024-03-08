@@ -39,3 +39,6 @@ mv Pan5215data.bed Pan5215_CNV.bed
 
 # delete unrequired files
 rm Pan5215dataSambamba.bed
+
+# Testing
+testing performed in 003_240223_exomedepth_bedfiles. Job ran without error.
