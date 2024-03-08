@@ -28,3 +28,5 @@ cat Pan3608.bed >> Pan5215data.bed
 
 # Sort and rename 
 sort Pan5215data.bed -k1,1V -k2,2n -k3,3n > Pan5215_sorted.bed;mv Pan5215data.bed Pan5215_unsorted.bed; mv Pan5215_sorted.bed Pan5215data.bed; rm Pan5215_unsorted.bed
+
+# Manually remove header from Pan5215data.bed
