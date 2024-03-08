@@ -33,3 +33,6 @@ sort Pan5215data.bed -k1,1V -k2,2n -k3,3n > Pan5215_sorted.bed;mv Pan5215data.be
 
 # Convert to 4 column format
 cut -f 1-4 Pan5215data.bed > Pan5215data_4col.bed; rm Pan5215data.bed; mv Pan5215data_4col.bed Pan5215data.bed
+
+# Rename file to make it clear that it's a CNV BED 
+mv Pan5215data.bed Pan5215_CNV.bed
