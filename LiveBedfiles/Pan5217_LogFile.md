@@ -41,3 +41,9 @@ c) Delete Entrez ID column
 
 ## Convert 4 column format
 cut -f1-4 cars_transcriptdata.bed > cars_transcriptdata_4col.bed
+
+## Run makeExomedepth.sh
+Generate intermediary exomedepth files for exons:
+    TestArea_for_bed_generation_script/makeExomedepth.sh hg19 _CARS1 cars_transcriptdata_4col.bed
+
+    
