@@ -38,3 +38,6 @@ a) Open cars_transcriptdata.bed in Excel, first split the GeneAccession column o
 b) In Excel format Entrez;Gene_Accession to only include gene symbol. Use find and replace to edit Entrez;Gene_Accession column to only include Gene symbols. Find *; and and leave replace field empty (remember to select wildcard option) Excel saves output as csv, in VScode replace "," with a tab
 
 c) Delete Entrez ID column
+
+## Convert 4 column format
+cut -f1-4 cars_transcriptdata.bed > cars_transcriptdata_4col.bed
