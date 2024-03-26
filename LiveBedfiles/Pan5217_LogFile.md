@@ -55,3 +55,7 @@ rm _CARS*
 ## copy Pan5211_exomedepth.bed
 
 cp Pan5211_exomedepth.bed Pan5217_exomedepth.bed
+
+## combine CARS1_exomedepth.bed
+
+cat CARS1_exomedepth.bed >> Pan5217_exomedepth.bed
