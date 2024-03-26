@@ -33,4 +33,7 @@ Create CARS1 exomedepth bedile
 
 ## Replace Entrez ID with gene symbols
 
-a) Open cars_transcriptdata.bed in Excel, first split the GeneAccession column on semi colon and create a column concatenating EntrezID;GeneSymbol. Excel saves file as a csv, so open file in VS code and replace "," with a tab This helps visualise changes during code review
+a) Open cars_transcriptdata.bed in Excel, first split the GeneAccession column on semi colon and create a column concatenating EntrezID;GeneSymbol. Excel saves file as a csv, so open file in VS code and replace "," with a tab. This helps visualise changes during code review
+
+b) In Excel format Entrez;Gene_Accession to only include gene symbol. Use find and replace to edit Entrez;Gene_Accession column to only include Gene symbols. Find *; and and leave replace field empty (remember to select wildcard option) Excel saves output as csv, in VScode replace "," with a tab
+
