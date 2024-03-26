@@ -51,3 +51,7 @@ git mv _CARS1_exomedepth.bed CARS1_exomedepth.bed
 
 ## Delete unrequired files
 rm _CARS*
+
+## copy Pan5211_exomedepth.bed
+
+cp Pan5211_exomedepth.bed Pan5217_exomedepth.bed
