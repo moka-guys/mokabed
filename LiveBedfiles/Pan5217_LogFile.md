@@ -74,3 +74,5 @@ Check all genes in the bedfile request form are present in the final bedfile.
 2. Open Pan5217_genecheck.csv use "_" to seperate gene name from exon number and delete the exon number column
 
 3. Add header: Chr,Start,Stop,Gene
+
+4. Create all transcript file; copy the genes and transcript list in the request form into an empty Excel file and save it as a CSV file
