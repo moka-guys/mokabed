@@ -76,3 +76,16 @@ Check all genes in the bedfile request form are present in the final bedfile.
 3. Add header: Chr,Start,Stop,Gene
 
 4. Create all transcript file; copy the genes and transcript list in the request form into an empty Excel file and save it as a CSV file
+
+5. Run compare_genelists.py
+
+python3 ~/Documents/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/compare_genelists.py Pan5217_genecheck.csv /home/natasha/Documents/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5217_alltranscripts.csv Gene Gene
+
+Output: 
+Genes missing:
+{'HYCC1', 'GBA1', 'MTRFR'}
+
+Troubleshooting
+hycc1= FAM126A 
+mtrfr = C12orf65
+GBA1= GBA 
