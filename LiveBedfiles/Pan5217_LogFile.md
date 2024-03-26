@@ -70,3 +70,6 @@ Check all genes in the bedfile request form are present in the final bedfile.
 
 1. Take a copy of Pan5211_exomedepth.bed 
     cp Pan5217_exomedepth.bed Pan5217_genecheck.csv
+
+2. Open Pan5217_genecheck.csv use "_" to seperate gene name from exon number and delete the exon number column
+
