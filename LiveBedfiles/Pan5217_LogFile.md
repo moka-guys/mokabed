@@ -68,3 +68,5 @@ Check all genes in the bedfile request form are present in the final bedfile.
 
 - Save Pan5217 request form (This was approved by Michael Yau)
 
+1. Take a copy of Pan5211_exomedepth.bed 
+    cp Pan5217_exomedepth.bed Pan5217_genecheck.csv
