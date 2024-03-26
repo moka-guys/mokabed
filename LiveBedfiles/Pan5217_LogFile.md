@@ -48,3 +48,6 @@ Generate intermediary exomedepth files for exons:
 
 ## Rename exomedepth file
 git mv _CARS1_exomedepth.bed CARS1_exomedepth.bed
+
+## Delete unrequired files
+rm _CARS*
