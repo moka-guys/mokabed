@@ -62,3 +62,9 @@ cat CARS1_exomedepth.bed >> Pan5217_exomedepth.bed
 
 ## Sort and rename
 sort Pan5217_exomedepth.bed -k1,1V -k2,2n -k3,3n > Pan5217_exomedepth_sorted.bed; mv Pan5217_exomedepth.bed Pan5217_exomedepth.bed_unsorted.bed; mv Pan5217_exomedepth_sorted.bed Pan5217_exomedepth.bed; rm Pan5217_exomedepth.bed_unsorted.bed
+
+## Gene list check
+Check all genes in the bedfile request form are present in the final bedfile.
+
+- Save Pan5217 request form (This was approved by Michael Yau)
+
