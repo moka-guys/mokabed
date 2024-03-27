@@ -89,3 +89,14 @@ Troubleshooting
 hycc1= FAM126A 
 mtrfr = C12orf65
 GBA1= GBA 
+
+Script was run a second time to check addiotional genes present in data.bed which weren't requested
+
+python3 ~/Documents/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/compare_genelists.py /home/natasha/Documents/mokabed/LiveBedfiles/Transcripts/Pantranscriptfiles/Pan5217_alltranscripts.csv Pan5217_genecheck.csv Gene Gene
+
+Genes missing:
+{'CNV08', 'FAM126A', 'BRCA1-IN11-1', 'CNV12-1', 'CNV11', 'RNU4ATAC', 'CNV09-1', 'CNV16-1', 'BRCA1-PM-5-2', 'CNV13', 'CNV10-1', 'C12orf65', 'BRCA1-IN12-1', 'CNV02-1', 'BRCA1-IN11-2', 'CNV07', 'CNV15', 'BRCA1-PM-5-1', 'CNV03', 'BRCA1-PM-5-3', 'GBA', 'BRCA1-PM-5-4', 'CNV14-1', 'BRCA1-IN12-2'}
+
+Regions highlighted are the additionally requested regions e.g CNV control sites, intronic regions
+RNU4ATAC is an RNA gene not included in the request form but MYau confirmed the gene is required.
+
