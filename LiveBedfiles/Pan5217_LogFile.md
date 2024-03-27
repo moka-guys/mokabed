@@ -100,6 +100,27 @@ Genes missing:
 Regions highlighted are the additionally requested regions e.g CNV control sites, intronic regions
 RNU4ATAC is an RNA gene not included in the request form but MYau confirmed the gene is required.
 
-# Update request form
+## Update request form
 
 Add RNU4ATAC to the request form
+
+## Bedtools substract
+
+It was noticed makeExomedepth.sh script struggles with single coding exon genes, leading to omission of coding regions mapping in the bedfiles.
+The lack of presense of these regions in the readcount bedfile led to these genes being excluded from analysis and omission in the header of the exomedepth report. The CNV calling bedfiles are not created using makeexomedepth.sh therefore, these bedfiles are correctly made. 
+
+Bedtools subtract was used to identify unique regions present in the CNV calling bedfile that are not present in the readcount bedfile. Any missing regions highlighted will be manually included in this BEDfile.
+
+VCP3 has 7 tests that require CNV analysis: R79 R81 R66 R229 R227 R90 R97 
+
+bcftools subtract was performed to find unique regions in the CNV calling BED files for each of these regions
+
+R79 
+bedtools subtract -a Pan5168_CNV.bed -b Pan5217_exomedepth.bed -A
+3	43121150	43122953	84892 POMGNT2 
+This has highlighed POMGNT2 exon 2 was excluded from Pan5217_exomedepth.bed. Pan5168_CNV.bed (https://github.com/moka-guys/mokabed/blob/master/LiveBedfiles/Pan5168_LogFile.md) was padded by +/-30bp, therefore padding will be removed from the exon2 region above to keep it consistent with the padding in other regions in Pan5217_exomedepth.bed
+
+Manual correcttion to Pan5217_exomedepth.bed
+3   43121180    43122923    POMGNT2_1 (reverse strand)
+
+
