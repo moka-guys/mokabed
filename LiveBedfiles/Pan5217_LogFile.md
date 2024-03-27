@@ -100,3 +100,6 @@ Genes missing:
 Regions highlighted are the additionally requested regions e.g CNV control sites, intronic regions
 RNU4ATAC is an RNA gene not included in the request form but MYau confirmed the gene is required.
 
+# Update request form
+
+Add RNU4ATAC to the request form
