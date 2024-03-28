@@ -172,3 +172,6 @@ CNV analysis not required for:R56, R57, R58, R60, R62
 
 ## Testing
 Pan5217_exomedepth.bed was tested using DNANexus app ED_readcount_analysis_v1.3.0 and the output RDATA file was tested using ED_cnv_calling_v1.3.0 to confirm compatibility in project 003_240223_exomedepth_bedfiles. The apps completed sucessfully.
+
+## Delete unrequired files
+rm cars_transcriptdata_4col.bed cars_transcriptdata.bed cars_transcriptdataRefSeqFormat.txt cars_transcriptdataSambamba.bed Pan5217_genecheck.csv
