@@ -144,3 +144,8 @@ This region was also highlighted as missing from Pan5217_exomedepth.bed
 
 Previously, it was noted that mokabed mapped DIAPH1 exon 18 incorrectly, and so it was manually corrected in Pan5211_exomedepth.bed. The coordinates were verfied in UCSC using NM_005219 refseq transcript. The DIAPH1 incorrectly mapped exon18 was not corrected in Pan5168_CNV.bed which is why the difference is being observed.
 
+19	3594803	3595104	6915    TBXA2R
+Difference is due to different transcripts used to make Pan5171_CNV.bed (NM_201636) and Pan5211_exomedepth.bed (NM_001060)
+
+Michael Yau and Mike Mitchel confirmed NM_001060 is the preferred transcript, therefore no changes are required to Pan5217_exomedepth.bed.
+
