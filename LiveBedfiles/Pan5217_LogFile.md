@@ -115,7 +115,7 @@ VCP3 has 7 tests that require CNV analysis: R79 R81 R66 R229 R227 R90 R97
 
 bcftools subtract was performed to find unique regions in the CNV calling BED files for each of these regions
 
-R79 
+**R79**
 bedtools subtract -a Pan5168_CNV.bed -b Pan5217_exomedepth.bed -A
 3	43121150	43122953	84892 POMGNT2 
 This has highlighed POMGNT2 exon 2 was excluded from Pan5217_exomedepth.bed. Pan5168_CNV.bed (https://github.com/moka-guys/mokabed/blob/master/LiveBedfiles/Pan5168_LogFile.md) was padded by +/-30bp, therefore padding will be removed from the exon2 region above to keep it consistent with the padding in other regions in Pan5217_exomedepth.bed
@@ -129,7 +129,7 @@ This region was also highlighted as missing from Pan5217_exomedepth.bed
 
 Previously, it was noted that mokabed mapped LAMA2 exon 44 incorrectly, and so it was manually corrected in Pan5211_exomedepth.bed. The coordinates were verfied in UCSC using NM_000426 refseq transcript. The LAMA2 incorrectly mapped exon44 was not corrected in Pan5168_CNV.bed which is why the difference is being observed.
 
-R90
+**R90**
 bedtools subtract -b Pan5217_exomedepth.bed -a Pan5171_CNV.bed -A
 3	151055574	151056663	64805 P2RY12
 
@@ -137,7 +137,6 @@ Exon 3 of P2RY12 was not included by makeExomedepth.sh, Pan5171_CNV.bed (https:/
 
 Manual correcttion to Pan5217_exomedepth.bed:
 3   151055604   151056633   P2RY12_3
-
 
 5	140915590	140915659	1729 DIAPH1
 This region was also highlighted as missing from Pan5217_exomedepth.bed
@@ -147,5 +146,24 @@ Previously, it was noted that mokabed mapped DIAPH1 exon 18 incorrectly, and so 
 19	3594803	3595104	6915    TBXA2R
 Difference is due to different transcripts used to make Pan5171_CNV.bed (NM_201636) and Pan5211_exomedepth.bed (NM_001060)
 
-Michael Yau and Mike Mitchel confirmed NM_001060 is the preferred transcript, therefore no changes are required to Pan5217_exomedepth.bed.
+Michael Yau and Mike Mitchel confirmed NM_001060 is the preferred transcript, therefore no changes are required to Pan5217_exomedepth.bed
 
+**R81** 
+bedtools subtract -b Pan5217_exomedepth.bed -a Pan5170_CNV.bed -A
+No unique regions in CNV BED file
+
+**R66**
+bedtools subtract -b Pan5217_exomedepth.bed -a Pan5174_CNV.bed -A
+No unique regions in CNV BED file
+
+**R229**
+bedtools subtract -b Pan5217_exomedepth.bed -a Pan5179_CNV.bed -A
+No unique regions in CNV BED file
+
+**R227**
+bedtools subtract -b Pan5217_exomedepth.bed -a Pan5177_CNV.bed -A
+No unique regions in CNV BED file
+
+**R97** 
+bedtools subtract -b Pan5217_exomedepth.bed -a Pan5173_CNV.bed -A
+No unique regions in CNV BED file
