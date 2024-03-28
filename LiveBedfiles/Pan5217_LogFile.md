@@ -125,7 +125,7 @@ Manual correcttion to Pan5217_exomedepth.bed
 
 
 6	129763336	129763402	3908    LAMA2
-This region was also highlighted as missing from Pan5217_exomedepth.bed, further investigation this exon of LAMA2 was mapped incorrectly in the bedfile.
+This region was also highlighted as missing from Pan5217_exomedepth.bed
 
 Previously, it was noted that mokabed mapped LAMA2 exon 44 incorrectly, and so it was manually corrected in Pan5211_exomedepth.bed. The coordinates were verfied in UCSC using NM_000426 refseq transcript. The LAMA2 incorrectly mapped exon44 was not corrected in Pan5168_CNV.bed which is why the difference is being observed.
 
@@ -136,5 +136,11 @@ bedtools subtract -b Pan5217_exomedepth.bed -a Pan5171_CNV.bed -A
 Exon 3 of P2RY12 was not included by makeExomedepth.sh, Pan5171_CNV.bed (https://github.com/moka-guys/mokabed/blob/master/LiveBedfiles/Pan5171_LogFile.md) was padded by +/-30bp, therefore padding will be removed from the exon3 region above to keep it consistent with the padding in other regions in Pan5217_exomedepth.bed
 
 Manual correcttion to Pan5217_exomedepth.bed:
-
 3   151055604   151056633   P2RY12_3
+
+
+5	140915590	140915659	1729 DIAPH1
+This region was also highlighted as missing from Pan5217_exomedepth.bed
+
+Previously, it was noted that mokabed mapped DIAPH1 exon 18 incorrectly, and so it was manually corrected in Pan5211_exomedepth.bed. The coordinates were verfied in UCSC using NM_005219 refseq transcript. The DIAPH1 incorrectly mapped exon18 was not corrected in Pan5168_CNV.bed which is why the difference is being observed.
+
