@@ -124,3 +124,11 @@ Manual correcttion to Pan5217_exomedepth.bed
 3   43121180    43122923    POMGNT2_1 (reverse strand)
 
 
+6	129763336	129763402	3908    LAMA2
+This region was also highlighted as missing from Pan5217_exomedepth.bed, further investigation this exon of LAMA2 was mapped incorrectly in the bedfile.
+
+Previously, it was noted that mokabed mapped LAMA2 exon 44 incorrectly, and so it was manually corrected in Pan5211_exomedepth.bed. The coordinates were verfied in UCSC using NM_000426 refseq transcript. The LAMA2 incorrectly mapped exon44 was not corrected in Pan5168_CNV.bed which is why the difference is being observed.
+
+
+
+
