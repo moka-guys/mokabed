@@ -1,0 +1,2 @@
+GuysAccession	Symbol	GuysAccessionVersion
+NM_001014437	CARS1	0
