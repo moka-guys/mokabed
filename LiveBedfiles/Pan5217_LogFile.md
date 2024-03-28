@@ -167,3 +167,5 @@ No unique regions in CNV BED file
 **R97** 
 bedtools subtract -b Pan5217_exomedepth.bed -a Pan5173_CNV.bed -A
 No unique regions in CNV BED file
+
+CNV analysis not required for:R56, R57, R58, R60, R62 
