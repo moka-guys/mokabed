@@ -38,3 +38,5 @@ incorrect 5:140915620-140915629
 corrected to  5:140950994-140951003
 
 
+## Convert to 4 column format
+cut -f 1-4 Pan5223data.bed > Pan5223data_4col.bed; rm Pan5223data.bed; mv Pan5223data_4col.bed Pan5223data.bed
