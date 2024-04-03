@@ -31,3 +31,10 @@ cat Pan3608.bed >> Pan5223data.bed
 sort Pan5223data.bed -k1,1V -k2,2n -k3,3n > Pan5223_sorted.bed;mv Pan5223data.bed Pan5223_unsorted.bed; mv Pan5223_sorted.bed Pan5223data.bed; rm Pan5223_unsorted.bed
 
 remove header
+
+## Fix DIAPH1 (no padding)
+incorrect 5:140915620-140915629
+
+corrected to  5:140950994-140951003
+
+
