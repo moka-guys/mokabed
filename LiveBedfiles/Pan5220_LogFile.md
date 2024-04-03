@@ -13,3 +13,6 @@ incorrect coordinates
 
 corre129764207ct coordinated- the regions were padded by +/-30bp to match the padding to other regions in the bedfile.
 6:129764177-129764243
+
+## Testing
+Pan5220_exomedepth.bed was tested using DNANexus app ED_cnv_calling_v1.3.0 in 003_240223_exomedepth_bedfiles. The app completed sucessfully.
