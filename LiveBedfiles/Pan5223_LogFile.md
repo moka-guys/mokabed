@@ -1,5 +1,5 @@
 # Pan5223
-This bedfile will be used to perform the variant filtering step of exome depth for R90. It is a remake of Pan5171; it is a known issue that mokabed mapps exon 18 of DIAPH1 incorrectly. While this issue was manually rectified in the VCP3 readcount bedfile (Pan5217), it was not corrected in Pan5171.
+This bedfile will be used to perform the variant filtering step of exome depth for R90. It is a remake of Pan5223; it is a known issue that mokabed mapps exon 18 of DIAPH1 incorrectly. While this issue was manually rectified in the VCP3 readcount bedfile (Pan5217), it was not corrected in Pan5171.
 
 Additionally, TBXA2R will be updated to use the MANE transcript NM_001060.
 
@@ -26,3 +26,6 @@ version as defined by git tag = v1.2
 
 # Add additional panels
 cat Pan3608.bed >> Pan5223data.bed
+
+## Sort data.bed
+sort Pan5223data.bed -k1,1V -k2,2n -k3,3n > Pan5223_sorted.bed;mv Pan5223data.bed Pan5223_unsorted.bed; mv Pan5223_sorted.bed Pan5223data.bed; rm Pan5223_unsorted.bed
