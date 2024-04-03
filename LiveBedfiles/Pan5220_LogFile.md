@@ -3,3 +3,5 @@ This bedfile will be used to perform the variant filtering step of exome depth f
 
 This bedfile will be a copy of Pan5168 but the LAMA2 region corrected.
 
+# Take a copy of Pan5168
+cp Pan5168_CNV.bed Pan5220_CNV.bed
