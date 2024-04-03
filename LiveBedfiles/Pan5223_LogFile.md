@@ -3,3 +3,6 @@ This bedfile will be used to perform the variant filtering step of exome depth f
 
 Additionally, TBXA2R will be updated to use the MANE transcript NM_001060.
 
+# Save transcript file and request form
+
+
