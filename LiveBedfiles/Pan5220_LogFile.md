@@ -3,5 +3,13 @@ This bedfile will be used to perform the variant filtering step of exome depth f
 
 This bedfile will be a copy of Pan5168 but the LAMA2 region corrected.
 
-# Take a copy of Pan5168
+## Take a copy of Pan5168
 cp Pan5168_CNV.bed Pan5220_CNV.bed
+
+## Fix incorrect region
+
+incorrect coordinates
+6:129763336-129763402
+
+corre129764207ct coordinated- the regions were padded by +/-30bp to match the padding to other regions in the bedfile.
+6:129764177-129764243
