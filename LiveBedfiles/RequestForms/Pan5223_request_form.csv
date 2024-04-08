@@ -1,0 +1,117 @@
+Instructions:,,
+"Add genes symbols and/or transcripts to a panel in Moka
+Add panel description to Moka
+Answer following questions:",VCP3_R90,
+,,
+1. Pan number of bed file to be created,Pan5223,
+2. Panel description/name (fill in a-c from Moka),,
+2. a) Category,VCP3 Viapath,
+2. b) SubCategory,R90,
+2. c) Panel,VCP3 Viapath R90,
+3. Is this BED file for RPKM?,ExomeDepth variant calling,
+4. a) Is this BED file exclusively based on coordinates provided by a supplier ,No,
+"4. b) If yes, does this need further padding?",N/A,
+5. a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts) Specific transcripts - see Moka,Yes - see below,
+5. b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state),No,
+6. What padding is required around the exons?,NA,
+7. a) Should UTRs be included for ALL genes?,N/A,
+7. b) Should UTRs be padded?,N/A,
+8. a) Are UTRs required for SOME genes? ,N/A,
+8. b) Please list genes/transcripts,N/A,
+8. c) Should UTRs be padded?,No,
+9. Any additional BED files to be included in this BED file? ,3608,
+10. Are any further regions required to be added?,No,
+Requested by:,Michael Yau,
+Requested date:,06/07/2023,
+,,
+,Gene Name,Transcript
+,ABCG5,NM_022436
+,ABCG8,NM_022437
+,ACTB,NM_001101
+,ACTN1,NM_001102
+,ACVRL1,NM_001077401
+,ANKRD26,NM_001256053
+,ANO6,NM_001025356
+,AP3B1,NM_003664
+,AP3D1,NM_003938
+,ARPC1B,NM_005720
+,BLOC1S3,NM_212550
+,BLOC1S6,NM_012388
+,CDC42,NM_001791
+,CHST14,NM_130468
+,COL3A1,NM_000090
+,CYCS,NM_018947
+,DIAPH1,NM_005219
+,DTNBP1,NM_032122
+,ENG,NM_001114753
+,ETV6,NM_001987
+,F10,NM_000504
+,F11,NM_000128
+,F12,NM_000505
+,F13A1,NM_000129
+,F13B,NM_001994
+,F2,NM_000506
+,F5,NM_000130
+,F7,NM_000131
+,F8,NM_000132
+,F9,NM_000133
+,FERMT3,NM_031471
+,FGA,NM_000508
+,FGB,NM_005141
+,FGG,NM_021870
+,FLI1,NM_002017
+,FLNA,NM_001456
+,FYB1,NM_001465
+,GATA1,NM_002049
+,GBA1,NM_000157
+,GFI1B,NM_004188
+,GGCX,NM_000821
+,GNE,NM_005476
+,GP1BA,NM_000173
+,GP1BB,NM_000407
+,GP6,NM_001083899
+,GP9,NM_000174
+,HPS1,NM_000195
+,HPS3,NM_032383
+,HPS4,NM_022081
+,HPS5,NM_181507
+,HPS6,NM_024747
+,IKZF5,NM_001271840
+,ITGA2B,NM_000419
+,ITGB3,NM_000212
+,KDSR,NM_002035
+,KLKB1,NM_000892
+,KNG1,NM_001102416
+,LMAN1,NM_005570
+,LYST,NM_000081
+,MCFD2,NM_139279
+,MECOM,NM_004991
+,MPIG6B,NM_138272
+,MPL,NM_005373
+,MYH9,NM_002473
+,NBEAL2,NM_015175
+,P2RY12,NM_022788
+,PLA2G4A,NM_024420
+,PLAU,NM_002658
+,PTGS1,NM_000962
+,RASGRP2,NM_153819
+,RBM8A,NM_005105
+,RUNX1,NM_001754
+,SERPINE1,NM_000602
+,SERPINF2,NM_000934
+,SLFN14,NM_001129820
+,SRC,NM_005417
+,STIM1,NM_003156
+,STXBP2,NM_006949
+,TBXA2R,NM_001060
+,TBXAS1,NM_001061
+,THBD,NM_000361
+,THPO,NM_000460
+,TNXB,NM_019105
+,TPM4,NM_003290
+,TUBB1,NM_030773
+,VIPAS39,NM_022067
+,VKORC1,NM_024006
+,VPS33B,NM_018668
+,VWF,NM_000552
+,WAS,NM_000377
