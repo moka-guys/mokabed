@@ -45,3 +45,6 @@ git mv Pan5223data.bed Pan5223_CNV.bed
 
 ## Delete unrequired files
 git rm Pan5223dataSambamba.bed Pan5223dataRefSeqFormat.txt
+
+## Testing
+Pan5223_CNV.bed was tested using DNANexus app ED_cnv_calling_v1.3.0 in 003_240223_exomedepth_bedfiles. The app completed sucessfully.
