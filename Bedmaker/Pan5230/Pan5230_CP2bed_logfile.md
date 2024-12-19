@@ -28,3 +28,9 @@ Pan5230_bedfile_query.json contains the original query given to bedmaker to gene
 Pan5230_data.bed was tested in DNAnexus using Moka Picard v1.2. The app completed successfully without any errors.
 
 Pan5230_sambamba.bed was tested using sambamba and chanjo v1.13. The app completed successfully without any errors.
+
+# Add Pan5230 prefix
+
+All files used to generate Pan5230 bedfiles were renamed with a Pan5230 prefix to help easily identify them in the future.
+
+rename logfile
