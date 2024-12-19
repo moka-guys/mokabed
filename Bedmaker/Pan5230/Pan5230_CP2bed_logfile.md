@@ -32,3 +32,5 @@ Pan5230_sambamba.bed was tested using sambamba and chanjo v1.13. The app complet
 # Add Pan5230 prefix
 
 All files used to generate Pan5230 bedfiles were renamed with a Pan5230 prefix to help easily identify them in the future.
+
+rename logfile
