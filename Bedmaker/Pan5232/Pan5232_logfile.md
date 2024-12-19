@@ -12,3 +12,15 @@ There was an issue with the original CP2 bedfile Pan5230, so the bedfile had to 
 - FXR1 non-coding region will be padded by +/-30bp, provided in Pan5230_FXR1_noncoding_region.txt. This region is for the muscle specific transcript described in https://doi.org/10.1038/s41467-019-08548-9
 
 5'UTR included for all genes, padded by +/-30bp
+
+Padding:
+Padding for data.bed- exons +/-30bp
+Padding for sambamba.bed- exons +/-10bp
+SNPs (when rsID provided) padded +/-5bb for all files
+
+Lists produced by R Haines and N Pinto using information from Heidi and Michael. 
+
+# Run Bedmaker
+
+Pan5232_bedfile_query.json contains the original query given to bedmaker to generate the bedfiles.
+
