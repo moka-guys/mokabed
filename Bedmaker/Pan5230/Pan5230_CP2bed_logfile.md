@@ -34,3 +34,12 @@ Pan5230_sambamba.bed was tested using sambamba and chanjo v1.13. The app complet
 All files used to generate Pan5230 bedfiles were renamed with a Pan5230 prefix to help easily identify them in the future.
 
 rename logfile
+
+## Save the correct CP2_pathogenic_snps_norsids.txt file
+
+
+It was noticed that the incorrect CP2_pathogenic_snps_norsids.txt file was saved in GitHub. The correct version is now saved.
+
+The correct version was used to create the Pan5230 bedfiles, it was confirmed by looking at the json created by Bedmaker.
+
+
