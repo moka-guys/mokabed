@@ -19,3 +19,11 @@ Padding for sambamba.bed- exons +/-10bp
 SNPs (when rsID provided) padded +/-5bb for all files
 
 Lists produced by R Haines and N Pinto using information from Heidi and Michael. 
+
+# Fix ABHD5
+cp Pan5230_CP2_transcripts.txt ../Pan5232/Pan5232_CP2_transcripts.txt
+
+Manually fix Pan5232_CP2_transcripts.txt by using the find and replace function in VScode.
+Transcript changed from NM_020676.5 to NM_016006.4
+
+
