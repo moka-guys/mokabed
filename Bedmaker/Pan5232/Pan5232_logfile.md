@@ -26,4 +26,5 @@ cp Pan5230_CP2_transcripts.txt ../Pan5232/Pan5232_CP2_transcripts.txt
 Manually fix Pan5232_CP2_transcripts.txt by using the find and replace function in VScode.
 Transcript changed from NM_020676.5 to NM_016006.4
 
-
+# Run Bedmaker
+Pan5232_bedfile_query.json contains the original query given to bedmaker to generate the bedfiles.
