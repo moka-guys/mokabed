@@ -28,3 +28,8 @@ Transcript changed from NM_020676.5 to NM_016006.4
 
 # Run Bedmaker
 Pan5232_bedfile_query.json contains the original query given to bedmaker to generate the bedfiles.
+
+# Testing done in 003_241223_Pan5230bedfile
+Pan5232_data.bed was tested in DNAnexus using Moka Picard v1.2. The app completed successfully without any errors.
+
+Pan5232_sambamba.bed was tested using sambamba and chanjo v1.13. The app completed successfully without any errors.
