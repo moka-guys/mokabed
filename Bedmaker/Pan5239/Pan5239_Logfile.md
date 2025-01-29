@@ -66,3 +66,16 @@ Bedmaker added genes from overlapping regions, which aren't regions of interest.
 
 # Fix labelling
 A few CNV intronic targets were had incomplete labels, these were fixed manually.
+
+# Add POLD1 and fix FXR1 intronic region
+To ensure all regions in Pan5239_CNVintronictargets.csv were included, a manual search was performed for each region. During this search it was noticed the POLD1_3UTR chr19:50921285-50921404 was missing. The region was accidentally removed during as they were thought to be overlapping regions (see section "remove unrequired regions").
+
+The regions were added back to the exomedepth bedfile
+19	50921285	50921404
+15	33010004	33010104
+
+The FXR1 intronic region label was corrected to FXR1_IN15_1
+
+
+# Testing
+Pan5239_exomeDepth.bed was tested in DNAnexus using ED_readcount_analysis_v1.3.0 and ED_cnv_calling_v1.3.0. The apps completed successfully without any errors.
