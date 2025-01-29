@@ -10,3 +10,5 @@ Pan5239_CNVintronictargets.csv- known CNV intronic targets.
 
 5UTR was included for all genes and no padding was added
 
+# Run Bedmaker
+Pan5239_exomedepth_query.json contains the original query given to bedmaker to generate the bedfile.
