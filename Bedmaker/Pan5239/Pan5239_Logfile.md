@@ -36,3 +36,26 @@ chr15:33010635-33010953 overlap was between GREM1(gene of interest) and RP11. Th
 chr17:56431028-56431147 overlap was between RNF43(gene of interest) and BZRAP1-AS1. The overlap was due to the genes being on opposite-strands. The duplicated region on BZRAP1-AS1 was manualy deleted in VScode and gene label was changed RNF43_3UTR.
 
 chr19:1228320-1228439 overlap was between STK11(gene of interest) and C19orf26. The overlap was due to the genes being on opposite-strands. The duplicated region on C19orf26 was manualy deleted in VScode and gene label was changed STK11_3UTR.
+
+# Fix N/A regions
+
+CNV intronic targets were labelled as N/A, the correct label was taken from Pan5239_CNVintronictargets.csv
+chr2:47616487-47616586
+chr2:47617980-47618099
+chr2:47622819-47622918
+chr2:47625850-47625969
+chr13:32974296-32974415
+chr15:32991264-32991383
+chr15:32993176-32993295
+chr15:32993990-32994109
+chr15:32996308-32996427
+chr15:32998420-32998618
+chr15:33001665-33001863
+chr15:33003192-33003311
+chr15:33004518-33004716
+chr15:33006076-33006195
+chr15:33007405-33007604
+chr15:33008744-33008863
+chr15:33037198-33037317
+chr17:59756490-59756609
+
