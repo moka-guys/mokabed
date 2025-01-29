@@ -59,3 +59,8 @@ chr15:33008744-33008863
 chr15:33037198-33037317
 chr17:59756490-59756609
 
+# Remove unrequired regions
+Bedmaker added genes from overlapping regions, which aren't regions of interest.
+19	50921285	50921404	CTD-2545M3.6_
+15	33010004	33010104	RP11-758N13.1_
+
