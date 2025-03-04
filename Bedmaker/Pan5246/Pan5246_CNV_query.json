@@ -1,0 +1,24 @@
+{
+  "assembly": "GRCh37",
+  "coordinates": "",
+  "identifiers": "CARS1,DDB2,ERCC1,ERCC2,ERCC3,ERCC4,ERCC5,ERCC6,ERCC8,GTF2E2,GTF2H5,MPLKIP,POLH,RNF113A,XPA,XPC,MORC2",
+  "include3UTR": false,
+  "include5UTR": false,
+  "padding_3": 0,
+  "padding_5": 0,
+  "settings": {
+    "bed_type": "cnv",
+    "include_3utr": false,
+    "include_5utr": true,
+    "padding": {
+      "snp": 0,
+      "standard": 0
+    }
+  },
+  "snp_padding_3": 0,
+  "snp_padding_5": 0,
+  "use_separate_snp_padding": false,
+  "created_date": "04/03/2025, 15:59",
+  "updated_date": "04/03/2025, 15:59",
+  "submitter": "test"
+}
