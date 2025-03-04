@@ -1,0 +1,39 @@
+THIS FORM SHOULD BE USED TO REQUEST THE CREATION OF NEW BED FILES				
+"All requests should be emailed to the bioinformatics team (gstt.mokaguys@nhs.net) using the subject ""BED File Creation Request"""				
+Please ensure that gene symbols/transcripts for the request have been added to a panel in Moka before submission				
+				
+"PLEASE USE ROW C TO FILL IN ANY REQUESTED DETAILS. IF N/A, LEAVE FIELD BLANK"				
+				
+Name	Full name of requestor	Rebecca Haines	Full name of checker	Heidi Kuoppamaa
+Date	Date in DD/MM/YYYY format	20/02/2025		28/02/2025
+Email	Email address to receive confirmation			
+				
+				
+Pan number	Pan number for BED file to be created	Pan5240		
+Panel description	Description of the panel and purpose of the BED file	R66 CNV calling BED		
+Assembly	GRCh37 or GRCh38	GRCh37		
+Identifiers	"Please enter the list of identifiers to be used (transcript ID, rsID, HGNC). Version MUST be included"	see below		
+Padding	"Describe the padding type and the number of base pairs required (i.e., exons +10, SNPs +5)"	none		
+UTR inclusion	3'/5' UTRs to be included?	5'UTR		
+Additional sites	"Provide a list of coordinates for any additional target regions with padding included, Format chr1:10000-20000 or 1-10000-20000. OR provide BED file to use"	none		
+				
+Identifiers				
+ADCY5	NM_183357.2			
+ATAD1	NM_032810.2			
+ATP1A2	NM_000702.3			
+ATP1A3	NM_152296.4			
+CACNA1A	NM_001127221.1			
+DNMT1	NM_001130823.1			
+GLRA1	NM_001146040.1			
+GLRB	NM_000824.4			
+KCNA1	NM_000217.2			
+KCNMA1	NM_001161352.1			
+KCNQ2	NM_172107.2			
+PDE10A	NM_001130690.2			
+PNKD	NM_015488.4			
+PRRT2	NM_145239.2			
+SCN1A	NM_006920.4			
+SLC1A3	NM_004172.4			
+SLC2A1	NM_006516.2			
+SLC6A5	NM_004211.3			
+VAMP2	NM_014232.2			

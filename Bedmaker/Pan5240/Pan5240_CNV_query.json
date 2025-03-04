@@ -1,0 +1,24 @@
+{
+  "assembly": "GRCh37",
+  "coordinates": "",
+  "identifiers": "ADCY5\t\t\t\t\n\n\nATAD1\t\t\t\n\n\nATP1A2\t\t\t\n\n\nATP1A3\t\t\t\n\n\nCACNA1A\t\n\n\nDNMT1\t\t\n\n\nGLRA1\t\t\n\n\nGLRB\t\t\n\n\nKCNA1\t\t\t\n\n\nKCNMA1\t\t\n\n\nKCNQ2\t\t\t\n\n\nPDE10A\t\t\t\n\n\nPNKD\t\t\t\n\n\nPRRT2\t\t\t\n\n\nSCN1A\t\t\t\t\n\n\nSLC1A3\t\t\t\n\n\nSLC2A1\t\t\t\t\n\n\nSLC6A5\t\t\t\t\n\n\nVAMP2\t\t\t\t\n",
+  "include3UTR": false,
+  "include5UTR": true,
+  "padding_3": 0,
+  "padding_5": 0,
+  "settings": {
+    "bed_type": "cnv",
+    "include_3utr": false,
+    "include_5utr": true,
+    "padding": {
+      "snp": 0,
+      "standard": 0
+    }
+  },
+  "snp_padding_3": 0,
+  "snp_padding_5": 0,
+  "use_separate_snp_padding": false,
+  "created_date": "04/03/2025, 13:54",
+  "updated_date": "04/03/2025, 13:54",
+  "submitter": "test"
+}
