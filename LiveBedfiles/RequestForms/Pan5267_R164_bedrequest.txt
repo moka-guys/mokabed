@@ -1,0 +1,101 @@
+THIS FORM SHOULD BE USED TO REQUEST THE CREATION OF NEW BED FILES				
+				
+"All requests should be emailed to the bioinformatics team (gstt.mokaguys@nhs.net) using the subject ""BED File Creation Request"""				
+				
+Please ensure that gene symbols/transcripts for the request have been added to a panel in Moka before submission				
+				
+				
+				
+"PLEASE USE ROW C TO FILL IN ANY REQUESTED DETAILS. IF N/A, LEAVE FIELD BLANK"				
+				
+				
+				
+Name	Full name of requestor	Rebecca Haines	Full name of checker	Heidi Kuoppamaa
+				
+Date	Date in DD/MM/YYYY format	20/02/2025		28/02/2025
+				
+Email	Email address to receive confirmation			
+				
+				
+				
+				
+				
+Pan number	Pan number for BED file to be created	Pan5267		
+				
+Panel description	Description of the panel and purpose of the BED file	R164 CNV calling BED		
+				
+Assembly	GRCh37 or GRCh38	GRCh37		
+				
+Identifiers	"Please enter the list of identifiers to be used (transcript ID, rsID, HGNC). Version MUST be included"	see below		
+				
+Padding	"Describe the padding type and the number of base pairs required (i.e., exons +10, SNPs +5)"	none		
+				
+UTR inclusion	3'/5' UTRs to be included?	5'UTR		
+				
+Additional sites	"Provide a list of coordinates for any additional target regions with padding included, Format chr1:10000-20000 or 1-10000-20000. OR provide BED file to use"	none		
+				
+				
+				
+Identifiers				
+				
+ATP2C1	NM_001001486.1			
+				
+CAST	NM_001042440.2			
+				
+CDSN	NM_001264.4			
+				
+COL17A1	NM_000494.3			
+				
+COL7A1	NM_000094.3			
+				
+CSTA	NM_005213.3			
+				
+DSG1	NM_001942.2			
+				
+DSP	NM_004415.2			
+				
+DST	NM_001723.5			
+				
+EXPH5	NM_015065.2			
+				
+FERMT1	NM_017671.4			
+				
+FLG2	NM_001014342.2			
+				
+IKBKG	NM_001099856.2			
+				
+ITGA3	NM_002204.2			
+				
+ITGA6	NM_001079818.1			
+				
+ITGB4	NM_000213.3			
+				
+JUP	NM_002230.2			
+				
+KLHL24	NM_017644.3			
+				
+KRT1	NM_006121.3			
+				
+KRT10	NM_000421.3			
+				
+KRT14	NM_000526.4			
+				
+KRT5	NM_000424.3			
+				
+LAMA3	NM_198129.1	NM_000227.3		
+				
+LAMB3	NM_001017402.1			
+				
+LAMC2	NM_005562.2			
+				
+PKP1	NM_000299.3			
+				
+PLEC	NM_201380.2	NM_201384.1		
+				
+SERPINB8	NM_198833.1	ENST00000397985.2		
+				
+SLC39A4	NM_130849.3			
+				
+TGM5	NM_201631.3			
+				
+ATP2A2	NM_001681.3			
