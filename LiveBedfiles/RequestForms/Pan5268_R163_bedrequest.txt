@@ -1,0 +1,119 @@
+THIS FORM SHOULD BE USED TO REQUEST THE CREATION OF NEW BED FILES				
+				
+"All requests should be emailed to the bioinformatics team (gstt.mokaguys@nhs.net) using the subject ""BED File Creation Request"""				
+				
+Please ensure that gene symbols/transcripts for the request have been added to a panel in Moka before submission				
+				
+				
+				
+"PLEASE USE ROW C TO FILL IN ANY REQUESTED DETAILS. IF N/A, LEAVE FIELD BLANK"				
+				
+				
+				
+Name	Full name of requestor	Rebecca Haines	Full name of checker	Heidi Kuoppamaa
+				
+Date	Date in DD/MM/YYYY format	20/02/2025		28/02/2025
+				
+Email	Email address to receive confirmation			
+				
+				
+				
+				
+				
+Pan number	Pan number for BED file to be created	Pan5268		
+				
+Panel description	Description of the panel and purpose of the BED file	R163 CNV calling BED		
+				
+Assembly	GRCh37 or GRCh38	GRCh37		
+				
+Identifiers	"Please enter the list of identifiers to be used (transcript ID, rsID, HGNC). Version MUST be included"	see below		
+				
+Padding	"Describe the padding type and the number of base pairs required (i.e., exons +10, SNPs +5)"	none		
+				
+UTR inclusion	3'/5' UTRs to be included?	5'UTR		
+				
+Additional sites	"Provide a list of coordinates for any additional target regions with padding included, Format chr1:10000-20000 or 1-10000-20000. OR provide BED file to use"	none		
+				
+				
+				
+Identifiers				
+				
+ANAPC1	NM_022662.3			
+				
+APCDD1	NM_153000.4			
+				
+AXIN2	NM_004655.3			
+				
+C3orf52	NM_001171747.1			
+				
+CDH3	NM_001793.4			
+				
+CDSN	NM_001264.4			
+				
+DSG4	NM_001134453.1			
+				
+EDA	NM_001399.4			
+				
+EDAR	NM_022336.3			
+				
+EDARADD	NM_145861.2			
+				
+GJB6	NM_001110219.2			
+				
+GRHL2	NM_024915.3			
+				
+HOXC13	NM_017410.2			
+				
+HR	NM_005144.4			
+				
+IKBKG	NM_001099856.2			
+				
+KRT14	NM_000526.4			
+				
+KRT25	NM_181534.3			
+				
+KRT74	NM_175053.3			
+				
+KRT85	NM_002283.3			
+				
+LIPH	NM_139248.2			
+				
+LPAR6	NM_005767.5			
+				
+MBTPS2	NM_015884.3			
+				
+MSX1	NM_002448.3			
+				
+NECTIN1	NM_002855.4			
+				
+NECTIN4	NM_030916.2			
+				
+NFKB2	NM_001077494.2			
+				
+NFKBIA	NM_020529.2			
+				
+PKP1	NM_000299.3			
+				
+PORCN	NM_203475.1			
+				
+PRKD1	NM_002742.2			
+				
+RMRP	NR_003051.3			
+				
+RSPO4	NM_001029871.3			
+				
+SNRPE	NM_003094.2			
+				
+ST14	NM_021978.3			
+				
+TP63	NM_003722.4			
+				
+TSPEAR	NM_144991.2			
+				
+WNT10A	NM_025216.2			
+				
+KRT81	NM_002281.3			
+				
+RIPK4	NM_020639.2			
+				
+SREBF1	NM_004176.4			
