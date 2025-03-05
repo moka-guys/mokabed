@@ -1,7 +1,7 @@
 {
   "assembly": "GRCh37",
   "coordinates": "",
-  "identifiers": "ADCY5\t\t\t\t\n\n\nATAD1\t\t\t\n\n\nATP1A2\t\t\t\n\n\nATP1A3\t\t\t\n\n\nCACNA1A\t\n\n\nDNMT1\t\t\n\n\nGLRA1\t\t\n\n\nGLRB\t\t\n\n\nKCNA1\t\t\t\n\n\nKCNMA1\t\t\n\n\nKCNQ2\t\t\t\n\n\nPDE10A\t\t\t\n\n\nPNKD\t\t\t\n\n\nPRRT2\t\t\t\n\n\nSCN1A\t\t\t\t\n\n\nSLC1A3\t\t\t\n\n\nSLC2A1\t\t\t\t\n\n\nSLC6A5\t\t\t\t\n\n\nVAMP2\t\t\t\t\n",
+  "identifiers": "NM_183357.2\nNM_032810.2\nNM_000702.3\nNM_152296.4\nNM_001127221.1\nNM_001130823.1\nNM_001146040.1\nNM_000824.4\nNM_000217.2\nNM_001161352.1\nNM_172107.2\nNM_001130690.2\nNM_015488.4\nNM_145239.2\nNM_006920.4\nNM_004172.4\nNM_006516.2\nNM_004211.3\nNM_014232.2",
   "include3UTR": false,
   "include5UTR": true,
   "padding_3": 0,
@@ -18,7 +18,7 @@
   "snp_padding_3": 0,
   "snp_padding_5": 0,
   "use_separate_snp_padding": false,
-  "created_date": "04/03/2025, 13:54",
-  "updated_date": "04/03/2025, 13:54",
+  "created_date": "05/03/2025, 14:46",
+  "updated_date": "05/03/2025, 14:46",
   "submitter": "test"
 }
