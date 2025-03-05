@@ -1,0 +1,24 @@
+{
+    "assembly": "GRCh37",
+    "coordinates": "",
+    "identifiers": "NM_024666.4\nNM_173076.2\nNM_001031806.1\nNM_001139.2\nNM_001165960.1\nNM_001651.3\nNM_152792.2\nNM_024110.4\nNM_001042440.2\nNM_178842.3\nNM_021101.4\nNM_173483.3\nNM_024422.3\nNM_001942.2\nNM_004415.2\nNM_022821.3\nNM_006208.2\nNM_002016.1\nNM_001014342.2\nNM_000165.3\nNM_004004.5\nNM_024009.2\nNM_153212.2\nNM_001110219.2\nNM_002095.4\nNM_002230.2\nNM_002035.2\nNM_006121.3\nNM_000421.3\nNM_000526.4\nNM_005557.3\nNM_000422.2\nNM_005554.3\nNM_005555.3\nNM_173086.4\nNM_000226.3\nNM_000427.2\nNM_001099287.1\nNM_004278.3\nNM_001145717.1\nNM_024599.5\nNM_001038633.3\nNM_148897.2\nNM_003784.3\nNM_005094.3\nNM_020427.2\nNM_004782.3\nNM_001127698.1\nNM_021978.3\nNM_000351.4\nNM_177973.1\nNM_000353.2\nNM_000359.2\nNM_145068.3\nNM_016006.4\nNM_001264.4\nNM_005213.3\nNM_022121.4\nNM_015932.5\nNM_198833.1\nNM_004176.4\nNM_201631.3\nENST00000397985.2 ",
+    "include3UTR": false,
+    "include5UTR": true,
+    "padding_3": 0,
+    "padding_5": 0,
+    "settings": {
+      "bed_type": "cnv",
+      "include_3utr": false,
+      "include_5utr": true,
+      "padding": {
+        "snp": 0,
+        "standard": 0
+      }
+    },
+    "snp_padding_3": 0,
+    "snp_padding_5": 0,
+    "use_separate_snp_padding": false,
+    "created_date": "05/03/2025, 12:22",
+    "updated_date": "05/03/2025, 12:22",
+    "submitter": "test"
+  }
