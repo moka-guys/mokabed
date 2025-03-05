@@ -7,3 +7,5 @@ Pan5268_R163_bedrequest.txt was used  (added into mokabed/LiveBedfiles/RequestFo
 
 5UTR was included for all genes and no padding was used. No additional sites was added. 
 
+# Run Bedmaker
+Pan5268_CNV_query.json contains the original query given to bedmaker to generate the bedfile.
