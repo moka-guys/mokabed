@@ -9,3 +9,6 @@ Pan5267_R164_bedrequest.txt was used  (added into mokabed/LiveBedfiles/RequestFo
 
 # Run Bedmaker
 Pan5267_CNV_query.json contains the original query given to bedmaker to generate the bedfile.
+
+# Testing
+Pan5267_cnv.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
