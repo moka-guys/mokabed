@@ -12,3 +12,6 @@ Pan5250_CNV_query.json contains the original query given to bedmaker to generate
 
 # Remove duplicates
 Remove the duplicated row for the same position. The duplicated rows with the genes that are not in the request form are deleted.
+
+# Replace NA
+Replace NA with the correct gene names as in the request form
