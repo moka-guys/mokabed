@@ -15,3 +15,6 @@ Remove the duplicated row for the same position. The duplicated rows with the ge
 
 # Replace NA
 Replace NA with the correct gene names as in the request form
+
+# modify gene names
+Modify the gene names in the additional regions to match the names in the request form
