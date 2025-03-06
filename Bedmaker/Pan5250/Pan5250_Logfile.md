@@ -18,3 +18,6 @@ Replace NA with the correct gene names as in the request form
 
 # modify gene names
 Modify the gene names in the additional regions to match the names in the request form
+
+# Testing
+Pan5250_cnv.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
