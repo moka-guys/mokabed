@@ -18,3 +18,6 @@ NA are replaced with correct gene names as in request form. The relevant ENSG nu
 
 # Replace correct gene name as in request from
 The subfix are some gene names are manually modified for additional regions to match with request form (for example, MSH2 is replace with MSH2_EPCAM_1 in chr2:47616487-47616586)
+
+# Testing
+Pan5247_cnv.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
