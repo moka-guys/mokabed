@@ -9,3 +9,6 @@ Pan5249_R208_bedrequest.txt was used  (added into mokabed/LiveBedfiles/RequestFo
 
 # Run Bedmaker
 Pan5249_CNV_query.json contains the original query given to bedmaker to generate the bedfile.
+
+# Remove duplicates
+Remove the duplicated row for the same position. The duplicated rows with the genes that are not in the request form are deleted.
