@@ -12,3 +12,6 @@ Pan5256_CNV_query.json contains the original query given to bedmaker to generate
 
 # Fix N/A values
 Some additionally added regions were labelled as NA. The labels were manually fixed
+
+# Fix labelling
+Some additionally added regions were labelled incorrectly. These were fixed manaully.
