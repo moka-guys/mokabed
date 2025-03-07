@@ -1,0 +1,34 @@
+THIS FORM SHOULD BE USED TO REQUEST THE CREATION OF NEW BED FILES				
+"All requests should be emailed to the bioinformatics team (gstt.mokaguys@nhs.net) using the subject ""BED File Creation Request"""				
+Please ensure that gene symbols/transcripts for the request have been added to a panel in Moka before submission				
+				
+"PLEASE USE ROW C TO FILL IN ANY REQUESTED DETAILS. IF N/A, LEAVE FIELD BLANK"				
+				
+Name	Full name of requestor	Rebecca Haines	Full name of checker	Heidi Kuoppamaa
+Date	Date in DD/MM/YYYY format	20/02/2025		28/02/2025
+Email	Email address to receive confirmation			
+				
+				
+Pan number	Pan number for BED file to be created	Pan5256		
+Panel description	Description of the panel and purpose of the BED file	R444.2 CNV calling BED for CP2		
+Assembly	GRCh37 or GRCh38	GRCh37		
+Identifiers	"Please enter the list of identifiers to be used (transcript ID, rsID, HGNC). Version MUST be included"	see below		
+Padding	"Describe the padding type and the number of base pairs required (i.e., exons +10, SNPs +5)"	none		
+UTR inclusion	3'/5' UTRs to be included?	5'UTR		
+Additional sites	"Provide a list of coordinates for any additional target regions with padding included, Format chr1:10000-20000 or 1-10000-20000. OR provide BED file to use"	see below		
+				
+Identifiers				
+BRCA1	NM_007294.3			
+BRCA2	NM_000059.3			
+				
+regions				
+BRCA1_3UTR	chr17:41196302-41196421			
+BRCA1_IN11_1	chr17:41234663-41234823			
+BRCA1_IN11_2	chr17:41235012-41235172			
+BRCA1_IN12_1	chr17:41234197-41234357			
+BRCA1_IN12_2	chr17:41233848-41234008			
+BRCA1_PM_5_1	chr17:41281042-41281202			
+BRCA1_PM_5_2	chr17:41286238-41286398			
+BRCA1_PM_5_3	chr17:41297651-41297811			
+BRCA1_PM_5_4	chr17:41322636-41322796			
+BRCA2_3UTR	chr13:32974296-32974415			
