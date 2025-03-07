@@ -1,0 +1,112 @@
+THIS FORM SHOULD BE USED TO REQUEST THE CREATION OF NEW BED FILES				
+"All requests should be emailed to the bioinformatics team (gstt.mokaguys@nhs.net) using the subject ""BED File Creation Request"""				
+Please ensure that gene symbols/transcripts for the request have been added to a panel in Moka before submission				
+				
+"PLEASE USE ROW C TO FILL IN ANY REQUESTED DETAILS. IF N/A, LEAVE FIELD BLANK"				
+				
+Name	Full name of requestor	Rebecca Haines	Full name of checker	Heidi Kuoppamaa
+Date	Date in DD/MM/YYYY format	28/02/2025		03/03/2025
+Email	Email address to receive confirmation			
+				
+				
+Pan number	Pan number for BED file to be created	Pan5252		
+Panel description	Description of the panel and purpose of the BED file	R90 CNV calling BED		
+Assembly	GRCh37 or GRCh38	GRCh37		
+Identifiers	"Please enter the list of identifiers to be used (transcript ID, rsID, HGNC). Version MUST be included"	see below		
+Padding	"Describe the padding type and the number of base pairs required (i.e., exons +10, SNPs +5)"	none		
+UTR inclusion	3'/5' UTRs to be included?	5'UTR		
+Additional sites	"Provide a list of coordinates for any additional target regions with padding included, Format chr1:10000-20000 or 1-10000-20000. OR provide BED file to use"	none		
+				
+Identifiers				
+ABCG5	NM_022436.2			
+ABCG8	NM_022437.2			
+ACTB	NM_001101.3			
+ACTN1	NM_001130004.1			
+ACVRL1	NM_000020.2			
+ANKRD26	NM_014915.2			
+ANO6	NM_001025356.2			
+AP3B1	NM_003664.4			
+AP3D1	NM_001261826.1			
+ARPC1B	NM_005720.3			
+BLOC1S3	NM_212550.3			
+BLOC1S6	NM_012388.2			
+CDC42	NM_001791.3			
+CHST14	NM_130468.3			
+COL3A1	NM_000090.3			
+CYCS	NM_018947.5			
+DIAPH1	NM_005219.4			
+DTNBP1	NM_032122.4			
+ENG	NM_001114753.2			
+ETV6	NM_001987.4			
+F10	NM_000504.3			
+F11	NM_000128.3			
+F12	NM_000505.3			
+F13A1	NM_000129.3			
+F13B	NM_001994.2			
+F2	NM_000506.3			
+F5	NM_000130.4			
+F7	NM_000131.4			
+F8	NM_000132.3			
+F9	NM_000133.3			
+FERMT3	NM_031471.5			
+FGA	NM_000508.3			
+FGB	NM_005141.4			
+FGG	NM_021870.2			
+FLI1	NM_002017.4			
+FLNA	NM_001110556.1			
+FYB1	NM_001465.4			
+GATA1	NM_002049.3			
+GBA1	NM_000157.3			
+GFI1B	NM_004188.4			
+GGCX	NM_000821.5			
+GNE	NM_005476.5			
+GP1BA	NM_000173.5			
+GP1BB	NM_000407.4			
+GP6	NM_001083899.1			
+GP9	NM_000174.3			
+HPS1	NM_000195.3			
+HPS3	NM_032383.3			
+HPS4	NM_022081.5			
+HPS5	NM_181507.1			
+HPS6	NM_024747.5			
+IKZF5	NM_001271840.1			
+ITGA2B	NM_000419.3			
+ITGB3	NM_000212.2			
+KDSR	NM_002035.2			
+KLKB1	NM_000892.3			
+KNG1	NM_001102416.2			
+LMAN1	NM_005570.3			
+LYST	NM_000081.3			
+MCFD2	NM_139279.5			
+MECOM	NM_004991.3			
+MPIG6B	NM_138272.2			
+MPL	NM_005373.2			
+MYH9	NM_002473.4			
+NBEAL2	NM_015175.2			
+P2RY12	NM_022788.4			
+PLA2G4A	NM_024420.2			
+PLAU	NM_002658.3			
+PTGS1	NM_000962.3			
+RASGRP2	NM_001098671.1			
+RBM8A	NM_005105.4			
+RUNX1	NM_001754.4			
+SERPINE1	NM_000602.4			
+SERPINF2	NM_000934.3			
+SLFN14	NM_001129820.1			
+SRC	NM_198291.2			
+STIM1	NM_003156.3			
+STXBP2	NM_006949.3			
+TBXA2R	NM_001060.5			
+TBXAS1	NM_001061.4			
+THBD	NM_000361.2			
+THPO	NM_000460.2			
+TNXB	NM_019105.6			
+TPM4	NM_003290.2			
+TUBB1	NM_030773.3			
+VIPAS39	NM_001193315.1			
+VKORC1	NM_024006.4			
+VPS33B	NM_018668.3			
+VWF	NM_000552.3			
+WAS	NM_000377.2			
+BLOC1S5	NM_201280.2			
+ADAMTS13	NM_139025.4			
