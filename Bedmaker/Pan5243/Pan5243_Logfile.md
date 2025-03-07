@@ -13,3 +13,5 @@ Pan5243_CNV_query.json contains the original query given to bedmaker to generate
 # Manually edit CNV bedfile 
 Duplicate overlapping region (5	112181828	112181947	CTC-554D6.1;ENSG00000258864) was added by bedmaker, these were manually removed.
 
+# Testing
+Pan5243_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
