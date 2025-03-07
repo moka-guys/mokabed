@@ -1,0 +1,105 @@
+THIS FORM SHOULD BE USED TO REQUEST THE CREATION OF NEW BED FILES				
+				
+"All requests should be emailed to the bioinformatics team (gstt.mokaguys@nhs.net) using the subject ""BED File Creation Request"""				
+				
+Please ensure that gene symbols/transcripts for the request have been added to a panel in Moka before submission				
+				
+				
+				
+"PLEASE USE ROW C TO FILL IN ANY REQUESTED DETAILS. IF N/A, LEAVE FIELD BLANK"				
+				
+				
+				
+Name	Full name of requestor	Rebecca Haines	Full name of checker	Heidi Kuoppamaa
+				
+Date	Date in DD/MM/YYYY format	20/02/2025		03/03/2025
+				
+Email	Email address to receive confirmation			
+				
+				
+				
+				
+				
+Pan number	Pan number for BED file to be created	Pan5258		
+				
+Panel description	Description of the panel and purpose of the BED file	R332 CNV calling BED		
+				
+Assembly	GRCh37 or GRCh38	GRCh37		
+				
+Identifiers	"Please enter the list of identifiers to be used (transcript ID, rsID, HGNC). Version MUST be included"	see below		
+				
+Padding	"Describe the padding type and the number of base pairs required (i.e., exons +10, SNPs +5)"	none		
+				
+UTR inclusion	3'/5' UTRs to be included?	5'UTR		
+				
+Additional sites	"Provide a list of coordinates for any additional target regions with padding included, Format chr1:10000-20000 or 1-10000-20000. OR provide BED file to use"	none		
+				
+				
+				
+Identifiers				
+				
+ADA2	NM_017424.2			
+				
+AIRE	NM_000383.3			
+				
+CARD11	NM_032415.4			
+				
+CARD14	NM_024110.4			
+				
+CARD9	NM_052813.4			
+				
+DOCK8	NM_203447.3			
+				
+ECM1	NM_001202858.1			
+				
+EGFR	NM_005228.3			
+				
+FDPS	NM_001135821.1			
+				
+GJA1	NM_000165.3			
+				
+GJB3	NM_024009.2			
+				
+GJB4	NM_153212.2			
+				
+IL1RN	NM_173841.2			
+				
+IL36RN	NM_012275.2			
+				
+KIT	NM_001093772.1			
+				
+MVD	NM_002461.1			
+				
+NCSTN	NM_015331.2			
+				
+NLRP3	NM_004895.4			
+				
+NOD2	NM_022162.1			
+				
+NSDHL	NM_015922.2			
+				
+OSMR	NM_003999.2			
+				
+PSENEN	NM_001281532.1			
+				
+PSENEN	ENST00000587708.2			
+				
+RAG1	NM_000448.2			
+				
+RAG2	NM_001243786.1			
+				
+RNU12	NR_029422.1			
+				
+SAMHD1	NM_015474.3			
+				
+SH3PXD2B	NM_001017995.2			
+				
+SLC39A4	NM_130849.3			
+				
+STAT3	NM_139276.2			
+				
+STING1	NM_198282.2			
+				
+TREX1	NM_016381.4			
+				
+NLRP1	NM_033004.3			
