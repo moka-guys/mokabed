@@ -15,3 +15,7 @@ Some additionally added regions were labelled as NA. The labels were manually fi
 
 # Fix labelling
 Some additionally added regions were labelled incorrectly. These were fixed manaully.
+
+# Testing
+Pan5241_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
+
