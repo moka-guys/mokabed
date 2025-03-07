@@ -1,0 +1,24 @@
+{
+  "assembly": "GRCh37",
+  "coordinates": "",
+  "identifiers": "NM_001014437.2,NM_000107.2,NM_001983.3,NM_000400.3,NM_000122.1,NM_005236.2,NM_000123.3,NM_000124.3,NM_000082.3,NM_002095.4,NM_207118.2,NM_138701.3,NM_006502.2,NM_006978.2,NM_000380.3,NM_004628.4,NM_014941.1",
+  "include3UTR": false,
+  "include5UTR": false,
+  "padding_3": 0,
+  "padding_5": 0,
+  "settings": {
+    "bed_type": "cnv",
+    "include_3utr": false,
+    "include_5utr": true,
+    "padding": {
+      "snp": 0,
+      "standard": 0
+    }
+  },
+  "snp_padding_3": 0,
+  "snp_padding_5": 0,
+  "use_separate_snp_padding": false,
+  "created_date": "06/03/2025, 10:58",
+  "updated_date": "06/03/2025, 10:58",
+  "submitter": "test"
+}
