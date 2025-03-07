@@ -9,3 +9,6 @@ Pan5241_R444.1_bedrequest.txt was used  (added into mokabed/LiveBedfiles/Request
 
 # Run Bedmaker
 Pan5241_CNV_query.json contains the original query given to bedmaker to generate the bedfile.
+
+# Fix N/A values
+Some additionally added regions were labelled as NA. The labels were manually fixed
