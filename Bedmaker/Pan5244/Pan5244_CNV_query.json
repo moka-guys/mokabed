@@ -1,0 +1,24 @@
+{
+  "assembly": "GRCh37",
+  "coordinates": "",
+  "identifiers": "NM_002485.4",
+  "include3UTR": false,
+  "include5UTR": false,
+  "padding_3": 0,
+  "padding_5": 0,
+  "settings": {
+    "bed_type": "cnv",
+    "include_3utr": false,
+    "include_5utr": true,
+    "padding": {
+      "snp": 0,
+      "standard": 0
+    }
+  },
+  "snp_padding_3": 0,
+  "snp_padding_5": 0,
+  "use_separate_snp_padding": false,
+  "created_date": "06/03/2025, 12:28",
+  "updated_date": "06/03/2025, 12:28",
+  "submitter": "test"
+}
