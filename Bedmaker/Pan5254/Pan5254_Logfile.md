@@ -15,3 +15,5 @@ Pan5254_cnv.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app comp
 
 # Correct the gene name for POMK to match with request form
 The NM_032237 was replaced with POMK to match with request form 
+# Re-testing
+Pan5254_cnv.bed was re-tested after update for POMK in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
