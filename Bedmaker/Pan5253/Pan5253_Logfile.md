@@ -12,3 +12,6 @@ Pan5253_CNV_query.json contains the original query given to bedmaker to generate
 
 # modify gene names
 Modify the gene name in the additional regions to match the name in the request form
+
+# Testing
+Pan5253_cnv.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
