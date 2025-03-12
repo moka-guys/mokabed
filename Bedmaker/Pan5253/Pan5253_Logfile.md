@@ -19,3 +19,6 @@ Pan5253_cnv.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app comp
 
 # replace NM with gene name
 Modify the gene name for NM_016653.2 to match the name in the request form which is MAP3K20
+
+# Re-testing
+Pan5253_cnv.bed was re-tested after updating for MAP3K20 in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
