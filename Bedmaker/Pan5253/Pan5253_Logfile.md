@@ -9,3 +9,6 @@ Pan5253_R81_bedrequest.txt was used  (added into mokabed/LiveBedfiles/RequestFor
 
 # Run Bedmaker
 Pan5253_CNV_query.json contains the original query given to bedmaker to generate the bedfile.
+
+# modify gene names
+Modify the gene name in the additional regions to match the name in the request form
