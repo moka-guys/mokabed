@@ -15,3 +15,7 @@ Modify the gene name in the additional regions to match the name in the request 
 
 # Testing
 Pan5253_cnv.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
+
+
+# replace NM with gene name
+Modify the gene name for NM_016653.2 to match the name in the request form which is MAP3K20
