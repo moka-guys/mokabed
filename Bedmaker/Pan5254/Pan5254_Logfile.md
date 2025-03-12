@@ -12,3 +12,6 @@ Pan5254_CNV_query.json contains the original query given to bedmaker to generate
 
 # Testing
 Pan5254_cnv.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
+
+# Correct the gene name for POMK to match with request form
+The NM_032237 was replaced with POMK to match with request form 
