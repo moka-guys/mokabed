@@ -1,0 +1,67 @@
+THIS FORM SHOULD BE USED TO REQUEST THE CREATION OF NEW BED FILES		
+"All requests should be emailed to the bioinformatics team (gstt.mokaguys@nhs.net) using the subject ""BED File Creation Request"""		
+Please ensure that gene symbols/transcripts for the request have been added to a panel in Moka before submission		
+		
+"PLEASE USE ROW C TO FILL IN ANY REQUESTED DETAILS. IF N/A, LEAVE FIELD BLANK"		
+		
+Name	Full name of requestor	Rebecca Haines
+Date	Date in DD/MM/YYYY format	20/02/2025
+Email	Email address to receive confirmation	
+		
+		
+Pan number	Pan number for BED file to be created	Pan5254
+Panel description	Description of the panel and purpose of the BED file	R79 CNV calling BED
+Assembly	GRCh37 or GRCh38	GRCh37
+Identifiers	"Please enter the list of identifiers to be used (transcript ID, rsID, HGNC). Version MUST be included"	see below
+Padding	"Describe the padding type and the number of base pairs required (i.e., exons +10, SNPs +5)"	none
+UTR inclusion	3'/5' UTRs to be included?	5'UTR
+Additional sites	"Provide a list of coordinates for any additional target regions with padding included, Format chr1:10000-20000 or 1-10000-20000. OR provide BED file to use"	none
+		
+Identifiers		
+B3GALNT2	NM_152490.3	
+B4GAT1	NM_006876.2	
+BET1	NM_005868.4	
+CAVIN1	NM_012232.5	
+CHKB	NM_005198.4	
+COL12A1	NM_004370.5	
+COL4A1	NM_001845.4	
+COL6A1	NM_001848.2	
+COL6A2	NM_001849.3	
+COL6A3	NM_004369.3	
+DAG1	NM_001165928.3	
+DMD	NM_004006.2	
+DOLK	NM_014908.3	
+DPM2	NM_003863.3	
+DPM3	NM_153741.1	
+DTNA	NM_001390.4	
+EMD	NM_000117.2	
+FHL1	NM_001159699.1	
+FKRP	NM_024301.4	
+FKTN	NM_001079802.1	
+GGPS1	NM_001037277.1	
+GMPPB	NM_013334.3	
+GOLGA2	NM_004486.4	
+GOSR2	NM_004287.3	
+HNRNPA2B1	NM_002137.3	
+INPP5K	NM_016532.3	
+ISPD	NM_001101426.3	
+ITGA7	NM_002206.2	
+JAG2	NM_002226.4	
+LAMA2	NM_000426.3	
+LARGE1	NM_004737.4	
+LMNA	NM_170707.3	
+MICU1	NM_006077.3	
+MSTO1	NM_018116.3	
+PLEC	NM_000445.3	
+POGLUT1	NM_152305.2	
+POMGNT1	NM_017739.3	
+POMGNT2	NM_032806.5	
+POMK	NM_032237.4	
+POMT1	NM_007171.3	
+POMT2	NM_013382.5	
+PYROXD1	NM_024854.3	
+SELENON	NM_020451.2	
+SIL1	NM_022464.4	
+SYNE1	NM_182961.3	
+TMEM5	NM_014254.2	
+TRAPPC11	NM_021942.5	
