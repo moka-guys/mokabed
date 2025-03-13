@@ -12,3 +12,10 @@ Pan5240_CNV_query.json contains the original query given to bedmaker to generate
 
 # Testing
 Pan5240_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
+
+# Re-run Bedmaker 
+BedMaker was re-run since the bed file should be made with transcript, not with the Gene name. 
+The old Pan5240_CNV.bed made with Gene name was deleted, and replaced with new Pan5240_cnv.bed. The query.json file is also updated.
+
+# Re-test
+After re-generating the bed file with transcripts, the new bed file was re-tested with ED_cnv_calling_v1.4.0. The app completed successfully without any error.
