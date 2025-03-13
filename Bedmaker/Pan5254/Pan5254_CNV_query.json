@@ -1,0 +1,24 @@
+{
+  "assembly": "GRCh37",
+  "coordinates": "",
+  "identifiers": "NM_152490.3\nNM_006876.2\nNM_005868.4\nNM_012232.5\nNM_005198.4\nNM_004370.5\nNM_001845.4\nNM_001848.2\nNM_001849.3\nNM_004369.3\nNM_001165928.3\nNM_004006.2\nNM_014908.3\nNM_003863.3\nNM_153741.1\nNM_001390.4\nNM_000117.2\nNM_001159699.1\nNM_024301.4\nNM_001079802.1\nNM_001037277.1\nNM_013334.3\nNM_004486.4\nNM_004287.3\nNM_002137.3\nNM_016532.3\nNM_001101426.3\nNM_002206.2\nNM_002226.4\nNM_000426.3\nNM_004737.4\nNM_170707.3\nNM_006077.3\nNM_018116.3\nNM_000445.3\nNM_152305.2\nNM_017739.3\nNM_032806.5\nNM_032237.4\nNM_007171.3\nNM_013382.5\nNM_024854.3\nNM_020451.2\nNM_022464.4\nNM_182961.3\nNM_014254.2\nNM_021942.5",
+  "include3UTR": false,
+  "include5UTR": true,
+  "padding_3": 0,
+  "padding_5": 0,
+  "settings": {
+    "bed_type": "cnv",
+    "include_3utr": false,
+    "include_5utr": true,
+    "padding": {
+      "snp": 0,
+      "standard": 0
+    }
+  },
+  "snp_padding_3": 0,
+  "snp_padding_5": 0,
+  "use_separate_snp_padding": false,
+  "created_date": "12/03/2025, 12:25",
+  "updated_date": "12/03/2025, 12:25",
+  "submitter": "test"
+}
