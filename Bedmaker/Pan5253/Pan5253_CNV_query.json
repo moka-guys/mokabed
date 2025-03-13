@@ -1,0 +1,24 @@
+{
+  "assembly": "GRCh37",
+  "coordinates": "chr3:180688803-180689003",
+  "identifiers": "NM_001100.3\nNM_001103.3\nNM_152328.3\nNM_006828.2\nNM_139343.2\nNM_000069.2\nNM_001031737.2\nNM_138638.4\nNM_004370.5\nNM_001848.2\nNM_001849.3\nNM_004369.3\nNM_005205.3\nNM_001005361.2\nNM_173660.4\nNM_004826.2\nNM_020964.2\nNM_017946.3\nNM_005087.3\nNM_014241.3\nNM_002137.3\nNM_001101362.2\nNM_152393.3\nNM_006063.2\nNM_170707.3\nNM_198271.3\nNM_016653.2\nNM_032446.2\nNM_006077.3\nNM_000252.2\nNM_002465.3\nNM_017534.5\nNM_002470.3\nNM_000257.2\nNM_079420.2\nNM_000432.3\nNM_001080483.2\nNM_032608.5\nNM_002478.4\nNM_032578.3\nNM_001271208.1\nNM_032790.3\nNM_002584.2\nNM_022068.2\nNM_024854.3\nNM_000540.2\nNM_001036.3\nNM_000334.4\nNM_020451.2\nNM_001151.3\nNM_005876.4\nNM_145064.1\nNM_003156.3\nNM_003279.2\nNM_003282.3\nNM_003283.4\nNM_006757.3\nNM_003289.3\nNM_152263.3\nNM_016213.4\nNM_001267550.1\nNM_001017980.3\nNM_001198800.2\nNM_001130103.1\nNM_198721.2\nNM_007034.3\nNM_000158.3\nNM_005262.2\nNM_178554.4\nNM_012318.2\nNM_138569.2\nNM_020971.2\nNM_006073.3\nNM_001267052.1\nNM_018684.3",
+  "include3UTR": false,
+  "include5UTR": true,
+  "padding_3": 0,
+  "padding_5": 0,
+  "settings": {
+    "bed_type": "cnv",
+    "include_3utr": false,
+    "include_5utr": true,
+    "padding": {
+      "snp": 0,
+      "standard": 0
+    }
+  },
+  "snp_padding_3": 0,
+  "snp_padding_5": 0,
+  "use_separate_snp_padding": false,
+  "created_date": "12/03/2025, 10:17",
+  "updated_date": "12/03/2025, 10:17",
+  "submitter": "test"
+}
