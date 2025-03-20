@@ -16,3 +16,6 @@ Duplicate overlapping region (C11orf65;ENSG00000166323 and FBXO11;ENSG0000013808
 # Fix labels
 
 Manually fix additional regions labels
+
+# Testing
+Pan5262_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
