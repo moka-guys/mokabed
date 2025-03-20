@@ -15,3 +15,6 @@ Duplicate overlapping region 11	108239720	108239839	C11orf65;ENSG00000166323 was
 
 # Fix naming
 Manually edit label of intronic regions
+
+# Testing
+Pan5259_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
