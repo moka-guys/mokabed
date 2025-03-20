@@ -13,3 +13,6 @@ Pan5263_CNV_query.json contains the original query given to bedmaker to generate
 # Fix labels
 
 Manually fix additional regions labels
+
+# Testing
+Pan5263_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
