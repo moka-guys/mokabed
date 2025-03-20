@@ -1,0 +1,86 @@
+THIS FORM SHOULD BE USED TO REQUEST THE CREATION OF NEW BED FILES					
+					
+					
+"All requests should be emailed to the bioinformatics team (gstt.mokaguys@nhs.net) using the subject ""BED File Creation Request"""					
+					
+					
+Please ensure that gene symbols/transcripts for the request have been added to a panel in Moka before submission					
+					
+					
+					
+					
+					
+"PLEASE USE ROW C TO FILL IN ANY REQUESTED DETAILS. IF N/A, LEAVE FIELD BLANK"					
+					
+					
+					
+					
+					
+Name	Full name of requestor	Rebecca Haines	Full name of checker	Heidi Kuoppamaa	
+					
+					
+Date	Date in DD/MM/YYYY format	20/02/2025		17/03/2025	
+					
+					
+Email	Email address to receive confirmation				
+					
+					
+					
+					
+					
+					
+					
+					
+Pan number	Pan number for BED file to be created	Pan5263			
+					
+					
+Panel description	Description of the panel and purpose of the BED file	R230 CNV calling BED			
+					
+					
+Assembly	GRCh37 or GRCh38	GRCh37			
+					
+					
+Identifiers	"Please enter the list of identifiers to be used (transcript ID, rsID, HGNC). Version MUST be included"	see below			
+					
+					
+Padding	"Describe the padding type and the number of base pairs required (i.e., exons +10, SNPs +5)"	none			
+					
+					
+UTR inclusion	3'/5' UTRs to be included?	5'UTR			
+					
+					
+Additional sites	"Provide a list of coordinates for any additional target regions with padding included, Format chr1:10000-20000 or 1-10000-20000. OR provide BED file to use"	yes see below			
+					
+					
+					
+					
+					
+Identifiers					
+					
+					
+CYLD	NM_015247.2				
+					
+					
+FLCN	NM_144997.5				
+					
+					
+LEMD3	NM_014319.4				
+					
+					
+MLH1	NM_000249.3				
+					
+					
+MSH2	NM_000251.2				
+					
+					
+PDGFRB	NM_002609.3				
+					
+					
+regions					
+					
+MLH1_3UTR	chr3:37092207-37092367				
+MSH2_3UTR	chr2:47710128-47710288				
+MSH2_EPCAM_1	chr2:47616487-47616586				
+MSH2_EPCAM_2	chr2:47617980-47618099				
+MSH2_EPCAM_3	chr2:47622819-47622918				
+MSH2_EPCAM_4	chr2:47625850-47625969				
