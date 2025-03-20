@@ -9,3 +9,7 @@ Pan5263_R230_bedrequest.txt was used  (added into mokabed/LiveBedfiles/RequestFo
 
 # Run Bedmaker
 Pan5263_CNV_query.json contains the original query given to bedmaker to generate the bedfile.
+
+# Fix labels
+
+Manually fix additional regions labels
