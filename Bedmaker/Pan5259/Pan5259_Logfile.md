@@ -12,3 +12,6 @@ Pan5259_CNV_query.json contains the original query given to bedmaker to generate
 
 # Manually edit CNV bedfile 
 Duplicate overlapping region 11	108239720	108239839	C11orf65;ENSG00000166323 was added by bedmaker, this was manually removed.
+
+# Fix naming
+Manually edit label of intronic regions
