@@ -9,3 +9,6 @@ Pan5262_R236_bedrequest.txt was used  (added into mokabed/LiveBedfiles/RequestFo
 
 # Run Bedmaker
 Pan5262_CNV_query.json contains the original query given to bedmaker to generate the bedfile.
+
+# Manually edit CNV bedfile 
+Duplicate overlapping region (C11orf65;ENSG00000166323 and FBXO11;ENSG00000138081) was added by bedmaker, this was manually removed.
