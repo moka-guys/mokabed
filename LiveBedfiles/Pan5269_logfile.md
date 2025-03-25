@@ -7,3 +7,4 @@ This BED file is for R444.1 CNV calling. It is a copy of Pan5183 with the additi
 ## Remove genes no longer required
 - ATM
 - RAD51D
+- RAD51C
