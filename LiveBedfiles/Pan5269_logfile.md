@@ -9,3 +9,7 @@ This BED file is for R444.1 CNV calling. It is a copy of Pan5183 with the additi
 - RAD51D
 - RAD51C
 - CHEK2
+
+## test BED file
+Testing performed in 003_250325_Pan5269_testing
+Reports produced as expected with only BRCA1, BRCA2 and PALB2 regions shown
