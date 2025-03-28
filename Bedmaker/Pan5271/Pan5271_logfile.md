@@ -23,3 +23,8 @@ Edit the file to fix the additional “_” in the label of additional regions e
 
 Use this regex in VScode to find words with muliple underscores: \w*_\w+_\w* 
 Only keep the "_" before the exon number, replace other "_" in gene name with "-"
+
+# Fix UTR regions
+Certain UTR regions are missing exon numbers.
+
+Search for "UTR" in VScode and edit the exon numbers and replace the underscore e.g EPCAM_3UTR to EPCAM-3UTR_10
