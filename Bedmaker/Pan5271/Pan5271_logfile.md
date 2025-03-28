@@ -15,3 +15,11 @@ Fix regions with genes names as transcript numbers. E.g NM_016653_1 should be MA
 In VScode use find and replace function to replace transcript IDs to gene symbols
 
 Only MAP3K20 and POMK had this issue.
+
+# Fix additonal "_" 
+
+Exomedepth uses “_” to split the genes name and exon number, any additional “_” returns an error on the reports. 
+Edit the file to fix the additional “_” in the label of additional regions e.g BMPR1A_3UTR_14 should be BMPR1A-3UTR_14 
+
+Use this regex in VScode to find words with muliple underscores: \w*_\w+_\w* 
+Only keep the "_" before the exon number, replace other "_" in gene name with "-"
