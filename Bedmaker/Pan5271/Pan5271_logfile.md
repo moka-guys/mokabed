@@ -5,4 +5,6 @@ It is a copy of Pan5239, a few issues were noted in the Pan5239_readcount.bed:
 2) The additional "_" in the region labels, caused an error to be printed on ED reports. 
 
 
+# Take a copy of Pan5239_exomeDepth.bed
 
+cp Pan5239_exomeDepth.bed Pan5271_exomeDepth.bed
