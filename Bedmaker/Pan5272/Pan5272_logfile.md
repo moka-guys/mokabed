@@ -34,3 +34,8 @@ Join the gene symbol and transcript ID together (MAP3K20;NM_016653.2) using the 
 Only MAP3K20 and POMK had this issue.
 
 Note: Excel saves in a csv format, open the file in VScode to convert back into tab-seperated (find&replace "," with "\t")
+
+# Testing 
+Pan5272_data.bed was tested in DNAnexus using Moka Picard v1.2. The app completed successfully without any errors.
+
+Pan5272_sambamba.bed was tested using sambamba and chanjo v1.13. The app completed successfully without any errors.
