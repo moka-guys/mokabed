@@ -28,3 +28,6 @@ Only keep the "_" before the exon number, replace other "_" in gene name with "-
 Certain UTR regions are missing exon numbers.
 
 Search for "UTR" in VScode and edit the exon numbers and replace the underscore e.g EPCAM_3UTR to EPCAM-3UTR_10
+
+# Testing
+Pan5271_exomeDepth.bed was tested in DNAnexus using ED_readcount_analysis_v1.3.0 and ED_cnv_calling_v1.3.0. The apps completed successfully without any errors printed on the reports.
