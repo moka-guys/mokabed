@@ -1,0 +1,415 @@
+THIS FORM SHOULD BE USED TO REQUEST THE CREATION OF NEW BED FILES					
+					
+					
+"All requests should be emailed to the bioinformatics team (gstt.mokaguys@nhs.net) using the subject ""BED File Creation Request"""					
+					
+					
+Please ensure that gene symbols/transcripts for the request have been added to a panel in Moka before submission					
+					
+					
+					
+					
+					
+"PLEASE USE ROW C TO FILL IN ANY REQUESTED DETAILS. IF N/A, LEAVE FIELD BLANK"					
+					
+					
+					
+					
+					
+Name	Full name of requestor	Rebecca Haines	Full name of checker	Heidi Kuoppamaa	
+					
+					
+Date	Date in DD/MM/YYYY format	20/02/2025		17/03/2025	
+					
+					
+Email	Email address to receive confirmation				
+					
+					
+					
+					
+					
+					
+					
+					
+Pan number	Pan number for BED file to be created	Pan5262			
+					
+					
+Panel description	Description of the panel and purpose of the BED file	R236 CNV calling BED			
+					
+					
+Assembly	GRCh37 or GRCh38	GRCh37			
+					
+					
+Identifiers	"Please enter the list of identifiers to be used (transcript ID, rsID, HGNC). Version MUST be included"	see below			
+					
+					
+Padding	"Describe the padding type and the number of base pairs required (i.e., exons +10, SNPs +5)"	none			
+					
+					
+UTR inclusion	3'/5' UTRs to be included?	5'UTR			
+					
+					
+Additional sites	"Provide a list of coordinates for any additional target regions with padding included, Format chr1:10000-20000 or 1-10000-20000. OR provide BED file to use"	"yes, see regions below"			
+					
+					
+					
+					
+					
+Identifiers					
+					
+					
+ABCB6	NM_005689.2				
+					
+					
+ADAM10	NM_001110.2				
+					
+					
+ADAR	NM_001193495.1				
+					
+					
+ANAPC1	NM_022662.3				
+					
+					
+AP3B1	NM_003664.4				
+					
+					
+ARSL	NM_000047.2				
+					
+					
+BAP1	NM_004656.3				
+					
+					
+BRAF	NM_004333.4				
+					
+					
+BRCA1	NM_007294.3				
+					
+					
+BRCA2	NM_000059.3				
+					
+					
+BRIP1	NM_032043.2				
+					
+					
+CBL	NM_005188.3				
+					
+					
+CDK4	NM_000075.3				
+					
+					
+CDKN2A	NM_058195.3				
+					
+					
+CIB1	NM_006384.3				
+					
+					
+COX7B	NM_001866.2				
+					
+					
+DDX3X	NM_001356.3				
+					
+					
+DKC1	NM_001363.3				
+					
+					
+EDN3	NM_207034.1				
+					
+					
+EDNRB	NM_001201397.1				
+					
+					
+ENPP1	NM_006208.2				
+					
+					
+ERCC4	NM_005236.2				
+					
+					
+FAM111B	NM_198947.3				
+					
+					
+FANCA	NM_000135.2				
+					
+					
+FANCB	NM_001018113.1				
+					
+					
+FANCC	NM_000136.2				
+					
+					
+FANCD2	NM_001018115.1				
+					
+					
+FANCE	NM_021922.2				
+					
+					
+FANCF	NM_022725.3				
+					
+					
+FANCG	NM_004629.1				
+					
+					
+FANCI	NM_001113378.1				
+					
+					
+FANCL	NM_018062.3				
+					
+					
+FGF23	NM_020638.2				
+					
+					
+GALNT3	NM_004482.3				
+					
+					
+GJA1	NM_000165.3				
+					
+					
+GJB3	NM_024009.2				
+					
+					
+GJB4	NM_153212.2				
+					
+					
+GPNMB	NM_002510.2				
+					
+					
+HCCS	NM_005333.4				
+					
+					
+HPS1	NM_000195.3				
+					
+					
+HRAS	NM_005343.2				
+					
+					
+KIT	NM_001093772.1				
+					
+					
+KITLG	NM_000899.4				
+					
+					
+KRAS	NM_033360.2				
+					
+					
+KRT10	NM_000421.3				
+					
+					
+KRT14	NM_000526.4				
+					
+					
+KRT5	NM_000424.3				
+					
+					
+LYST	NM_000081.3				
+					
+					
+LZTR1	NM_006767.3				
+					
+					
+MAP2K1	NM_002755.3				
+					
+					
+MAP2K2	NM_030662.3				
+					
+					
+MITF	NM_198159.2				
+					
+					
+MLH1	NM_000249.3				
+					
+					
+MSH2	NM_000251.2				
+					
+					
+MSH6	NM_000179.2				
+					
+					
+MTOR	NM_004958.3				
+					
+					
+MYO5A	NM_000259.3				
+					
+					
+NF1	NM_001042492.2				
+					
+					
+NF2	NM_181832.2				
+					
+					
+NRAS	NM_002524.4				
+					
+					
+OCA2	NM_000275.2				
+					
+					
+OSMR	NM_003999.2				
+					
+					
+PALB2	NM_024675.3				
+					
+					
+PAX3	NM_181459.3				
+					
+					
+PHF6	NM_032458.2				
+					
+					
+PIK3CA	NM_006218.2				
+					
+					
+PMS2	NM_000535.5				
+					
+					
+POFUT1	NM_015352.1				
+					
+					
+POGLUT1	NM_152305.2				
+					
+					
+PORCN	NM_203475.1				
+					
+					
+PPP1CB	NM_002709.2				
+					
+					
+PRKAR1A	NM_002734.4				
+					
+					
+PSENEN	NM_001281532.1				
+					
+					
+PSENEN	ENST00000587708.2				
+					
+					
+PTEN	NM_000314.4				
+					
+					
+PTPN11	NM_002834.3				
+					
+					
+RAB27A	NM_004580.4				
+					
+					
+RAF1	NM_002880.3				
+					
+					
+RECQL4	NM_004260.3				
+					
+					
+RIT1	NM_001256821.1				
+					
+					
+SAMD9	NM_017654.3				
+					
+					
+SASH1	NM_015278.3				
+					
+					
+SHOC2	NM_007373.3				
+					
+					
+SLC24A5	NM_205850.2				
+					
+					
+SLC29A3	NM_018344.5				
+					
+					
+SLC45A2	NM_016180.3				
+					
+					
+SLX4	NM_032444.2				
+					
+					
+SMARCAL1	NM_014140.3				
+					
+					
+SOS1	NM_005633.3				
+					
+					
+SOS1	ENST00000426016.1				
+					
+					
+SOS2	NM_006939.2				
+					
+					
+SOX10	NM_006941.3				
+					
+					
+SOX18	NM_018419.2				
+					
+					
+SPRED1	NM_152594.2				
+					
+					
+STK11	NM_000455.4				
+					
+					
+TERC	NR_001566.1				
+					
+					
+TERT	NM_198253.2				
+					
+					
+TFE3	NM_006521.4				
+					
+					
+TINF2	NM_001099274.1				
+					
+					
+TMC6	NM_007267.6				
+					
+					
+TMC8	NM_152468.4				
+					
+					
+TSC1	NM_001162427.1				
+					
+					
+TSC2	NM_000548.3				
+					
+					
+TYR	NM_000372.4				
+					
+					
+TYRP1	NM_000550.2				
+					
+					
+UBE2T	NM_014176.3				
+					
+					
+USB1	NM_024598.3				
+					
+					
+USP9X	NM_001039591.2				
+					
+					
+WRAP53	NM_018081.2				
+					
+					
+WRAP53	ENST00000316024.5				
+					
+					
+LMNA	NM_170707.3				
+					
+					
+regions					
+BRCA1_IN12_2	chr17:41233848-41234008				
+BRCA1_PM_5_1	chr17:41281042-41281202				
+BRCA1_3UTR	chr17:41196302-41196421				
+BRCA1_IN12_1	chr17:41234197-41234357				
+BRCA1_IN11_1	chr17:41234663-41234823				
+BRCA1_IN11_2	chr17:41235012-41235172				
+BRCA1_PM_5_2	chr17:41286238-41286398				
+BRCA1_PM_5_3	chr17:41297651-41297811				
+BRCA1_PM_5_4	chr17:41322636-41322796				
+BRCA2_3UTR	chr13:32974296-32974415				
+BRIP1_3UTR	chr17:59756490-59756609				
+MLH1_3UTR	chr3:37092207-37092367				
+MSH2_EPCAM_1	chr2:47616487-47616586				
+MSH2_EPCAM_2	chr2:47617980-47618099				
+MSH2_EPCAM_3	chr2:47622819-47622918				
+MSH2_EPCAM_4	chr2:47625850-47625969				
+MSH2_3UTR	chr2:47710128-47710288				
+MSH6_3UTR	chr2:48034020-48034180				
+PALB2_3UTR	chr16:23614580-23614699				
+PTEN_3UTR	chr10:89731578-89731697				
+STK11_3UTR	chr19:1228320-1228439				
