@@ -14,3 +14,6 @@ NOTE: genes names specified in the form may not match the gene names in the bedf
 
 # Copy previously generated R81 bed file
 Copied Previously generated R81 bed file (i.e. Pan5253_CNV.bed) and renamed this bed file as Pan5273_CNV.bed. 
+
+# remove gene
+Delete CCDC78 gene regions from the bed file
