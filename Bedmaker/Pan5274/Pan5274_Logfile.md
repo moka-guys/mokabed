@@ -14,3 +14,6 @@ NOTE: genes names specified in the form may not match the gene names in the bedf
 
 # Copy previously generated R74 bed file
 Copied Previously generated R74 bed file (i.e. Pan5254_CNV.bed) and renamed this bed file as Pan5274_CNV.bed. 
+
+# Deleting COL4A1 gene from bed file
+All regions for COL4A1 are removed from the bed file.
