@@ -17,3 +17,6 @@ Copied Previously generated R81 bed file (i.e. Pan5253_CNV.bed) and renamed this
 
 # remove gene
 Delete CCDC78 gene regions from the bed file
+
+# testing
+Pan5273_CNV.bed was tested in DNAnexus (003_250304_CP2_exomedepth_bedfiles) using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
