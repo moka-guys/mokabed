@@ -17,3 +17,6 @@ Copied Previously generated R74 bed file (i.e. Pan5254_CNV.bed) and renamed this
 
 # Deleting COL4A1 gene from bed file
 All regions for COL4A1 are removed from the bed file.
+
+# testing
+Pan5274_CNV.bed was tested in DNAnexus (003_250304_CP2_exomedepth_bedfiles) using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
