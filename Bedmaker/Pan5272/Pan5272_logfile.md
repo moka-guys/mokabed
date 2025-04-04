@@ -39,3 +39,6 @@ Note: Excel saves in a csv format, open the file in VScode to convert back into 
 Pan5272_data.bed was tested in DNAnexus using Moka Picard v1.2. The app completed successfully without any errors.
 
 Pan5272_sambamba.bed was tested using sambamba and chanjo v1.13. The app completed successfully without any errors.
+
+# remove underscore from the sambamba bed file
+rename the sambamba bed file to remove underscore `git mv Pan5272__sambamba.bed Pan5272_sambamba.bed`
