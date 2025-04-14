@@ -18,3 +18,6 @@ Files used to create the original CP2 variant calling bedfiles (Pan5230 and Pan5
 5'UTR included for all genes, padded by +/-30bp
 
 
+# Copy Pan5232_CP2_transcripts.txt
+
+cp Pan5232_CP2_transcripts.txt Pan5275_CP2_transcripts.txt
