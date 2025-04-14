@@ -39,3 +39,7 @@ data.bed and sambamba.bed were checked for gene naming issues fixed in Pan5272
 
 Both bedfiles did not have any naming errors.
 
+# Testing 
+Pan5275_data.bed was tested in DNAnexus using Moka Picard v1.2. The app completed successfully without any errors.
+
+Pan5275_sambamba.bed was tested using sambamba and chanjo v1.13. The app completed successfully without any errors.
