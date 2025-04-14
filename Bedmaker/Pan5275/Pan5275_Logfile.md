@@ -21,3 +21,8 @@ Files used to create the original CP2 variant calling bedfiles (Pan5230 and Pan5
 # Copy Pan5232_CP2_transcripts.txt
 
 cp Pan5232_CP2_transcripts.txt Pan5275_CP2_transcripts.txt
+
+# Add new transcripts provided by Heidi
+
+Seven new genes transcript (wiht versions) were added to Pan5275_CP2_transcripts.txt
+
