@@ -17,6 +17,11 @@ Files used to create the original CP2 variant calling bedfiles (Pan5230 and Pan5
 
 5'UTR included for all genes, padded by +/-30bp
 
+Padding:
+Padding for data.bed- exons +/-30bp
+Padding for sambamba.bed- exons +/-10bp
+SNPs (when rsID provided) padded +/-5bb for all files
+
 
 # Copy Pan5232_CP2_transcripts.txt
 
@@ -26,3 +31,4 @@ cp Pan5232_CP2_transcripts.txt Pan5275_CP2_transcripts.txt
 
 Seven new genes transcript (wiht versions) were added to Pan5275_CP2_transcripts.txt
 
+# Run Bedmaker
