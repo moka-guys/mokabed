@@ -32,3 +32,10 @@ cp Pan5232_CP2_transcripts.txt Pan5275_CP2_transcripts.txt
 Seven new genes transcript (wiht versions) were added to Pan5275_CP2_transcripts.txt
 
 # Run Bedmaker
+Pan5275_bedfile_query.json contains the original query given to bedmaker to generate the bedfiles.
+
+# Check for formatting errors
+data.bed and sambamba.bed were checked for gene naming issues fixed in Pan5272
+
+Both bedfiles did not have any naming errors.
+
