@@ -53,3 +53,7 @@ Rebecca Haines used UCSC and IGV to obtain the exon 1 coordinates (chrX:33357376
 The exon was padded by +/-30bp to be consistent with the rest of the regions in the bedfiles.
 
 Region added chrX:33357346-33357535
+
+This was repeated for sambamba.bed but the region has been padded by +/-10bp
+
+Region added chrX:33357366-33357515
