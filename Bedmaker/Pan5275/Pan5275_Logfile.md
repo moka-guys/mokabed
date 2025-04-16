@@ -43,3 +43,13 @@ Both bedfiles did not have any naming errors.
 Pan5275_data.bed was tested in DNAnexus using Moka Picard v1.2. The app completed successfully without any errors.
 
 Pan5275_sambamba.bed was tested using sambamba and chanjo v1.13. The app completed successfully without any errors.
+
+# Add exon 1 of DMD (NM_000109.4)
+
+We currently use NM_004006.2 for DMD, however we have been requested to add exon 1(NM_000109.4)
+
+Rebecca Haines used UCSC and IGV to obtain the exon 1 coordinates (chrX:33357376-33357505), these were manually added to the data.bed and sambamba.bed 
+
+The exon was padded by +/-30bp to be consistent with the rest of the regions in the bedfiles.
+
+Region added chrX:33357346-33357535
