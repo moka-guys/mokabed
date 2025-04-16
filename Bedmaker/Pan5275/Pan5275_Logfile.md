@@ -64,3 +64,4 @@ Data.bed and sambamba were sorted to ensure the region is placed
 
 sort Pan5275_data.bed -k1,1V -k2,2n -k3,3n > Pan5275_sorted.bed;mv Pan5275_data.bed Pan5275_unsorted.bed; mv Pan5275_sorted.bed Pan5275_data.bed; rm Pan5275_unsorted.bed
 
+sort Pan5275_sambamba.bed -k1,1V -k2,2n -k3,3n > Pan5275sambamba_sorted.bed;mv Pan5275_sambamba.bed Pan5275sambamba_unsorted.bed; mv Pan5275sambamba_sorted.bed Pan5275_sambamba.bed; rm Pan5275sambamba_unsorted.bed
