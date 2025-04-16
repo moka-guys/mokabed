@@ -57,3 +57,10 @@ Region added chrX:33357346-33357535
 This was repeated for sambamba.bed but the region has been padded by +/-10bp
 
 Region added chrX:33357366-33357515
+
+# Sort bedfiles
+
+Data.bed and sambamba were sorted to ensure the region is placed 
+
+sort Pan5275_data.bed -k1,1V -k2,2n -k3,3n > Pan5275_sorted.bed;mv Pan5275_data.bed Pan5275_unsorted.bed; mv Pan5275_sorted.bed Pan5275_data.bed; rm Pan5275_unsorted.bed
+
