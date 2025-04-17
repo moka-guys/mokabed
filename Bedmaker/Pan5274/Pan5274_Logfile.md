@@ -20,3 +20,11 @@ All regions for COL4A1 are removed from the bed file.
 
 # testing
 Pan5274_CNV.bed was tested in DNAnexus (003_250304_CP2_exomedepth_bedfiles) using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
+
+# Add exon 1 of DMD (NM_000109.4)
+
+We currently use NM_004006.2 for DMD, however we have been requested to add exon 1(NM_000109.4)
+
+Rebecca Haines used UCSC and IGV to obtain the exon 1 coordinates (chrX:33357376-33357505), these were manually added to the data.bed and sambamba.bed 
+
+The exon was not padded to be consistent with the rest of the regions in the bedfiles.
