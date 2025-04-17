@@ -1,4 +1,4 @@
-## Pan5275
+## Pan5279
 CP2 Whole Capture BED file (build37) for coverage and variant calling.
 It is a copy of Pan5271, a few issues were noted in the Pan5271_exomeDepth.bed:
 1) The incorrect transcript was provided for the gene ABHD5, in Pan5232 the transcript was corrected to NM_016006.4 from NM_020676.5 (ABHD6 transcript).
@@ -35,3 +35,12 @@ sort Pan5279_exomeDepth.bed -k1,1V -k2,2n -k3,3n > Pan5279_sorted.bed;mv Pan5279
 
 # Testing 
 Pan5279_exomeDepth.bed was tested in DNAnexus using ED_readcount_analysis_v1.3.0 and ED_cnv_calling_v1.3.0. The apps completed successfully without any errors.
+
+# Fixes
+
+A few issues were spotted during code review
+1) Add tab between chromosome and start coordinate (3	43732375	43732531)
+2) Changed name of a region from DMD-ex1_1 to DMD-Dp427C_1
+3) Remove 3 that was added accidentatly to F8_1 (F8_13 to F8_1)
+4) Fix typo in logfile (Header changed from Pan5275 to Pan5279)
+ 
