@@ -19,3 +19,10 @@ Pan5279_ABHD5_bedfile_query.json contains the original query given to bedmaker t
 
 cat Pan5279ABHD5_exomeDepth.bed >> Pan5279_exomeDepth.bed
 
+# Add exon 1 of DMD (NM_000109.4)
+
+We currently use NM_004006.2 for DMD, however we have been requested to add exon 1(NM_000109.4)
+
+Rebecca Haines used UCSC and IGV to obtain the exon 1 coordinates (chrX:33357376-33357505), these were manually added to the data.bed and sambamba.bed 
+
+The exon was not padded to be consistent with the rest of the regions in the bedfiles.
