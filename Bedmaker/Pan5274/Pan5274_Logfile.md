@@ -28,3 +28,9 @@ We currently use NM_004006.2 for DMD, however we have been requested to add exon
 Rebecca Haines used UCSC and IGV to obtain the exon 1 coordinates (chrX:33357376-33357505), these were manually added to the data.bed and sambamba.bed 
 
 The exon was not padded to be consistent with the rest of the regions in the bedfiles.
+
+# Sort bedfiles
+
+Pan5274_CNV.bed was sorted to ensure the region is placed 
+
+sort Pan5274_CNV.bed -k1,1V -k2,2n -k3,3n > Pan5274_sorted.bed;mv Pan5274_CNV.bed Pan5274_unsorted.bed; mv Pan5274_sorted.bed Pan5274_CNV.bed; rm Pan5274_unsorted.bed
