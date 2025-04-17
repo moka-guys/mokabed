@@ -23,6 +23,12 @@ cat Pan5279ABHD5_exomeDepth.bed >> Pan5279_exomeDepth.bed
 
 We currently use NM_004006.2 for DMD, however we have been requested to add exon 1(NM_000109.4)
 
-Rebecca Haines used UCSC and IGV to obtain the exon 1 coordinates (chrX:33357376-33357505), these were manually added to the data.bed and sambamba.bed 
+Rebecca Haines used UCSC and IGV to obtain the exon 1 coordinates (chrX:33357376-33357505), these were manually added to Pan5279_exomeDepth.bed
 
 The exon was not padded to be consistent with the rest of the regions in the bedfiles.
+
+# # Sort bedfiles
+
+Pan5279_exomeDepth.bed were sorted to ensure the region is placed 
+
+sort Pan5279_exomeDepth.bed -k1,1V -k2,2n -k3,3n > Pan5279_sorted.bed;mv Pan5279_exomeDepth.bed Pan5279_unsorted.bed; mv Pan5279_sorted.bed Pan5279_exomeDepth.bed; rm Pan5279_unsorted.bed
