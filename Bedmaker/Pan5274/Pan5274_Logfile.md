@@ -34,3 +34,6 @@ The exon was not padded to be consistent with the rest of the regions in the bed
 Pan5274_CNV.bed was sorted to ensure the region is placed 
 
 sort Pan5274_CNV.bed -k1,1V -k2,2n -k3,3n > Pan5274_sorted.bed;mv Pan5274_CNV.bed Pan5274_unsorted.bed; mv Pan5274_sorted.bed Pan5274_CNV.bed; rm Pan5274_unsorted.bed
+
+# testing
+Pan5274_CNV.bed was tested in DNAnexus (003_250304_CP2_exomedepth_bedfiles) using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
