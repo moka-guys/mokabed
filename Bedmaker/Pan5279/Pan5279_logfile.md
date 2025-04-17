@@ -14,3 +14,8 @@ Manually remove ABHD6 regions using VScode
 
 # Run Bedmaker
 Pan5279_ABHD5_bedfile_query.json contains the original query given to bedmaker to generate ABHD5 the bedfiles.
+
+# Combine ABHD5 regions with Pan5271_exomeDepth.bed
+
+cat Pan5279ABHD5_exomeDepth.bed >> Pan5279_exomeDepth.bed
+
