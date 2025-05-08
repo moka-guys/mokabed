@@ -18,3 +18,14 @@ Manually edit label of intronic regions
 
 # Testing
 Pan5259_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
+
+# Remove ATM_3UTR
+ATM_3UTR has poor coverage, which resulted in errors in the Exomedepth CNV report. 
+M.Yau confirmed the regions is okay to remove.
+
+ATM_3UTR	chr11:108239720-108239839
+
+The region above was manually removed from Pan5259_CNV.bed
+
+# Testing
+Pan5259_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error on the report.
