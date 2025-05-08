@@ -20,3 +20,11 @@ Replace NA with the correct gene names as in the request form
 Modify the gene names in the additional regions to match the names in the request form
 # Testing
 Pan5249_cnv.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
+
+# Remove ATM_3UTR
+ATM_3UTR has poor coverage, which resulted in errors in the Exomedepth CNV report. 
+M.Yau confirmed the regions is okay to remove.
+
+ATM_3UTR	chr11:108239720-108239839
+
+The region above was manually removed from Pan5249_CNV.bed
