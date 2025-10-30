@@ -19,3 +19,7 @@ Use Bedmaker to create bedfile for VCP1 and VCP2 genes with +/-30bp for variant 
 Save Pan5294_VCP1_VCP2_transcripts.txt
 
 Run bedmaker and save Pan5294_VCP1_VCP2_query.json
+
+# Make VCP3/CP205 bedfile + non R code genes
+
+Save Pan5294_VCP3_CP205_transcripts.txt and Pan5294_nonRcode_genes.txt
