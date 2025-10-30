@@ -17,3 +17,5 @@ Lists produced by R Haines and N Pinto using information from Heidi and Michael.
 Use Bedmaker to create bedfile for VCP1 and VCP2 genes with +/-30bp for variant calling and +/-10 for coverage.
 
 Save Pan5294_VCP1_VCP2_transcripts.txt
+
+Run bedmaker and save Pan5294_VCP1_VCP2_query.json

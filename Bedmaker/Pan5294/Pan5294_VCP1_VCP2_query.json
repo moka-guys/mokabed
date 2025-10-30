@@ -1,0 +1,50 @@
+Pan5294_VCP1_VCP2_data.bed
+{
+  "assembly": "GRCh37",
+  "coordinates": "",
+  "identifiers": "NM_000038.6\nNM_000384.3\nNM_000041.4\nNM_000051.4\nNM_004329.3\nNM_007294.4\nNM_000059.4\nNM_032043.3\nNM_000492.4\nNM_007194.4\nNM_004006.3\nNM_002354.3\nNM_000504.4\nNM_000128.4\nNM_000129.4\nNM_001994.3\nNM_000506.5\nNM_000130.5\nNM_019616.4\nNM_000131.4\nNM_000132.4\nNM_000133.4\nNM_000142.5\nNM_000821.7\nNM_013372.7\nNM_000527.5\nNM_015627.3\nNM_005570.4\nNM_139279.6\nNM_000249.4\nNM_000251.3\nNM_000179.3\nNM_001048174.2\nNM_001128425.2\nNM_002485.5\nNM_000435.3\nNM_002528.7\nNM_024675.4\nNM_174936.4\nNM_000535.7\nNM_002691.4\nNM_006231.4\nNM_000314.8\nNM_058216.3\nNM_002878.4\nNM_017763.6\nNM_001144757.3\nNM_005359.6\nNM_000455.5\nNM_024006.6\nNM_000552.5",
+  "include3UTR": false,
+  "include5UTR": false,
+  "padding_3": 0,
+  "padding_5": 0,
+  "settings": {
+    "bed_type": "data",
+    "include_3utr": false,
+    "include_5utr": true,
+    "padding": {
+      "snp": 5,
+      "standard": 30
+    }
+  },
+  "snp_padding_3": 0,
+  "snp_padding_5": 0,
+  "use_separate_snp_padding": false,
+  "created_date": "30/10/2025, 16:34",
+  "updated_date": "30/10/2025, 16:34",
+  "submitter": "test"
+}
+Pan5294_VCP1_VCP2_sambamba.bed
+{
+  "assembly": "GRCh37",
+  "coordinates": "",
+  "identifiers": "NM_000038.6\nNM_000384.3\nNM_000041.4\nNM_000051.4\nNM_004329.3\nNM_007294.4\nNM_000059.4\nNM_032043.3\nNM_000492.4\nNM_007194.4\nNM_004006.3\nNM_002354.3\nNM_000504.4\nNM_000128.4\nNM_000129.4\nNM_001994.3\nNM_000506.5\nNM_000130.5\nNM_019616.4\nNM_000131.4\nNM_000132.4\nNM_000133.4\nNM_000142.5\nNM_000821.7\nNM_013372.7\nNM_000527.5\nNM_015627.3\nNM_005570.4\nNM_139279.6\nNM_000249.4\nNM_000251.3\nNM_000179.3\nNM_001048174.2\nNM_001128425.2\nNM_002485.5\nNM_000435.3\nNM_002528.7\nNM_024675.4\nNM_174936.4\nNM_000535.7\nNM_002691.4\nNM_006231.4\nNM_000314.8\nNM_058216.3\nNM_002878.4\nNM_017763.6\nNM_001144757.3\nNM_005359.6\nNM_000455.5\nNM_024006.6\nNM_000552.5",
+  "include3UTR": false,
+  "include5UTR": false,
+  "padding_3": 0,
+  "padding_5": 0,
+  "settings": {
+    "bed_type": "sambamba",
+    "include_3utr": false,
+    "include_5utr": true,
+    "padding": {
+      "snp": 5,
+      "standard": 10
+    }
+  },
+  "snp_padding_3": 0,
+  "snp_padding_5": 0,
+  "use_separate_snp_padding": false,
+  "created_date": "30/10/2025, 16:34",
+  "updated_date": "30/10/2025, 16:34",
+  "submitter": "test"
+}
