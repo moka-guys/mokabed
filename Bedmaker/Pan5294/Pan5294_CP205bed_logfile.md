@@ -35,3 +35,7 @@ Run bedmaker and save Pan5294_VCP3_CP2_nonRcode_query.json
 Save CP205_pathogenicsnps_wrsids.txt, CP205_pathogenic_snps_norsids.txt and FXR1_noncoding_region.txt
 
 Run bedmaker and save Pan5294_additionalregions_query.json
+
+# Combine all bedfiles
+
+cat Pan5294_VCP1_VCP2_data.bed Pan5294_additionalregions_data.bed >> Pan5294_VCP3_CP2_nonRcode_data.bed
