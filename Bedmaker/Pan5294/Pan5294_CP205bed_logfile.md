@@ -30,3 +30,7 @@ Edit Pan5294_VCP3_CP205_transcripts.txt to replace CAST transcript NM_001750.7 w
 
 Run bedmaker and save Pan5294_VCP3_CP2_nonRcode_query.json
 
+# Make additional regions bedfile
+
+Save CP205_pathogenicsnps_wrsids.txt, CP205_pathogenic_snps_norsids.txt and FXR1_noncoding_region.txt
+
