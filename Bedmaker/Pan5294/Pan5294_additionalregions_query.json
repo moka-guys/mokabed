@@ -1,0 +1,51 @@
+Pan5294_additionalregions_data.bed
+{
+  "assembly": "GRCh37",
+  "coordinates": "chr7:117120320-117120330\nchrX:31393485-31393495\nchrX:32042106-32042116\nchrX:32479311-32479321\nchrX:32669189-32669199\nchrX:31226395-31226405\nchrX:32407101-32407111\nchrX:32460269-32460279\nchrX:32662800-32662813\nchrX:32490071-32490081\nchrX:31225206-31225216\nchrX:31168626-31168636\nchr17:41277370-41277380\nchr10:50681654-50681664\nchr19:13318754-13318863\nchr3:180688803-180689003",
+  "identifiers": "rs2479409\nrs629301\nrs1367117\nrs4299376\nrs1564348\nrs1800562\nrs3757354\nrs11220462\nrs8017377\nrs6511720\nrs429358\nrs7412\nrs397508809\nrs397508229\nrs397508266\nrs1792647486\nrs75039782\nrs895394181\nrs398124099  \nrs2147652293 \nrs587776747 \nrs1348543709\nrs182575709 \nrs886042106 \nrs1556861879 \nrs398124091 \nrs2148603618 \nrs1556980528 \nrs2097300013 \nrs1603441629 \nrs797045526 \nrs886042109 \nrs1603636710 \nrs1557211730 \nrs2040596697 \nrs72468626 \nrs181542489 \nrs2149699585 \nrs1028411472 \nrs1556425596",
+  "include3UTR": false,
+  "include5UTR": false,
+  "padding_3": 0,
+  "padding_5": 0,
+  "settings": {
+    "bed_type": "data",
+    "include_3utr": false,
+    "include_5utr": false,
+    "padding": {
+      "snp": 5,
+      "standard": 10
+    }
+  },
+  "snp_padding_3": 0,
+  "snp_padding_5": 0,
+  "use_separate_snp_padding": false,
+  "created_date": "03/11/2025, 12:32",
+  "updated_date": "03/11/2025, 12:32",
+  "submitter": "test"
+}
+
+Pan5294_additionalregions_sambamba.bed
+{
+  "assembly": "GRCh37",
+  "coordinates": "chr7:117120320-117120330\nchrX:31393485-31393495\nchrX:32042106-32042116\nchrX:32479311-32479321\nchrX:32669189-32669199\nchrX:31226395-31226405\nchrX:32407101-32407111\nchrX:32460269-32460279\nchrX:32662800-32662813\nchrX:32490071-32490081\nchrX:31225206-31225216\nchrX:31168626-31168636\nchr17:41277370-41277380\nchr10:50681654-50681664\nchr19:13318754-13318863\nchr3:180688803-180689003",
+  "identifiers": "rs2479409\nrs629301\nrs1367117\nrs4299376\nrs1564348\nrs1800562\nrs3757354\nrs11220462\nrs8017377\nrs6511720\nrs429358\nrs7412\nrs397508809\nrs397508229\nrs397508266\nrs1792647486\nrs75039782\nrs895394181\nrs398124099  \nrs2147652293 \nrs587776747 \nrs1348543709\nrs182575709 \nrs886042106 \nrs1556861879 \nrs398124091 \nrs2148603618 \nrs1556980528 \nrs2097300013 \nrs1603441629 \nrs797045526 \nrs886042109 \nrs1603636710 \nrs1557211730 \nrs2040596697 \nrs72468626 \nrs181542489 \nrs2149699585 \nrs1028411472 \nrs1556425596",
+  "include3UTR": false,
+  "include5UTR": false,
+  "padding_3": 0,
+  "padding_5": 0,
+  "settings": {
+    "bed_type": "sambamba",
+    "include_3utr": false,
+    "include_5utr": false,
+    "padding": {
+      "snp": 5,
+      "standard": 10
+    }
+  },
+  "snp_padding_3": 0,
+  "snp_padding_5": 0,
+  "use_separate_snp_padding": false,
+  "created_date": "03/11/2025, 12:32",
+  "updated_date": "03/11/2025, 12:32",
+  "submitter": "test"
+}
