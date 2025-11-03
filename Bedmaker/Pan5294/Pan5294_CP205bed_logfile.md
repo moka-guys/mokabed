@@ -53,3 +53,6 @@ mv Pan5294_VCP3_CP2_nonRcode_data.bed Pan5294_data.bed
 # Combine sambamba bedfiles
 
 cat Pan5294_VCP1_VCP2_sambamba.bed Pan5294_additionalregions_sambamba.bed >> Pan5294_VCP3_CP2_nonRcode_sambamba.bed
+
+# sort sambamba.bed
+sort Pan5294_VCP3_CP2_nonRcode_sambamba.bed -k1,1V -k2,2n -k3,3n > Pan5294_VCP3_CP2_nonRcode_sambamba_sorted.bed; mv Pan5294_VCP3_CP2_nonRcode_sambamba.bed Pan5294_VCP3_CP2_nonRcode_sambamba_unsorted_data.bed; mv Pan5294_VCP3_CP2_nonRcode_sambamba_sorted.bed Pan5294_VCP3_CP2_nonRcode_sambamba.bed; rm Pan5294_VCP3_CP2_nonRcode_sambamba_unsorted_data.bed
