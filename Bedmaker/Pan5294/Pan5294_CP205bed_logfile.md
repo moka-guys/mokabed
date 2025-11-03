@@ -39,3 +39,7 @@ Run bedmaker and save Pan5294_additionalregions_query.json
 # Combine all bedfiles
 
 cat Pan5294_VCP1_VCP2_data.bed Pan5294_additionalregions_data.bed >> Pan5294_VCP3_CP2_nonRcode_data.bed
+
+# sort data.bed
+
+sort Pan5294_VCP3_CP2_nonRcode_data.bed -k1,1V -k2,2n -k3,3n > Pan5294_VCP3_CP2_nonRcode_data_sorted.bed; mv Pan5294_VCP3_CP2_nonRcode_data.bed Pan5294_VCP3_CP2_nonRcode_unsorted_data.bed; mv Pan5294_VCP3_CP2_nonRcode_data_sorted.bed Pan5294_VCP3_CP2_nonRcode_data.bed; rm Pan5294_VCP3_CP2_nonRcode_unsorted_data.bed
