@@ -23,3 +23,10 @@ Run bedmaker and save Pan5294_VCP1_VCP2_query.json
 # Make VCP3/CP205 bedfile + non R code genes
 
 Save Pan5294_VCP3_CP205_transcripts.txt and Pan5294_nonRcode_genes.txt
+
+Bedmaker was unable to find any data for NM_001750.7 (CAST gene) in build 37 using the TARK API, therefore after an investigation by RLH it was proposed to use NM_001190442.1 and NM_001042440.2 for CAST.  Lu Liu approved the changes on 31/10/2025
+
+Edit Pan5294_VCP3_CP205_transcripts.txt to replace CAST transcript NM_001750.7 with NM_001190442.1 and NM_001042440.2
+
+
+
