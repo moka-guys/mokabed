@@ -59,3 +59,8 @@ sort Pan5294_VCP3_CP2_nonRcode_sambamba.bed -k1,1V -k2,2n -k3,3n > Pan5294_VCP3_
 
 # rename Pan5294_VCP3_CP2_nonRcode_sambamba.bed
 mv Pan5294_VCP3_CP2_nonRcode_sambamba.bed Pan5294_sambamba.bed
+
+# Testing 
+Pan5294_data.bed was tested in DNAnexus using Moka Picard v1.2. The app completed successfully without any errors.
+
+Pan5294_sambamba.bed was tested using sambamba and chanjo v1.13. The app completed successfully without any errors.
