@@ -46,3 +46,6 @@ sort Pan5294_VCP3_CP2_nonRcode_data.bed -k1,1V -k2,2n -k3,3n > Pan5294_VCP3_CP2_
 
 Noticed a minor error in Pan5294_VCP3_CP2_nonRcode_data.bed, missed new line. 
 1	25870076	25870277	26119	LDLRAP1;NM_015627.2, manually moved to the correct position 
+
+# rename Pan5294_VCP3_CP2_nonRcode_data.bed
+mv Pan5294_VCP3_CP2_nonRcode_data.bed Pan5294_data.bed
