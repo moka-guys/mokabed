@@ -28,5 +28,5 @@ Bedmaker was unable to find any data for NM_001750.7 (CAST gene) in build 37 usi
 
 Edit Pan5294_VCP3_CP205_transcripts.txt to replace CAST transcript NM_001750.7 with NM_001190442.1 and NM_001042440.2
 
-
+Run bedmaker and save Pan5294_VCP3_CP2_nonRcode_query.json
 
