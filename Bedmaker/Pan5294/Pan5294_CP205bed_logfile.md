@@ -19,3 +19,5 @@ Save Pan5294_VCP1_VCP2_transcripts.txt
 # Save script used to generate bedfiles
 Save refgene.py, refgene_readme.md, check_transcript.py, config.yaml and ncbiRefSeq.txt 
 
+# Run refgene.py
+Run refgene.py to create bedfiles for VCP1 and VCP2 genes with +/-30bp for variant calling and +/-10 for coverage.

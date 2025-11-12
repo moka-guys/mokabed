@@ -1,0 +1,27 @@
+padding:
+  cds:
+    upstream: 10
+    downstream: 10
+segments:
+  split_utrs: true
+  include_utrs:
+    five_prime: true
+    three_prime: false
+bed_formats:
+  sambamba:
+    columns:
+      - "{chrom}"
+      - "{start}"
+      - "{end}"
+      - "{coords}"
+      - "0"
+      - "{strand}"
+      - "{gene};{transcript}"
+      - "{gene_id}"
+  data:
+    columns:
+      - "{chrom}"
+      - "{start}"
+      - "{end}"
+      - "{gene_id}"
+      - "{gene};{transcript}"
