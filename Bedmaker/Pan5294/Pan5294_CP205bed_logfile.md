@@ -35,3 +35,5 @@ The refseq gene was unable to find the following transcripts, because they are n
 A seperate bedfile will be created using these transcripts (VCP3_CP205_nonMANETranscripts.txt) and Pan5294_nonRcode_genes.txt
 
 Remove the list of non-MANE transcripts from Pan5294_VCP3_CP205_transcripts.txt
+
+Rerun refegene.py with modified Pan5294_VCP3_CP205_transcripts.txt

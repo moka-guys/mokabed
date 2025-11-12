@@ -1,0 +1,85 @@
+Pan5294_VCP3_CP205_data.bed
+{
+  "bed_format": "data",
+  "config": {
+    "bed_formats": {
+      "data": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene_id}",
+          "{gene};{transcript}"
+        ]
+      },
+      "sambamba": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{coords}",
+          "0",
+          "{strand}",
+          "{gene};{transcript}",
+          "{gene_id}"
+        ]
+      }
+    },
+    "padding": {
+      "cds": {
+        "downstream": 10,
+        "upstream": 10
+      }
+    },
+    "segments": {
+      "include_utrs": {
+        "five_prime": false,
+        "three_prime": false
+      },
+      "split_utrs": true
+    }
+  }
+}
+
+Pan5294_VCP3_CP205_sambamba.bed
+{
+  "bed_format": "sambamba",
+  "config": {
+    "bed_formats": {
+      "data": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene_id}",
+          "{gene};{transcript}"
+        ]
+      },
+      "sambamba": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{coords}",
+          "0",
+          "{strand}",
+          "{gene};{transcript}",
+          "{gene_id}"
+        ]
+      }
+    },
+    "padding": {
+      "cds": {
+        "downstream": 10,
+        "upstream": 10
+      }
+    },
+    "segments": {
+      "include_utrs": {
+        "five_prime": false,
+        "three_prime": false
+      },
+      "split_utrs": true
+    }
+  }
+}
