@@ -15,3 +15,7 @@ Lists produced by R Haines and N Pinto using information from Heidi and Michael.
 
 # Make VCP1 and VCP2 genes bedfile
 Save Pan5294_VCP1_VCP2_transcripts.txt
+
+# Save script used to generate bedfiles
+Save refgene.py, refgene_readme.md, check_transcript.py, config.yaml and ncbiRefSeq.txt 
+
