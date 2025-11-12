@@ -24,3 +24,14 @@ Run refgene.py to create bedfiles for VCP1 and VCP2 genes with +/-30bp for varia
 
 # Make VCP3/CP205 bedfile + non R code genes
 Save Pan5294_VCP3_CP205_transcripts.txt and Pan5294_nonRcode_genes.txt
+
+Create bedfile for Pan5294_VCP3_CP205_transcripts.txt using refgene.py and save Pan5294_VCP3_CP205_query.json
+
+example of refgene cmd:
+python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file /usr/local/src/mokaguys/development_area/mokabed/Bedmaker/Pan5294/Pan5294_VCP3_CP205_transcripts.txt --bed-format data --out Pan5294_VCP3_CP205_data.bed
+
+The refseq gene was unable to find the following transcripts, because they are not MANE: Transcript(s) not found in ncbiRefSeq.txt: NM_000445.3, NM_001083899.1, NM_001130103.1, NM_001146040.1, NM_001390.4, NM_002584.2, NM_007171.3, NM_013334.3, NM_022068.2, NM_138569.2, NM_201380.2
+
+A seperate bedfile will be created using these transcripts (VCP3_CP205_nonMANETranscripts.txt) and Pan5294_nonRcode_genes.txt
+
+Remove the list of non-MANE transcripts from Pan5294_VCP3_CP205_transcripts.txt
