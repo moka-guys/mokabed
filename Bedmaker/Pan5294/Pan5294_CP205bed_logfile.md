@@ -21,3 +21,6 @@ Save refgene.py, refgene_readme.md, check_transcript.py, config.yaml and ncbiRef
 
 # Run refgene.py
 Run refgene.py to create bedfiles for VCP1 and VCP2 genes with +/-30bp for variant calling and +/-10 for coverage.
+
+# Make VCP3/CP205 bedfile + non R code genes
+Save Pan5294_VCP3_CP205_transcripts.txt and Pan5294_nonRcode_genes.txt
