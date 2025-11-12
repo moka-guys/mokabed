@@ -12,3 +12,6 @@ The bedfile consists of
 5'UTR included for VCP1 and VCP2 genes only; no padding
 
 Lists produced by R Haines and N Pinto using information from Heidi and Michael. 
+
+# Make VCP1 and VCP2 genes bedfile
+Save Pan5294_VCP1_VCP2_transcripts.txt
