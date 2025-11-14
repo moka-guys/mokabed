@@ -67,3 +67,13 @@ Run bedmaker and save Pan5294_additionalregions_query.json
 # Remove chr prefix
 bedfiles made by refgene.py had a 'chr' prefix and bedmaker bedfiles didn't. 'Chr' prefix removed using VScode
 
+# Check for duplicated regions
+A few genes have multiple transcripts requested, this has resulted in duplicated regions in the bedfiles.
+
+Bedtools merge will be used to remove overlapping regions.
+
+First combine Pan5294_VCP3_CP205_data.bed and VCP3_CP205_nonR_nonMANE_data.bed
+NOTE: Pan5294_VCP1_VCP2_data.bed wasn't combined as we didn't want to merge the 5UTR regions.
+
+cat VCP3_CP205_nonR_nonMANE_data.bed >> Pan5294_VCP3_CP205_data.bed
+
