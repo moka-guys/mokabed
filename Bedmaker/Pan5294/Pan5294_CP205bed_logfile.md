@@ -80,3 +80,7 @@ cat VCP3_CP205_nonR_nonMANE_data.bed >> Pan5294_VCP3_CP205_data.bed
 sort the bedfile
 sort Pan5294_VCP3_CP205_data.bed -k1,1V -k2,2n -k3,3n > Pan5294_VCP3_CP205_data_sorted.bed
 
+bedtools merge
+-c- keep columns 4 and 5
+-o first- choose the first value
+bedtools merge -i Pan5294_VCP3_CP205_data_sorted.bed -c 4,5 -o first,first > Pan5294_VCP3_CP205_data_sorted_merged.bed
