@@ -77,3 +77,6 @@ NOTE: Pan5294_VCP1_VCP2_data.bed wasn't combined as we didn't want to merge the 
 
 cat VCP3_CP205_nonR_nonMANE_data.bed >> Pan5294_VCP3_CP205_data.bed
 
+sort the bedfile
+sort Pan5294_VCP3_CP205_data.bed -k1,1V -k2,2n -k3,3n > Pan5294_VCP3_CP205_data_sorted.bed
+
