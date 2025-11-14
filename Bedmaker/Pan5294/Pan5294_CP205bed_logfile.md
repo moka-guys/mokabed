@@ -54,6 +54,11 @@ Result:All transcript lines are present in bed file.
 python3 /usr/local/src/mokaguys/development_area/mokabed/LiveBedfiles/TestArea_for_bed_generation_script --transcripts Pan5294_VCP3_CP205_transcripts.txt --bed Pan5294_VCP3_CP205_sambamba.bed
 Result:All transcript lines are present in bed file.
 
-## Create bedfile for VCP3_CP205_nonMANETranscripts.txt and Pan5294_nonRcode_genes.txt
+# Create bedfile for VCP3_CP205_nonMANETranscripts.txt and Pan5294_nonRcode_genes.txt
 
 Run bedmaker and save the outputs
+
+# Make additional regions bedfile
+
+Save CP205_pathogenicsnps_wrsids.txt, CP205_pathogenic_snps_norsids.txt and FXR1_noncoding_region.txt
+
