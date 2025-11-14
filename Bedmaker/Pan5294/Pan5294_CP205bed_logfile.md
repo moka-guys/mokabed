@@ -62,3 +62,4 @@ Run bedmaker and save the outputs
 
 Save CP205_pathogenicsnps_wrsids.txt, CP205_pathogenic_snps_norsids.txt and FXR1_noncoding_region.txt
 
+Run bedmaker and save Pan5294_additionalregions_query.json
