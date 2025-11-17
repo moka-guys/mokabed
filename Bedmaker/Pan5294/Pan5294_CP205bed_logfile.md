@@ -106,3 +106,6 @@ combine regions
 -c: keep columns 4-8
 -o: keep first value for each column
 bedtools merge -i Pan5294_VCP3_CP205_sambamba_sorted.bed -c 4,5,6,7,8 -o first,first,first,first,first >> Pan5294_VCP3_CP205_sambamba_sorted_merged.bed
+
+# Combine VCP1/VCP2 bedfile and additional regions bedfiles
+cat Pan5294_additionalregions_sambamba.bed Pan5294_VCP1_VCP2_sambamba.bed >> Pan5294_VCP3_CP205_sambamba_sorted_merged.bed
