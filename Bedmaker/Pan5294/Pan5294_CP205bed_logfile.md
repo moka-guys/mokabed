@@ -94,3 +94,8 @@ mv Pan5294_VCP3_CP205_data_sorted_merged.bed Pan5294_data.bed
 # sort bedfile
 sort Pan5294_data.bed -k1,1V -k2,2n -k3,3n > Pan5294_data_sorted.bed; mv Pan5294_data.bed Pan5294_unsorted_data.bed; mv Pan5294_data_sorted.bed Pan5294_data.bed; rm Pan5294_unsorted_data.bed
 
+# Check for duplicated regions in sambamba bedfiles
+
+combine Pan5294_VCP3_CP205_sambamba.bed and VCP3_CP205_nonR_nonMANE_sambamba.bed
+cat VCP3_CP205_nonR_nonMANE_sambamba.bed >> Pan5294_VCP3_CP205_sambamba.bed
+
