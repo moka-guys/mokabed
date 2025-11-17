@@ -124,3 +124,8 @@ The error was fixed in VScode
 # Re-sort sambamba.bed
 sort Pan5294_sambamba.bed -k1,1V -k2,2n -k3,3n > Pan5294_sambamba_sorted.bed; mv Pan5294_sambamba.bed Pan5294_unsorted_sambamba.bed; mv Pan5294_sambamba_sorted.bed Pan5294_sambamba.bed; rm Pan5294_unsorted_sambamba.bed
 
+# Testing 
+Pan5294_data.bed was tested in DNAnexus using Moka Picard v1.2. The app completed successfully without any errors.
+
+Pan5294_sambamba.bed was tested using Coverage Analysis using Sambamba v0.6.9. The app completed successfully without any errors.
+Footer
