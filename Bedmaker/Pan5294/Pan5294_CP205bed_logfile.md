@@ -115,3 +115,10 @@ mv Pan5294_VCP3_CP205_sambamba_sorted_merged.bed Pan5294_sambamba.bed
 
 # sort sambamba bedfile
 sort Pan5294_sambamba.bed -k1,1V -k2,2n -k3,3n > Pan5294_sambamba_sorted.bed; mv Pan5294_sambamba.bed Pan5294_unsorted_sambamba.bed; mv Pan5294_sambamba_sorted.bed Pan5294_sambamba.bed; rm Pan5294_unsorted_sambamba.bed
+
+# Testing 
+During testing Coverage Analysis using Sambamba v0.6.9 failed, '1-25870096-25870189' was on the same line as 'X-33192447-33192457' instead of a new line.
+
+The error was fixed in VScode
+
+
