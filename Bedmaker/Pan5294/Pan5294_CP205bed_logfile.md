@@ -99,3 +99,5 @@ sort Pan5294_data.bed -k1,1V -k2,2n -k3,3n > Pan5294_data_sorted.bed; mv Pan5294
 combine Pan5294_VCP3_CP205_sambamba.bed and VCP3_CP205_nonR_nonMANE_sambamba.bed
 cat VCP3_CP205_nonR_nonMANE_sambamba.bed >> Pan5294_VCP3_CP205_sambamba.bed
 
+sort the bedfile
+sort -k1,1 -k2,2n -k3,3n Pan5294_VCP3_CP205_sambamba.bed > Pan5294_VCP3_CP205_sambamba_sorted.bed
