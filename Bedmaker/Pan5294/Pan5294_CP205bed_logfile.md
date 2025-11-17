@@ -91,3 +91,6 @@ cat Pan5294_VCP1_VCP2_data.bed Pan5294_additionalregions_data.bed >> Pan5294_VCP
 rename Pan5294_VCP3_CP205_data_sorted_merged.bed
 mv Pan5294_VCP3_CP205_data_sorted_merged.bed Pan5294_data.bed
 
+# sort bedfile
+sort Pan5294_data.bed -k1,1V -k2,2n -k3,3n > Pan5294_data_sorted.bed; mv Pan5294_data.bed Pan5294_unsorted_data.bed; mv Pan5294_data_sorted.bed Pan5294_data.bed; rm Pan5294_unsorted_data.bed
+
