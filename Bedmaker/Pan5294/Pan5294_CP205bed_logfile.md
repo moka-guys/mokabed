@@ -101,3 +101,8 @@ cat VCP3_CP205_nonR_nonMANE_sambamba.bed >> Pan5294_VCP3_CP205_sambamba.bed
 
 sort the bedfile
 sort -k1,1 -k2,2n -k3,3n Pan5294_VCP3_CP205_sambamba.bed > Pan5294_VCP3_CP205_sambamba_sorted.bed
+
+combine regions
+-c: keep columns 4-8
+-o: keep first value for each column
+bedtools merge -i Pan5294_VCP3_CP205_sambamba_sorted.bed -c 4,5,6,7,8 -o first,first,first,first,first >> Pan5294_VCP3_CP205_sambamba_sorted_merged.bed
