@@ -109,3 +109,6 @@ bedtools merge -i Pan5294_VCP3_CP205_sambamba_sorted.bed -c 4,5,6,7,8 -o first,f
 
 # Combine VCP1/VCP2 bedfile and additional regions bedfiles
 cat Pan5294_additionalregions_sambamba.bed Pan5294_VCP1_VCP2_sambamba.bed >> Pan5294_VCP3_CP205_sambamba_sorted_merged.bed
+
+rename Pan5294_VCP3_CP205_data_sorted_merged.bed
+mv Pan5294_VCP3_CP205_sambamba_sorted_merged.bed Pan5294_sambamba.bed
