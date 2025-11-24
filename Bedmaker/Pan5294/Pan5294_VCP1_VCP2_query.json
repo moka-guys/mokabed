@@ -1,0 +1,84 @@
+Pan5294_VCP1_VCP2_sambamba.bed
+{
+  "bed_format": "sambamba",
+  "config": {
+    "bed_formats": {
+      "data": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene_id}",
+          "{gene};{transcript}"
+        ]
+      },
+      "sambamba": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{coords}",
+          "0",
+          "{strand}",
+          "{gene};{transcript}",
+          "{gene_id}"
+        ]
+      }
+    },
+    "padding": {
+      "cds": {
+        "downstream": 10,
+        "upstream": 10
+      }
+    },
+    "segments": {
+      "include_utrs": {
+        "five_prime": true,
+        "three_prime": false
+      },
+      "split_utrs": true
+    }
+  }
+}
+
+{
+  "bed_format": "data",
+  "config": {
+    "bed_formats": {
+      "data": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene_id}",
+          "{gene};{transcript}"
+        ]
+      },
+      "sambamba": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{coords}",
+          "0",
+          "{strand}",
+          "{gene};{transcript}",
+          "{gene_id}"
+        ]
+      }
+    },
+    "padding": {
+      "cds": {
+        "downstream": 30,
+        "upstream": 30
+      }
+    },
+    "segments": {
+      "include_utrs": {
+        "five_prime": true,
+        "three_prime": false
+      },
+      "split_utrs": true
+    }
+  }
+}
