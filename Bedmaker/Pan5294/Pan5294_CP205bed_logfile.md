@@ -127,5 +127,5 @@ sort Pan5294_sambamba.bed -k1,1V -k2,2n -k3,3n > Pan5294_sambamba_sorted.bed; mv
 # Testing 
 Pan5294_data.bed was tested in DNAnexus using Moka Picard v1.2. The app completed successfully without any errors.
 
-Pan5294_sambamba.bed was tested using Coverage Analysis using Sambamba v0.6.9. The app completed successfully without any errors.
-Footer
+Pan5294_sambamba.bed was tested using sambamba_coverage_v2.0.3 The app completed successfully without any errors.
+
