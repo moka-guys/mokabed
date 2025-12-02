@@ -141,13 +141,19 @@ def exon_segments_with_labels(
         raise ValueError("order must be 'transcript' or 'genomic'")
 
     include = include_utrs or {"5UTR": True, "3UTR": True}
+    base_metadata = dict(metadata or {})
+
+    def meta_for_exon(exon_number):
+        meta = base_metadata.copy()
+        meta["exon_number"] = exon_number
+        return meta
 
     if is_noncoding:
         label = f"{gene}_ncRNA"
-        for exon_idx in idxs:
+        for exon_number, exon_idx in enumerate(idxs, start=1):
             s = exonStarts[exon_idx]
             e = exonEnds[exon_idx]
-            yield chrom, s, e, label, strand, metadata
+            yield chrom, s, e, label, strand, meta_for_exon(exon_number)
         return
 
     def make_utr_label(position):
@@ -165,7 +171,7 @@ def exon_segments_with_labels(
             return include.get("3UTR", True)
         return True
 
-    for exon_idx in idxs:
+    for exon_number, exon_idx in enumerate(idxs, start=1):
         s = exonStarts[exon_idx]
         e = exonEnds[exon_idx]
 
@@ -173,30 +179,30 @@ def exon_segments_with_labels(
         if e <= cdsStart:
             label = make_utr_label("before")
             if allowed(label):
-                yield chrom, s, e, label, strand, metadata
+                yield chrom, s, e, label, strand, meta_for_exon(exon_number)
         # Completely after CDS
         elif s >= cdsEnd:
             label = make_utr_label("after")
             if allowed(label):
-                yield chrom, s, e, label, strand, metadata
+                yield chrom, s, e, label, strand, meta_for_exon(exon_number)
         # Crosses CDS start boundary: split into UTR then CDS
         elif s < cdsStart < e <= cdsEnd:
             label = make_utr_label("before")
             if allowed(label):
-                yield chrom, s, cdsStart, label, strand, metadata
-            yield chrom, *apply_cds_padding(cdsStart, e, strand, cdsStart, cdsEnd, cds_padding), f"{gene}_CDS", strand, metadata
+                yield chrom, s, cdsStart, label, strand, meta_for_exon(exon_number)
+            yield chrom, *apply_cds_padding(cdsStart, e, strand, cdsStart, cdsEnd, cds_padding), f"{gene}_CDS", strand, meta_for_exon(exon_number)
         # Crosses CDS end boundary: split into CDS then UTR
         elif cdsStart <= s < cdsEnd < e:
-            yield chrom, *apply_cds_padding(s, cdsEnd, strand, cdsStart, cdsEnd, cds_padding), f"{gene}_CDS", strand, metadata
+            yield chrom, *apply_cds_padding(s, cdsEnd, strand, cdsStart, cdsEnd, cds_padding), f"{gene}_CDS", strand, meta_for_exon(exon_number)
             label = make_utr_label("after")
             if allowed(label):
-                yield chrom, cdsEnd, e, label, strand, metadata
+                yield chrom, cdsEnd, e, label, strand, meta_for_exon(exon_number)
         # Fully within CDS
         elif s >= cdsStart and e <= cdsEnd:
-            yield chrom, *apply_cds_padding(s, e, strand, cdsStart, cdsEnd, cds_padding), f"{gene}_CDS", strand, metadata
+            yield chrom, *apply_cds_padding(s, e, strand, cdsStart, cdsEnd, cds_padding), f"{gene}_CDS", strand, meta_for_exon(exon_number)
         else:
             # Handles rare edge-cases (e.g., non-canonical annotations)
-            yield chrom, s, e, f"{gene}_unknown", strand, metadata
+            yield chrom, s, e, f"{gene}_unknown", strand, meta_for_exon(exon_number)
 
 
 def get_bed_formatter(config, selected_name, split_utrs=True):
@@ -241,6 +247,7 @@ def get_bed_formatter(config, selected_name, split_utrs=True):
             "base_gene": base_gene,
             "transcript": meta.get("transcript", ""),
             "gene_id": meta.get("gene_id", ""),
+            "exon_number": meta.get("exon_number", ""),
         }
         context["coords"] = f"{chrom}-{start}-{end}"
         try:

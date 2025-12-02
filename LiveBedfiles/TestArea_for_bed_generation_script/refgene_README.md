@@ -18,7 +18,7 @@ python3 refgene.py \
 
 Key options:
 - `--transcript` / `--transcript-file` supply one or more target IDs (e.g. NM_001282225.2 or .txt file containing line separated identifiers).
-- `--bed-format` (required) selects one of the presets defined under `bed_formats` in `config.yaml` (`sambamba`, `data`, …).
+- `--bed-format` (required) selects one of the presets defined under `bed_formats` in `config.yaml` (`sambamba`, `data`, `exomedepth`, …).
 - `--order` controls row ordering (`transcript` keeps biological direction; `genomic` sorts by coordinate).
 
 `config.yaml` also drives CDS padding (`padding.cds`), UTR inclusion (`segments.include_utrs`), UTR naming (`segments.split_utrs`), and houses the reusable BED format presets under `bed_formats`.

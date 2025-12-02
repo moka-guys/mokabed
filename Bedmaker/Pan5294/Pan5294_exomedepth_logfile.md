@@ -13,3 +13,10 @@ Lists produced by R Haines and N Pinto using information from Heidi and Michael.
 
 # Save updated refgene.py
 refgene.py was updated to create exomedepth readcount bedfiles.
+
+# Make VCP1/VCP2 bedfile + non R code genes
+Run refgene.py to create bedfile with no padding and 5UTR. 
+
+python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file /home/natashapinto/Desktop/mokabed/Bedmaker/Pan5294/Pan5294_VCP1_VCP2_transcripts.txt --bed-format exomedepth --out Pan5294_VCP1_VCP2_exomeDepth.bed
+
+
