@@ -19,4 +19,5 @@ Run refgene.py to create bedfile with no padding and 5UTR.
 
 python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file /home/natashapinto/Desktop/mokabed/Bedmaker/Pan5294/Pan5294_VCP1_VCP2_transcripts.txt --bed-format exomedepth --out Pan5294_VCP1_VCP2_exomeDepth.bed
 
-
+# Remove "_" from 5UTR names
+Exomedepth uses "_" to split the genes name and exon number, any additional "_" returns an error on the reports. Use VScode find and replace "_5UTR" to "-5UTR" 
