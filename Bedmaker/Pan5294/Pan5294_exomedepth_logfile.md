@@ -10,3 +10,6 @@ The bedfile consists of
 - Pan5294_CNVintronictargets.csv: known CNV intronic targets.
 
 Lists produced by R Haines and N Pinto using information from Heidi and Michael. 
+
+# Save updated refgene.py
+refgene.py was updated to create exomedepth readcount bedfiles.
