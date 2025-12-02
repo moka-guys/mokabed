@@ -23,7 +23,13 @@ python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file /home/natashapinto
 Exomedepth uses "_" to split the genes name and exon number, any additional "_" returns an error on the reports. Use VScode find and replace "_5UTR" to "-5UTR" 
 
 # Make VCP3/CP205 bedfile
-Run refgene for VCP3 and CP205 genes
+Run refgene for VCP3 and CP205 genes with no padding and no UTRs
 
 python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file /home/natashapinto/Desktop/mokabed/Bedmaker/Pan5294/Pan5294_VCP3_CP205_transcripts.txt --bed-format exomedepth --out Pan5294_VCP3_CP205_exomeDepth.bed
 
+# Run bedmaker for non_MANE and nonRgenes
+From our previous attempts to create the variant calling and coverage bedfiles using refgene we know refseq gene was unable to find the following transcripts, because they are not MANE: Transcript(s) not found in ncbiRefSeq.txt: NM_000445.3, NM_001083899.1, NM_001130103.1, NM_001146040.1, NM_001390.4, NM_002584.2, NM_007171.3, NM_013334.3, NM_022068.2, NM_138569.2, NM_201380.2
+
+A seperate bedfile will be created using these transcripts (VCP3_CP205_nonMANETranscripts.txt) and Pan5294_nonRcode_genes.txt
+
+Run bedmaker and save the outputs
