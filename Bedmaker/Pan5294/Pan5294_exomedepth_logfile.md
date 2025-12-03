@@ -33,3 +33,24 @@ From our previous attempts to create the variant calling and coverage bedfiles u
 A seperate bedfile will be created using these transcripts (VCP3_CP205_nonMANETranscripts.txt) and Pan5294_nonRcode_genes.txt
 
 Run bedmaker and save the outputs
+
+# Run bedmaker for additional regions
+FXR1_noncoding_region.txt DMD_ex1.txt Pan5294_CNVintronictargets.csv
+Run bedmaker and save the outputs
+
+# Fix overlapping regions
+When generating the bedfile bedmaker highlighted the following regions that overlapped multiple genes: 
+
+chr2:48034020-48034180 overlap was between MSH6(gene of interest) and FBXO11. The overlap was due to the genes being on opposite-strands. The duplicated region on FBX011 was manualy deleted in VScode and gene label was changed MSH6_3UTR
+
+chr5:112181828-112181947 overlap was between APC(gene of interest) and CTC. The overlap was due to the genes being on opposite-strands. The duplicated region on CTC was manualy deleted in VScode and gene label was changed APC_3UTR.
+
+chr11:108239720-108239839 overlap was between ATM(gene of interest) and C11orf65. The overlap was due to the genes being on opposite-strands. The duplicated region on C11orf65 was manualy deleted in VScode and gene label was changed ATM_3UTR.
+
+chr15:33010462-33010561 overlap was between GREM1(gene of interest) and RP11. The overlap was due to the genes being on opposite-strands. The duplicated region on RP11 was manualy deleted in VScode and gene label was changed GREM1-SCG5_13.
+
+chr15:33010635-33010953 overlap was between GREM1(gene of interest) and RP11. The overlap was due to the genes being on opposite-strands. The duplicated region on RP11 was manualy deleted in VScode and gene label was changed GREM1-SCG5_14.
+
+chr17:56431028-56431147 overlap was between RNF43(gene of interest) and BZRAP1-AS1. The overlap was due to the genes being on opposite-strands. The duplicated region on BZRAP1-AS1 was manualy deleted in VScode and gene label was changed RNF43_3UTR.
+
+chr19:1228320-1228439 overlap was between STK11(gene of interest) and C19orf26. The overlap was due to the genes being on opposite-strands. The duplicated region on C19orf26 was manualy deleted in VScode and gene label was changed STK11_3UTR.
