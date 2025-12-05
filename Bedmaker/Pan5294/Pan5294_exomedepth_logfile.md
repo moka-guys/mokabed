@@ -58,3 +58,5 @@ chr19:1228320-1228439 overlap was between STK11(gene of interest) and C19orf26. 
 # Fix NA regions
 CNV intronic targets were labelled as N/A, the correct label was taken from Pan5294_CNVintronictargets.csv
 
+# Remove unrequired regions
+Bedmaker added genes from overlapping regions, which aren't regions of interest. 19 50921285 50921404 CTD-2545M3.6_ 15 33010004 33010104 RP11-758N13.1_
