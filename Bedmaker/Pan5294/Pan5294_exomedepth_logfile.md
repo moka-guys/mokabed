@@ -90,3 +90,6 @@ bedtools merge -i Pan5294_VCP3_CP205_exomeDepth_sorted.bed -c 4 -o first > Pan52
 
 # Combine VCP1/VCP2 bedfile and additional regions bedfiles
 cat Pan5294_VCP1_VCP2_exomeDepth.bed Pan5294_additionalregions_exomeDepth.bed >> Pan5294_VCP3_CP205_exomeDepth_sorted_merged.bed
+
+rename Pan5294_VCP3_CP205_data_sorted_merged.bed
+mv Pan5294_VCP3_CP205_exomeDepth_sorted_merged.bed Pan5294_exomeDepth.bed
