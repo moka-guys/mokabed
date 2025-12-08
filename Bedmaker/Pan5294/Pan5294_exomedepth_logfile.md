@@ -100,3 +100,6 @@ sort Pan5294_exomeDepth.bed -k1,1V -k2,2n -k3,3n > Pan5294_exomeDepth_sorted.bed
 # Check labelling of additional regions
 
 3UTR regions were missing exon numbering, these were added manually in VScode.
+
+# Testing
+Pan5294_exomeDepth.bed was tested in DNAnexus using ED_readcount_analysis_v1.5.0 and ED_cnv_calling_v1.4.0. The apps completed successfully without any errors.
