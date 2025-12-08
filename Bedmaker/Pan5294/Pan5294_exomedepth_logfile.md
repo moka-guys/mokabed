@@ -79,3 +79,6 @@ First combine Pan5294_VCP3_CP205_exomeDepth.bed and Pan5294_nonMANEnonR_exomeDep
 NOTE: Pan5294_VCP1_VCP2_exomeDepth.bed wasn't combined as we didn't want to merge the 5UTR regions.
 
 cat Pan5294_nonMANEnonR_exomeDepth.bed >> Pan5294_VCP3_CP205_exomeDepth.bed
+
+sort the bedfile
+sort -k1,1V -k2,2n -k3,3n Pan5294_VCP3_CP205_exomeDepth.bed > Pan5294_VCP3_CP205_exomeDepth_sorted.bed
