@@ -60,3 +60,6 @@ CNV intronic targets were labelled as N/A, the correct label was taken from Pan5
 
 # Remove unrequired regions
 Bedmaker added genes from overlapping regions, which aren't regions of interest. 19 50921285 50921404 CTD-2545M3.6_ 15 33010004 33010104 RP11-758N13.1_
+
+# Fix labelling
+A few CNV intronic targets had incomplete labels, these were fixed manually.
