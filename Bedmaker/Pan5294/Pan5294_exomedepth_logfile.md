@@ -82,3 +82,8 @@ cat Pan5294_nonMANEnonR_exomeDepth.bed >> Pan5294_VCP3_CP205_exomeDepth.bed
 
 sort the bedfile
 sort -k1,1V -k2,2n -k3,3n Pan5294_VCP3_CP205_exomeDepth.bed > Pan5294_VCP3_CP205_exomeDepth_sorted.bed
+
+bedtools merge
+-c- keep column 4
+-o first- choose the first value
+bedtools merge -i Pan5294_VCP3_CP205_exomeDepth_sorted.bed -c 4 -o first > Pan5294_VCP3_CP205_exomeDepth_sorted_merged.bed
