@@ -93,3 +93,6 @@ cat Pan5294_VCP1_VCP2_exomeDepth.bed Pan5294_additionalregions_exomeDepth.bed >>
 
 rename Pan5294_VCP3_CP205_data_sorted_merged.bed
 mv Pan5294_VCP3_CP205_exomeDepth_sorted_merged.bed Pan5294_exomeDepth.bed
+
+# sort bedfile
+sort Pan5294_exomeDepth.bed -k1,1V -k2,2n -k3,3n > Pan5294_exomeDepth_sorted.bed; mv Pan5294_exomeDepth.bed Pan5294_exomeDepth_unsorted.bed; mv Pan5294_exomeDepth_sorted.bed Pan5294_exomeDepth.bed; rm Pan5294_exomeDepth_unsorted.bed
