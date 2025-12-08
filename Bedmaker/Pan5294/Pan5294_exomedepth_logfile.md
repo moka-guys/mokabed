@@ -67,3 +67,6 @@ A few CNV intronic targets had incomplete labels, these were fixed manually.
 # Add POLD1 region back
 To ensure all regions in Pan5294_CNVintronictargets.csv were included, a manual search was performed for each region. During this search it was noticed the POLD1_3UTR chr19:50921285-50921404 and GREM1_SCG5_12 chr15:33010004-33010104 were missing. The region was accidentally removed during as they were thought to be overlapping regions (see section "remove unrequired regions").
 
+# Remove chr prefix
+bedfiles made by refgene.py had a 'chr' prefix and bedmaker bedfiles didn't. 'Chr' prefix removed using VScode
+
