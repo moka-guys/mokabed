@@ -103,3 +103,6 @@ sort Pan5294_exomeDepth.bed -k1,1V -k2,2n -k3,3n > Pan5294_exomeDepth_sorted.bed
 
 # Testing
 Pan5294_exomeDepth.bed was tested in DNAnexus using ED_readcount_analysis_v1.5.0 and ED_cnv_calling_v1.4.0. The apps completed successfully without any errors.
+
+# Delete unrequired files
+rm Pan5294_VCP1_VCP2_exomeDepth.bed Pan5294_VCP3_CP205_exomeDepth_sorted.bed Pan5294_nonMANEnonR_exomeDepth.bed Pan5294_additionalregions_exomeDepth.bed
