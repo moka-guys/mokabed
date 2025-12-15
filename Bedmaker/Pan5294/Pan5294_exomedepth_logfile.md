@@ -112,3 +112,6 @@ Labelling issues were spotted during code review, these were manually fixed in V
 MUTYH-5UTR_1 changed to MUTYH-5UTR-NM_001128425_1
 GREM1_SCG5_12 changed to GREM1-SCG5_12
 POLD1_3UTR_28 changed to POLD1-3UTR_28
+
+# Testing
+Pan5294_exomeDepth.bed was tested in DNAnexus using ED_readcount_analysis_v1.5.0 and ED_cnv_calling_v1.4.0. The apps completed successfully without any errors.
