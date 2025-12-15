@@ -1,7 +1,7 @@
 padding:
   cds:
-    upstream: 10
-    downstream: 10
+    upstream: 0
+    downstream: 0
 segments:
   split_utrs: true
   include_utrs:
@@ -25,3 +25,9 @@ bed_formats:
       - "{end}"
       - "{gene_id}"
       - "{gene};{transcript}"
+  exomedepth:
+    columns:
+      - "{chrom}"
+      - "{start}"
+      - "{end}"
+      - "{gene}_{exon_number}"
