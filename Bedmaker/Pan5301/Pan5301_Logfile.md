@@ -13,3 +13,7 @@ Script has been updated to support generation of CNV calling bedfiles
 Use Pan5301_transcript.txt to run refgene.py
 python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file Pan5301_transcript.txt --bed-format cnv --out Pan5301_CNV.bed
 
+# Run bedmaker for additional region
+Requested to add DMD_ex1 to R73 CNV calling bed
+
+Save outputs from Bedmaker
