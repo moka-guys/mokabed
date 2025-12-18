@@ -24,3 +24,6 @@ Update label from DMD to DMD-Dp427C
 # combine Pan5301_CNV.bed and Pan5301_DMDex1.bed
 
 cat Pan5301_DMDex1.bed >> Pan5301_CNV.bed
+
+# Testing
+Pan5301_cnv.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
