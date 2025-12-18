@@ -21,3 +21,5 @@ Pan5346_data.bed updated to include the GREM1 regions
 
 Note: no padding was added to these regions as this would lead to UTRs being included.
 
+# Repeat for coverage bedfile
+Use VScode to update Pan5346_sambamba.bed with trimmed regions
