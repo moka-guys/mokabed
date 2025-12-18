@@ -9,3 +9,7 @@ Pan5301_request_form.csv was used (added into mokabed/LiveBedfiles/RequestForms)
 # Save updated refgene.py 
 Script has been updated to support generation of CNV calling bedfiles
 
+# Run refgene.py
+Use Pan5301_transcript.txt to run refgene.py
+python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file Pan5301_transcript.txt --bed-format cnv --out Pan5301_CNV.bed
+
