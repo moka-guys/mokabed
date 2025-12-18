@@ -20,3 +20,7 @@ Save outputs from Bedmaker
 
 # Modify label of DMD region
 Update label from DMD to DMD-Dp427C
+
+# combine Pan5301_CNV.bed and Pan5301_DMDex1.bed
+
+cat Pan5301_DMDex1.bed >> Pan5301_CNV.bed
