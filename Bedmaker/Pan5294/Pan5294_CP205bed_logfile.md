@@ -1,6 +1,11 @@
 ## Pan5294
 CP205 Whole Capture BED file (build37) for coverage and variant calling
 
+###############################################################################
+During validation, coverage issues were spotted with single exons genes containing the 5' and 3' UTRs, therefore BEDfiles need to be remade.
+**Pan5294 has now been replaced by Pan5346.**
+##############################################################################
+
 The bedfile consists of 
 
 - VCP1 and VCP2 genes- to be padded +/-30bp for variant calling (+/-10 for coverage)
@@ -129,3 +134,7 @@ Pan5294_data.bed was tested in DNAnexus using Moka Picard v1.2. The app complete
 
 Pan5294_sambamba.bed was tested using sambamba_coverage_v2.0.3 The app completed successfully without any errors.
 
+###############################################################################
+During validation, coverage issues were spotted with single exons genes containing the 5' and 3' UTRs, therefore BEDfiles need to be remade.
+**Pan5294 has now been replaced by Pan5346.** 
+##############################################################################
