@@ -10,3 +10,6 @@ cp /home/natashapinto/Documents/mokabed/Bedmaker/Pan5294/Pan5294_sambamba.bed Pa
 # Update BEDfiles
 List of single exon genes with 5UTR and 3UTR included curated by George Doyle.
 5UTR and 3UTR regions trimmed from VCP3/CP2 genes and 5UTR retained for the VCP2 gene (GREM1), see trimmed_singleexon_regions.txt for full list
+
+# Manually fix trimmed regions
+Use VScode to update Pan5346_data.bed with trimmed regions
