@@ -17,3 +17,6 @@ python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file Pan5301_transcript
 Requested to add DMD_ex1 to R73 CNV calling bed
 
 Save outputs from Bedmaker
+
+# Modify label of DMD region
+Update label from DMD to DMD-Dp427C
