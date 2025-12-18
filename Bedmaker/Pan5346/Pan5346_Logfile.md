@@ -13,3 +13,11 @@ List of single exon genes with 5UTR and 3UTR included curated by George Doyle.
 
 # Manually fix trimmed regions
 Use VScode to update Pan5346_data.bed with trimmed regions
+
+Since GREM1 is a VCP2 gene, we need to retain 5UTR region, however it was noticed the 5UTR was not split from the exon in trimmed_singleexon_regions.txt
+
+trimmed_singleexon_regions.txt was updated to split the exon and the 5UTR (only 1bp)
+Pan5346_data.bed updated to include the GREM1 regions
+
+Note: no padding was added to these regions as this would lead to UTRs being included.
+
