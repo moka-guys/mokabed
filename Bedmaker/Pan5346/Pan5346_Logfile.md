@@ -23,3 +23,9 @@ Note: no padding was added to these regions as this would lead to UTRs being inc
 
 # Repeat for coverage bedfile
 Use VScode to update Pan5346_sambamba.bed with trimmed regions
+
+
+# Testing 
+Pan5346_data.bed was tested in DNAnexus using Moka Picard v1.2. The app completed successfully without any errors.
+
+Pan5346_sambamba.bed was tested using sambamba_coverage_v2.0.3 The app completed successfully without any errors.
