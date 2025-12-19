@@ -31,3 +31,10 @@ bed_formats:
       - "{start}"
       - "{end}"
       - "{gene}_{exon_number}"
+  cnv:
+    strip_chr_prefix: true
+    columns:
+      - "{chrom}"
+      - "{start}"
+      - "{end}"
+      - "{gene};{transcript}"

@@ -226,6 +226,8 @@ def get_bed_formatter(config, selected_name, split_utrs=True):
         else:
             templates.append(str(col))
 
+    strip_chr_prefix = bool(preset.get("strip_chr_prefix", False))
+
     def formatter(row):
         chrom, start, end, label, strand, meta = row
         meta = meta or {}
@@ -237,8 +239,13 @@ def get_bed_formatter(config, selected_name, split_utrs=True):
             elif label.endswith("_3UTR"):
                 gene_for_output = f"{base_gene}_3UTR"
 
+        # Strip 'chr' prefix if configured
+        chrom_out = chrom
+        if strip_chr_prefix and chrom_out.lower().startswith("chr"):
+            chrom_out = chrom_out[3:]
+
         context = {
-            "chrom": chrom,
+            "chrom": chrom_out,
             "start": start,
             "end": end,
             "label": label,
@@ -249,7 +256,7 @@ def get_bed_formatter(config, selected_name, split_utrs=True):
             "gene_id": meta.get("gene_id", ""),
             "exon_number": meta.get("exon_number", ""),
         }
-        context["coords"] = f"{chrom}-{start}-{end}"
+        context["coords"] = f"{chrom_out}-{start}-{end}"
         try:
             columns_out = [template.format(**context) for template in templates]
         except KeyError as exc:
