@@ -1,6 +1,11 @@
 ## Pan5294_exomedepth
 CP205 Whole Capture BED file (build37) for CNV calling using Exomedepth
 
+###############################################################################
+During validation, coverage issues were spotted with single exons genes containing the 5' and 3' UTRs, therefore BEDfiles need to be remade.
+**Pan5294 has now been replaced by Pan5346.** 
+##############################################################################
+
 The bedfile consists of 
 
 - VCP1/VCP2 genes- no padding but include 5UTR
@@ -115,3 +120,8 @@ POLD1_3UTR_28 changed to POLD1-3UTR_28
 
 # Testing
 Pan5294_exomeDepth.bed was tested in DNAnexus using ED_readcount_analysis_v1.5.0 and ED_cnv_calling_v1.4.0. The apps completed successfully without any errors.
+
+###############################################################################
+During validation, coverage issues were spotted with single exons genes containing the 5' and 3' UTRs, therefore BEDfiles need to be remade.
+**Pan5294 has now been replaced by Pan5346.**
+##############################################################################
