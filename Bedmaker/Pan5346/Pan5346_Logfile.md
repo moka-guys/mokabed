@@ -25,3 +25,7 @@ Padding info:
 - All VCP3/CP2 trimmed regions were padded +/10bp
 - VCP2 gene (GREM1, GREM1_5UTR) was padded +/-10bp
 
+# Testing 
+Pan5346_data.bed was tested in DNAnexus using Moka Picard v1.2. The app completed successfully without any errors.
+
+Pan5346_sambamba.bed was tested using sambamba_coverage_v2.0.3 The app completed successfully without any errors.
