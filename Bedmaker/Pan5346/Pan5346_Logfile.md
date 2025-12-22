@@ -18,3 +18,10 @@ Padding info:
 - All VCP3/CP2 trimmed regions were padded +/10bp
 - VCP2 gene (GREM1, GREM1_5UTR) was padded +/-30bp
 
+# Repeat for coverage bedfile
+Use VScode to update Pan5346_sambamba.bed with trimmed regions
+
+Padding info:
+- All VCP3/CP2 trimmed regions were padded +/10bp
+- VCP2 gene (GREM1, GREM1_5UTR) was padded +/-10bp
+
