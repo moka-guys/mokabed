@@ -5,3 +5,6 @@ This BEDfile replaces Pan5294; during validation, coverage issues were spotted w
 
 # Copy Pan5294 bedfiles
 cp /home/natashapinto/Documents/mokabed/Bedmaker/Pan5294/Pan5294_exomeDepth.bed Pan5346_exomeDepth.bed
+
+# Manually fix trimmed regions in data.bed
+Use VScode to update Pan5346_exomeDepth.bed with trimmed regions (trimmed_singleexon_regions.txt)
