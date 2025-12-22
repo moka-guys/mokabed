@@ -8,3 +8,6 @@ cp /home/natashapinto/Documents/mokabed/Bedmaker/Pan5294/Pan5294_exomeDepth.bed 
 
 # Manually fix trimmed regions in data.bed
 Use VScode to update Pan5346_exomeDepth.bed with trimmed regions (trimmed_singleexon_regions.txt)
+
+# Testing
+Pan5346_exomeDepth.bed was tested in DNAnexus using ED_readcount_analysis_v1.5.0 and ED_cnv_calling_v1.4.0. The apps completed successfully without any errors.
