@@ -29,3 +29,8 @@ Padding info:
 Pan5346_data.bed was tested in DNAnexus using Moka Picard v1.2. The app completed successfully without any errors.
 
 Pan5346_sambamba.bed was tested using sambamba_coverage_v2.0.3 The app completed successfully without any errors.
+
+# Remove GREM UTR padding
+GREM1 5UTR 15:33022890-33022891 was accidentally padded. 
+Padding for the 5UTR removed from Pan5346_data.bed and Pan5346_sambamba.bed to be consistent with the other UTRs in the bedfiles.
+
