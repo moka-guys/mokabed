@@ -11,3 +11,10 @@ cp /home/natashapinto/Documents/mokabed/Bedmaker/Pan5294/Pan5294_sambamba.bed Pa
 List of single exon genes with 5UTR and 3UTR included curated by George Doyle and Rebecca Haines.
 5UTR and 3UTR regions trimmed from VCP3/CP2 genes and 5UTR retained for the VCP2 gene (GREM1), see trimmed_singleexon_regions.txt (not padded) for full list
 
+# Manually fix trimmed regions in data.bed
+Use VScode to update Pan5346_data.bed with trimmed regions
+
+Padding info:
+- All VCP3/CP2 trimmed regions were padded +/10bp
+- VCP2 gene (GREM1, GREM1_5UTR) was padded +/-30bp
+
