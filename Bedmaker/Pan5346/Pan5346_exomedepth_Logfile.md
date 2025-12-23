@@ -11,3 +11,7 @@ Use VScode to update Pan5346_exomeDepth.bed with trimmed regions (trimmed_single
 
 # Testing
 Pan5346_exomeDepth.bed was tested in DNAnexus using ED_readcount_analysis_v1.5.0 and ED_cnv_calling_v1.4.0. The apps completed successfully without any errors.
+
+# move GREM1 UTR
+GREM1 5UTR was in the correct order, it was manually moved.
+
