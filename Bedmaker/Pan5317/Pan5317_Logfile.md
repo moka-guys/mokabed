@@ -22,3 +22,6 @@ remove duplicated region for 11	108239720	108239839
 
 # replace NA with correct gene name from the request form
 replace NA for 13	32974296	32974415
+
+# rename gene
+rename gene to match with those from request form
