@@ -10,3 +10,8 @@ R134_BEDfile_request_form.csv was used (added into mokabed/LiveBedfiles/RequestF
 
 Use R134_transcript.txt to run refgene.py
 python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/refgene.py --refgene /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/ncbiRefSeq.txt --transcript-file /home/win/Desktop/workspace/generate_bed/CP205/R134/R134_transcripts.txt --bed-format cnv --out Pan5313_CNV.bed --config /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/config.yaml
+
+### no need to run bedmaker since there in no additional regions.
+
+# test bed file
+Generated bed file was tested on DNAnexus by running ED_cnv_calling_v1.6.0 and The app completed successfully without any error.
