@@ -13,3 +13,6 @@ python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_gen
 
 # run bedmaker 
 bedmaker was run for additional regions requested. 
+
+# combine two bed files
+cat Pan5317_cnv_additinal_regions.bed >> Pan5317_CNV.bed
