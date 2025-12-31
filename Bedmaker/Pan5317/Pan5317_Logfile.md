@@ -25,3 +25,6 @@ replace NA for 13	32974296	32974415
 
 # rename gene
 rename gene to match with those from request form
+
+# testing
+Generated bed file was run with ED_cnv_calling_v1.6.0. The app finished without error.
