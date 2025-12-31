@@ -18,3 +18,6 @@ cat Pan5318_cnv_additional_regions.bed >> Pan5318_CNV.bed
 
 ## remove duplicated region
 removed duplicated region for 	2	48034020	48034180	
+
+## replace NA regions
+replace NA with gene name from request form
