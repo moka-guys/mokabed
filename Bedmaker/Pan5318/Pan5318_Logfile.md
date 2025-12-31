@@ -21,3 +21,6 @@ removed duplicated region for 	2	48034020	48034180
 
 ## replace NA regions
 replace NA with gene name from request form
+
+## correct gene name
+gene names were corrected to match the ones from request form
