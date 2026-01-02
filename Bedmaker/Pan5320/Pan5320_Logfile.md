@@ -18,3 +18,6 @@ cat Pan5320_cnv_additional_regions.bed >> Pan5320_CNV.bed
 
 ## remove duplicated regions
 remove duplicated regions that are not in request form
+
+## replace N/A
+replace N/A with correct gene names from request form
