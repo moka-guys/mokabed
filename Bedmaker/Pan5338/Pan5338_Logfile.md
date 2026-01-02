@@ -24,3 +24,6 @@ replace N/A regions with those from request form
 
 ## correct gene name and replace more NA 
 correct gene names with those from request form and also replace more NA region
+
+## trimming
+trimmed FANCF gene as in exomedepth bedfile
