@@ -13,3 +13,5 @@ python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_gen
 
 ## run bedmaker
 The excluded transcript NM_001083899.1 above is NM_016363.5 in hg19. It was run on Bedmaker
+# combine bed files
+cat Pan5330_cnv_additional_regions.bed >> Pan5330_CNV.bed
