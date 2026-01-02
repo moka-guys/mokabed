@@ -21,3 +21,7 @@ remove duplicated regions that are not in request form
 
 ## replace N/A
 replace N/A with correct gene names from request form
+
+## correct gene name
+correct gene name to match those from request form
+
