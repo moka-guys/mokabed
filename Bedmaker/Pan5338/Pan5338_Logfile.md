@@ -27,3 +27,6 @@ correct gene names with those from request form and also replace more NA region
 
 ## trimming
 trimmed FANCF gene as in exomedepth bedfile
+
+## testing
+Generated bed was tested using ED_cnv_calling_v1.6.0. The app completed without error.
