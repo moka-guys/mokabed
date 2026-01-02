@@ -17,3 +17,10 @@ Saved outputs from Bedmaker.
 
 ## Add labels for additional regions
 Update Pan5325_additional_regions_cnv.bed with labels defined in request form.
+
+## Combine and sort Pan5325_CNV.bed and Pan5325_additional_regions_cnv.bed
+```
+cat Pan5325_additional_regions_cnv.bed >> Pan5325_CNV.bed
+
+sort -k1,1 -k2,2n Pan5325_CNV.bed -o Pan5325_CNV.bed 
+```
