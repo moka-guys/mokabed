@@ -1,0 +1,58 @@
+{
+  "bed_format": "cnv",
+  "config": {
+    "bed_formats": {
+      "cnv": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene};{transcript}"
+        ],
+        "strip_chr_prefix": true
+      },
+      "data": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene_id}",
+          "{gene};{transcript}"
+        ]
+      },
+      "exomedepth": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene}_{exon_number}"
+        ]
+      },
+      "sambamba": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{coords}",
+          "0",
+          "{strand}",
+          "{gene};{transcript}",
+          "{gene_id}"
+        ]
+      }
+    },
+    "padding": {
+      "cds": {
+        "downstream": 0,
+        "upstream": 0
+      }
+    },
+    "segments": {
+      "include_utrs": {
+        "five_prime": false,
+        "three_prime": false
+      },
+      "split_utrs": true
+    }
+  }
+}
