@@ -45,6 +45,9 @@ trimmed GREM1 gene as in exomedepth bed file
 
 Generated bed file was tested with ED_cnv_calling_v1.6.0 and the app completed without errors
 
+## modify gene name to be consistent with others
+GREM1-5UTR_2 is updated to GREM1_5UTR2
+
 
 
 
