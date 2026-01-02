@@ -9,7 +9,7 @@
   "settings": {
     "bed_type": "cnv",
     "include_3utr": false,
-    "include_5utr": true,
+    "include_5utr": false,
     "padding": {
       "snp": 0,
       "standard": 0
@@ -18,7 +18,7 @@
   "snp_padding_3": 0,
   "snp_padding_5": 0,
   "use_separate_snp_padding": false,
-  "created_date": "02/01/2026, 12:06",
-  "updated_date": "02/01/2026, 12:06",
+  "created_date": "02/01/2026, 13:48",
+  "updated_date": "02/01/2026, 13:48",
   "submitter": "test"
 }

@@ -12,3 +12,6 @@ python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_gen
 
 ## run bedmaker
 bedmaker was run for additional regions
+
+## re-run bedmaker with new settings
+Bedmaker was re-run as noted that 5'UTR setting should be changed at settings page.
