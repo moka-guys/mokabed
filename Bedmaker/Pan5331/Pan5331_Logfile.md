@@ -12,8 +12,11 @@ Use Pan5331_transcript.txt to run refgene.py
 python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file ../../Bedmaker/Pan5331/Pan5331_transcript.txt --bed-format cnv --out Pan5331_CNV.bed
 ```
 
-# Sort Pan5331_CNV.bed
+## Sort Pan5331_CNV.bed
 Sort Pan5331_CNV.bed numerically
 ```
 sort -k1,1V -k2,2n Pan5331_CNV.bed -o Pan5331_CNV.bed
 ```
+
+# Testing
+Pan5331_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.6.0. The app completed successfully without any error.
