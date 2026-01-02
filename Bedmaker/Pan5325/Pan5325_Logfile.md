@@ -24,3 +24,6 @@ cat Pan5325_additional_regions_cnv.bed >> Pan5325_CNV.bed
 
 sort -k1,1 -k2,2n Pan5325_CNV.bed -o Pan5325_CNV.bed 
 ```
+
+## Testing
+Pan5325_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.6.0. The app completed successfully without any error.
