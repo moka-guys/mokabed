@@ -39,7 +39,11 @@ remove duplicated regions after combining bed files
 
 ## trimming
 
-trimmed GREM1 gene as in exomedetph bed file
+trimmed GREM1 gene as in exomedepth bed file
+
+## testing
+
+Generated bed file was tested with ED_cnv_calling_v1.6.0 and the app completed without errors
 
 
 
