@@ -17,3 +17,6 @@ The excluded transcript NM_001083899.1 above is NM_016363.5 in hg19. It was run 
 cat Pan5330_cnv_additional_regions.bed >> Pan5330_CNV.bed
 # remove duplicated regions
 duplicated region is removed 
+
+## trimming
+CHST14, BLOC1S3, THBD, P2RY12 genes were trimmed
