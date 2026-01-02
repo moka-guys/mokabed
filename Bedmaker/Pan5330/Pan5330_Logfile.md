@@ -11,3 +11,5 @@ NM_001083899.1 from request from in not Mane transcript. So, it is not included 
 
 python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/refgene.py --refgene /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/ncbiRefSeq.txt --transcript-file /home/win/Desktop/workspace/generate_bed/CP205/R90/R90_transcripts.txt --bed-format cnv --out Pan5330_CNV.bed --config /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/config.yaml
 
+## run bedmaker
+The excluded transcript NM_001083899.1 above is NM_016363.5 in hg19. It was run on Bedmaker
