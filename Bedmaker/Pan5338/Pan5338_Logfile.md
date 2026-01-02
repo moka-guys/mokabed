@@ -15,3 +15,6 @@ bedmaker was run for additional regions
 
 ## re-run bedmaker with new settings
 Bedmaker was re-run as noted that 5'UTR setting should be changed at settings page.
+
+## combine bed files
+cat Pan5338new_cnv_additional_regions.bed >> Pan5338_CNV.bed
