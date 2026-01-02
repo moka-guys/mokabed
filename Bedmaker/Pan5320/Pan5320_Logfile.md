@@ -25,3 +25,11 @@ replace N/A with correct gene names from request form
 ## correct gene name
 correct gene name to match those from request form
 
+## run ref gene for addition MUTYH gene
+Noted that 2nd transcript for MUTYH gene NM_001128425.2 was missed while running refgene previously.
+Refgene was run again with mutyh_transcripts.txt
+
+python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/refgene.py --refgene /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/ncbiRefSeq.txt --transcript-file /home/win/Desktop/workspace/generate_bed/CP205/R211/mutyh_transcripts.txt --bed-format cnv --out Pan5320_mutyh_CNV.bed --config /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/config.yaml
+
+
+
