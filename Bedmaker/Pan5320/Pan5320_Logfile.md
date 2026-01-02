@@ -34,6 +34,9 @@ python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_gen
 ## combine bed files
 cat Pan5320_mutyh_CNV.bed >> Pan5320_CNV.bed
 
+## remove duplicated regions
+remove duplicated regions after combining bed files
+
 
 
 
