@@ -37,6 +37,14 @@ cat Pan5320_mutyh_CNV.bed >> Pan5320_CNV.bed
 ## remove duplicated regions
 remove duplicated regions after combining bed files
 
+## trimming
+
+trimmed GREM1 gene as in exomedetph bed file
+
+
+
+
+
 
 
 
