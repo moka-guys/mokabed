@@ -18,3 +18,6 @@ Bedmaker was re-run as noted that 5'UTR setting should be changed at settings pa
 
 ## combine bed files
 cat Pan5338new_cnv_additional_regions.bed >> Pan5338_CNV.bed
+
+## replace NA regions
+replace N/A regions with those from request form
