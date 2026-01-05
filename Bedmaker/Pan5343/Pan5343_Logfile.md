@@ -11,3 +11,7 @@ Use Pan5343_transcript.txt to run refgene.py
 ```
 python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file ../../Bedmaker/Pan5343/Pan5343_transcript.txt --bed-format cnv --out Pan5343_CNV.bed
 ```
+
+# Run bedmaker
+Requested to add specified 3UTR regions to genes ATM and SMAD4. 
+Saved outputs from BEDmaker.
