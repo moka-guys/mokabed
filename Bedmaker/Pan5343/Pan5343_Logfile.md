@@ -23,3 +23,9 @@ Add labels to Pan5343_additional_regions_cnv.bed file
 ```
 cat Pan5343_additional_regions_cnv.bed >> Pan5343_CNV.bed
 ```
+
+# Sort bedfiles
+Sort bedfile numerically
+```
+sort -k1,1V -k2,2n Pan5343_CNV.bed -o Pan5343_CNV.bed
+```
