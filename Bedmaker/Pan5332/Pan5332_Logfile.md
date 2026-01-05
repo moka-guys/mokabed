@@ -9,3 +9,8 @@ no UTR, no padding. No additional regions requested
 refgene.py was run using R163_transcripts.txt
 
 python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/refgene.py --refgene /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/ncbiRefSeq.txt --transcript-file /home/win/Desktop/workspace/generate_bed/CP205/R163/R163_transcripts.txt --bed-format cnv --out Pan5332_CNV.bed --config /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/config.yaml
+
+## trimming 
+GJB6 was manually trimmed as in Exomedepth bedfile
+
+
