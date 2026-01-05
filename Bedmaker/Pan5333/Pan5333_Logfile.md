@@ -20,3 +20,5 @@ cat Pan5333_cnv_additional_regions.bed >> Pan5333_CNV.bed
 ## remove duplicated regions
 remove regions that are duplicated in bed file
 
+## testing 
+Generated bed was run with  ED_cnv_calling_v1.6.0. The app completed without error.
