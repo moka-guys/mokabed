@@ -17,3 +17,6 @@ ENST00000397985.2, NM_001042440.2, NM_001190442.1, NM_201380.2 were run with bed
 ## combine bed files
 cat Pan5333_cnv_additional_regions.bed >> Pan5333_CNV.bed 
 
+## remove duplicated regions
+remove regions that are duplicated in bed file
+
