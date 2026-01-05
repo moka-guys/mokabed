@@ -12,3 +12,6 @@ python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_gen
 
 ## run bedmaker
 run bedmaker for ENST00000397985.2, NM_001042440.2, NM_001190442.1.
+
+## combine bed files
+cat Pan5335_cnv_additional_regions.bed >> Pan5335_CNV.bed
