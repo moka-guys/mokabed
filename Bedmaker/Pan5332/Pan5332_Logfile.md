@@ -13,4 +13,5 @@ python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_gen
 ## trimming 
 GJB6 was manually trimmed as in Exomedepth bedfile
 
-
+## testing
+Generated bedfile was run with ED_cnv_calling_v1.6.0. The app completed without errors.
