@@ -32,3 +32,6 @@ It was noted that bedmaker should be run with NM_001083899.1 (but not with NM_01
 - deleting combined section of NM_016363.5 from previous bedmaker run
 - re-run bedmaker with NM_001083899.1
 - combined NM_001083899.1 regions from bedmaker into Pan5330_CNV.bed by cat Pan5330new_cnv_additional_regions.bed >> Pan5330_CNV.bed
+
+## testing
+testing was done again after correction. The ED app completed without errors.
