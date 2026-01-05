@@ -6,3 +6,8 @@ Pan5343_request_form.csv was used (added into mokabed/LiveBedfiles/RequestForms)
 
 No padding, no UTRs, and 2 additional regions specified to be included (ATM_3UTR, SMAD4_3UTR)
 
+# Run refgene
+Use Pan5343_transcript.txt to run refgene.py
+```
+python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file ../../Bedmaker/Pan5343/Pan5343_transcript.txt --bed-format cnv --out Pan5343_CNV.bed
+```
