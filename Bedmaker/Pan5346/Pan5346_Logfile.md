@@ -38,3 +38,6 @@ Padding for the 5UTR removed from Pan5346_data.bed and Pan5346_sambamba.bed to b
 Pan5346_data.bed was tested in DNAnexus using Moka Picard v1.2. The app completed successfully without any errors.
 
 Pan5346_sambamba.bed was tested using sambamba_coverage_v2.0.3 The app completed successfully without any errors.
+
+## Manual adjustments to KCNA1 gene to trimming 3' UTR, include padding - 05/01/2026
+Updates to Pan5346_data.bed and Pan5346_sambamba.bed in order to correct single exon gene issue (Requires 3' UTR removal and padding +10).
