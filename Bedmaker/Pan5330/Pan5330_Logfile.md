@@ -25,3 +25,10 @@ CHST14, BLOC1S3, THBD, P2RY12 genes were trimmed
 
 ## testing
 Generated bed file was tested with ED_cnv_calling_v1.6.0. The app completed without error.
+
+## correction
+It was noted that bedmaker should be run with NM_001083899.1 (but not with NM_016363.5). So correction was done. 
+- delete existing Pan5330_cnv_additional_regions.bed Pan5330_CNV_query_additional_regions.json
+- deleting combined section of NM_016363.5 from previous bedmaker run
+- re-run bedmaker with NM_001083899.1
+- combined NM_001083899.1 regions from bedmaker into Pan5330_CNV.bed by cat Pan5330new_cnv_additional_regions.bed >> Pan5330_CNV.bed

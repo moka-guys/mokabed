@@ -1,7 +1,7 @@
 {
   "assembly": "GRCh37",
   "coordinates": "",
-  "identifiers": "NM_016363.5",
+  "identifiers": "NM_001083899.1",
   "include3UTR": false,
   "include5UTR": false,
   "padding_3": 0,
@@ -18,7 +18,7 @@
   "snp_padding_3": 0,
   "snp_padding_5": 0,
   "use_separate_snp_padding": false,
-  "created_date": "02/01/2026, 16:32",
-  "updated_date": "02/01/2026, 16:32",
+  "created_date": "05/01/2026, 10:10",
+  "updated_date": "05/01/2026, 10:10",
   "submitter": "test"
 }
