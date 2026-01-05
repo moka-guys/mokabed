@@ -22,3 +22,6 @@ duplicated regions are removed from bed file
 
 ## trimming
 GJB2, GJB6 and GJA1 were trimmed as in exomedepth bed file manually
+
+## testing
+Generated bed was tested with ED_cnv_calling_v1.6.0 and the app completed without errors
