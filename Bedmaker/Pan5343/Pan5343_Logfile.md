@@ -15,3 +15,6 @@ python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file ../../Bedmaker/Pan
 # Run bedmaker
 Requested to add specified 3UTR regions to genes ATM and SMAD4. 
 Saved outputs from BEDmaker.
+
+# Add labels
+Add labels to Pan5343_additional_regions_cnv.bed file
