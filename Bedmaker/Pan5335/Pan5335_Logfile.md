@@ -18,3 +18,6 @@ cat Pan5335_cnv_additional_regions.bed >> Pan5335_CNV.bed
 
 ## remove duplicates
 duplicated regions are removed
+
+## trimming
+GJB2 and GJA1 were trimmed manually as in exomedepth bedfile
