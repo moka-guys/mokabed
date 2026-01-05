@@ -115,3 +115,71 @@ Manually adjusted KCNA1 using IGV in order to:
 - Removed 3' UTR erroneously included as part of CDS
 - Applied +10bp padding to CDS region (extending into 3' UTR). Not required on 5' end of CDS as it would overlap into UTR region already included in BED.
 - Included screenshot to visually display changes between refgene.py output and manually updated record.
+
+## Ran refgene.py using single NM_000217.3 transcript for updating sambamba.bed file
+python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file KCNA1.txt --bed-format sambamba --out KCNA1_sambamba.bed --config config.yaml 
+
+KCNA1_sambamba_query_json:
+
+{
+  "bed_format": "sambamba",
+  "config": {
+    "bed_formats": {
+      "cnv": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene};{transcript}"
+        ],
+        "strip_chr_prefix": true
+      },
+      "data": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene_id}",
+          "{gene};{transcript}"
+        ],
+        "strip_chr_prefix": true
+      },
+      "exomedepth": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene}_{exon_number}"
+        ]
+      },
+      "sambamba": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{coords}",
+          "0",
+          "{strand}",
+          "{gene};{transcript}",
+          "{gene_id}"
+        ],
+        "strip_chr_prefix": true
+      }
+    },
+    "padding": {
+      "cds": {
+        "downstream": 0,
+        "upstream": 0
+      }
+    },
+    "segments": {
+      "include_utrs": {
+        "five_prime": true,
+        "three_prime": false
+      },
+      "split_utrs": true
+    }
+  }
+}
+
+* Note that padding is not applied as current refgene.py logic will not extend CDS into UTR regions. This will have to be updated manually.
