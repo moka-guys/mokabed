@@ -18,3 +18,8 @@ Saved outputs from BEDmaker.
 
 # Add labels
 Add labels to Pan5343_additional_regions_cnv.bed file
+
+# Combine bedfiles
+```
+cat Pan5343_additional_regions_cnv.bed >> Pan5343_CNV.bed
+```
