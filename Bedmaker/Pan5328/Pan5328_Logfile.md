@@ -18,3 +18,6 @@ cat Pan5328_cnv_additional_regions.bed >> Pan5328_CNV.bed
 
 ## remove duplicated regions
 duplicated regions were removed manually
+
+## trimming
+FKRP was trimmed manually
