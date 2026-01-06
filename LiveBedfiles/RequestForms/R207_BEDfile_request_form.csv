@@ -1,0 +1,65 @@
+"DOC333	Revision1			",
+"Instructions:		",
+All transcripts and gene symbols must be confirmed by a Clinical Scientist. ,
+Check if transcript is available in DSS if not use MANE.,
+"Create bedfile Pan number in Moka.	",
+"Answer following questions				",
+"Please save this as a CSV file.				",
+"				",
+"1. Pan number of bed file to be created	PanXXXX			",Pan5316
+"2. Panel description/name (fill in a-c from Moka)				",CP205 CNV BED- R207 Dec2025 CNV calling
+"2. a) Category	 eg capture kit			","no padding, 5UTR"
+"2. b) SubCategory	 description of what is included, eg padding, UTR inclusion (or not),  intronic BED files,  any modifications from an existing BED file",
+"2. c) Panel	 Category and subcategory combined			",
+"3a). Is this BED file used for Exome depth?	Yes/No			",Yes
+"3b). Is this BED file used to generate read counts or filter calls?	Yes/No/N/A			","Yes, filter calls"
+"4. a) Is this BED file exclusively based on coordinates provided by a supplier? 	Yes/No/N/A			",No
+"4. b) If yes does this need further padding?	Yes/No/N/A			",N/A
+"5. a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts for a gene)	Yes/No/N/A			",Yes
+"5. b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state)	Yes/No/N/A			",No
+"6. What padding is required around the exons?(usually 10, 30 or 50bp)",0
+"7. a) Should UTRs be included for ALL genes?	Yes/No			","Yes, 5' UTR only"
+"7. b) Should UTRs be padded? and if so by how much	Yes(10/30/50bp)/No/N/A			",No
+"8. a) Are UTRs required for SOME genes? 	Yes/No			",No
+"8. b) Please list genes/transcripts	Yes/No/N/A			",N/A
+"8. c) Should UTRs be padded? and if so by how much	Yes(10/30/50bp)/No/N/A			",N/A
+"9. Any additional BED files to be included in this BED file?	 (eg intronic region BED files, SNP sites,  CNV control sites etc)	",No
+"10. Are any further regions required to be added?	Yes/No			",Yes
+"11. Are there any regions in the below transcripts that should be excluded?	 			",No
+"Requested by:				",Heidi Kuoppamaa
+"Requested date:				",11/12/2025
+"				",
+"Please list gene and transcripts below.				",
+,
+"Gene Name				",Transcript
+BRCA1,NM_007294.4
+BRCA2,NM_000059.4
+BRIP1,NM_032043.3
+MLH1,NM_000249.4
+MSH2,NM_000251.3
+MSH6,NM_000179.3
+PALB2,NM_024675.4
+RAD51C,NM_058216.3
+RAD51D,NM_002878.4
+,
+Regions,
+BRCA1_3UTR,chr17:41196302-41196421
+BRCA1_IN11_1,chr17:41234663-41234823
+BRCA1_IN11_2,chr17:41235012-41235172
+BRCA1_IN12_1,chr17:41234197-41234357
+BRCA1_IN12_2,chr17:41233848-41234008
+BRCA1_PM_5_1,chr17:41281042-41281202
+BRCA1_PM_5_2,chr17:41286238-41286398
+BRCA1_PM_5_3,chr17:41297651-41297811
+BRCA1_PM_5_4,chr17:41322636-41322796
+BRCA2_3UTR,chr13:32974296-32974415
+BRIP1_3UTR,chr17:59756490-59756609
+MLH1_3UTR,chr3:37092207-37092367
+MSH2_3UTR,chr2:47710128-47710288
+MSH2_EPCAM_1,chr2:47616487-47616586
+MSH2_EPCAM_2,chr2:47617980-47618099
+MSH2_EPCAM_3,chr2:47622819-47622918
+MSH2_EPCAM_4,chr2:47625850-47625969
+MSH6_3UTR,chr2:48034020-48034180
+PALB2_3UTR,chr16:23614580-23614699
+RAD51D_3UTR,chr17:33419230-33419349

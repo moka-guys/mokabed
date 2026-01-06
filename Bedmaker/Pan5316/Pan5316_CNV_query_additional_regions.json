@@ -1,0 +1,24 @@
+{
+  "assembly": "GRCh37",
+  "coordinates": "chr17:41196302-41196421\nchr17:41234663-41234823\nchr17:41235012-41235172\nchr17:41234197-41234357\nchr17:41233848-41234008\nchr17:41281042-41281202\nchr17:41286238-41286398\nchr17:41297651-41297811\nchr17:41322636-41322796\nchr13:32974296-32974415\nchr17:59756490-59756609\nchr3:37092207-37092367\nchr2:47710128-47710288\nchr2:47616487-47616586\nchr2:47617980-47618099\nchr2:47622819-47622918\nchr2:47625850-47625969\nchr2:48034020-48034180\nchr16:23614580-23614699\nchr17:33419230-33419349",
+  "identifiers": "",
+  "include3UTR": false,
+  "include5UTR": true,
+  "padding_3": 0,
+  "padding_5": 0,
+  "settings": {
+    "bed_type": "cnv",
+    "include_3utr": false,
+    "include_5utr": true,
+    "padding": {
+      "snp": 0,
+      "standard": 0
+    }
+  },
+  "snp_padding_3": 0,
+  "snp_padding_5": 0,
+  "use_separate_snp_padding": false,
+  "created_date": "06/01/2026, 15:24",
+  "updated_date": "06/01/2026, 15:24",
+  "submitter": "test"
+}
