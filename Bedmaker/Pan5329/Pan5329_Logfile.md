@@ -15,3 +15,6 @@ refgene was run with R81_transcripts.txt, except NM_001130103.1, NM_002584.2, NM
 
  ## combine bed files
  cat Pan5329_cnv_additional_regions.bed >> Pan5329_CNV.bed
+
+ ## remove duplicates
+ duplicated regions were removed from bed file
