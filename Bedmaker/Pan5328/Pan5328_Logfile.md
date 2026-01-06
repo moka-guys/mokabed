@@ -21,3 +21,6 @@ duplicated regions were removed manually
 
 ## trimming
 FKRP was trimmed manually
+
+## testing
+generated bed file was tested with ED_cnv_calling_v1.6.0. The app completed without errors. 
