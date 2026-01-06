@@ -21,3 +21,6 @@ refgene was run with R81_transcripts.txt, except NM_001130103.1, NM_002584.2, NM
 
  ## trimming
  manual trimming was done for KBTBD13 as in Exomedepth bed file. 
+
+ ## testing
+ Generated bed file was run with ED_cnv_calling_v1.6.0. The app completed without error.
