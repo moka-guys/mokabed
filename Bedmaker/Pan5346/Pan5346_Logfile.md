@@ -196,3 +196,15 @@ Manually adjusted KCNA1 using IGV in order to:
 Pan5346_data.bed was tested in DNAnexus using Moka Picard v1.2.1. The app completed successfully without any errors.
 
 Pan5346_sambamba.bed was tested using sambamba_coverage_v2.0.3. The app completed successfully without any errors. KCNA1 gene level coverage 100%.
+
+## Further adjustment - 06/01/2026
+
+Manual removal of 5' UTRs - not needed as KCNA1 is VCP3/CP2 and only requires coding regions. CDS +10bp only retained.
+
+## Testing
+
+Visual inspection of Pan5346_data.bed and Pan5346_sambamba.bed to confirm no UTRs present/padding correct in IGV.
+
+Pan5346_data.bed was tested in DNAnexus using Moka Picard v1.2.1. The app completed successfully without any errors.
+
+Pan5346_sambamba.bed was tested using sambamba_coverage_v2.0.3. The app completed successfully without any errors. KCNA1 gene level coverage 100%.
