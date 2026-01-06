@@ -183,3 +183,10 @@ KCNA1_sambamba_query_json:
 }
 
 * Note that padding is not applied as current refgene.py logic will not extend CDS into UTR regions. This will have to be updated manually.
+
+## Manual adjustment of KCNA1 gene in sambamba.bed to split 5' UTRs correctly, remove 3' UTR, apply +10bp padding
+Manually adjusted KCNA1 using IGV in order to:
+- Split 5' UTRs correctly into 2 distinct entries: Exon 1 is UTR only, Exon 2 contains 5'UTR
+- Removed 3' UTR erroneously included as part of CDS
+- Applied +10bp padding to CDS region (extending into 3' UTR). Not required on 5' end of CDS as it would overlap into UTR region already included in BED.
+- Included screenshot to visually display changes between refgene.py output and manually updated record.
