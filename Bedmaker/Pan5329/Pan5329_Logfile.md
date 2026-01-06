@@ -12,3 +12,6 @@ refgene was run with R81_transcripts.txt, except NM_001130103.1, NM_002584.2, NM
 
  ## run bedmaker 
  bedmaker was run for NM_001130103.1, NM_002584.2, NM_022068.2, NM_138569.2 and additional regions
+
+ ## combine bed files
+ cat Pan5329_cnv_additional_regions.bed >> Pan5329_CNV.bed
