@@ -20,3 +20,6 @@ sort -k1,1V -k2,2n Pan5331_CNV.bed -o Pan5331_CNV.bed
 
 ## Trim THBD region
 Mannually trim the THBD BED region in Pan5331_CNV.bed to match Pan5346_exomeDepth.bed (to fix the previous single exon gene issue).
+
+## Testing
+Pan5331_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
