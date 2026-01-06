@@ -9,3 +9,6 @@ No UTR, no padding. Additional regions was requested.
 refgene was run with R81_transcripts.txt, except NM_001130103.1, NM_002584.2, NM_022068.2, NM_138569.2
 
  python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/refgene.py --refgene /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/ncbiRefSeq.txt --transcript-file /home/win/Desktop/workspace/generate_bed/CP205/R81/R81_transcripts.txt --bed-format cnv --out Pan5329_CNV.bed --config /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/config.yaml
+
+ ## run bedmaker 
+ bedmaker was run for NM_001130103.1, NM_002584.2, NM_022068.2, NM_138569.2 and additional regions
