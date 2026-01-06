@@ -17,3 +17,6 @@ bedmaker was run for additional regions.
 cat Pan5316_cnv_additional_regions.bed >> Pan5316_CNV.bed
 ## remove duplicates
 duplicated region was removed
+
+## replace NA
+NA regions were replaced with gene names from request form
