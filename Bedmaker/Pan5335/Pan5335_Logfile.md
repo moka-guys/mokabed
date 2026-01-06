@@ -21,3 +21,6 @@ duplicated regions are removed
 
 ## trimming
 GJB2 and GJA1 were trimmed manually as in exomedepth bedfile
+
+## testing
+Generated bed file was tested with ED app. The app completed without errors.
