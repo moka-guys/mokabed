@@ -190,3 +190,9 @@ Manually adjusted KCNA1 using IGV in order to:
 - Removed 3' UTR erroneously included as part of CDS
 - Applied +10bp padding to CDS region (extending into 3' UTR). Not required on 5' end of CDS as it would overlap into UTR region already included in BED.
 - Included screenshot to visually display changes between refgene.py output and manually updated record.
+
+## Testing
+
+Pan5346_data.bed was tested in DNAnexus using Moka Picard v1.2.1. The app completed successfully without any errors.
+
+Pan5346_sambamba.bed was tested using sambamba_coverage_v2.0.3. The app completed successfully without any errors. KCNA1 gene level coverage 100%.
