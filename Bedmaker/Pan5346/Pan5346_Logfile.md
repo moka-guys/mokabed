@@ -38,3 +38,173 @@ Padding for the 5UTR removed from Pan5346_data.bed and Pan5346_sambamba.bed to b
 Pan5346_data.bed was tested in DNAnexus using Moka Picard v1.2. The app completed successfully without any errors.
 
 Pan5346_sambamba.bed was tested using sambamba_coverage_v2.0.3 The app completed successfully without any errors.
+
+## Manual adjustments to KCNA1 gene to trimming 3' UTR, include padding - 05/01/2026
+Updates to Pan5346_data.bed and Pan5346_sambamba.bed in order to correct single exon gene issue (Requires 3' UTR removal and padding +10).
+
+## Ran refgene.py using single NM_000217.3 transcript for updating data.bed file
+python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file KCNA1.txt --bed-format data --out KCNA1.bed --config config.yaml
+
+KCNA1_query_json:
+
+{
+  "bed_format": "data",
+  "config": {
+    "bed_formats": {
+      "cnv": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene};{transcript}"
+        ],
+        "strip_chr_prefix": true
+      },
+      "data": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene_id}",
+          "{gene};{transcript}"
+        ],
+        "strip_chr_prefix": true
+      },
+      "exomedepth": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene}_{exon_number}"
+        ]
+      },
+      "sambamba": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{coords}",
+          "0",
+          "{strand}",
+          "{gene};{transcript}",
+          "{gene_id}"
+        ]
+      }
+    },
+    "padding": {
+      "cds": {
+        "downstream": 0,
+        "upstream": 0
+      }
+    },
+    "segments": {
+      "include_utrs": {
+        "five_prime": true,
+        "three_prime": false
+      },
+      "split_utrs": true
+    }
+  }
+}
+
+* Note that padding is not applied as current refgene.py logic will not extend CDS into UTR regions. This will have to be updated manually.
+
+## Manual adjustment of KCNA1 gene in data.bed to split 5' UTRs correctly, remove 3' UTR, apply +10bp padding
+Manually adjusted KCNA1 using IGV in order to:
+- Split 5' UTRs correctly into 2 distinct entries: Exon 1 is UTR only, Exon 2 contains 5'UTR
+- Removed 3' UTR erroneously included as part of CDS
+- Applied +10bp padding to CDS region (extending into 3' UTR). Not required on 5' end of CDS as it would overlap into UTR region already included in BED.
+- Included screenshot to visually display changes between refgene.py output and manually updated record.
+
+## Ran refgene.py using single NM_000217.3 transcript for updating sambamba.bed file
+python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file KCNA1.txt --bed-format sambamba --out KCNA1_sambamba.bed --config config.yaml 
+
+KCNA1_sambamba_query_json:
+
+{
+  "bed_format": "sambamba",
+  "config": {
+    "bed_formats": {
+      "cnv": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene};{transcript}"
+        ],
+        "strip_chr_prefix": true
+      },
+      "data": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene_id}",
+          "{gene};{transcript}"
+        ],
+        "strip_chr_prefix": true
+      },
+      "exomedepth": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{gene}_{exon_number}"
+        ]
+      },
+      "sambamba": {
+        "columns": [
+          "{chrom}",
+          "{start}",
+          "{end}",
+          "{coords}",
+          "0",
+          "{strand}",
+          "{gene};{transcript}",
+          "{gene_id}"
+        ],
+        "strip_chr_prefix": true
+      }
+    },
+    "padding": {
+      "cds": {
+        "downstream": 0,
+        "upstream": 0
+      }
+    },
+    "segments": {
+      "include_utrs": {
+        "five_prime": true,
+        "three_prime": false
+      },
+      "split_utrs": true
+    }
+  }
+}
+
+* Note that padding is not applied as current refgene.py logic will not extend CDS into UTR regions. This will have to be updated manually.
+
+## Manual adjustment of KCNA1 gene in sambamba.bed to split 5' UTRs correctly, remove 3' UTR, apply +10bp padding
+Manually adjusted KCNA1 using IGV in order to:
+- Split 5' UTRs correctly into 2 distinct entries: Exon 1 is UTR only, Exon 2 contains 5'UTR
+- Removed 3' UTR erroneously included as part of CDS
+- Applied +10bp padding to CDS region (extending into 3' UTR). Not required on 5' end of CDS as it would overlap into UTR region already included in BED.
+- Included screenshot to visually display changes between refgene.py output and manually updated record.
+
+## Testing
+
+Pan5346_data.bed was tested in DNAnexus using Moka Picard v1.2.1. The app completed successfully without any errors.
+
+Pan5346_sambamba.bed was tested using sambamba_coverage_v2.0.3. The app completed successfully without any errors. KCNA1 gene level coverage 100%.
+
+## Further adjustment - 06/01/2026
+
+Manual removal of 5' UTRs - not needed as KCNA1 is VCP3/CP2 and only requires coding regions. CDS +10bp only retained.
+
+## Testing
+
+Visual inspection of Pan5346_data.bed and Pan5346_sambamba.bed to confirm no UTRs present/padding correct in IGV.
+
+Pan5346_data.bed was tested in DNAnexus using Moka Picard v1.2.1. The app completed successfully without any errors.
+
+Pan5346_sambamba.bed was tested using sambamba_coverage_v2.0.3. The app completed successfully without any errors. KCNA1 gene level coverage 100%.
