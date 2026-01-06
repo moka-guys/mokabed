@@ -20,3 +20,6 @@ duplicated region was removed
 
 ## replace NA
 NA regions were replaced with gene names from request form
+
+## correct gene name
+gene names were correct to match with request form
