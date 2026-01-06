@@ -18,3 +18,6 @@ refgene was run with R81_transcripts.txt, except NM_001130103.1, NM_002584.2, NM
 
  ## remove duplicates
  duplicated regions were removed from bed file
+
+ ## trimming
+ manual trimming was done for KBTBD13 as in Exomedepth bed file. 
