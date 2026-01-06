@@ -15,3 +15,6 @@ bedmaker was run for NM_000445.3, NM_001390.4, NM_007171.3, NM_013334.3 and addi
 
 ## combine bed file
 cat Pan5328_cnv_additional_regions.bed >> Pan5328_CNV.bed
+
+## remove duplicated regions
+duplicated regions were removed manually
