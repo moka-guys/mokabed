@@ -29,3 +29,6 @@ Sort bedfile numerically
 ```
 sort -k1,1V -k2,2n Pan5343_CNV.bed -o Pan5343_CNV.bed
 ```
+
+# Mannually trim FOXC2 region
+Edit FOXC2 regions to match Pan5346_exomeDepth.bed file.
