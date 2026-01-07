@@ -14,3 +14,6 @@ bedmaker was run for ENST00000587708.2
 
 ## combine bed files
 cat Pan5344_cnv_additional_regions.bed >> Pan5344_CNV.bed
+
+## remove duplicate
+duplicated region was removed
