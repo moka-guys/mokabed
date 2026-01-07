@@ -33,3 +33,6 @@ sort -k1,1V -k2,2n Pan5340_CNV.bed -o Pan5340_CNV.bed
 
 ## Trim regions in Pan5340_CNV.bed
 Mannually trim regions in Pan5340_CNV.bed for genes FANCF, GJA1, and SAMD9 to match Pan5346_exomeDepth.bed (fix prior bed issue with single exon genes).
+
+## Testing
+Pan5340_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
