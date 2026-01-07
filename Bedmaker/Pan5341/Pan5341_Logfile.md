@@ -10,3 +10,5 @@ refgene is run with R237_transcripts.txt
 
 python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/refgene.py --refgene /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/ncbiRefSeq.txt --transcript-file /home/win/Desktop/workspace/generate_bed/CP205/R237/R237_transcripts.txt --bed-format cnv --out Pan5341_CNV.bed --config /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/config.yaml
 
+## testing
+Generated bed was tested with ED_cnv_calling_v1.6.0 and the app completed without errors.
