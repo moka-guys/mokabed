@@ -30,3 +30,6 @@ cat Pan5340_cnv_additional_regions.bed >> Pan5340_CNV.bed
 ```
 sort -k1,1V -k2,2n Pan5340_CNV.bed -o Pan5340_CNV.bed
 ```
+
+## Trim regions in Pan5340_CNV.bed
+Mannually trim regions in Pan5340_CNV.bed for genes FANCF, GJA1, and SAMD9 to match Pan5346_exomeDepth.bed (fix prior bed issue with single exon genes).
