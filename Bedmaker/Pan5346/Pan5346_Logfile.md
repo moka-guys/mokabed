@@ -208,3 +208,11 @@ Visual inspection of Pan5346_data.bed and Pan5346_sambamba.bed to confirm no UTR
 Pan5346_data.bed was tested in DNAnexus using Moka Picard v1.2.1. The app completed successfully without any errors.
 
 Pan5346_sambamba.bed was tested using sambamba_coverage_v2.0.3. The app completed successfully without any errors. KCNA1 gene level coverage 100%.
+
+## ExomeDepth BED adjustment to KCNA1 - 07/01/2026
+
+Manual changes to the KCNA1 entry to remove UTRs and padding in exomedepth BED file.
+
+## Testing
+
+Pan5346_exomedepth.bed was tested using ed_readcount_analysis_v1.5.0. The app completed successfully without any errors.
