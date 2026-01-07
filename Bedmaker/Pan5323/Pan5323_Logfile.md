@@ -18,3 +18,6 @@ cat Pan5323_cnv_additional_regions.bed >> Pan5323_CNV.bed
 
 ## remove duplicate region
 duplicated region was removed
+
+## testing
+generated bed file was run with ED_cnv_calling_v1.6.0. The app completed without errors.
