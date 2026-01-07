@@ -30,6 +30,3 @@ cat Pan5340_cnv_additional_regions.bed >> Pan5340_CNV.bed
 ```
 sort -k1,1V -k2,2n Pan5340_CNV.bed -o Pan5340_CNV.bed
 ```
-
-## Testing
-Pan5340_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
