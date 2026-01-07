@@ -12,3 +12,8 @@ Manually created Pan5340_transcripts_ncbi.txt from the Request form, and used as
 ```
 python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file ../../Bedmaker/Pan5340/Pan5340_transcripts_ncbi.txt --bed-format cnv --out Pan5340_CNV.bed
 ```
+
+## Run bedmaker for ENST transcripts and additional regions
+Requested to add 21 additional regions, and 3 Ensembl transcripts. 
+Ran BEDmaker (:8080) using settings to split UTRs, NOT include 5'UTR, and NOT include 3'UTR.
+Saved outputs.
