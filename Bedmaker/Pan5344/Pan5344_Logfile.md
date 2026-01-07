@@ -21,3 +21,5 @@ duplicated region was removed
 ## trimming
 RAG1, RAG2 and GJA1 were trimmed manually as in exomedepth bed file.
 
+## testing
+generated bed was run with ED_cnv_calling_v1.6.0, and the app completed without errors
