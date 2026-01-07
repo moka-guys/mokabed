@@ -19,3 +19,5 @@ bedmaker is run for NM_001146040.1 and additional region.
 
 ## trimming
 KCNA1 was trimmed manually as in exomedepth bed file
+## correct gene name
+gene name was corrected to match with request form 
