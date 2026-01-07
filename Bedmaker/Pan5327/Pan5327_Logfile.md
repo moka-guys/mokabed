@@ -16,3 +16,6 @@ bedmaker is run for NM_001146040.1 and additional region.
 
 ## combine bed file
  cat Pan5327_cnv_additional_regions.bed >> Pan5327_CNV.bed
+
+## trimming
+KCNA1 was trimmed manually as in exomedepth bed file
