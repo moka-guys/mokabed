@@ -18,5 +18,10 @@ Requested to add 21 additional regions, and 3 Ensembl transcripts.
 Ran BEDmaker (:8080) using settings to split UTRs, NOT include 5'UTR, and NOT include 3'UTR.
 Saved outputs.
 
-# Edit additional BED labels
+## Edit additional BED labels
 Removed duplicate regions and updated labels in Pan5340_cnv_additional_regions.bed to match request form.
+
+## Combine BED files
+```
+cat Pan5340_cnv_additional_regions.bed >> Pan5340_CNV.bed 
+```
