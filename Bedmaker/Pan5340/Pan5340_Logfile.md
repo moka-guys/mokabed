@@ -25,3 +25,8 @@ Removed duplicate regions and updated labels in Pan5340_cnv_additional_regions.b
 ```
 cat Pan5340_cnv_additional_regions.bed >> Pan5340_CNV.bed 
 ```
+
+## Sort Pan5340_CNV.bed
+```
+sort -k1,1V -k2,2n Pan5340_CNV.bed -o Pan5340_CNV.bed
+```
