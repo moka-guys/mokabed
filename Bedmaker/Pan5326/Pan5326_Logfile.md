@@ -15,3 +15,6 @@ bedmaker was run for additional regions.
 
 ## combine bed files
 cat Pan5326_cnv_additional_regions.bed >> Pan5326_CNV.bed
+
+## replace NA
+NA region was replaced with correct gene name from request form
