@@ -7,3 +7,6 @@ R25_BEDfile_request_form.csv was added into /LiveBedfiles/RequestForms
 
 ## run bedmaker
 bedmaker was run for NM_000142.4 as it is not in ncbiRefSeq.txt
+
+## testing
+generated bed was run with ED_cnv_calling_v1.6.0. The app completed without error
