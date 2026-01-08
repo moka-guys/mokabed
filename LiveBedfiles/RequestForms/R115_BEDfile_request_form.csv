@@ -1,0 +1,35 @@
+"DOC333	Revision1			",
+"Instructions:		",
+All transcripts and gene symbols must be confirmed by a Clinical Scientist. ,
+Check if transcript is available in DSS if not use MANE.,
+"Create bedfile Pan number in Moka.	",
+"Answer following questions				",
+"Please save this as a CSV file.				",
+"				",
+"1. Pan number of bed file to be created	PanXXXX			",Pan5303
+"2. Panel description/name (fill in a-c from Moka)				",CP205 CNV BED- R115 Dec2025 CNV calling
+"2. a) Category	 eg capture kit			",
+"2. b) SubCategory	 description of what is included, eg padding, UTR inclusion (or not),  intronic BED files,  any modifications from an existing BED file","no padding, 5UTR"
+"2. c) Panel	 Category and subcategory combined			",
+"3a). Is this BED file used for Exome depth?	Yes/No			",Yes
+"3b). Is this BED file used to generate read counts or filter calls?	Yes/No/N/A			","Yes, filter calls"
+"4. a) Is this BED file exclusively based on coordinates provided by a supplier? 	Yes/No/N/A			",No
+"4. b) If yes does this need further padding?	Yes/No/N/A			",N/A
+"5. a) Should specific transcripts be used to create the bed file? (as opposed to all transcripts for a gene)	Yes/No/N/A			",Yes
+"5. b) If specific transcripts are to be used have you provided multiple transcripts for the same gene? (if Yes please state)	Yes/No/N/A			",No
+"6. What padding is required around the exons?(usually 10, 30 or 50bp)",0
+"7. a) Should UTRs be included for ALL genes?	Yes/No			","Yes, 5' UTR only"
+"7. b) Should UTRs be padded? and if so by how much	Yes(10/30/50bp)/No/N/A			",No
+"8. a) Are UTRs required for SOME genes? 	Yes/No			",No
+"8. b) Please list genes/transcripts	Yes/No/N/A			",N/A
+"8. c) Should UTRs be padded? and if so by how much	Yes(10/30/50bp)/No/N/A			",N/A
+"9. Any additional BED files to be included in this BED file?	 (eg intronic region BED files, SNP sites,  CNV control sites etc)	",No
+"10. Are any further regions required to be added?	Yes/No			",No
+"11. Are there any regions in the below transcripts that should be excluded?	 			",No
+"Requested by:				",Heidi Kuoppamaa
+"Requested date:				",11/12/2025
+"				",
+"Please list gene and transcripts below.				",
+,
+"Gene Name				",Transcript
+F5,NM_000130.5
