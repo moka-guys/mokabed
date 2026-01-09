@@ -24,3 +24,6 @@ NA regions were replaced with gene names from request form
 
 ## correct gene name
 gene names were corrected as in request form
+
+## testing
+generated bed file was tested with ED_cnv_calling_v1.6.0. The app completed without error.
