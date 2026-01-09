@@ -6,8 +6,8 @@ Check if transcript is available in DSS if not use MANE.,,
 "Answer following questions				",,
 "Please save this as a CSV file.				",,
 "				",,
-"1. Pan number of bed file to be created	PanXXXX			",,Pan5340
-"2. Panel description/name (fill in a-c from Moka)				",,CP205 CNV BED- R236 Dec2025 CNV calling
+"1. Pan number of bed file to be created	PanXXXX			",,Pan5339
+"2. Panel description/name (fill in a-c from Moka)				",,CP205 CNV BED- R230 Dec2025 CNV calling
 "2. a) Category	 eg capture kit			",,"no padding, 5UTR"
 "2. b) SubCategory	 description of what is included, eg padding, UTR inclusion (or not),  intronic BED files,  any modifications from an existing BED file",,
 "2. c) Panel	 Category and subcategory combined			",,
