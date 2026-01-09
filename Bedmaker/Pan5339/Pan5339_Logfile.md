@@ -21,3 +21,6 @@ cat Pan5339_cnv_additional_regions.bed >> Pan5339_CNV.bed
 
 ## replace NA
 NA regions were replaced with gene names from request form
+
+## correct gene name
+gene names were corrected as in request form
