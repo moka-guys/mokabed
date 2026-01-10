@@ -1,0 +1,21 @@
+{
+  "assembly": "GRCh37",
+  "coordinates": [
+    "chr11:108239720-108239839",
+    "chr18:48611303-48611422"
+  ],
+  "downloaded_at": "2026-01-05T13:56:44.234595",
+  "failed_identifiers": [],
+  "identifiers": [],
+  "records_returned": 2,
+  "settings": {
+    "bed_type": "cnv",
+    "include_3utr": false,
+    "include_5utr": false,
+    "padding": {
+      "snp": 0,
+      "standard": 0
+    },
+    "split_utrs": true
+  }
+}
