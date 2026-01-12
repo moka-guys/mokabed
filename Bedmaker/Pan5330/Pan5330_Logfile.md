@@ -1,0 +1,44 @@
+## Pan5330
+CP205 CNV calling (R90) BED file (build37) for exomedepth CNV caller step.
+
+## add request form
+R90_BEDfile_request_form.csv was added into LiveBedfiles/RequestForms
+No UTR, no padding. No additional regions are requested.
+
+## run refgene
+refgene.py was run with R90_transcripts.txt
+NM_001083899.1 from request from in not Mane transcript. So, it is not included in ncbiRefSeq.txt. So that transcript was not included when running refgene.
+
+python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/refgene.py --refgene /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/ncbiRefSeq.txt --transcript-file /home/win/Desktop/workspace/generate_bed/CP205/R90/R90_transcripts.txt --bed-format cnv --out Pan5330_CNV.bed --config /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_generation_script/config.yaml
+
+## run bedmaker
+The excluded transcript NM_001083899.1 above is NM_016363.5 in hg19. It was run on Bedmaker
+
+# combine bed files
+cat Pan5330_cnv_additional_regions.bed >> Pan5330_CNV.bed
+
+# remove duplicated regions
+duplicated region is removed 
+
+## trimming
+CHST14, BLOC1S3, THBD, P2RY12 genes were trimmed
+
+## testing
+Generated bed file was tested with ED_cnv_calling_v1.6.0. The app completed without error.
+
+## correction
+It was noted that bedmaker should be run with NM_001083899.1 (but not with NM_016363.5). So correction was done. 
+- delete existing Pan5330_cnv_additional_regions.bed Pan5330_CNV_query_additional_regions.json
+- deleting combined section of NM_016363.5 from previous bedmaker run
+- re-run bedmaker with NM_001083899.1
+- combined NM_001083899.1 regions from bedmaker into Pan5330_CNV.bed by cat Pan5330new_cnv_additional_regions.bed >> Pan5330_CNV.bed
+
+## testing
+testing was done again after correction. The ED app completed without errors.
+
+## sorting
+
+sort -k1,1V -k2,2n Pan5330_CNV.bed -o Pan5330_CNV.bed
+
+## testing
+bed file was tested again after sorting. The ED app completed without errors.
