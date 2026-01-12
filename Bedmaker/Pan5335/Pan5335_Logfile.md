@@ -24,3 +24,6 @@ GJB2 and GJA1 were trimmed manually as in exomedepth bedfile
 
 ## testing
 Generated bed file was tested with ED app. The app completed without errors.
+
+## sorting
+sort -k1,1V -k2,2n Pan5335_CNV.bed -o Pan5335_CNV.bed
