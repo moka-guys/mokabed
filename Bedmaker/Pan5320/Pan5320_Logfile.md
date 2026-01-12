@@ -48,9 +48,9 @@ Generated bed file was tested with ED_cnv_calling_v1.6.0 and the app completed w
 ## modify gene name to be consistent with others
 GREM1-5UTR_2 is updated to GREM1_5UTR2
 
+## sorting
 
-
-
+sort -k1,1V -k2,2n Pan5320_CNV.bed -o Pan5320_CNV.bed
 
 
 
