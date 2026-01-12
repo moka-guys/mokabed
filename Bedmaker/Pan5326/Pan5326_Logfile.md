@@ -24,3 +24,6 @@ correct gene name to match with request form
 
 ## testing
 generated bed file was run with ED_cnv_calling_v1.6.0. The app completed without errors.
+
+## sorting
+sort -k1,1V -k2,2n Pan5326_CNV.bed -o Pan5326_CNV.bed
