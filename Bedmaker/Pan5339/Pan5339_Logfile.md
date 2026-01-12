@@ -27,3 +27,6 @@ gene names were corrected as in request form
 
 ## testing
 generated bed file was tested with ED_cnv_calling_v1.6.0. The app completed without error.
+
+## sorting
+sort -k1,1V -k2,2n Pan5339_CNV.bed -o Pan5339_CNV.bed
