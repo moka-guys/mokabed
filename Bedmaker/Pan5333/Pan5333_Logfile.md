@@ -22,3 +22,7 @@ remove regions that are duplicated in bed file
 
 ## testing 
 Generated bed was run with  ED_cnv_calling_v1.6.0. The app completed without error.
+
+## sorting
+sort -k1,1V -k2,2n Pan5333_CNV.bed -o Pan5333_CNV.bed
+
