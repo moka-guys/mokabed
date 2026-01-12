@@ -52,6 +52,6 @@ GREM1-5UTR_2 is updated to GREM1_5UTR2
 
 sort -k1,1V -k2,2n Pan5320_CNV.bed -o Pan5320_CNV.bed
 
-
-
+## testing
+sorted bed file was tested and the ED app completed without errors.
 
