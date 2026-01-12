@@ -15,3 +15,6 @@ GJB6 was manually trimmed as in Exomedepth bedfile
 
 ## testing
 Generated bedfile was run with ED_cnv_calling_v1.6.0. The app completed without errors.
+
+## sorting
+sort -k1,1V -k2,2n Pan5332_CNV.bed -o Pan5332_CNV.bed
