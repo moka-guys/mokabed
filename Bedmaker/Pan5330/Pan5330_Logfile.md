@@ -35,3 +35,8 @@ It was noted that bedmaker should be run with NM_001083899.1 (but not with NM_01
 
 ## testing
 testing was done again after correction. The ED app completed without errors.
+
+## sorting
+
+sort -k1,1V -k2,2n Pan5330_CNV.bed -o Pan5330_CNV.bed
+
