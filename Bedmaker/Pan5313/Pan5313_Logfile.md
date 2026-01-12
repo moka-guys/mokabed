@@ -19,3 +19,6 @@ Generated bed file was tested on DNAnexus by running ED_cnv_calling_v1.6.0 and T
 
 ## sorting
 sort -k1,1V -k2,2n Pan5313_CNV.bed -o Pan5313_CNV.bed
+
+## testing
+sorted bed was tested again and the ED app completed without error.
