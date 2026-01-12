@@ -27,3 +27,6 @@ Generated bed file was tested with ED app. The app completed without errors.
 
 ## sorting
 sort -k1,1V -k2,2n Pan5335_CNV.bed -o Pan5335_CNV.bed
+
+## testing
+sorted bed file was tested again. The ED app completed without error
