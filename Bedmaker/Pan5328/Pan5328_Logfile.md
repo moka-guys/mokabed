@@ -24,3 +24,6 @@ FKRP was trimmed manually
 
 ## testing
 generated bed file was tested with ED_cnv_calling_v1.6.0. The app completed without errors. 
+
+## sorting
+sort -k1,1V -k2,2n Pan5328_CNV.bed -o Pan5328_CNV.bed
