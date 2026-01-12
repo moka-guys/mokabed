@@ -40,3 +40,5 @@ testing was done again after correction. The ED app completed without errors.
 
 sort -k1,1V -k2,2n Pan5330_CNV.bed -o Pan5330_CNV.bed
 
+## testing
+bed file was tested again after sorting. The ED app completed without errors.
