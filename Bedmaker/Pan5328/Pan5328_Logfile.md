@@ -27,3 +27,6 @@ generated bed file was tested with ED_cnv_calling_v1.6.0. The app completed with
 
 ## sorting
 sort -k1,1V -k2,2n Pan5328_CNV.bed -o Pan5328_CNV.bed
+
+## testing
+generated bed was tested again. The ED app completed without error.
