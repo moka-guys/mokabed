@@ -23,3 +23,6 @@ RAG1, RAG2 and GJA1 were trimmed manually as in exomedepth bed file.
 
 ## testing
 generated bed was run with ED_cnv_calling_v1.6.0, and the app completed without errors
+
+## sorting
+sort -k1,1V -k2,2n Pan5344_CNV.bed -o Pan5344_CNV.bed
