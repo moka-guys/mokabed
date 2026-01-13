@@ -35,3 +35,6 @@ Edit FOXC2 regions to match Pan5346_exomeDepth.bed file.
 
 ## Testing
 Pan5343_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
+
+## add transcripts
+transcripts were added in missing lines
