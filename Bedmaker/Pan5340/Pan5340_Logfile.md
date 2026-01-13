@@ -36,3 +36,6 @@ Mannually trim regions in Pan5340_CNV.bed for genes FANCF, GJA1, and SAMD9 to ma
 
 ## Testing
 Pan5340_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
+
+## remove duplicates
+duplicated regions were removed
