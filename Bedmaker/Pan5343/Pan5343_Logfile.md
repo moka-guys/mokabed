@@ -38,3 +38,6 @@ Pan5343_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app comp
 
 ## add transcripts
 transcripts were added in missing lines
+
+## testing
+updated bed was tested again. The ED app completed without errors.
