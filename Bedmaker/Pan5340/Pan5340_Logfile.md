@@ -42,3 +42,6 @@ duplicated regions were removed
 
 ## add transcripts
 transcript names were added in the missing lines
+
+## testing
+testing was done again after updates. The ED app completed without errors.
