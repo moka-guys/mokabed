@@ -39,3 +39,6 @@ Pan5340_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app comp
 
 ## remove duplicates
 duplicated regions were removed
+
+## add transcripts
+transcript names were added in the missing lines
