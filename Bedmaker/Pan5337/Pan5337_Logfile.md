@@ -12,3 +12,9 @@ python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_gen
 
 ## testing
 Generated bed was tested with ED_cnv_calling_v1.6.0. The app completed without error.
+
+## sorting
+sort -k1,1V -k2,2n Pan5337_CNV.bed -o Pan5337_CNV.bed
+
+## testing
+sorted bed was tested again. The ED app completed without error.
