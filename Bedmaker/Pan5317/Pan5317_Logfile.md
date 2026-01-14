@@ -28,3 +28,9 @@ rename gene to match with those from request form
 
 # testing
 Generated bed file was run with ED_cnv_calling_v1.6.0. The app finished without error.
+
+## sorting
+sort -k1,1V -k2,2n Pan5317_CNV.bed -o Pan5317_CNV.bed
+
+## testing
+sorted bed file was tested again. The ED app completed without error.
