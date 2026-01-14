@@ -57,3 +57,6 @@ sorted bed file was tested and the ED app completed without errors.
 
 ## add transcript
 added missing transcript
+
+## testing
+testing done again after update. The ED app completed without error.
