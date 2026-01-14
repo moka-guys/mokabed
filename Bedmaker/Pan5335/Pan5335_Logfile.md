@@ -33,3 +33,6 @@ sorted bed file was tested again. The ED app completed without error
 
 ## remove 0/1 based duplicates
  1 based duplicates were removed. 0 based were left.
+
+ ## testing
+ updated bed were tested again. The ED app completed without error. 
