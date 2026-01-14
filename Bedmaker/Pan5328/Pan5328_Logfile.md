@@ -33,3 +33,6 @@ generated bed was tested again. The ED app completed without error.
 
 ## removing duplicates
 duplicate regions due to 0 based and 1 based difference were removed. 0 based regions were left.
+
+## testing
+updated bed was tested again. The ED app was completed without errors. 
