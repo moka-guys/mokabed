@@ -30,3 +30,6 @@ sort -k1,1V -k2,2n Pan5335_CNV.bed -o Pan5335_CNV.bed
 
 ## testing
 sorted bed file was tested again. The ED app completed without error
+
+## remove 0/1 based duplicates
+ 1 based duplicates were removed. 0 based were left.
