@@ -25,3 +25,9 @@ GJB2, GJB6 and GJA1 were trimmed as in exomedepth bed file manually
 
 ## testing
 Generated bed was tested with ED_cnv_calling_v1.6.0 and the app completed without errors
+
+## sorting
+sort -k1,1V -k2,2n Pan5334_CNV.bed -o Pan5334_CNV.bed
+
+## testing
+sorted bed was tested again. The ED app completed without error.
