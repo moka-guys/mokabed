@@ -33,3 +33,6 @@ sorted bed was tested again. The ED app was completed without error.
 
 ## remove 0/1 duplicates
 duplicated 1 based were removed. 0 based were left.
+
+## testing
+updated bed was tested again and the ED app complete without error.
