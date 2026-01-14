@@ -30,3 +30,9 @@ trimmed FANCF gene as in exomedepth bedfile
 
 ## testing
 Generated bed was tested using ED_cnv_calling_v1.6.0. The app completed without error.
+
+## sorting
+sort -k1,1V -k2,2n Pan5338_CNV.bed -o Pan5338_CNV.bed
+
+## testing
+sorted bed was tested again. The ED app completed without error.
