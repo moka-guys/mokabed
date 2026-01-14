@@ -28,3 +28,6 @@ sort -k1,1V -k2,2n Pan5333_CNV.bed -o Pan5333_CNV.bed
 
 ## testing
 sorted bed file was tested again. The ED app completed without error.
+
+## remove duplicated lines
+some line are different only one base just because they are 0 and 1 based. Duplicated 1 based are removed and 0 based are left.
