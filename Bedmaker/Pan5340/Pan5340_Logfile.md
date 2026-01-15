@@ -45,3 +45,6 @@ transcript names were added in the missing lines
 
 ## testing
 testing was done again after updates. The ED app completed without errors.
+
+## remove 0/1 based duplicates
+1 based were removed. 0 based were left
