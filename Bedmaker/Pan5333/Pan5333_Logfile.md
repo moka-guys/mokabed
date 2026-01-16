@@ -38,3 +38,6 @@ updated bed was tested again. The ED complected without error.
 ## remove some transcripts regions
 NM_001190442.1, NM_001042440.2, ENST00000397985.2 - these transcripts are in the request form but they are not in agreed transcripts list for CP205 readcount and CNV bedfiles. 
 Regions for these transcripts are removed from the bed files. Some regions are already removed when removing duplicates previously (e.g. NM_001042440.2 does not need to be removed although it is in request as it's already removed by previous step)
+
+## testing
+updated bed was tested again. The ED app completed without errors.
