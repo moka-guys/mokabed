@@ -49,3 +49,6 @@ bedtools merge \
 
 mv Pan5333_CNV.bed Pan5333_CNV_uncleaned_unmerged.bed
 mv Pan5333_CNV_merged.bed Pan5333_CNV.bed
+
+## testing
+updated BED was tested again. The ED app completed without errors.
