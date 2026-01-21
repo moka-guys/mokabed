@@ -30,3 +30,7 @@ refgene was run with R81_transcripts.txt, except NM_001130103.1, NM_002584.2, NM
 
  ## testing
  sorted bed was tested again. The ED app completed without error. 
+
+ ## revert the 0/1based duplications
+ It was found out that 0/1 duplication should be merged instead of removing.
+ The commit was reverted back before the step of remove 0/1 based duplications
