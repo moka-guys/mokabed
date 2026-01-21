@@ -45,3 +45,9 @@ transcript names were added in the missing lines
 
 ## testing
 testing was done again after updates. The ED app completed without errors.
+
+## reverting
+It was found out that 0/1 based duplicated regions should be merged, rather than deleting.
+Commits were reverted till to the step of 0/1 based duplicates removal.
+Commit for invalid transcript removal was also reverted although it was correct, as this step is after 0/1 based duplicates removal
+So, this step needs redoing
