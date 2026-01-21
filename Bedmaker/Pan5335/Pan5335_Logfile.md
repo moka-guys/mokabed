@@ -45,3 +45,6 @@ grep -v -E "NM_001190442.1|NM_001042440.2|ENST00000397985.2" Pan5335_CNV.bed > P
 Removing the invalid transcripts automatically removed the 0/1 based duplicated regions also. So, merging is not required.
  mv Pan5335_CNV.bed Pan5335_CNV_unclean.bed
  mv Pan5335_CNV_clean.bed Pan5335_CNV.bed
+
+ ## testing
+ updated bed was tested again. The ED app completed without error.
