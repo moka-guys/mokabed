@@ -38,6 +38,3 @@ updated bed file was tested again The ED app completed without errors.
 
 ## remove region 
 A region for PSENEN - ENST00000587708.2 was removed as this transcript is not in the agreed list for CP205 readcount and CNV bed.
-
-## testing
-updated bed was tested again. The ED app completed without error
