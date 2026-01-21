@@ -41,3 +41,11 @@ Invalid transcripts removal commit was also reverted althogh it was the correct 
 NM_001190442.1, NM_001042440.2, ENST00000397985.2 - these transcripts are in the request form but they are not in agreed transcripts list for CP205 readcount and CNV bedfiles. 
 Regions for these transcripts are removed from the bed files.
 grep -v -E "NM_001190442.1|NM_001042440.2|ENST00000397985.2" Pan5334_CNV.bed > Pan5334_CNV_clean.bed
+
+## merging
+0/1 duplicated regions were merged using bedtools
+bedtools merge \
+  -i Pan5334_CNV_clean.bed \
+  -c 4 \
+  -o first \
+  > Pan5334_CNV_merged.bed
