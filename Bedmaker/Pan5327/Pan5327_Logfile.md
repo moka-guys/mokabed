@@ -30,3 +30,7 @@ sort -k1,1V -k2,2n Pan5327_CNV.bed -o Pan5327_CNV.bed
 
 ## testing
 sorted bed was tested again. The ED app was completed without error.
+
+## reverting
+It was noted that 0/1 duplicated regions should be merged instead of removal
+So, git commit were reverted
