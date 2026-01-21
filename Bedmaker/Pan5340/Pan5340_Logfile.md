@@ -51,3 +51,9 @@ It was found out that 0/1 based duplicated regions should be merged, rather than
 Commits were reverted till to the step of 0/1 based duplicates removal.
 Commit for invalid transcript removal was also reverted although it was correct, as this step is after 0/1 based duplicates removal
 So, this step needs redoing
+
+## remove invalid transcripts
+
+ENST00000316024.5,ENST00000587708.2, ENST00000426016.1 - these transcripts are in the request form but they are not in agreed transcripts list for CP205 readcount and CNV bedfiles. 
+Regions for these transcripts are removed from the bed files.
+grep -v -E "ENST00000316024.5|ENST00000587708.2|ENST00000426016.1" Pan5340_CNV.bed > Pan5340_CNV_clean.bed
