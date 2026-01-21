@@ -34,3 +34,7 @@ refgene was run with R81_transcripts.txt, except NM_001130103.1, NM_002584.2, NM
  ## revert the 0/1based duplications
  It was found out that 0/1 duplication should be merged instead of removing.
  The commit was reverted back before the step of remove 0/1 based duplications
+
+ ## merging
+ Bedtools merge will be used to remove overlapping regions.
+ bedtools merge -i Pan5329_CNV.bed -c 4 -o first > Pan5329_CNV_merged.bed
