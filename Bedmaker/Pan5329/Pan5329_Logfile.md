@@ -30,6 +30,3 @@ refgene was run with R81_transcripts.txt, except NM_001130103.1, NM_002584.2, NM
 
  ## testing
  sorted bed was tested again. The ED app completed without error. 
-
- ## remove 0/1 based duplications
- remove regions that are duplicated for 0/1 based. 1 based are removed and 0 based are left
