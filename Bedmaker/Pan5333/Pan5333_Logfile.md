@@ -31,6 +31,3 @@ sorted bed file was tested again. The ED app completed without error.
 
 ## remove duplicated lines
 some line are different only one base just because they are 0 and 1 based. Duplicated 1 based are removed and 0 based are left.
-
-## testing
-updated bed was tested again. The ED complected without error.
