@@ -37,3 +37,10 @@ NM_001190442.1, NM_001042440.2, ENST00000397985.2 - these transcripts are in the
 Regions for these transcripts are removed from the bed files.
 grep -v -E "NM_001190442.1|NM_001042440.2|ENST00000397985.2" Pan5333_CNV.bed > Pan5333_CNV_clean.bed
 
+## merging duplicated regions
+bedtools was used to merged 0/1 based duplicated regions
+bedtools merge \
+  -i Pan5333_CNV_clean.bed \
+  -c 4 \
+  -o first \
+  > Pan5333_CNV_merged.bed
