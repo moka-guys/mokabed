@@ -51,6 +51,3 @@ testing was done again after updates. The ED app completed without errors.
 
 ## testing
 updated bed was tested again. The ED app completed without error
-
-## remove regions
-Remove regions for ENST transcripts for SOS1, WRAP53 and PSENEN were removed as those were not in agreed list for CP205 readcount and CNV bed file
