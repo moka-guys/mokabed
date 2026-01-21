@@ -49,3 +49,7 @@ bedtools merge \
   -c 4 \
   -o first \
   > Pan5334_CNV_merged.bed
+
+## renaming
+ mv Pan5334_CNV.bed Pan5334_CNV_unclean_unmerged.bed
+ mv Pan5334_CNV_merged.bed Pan5334_CNV.bed
