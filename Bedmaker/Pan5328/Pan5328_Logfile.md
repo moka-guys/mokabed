@@ -46,3 +46,6 @@ bedtools merge \
 bedfiles were renamed. 
  mv Pan5328_CNV.bed Pan5328_CNV_unmerged.bed
  mv Pan5328_CNV_merged.bed Pan5328_CNV.bed
+
+## testing
+updated bed file was tested. The ED app completed without error
