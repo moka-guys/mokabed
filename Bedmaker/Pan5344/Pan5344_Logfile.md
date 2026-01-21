@@ -34,3 +34,8 @@ sorted bed was tested again. The ED app completed without errors.
 It was found out that 0/1 based duplicated regions should be merged, rather than deleting.
 Commits were reverted till the step where 0/1 based duplication were removed
 Commit for removing invalid transcripts was also reverted although it a correct commit as this step is after 0/1 based duplicates removal, so this step needs redoing.
+
+## remove invalid transcripts
+ ENST00000587708.2- this is in the request form but is not in agreed transcripts list for CP205 readcount and CNV bedfiles. 
+Regions for this transcript are removed from the bed files.
+grep -v -E "ENST00000587708.2" Pan5344_CNV.bed > Pan5344_CNV_clean.bed
