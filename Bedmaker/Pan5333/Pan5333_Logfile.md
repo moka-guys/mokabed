@@ -31,3 +31,9 @@ sort -k1,1V -k2,2n Pan5333_CNV.bed -o Pan5333_CNV.bed
 ## reverting
 It was noted that 0/1 duplicated regions should be merged instead of removal
 So, git commit were reverted until 0/1 duplicated removal step. In doing so, removal of invalid transcripts was also reverted since this step was done after 0/1 duplicated removal. So, invalid transcript removal step will be re-added in the updated PR
+
+## remove some transcripts regions
+NM_001190442.1, NM_001042440.2, ENST00000397985.2 - these transcripts are in the request form but they are not in agreed transcripts list for CP205 readcount and CNV bedfiles. 
+Regions for these transcripts are removed from the bed files.
+grep -v -E "NM_001190442.1|NM_001042440.2|ENST00000397985.2" Pan5333_CNV.bed > Pan5333_CNV_clean.bed
+
