@@ -42,3 +42,7 @@ bedtools merge \
   -c 4 \
   -o first \
   > Pan5327_CNV_merged.bed
+
+  ## renaming
+ mv Pan5327_CNV.bed Pan5327_CNV_unmerged.bed
+ mv Pan5327_CNV_merged.bed Pan5327_CNV.bed
