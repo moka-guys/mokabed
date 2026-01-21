@@ -44,3 +44,6 @@ grep -v -E "ENST00000587708.2" Pan5344_CNV.bed > Pan5344_CNV_clean.bed
 Removing invalid transcripts also remove the 0/1 based duplicates. So, merging is not required. Renaming was done as below:
  mv Pan5344_CNV.bed Pan5344_CNV_unclean.bed
  mv Pan5344_CNV_clean.bed Pan5344_CNV.bed
+
+## testing
+updated bed was tested and the ED app completed without errors
