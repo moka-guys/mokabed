@@ -29,3 +29,8 @@ sort -k1,1V -k2,2n Pan5344_CNV.bed -o Pan5344_CNV.bed
 
 ## testing
 sorted bed was tested again. The ED app completed without errors.
+
+## reverting
+It was found out that 0/1 based duplicated regions should be merged, rather than deleting.
+Commits were reverted till the step where 0/1 based duplication were removed
+Commit for removing invalid transcripts was also reverted although it a correct commit as this step is after 0/1 based duplicates removal, so this step needs redoing.
