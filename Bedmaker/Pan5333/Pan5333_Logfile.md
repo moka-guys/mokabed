@@ -27,4 +27,7 @@ Generated bed was run with  ED_cnv_calling_v1.6.0. The app completed without err
 sort -k1,1V -k2,2n Pan5333_CNV.bed -o Pan5333_CNV.bed
 
 ## testing
-sorted bed file was tested again. The ED app completed without error.
+
+## reverting
+It was noted that 0/1 duplicated regions should be merged instead of removal
+So, git commit were reverted until 0/1 duplicated removal step. In doing so, removal of invalid transcripts was also reverted since this step was done after 0/1 duplicated removal. So, invalid transcript removal step will be re-added in the updated PR
