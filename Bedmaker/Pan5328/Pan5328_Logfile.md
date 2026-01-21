@@ -30,6 +30,3 @@ sort -k1,1V -k2,2n Pan5328_CNV.bed -o Pan5328_CNV.bed
 
 ## testing
 generated bed was tested again. The ED app completed without error.
-
-## removing duplicates
-duplicate regions due to 0 based and 1 based difference were removed. 0 based regions were left.
