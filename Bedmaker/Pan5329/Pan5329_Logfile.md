@@ -44,3 +44,6 @@ refgene was run with R81_transcripts.txt, except NM_001130103.1, NM_002584.2, NM
  Pan5329_CNV_merged.bed was renamed as Pan5329_CNV.bed
  mv Pan5329_CNV.bed Pan5329_CNV_unmerged.bed
  mv Pan5329_CNV_merged.bed Pan5329_CNV.bed
+
+ ## testing
+ updated bed was tested with ED app. The app completed without errors.
