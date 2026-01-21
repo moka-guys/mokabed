@@ -57,3 +57,10 @@ So, this step needs redoing
 ENST00000316024.5,ENST00000587708.2, ENST00000426016.1 - these transcripts are in the request form but they are not in agreed transcripts list for CP205 readcount and CNV bedfiles. 
 Regions for these transcripts are removed from the bed files.
 grep -v -E "ENST00000316024.5|ENST00000587708.2|ENST00000426016.1" Pan5340_CNV.bed > Pan5340_CNV_clean.bed
+
+## merging
+bedtools merge \
+  -i Pan5340_CNV_clean.bed \
+  -c 4 \
+  -o first \
+  > Pan5340_CNV_merged.bed
