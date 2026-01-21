@@ -48,6 +48,3 @@ testing was done again after updates. The ED app completed without errors.
 
 ## remove 0/1 based duplicates
 1 based were removed. 0 based were left
-
-## testing
-updated bed was tested again. The ED app completed without error
