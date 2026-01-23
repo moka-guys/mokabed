@@ -42,3 +42,23 @@ sort -k1,1V -k2,2n Pan5330_CNV.bed -o Pan5330_CNV.bed
 
 ## testing
 bed file was tested again after sorting. The ED app completed without errors.
+
+## reverting
+It was found out that 0/1 based duplicated regions should be merged rather than deleting
+Commits were reverted till the step of 0/1 based duplicated removal
+
+## merging
+overlapping regions were merged with bedtools
+bedtools merge \
+  -i Pan5330_CNV.bed \
+  -c 4 \
+  -o first \
+  > Pan5330_CNV_merged.bed
+
+## renaming
+Bed files were renamed
+mv Pan5330_CNV.bed Pan5330_CNV_unmerged.bed
+ mv Pan5330_CNV_merged.bed Pan5330_CNV.bed
+
+## testing
+updated bed was tested again. The ED app finished without errors.
