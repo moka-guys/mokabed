@@ -1,0 +1,73 @@
+# Pan5340
+CP205 CNV calling (R236) BED file (build37) for exomedepth CNV caller step.
+
+## Save request form
+Pan5340_request_form.csv was used (added into mokabed/LiveBedfiles/RequestForms)
+
+No padding. Multiple transcripts requested for genes BRAF, CDKN2A, HRAS, KRAS, MITF, PSENEN, SOS1, WRAP53, and LMNA. 21 additional regions requested. 
+
+## Run refgene.py
+Manually created Pan5340_transcripts_ncbi.txt from the Request form, and used as the input to run refgene.py
+
+```
+python3 refgene.py --refgene ncbiRefSeq.txt --transcript-file ../../Bedmaker/Pan5340/Pan5340_transcripts_ncbi.txt --bed-format cnv --out Pan5340_CNV.bed
+```
+
+## Run bedmaker for ENST transcripts and additional regions
+Requested to add 21 additional regions, and 3 Ensembl transcripts. 
+Ran BEDmaker (:8080) using settings to split UTRs, NOT include 5'UTR, and NOT include 3'UTR.
+Saved outputs.
+
+## Edit additional BED labels
+Removed duplicate regions and updated labels in Pan5340_cnv_additional_regions.bed to match request form.
+
+## Combine BED files
+```
+cat Pan5340_cnv_additional_regions.bed >> Pan5340_CNV.bed 
+```
+
+## Sort Pan5340_CNV.bed
+```
+sort -k1,1V -k2,2n Pan5340_CNV.bed -o Pan5340_CNV.bed
+```
+
+## Trim regions in Pan5340_CNV.bed
+Mannually trim regions in Pan5340_CNV.bed for genes FANCF, GJA1, and SAMD9 to match Pan5346_exomeDepth.bed (fix prior bed issue with single exon genes).
+
+## Testing
+Pan5340_CNV.bed was tested in DNAnexus using ED_cnv_calling_v1.4.0. The app completed successfully without any error.
+
+## remove duplicates
+duplicated regions were removed
+
+## add transcripts
+transcript names were added in the missing lines
+
+## testing
+testing was done again after updates. The ED app completed without errors.
+
+## reverting
+It was found out that 0/1 based duplicated regions should be merged, rather than deleting.
+Commits were reverted till to the step of 0/1 based duplicates removal.
+Commit for invalid transcript removal was also reverted although it was correct, as this step is after 0/1 based duplicates removal
+So, this step needs redoing
+
+## remove invalid transcripts
+
+ENST00000316024.5,ENST00000587708.2, ENST00000426016.1 - these transcripts are in the request form but they are not in agreed transcripts list for CP205 readcount and CNV bedfiles. 
+Regions for these transcripts are removed from the bed files.
+grep -v -E "ENST00000316024.5|ENST00000587708.2|ENST00000426016.1" Pan5340_CNV.bed > Pan5340_CNV_clean.bed
+
+## merging
+bedtools merge \
+  -i Pan5340_CNV_clean.bed \
+  -c 4 \
+  -o first \
+  > Pan5340_CNV_merged.bed
+
+## renaming
+ mv Pan5340_CNV.bed Pan5340_CNV_unclean_unmerged.bed
+ mv Pan5340_CNV_merged.bed Pan5340_CNV.bed
+
+## testing
+updated bed was tested. The ED app completed without error
