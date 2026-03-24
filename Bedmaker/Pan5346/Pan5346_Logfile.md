@@ -248,3 +248,6 @@ sort -k1,1V -k2,2n Pan5346_sambamba.bed -o Pan5346_sambamba.bed
 ## remove a DMD region from sambamba bed
 The following region was removed from sambamba bed as requested by Michael Yau
 DMD NM_000109.4 2928 X 32489312 32489322 
+
+## replace space with tab for the manually updated rows
+In both data bed and sambamba bed file, the space between columns were replaced with tab.
