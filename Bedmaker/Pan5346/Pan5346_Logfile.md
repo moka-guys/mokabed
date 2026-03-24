@@ -229,3 +229,6 @@ These regions were manually added into Pan5346_data.bed
 ## sorting data bed file
 sort -k1,1V -k2,2n Pan5346_data.bed -o Pan5346_data.bed
 
+## remove a DMD region
+The following region was removed from data bed as requested by Michael Yau
+DMD NM_000109.4 2928 X 32489312 32489322 
