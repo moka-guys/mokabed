@@ -232,3 +232,12 @@ sort -k1,1V -k2,2n Pan5346_data.bed -o Pan5346_data.bed
 ## remove a DMD region
 The following region was removed from data bed as requested by Michael Yau
 DMD NM_000109.4 2928 X 32489312 32489322 
+
+## manual adding for 5UTR regions to sambamba bed
+Michael Mitchel asked to add these 4 regions into small variant bed files
+chr2    128175862    128176040  PROC  
+chr3 93692632  93692783   PROS1
+chr1        173886443        173886568     SERPINC1   
+chr10    27389341     27389395  ANKRD26
+
+These regions were manually added into Pan5346_sambamba.bed
