@@ -241,3 +241,6 @@ chr1        173886443        173886568     SERPINC1
 chr10    27389341     27389395  ANKRD26
 
 These regions were manually added into Pan5346_sambamba.bed
+
+## sorting sambamba bed
+sort -k1,1V -k2,2n Pan5346_sambamba.bed -o Pan5346_sambamba.bed
