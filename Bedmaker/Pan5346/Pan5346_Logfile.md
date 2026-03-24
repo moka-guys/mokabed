@@ -216,3 +216,12 @@ Manual changes to the KCNA1 entry to remove UTRs and padding in exomedepth BED f
 ## Testing
 
 Pan5346_exomedepth.bed was tested using ed_readcount_analysis_v1.5.0. The app completed successfully without any errors.
+
+## manual adding for 5UTR regions to data bed
+Michael Mitchel asked to add these 4 regions into small variant bed files
+chr2    128175862    128176040  PROC  
+chr3 93692632  93692783   PROS1
+chr1        173886443        173886568     SERPINC1   
+chr10    27389341     27389395  ANKRD26
+
+These regions were manually added into Pan5346_data.bed
