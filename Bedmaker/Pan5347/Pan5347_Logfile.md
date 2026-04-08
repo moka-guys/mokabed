@@ -1,9 +1,9 @@
 ## Pan5347
 CP205 Whole Capture BED file (build37) for coverage and variant calling
 
-This BEDfile replaces Pan5346; during validation, Michael Mitchel asked to add these 4 5' UTR regions into small variant bed files. Michael Yau asked to remove a region in DMD gene, therefore BEDfiles need to be remade.
+This BEDfile replaces Pan5346; during validation, Michael Mitchell asked to add four 5' UTR regions into small variant bed files. Michael Yau asked to remove a region in DMD gene, therefore BEDfiles need to be remade.
 
-The following changes were done in existing Pan5346 databed and sambamba bed files. Since the Pannumber of the bed files need updating, the changes done on existing Pan5346 were copied to a new branch "Pan5347"
+The following changes were done in existing Pan5346 data bed and sambamba bed files. Since the Pannumber of the bed files need updating, the changes done on existing Pan5346 were copied to a new branch "Pan5347"
 
 ## manual adding for 5UTR regions to data bed
 Michael Mitchel asked to add these 4 regions into small variant bed files
@@ -41,7 +41,7 @@ DMD NM_000109.4 2928 X 32489312 32489322
 updated data bed and sambamba bed were testing by running filtering app and coverage app on DNAnexus.
 The apps finished without error. 
 
-After copying all above changes Pan5346 bedfiles were renamed as Pan5347.
+After copying all above changes into a new branch, Pan5346 bedfiles were renamed as Pan5347.
 
 # Rename the bed file
 mv Pan5346_data.bed Pan5347_data.bed
