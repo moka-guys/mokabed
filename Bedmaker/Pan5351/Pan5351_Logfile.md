@@ -9,3 +9,5 @@ cp ../Pan5318/Pan5318_CNV.bed ./Pan5351_CNV.bed
 
 ## run bedmaker
 NM_207421.3 was used for PADI6 gene to run bedmaker
+## combine bed files
+cat Pan5351_cnv_PADI6.bed >> Pan5351_CNV.bed
