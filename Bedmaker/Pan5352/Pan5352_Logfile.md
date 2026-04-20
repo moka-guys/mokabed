@@ -14,3 +14,5 @@ cat Pan5352_cnv_MBD4.bed >> Pan5352_CNV.bed
 ## sorting
 sort -k1,1V -k2,2n Pan5352_CNV.bed -o Pan5352_CNV.bed
 
+## testing
+updated Bed file was tested with ED_cnv_calling_v1.7.0 and the app finished without error.
