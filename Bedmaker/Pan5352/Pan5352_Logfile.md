@@ -1,0 +1,7 @@
+## Pan5352
+CP205 CNV calling (R211) BED file (build37) for exomedepth CNV caller step.
+
+## Copy Pan5320_CNV bed to Pan5352 CNV bed
+Pan5320_CNV.bed is existing bed file for R211. For additional changes, Pan5320_CNV.bed file was copied as Pan5352_CNV.bed
+
+cp ../Pan5320/Pan5320_CNV.bed ./Pan5352_CNV.bed
