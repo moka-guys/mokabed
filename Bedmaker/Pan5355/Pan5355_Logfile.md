@@ -12,3 +12,6 @@ NM_004804.2 and NM_002916.3 were used to run CIAO1 and RFC4 gene respectively (N
 cat Pan5355_cnv_CIAO1_RFC4.bed >> Pan5355_CNV.bed
 ## sorting
 sort -k1,1V -k2,2n Pan5355_CNV.bed -o Pan5355_CNV.bed
+
+## testing
+Bed file was tested using ED_cnv_caller_v1.7.0 and the app finished without error
