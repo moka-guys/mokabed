@@ -10,3 +10,6 @@ NM_000465.2 is used for BARD1 gene to run bedmaker.
 
 ## combine bed files
 cat Pan5350_cnv_BARD1.bed >> Pan5350_CNV.bed 
+
+## sorting
+sort -k1,1V -k2,2n Pan5350_CNV.bed -o Pan5350_CNV.bed
