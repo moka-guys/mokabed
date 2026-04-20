@@ -6,3 +6,6 @@ Pan5318_CNV.bed is existing bed file for R210. For additional changes, R5318_CNV
 
 
 cp ../Pan5318/Pan5318_CNV.bed ./Pan5351_CNV.bed
+
+## run bedmaker
+NM_207421.3 was used for PADI6 gene to run bedmaker
