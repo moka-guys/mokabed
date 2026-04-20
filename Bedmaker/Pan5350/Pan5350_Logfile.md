@@ -13,3 +13,5 @@ cat Pan5350_cnv_BARD1.bed >> Pan5350_CNV.bed
 
 ## sorting
 sort -k1,1V -k2,2n Pan5350_CNV.bed -o Pan5350_CNV.bed
+## testing
+generated bed file was tested with ED_cnv_calling_v1.7.0 and the app finished without error. 
