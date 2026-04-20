@@ -8,3 +8,5 @@ cp ../Pan5329/Pan5329_CNV.bed ./Pan5355_CNV.bed
 
 ## run bed maker
 NM_004804.2 and NM_002916.3 were used to run CIAO1 and RFC4 gene respectively (No 5UTR)
+## combine bed files
+cat Pan5355_cnv_CIAO1_RFC4.bed >> Pan5355_CNV.bed
