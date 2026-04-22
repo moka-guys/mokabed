@@ -13,3 +13,5 @@ cat Pan5353_CIAO1_cnv.bed >> Pan5353_CNV.bed
 ## sorting
 sort -k1,1V -k2,2n Pan5353_CNV.bed -o Pan5353_CNV.bed
 
+## testing
+Bed file was tested using ED_cnv_calling_v1.7.0 and the app finished without error.
