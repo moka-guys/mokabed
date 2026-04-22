@@ -10,3 +10,6 @@ cp ../Pan5328/Pan5328_CNV.bed ./Pan5353_CNV.bed
 NM_004804.2 was used to run bedmaker for CIAO1 gene (no UTR)
 ## combine bed files
 cat Pan5353_CIAO1_cnv.bed >> Pan5353_CNV.bed
+## sorting
+sort -k1,1V -k2,2n Pan5353_CNV.bed -o Pan5353_CNV.bed
+
