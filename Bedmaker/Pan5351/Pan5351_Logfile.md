@@ -14,4 +14,5 @@ python3 /home/win/Desktop/clone_github/mokabed/LiveBedfiles/TestArea_for_bed_gen
 cat Pan5351_BLM_CNV.bed >> Pan5351_CNV.bed
 ## sorting
 sort -k1,1V -k2,2n Pan5351_CNV.bed -o Pan5351_CNV.bed
-
+## testing
+Bed file was tested with ED_cnv_calling_v1.7.0 and the app finished without error. 
