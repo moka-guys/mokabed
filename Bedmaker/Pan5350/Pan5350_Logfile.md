@@ -23,3 +23,5 @@ In the request form the newly added transcript for BARD1 is NM_000465.4. However
 ## split 5UTR
 5UTR region for BARD1 was missed to split. It was split manually
 
+## testing
+Amended bed file was tested again with ED_cnv_calling_v1.7.0 and the app finished without error. 
