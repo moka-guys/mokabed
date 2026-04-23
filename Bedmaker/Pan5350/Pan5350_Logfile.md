@@ -19,4 +19,7 @@ generated bed file was tested with ED_cnv_calling_v1.7.0 and the app finished wi
 ## adding the request form
 R208_BEDfile_request_form_april2026.csv was added into mokabed/LiveBedfiles/
 In the request form the newly added transcript for BARD1 is NM_000465.4. However, NM_000465.2 was used as this is the transcript used in small variant capture bed (i.d. data.bed). Both transcript have the same CCDS number CCDS2397.1
-                                                                              
+
+## split 5UTR
+5UTR region for BARD1 was missed to split. It was split manually
+
