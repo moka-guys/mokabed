@@ -16,3 +16,7 @@ sort -k1,1V -k2,2n Pan5352_CNV.bed -o Pan5352_CNV.bed
 
 ## testing
 updated Bed file was tested with ED_cnv_calling_v1.7.0 and the app finished without error.
+
+## add request form
+R211_BEDfile_request_form_april2026.csv was added into mokabed/LiveBedfiles. In the request form the newly added transcript for MBD4 is NM_001276270.2. However, NM_001276270.1 was used as this is the transcript used in small variant capture bed (i.d. data.bed). Both transcript have the same CCDS number CCDS63768.1"
+
