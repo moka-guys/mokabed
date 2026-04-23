@@ -16,3 +16,7 @@ cat Pan5351_BLM_CNV.bed >> Pan5351_CNV.bed
 sort -k1,1V -k2,2n Pan5351_CNV.bed -o Pan5351_CNV.bed
 ## testing
 Bed file was tested with ED_cnv_calling_v1.7.0 and the app finished without error. 
+
+## add request form
+R236_BEDfile_request_form_april2026.csv was added into mokabed/LiveBedFiles.
+In the request form the newly added transcript for BLM is NM_000057.4.
