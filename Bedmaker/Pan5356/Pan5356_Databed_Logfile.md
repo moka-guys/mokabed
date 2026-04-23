@@ -8,3 +8,6 @@ cp ../Pan5347/Pan5347_data.bed ./Pan5356_data.bed
 
 ## Extend the padding region 
 BARD1 and MBD4 genes were added into CNV calling bed files for R208 and R211 respectively, that are VCP2 panels. For VCP2, +/-30 padding is needed, so for these genes, additional +/-20 padding was added manually
+
+## testing
+Updated bedfile was tested by running vcfeval_hap.py_v1.4.3 and filter_vcf_with_bedfile_v1.2.0 and the apps finished without error. 
