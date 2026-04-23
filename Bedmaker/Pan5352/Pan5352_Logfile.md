@@ -23,3 +23,5 @@ R211_BEDfile_request_form_april2026.csv was added into mokabed/LiveBedfiles. In 
 ## split 5UTR
 It was noted that 5UTR was missed to split from  exon. The UTR region was split manually.
 
+## testing 
+Amended bed file was tested again ED_cnv_calling_v1.7.0 and the app finished without error.
