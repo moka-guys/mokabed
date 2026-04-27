@@ -31,3 +31,6 @@ For example:
 
 19	11200138	11200224	670	LDLR_5UTR;NM_000527.5
 19	11200224	11200321	670	LDLR;NM_000527.5
+
+## testing
+Updated bed was tested by running vcfeval_hap.py_v1.4.3 and filter_vcf_with_bedfile_v1.2.0 and the apps finished without error
