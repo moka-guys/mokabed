@@ -14,3 +14,6 @@ cp Pan5356/Pan5356_exomeDepth.bed Pan5358/
 ## rename bed file
 The bed file was renamed as Pan5358
 mv Pan5356_exomeDepth.bed Pan5358_exomeDepth.bed
+
+## testing
+The updated readcount bed was tested using ED_readcount_analysis_v1.6.1. The expected readcount RData is generated
