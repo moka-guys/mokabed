@@ -11,3 +11,6 @@ cp Pan5356/Pan5356_exomeDepth.bed Pan5358/
 15	32996308	32996427	GREM1_SCG5_4  is updated to 15	32996308	32996427	GREM1-SCG5_4
 
 
+## rename bed file
+The bed file was renamed as Pan5358
+mv Pan5356_exomeDepth.bed Pan5358_exomeDepth.bed
