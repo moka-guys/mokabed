@@ -7,3 +7,7 @@ This is to replace the existing bed (Pan5356_exomeDepth.bed) that has typo in GR
 ## Copy Pan5356 to Pan5358 ExomeDepth bed
 cp Pan5356/Pan5356_exomeDepth.bed Pan5358/
 
+## Correcting typo
+15	32996308	32996427	GREM1_SCG5_4  is updated to 15	32996308	32996427	GREM1-SCG5_4
+
+
